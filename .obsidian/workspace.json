@@ -1,0 +1,199 @@
+{
+  "main": {
+    "id": "43a9dd6c91b43298",
+    "type": "split",
+    "children": [
+      {
+        "id": "c70de5bfb887a301",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0def4366b480e5cd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "efc0f3cb28b66343",
+    "type": "split",
+    "children": [
+      {
+        "id": "1fa00f2691731dbb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "209ce61b85d9fde7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a85a473b3bf9a197",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "•",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "97bf5fa5c173231b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 272.50390243530273
+  },
+  "right": {
+    "id": "275de8eb1be3a52e",
+    "type": "split",
+    "children": [
+      {
+        "id": "dc0cb094b000a6ee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2020eba070a2f5b3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "79650bc2852e87ee",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "70c0e31c6f573e0d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c79f5b156c4b6d21",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "0def4366b480e5cd",
+  "lastOpenFiles": [
+    "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
+    "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
+    "Computer Science/Computer networks/4 Network layer/4.6 Network management (ICMP, SNMP, NETCONF, YANG).md",
+    "Computer Science/Computer networks/4 Network layer/4.5 Software-defined networking (SDN).md",
+    "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
+    "Computer Science/Computer networks/3 Transport layer/3.2 User Datagram Protocol (UDP).md",
+    "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
+    "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
+    "Computer Science/Computer networks/2 Application layer/2.1 Application layer principles.md",
+    "Computer Science/Computer networks/2 Application layer/2 Application layer.md",
+    "Computer Science/Computer networks/1 Network architecture/1.2 Internet Architecture.md",
+    "Computer Science/Computer networks/1 Network architecture/1.1 History of the Internet.md",
+    "Computer Science/Computer networks/1 Network architecture/1 Network architecture.md",
+    "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 17.00.03.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.56.37.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.55.04.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.25.52.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.24.36.png",
+    "Screenshot 2024-04-04 at 16.24.10.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.13.41.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.21.43.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.19.25.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.18.57.png",
+    "Computer Science/Computer networks/4 Network layer/pictures",
+    "Computer Science/Computer networks/Computer Networks.md",
+    "Computer Science/Computer networks/4 Network layer/4 Network layer.md",
+    "Computer Science/Computer networks/4 Network layer/4.7 Summery.md",
+    "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
+    "Computer Science/Computer networks/4 Network layer",
+    "Computer Science/Computer networks/3 Transport layer/3.5 TCP congestion control.md",
+    "Computer Science/Computer networks/1 Network architecture/1.5 Summary.md",
+    "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md",
+    "Computer Science/Computer networks/1 Network architecture/1.3 Network performance.md",
+    "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
+    "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
+    "Computer Science/Computer networks/3 Transport layer/Untitled.md",
+    "Computer Science/Computer Science Ba2.md",
+    "Computer Science/Compilers/pictures",
+    "Untitled.canvas",
+    "Computer Science/Computer networks/3 Transport layer/Pictures",
+    "Computer Science/Computer networks/2 Application layer/Pictures",
+    "Computer Science/Computer networks/3 Transport layer",
+    "Computer Science/Computer networks/2 Application layer",
+    "Computer Science/Computer networks/1 Network architecture",
+    "Computer Science/Compilers",
+    "Computer Science/Computer networks"
+  ]
+}
