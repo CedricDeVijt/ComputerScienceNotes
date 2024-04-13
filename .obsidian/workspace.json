@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f5295f69389fbcc2",
+        "id": "978b0b7f2bb913bd",
         "type": "tabs",
         "children": [
           {
-            "id": "8a9feecb73dbebd3",
+            "id": "04dda7c8e1d168d0",
             "type": "leaf",
             "state": {
               "type": "diff-view",
               "state": {
-                "file": ".gitignore",
+                "file": ".obsidian/workspace.json",
                 "staged": false
               }
             }
@@ -125,7 +125,7 @@
             }
           },
           {
-            "id": "442cb8ca4f9d0d79",
+            "id": "f123dd39839146d1",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -149,7 +149,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8a9feecb73dbebd3",
+  "active": "04dda7c8e1d168d0",
   "lastOpenFiles": [
     "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
     "2024-04-12.md",
