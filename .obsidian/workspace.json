@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "977dd36f53f9e755",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md"
               }
             }
           }
@@ -167,54 +154,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "977dd36f53f9e755",
+  "active": "25a24be322f00122",
   "lastOpenFiles": [
-    "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
-    "conflict-files-obsidian-git.md",
-    "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
-    "Untitled.md",
-    "Computer Science/Compilers/Lecture 6 Bottom-up parsing, CFSM and LR(0) parsers.md",
-    "Computer Science/Compilers/Lecture 9.md",
-    "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
-    "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
-    "Computer Science/Compilers/Lecture 5 Error recovery, type checking, and other semantic analyses.md",
-    "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
-    "2024-04-12.md",
-    "README.md",
-    "Computer Science/Computer networks/4 Network layer/4.5 Software-defined networking (SDN).md",
-    "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
-    "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
-    "Computer Science/Computer networks/4 Network layer/4 Network layer.md",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.32.28.png",
-    "Computer Science/Computer networks/4 Network layer/4.6 Summery.md",
-    "Computer Science/Computer networks/Computer Networks.md",
-    "Computer Science/Computer networks/4 Network layer/4.6 Network management (ICMP, SNMP, NETCONF, YANG).md",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.28.11.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.22.47.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.21.22.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.18.30.png",
-    "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
-    "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
-    "Computer Science/Computer networks/3 Transport layer/3.2 User Datagram Protocol (UDP).md",
-    "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
-    "Computer Science/Computer networks/2 Application layer/2.1 Application layer principles.md",
-    "Computer Science/Computer networks/2 Application layer/2 Application layer.md",
-    "Computer Science/Computer networks/1 Network architecture/1.2 Internet Architecture.md",
-    "Computer Science/Computer networks/1 Network architecture/1.1 History of the Internet.md",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 17.00.03.png",
-    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.56.37.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.55.04.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.25.52.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.56.37.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.24.36.png",
+    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.21.43.png",
     "Computer Science/Computer networks/4 Network layer/pictures",
-    "Computer Science/Computer networks/4 Network layer",
-    "Computer Science/Compilers/pictures",
-    "Untitled.canvas",
+    "Computer Science/Computer networks/4 Network layer/4.6 Summery.md",
+    "Computer Science/Computer networks/4 Network layer/4.5 Software-defined networking (SDN).md",
+    "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
+    "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
+    "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
+    "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
+    "Computer Science/Computer networks/4 Network layer/4 Network layer.md",
     "Computer Science/Computer networks/3 Transport layer/Pictures",
+    "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
+    "Computer Science/Computer networks/3 Transport layer/3.5 TCP congestion control.md",
+    "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
+    "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
+    "Computer Science/Computer networks/3 Transport layer/3.2 User Datagram Protocol (UDP).md",
+    "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
+    "Computer Science/Computer networks/3 Transport layer/3 Transport layer.md",
     "Computer Science/Computer networks/2 Application layer/Pictures",
+    "Computer Science/Computer networks/2 Application layer/2.5 Summery.md",
+    "Computer Science/Computer networks/2 Application layer/2.4 Domain Name System (DNS).md",
+    "Computer Science/Computer networks/2 Application layer/2.3 Electronic mail (email).md",
+    "Computer Science/Computer networks/2 Application layer/2.2 The web and HTTP.md",
+    "Computer Science/Computer networks/2 Application layer/2.1 Application layer principles.md",
+    "Computer Science/Computer networks/2 Application layer/2 Application layer.md",
+    "Computer Science/Computer networks/1 Network architecture/1.5 Summary.md",
+    "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md",
+    "Computer Science/Computer networks/1 Network architecture/1.3 Network performance.md",
+    "Computer Science/Computer networks/1 Network architecture/1.2 Internet Architecture.md",
+    "Computer Science/Computer networks/1 Network architecture/1.1 History of the Internet.md",
+    "Computer Science/Computer networks/4 Network layer",
     "Computer Science/Computer networks/3 Transport layer",
     "Computer Science/Computer networks/2 Application layer",
     "Computer Science/Computer networks/1 Network architecture",
-    "Computer Science/Compilers",
-    "Computer Science/Computer networks"
+    "Computer Science/Computer networks",
+    "Computer Science/Compilers/pictures",
+    "Untitled.canvas",
+    "Computer Science/Compilers"
   ]
 }
