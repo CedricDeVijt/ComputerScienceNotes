@@ -45,7 +45,7 @@
 	$q_0$ is the closure of $\{ (S \rightarrow \bullet\alpha , \epsilon) | S \rightarrow \text{is a rule} \}$
 	$\delta (q,a)$ maps the closure of the a-successor of q
 ## 7.4 A hierarchy of CLFs
-- Theorem: Relationship between LR(k) languages, LR(1) languages, and languages recognizable by deterministic PDAs.
+- Theorem: Relationship between LR(k) languages, LR(1) languages, and languages recognisable by deterministic PDAs.
 - Note: Most widely-used programming languages have an LALR(1) grammar.
 
 ![[Screenshot 2024-04-16 at 15.15.15.png]]

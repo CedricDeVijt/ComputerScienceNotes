@@ -4,17 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "978b0b7f2bb913bd",
+        "id": "9669212060e1a211",
         "type": "tabs",
         "children": [
           {
-            "id": "04dda7c8e1d168d0",
+            "id": "25a24be322f00122",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".obsidian/workspace.json",
-                "staged": false
+                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -47,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "•",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,23 +120,25 @@
             }
           },
           {
-            "id": "c79f5b156c4b6d21",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {}
-            }
-          },
-          {
-            "id": "f123dd39839146d1",
+            "id": "92d765021d596cc9",
             "type": "leaf",
             "state": {
               "type": "git-view",
               "state": {}
             }
+          },
+          {
+            "id": "ad29475413241d98",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md"
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -149,8 +154,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "04dda7c8e1d168d0",
+  "active": "25a24be322f00122",
   "lastOpenFiles": [
+    "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
+    "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
+    "Untitled.md",
+    "Computer Science/Compilers/Lecture 6 Bottom-up parsing, CFSM and LR(0) parsers.md",
+    "Computer Science/Compilers/Lecture 9.md",
+    "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
+    "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
+    "Computer Science/Compilers/Lecture 5 Error recovery, type checking, and other semantic analyses.md",
     "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
     "2024-04-12.md",
     "README.md",
@@ -174,21 +187,12 @@
     "Computer Science/Computer networks/2 Application layer/2 Application layer.md",
     "Computer Science/Computer networks/1 Network architecture/1.2 Internet Architecture.md",
     "Computer Science/Computer networks/1 Network architecture/1.1 History of the Internet.md",
-    "Computer Science/Computer networks/1 Network architecture/1 Network architecture.md",
-    "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 17.00.03.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.56.37.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.55.04.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.25.52.png",
-    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-04 at 16.24.36.png",
     "Computer Science/Computer networks/4 Network layer/pictures",
-    "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
     "Computer Science/Computer networks/4 Network layer",
-    "Computer Science/Computer networks/3 Transport layer/3.5 TCP congestion control.md",
-    "Computer Science/Computer networks/1 Network architecture/1.5 Summary.md",
-    "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md",
-    "Computer Science/Computer networks/1 Network architecture/1.3 Network performance.md",
-    "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
     "Computer Science/Compilers/pictures",
     "Untitled.canvas",
     "Computer Science/Computer networks/3 Transport layer/Pictures",
