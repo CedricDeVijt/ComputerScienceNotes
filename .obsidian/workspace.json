@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "977dd36f53f9e755",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -154,9 +167,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "25a24be322f00122",
+  "active": "977dd36f53f9e755",
   "lastOpenFiles": [
     "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
+    "conflict-files-obsidian-git.md",
     "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
     "Untitled.md",
     "Computer Science/Compilers/Lecture 6 Bottom-up parsing, CFSM and LR(0) parsers.md",
