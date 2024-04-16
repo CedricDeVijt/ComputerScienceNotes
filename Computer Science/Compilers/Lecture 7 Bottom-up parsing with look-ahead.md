@@ -37,20 +37,15 @@
 - *LR(k)-closure*: closure of an LR(k)-time ($A \leftarrow \alpha_1 \bullet B \alpha_2, w$) is where the set of all LR(k)-times ($B \rightarrow \bullet \beta , y$) where
 	$B \rightarrow \beta$ is a rule of the grammar
 	$y \in First^k (\alpha_2 w)$
-
-
 ### The LR(k)-CFSM
 - *CFSM states*: subsets of LR(k)-items. The a-successor of a state I, for $a \in T \cup V$, is the closure of the set $\{ (A \rightarrow \alpha_1 a \bullet\alpha_2 , w) | (A \rightarrow \alpha_1 \bullet a\alpha_2 , w) \in I \}$
 
-
-
-
-
-
-
-
-### Conclusions
+- *LR(k)-CFSM*: the DFA ($Q,V\cup T, \delta , q_0$) where
+	$Q$ is the set of all subsets of LR(k)-items
+	$q_0$ is the closure of $\{ (S \rightarrow \bullet\alpha , \epsilon) | S \rightarrow \text{is a rule} \}$
+	$\delta (q,a)$ maps the closure of the a-successor of q
+## 7.4 A hierarchy of CLFs
 - Theorem: Relationship between LR(k) languages, LR(1) languages, and languages recognizable by deterministic PDAs.
 - Note: Most widely-used programming languages have an LALR(1) grammar.
 
-## 7.4 A hierarchy of CFLs
+![[Screenshot 2024-04-16 at 15.15.15.png]]
