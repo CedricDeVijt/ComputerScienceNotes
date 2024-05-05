@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "9669212060e1a211",
+        "id": "c51245d36d9d5d3a",
         "type": "tabs",
         "children": [
           {
-            "id": "25a24be322f00122",
+            "id": "b987e42dabf9e88a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -147,11 +139,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "25a24be322f00122",
+  "active": "b987e42dabf9e88a",
   "lastOpenFiles": [
-    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 12.00.30.png",
+    "Computer Science/Compilers/Compilers.md",
+    "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
+    "Computer Science/Compilers/Lecture 9.md",
+    "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
+    "Computer Science/Compilers/Lecture 3.2 ANTLR.md",
+    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
+    "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
+    "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
+    "Computer Science/Compilers/Lecture 6 Bottom-up parsing, CFSM and LR(0) parsers.md",
+    "Computer Science/Compilers/Lecture 5 Error recovery, type checking, and other semantic analyses.md",
     "README.md",
     "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
+    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 12.00.30.png",
     "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 11.55.02.png",
     "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
     "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 11.35.21.png",
@@ -168,28 +170,18 @@
     "Computer Science/Computer networks/5 Link layer/5.5 Summery.md",
     "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
     "Computer Science/Computer networks/5 Link layer/5.4 Local Area Networks.md",
-    "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
     "Computer Science/Computer networks/5 Link layer/pictures",
     "Computer Science/Computer networks/5 Link layer",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.32.28.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.28.11.png",
     "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.22.47.png",
-    "Computer Science/Computer networks/4 Network layer/pictures/Screenshot 2024-04-12 at 17.21.22.png",
     "Computer Science/Computer networks/4 Network layer/pictures",
     "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
     "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
     "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
     "Computer Science/Computer networks/3 Transport layer/Pictures",
     "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
-    "Computer Science/Computer networks/3 Transport layer/3.5 TCP congestion control.md",
-    "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
-    "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
-    "Computer Science/Computer networks/3 Transport layer/3.2 User Datagram Protocol (UDP).md",
-    "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
-    "Computer Science/Computer networks/3 Transport layer/3 Transport layer.md",
     "Computer Science/Computer networks/2 Application layer/Pictures",
-    "Computer Science/Computer networks/2 Application layer/2.5 Summery.md",
-    "Computer Science/Computer networks/2 Application layer/2.4 Domain Name System (DNS).md",
     "Computer Science/Computer networks/4 Network layer",
     "Computer Science/Computer networks/3 Transport layer",
     "Computer Science/Computer networks/2 Application layer",
