@@ -5,11 +5,11 @@
  - Understanding regular languages, adding look-ahead, grasping context-free grammars, pushdown automata practice, generating scanners automatically using flex, and implementing parsers.
 - **Utility**: 
  - Enables building a compiler without manual crafting of a scanner or parser.
-## 1.1 Introduction
-### What are Compilers?
+# 1.1 Introduction
+## What are Compilers?
 - *Compiler*: a program that processes programs and translates a source program $P^s$ written in some source language $L^s$ into an equivalent target program $P^t$ written in some target language $L^t$.
 - They translate one formal language into another.
-### Bootstrapping
+## Bootstrapping
 *Bootstrapping*: the process of creating a compiler for a programming language using an existing compiler
 
 - **Necessity**: Every compiler must be initially written in some language before it can compile programs in its own language.
