@@ -21,12 +21,12 @@
   - Real CPUs have a fixed number, while LLVM IR has an infinite number.
 - **Translation to real assembly**:
   - Register allocator maps infinite registers to a finite physical set.
-  - Type legalization maps LLVM types to machine types.
+  - Type legalisation maps LLVM types to machine types.
 ## 3.1.2 Static single assignment (SSA)
 - **Definition**:
-  - Every register can be assigned at most once, simplifying and improving optimization results.
+  - Every register can be assigned at most once, simplifying and improving optimisation results.
 - **Advantages**:
-  - Simplifies optimization by making the flow of data explicit.
+  - Simplifies optimisation by making the flow of data explicit.
   - Enables easy identification of unused values.
 ## 3.1.3 Basic blocks and terminators
 - **Basic block**: 
@@ -53,9 +53,9 @@
 - **Solution**:
   - Utilize select instruction to assign constants without jumps.
 ### Further questions
-- **Minimizing Phi usage**:
-  - Using node dominance and dominance frontier to characterize when Phi instructions are needed.
-- **Minimizing register usage**:
+- **Minimising Phi usage**:
+  - Using node dominance and dominance frontier to characterise when Phi instructions are needed.
+- **Minimising register usage**:
   - Register allocation strategies, including Chaitin's algorithm and Sethi-Ullman algorithm.
 
 # Next up

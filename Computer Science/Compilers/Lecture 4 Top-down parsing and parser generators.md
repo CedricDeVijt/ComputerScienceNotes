@@ -23,7 +23,6 @@
 - The PDA is NOT implementable
 	Unfortunately, we cannot implement an efficient simulation of the PDA since it is nondeterministic. If there are rules A → α1, A → α2, which one should we produce?
 	
-![[Screenshot 2024-03-25 at 17.02.59.png]]
 ### Predictive Parsers
 - **Look-ahead** corresponds to having access to more than one letter of the input at a time without consuming it.
 - Predictive parsers utilize lookahead for deterministic parsing.

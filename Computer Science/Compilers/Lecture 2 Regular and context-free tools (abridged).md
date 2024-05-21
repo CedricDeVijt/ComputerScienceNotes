@@ -6,13 +6,11 @@
 - **Utility**:
   - Allows building compilers without manual creation of scanners or parsers.
 ## 2.1 Scanner Fundamentals
-
 - **Scanner Definition**:
   - A scanner splits input into sub-strings and groups them into lexical units, providing a tokenised version of the input for parsing.
 - **Grammar Explanation**:
   - A grammar specifies a formal language, crucial for defining the syntax of a programming language.
 ## 2.2 Building Scanners
-
 - **Pre-DFA Era**:
   - Lexical analysers were hand-coded before scanner-generating tools based on DFAs emerged.
 
@@ -23,10 +21,8 @@
 - **Advantages**:
   - Capable of recognising beyond regular languages.
   - Hand-written scanners offer easier debugging and better efficiency.
-
 - **Course Approach**:
   - Utilises DFA-based scanner-generating tools such as flex and ANTLR for efficiency and flexibility.
-
 ## 2.3 Recognising vs. Scanning
 - **Difference**:
   - Recognition focuses on determining if a string is a lexeme, while scanning involves returning a sequence of tokens from a longer string.
@@ -37,15 +33,13 @@
   - Utilize look-ahead and simulate DFAs until rejection or input end to ensure maximal matches.
 ### Handling Multiple Matches
 - **Problem**:
-  - When multiple DFAs recognize the same string, prioritization or unambiguous specifications are necessary.
+  - When multiple DFAs recognize the same string, prioritisation or unambiguous specifications are necessary.
 - **Implementation**:
   - Techniques include ordered DFAs and language checking during scanner generation.
 ## 2.4 Fast Lexical Analyzer Generator
 - **Flex**:
   - Generates scanners specified using regular expressions, utilizing DFAs for tokenising input strings.
 ## 2.5 Parsing
-- **Topics Covered**:
-  - Grammars, context-free languages, derivation trees, membership problem for CFGs, attribute grammars, pushdown automata, and grammar transformations.
 ### The Limits of Regular Languages
 - **Challenges**:
   - Regular languages may not suffice for specifying programming languages, especially for ensuring well-parenthesised expressions.

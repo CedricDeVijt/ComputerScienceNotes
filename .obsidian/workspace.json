@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md",
+                "file": "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md",
+                "file": "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md",
+                "file": "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md"
+                "file": "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md"
               }
             }
           }
@@ -149,11 +149,16 @@
   },
   "active": "b987e42dabf9e88a",
   "lastOpenFiles": [
+    "Computer Science/Compilers/Lecture 3.2 ANTLR.md",
+    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
+    "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
+    "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
+    "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
     "Computer Science/Computer networks/1 Network architecture/1.5 Summary.md",
+    "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md",
     "Computer Science/Computer networks/1 Network architecture/1.3 Network performance.md",
     "Computer Science/Computer networks/1 Network architecture/1.2 Internet Architecture.md",
     "Computer Science/Computer networks/1 Network architecture/1.1 History of the Internet.md",
-    "Computer Science/Computer networks/1 Network architecture/1.4 Protocol layers.md",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.23.12.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 14.51.26.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures",
@@ -167,14 +172,10 @@
     "Computer Science/Computer networks/2 Application layer/2.2 The web and HTTP.md",
     "Computer Science/Computer networks/2 Application layer/2.1 Application layer principles.md",
     "Computer Science/Computer networks/2 Application layer/2 Application layer.md",
-    "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
     "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
     "Computer Science/Compilers/Lecture 6 Bottom-up parsing, CFSM and LR(0) parsers.md",
     "Computer Science/Compilers/Lecture 5 Error recovery, type checking, and other semantic analyses.md",
     "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
-    "Computer Science/Compilers/Lecture 3.2 ANTLR.md",
-    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
-    "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
     "Computer Science/Compilers/Lecture 9.md",
     "Computer Science/Compilers/Compilers.md",
     "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
@@ -184,7 +185,6 @@
     "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 11.55.02.png",
     "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 11.35.21.png",
     "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 11.34.51.png",
-    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 11.33.37.png",
     "Computer Science/Computer networks/5 Link layer/pictures",
     "Computer Science/Computer networks/5 Link layer",
     "Computer Science/Computer networks/4 Network layer/pictures",
