@@ -8,21 +8,21 @@
 - **Utility**:
 	* Understanding the limits of what a compiler can do.
 ### Error Recovery and Repair
-- *Error recovery*: The process of ignoring the current error and having the parser reach a configuration from which it can read the rest of the input.
-- *Error repair*: The parser attempts to fix the input so as to obtain a valid input prefix and then continue.
-- *Panic mode*: The parser skips input tokens until it finds a frequently occurring delimiter (e.g. a semicolon).
+- **Error recovery**: The process of ignoring the current error and having the parser reach a configuration from which it can read the rest of the input.
+- **Error repair**: The parser attempts to fix the input so as to obtain a valid input prefix and then continue.
+- **Panic mode**: The parser skips input tokens until it finds a frequently occurring delimiter (e.g. a semicolon).
 ### Errors in LL(1) Parsers
-- *Detection*: If no entry in the action table is enabled by the look-ahead, we have an error.
-- *Recovery in recursive descent*: Every call to a non-terminal-function is given as argument some set of potential end-of-block lexical units. If an error occurs, then the function discards tokens until one such token is matched (e.g. semicolon).
+- **Detection**: If no entry in the action table is enabled by the look-ahead, we have an error.
+- **Recovery in recursive descent**: Every call to a non-terminal-function is given as argument some set of potential end-of-block lexical units. If an error occurs, then the function discards tokens until one such token is matched (e.g. semicolon).
 ### Semantic Analysis
-- *Type checking*: Traversing the AST to verify that the types of all components at every node conform to the expected type for the programming language.
+- **Type checking**: Traversing the AST to verify that the types of all components at every node conform to the expected type for the programming language.
 - *Reachability and termination*: Checking for instructions that can never be reached and verifying that constructs terminate normally.
 - *Exceptions*: Verifying that thrown exceptions must be caught or listed in the construct’s throw list.
 ### Type Checking
 - *Types as invariants*: Assigning a type to a variable is an invariant that the variable will only hold values of that type throughout the execution of the program.
-- *Turing-complete, hence undecidable*: Most modern programming languages are Turing complete, so type checking is undecidable.
+- *Turing-complete*: Most modern programming languages are Turing complete, so type checking is undecidable.
 ### Static Type Checking
-- *Static type checking*: Applying inference rules to deduce types of expressions without caring about reachability of instructions.
+- **Static type checking**: Applying inference rules to deduce types of expressions without caring about reachability of instructions.
 - *Type consistency*: A single bottom-up traversal of an expression tree should allow us to determine the type of the expression and check whether the constants, variables, and operators are used consistently with their types.
 ### Operators
 - *Checking operators*: We can check whether the types of the provided arguments are correct and the return type gives the type of the operator application.
@@ -39,7 +39,7 @@
 ### Rules for Reachability and Termination
 - *For a simple analysis, follow these rules*: A set of rules is provided to determine the reachability and termination of statements in a simple analysis.
 ### Analyzing Control-Flow Instructions
-- *Remark*: Functions should never terminate normally and should always return a value.
+- Functions should never terminate normally and should always return a value.
 - *If-then-else*: Both branches of a conditional statement are reachable and should be checked for reachability and termination.
 ### LLVM CFG
 - *A control-flow graph*: Maximal statement-lists with the same reachability status are nodes of an adequate CFG for LLVM IR.
@@ -58,7 +58,7 @@
 - *The simple case*: For procedure calls, we must consider whether the language allows overloading and match the types of the arguments and the name of the procedure.
 - *Matching formal and actual parameters*: The number of parameters should match, and the parameters should be bindable.
 ### Calling the Most Specific Possibility
-- *Examples*: Examples are given to illustrate how the most specific procedure should be called in cases of inheritance and overloading.
+- The most specific procedure should be called in cases of inheritance and overloading.
 ### Conclusions
 - Static type checking is the main task carried out during semantic analysis.
 - Reachability of instructions and their effect on the control flow is also something that can be approximated.

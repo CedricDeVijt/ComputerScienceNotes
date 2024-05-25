@@ -19,10 +19,6 @@
 		- **Produce**: For all rules A → α, the PDA has a transition that pops A and pushes α into the stack (without reading from the input).
 		- **Match**: For all terminals a ∈ T, there is a transition that pops a and reads a from the input. 
 	- The PDA accepts by empty stack.
-
-- The PDA is NOT implementable
-	Unfortunately, we cannot implement an efficient simulation of the PDA since it is nondeterministic. If there are rules A → α1, A → α2, which one should we produce?
-	
 ### Predictive Parsers
 - **Look-ahead** corresponds to having access to more than one letter of the input at a time without consuming it.
 - Predictive parsers utilize lookahead for deterministic parsing.
@@ -38,22 +34,19 @@
 ### Definition (Follow)
 - **Follow Set**: a set of non-terminal symbol in a grammar that represents the set of terminal symbols that can appear immediately to the right of that non-terminal in any derivation.
 - $Follow^k(\alpha) := \{ w \in T^* : \exists \beta, \gamma : S \Rightarrow^* \beta \alpha \gamma \wedge w \in First^k (\gamma)\}$
-## 4.4 Why LL(k) Grammars?
-
+## 4.4 LL(k) Grammars
 ### Definition (LL(k) grammar)
 - Characteristics of LL(k) grammars.
 - Determining LL(k) nature of a grammar.
 ### Solutions to LL(k) Conflicts
 - Strategies for resolving conflicts: Left factoring, Substitution, Left recursion removal.
 ## 4.5 LL(k) Languages
-
 ### Definition (LL(k) language)
 - Characteristics of LL(k) languages.
 - Equivalence and determinism considerations.
 ### A Hierarchy of LL(\*) Languages
 - Theorem highlighting a strict hierarchy of LL(\*) languages.
 ## 4.6 LL(1) Parser
-
 ### The Action Table for LL(1) Parsers
 - Using First and Follow sets for constructing action tables.
 - Importance of a well-structured parsing table.
@@ -65,9 +58,6 @@
 - Discussion on complexity and practicality.
 - Mention of ANTLR and recursive-descent parsers.
 ## 4.7 Recursive-Descent Parsers
-
 ### Simple Rules
 - Introduction to recursive-descent parsing.
 - Example of parsing rules with Python-like syntax.
-
-This breakdown organises the lecture content into digestible bullet points, explaining key terms and concepts as per your request.

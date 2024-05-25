@@ -22,36 +22,20 @@
 **Consideration**: Ensuring a shift won't inhibit subsequent reductions is crucial.
 ## Prefixes on the Stack
 ### Viable Prefixes on the Stack
-#### Definitions
 - **Right-sentential form**: Derivable via a right-most derivation.
 - **Viable prefix**: Precedes a right-sentential form on the stack during an accepting run.
-### Recognizing Viable Prefixes
-#### Definition
+### Recognising Viable Prefixes
 - **Canonical Finite-State Machine (CFSM)**: A type of finite machine that recognises a regular language and has a unique minimal representation.
 ## Items and Their Closures
-### Definitions
 - **Item**: Grammar rule with a marker indicating a position in the RHS.
 - **Closure of an Item**: Set of all items derived from the original item.
-
 ### Application
 - CFSM states are sets of items; closures determine state transitions.
 
 ## The CFSM
-
+- **The CFSM**: DFA mapping subsets of items to closures, facilitating viable prefix recognition.
 ### CFSM States
 - Represented as sets of items; transitions governed by a-successors.
-
-### Definition
-- **The CFSM**: DFA mapping subsets of items to closures, facilitating viable prefix recognition.
-
-## CFSM Properties
-
-### Theorem
-- The CFSM accurately identifies all viable prefixes.
-
-### Exercise
-- Construct the CFSM for a given grammar.
-
 ## LR(0) Parsers
 
 ### Overview
