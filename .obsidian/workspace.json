@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
+                "file": "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
+                "file": "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
+                "file": "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md"
+                "file": "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md"
               }
             }
           }
@@ -148,6 +148,9 @@
   },
   "active": "b987e42dabf9e88a",
   "lastOpenFiles": [
+    "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
+    "Computer Science/Computer networks/4 Network layer/4 Network layer.md",
+    "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
     "Computer Science/Computer networks/3 Transport layer/3.5 TCP congestion control.md",
     "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
     "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
@@ -161,7 +164,6 @@
     "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
     "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
     "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
-    "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
     "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
     "Computer Science/Computer networks/Computer Networks.md",
     "Computer Science/Computer networks/2 Application layer/2.3 Electronic mail (email).md",
@@ -172,8 +174,6 @@
     "Computer Science/Compilers/Lecture 9.md",
     "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
     "Computer Science/Compilers/Lecture 6 Bottom-up parsing, CFSM and LR(0) parsers.md",
-    "Computer Science/Compilers/Lecture 5 Error recovery, type checking, and other semantic analyses.md",
-    "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
     "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.23.12.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 14.51.26.png",
