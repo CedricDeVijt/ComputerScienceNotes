@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
-                "mode": "source",
+                "file": "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
+                "file": "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
+                "file": "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md"
+                "file": "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md"
               }
             }
           }
@@ -148,9 +148,9 @@
   },
   "active": "b987e42dabf9e88a",
   "lastOpenFiles": [
-    "Computer Science/Computer networks/3 Transport layer/3.5 TCP congestion control.md",
-    "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
     "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
+    "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
+    "Computer Science/Computer networks/3 Transport layer/3.5 TCP congestion control.md",
     "Computer Science/Computer networks/3 Transport layer/3.2 User Datagram Protocol (UDP).md",
     "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
     "Computer Science/Computer networks/3 Transport layer/3 Transport layer.md",
