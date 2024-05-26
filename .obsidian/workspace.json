@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
-                "mode": "preview",
+                "file": "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
+                "file": "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
+                "file": "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md"
+                "file": "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md"
               }
             }
           }
@@ -148,15 +148,15 @@
   },
   "active": "b987e42dabf9e88a",
   "lastOpenFiles": [
-    "Computer Science/Computer networks/3 Transport layer/3 Transport layer.md",
-    "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
-    "Computer Science/Computer networks/2 Application layer/2.5 Summery.md",
-    "Computer Science/Computer networks/2 Application layer/2.4 Domain Name System (DNS).md",
-    "Computer Science/Computer Science.md",
     "Computer Science/Computer networks/3 Transport layer/3.5 TCP congestion control.md",
     "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
     "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
     "Computer Science/Computer networks/3 Transport layer/3.2 User Datagram Protocol (UDP).md",
+    "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
+    "Computer Science/Computer networks/3 Transport layer/3 Transport layer.md",
+    "Computer Science/Computer networks/2 Application layer/2.5 Summery.md",
+    "Computer Science/Computer networks/2 Application layer/2.4 Domain Name System (DNS).md",
+    "Computer Science/Computer Science.md",
     "Computer Science/Computer networks/4 Network layer/4.5 Software-defined networking (SDN).md",
     "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
     "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
