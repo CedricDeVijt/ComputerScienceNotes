@@ -1,8 +1,5 @@
-# Obsidian notes for computer science
+# Notes for Bachelor in Computer Science University of Antwerp
 
-Compilers: 1001WETCOP
-
-Computer networks: 1001WETCON
-
-# How to use
-Open directory in Obsidian, and voila...
+## Bachelor 2
+- Compilers: 1001WETCOP
+- Computer networks: 1001WETCON

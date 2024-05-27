@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 305.50390243530273
+    "width": 306.50390243530273
   },
   "right": {
     "id": "275de8eb1be3a52e",
@@ -148,6 +148,8 @@
   },
   "active": "b987e42dabf9e88a",
   "lastOpenFiles": [
+    "README.md",
+    "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
     "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
     "Computer Science/Computer networks/4 Network layer/4 Network layer.md",
     "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
@@ -163,7 +165,6 @@
     "Computer Science/Computer networks/4 Network layer/4.5 Software-defined networking (SDN).md",
     "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
     "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
-    "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
     "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
     "Computer Science/Computer networks/Computer Networks.md",
     "Computer Science/Computer networks/2 Application layer/2.3 Electronic mail (email).md",
@@ -173,7 +174,6 @@
     "Computer Science/Computer networks/1 Network architecture/1 Network architecture.md",
     "Computer Science/Compilers/Lecture 9.md",
     "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
-    "Computer Science/Compilers/Lecture 6 Bottom-up parsing, CFSM and LR(0) parsers.md",
     "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.23.12.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 14.51.26.png",
