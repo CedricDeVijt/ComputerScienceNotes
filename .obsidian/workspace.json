@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
+                "file": "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
+                "file": "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
+                "file": "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md"
+                "file": "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md"
               }
             }
           }
@@ -148,6 +148,15 @@
   },
   "active": "b987e42dabf9e88a",
   "lastOpenFiles": [
+    "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
+    "Computer Science/Computer networks/5 Link layer/5.4 Local Area Networks.md",
+    "Computer Science/Computer networks/5 Link layer/5.5 Summery.md",
+    "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
+    "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
+    "Computer Science/Computer networks/5 Link layer/5 Link layer.md",
+    "Computer Science/Computer networks/4 Network layer/4.6 Summery.md",
+    "Computer Science/Computer networks/4 Network layer/4.5 Software-defined networking (SDN).md",
+    "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
     "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
     "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
     "README.md",
@@ -163,17 +172,8 @@
     "Computer Science/Computer networks/2 Application layer/2.5 Summery.md",
     "Computer Science/Computer networks/2 Application layer/2.4 Domain Name System (DNS).md",
     "Computer Science/Computer Science.md",
-    "Computer Science/Computer networks/4 Network layer/4.5 Software-defined networking (SDN).md",
-    "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
-    "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
     "Computer Science/Computer networks/Computer Networks.md",
     "Computer Science/Computer networks/2 Application layer/2.3 Electronic mail (email).md",
-    "Computer Science/Computer networks/2 Application layer/2.2 The web and HTTP.md",
-    "Computer Science/Computer networks/2 Application layer/2.1 Application layer principles.md",
-    "Computer Science/Computer networks/2 Application layer/2 Application layer.md",
-    "Computer Science/Computer networks/1 Network architecture/1 Network architecture.md",
-    "Computer Science/Compilers/Lecture 9.md",
-    "Computer Science/Compilers/Lecture 7 Bottom-up parsing with look-ahead.md",
     "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.23.12.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 14.51.26.png",
