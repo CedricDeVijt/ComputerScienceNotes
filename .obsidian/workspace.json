@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
-                "mode": "preview",
+                "file": "Computer Science/Computer networks/5 Link layer/5.4 Local Area Networks.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
+                "file": "Computer Science/Computer networks/5 Link layer/5.4 Local Area Networks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
+                "file": "Computer Science/Computer networks/5 Link layer/5.4 Local Area Networks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md"
+                "file": "Computer Science/Computer networks/5 Link layer/5.4 Local Area Networks.md"
               }
             }
           }
@@ -146,13 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b987e42dabf9e88a",
+  "active": "209ce61b85d9fde7",
   "lastOpenFiles": [
-    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-28 at 16.09.47.png",
+    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-28 at 17.36.17.png",
+    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-28 at 17.29.42.png",
+    "Computer Science/Computer networks/5 Link layer/5.4 Local Area Networks.md",
+    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-28 at 17.25.22.png",
+    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-28 at 17.23.59.png",
     "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
+    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-28 at 16.09.47.png",
     "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-28 at 16.01.16.png",
     "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-28 at 15.49.55.png",
-    "Computer Science/Computer networks/5 Link layer/5.4 Local Area Networks.md",
     "Computer Science/Computer networks/5 Link layer/5.5 Summery.md",
     "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
     "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
@@ -181,9 +185,6 @@
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 14.51.26.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.03.28.png",
-    "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.00.25.png",
-    "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 14.56.36.png",
-    "Computer Science/Computer networks/5 Link layer/pictures/Screenshot 2024-05-02 at 12.00.30.png",
     "Computer Science/Computer networks/5 Link layer/pictures",
     "Computer Science/Computer networks/5 Link layer",
     "Computer Science/Computer networks/4 Network layer/pictures",
