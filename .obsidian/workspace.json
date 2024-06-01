@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
+                "file": "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
+                "file": "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
+                "file": "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md"
+                "file": "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md"
               }
             }
           }
@@ -148,6 +148,9 @@
   },
   "active": "b987e42dabf9e88a",
   "lastOpenFiles": [
+    "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
+    "Computer Science/Compilers/Lecture 9.md",
+    "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
     "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
     "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
     "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
@@ -178,8 +181,6 @@
     "Computer Science/Computer networks/3 Transport layer/3 Transport layer.md",
     "Computer Science/Computer networks/2 Application layer/2.5 Summery.md",
     "Computer Science/Computer networks/2 Application layer/2.4 Domain Name System (DNS).md",
-    "Computer Science/Computer Science.md",
-    "Computer Science/Computer networks/Computer Networks.md",
     "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.23.12.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 14.51.26.png",
