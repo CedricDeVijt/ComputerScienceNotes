@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
+                "file": "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "83b2c6ce1b540c84",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 7-6-21.md",
                 "mode": "preview",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 7-6-21.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 7-6-21.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md"
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 7-6-21.md"
               }
             }
           }
@@ -146,11 +159,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b987e42dabf9e88a",
+  "active": "83b2c6ce1b540c84",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Untitled 1.md",
+    "Computer Science/Compilers/Exam Solutions/Compilers exam 7-6-21.md",
+    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
+    "Computer Science/Compilers/Exam Solutions",
     "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
     "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
-    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
     "Computer Science/Compilers/Lecture 9.md",
     "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
     "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
@@ -178,9 +195,6 @@
     "Computer Science/Computer networks/3 Transport layer/3.4 Transport Control Protocol (TCP).md",
     "Computer Science/Computer networks/3 Transport layer/3.3 Reliable data transfer.md",
     "Computer Science/Computer networks/3 Transport layer/3.2 User Datagram Protocol (UDP).md",
-    "Computer Science/Computer networks/3 Transport layer/3.1 Transport-layer services.md",
-    "Computer Science/Computer networks/3 Transport layer/3 Transport layer.md",
-    "Computer Science/Computer networks/2 Application layer/2.5 Summery.md",
     "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.23.12.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 14.51.26.png",
@@ -193,7 +207,6 @@
     "Computer Science/Computer networks/4 Network layer",
     "Computer Science/Computer networks/3 Transport layer",
     "Computer Science/Computer networks/2 Application layer",
-    "Computer Science/Computer networks/1 Network architecture",
     "Untitled.canvas"
   ]
 }
