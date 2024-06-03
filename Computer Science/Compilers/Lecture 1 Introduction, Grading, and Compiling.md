@@ -28,13 +28,13 @@
 ## 1.3 Other components
 
 ### Lexical Units
-- *Definition*: Lexical units are the basic elements that a scanner splits the input into.
+- **Definition**: These are the individual words or multi-word expressions in a text that carry meaning. They are the individual words and multi-word expressions in the input.
 - *Role*: They are the fundamental building blocks of a programming language, forming the basis for further analysis.
 ### Lexemes
-- *Definition*: Lexemes are elements of lexical units, representing specific instances of tokens.
+- **Definition**: These are the abstract units that represent a set of word forms that share the same core meaning. They are the abstract representations of the meanings of the lexical units.
 - *Characteristics*: They are concrete instances of identifiers, keywords, literals, etc., identified during lexical analysis.
 ### Tokens
-- *Definition*: Tokens are pairs consisting of an identifier (id) and an attribute (att).
+- **Definition**: Tokens are pairs consisting of an identifier (id) and an attribute (att). They are the actual instances of lexical units (words or multi-word expressions) in the text after it has been tokenised (split into smaller units).
 - *Purpose*: They represent recognised lexemes along with additional information that aids in their interpretation and processing.
 ### Symbol Table
 - *Definition*: A symbol table is a data structure used by compilers to store information about identifiers in a program.
