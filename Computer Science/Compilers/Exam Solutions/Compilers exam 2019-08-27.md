@@ -21,8 +21,14 @@ The grammar is not LL(2), if we look at the rules for Exp, the first will always
 
 ### 4. (10 points) Let T = {cst, ∗} be a set of terminals and S be the initial non-terminal symbol. In the following attribute grammar the assignments on the right of the grammar rules should be understood as semantic rules a.k.a. attribute functions.
 - (a) (5 points) Classify the attributes, per non-terminal variable, into synthesized and inherited. 
-	
-
-
+	- S:
+		- Synthesized: v(S)
+		- Inherited:
+	- T:
+		- Synthesized:
+		- Inherited:
+	- F:
+		- Synthesized:
+		- Inherited:
 
 - (b) (5 points) What is the meaning (i.e. the semantics) of a word derived from S?

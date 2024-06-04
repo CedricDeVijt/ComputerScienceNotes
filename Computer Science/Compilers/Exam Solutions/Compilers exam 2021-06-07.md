@@ -11,13 +11,12 @@ int ackermann(int x, int y) {
 	return achermann(x-1, ackermann(x, y-1));
 }
 ```
-
-
+<span style="color:red">SKIP</span>
 ### 2. (5 points) Suppose we are given a deterministic finite automaton for language L on Σ. For all words w ∈ Σ*, we can use the automaton to determine whether w ∈ L in time:
 
 - ~~O(2^{|w|})~~
 - ~~O(|w|^2)~~
-- O(|w|)
+- <span style="color:green">O(|w|)</span>
 - ~~O(log|w|)~~
 
 Explanation:
