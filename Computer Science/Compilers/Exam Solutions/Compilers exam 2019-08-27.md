@@ -17,3 +17,12 @@
 | (2) | Exp   | →    | Exp + Exp |
 | (3) |       | →    | id      |
 | (4) |       | →    | id++    |
+The grammar is not LL(2), if we look at the rules for Exp, the first will always be id, but to know if we use rule 2 in combination with rule 4 we need 3 lookup tokens so we can differentiate between all the rules, so the grammar does define an LL(3) language
+
+### 4. (10 points) Let T = {cst, ∗} be a set of terminals and S be the initial non-terminal symbol. In the following attribute grammar the assignments on the right of the grammar rules should be understood as semantic rules a.k.a. attribute functions.
+(a) (5 points) Classify the attributes, per non-terminal variable, into synthesized and inherited. 
+
+
+
+
+(b) (5 points) What is the meaning (i.e. the semantics) of a word derived from S?
