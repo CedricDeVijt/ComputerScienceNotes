@@ -24,10 +24,37 @@ However, the grammar does define an LL(2) language. With two symbols of lookahea
 
 ![[Screenshot 2024-06-04 at 15.35.44.png]]
 
+- Synthesized Attributes: These are attributes whose values are computed from the attribute values of their children nodes in the parse tree.
+- Inherited Attributes: These are attributes whose values are computed from the attribute values of their parent and/or sibling nodes in the parse tree.
+
 (a) (6 points) Classify the attributes, per non-terminal variable, into synthesized and inherited.
-
-
-
-
+- R:
+	- Synthesized: v(R)
+	- Inherited: None
+- S:
+	- Synthesized: v(S0)
+	- Inherited: d(H), d(S1)
+- H:
+	- Synthesized: v(H)
+	- Inherited: d(D), d(A)
+- D:
+	- Synthesized: v(D)
+	- Inherited: d(D)
+- A:
+	- Synthesized: v(A)
+	- Inherited: d(A)
 
 (b) (6 points) What is the meaning (i.e. the semantics) of a word derived from R?
+The given attribute grammar seems to compute the numerical value of a hexadecimal string.
+
+The semantics of the string is thus to evaluate the hexadecimal number it represents, calculating its value in decimal by considering the position of each digit. 
+The final synthesized attribute v(R) gives the decimal value of the entire hexadecimal string derived from R.
+
+### 5. (12 points) During the course we have focused on conservative approximations of both type checking and reachability analysis. Argue that the exact versions of both tasks are in fact undecidable.
+
+The halting problem asks whether a given program will halt or run indefinitely for a given input. To prove the undecidability of exact type checking, we can reduce the halting problem to it. Suppose we have a method to perform exact type checking on any program. We can then construct a program that contains a type error if and only if it does not halt. By checking for type errors in this program, we can effectively solve the halting problem, which is known to be undecidable.
+
+To prove the undecidability of exact reachability analysis, we can construct a program that reaches a specific program point if and only if it does not halt. By checking whether the specific program point is reachable, we can effectively solve the halting problem, which is undecidable.
+
+Both exact type checking and exact reachability analysis require solving problems that are inherently linked to the Halting Problem and other undecidable problems. Therefore, the undecidability of the Halting Problem directly implies the undecidability of exact type checking and exact reachability analysis. Conservative approximations are used in practice to provide safe and computable guarantees about programs, avoiding the undecidability inherent in the exact versions of these tasks.
+
