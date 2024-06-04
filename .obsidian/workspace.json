@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Compilers/Exam Solutions/Cheat sheet.md",
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-08-27.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Compilers/Exam Solutions/Cheat sheet.md",
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-08-27.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Compilers/Exam Solutions/Cheat sheet.md",
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-08-27.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Compilers/Exam Solutions/Cheat sheet.md"
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-08-27.md"
               }
             }
           }
@@ -148,8 +148,9 @@
   },
   "active": "83b2c6ce1b540c84",
   "lastOpenFiles": [
-    "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-06-25.md",
     "Computer Science/Compilers/Exam Solutions/Cheat sheet.md",
+    "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-08-27.md",
+    "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-06-25.md",
     "Screenshot 2024-06-04 at 15.35.44.png",
     "Computer Science/Compilers/Exam Solutions/Compilers exam 2021-06-07.md",
     "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
@@ -182,7 +183,6 @@
     "README.md",
     "Computer Science/Computer networks/4 Network layer/4.1 Network layer overview.md",
     "Computer Science/Computer networks/4 Network layer/4 Network layer.md",
-    "Computer Science/Computer networks/3 Transport layer/3.6 Summery.md",
     "Computer Science/Compilers/pictures/Screenshot 2024-04-16 at 15.15.15.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures/Screenshot 2024-05-20 at 15.23.12.png",
     "Computer Science/Computer networks/1 Network architecture/Pictures",
