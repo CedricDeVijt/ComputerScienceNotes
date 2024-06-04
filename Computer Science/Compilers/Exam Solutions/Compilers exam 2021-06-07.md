@@ -1,17 +1,3 @@
-### 1. (20 points) Translate the following C snippet into LLVM intermediate representation and into MIPS.
-
-```c
-int ackermann(int x, int y) {
-	if (x < 0 || y < 0)
-		return -1;
-	if (x == 0)
-		return y + 1;
-	if (y == 0)
-		return ackermann(x-1, 1);
-	return achermann(x-1, ackermann(x, y-1));
-}
-```
-<span style="color:red">SKIP</span>
 ### 2. (5 points) Suppose we are given a deterministic finite automaton for language L on Σ. For all words w ∈ Σ*, we can use the automaton to determine whether w ∈ L in time:
 
 In a DFA, the process of checking if a word w of length |w| is accepted involves the following steps:
@@ -77,3 +63,7 @@ To solve the right child, we need min of 3 registers, 2 of which can be recycled
 If we first calculate the right child, we use min of 3 registers but we can recycle 2 of those registers to solve the left child, to not waste registers.
 
 Meaning we need at least 3 registers.
+
+### 9. (5 points) In the above question, can you do better if you use algebraic identities? Why or why not?
+
+If we use algebraic identities to simplify $a+b-a+(d*e+e*f)$ we get: $b+(d+f)*e$, which can be calculated using 2 registers.
