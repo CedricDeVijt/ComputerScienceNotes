@@ -52,3 +52,28 @@ To prove the undecidability of exact reachability analysis, we can construct a p
 
 Both exact type checking and exact reachability analysis require solving problems that are inherently linked to the Halting Problem and other undecidable problems. Therefore, the undecidability of the Halting Problem directly implies the undecidability of exact type checking and exact reachability analysis. Conservative approximations are used in practice to provide safe and computable guarantees about programs, avoiding the undecidability inherent in the exact versions of these tasks.
 
+### 7. (20 points) Let T = {cst, id, +,*} be a set of terminals. Is the following grammar SLR(0)? Is it LALR(2)?
+
+| (1) | Exp  | Exp + Prod  |
+| --- | ---- | ----------- |
+| (2) |      | Prod        |
+| (3) | Prod | Prod * atom |
+| (4) |      | atom        |
+| (5) | Atom | cst         |
+| (6) |      | id          |
+
+
+
+
+
+### 8. (5 points) What is the minimal number of registers required to evaluate the expression tree shown below without using algebraic properties, nor additional memory?
+
+![[Screenshot 2024-06-04 at 23.23.20.png]]
+
+To solve the left child of the root node, we need min of 2 registers, one of which can be recycled, the other is used to save the value of a+b-a.
+
+To solve the right child, we need min of 3 registers, 2 of which can be recycled and the other used to save the value of $d*e+e*f$.
+
+If we first calculate the right child, we use min of 3 registers but we can recycle 2 of those registers to solve the left child, to not waste registers.
+
+Meaning we need at least 3 registers.
