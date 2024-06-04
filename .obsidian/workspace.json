@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2020-06-15.md",
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2021-06-07.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2020-06-15.md",
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2021-06-07.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2020-06-15.md",
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2021-06-07.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2020-06-15.md"
+                "file": "Computer Science/Compilers/Exam Solutions/Compilers exam 2021-06-07.md"
               }
             }
           }
@@ -146,11 +146,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "209ce61b85d9fde7",
+  "active": "83b2c6ce1b540c84",
   "lastOpenFiles": [
-    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
-    "Computer Science/Compilers/Exam Solutions/Compilers exam 2020-06-15.md",
     "Computer Science/Compilers/Exam Solutions/Compilers exam 2021-06-07.md",
+    "Computer Science/Compilers/Exam Solutions/Compilers exam 2020-06-15.md",
+    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
     "Screenshot 2024-06-04 at 23.23.20.png",
     "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-06-25.md",
     "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-08-27.md",
