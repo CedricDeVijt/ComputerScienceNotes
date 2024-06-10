@@ -86,27 +86,27 @@
 ## Oppervlakte
 
 | Cartesisch | $S=\displaystyle\int_a^b \|f(x)\|dx$                        |
-| ---------- | ----------------------------------------------------------- |
+|: ---------- |: ----------------------------------------------------------- |
 | Parameter  | $S=\displaystyle\int_a^b \|g(t)\|f'(t)dt$                   |
 | Pool       | $S=\displaystyle\int_{\alpha}^{\beta} (r(\theta))^2d\theta$ |
 
 ## Omwentelingsvolume
 
 | Cartesisch | $V=\pi \displaystyle\int_a^b (f(x))^2dx$      |
-| ---------- | --------------------------------------------- |
+|: ---------- |: --------------------------------------------- |
 | Parameter  | $V=\pi \displaystyle\int_a^b (g(t))^2f'(t)dt$ |
 | Pool       |                                               |
 
 ## Booglengte
 
 | Cartesisch | $L=\displaystyle\int_a^b \sqrt{1+(f'(x))^2}dx$                                    |
-| ---------- | --------------------------------------------------------------------------------- |
+|: ---------- |: --------------------------------------------------------------------------------- |
 | Parameter  | $L=\displaystyle\int_a^b \sqrt{(f'(t))^2+(g'(t))^2}dt$                            |
 | Pool       | $L=\displaystyle\int_{\alpha}^{\beta} \sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta$ |
 
 ## Complanatie
 
 | Cartesisch | $C=2\pi \displaystyle\int_a^b \|f(x) \| \sqrt{1+(f'(x))^2}dx$        |
-| ---------- | -------------------------------------------------------------------- |
+|: ---------- |: -------------------------------------------------------------------- |
 | Parameter  | $C=2\pi \displaystyle\int_a^b \|g(t)\| \sqrt{(f'(t))^2+(g'(t))^2}dt$ |
 | Pool       |                                                                      |
