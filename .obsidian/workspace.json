@@ -11,11 +11,9 @@
             "id": "83b2c6ce1b540c84",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Computer Science/Calculus/Cheat sheet.md",
-                "mode": "source",
-                "source": false
+                "file": "Computer Science/Calculus/cheat_sheet.pdf"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Calculus/Cheat sheet.md",
+                "file": "Computer Science/Calculus/cheat_sheet.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Calculus/Cheat sheet.md",
+                "file": "Computer Science/Calculus/cheat_sheet.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Calculus/Cheat sheet.md"
+                "file": "Computer Science/Calculus/cheat_sheet.pdf"
               }
             }
           }
@@ -148,9 +146,18 @@
   },
   "active": "83b2c6ce1b540c84",
   "lastOpenFiles": [
-    "Computer Science/Compilers/pictures/Screenshot 2024-06-04 at 15.35.44.png",
     "Computer Science/Calculus/Cheat sheet.md",
-    "Computer Science/Calculus",
+    "Computer Science/Calculus/cheat_sheet.synctex(busy)",
+    "Computer Science/Calculus/pdflatex51183.fls",
+    "Computer Science/Calculus/pdflatex51159.fls",
+    "Computer Science/Calculus/pdflatex51138.fls",
+    "Computer Science/Calculus/pdflatex51104.fls",
+    "Computer Science/Calculus/pdflatex51041.fls",
+    "Computer Science/Calculus/cheat_sheet.out",
+    "Computer Science/Calculus/cheat_sheet.log",
+    "Computer Science/Calculus/cheat_sheet.fls",
+    "Computer Science/Calculus/pdflatex51037.fls",
+    "Computer Science/Compilers/pictures/Screenshot 2024-06-04 at 15.35.44.png",
     "Untitled.md",
     "Untitled 1.md",
     "Computer Science/Compilers/pictures/Screenshot 2024-06-04 at 21.31.45.png",
@@ -167,7 +174,6 @@
     "Computer Science/Compilers/Lecture 3.2 ANTLR.md",
     "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
     "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
-    "Computer Science/Compilers/Exam Solutions",
     "Computer Science/Compilers/Lecture 9.md",
     "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
     "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
@@ -185,14 +191,6 @@
     "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
     "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
     "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
-    "Computer Science/Computer networks/1 Network architecture/Pictures",
-    "Computer Science/Computer networks/5 Link layer/pictures",
-    "Computer Science/Computer networks/5 Link layer",
-    "Computer Science/Computer networks/4 Network layer/pictures",
-    "Computer Science/Computer networks/3 Transport layer/Pictures",
-    "Computer Science/Computer networks/2 Application layer/Pictures",
-    "Computer Science/Computer networks/4 Network layer",
-    "Computer Science/Computer networks/3 Transport layer",
     "Untitled.canvas"
   ]
 }

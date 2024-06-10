@@ -1,0 +1,182 @@
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+
+\ifthenelse{\lengthtest{\paperwidth=11in}}
+    {\geometry{top=.5in,left=.5in,right=.5in,bottom=.5in}}
+    {\ifthenelse{\lengthtest{\paperwidth=297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}}
+    }
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+
+\title{Calculus}
+
+\begin{document}
+
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{Calculus}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{H3 Afgeleiden}
+
+\subsection*{Basics}
+$D(x^n)=nx^{n-1}dx$\\
+$D(f(x)+g(x))= D(f(x))+ D(g(x))$\\
+$D(\lambda f(x))= \lambda D(f(x))$\\
+$d(f \cdot g)(x) = f(x)g'(x)+f'(x)g(x)$\\
+$d\left( \dfrac{f(x)}{g(x)}\right) = \dfrac{g(x)f'(x)-g'(x)f(x)}{(g(x))^2}$\\
+
+\subsection*{Goniometrische functies}
+
+$D(\sin x)=\cos x$\\
+$D(\cos x)=-\sin x$\\
+$D(\tan x)=\dfrac{1}{\cos^2 x}$\\
+$D(\cot x)=\dfrac{-1}{\sin^2 x}$\\
+$D(\sec x)=\dfrac{\sin x}{\cos^2 x}$\\
+$D(\csc x)=\dfrac{-\cos x}{\sin^2 x}$\\
+
+\subsection*{Cyclometrische functies}
+
+$D(\operatorname{Bgsin} x)=\dfrac{1}{\sqrt{1-x^2}}$\\
+$D(\operatorname{Bgcos} x)=\dfrac{-1}{\sqrt{1-x^2}}$\\
+$D(\operatorname{Bgtan} x)=\dfrac{1}{1+x^2}$\\
+$D(\operatorname{Bgcot} x)=\dfrac{-1}{1+x^2}$\\
+
+\subsection*{Hyperbolische functies}
+
+$D(\sinh x)=\cosh x$\\
+$D(\cosh x)=\sinh x$\\
+$D(\tanh x)=\dfrac{1}{\cosh^2 x}$\\
+$D(\coth x)=\dfrac{-1}{\sinh^2 x}$\\
+
+\subsection*{Exponentiële functies}
+
+$D(a^x)=a^x \ln a$\\
+$D(e^x)=e^x$\\
+$D(\ln x)=\dfrac{1}{x}$\\
+$D(\log_a x)=\dfrac{1}{x \ln a}$\\
+
+\subsection*{Kettingregel}
+
+$D(f(g(x)))=f'(g(x))g'(x)$\\
+
+\section{H4 Integralen}
+
+\subsection*{Basics}
+
+$\int x^n dx = \dfrac{x^{n+1}}{n+1}+C$\\
+$\int f(x)+g(x)dx = \int f(x)dx + \int g(x)dx$\\
+$\int \lambda f(x)dx = \lambda \int f(x)dx$\\
+$\int f(x)g'(x)dx = f(x)g(x)-\int f'(x)g(x)dx$\\
+$\int \dfrac{f'(x)}{f(x)}dx = \ln |f(x)| + C$\\
+
+\subsection*{Goniometrische functies}
+
+$\int \sin x dx = -\cos x + C$\\
+$\int \cos x dx = \sin x + C$\\
+$\int \dfrac{1}{\cos^2 x}dx = \tan x + C$\\
+$\int \dfrac{-1}{\sin^2 x}dx = \cot x + C$\\
+
+\subsection*{Cyclometrische functies}
+
+$\int \dfrac{1}{\sqrt{1-x^2}}dx = \operatorname{Bgsin} x + C$\\
+$\int \dfrac{1}{\sqrt{a^2-x^2}}dx = \operatorname{Bgsin} \dfrac{x}{a} + C$\\
+$\int \dfrac{1}{x^2+1}dx = \operatorname{Bgtan} x + C$\\
+$\int \dfrac{1}{\sqrt{x^2+a}}dx = \ln |x+\sqrt{x^2+a}| + C$\\
+
+\subsection*{Hyperbolische functies}
+
+$\int \cosh x dx = \sinh x + C$\\
+$\int \sinh x dx = \cosh x + C$\\
+$\int \dfrac{1}{\cosh^2 x}dx = \tanh x + C$\\
+$\int \dfrac{1}{\sinh^2 x}dx = -\coth x + C$\\
+
+\subsection*{Exponentiële functies}
+
+$\int a^x dx = \dfrac{a^x}{\ln a} + C$\\
+$\int e^x dx = e^x + C$\\
+$\int \dfrac{1}{x}dx = \ln |x| + C$\\
+
+\section{H5 Bepaalde integralen}
+
+\subsection*{Oppervlakte}
+
+\begin{tabular}{|l|l|}
+    \hline
+    Cartesisch & \( S=\int_a^b \|f(x)\|dx \) \\
+    \hline
+    Parameter & \( S=\int_a^b \|g(t)\|f'(t)dt \) \\
+    \hline
+    Pool & \( S=\int_{\alpha}^{\beta} (r(\theta))^2d\theta \) \\
+    \hline
+\end{tabular}
+
+\subsection*{Omwentelingsvolume}
+
+\begin{tabular}{|l|l|}
+    \hline
+    Cartesisch & \( V=\pi \int_a^b (f(x))^2dx \) \\
+    \hline
+    Parameter & \( V=\pi \int_a^b (g(t))^2f'(t)dt \) \\
+    \hline
+    Pool & \\
+    \hline
+\end{tabular}
+
+\subsection*{Booglengte}
+
+\begin{tabular}{|l|l|}
+    \hline
+    Cartesisch & \( L=\int_a^b \sqrt{1+(f'(x))^2}dx \) \\
+    \hline
+    Parameter & \( L=\int_a^b \sqrt{(f'(t))^2+(g'(t))^2}dt \) \\
+    \hline
+    Pool & \( L=\int_{\alpha}^{\beta} \sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta \) \\
+    \hline
+\end{tabular}
+
+\subsection*{Complanatie}
+
+\begin{tabular}{|l|l|}
+    \hline
+    Cartesisch & \( C=2\pi \int_a^b \|f(x)\| \sqrt{1+(f'(x))^2}dx \) \\
+    \hline
+    Parameter & \( C=2\pi \int_a^b \|g(t)\| \sqrt{(f'(t))^2+(g'(t))^2}dt \) \\
+    \hline
+    Pool & \\
+    \hline
+\end{tabular}
+
+\end{multicols}
+\end{document}
