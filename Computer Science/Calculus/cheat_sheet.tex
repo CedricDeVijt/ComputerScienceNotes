@@ -3,15 +3,9 @@
 \usepackage{multicol,multirow}
 \usepackage{calc}
 \usepackage{ifthen}
-\usepackage[landscape]{geometry}
+\usepackage[landscape,a4paper,top=1cm,left=1cm,right=1cm,bottom=1cm]{geometry}
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
 
-\ifthenelse{\lengthtest{\paperwidth=11in}}
-    {\geometry{top=.5in,left=.5in,right=.5in,bottom=.5in}}
-    {\ifthenelse{\lengthtest{\paperwidth=297mm}}
-        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}}
-        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}}
-    }
 \pagestyle{empty}
 \makeatletter
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
@@ -30,6 +24,7 @@
 \setcounter{secnumdepth}{0}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt plus 0.5ex}
+
 % -----------------------------------------------------------------------
 
 \title{Calculus}
