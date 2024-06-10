@@ -11,12 +11,8 @@
             "id": "83b2c6ce1b540c84",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "README.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -148,6 +140,12 @@
   },
   "active": "83b2c6ce1b540c84",
   "lastOpenFiles": [
+    "Computer Science/Compilers/Lecture 3.2 ANTLR.md",
+    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
+    "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
+    "Computer Science/Calculus/Cheat sheet.md",
+    "Computer Science.md",
+    "README.md",
     "Computer Science/Calculus/cheat_sheet.pdf",
     "Computer Science/Calculus/pdflatex51503.fls",
     "Computer Science/Calculus/cheat_sheet.synctex.gz",
@@ -158,8 +156,6 @@
     "Computer Science/Calculus/pdflatex51502.fls",
     "Computer Science/Calculus/cheat_sheet.fdb_latexmk",
     "Computer Science/Calculus/cheat_sheet.aux",
-    "Computer Science/Calculus/Cheat sheet.md",
-    "Computer Science/Calculus/pdflatex51183.fls",
     "Computer Science/Compilers/pictures/Screenshot 2024-06-04 at 15.35.44.png",
     "Untitled.md",
     "Untitled 1.md",
@@ -169,14 +165,11 @@
     "Computer Science/Computer networks/5 Link layer/5.3 Multiple Access Protocols.md",
     "Computer Science/Compilers/Exam Solutions/Compilers exam 2021-06-07.md",
     "Computer Science/Compilers/Exam Solutions/Compilers exam 2020-06-15.md",
-    "Computer Science/Compilers/Lecture 3.1 LLVM IR, Specification.md",
     "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-06-25.md",
     "Computer Science/Compilers/Exam Solutions/Compilers exam 2019-08-27.md",
     "Computer Science/Compilers/Exam Solutions/Cheat sheet.md",
     "Computer Science/Compilers/Lecture 1 Introduction, Grading, and Compiling.md",
-    "Computer Science/Compilers/Lecture 3.2 ANTLR.md",
     "Computer Science/Compilers/Lecture 4 Top-down parsing and parser generators.md",
-    "Computer Science/Compilers/Lecture 2 Regular and context-free tools (abridged).md",
     "Computer Science/Compilers/Lecture 9.md",
     "Computer Science/Computer networks/5 Link layer/5.1 Introduction to the Link Layer.md",
     "Computer Science/Computer networks/5 Link layer/5.2 Error detection and correction.md",
@@ -193,7 +186,6 @@
     "Computer Science/Computer networks/4 Network layer/4.5 Software-defined networking (SDN).md",
     "Computer Science/Computer networks/4 Network layer/4.4 Routing on the Internet (OSPF and BGP).md",
     "Computer Science/Computer networks/4 Network layer/4.3 Routing algorithms.md",
-    "Computer Science/Computer networks/4 Network layer/4.2 The Internet Protocol (IPv4 and IPv6).md",
     "Untitled.canvas"
   ]
 }
