@@ -8,7 +8,6 @@
 
 - $d(f \cdot g)(x) = f(x)g'(x)+f'(x)g(x)$
 - $d\left( \dfrac{f(x)}{g(x)}\right) = \dfrac{g(x)f'(x)-g'(x)f(x)}{(g(x))^2}$
-
 ## Goniometrische functies
 
 - $D(\sin x)=\cos x$
@@ -17,31 +16,29 @@
 - $D(\cot x)=\dfrac{-1}{\sin^2 x}$
 - $D(\sec x)=\dfrac{\sin x}{\cos^2 x}$
 - $D(\csc x)=\dfrac{-\cos x}{\sin^2 x}$
-
 ## Cyclometrische functies
 
-- $D(\operatorname{Bgsin} x)=\dfrac{1}{\sqrt{1-x^2}}$
-- $D(\operatorname{Bgcos} x)=\dfrac{-1}{\sqrt{1-x^2}}$
-- $D(\operatorname{Bgtan} x)=\dfrac{1}{1+x^2}$
-- $D(\operatorname{Bgcot} x)=\dfrac{-1}{1+x^2}$
-
+- $D(\arcsin x)=\dfrac{1}{\sqrt{1-x^2}}$
+- $D(\arccos x)=\dfrac{-1}{\sqrt{1-x^2}}$
+- $D(\arctan x)=\dfrac{1}{1+x^2}$
+- $D(\text{arccot } x)=\dfrac{-1}{1+x^2}$
 ## Hyperbolische functies
 
 - $D(\sinh x)=\cosh x$
 - $D(\cosh x)=\sinh x$
 - $D(\tanh x)=\dfrac{1}{\cosh^2 x}$
 - $D(\coth x)=\dfrac{-1}{\sinh^2 x}$
-
 ## Exponentiële functies
 
 - $D(a^x)=a^x \ln a$
 - $D(e^x)=e^x$
 - $D(\ln x)=\dfrac{1}{x}$
 - $D(\log_a x)=\dfrac{1}{x \ln a}$
-
 ## Kettingregel
 
 - $D(f(g(x)))=f'(g(x))g'(x)$
+## Machtsregel
+- $D(f(x)^{g(x)})=g(x)f(x)^{g(x)-1}f'(x)+f(x)^{g(x)}g'(x)\ln f(x)$
 
 # H4 Integralen
 
@@ -63,9 +60,9 @@
 
 ## Cyclometrische functies
 
-- $\displaystyle\int \dfrac{1}{\sqrt{1-x^2}}dx = \operatorname{Bgsin} x + C$
-- $\displaystyle\int \dfrac{1}{\sqrt{a^2-x^2}}dx = \operatorname{Bgsin} \dfrac{x}{a} + C$
-- $\displaystyle\int \dfrac{1}{x^2+1}dx = \operatorname{Bgtan} x + C$
+- $\displaystyle\int \dfrac{1}{\sqrt{1-x^2}}dx = \arcsin x + C$
+- $\displaystyle\int \dfrac{1}{\sqrt{a^2-x^2}}dx = \arcsin \dfrac{x}{a} + C$
+- $\displaystyle\int \dfrac{1}{x^2+1}dx = \arctan x + C$
 - $\displaystyle\int \dfrac{1}{\sqrt{x^2+a}}dx = \ln |x+\sqrt{x^2+a}| + C$
 
 ## Hyperbolische functies
