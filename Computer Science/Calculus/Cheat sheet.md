@@ -1,7 +1,9 @@
 # H2 Limieten
 
-$
+## Exponentiële en logaritmische functies
 
+$\lim\limits_{x\rightarrow \infty}\left(1+\dfrac{1}{x}\right)^x=e$
+$\lim\limits_{x\rightarrow \infty}\left(1+\dfrac{k}{x}\right)^x=e^k$
 ## Bijzondere goniometrische limieten
 
 $\lim\limits_{x\rightarrow0}\dfrac{\sin (x)}{x} = 1$
