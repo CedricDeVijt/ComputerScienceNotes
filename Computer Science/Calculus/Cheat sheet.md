@@ -1,5 +1,7 @@
 # H2 Limieten
 
+$
+
 ## Bijzondere goniometrische limieten
 
 $\lim\limits_{x\rightarrow0}\dfrac{\sin (x)}{x} = 1$
