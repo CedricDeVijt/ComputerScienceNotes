@@ -5,7 +5,6 @@
 $\lim\limits_{x\rightarrow0}\dfrac{\sin (x)}{x} = 1$
 $\lim\limits_{x\rightarrow 0}\dfrac{\tan (x)}{x}=1$
 # H3 Afgeleiden
-
 ## Basics
 
 - $D(x^n)=nx^{n-1}dx$
