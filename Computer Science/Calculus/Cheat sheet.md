@@ -1,3 +1,10 @@
+# H1 Getallenverzameling
+
+## Poolcoördinaten
+$r=\sqrt{(x^2+y^2)}$
+$\tan\theta=\dfrac{y}{x}$
+$z=r \operatorname{cis}\alpha = r\cos + ir\sin$
+$\sqrt[n]{z} = \sqrt[n]{r} \operatorname{cis} \left( \frac{\alpha + 2k\pi}{n} \right)$
 # H2 Limieten
 
 ## Exponentiële en logaritmische functies
