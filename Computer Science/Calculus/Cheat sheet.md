@@ -2,8 +2,8 @@
 
 ## Poolcoördinaten
 $r=\sqrt{(x^2+y^2)}$
-$\tan\theta=\dfrac{y}{x}$
-$z=r \operatorname{cis}\alpha = r\cos + ir\sin$
+$\theta=\arctan \left(\dfrac{y}{x}\right)$
+$r \operatorname{cis}\alpha = r\cos + ir\sin$
 $\sqrt[n]{z} = \sqrt[n]{r} \operatorname{cis} \left( \frac{\alpha + 2k\pi}{n} \right)$
 # H2 Limieten
 
@@ -15,6 +15,7 @@ $\lim\limits_{x\rightarrow \infty}\left(1+\dfrac{k}{x}\right)^x=e^k$
 
 $\lim\limits_{x\rightarrow0}\dfrac{\sin (x)}{x} = 1$
 $\lim\limits_{x\rightarrow 0}\dfrac{\tan (x)}{x}=1$
+
 # H3 Afgeleiden
 ## Basics
 
