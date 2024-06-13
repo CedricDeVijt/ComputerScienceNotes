@@ -4,7 +4,8 @@
 $r=\sqrt{(x^2+y^2)}$
 $\theta=\arctan \left(\dfrac{y}{x}\right)$
 $z=r\operatorname{cis}\alpha = r(\cos \alpha + i\sin \alpha)$
-$\sqrt[n]{z} = \sqrt[n]{r} \operatorname{cis} \left( \frac{\alpha + 2k\pi}{n} \right)$
+$(r\operatorname{cis}\alpha)^n=r^n\operatorname{cis}(n\alpha)$
+$z_k=\sqrt[n]{r} \operatorname{cis} \left(\alpha + \frac{2k\pi}{n} \right)$
 # H2 Limieten
 
 ## Exponentiële en logaritmische functies
