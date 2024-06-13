@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1718269405 "/Users/cedric/Documents/Obsidian Vault/Computer Science/Calculus/cheat_sheet.tex" "cheat_sheet.pdf" "cheat_sheet" 1718269405
-  "/Users/cedric/Documents/Obsidian Vault/Computer Science/Calculus/cheat_sheet.tex" 1718269400 6096 67c07f67c5980c9f439a990454014751 ""
+["pdflatex"] 1718270007 "/Users/cedric/Documents/Obsidian Vault/Computer Science/Calculus/cheat_sheet.tex" "cheat_sheet.pdf" "cheat_sheet" 1718270008
+  "/Users/cedric/Documents/Obsidian Vault/Computer Science/Calculus/cheat_sheet.tex" 1718270002 6112 65bac7536da1a2189f568df1319daa08 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -86,9 +86,9 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1653137103 2826445 e85205a0aa3686ccb9220dcf26bed251 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "cheat_sheet.aux" 1718269405 3082 4b7bacf5bfd8e11a73265cd7d10e974e "pdflatex"
-  "cheat_sheet.out" 1718269405 3375 db5cd612e0b34892387679ad9e93e015 "pdflatex"
-  "cheat_sheet.tex" 1718269400 6096 67c07f67c5980c9f439a990454014751 ""
+  "cheat_sheet.aux" 1718270008 3082 4b7bacf5bfd8e11a73265cd7d10e974e "pdflatex"
+  "cheat_sheet.out" 1718270008 3375 db5cd612e0b34892387679ad9e93e015 "pdflatex"
+  "cheat_sheet.tex" 1718270002 6112 65bac7536da1a2189f568df1319daa08 ""
   (generated)
   "cheat_sheet.aux"
   "cheat_sheet.log"
