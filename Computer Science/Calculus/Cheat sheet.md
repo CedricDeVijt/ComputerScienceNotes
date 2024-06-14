@@ -5,7 +5,7 @@ $r=\sqrt{(x^2+y^2)}$
 $\theta=\arctan \left(\dfrac{y}{x}\right)$
 $z=r\operatorname{cis}\alpha = r(\cos \alpha + i\sin \alpha)$
 $(r\operatorname{cis}\alpha)^n=r^n\operatorname{cis}(n\alpha)$
-$z_k=\sqrt[n]{r} \operatorname{cis} \left(\alpha + \frac{2k\pi}{n} \right)$
+$z_k=\sqrt[n]{r} \operatorname{cis} \left(\frac{\alpha + 2k\pi}{n} \right)$
 # H2 Limieten
 
 ## Exponentiële en logaritmische functies
@@ -125,3 +125,4 @@ $\lim\limits_{x\rightarrow 0}\dfrac{\tan (x)}{x}=1$
 |: ---------- |: -------------------------------------------------------------------- |
 | Parameter  | $C=2\pi \displaystyle\int_a^b \|g(t)\| \sqrt{(f'(t))^2+(g'(t))^2}dt$ |
 | Pool       |                                                                      |
+

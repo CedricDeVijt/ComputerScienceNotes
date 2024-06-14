@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1718272696 "/Users/cedric/Documents/Obsidian Vault/Computer Science/Calculus/cheat_sheet.tex" "cheat_sheet.pdf" "cheat_sheet" 1718272696
-  "/Users/cedric/Documents/Obsidian Vault/Computer Science/Calculus/cheat_sheet.tex" 1718272695 6122 691f57b8c34d652ce50477c34f818ae1 ""
+["pdflatex"] 1718401387 "/Users/cedric/Documents/Obsidian Vault/Computer Science/Calculus/cheat_sheet.tex" "cheat_sheet.pdf" "cheat_sheet" 1718401388
+  "/Users/cedric/Documents/Obsidian Vault/Computer Science/Calculus/cheat_sheet.tex" 1718400868 1768 710c5f892f54375dd3669a867449de56 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -26,6 +26,7 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1248133631 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
@@ -86,9 +87,15 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1653137103 2826445 e85205a0aa3686ccb9220dcf26bed251 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "cheat_sheet.aux" 1718272696 3185 b800cb5edfdcf9200c530ae528a604a7 "pdflatex"
-  "cheat_sheet.out" 1718272696 3509 538912ea4ed7031973b9f3cd2eaf8bef "pdflatex"
-  "cheat_sheet.tex" 1718272695 6122 691f57b8c34d652ce50477c34f818ae1 ""
+  "Chapters/H0_Parate_kennis.tex" 1718401387 480 6ae16fd69e948208273a04d9a8841731 ""
+  "Chapters/H1_Getallenverzameling.tex" 1718400555 379 12c3fa662942ccd85ca04e9e40a0c489 ""
+  "Chapters/H2_Limieten.tex" 1718401378 784 bb6c9bfc26becd9aae0af2c69fef865f ""
+  "Chapters/H3_Afgeleiden.tex" 1718400714 1174 a0991630f9c1bc8194201922816cc819 ""
+  "Chapters/H4_Integralen.tex" 1718400790 1424 e5fca1fe1128b9230da76064f390bca0 ""
+  "Chapters/H5_Bepaalde_integralen.tex" 1718400840 1272 9fce7c64c6bf357c1783465f868abbc9 ""
+  "cheat_sheet.aux" 1718401388 3806 4957b77576c260ffdc2eca910e5cc3cb "pdflatex"
+  "cheat_sheet.out" 1718401388 4365 659bd2e4f14a12e1ca2deee1ba0baec3 "pdflatex"
+  "cheat_sheet.tex" 1718400868 1768 710c5f892f54375dd3669a867449de56 ""
   (generated)
   "cheat_sheet.aux"
   "cheat_sheet.log"
