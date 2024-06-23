@@ -38,3 +38,9 @@ M = Op input $\langle G,s,t  \rangle$ met G een gerichte graaf met beginknoop s 
 - Stap 4 herhalen we m keer (m aantal knopen)
 
 # 2.2 Satisfiability problemen
+**Satisfiability problemen**: een klasse van problemen die gaan over het vinden van een toewijzing van waarden aan variabelen die voldoen aan een bepaalde logische formule.
+
+Een propositionele formule $\rho$ is een uitdrukking die inductief gedefinieerd, is als volgt,
+▸ een (propositionele) veranderlijke in X = {x1, x2, ..., xk } is een formule;
+▸ als $\rho$ een formule is dan is ook ($\neg\rho$) een formule (negatie); en
+▸ als $\rho_1$ en $\rho_2$ formules zijn, dan zijn ook ($\rho_1 \wedge \rho_2$) (conjunctie) en ($\rho_1 \vee \rho_2$) (disjunctie) formules.
