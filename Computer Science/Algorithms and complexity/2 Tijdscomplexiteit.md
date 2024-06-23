@@ -36,3 +36,5 @@ M = Op input $\langle G,s,t  \rangle$ met G een gerichte graaf met beginknoop s 
 - Stappen 1 en 4 zijn in polynomiale tijd.
 - Stap 3 vraagt om de input te scannen en te testen welke knopen gemarkeerd zijn, dit kan ook in polynomiale tijd
 - Stap 4 herhalen we m keer (m aantal knopen)
+
+# 2.2 Satisfiability problemen
