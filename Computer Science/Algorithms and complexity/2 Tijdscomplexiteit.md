@@ -5,7 +5,7 @@
 
 **Polynomiale tijdcomplexiteit**: als de tijd die het kost om het probleem op te lossen, kan worden uitgedrukt als een polynomiale functie van de grootte van de invoer.
 
-Alle deterministische berekeningsmodellen zijn polynomiaal equivalent (d.w.z. dat deze modellen kunnen in elkaar worden getransformeerd in polynomiale tijd)
+Alle deterministische berekeningsmodellen zijn polynomiaal equivalent (d.w.z. dat deze modellen kunnen in elkaar worden getransformeerd in polynomiale tijd) 
 
 **Deterministische tijdscomplexiteitsklasse (DTIME(t(n)))**:$\text{DTIME}(t(n)) = \{L | \text{de taal } L \text{ wordt beslist door een } O(t(n)) \text{-tijd deterministische Turing machine met één tape} \}$
 ### Voorbeeld:
@@ -44,3 +44,4 @@ Een propositionele formule $\rho$ is een uitdrukking die inductief gedefinieerd,
 ▸ een (propositionele) veranderlijke in X = {x1, x2, ..., xk } is een formule;
 ▸ als $\rho$ een formule is dan is ook ($\neg\rho$) een formule (negatie); en
 ▸ als $\rho_1$ en $\rho_2$ formules zijn, dan zijn ook ($\rho_1 \wedge \rho_2$) (conjunctie) en ($\rho_1 \vee \rho_2$) (disjunctie) formules.
+
