@@ -8,7 +8,7 @@
 Alle deterministische berekeningsmodellen zijn polynomiaal equivalent (d.w.z. dat deze modellen kunnen in elkaar worden getransformeerd in polynomiale tijd) 
 
 **Deterministische tijdscomplexiteitsklasse (DTIME(t(n)))**:$\text{DTIME}(t(n)) = \{L | \text{de taal } L \text{ wordt beslist door een } O(t(n)) \text{-tijd deterministische Turing machine met één tape} \}$
-### Voorbeeld:
+Voorbeeld:
 Veronderstel dat je computer 100 miljoen stappen doet per seconde.
 De onderstaande tabel toont de CPU tijd voor verschillende functies t ∶ N → N.
 ![[Screenshot 2024-06-23 at 20.52.00.png]]
