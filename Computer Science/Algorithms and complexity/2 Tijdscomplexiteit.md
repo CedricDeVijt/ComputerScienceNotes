@@ -1,20 +1,28 @@
 # 2.1 Deterministisch polynomiale tijd (PTIME)
-**Polynomiale tijd (PTIME)**: de tijd die het kost om een probleem op te lossen, begrensd is door een polynomiale functie van de grootte van de invoer. De uitvoeringstijd van het algoritme kan worden uitgedrukt als $O(n^k)$, waarbij n de grootte van de invoer is en K een bepaalde constante.
+
+**Deterministische Tijd(DTIME):** functie die de tijdcomplexiteit beschrijft van een deterministische Turing-machine. Voor een gegeven functie $f(n)$, is DTIME($f(n)$) de klasse van talen die door een deterministische Turing-machine binnen $f(n)$ stappen kunnen worden besloten voor een invoer van grootte $n$.
+
+$DTIME(t(n)) = \{L ∣ \text{de taal L wordt beslist door een } O(t(n))-\text{tijd deterministische Turing machine met  een tape}\}$
+
+DTIME biedt een gedetailleerdere maatstaf voor complexiteit, waarbij specifieke tijdsgrenzen worden aangegeven in plaats van de algemene polynomiale vorm. Bijvoorbeeld, DTIME($n$), DTIME($n^2$) en DTIME($2^n$) zijn specifieke klassen waar de tijdcomplexiteit respectievelijk lineair, kwadratisch en exponentieel is.
+
+**Polynomiale tijdcomplexiteit**: Een algoritme heeft een polynomiale tijdcomplexiteit als de tijd die nodig is om een invoer van grootte n te verwerken, kan worden uitgedrukt als een polynoom p(n) in n.
+
+**Polynomiale Tijd (PTIME)**: verwijst naar de verzameling beslissingsproblemen die kunnen worden opgelost door een deterministische Turing-machine met één tape in polynomiale tijd. Dit betekent dat er een polynoom $p(n)$ bestaat zodanig dat voor een invoer van grootte $n$, de machine het probleem kan oplossen in maximaal $p(n)$ stappen.
+
+$PTIME = \underset{k} \cup DTIME (n^k)$
+
+Problemen in PTIME worden als efficiënt oplosbaar beschouwd omdat hun looptijd hoogstens polynomiaal groeit met de grootte van de invoer.
 
 **Exhaustieve enumeratie**: een probleemoplossingstechniek waarbij alle mogelijke oplossingen systematisch worden gegenereerd en onderzocht om de gewenste oplossing te vinden.
 
-**Polynomiale tijdcomplexiteit**: als de tijd die het kost om het probleem op te lossen, kan worden uitgedrukt als een polynomiale functie van de grootte van de invoer.
-
 Alle deterministische berekeningsmodellen zijn polynomiaal equivalent (d.w.z. dat deze modellen kunnen in elkaar worden getransformeerd in polynomiale tijd) 
 
-**Deterministische tijdscomplexiteitsklasse (DTIME(t(n)))**:$\text{DTIME}(t(n)) = \{L | \text{de taal } L \text{ wordt beslist door een } O(t(n)) \text{-tijd deterministische Turing machine met één tape} \}$
 Voorbeeld:
 Veronderstel dat je computer 100 miljoen stappen doet per seconde.
 De onderstaande tabel toont de CPU tijd voor verschillende functies t ∶ N → N.
-![[Screenshot 2024-06-23 at 20.52.00.png]]
 
-PTIME = de klasse van alle talen die beslist kunnen worden door een deterministische TM met één tape, en dit in polynomiale tijd
-$PTIME = \underset{k} \cup DTIME (n^k)$
+![[Screenshot 2024-06-25 at 14.27.53.png]]
 
 *Representatie van een object* x als woord: $\langle x \rangle$ (object kan een graaf, formule of een getal zijn)
 
