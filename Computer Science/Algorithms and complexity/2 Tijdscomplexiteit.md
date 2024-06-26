@@ -90,4 +90,4 @@ met $Φ1 =((x1 ∧x2)∨x3)$ en $Φ2 =(((¬x1)∨(¬x2))∧(x1 ∨x3))→(x2 ∨
 
 **Equivalentie van formules**: Twee propositionele formules $φ$ en $ψ$ over dezelfde veranderlijken zijn equivalent, genoteerd als $φ ≡ ψ$, als $ν \models φ$ als en slechts dan $ν \models ψ$, voor elke truth assignment ν van de veranderlijken.
 
-**Conjunctieve normaalvorm (CNF)**: Een propositionele formule $φ$ over $X$ is in conjunctieve normaalvorm als die van de vorm$^a$ $φ = C1 ∧ C2 ∧ ⋯ ∧ Cn$, is, waarin clauses $C_i$ zijn, met elke clause van de vorm $C_i =l^i_1 \lor l^i_2 \lor⋯\lor l^i_{p_i}$, met daarin $l^i_j$ literals. Een literal is ofwel een veranderlijke (positive literal x) of een negatie van een veranderlijke (negatieve literal $¬x$ of $\overline{x}$) in X.
+**Conjunctieve normaalvorm (CNF)**: Een propositionele formule $φ$ over $X$ is in conjunctieve normaalvorm als die van de vorm$^a$ $φ = C1 ∧ C2 ∧ ⋯ ∧ Cn$, is, waarin clauses $C_i$ zijn, met elke clause van de vorm $C_i =l^i_1 \lor l^i_2 \lor⋯\lor l^i_{p_i}$, met daarin $l^i_j$ literals. Een literal is ofwel een veranderlijke (positive literal x) of een negatie van een veranderlijke (negatieve literal $¬x$ of $\overline{x}$) in X 
