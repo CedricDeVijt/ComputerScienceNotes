@@ -1,5 +1,0 @@
-[[5.1 Introduction to the Link Layer]]
-[[5.2 Error detection and correction]]
-[[5.3 Multiple Access Protocols]]
-[[5.4 Local Area Networks]]
-[[5.5 Summery]]

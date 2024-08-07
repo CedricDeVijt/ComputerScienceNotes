@@ -1,6 +1,0 @@
-### [[3.1 Transport-layer services]]
-### [[3.2 User Datagram Protocol (UDP)]]
-### [[3.3 Reliable data transfer]]
-### [[3.4 Transport Control Protocol (TCP)]]
-### [[3.5 TCP congestion control]]
-### [[3.6 Summery]]

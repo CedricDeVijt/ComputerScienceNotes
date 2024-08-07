@@ -6,3 +6,4 @@
 - Algorithms and complexity: 1001WETALC
 - Compilers: 1001WETCOP
 - Computer networks: 1001WETCON
+- Linear algebra: 1500WETLAL
