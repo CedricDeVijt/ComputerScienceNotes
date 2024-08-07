@@ -1,4 +1,4 @@
-# Notes for Bachelor in Computer Science University of Antwerp
+# Notes for computer science courses at university of Antwerp
 
 ## Bachelor 1
 - Calculus: 1001WETCAL

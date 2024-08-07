@@ -1,7 +1,6 @@
 .idea/
 .obsidian/
 *.DS_Store
-.obsidian/workspace.json
 
 # LaTeX  files
 *.aux
@@ -14,8 +13,6 @@
 *.fls
 *.synctex.gz
 *.toc
-
-
 
 # Ignore Smart Connections folder
 .smart-connections
