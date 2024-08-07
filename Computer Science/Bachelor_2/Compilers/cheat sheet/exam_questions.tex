@@ -1,0 +1,17 @@
+\section{Exam Questions}
+
+Suppose we are given a deterministic finite automaton for a language L on $\Sigma$. For all words w $\in$ $\Sigma *$, we can use the automaton to determine whether w $\in$ L in time: $O ( |w| )$
+
+Suppose we are given a context free grammar for a language L on $\Sigma$. For all words w $\in$ $\Sigma$*, we can use the grammar to determine whether w $\in$ Lin time: polynomial in $|w|$
+
+
+\subsection{Examples of grammars and languages}
+Give an example of an LL(1) grammar that is not strongly LL(1):\\
+% A strongly LL(1) grammar is a more restrictive subset of LL(1) grammars. In a strongly LL(1) grammar, for any two distinct production rules A → α and A → β, the sets FIRST(α) and FIRST(β) must be disjoint, and if ε (epsilon, the empty string) is in FIRST(α), then FIRST(β) and FOLLOW(A) must also be disjoint.
+
+$S \rightarrow A a | B b$\\
+$A \rightarrow \epsilon$\\
+$B \rightarrow \epsilon$\\
+
+
+

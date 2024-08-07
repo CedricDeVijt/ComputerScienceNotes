@@ -1,0 +1,71 @@
+\section{Examples of languages and grammars}
+
+\subsection{LL(1)}
+\subsubsection{Grammar}
+S → aAB\\
+A → bA | \epsilon\\
+B → cB | d
+
+% \subsubsection{Language}
+% $ab^{n}c^{m}d$ | $n \geq 0$, $m \geq 0$
+% This language consists of strings that start with 'a', followed by zero or more 'b's, followed by zero or more 'c's, and ending with 'd'.
+
+% \subsection{LL(2)}
+% \subsubsection{Grammar}
+% S → aAb | aBc
+% A → cd
+% B → dc
+
+% \subsubsection{Language}
+% {acdb, adcc}
+% This language requires two tokens of lookahead to determine which production to use for S.
+
+% \subsection{LR(0)}
+% \subsubsection{Grammar}
+% S → aAb
+% A → cA | c
+
+% \subsubsection{Language}
+% $ac^nb | n ≥ 1$
+% This language consists of strings that start with 'a', followed by one or more 'c's, and ending with 'b'.
+
+% \subsection{LR(1)}
+% \subsubsection{Grammar}
+% S → aA | bB
+% A → cA | d
+% B → cB | d
+
+% \subsubsection{Language}
+% $ac^nd | n ≥ 0} ∪ {bc^nd | n ≥ 0$
+% This language consists of strings that start with either 'a' or 'b', followed by zero or more 'c's, and ending with 'd'.
+
+% \subsection{LR(2)}
+% \subsubsection{Grammar}
+% S → aAb | aBc
+% A → de
+% B → ed
+
+% \subsubsection{Language}
+% {adeb, aedc}
+% This language requires two tokens of lookahead to determine the correct reduction during parsing.
+
+% \subsection{LALR(1)}
+% \subsubsection{Grammar}
+% S → E
+% E → E + T | T
+% T → T * F | F
+% F → (E) | id
+
+% \subsubsection{Language}
+% Simple arithmetic expressions with addition, multiplication, parentheses, and identifiers.
+% Example strings: id, id + id, id * id, (id + id) * id
+
+% \subsection{SLR(1)}
+% \subsubsection{Grammar}
+% S → L = R | R
+% L → *R | id
+% R → L
+
+% \subsubsection{Language}
+% Simple assignment and dereferencing expressions.
+% Example strings: id = id, *id = id, id, *id
