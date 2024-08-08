@@ -1,0 +1,68 @@
+\section{LL(k)-Parser}
+
+\subsection{Definition}
+A grammar is LL(k) if it can be parsed from Left to right, using Leftmost derivations, with \( k \) lookahead tokens.
+
+\subsection{Features}
+\begin{itemize}
+    \item Predictive Parsing: Uses a parsing table to predict which production to apply based on the lookahead tokens.
+    \item No Backtracking: Decisions are made based on the lookahead, eliminating the need for backtracking.
+\end{itemize}
+
+\subsection{Conditions}
+\begin{itemize}
+    \item No Left Recursion: The grammar should not have left recursion.
+    \item Factoring: Left-factoring may be necessary to resolve ambiguities.
+    \item Unambiguous: The grammar must be unambiguous for effective parsing.
+\end{itemize}
+
+\section{SLR(k)-Parser}
+
+\subsection{Definition}
+A grammar is SLR(1) if it can be parsed using a Simple LR parser with 1 lookahead token.
+
+\subsection{Features}
+\begin{itemize}
+    \item Shift-Reduce Parsing: Utilizes a shift-reduce mechanism based on a parsing table.
+    \item LR(0) Items: Relies on LR(0) items and follow sets for handling reduce actions.
+\end{itemize}
+
+\subsection{Conditions}
+\begin{itemize}
+    \item No Ambiguity: The grammar should be unambiguous and clearly defined for reductions.
+    \item Conflict Resolution: Resolves conflicts using follow sets.
+\end{itemize}
+
+\section{LR(k)-Parser}
+
+\subsection{Definition}
+A grammar is LR(k) if it can be parsed using a Left-to-right scan with Rightmost derivations and \( k \) lookahead tokens.
+
+\subsection{Features}
+\begin{itemize}
+    \item More Powerful: Handles a broader class of grammars compared to LL(k) and SLR(k) parsers.
+    \item Constructing Parsing Tables: Involves complex state-based parsing and lookahead management.
+\end{itemize}
+
+\subsection{Conditions}
+\begin{itemize}
+    \item General LR Parsing: LR(1) is commonly used due to a balance between complexity and capability.
+    \item Handles Ambiguity: Capable of resolving more complex ambiguities.
+\end{itemize}
+
+\section{LALR(k)-Parser}
+
+\subsection{Definition}
+A grammar is LALR(1) if it can be parsed using a Look-Ahead LR parser with 1 lookahead token and a simplified set of LR(1) states.
+
+\subsection{Features}
+\begin{itemize}
+    \item Efficient LR Parsing: Combines the power of LR(1) parsing with more efficient state management.
+    \item Reduction of States: Reduces the number of states compared to full LR(1) parsing.
+\end{itemize}
+
+\subsection{Conditions}
+\begin{itemize}
+    \item LR(1) Compatibility: Every LALR(1) grammar is LR(1), but not every LR(1) grammar is LALR(1).
+    \item State Merging: Simplifies state management but may introduce conflicts.
+\end{itemize}
