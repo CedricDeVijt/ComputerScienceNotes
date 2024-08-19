@@ -65,7 +65,7 @@ The column space $C(A)$ and the left null space $N (A^T)$ are orthogonal
 The row space $C(A^T )$ and the null space $N (A)$ are orthogonal
 
 Orthogonal complement
-Let $V$ be a subspace of $R^n$. Then, the orthogonal complement of $V$ is a set of all vectors that are perpendicular to to $V$, which is denoted by $V^{\bot}$
+Let $V$ be a subspace of $\mathbb{R}^n$. Then, the orthogonal complement of $V$ is a set of all vectors that are perpendicular to to $V$, which is denoted by $V^{\bot}$
 
 Orthogonal projection of b onto the line through a
 $p= \frac{\langle a,b \rangle}{\langle a,a \rangle}a$
@@ -74,11 +74,12 @@ Orthogonal projection onto a subspace
 $p= A(A^TA)^{-1}A^T b$
 
 Orthonormal vectors
-$Q^T Q= I$
+Let $q_1, q_2, . . . , q_n \in \mathbb{R}^m$ and $Q = [ q_1, q_2, . . . , q_n ]$ Then, these vectors are said to be orthonormal if $Q^T Q= I$
 
-orthonormal matrices leave length unchanged
+Orthonormal matrices leave length unchanged
 
 Gram-Schmidt process:
+TODO
 
 ## Ch10 Symmetric and positive definite matrices
 
