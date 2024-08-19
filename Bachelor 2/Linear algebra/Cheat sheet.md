@@ -79,7 +79,9 @@ Let $q_1, q_2, . . . , q_n \in \mathbb{R}^m$ and $Q = [ q_1, q_2, . . . , q_n ]$
 Orthonormal matrices leave length unchanged
 
 Gram-Schmidt process:
-TODO
+1) Set $b_1 = a_1$;
+2) Set $b_i = a_i - \sum_{j=1}^{i-1} \frac{\langle b_j,a_i \rangle}{\langle b_j,b_j \rangle}b_j$ for $i = 3,4,...,n$
+3) Normalize $q_i = \frac{b_i}{\|b_i\|}$
 
 ## Ch10 Symmetric and positive definite matrices
 
