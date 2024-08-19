@@ -26,19 +26,59 @@ For $A \in \mathbb{R}^{n\times n}:  AA^{-1}=I^n$
 Solving linear system of equations using inverse matrices
 $x = A^{-1}b$
 
-Cramer’s Rule:
+## Ch6 Determinant
+**Cramer’s Rule**:
 Let $Ax= b$ for $B \in \mathbb{R}^{n}$ and $A \in \mathbb{R}^{m\times n}$ with $det(A) ≠ 0$. Then, this system is solved by determinants, i.e.
 $x_i=\frac{det(B_i)}{det(A)}$ for $i = 1,2,...,n$
 where the matrix Bi has the ith column of A replaced by b, i.e.,
 
-
-## Ch6 Determinant
-
 ## Ch7 Eigenvalue and Eigenvector
+Rayleigh quotient:
+$R_A (x) = \frac {\langle x,Ax \rangle}{\|x\| ^2}$
 
+Computing eigenvalues:
+$det(A - \lambda I_n) = 0$
+
+Relation eigenvalues and determinant
+$det(A) = \lambda _1  \lambda _2 ...  \lambda _n$
+Relation eigenvalues and trace
+$tr(A) = \lambda _1 + \lambda _2 + ... + \lambda _n$
 ## Ch8 Diagonalizable and Similar Matrices
+Matrix diagonalization:
+Let $A$ be an $n \times n$ square matrix ($A \in \mathbb{R}^{m\times n}$), let $\lambda _1,  \lambda _2, ...,  \lambda _n$ be its n eigenvalues, and let $x_1, x_2, . . . , x_n$ be n linearly independent eigenvectors of A.
+$A = X \Lambda X^{—1}$
 
+A must be diagonalizable if A has n distinct eigenvalues.
+
+Calculating kth power of a diagonalizable matrix:
+$A^k = X \Lambda ^k X^{—1}$
+
+A and C are similar matrices if $A = BCB^{-1}$
+
+Similar matrices have same eigenvalues
 ## Ch9 Orthogonality
+Orthogonal vectors or subspaces
+$\langle x,y \rangle = 0$
+
+Orthogonality of four subspaces
+The column space $C(A)$ and the left null space $N (A^T)$ are orthogonal
+The row space $C(A^T )$ and the null space $N (A)$ are orthogonal
+
+Orthogonal complement
+Let $V$ be a subspace of $R^n$. Then, the orthogonal complement of $V$ is a set of all vectors that are perpendicular to to $V$, which is denoted by $V^{\bot}$
+
+Orthogonal projection of b onto the line through a
+$p= \frac{\langle a,b \rangle}{\langle a,a \rangle}a$
+
+Orthogonal projection onto a subspace
+$p= A(A^TA)^{-1}A^T b$
+
+Orthonormal vectors
+$Q^T Q= I$
+
+orthonormal matrices leave length unchanged
+
+Gram-Schmidt process:
 
 ## Ch10 Symmetric and positive definite matrices
 
