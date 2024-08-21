@@ -1,22 +1,16 @@
 \subsection{Example Languages}
 \textbf{LR(0) language that is not LL(1)}\\
-    $S \rightarrow aSb | a$
+    $L = \{ w \mid w \text{ is of the form } a^n b^n \text{ or } w = a \text{ for } n \geq 0 \}$
 
 \textbf{LR(0) language that is not LL(k)}\\
-    $S \rightarrow aSb | ab$
+    $L = \{ a^n b \mid n \geq 1 \} \cup \{ ab \}$
 
 \textbf{LL(2) language that is not LL(1)}\\
-    $S \rightarrow aAB | bBA$\\
-    $A \rightarrow c$\\
-    $B \rightarrow d$\\
+    $L = \{ a \, c \, d \, | \text{ where } c \text{ and } d \text{ are any single characters} \} \cup \{ b \, d \, c \, | \text{ where } c \text{ and } d \text{ are any single characters} \}$
 
 \textbf{LL(3) language that is not LL(2)}\\
-    $S \rightarrow aaa | aab | aac$
+    $L = \{ aaa, aab, aac \}$
 
-\textbf{CFG that in not LR(1)}\\
-    $S\rightarrow aB|aDc$\\
-    $B\rightarrow bBc|c$\\
-    $D\rightarrow bc|c$
 
 \subsection{Example Grammars}
 \textbf{LL(1) grammar that is not strongly LL(1)}\\
@@ -34,4 +28,8 @@
     $A \rightarrow B b | C c$\\
     $B \rightarrow b$\\
     $C \rightarrow c$
-    
+
+\textbf{CFG that in not LR(1)}\\
+    $S\rightarrow aB|aDc$\\
+    $B\rightarrow bBc|c$\\
+    $D\rightarrow bc|c$
