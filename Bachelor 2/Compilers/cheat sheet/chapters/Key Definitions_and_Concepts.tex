@@ -1,0 +1,120 @@
+\subsubsection{Key Definitions and Concepts}
+Strong grammars
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 1. **Strongly LL(k) vs. LL(k) Grammars**
+- **LL(k) Grammar:**
+  - **Definition:** A context-free grammar is LL(k) if a top-down parser can parse the grammar using **k** lookahead tokens without backtracking.
+  - **Characteristics:**
+    - **Left-to-right** parsing.
+    - **Leftmost** derivation.
+    - Unambiguous: No choice points in parsing, and the parser can decide the next production rule by looking at the next k tokens.
+
+- **Strongly LL(k) Grammar:**
+  - **Definition:** A grammar is strongly LL(k) if it remains LL(k) regardless of how the grammar is written, even after common prefix and left factoring transformations.
+  - **Key Difference:** An LL(k) grammar may become non-LL(k) after certain transformations like left factoring, while a strongly LL(k) grammar will remain LL(k) no matter the transformations applied.
+
+**Example:**
+- Consider a simple grammar:
+  - `S → aA | bB`
+  - `A → a | ε`
+  - `B → b | ε`
+
+  This grammar is LL(1) because the parser can decide between `aA` and `bB` by looking at just one token (`a` or `b`). However, a grammar might not be strongly LL(1) if, after left-factoring, it becomes ambiguous or no longer LL(1).
+
+
+### 2. **ItemFollow vs. Follow**
+- **Follow Set:**
+  - **Definition:** The follow set of a non-terminal A in a grammar is the set of terminals that can appear immediately to the right of A in some "sentential form" derived from the start symbol.
+  - **Usage:** It is used in constructing parsing tables for LL(1) parsers.
+
+- **ItemFollow:**
+  - **Definition:** ItemFollow is a more refined version of the Follow set used in the context of LALR(1) parsing. It considers the specific items (e.g., partially parsed productions) and the context in which they appear, leading to potentially smaller and more accurate sets.
+  - **Key Difference:** While Follow sets are global (based on the entire grammar), ItemFollow sets are local to specific items in the LALR(1) parsing process, helping resolve conflicts more effectively.
+
+**Example:**
+- For a rule like `A → αBβ`, `Follow(B)` would include terminals that can appear after `B` in any derivation. In contrast, `ItemFollow(B)` would consider specific parsing situations (items) in which `B` occurs, potentially reducing conflicts in LALR(1) parsing tables.
+
+
+### 3. **LR(0) vs. LL(1) Key Differences**
+- **LL(1):**
+  - **Top-Down Parsing:** Parses input from left to right, constructing a leftmost derivation of the sentence.
+  - **Lookahead:** Uses 1 lookahead token to decide which production to apply.
+  - **Predictive Parsing:** LL(1) parsers are predictive; they use a single lookahead to decide the next action without backtracking.
+
+- **LR(0):**
+  - **Bottom-Up Parsing:** Parses input by constructing a rightmost derivation in reverse (shift-reduce).
+  - **No Lookahead (0):** LR(0) parsers do not use any lookahead tokens.
+  - **Handles More Grammars:** LR(0) parsers can handle more complex grammars than LL(1) because they work with more context (considering the entire stack).
+
+**Key Differences:**
+- **Context Sensitivity:** LR(0) parsers use the entire stack for decisions, while LL(1) relies on a single lookahead token.
+- **Grammar Coverage:** LL(1) is more restrictive; not all context-free grammars can be parsed by an LL(1) parser, while LR(0) can parse a broader range of grammars.
+
+**Example:**
+- Consider the grammar `S → Aa | b`, `A → b`. This grammar is LR(0) because an LR(0) parser can handle the shift/reduce actions with the entire stack context. However, it is not LL(1) because the first token (`b`) does not uniquely determine which rule to apply (`S → Aa` or `S → b`).
+
+
+### 4. **LALR(1) vs. SLR(1) Parsers: Key Differences**
+- **SLR(1):**
+  - **Simple LR (1):** Uses a single lookahead token and the Follow sets to resolve parsing decisions.
+  - **Follow Set Based:** SLR(1) parsing tables use Follow sets to decide whether to reduce or shift, potentially leading to conflicts if the Follow sets are too broad.
+
+- **LALR(1):**
+  - **Lookahead LR (1):** A refinement of SLR(1) that merges states in the LR(1) parsing table that have identical LR(0) items but uses individual lookaheads for more precise conflict resolution.
+  - **ItemFollow Based:** Uses ItemFollow sets, which are smaller and more precise than the Follow sets used in SLR(1), reducing the chance of conflicts.
+
+**Key Differences:**
+- **Conflict Resolution:** LALR(1) parsers can handle more cases without conflicts due to their more refined approach (ItemFollow vs. Follow).
+- **Table Size:** LALR(1) parsing tables are usually more compact than LR(1) but slightly larger than SLR(1).
+
+**Example:**
+- For a grammar with ambiguous constructs where SLR(1) might fail due to a conflict in the Follow sets, LALR(1) may succeed by resolving conflicts using more precise ItemFollow sets.
+
+
+### 5. **Regular Languages vs. Context-Free Languages: Key Differences**
+- **Regular Languages:**
+  - **Defined By:** Regular expressions or finite automata (DFA/NFA).
+  - **Closure Properties:** Closed under union, concatenation, and Kleene star operations.
+  - **Recognized By:** DFA/NFA or regular expressions.
+  - **Limitations:** Cannot handle nested structures (e.g., matching parentheses).
+
+- **Context-Free Languages (CFLs):**
+  - **Defined By:** Context-Free Grammars (CFGs).
+  - **Closure Properties:** Closed under union, concatenation, and Kleene star operations, but not under intersection and complement.
+  - **Recognized By:** Pushdown automata (PDA).
+  - **Strengths:** Can handle nested structures and recursive patterns.
+
+**Key Differences:**
+- **Parsing Power:** Regular languages cannot handle context dependencies (e.g., matching parentheses), while CFLs can.
+- **Automaton:** Regular languages use finite automata (memory-less), while CFLs require pushdown automata (with stack-based memory).
+
+**Example:**
+- **Regular:** `a*` (all strings of `a`s).
+- **CFL:** `{a^n b^n | n ≥ 0}` (equal numbers of `a`s followed by `b`s, which regular languages can't handle).
+
+
+### 6. **Sentential-form Prefixes on the Stack: Theorem and Implications**
+- **Theorem (Sentential-form Prefixes on the Stack):**
+  - **Statement:** In a configuration `(q, w, γZ0)` reached along an accepting run of a classical bottom-up parser (using shift/reduce operations), if `q` is not of the form `(A, . . . )`, then the grammar allows a derivation `S ⇒* γR · w` in a rightmost derivation sequence.
+  - **Implication:** This theorem guarantees that the stack configuration in a bottom-up parser represents a valid prefix of a rightmost derivation.
+
+- **Converse is Not True:**
+  - **Implication:** The converse statement, which would claim that any valid sentential form corresponds to some configuration in the parser's stack, is not true. There exist valid sentential forms that a bottom-up parser may not encounter in its stack due to the specific sequence of shift/reduce operations.
+
+**Example:**
+- Consider a CFG and a specific derivation sequence. While the bottom-up parser’s stack might correspond to prefixes of this derivation, not all prefixes of derivations can be realized as configurations in the parser’s stack.
+
+
+These explanations should provide a solid foundation for your cheat sheet, making it useful during your exam for quick reference and problem-solving.
