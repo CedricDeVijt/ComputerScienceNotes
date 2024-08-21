@@ -1,1 +1,26 @@
-Compute First^2 (Atom) and follow2(Prod) based on a given grammar.
+% DONE
+
+\subsection{First and Follow}
+\subsubsection{First}
+The $FIRST$ set of a non-terminal symbol A in a grammar is the set of terminal symbols that appear at the beginning of any string derived from A.
+
+\textbf{How to Compute:}
+For a non-terminal symbol A:
+    If A can derive a string that starts with a terminal symbol, include that terminal in $FIRST(A)$.
+    If A can derive $\epsilon$ (the empty string), include $\epsilon$ in $FIRST(A)$.
+    For a production $A \rightarrow B_1 B_2 \ldots B_n$ :
+    Include the $FIRST$ set of $B_1$ in $FIRST(A)$.
+    If $B_1$ can derive $\epsilon$, then include $FIRST(B_2)$ in $FIRST(A)$, and so on for subsequent $B_i$ until a non-$\epsilon$ deriving symbol is found or all $B_i$ derive $\epsilon$.
+
+\subsubsection{Follow}
+The FOLLOW set of a non-terminal symbol A is the set of terminal symbols that can appear immediately to the right of A in some sentential form derived from the start symbol of the grammar.
+
+
+\textbf{How to Compute:}
+1. Initialization:
+   Add \$ (the end-of-input marker) to FOLLOW set of the start symbol.
+2. For Each Production $A \rightarrow \alpha B \beta$:
+   Add $FIRST(\beta$) (excluding $\epsilon$) to $FOLLOW(B)$.
+   If $\beta$ can derive $\epsilon$ (or if $\beta$ is empty), add $FOLLOW(A)$ to $FOLLOW(B)$.
+3. Repeat Until No Changes:
+   Continue updating the FOLLOW sets until no more symbols can be added.
