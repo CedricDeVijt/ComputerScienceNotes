@@ -1,18 +1,29 @@
-\subsection{Grammars and Languages}
+\subsection{Grammars}
 
-LL(k)
+\subsubsection{LL(k)}
 
-LR(k)
+1. No Left Recursion: No non-terminal should be able to derive itself through a sequence of productions that starts with the same non-terminal. For example, a rule like $A \rightarrow A\alpha$ (where $\alpha$  is any sequence of terminals and/or non-terminals) would be left-recursive.
 
-SLR(k)
+2. Left Factoring: For any non-terminal $A$ and productions $A \rightarrow \alpha \beta_1$ and $A \rightarrow \alpha \beta_2$ where $\alpha$ is a common prefix, the grammar should be refactored to remove the common prefix. The left-factored form would be:
+   $A \rightarrow \alpha A'$\\
+   $A' \rightarrow \beta_1 \mid \beta_2$
 
-LALR(k)
+3. First/Follow Set Conditions: For each non-terminal $A$ and productions $A \rightarrow \alpha_1$ and $A \rightarrow \alpha_2$:
+   The sets of terminals that can appear as the first token of the strings derived from $\alpha_1$ and $\alpha_2$ (i.e., the FIRST sets) must be disjoint.
+   If $\alpha_i$ can derive the empty string $\epsilon$, then the FIRST set of $\alpha_i$ should not intersect with the FOLLOW set of $A$. The FOLLOW set of $A$ is the set of terminals that can appear immediately to the right of $A$ in some sentential form.
 
-Languages
 
-Regular langauges
 
-Context-free languages
+%SLR(k)
 
-Context-sensitive languages
+%LALR(k)
 
+%LR(k)
+
+\subsection{Languages}
+
+\subsubsection{Regular langauges}
+Regular languages are those that can be recognized by a finite automaton or expressed by a regular expression.
+
+\subsubsection{Context-free languages}
+Context-free languages are those that can be recognized by a pushdown automaton or expressed by a context-free grammar.

@@ -24,3 +24,10 @@ The FOLLOW set of a non-terminal symbol A is the set of terminal symbols that ca
    If $\beta$ can derive $\epsilon$ (or if $\beta$ is empty), add $FOLLOW(A)$ to $FOLLOW(B)$.
 3. Repeat Until No Changes:
    Continue updating the FOLLOW sets until no more symbols can be added.
+
+
+\subsubsection{ItemFollows}
+The $FIRST$ set of a string of symbols is the set of terminals that can appear as the first symbol of a string derived from the given string.
+
+The $FOLLOW$ set of a string of symbols is the set of terminals that can appear immediately to the right of the string in some sentential form derived from the start symbol of the grammar.
+

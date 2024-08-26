@@ -1,16 +1,15 @@
 \subsection{Example Languages}
 \textbf{LR(0) language that is not LL(1)}\\
-    $L = \{ w \mid w \text{ is of the form } a^n b^n \text{ or } w = a \text{ for } n \geq 0 \}$
+    $L = \{a^n b^n | n \geq 0\}$
 
-\textbf{LR(0) language that is not LL(k)}\\
-    $L = \{ a^n b \mid n \geq 1 \} \cup \{ ab \}$
+\textbf{LR(0) language that is not LL(k) for any k}\\
+$L = \{a^n b^n c^m | n, m \geq 1\} $\
 
 \textbf{LL(2) language that is not LL(1)}\\
-    $L = \{ a \, c \, d \, | \text{ where } c \text{ and } d \text{ are any single characters} \} \cup \{ b \, d \, c \, | \text{ where } c \text{ and } d \text{ are any single characters} \}$
+$L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
 
-\textbf{LL(3) language that is not LL(2)}\\
-    $L = \{ aaa, aab, aac \}$
-
+\textbf{CFL that in not LR(1)}\\
+    English language
 
 \subsection{Example Grammars}
 \textbf{LL(1) grammar that is not strongly LL(1)}\\
