@@ -18,7 +18,69 @@
 
 %LALR(k)
 
-%LR(k)
+\subsubsection{LR(k)}
+To determine if a grammar is LR(1), you need to check if it can be parsed using an LR(1) parser without conflicts. An LR(1) parser is a type of bottom-up parser that reads input from left to right and produces a rightmost derivation in reverse. The "1" in LR(1) indicates that the parser uses 1 lookahead token to make parsing decisions.
+
+Here's a step-by-step method to determine if a grammar is LR(1):
+
+\textbf{1. Construct the LR(1) Items}\\
+
+LR(1) items are similar to LR(0) items but with an additional lookahead component. An LR(1) item is of the form `[A → α $\bullet$ β, a]` where:
+
+`A → αβ` is a production.
+`$\bullet$` indicates the current position in the production.
+`a` is a lookahead token (a terminal that may appear next in the input).
+
+To construct the LR(1) items:
+
+Start with an augmented grammar by adding a new start symbol \(S'\) with a production \(S' \to S\), where \(S\) is the original start symbol of the grammar.
+
+Create the initial LR(1) item for the augmented production: `[(S' → $\bullet$S, $)]`, where `$` is the end-of-input marker.
+
+\textbf{2. Compute the Closure of LR(1) Items}\\
+
+The closure of a set of LR(1) items includes all items that could be valid in that parsing context. To compute the closure:
+
+1. Start with an initial set of items (e.g., the initial LR(1) item).
+2. For each item `[A → α $\bullet$ Bβ, a]` in the set, if `$\bullet$` is before a non-terminal `B`, for every production `B → γ`:
+   For each terminal `b` in FIRST(βa), add the item `[B → $\bullet$γ, b]` to the set if it is not already present.
+3. Repeat until no more items can be added.
+
+\textbf{3. Construct the Canonical Collection of LR(1) Sets}\\
+
+The canonical collection is a set of all unique LR(1) item sets (states). To construct it:
+
+1. Start with the closure of the initial LR(1) item set as the first state.
+2. For each state and each grammar symbol (terminal or non-terminal), compute the goto for that symbol:
+   The goto of a set of items for a symbol `X` is a set of items you get by moving the `$\bullet$` past `X` in all items and then taking the closure of the resulting set.
+3. If the resulting set of items is new (i.e., not already in the collection), add it as a new state.
+4. Repeat until no new states can be added.
+
+\textbf{4. Construct the LR(1) Parsing Table}\\
+
+Using the canonical collection of LR(1) sets, construct the parsing table:
+
+Action Table: Specifies parser actions (shift, reduce, accept) for terminals.
+Goto Table: Specifies transitions between states for non-terminals.
+
+To fill in the table:
+
+Shift: For each item `[A → α $\bullet$ aβ, b]` where `a` is a terminal, if `goto(I, a) = J`, then set `ACTION[I, a]` to "shift J".
+Reduce: For each item `[A → α $\bullet$, a]`, set `ACTION[I, a]` to "reduce A → α".
+Accept: If the item is `[S' → S$\bullet$, $]` in some state, set `ACTION[I, $]` to "accept".
+Goto: If `goto(I, A) = J` for non-terminal `A`, set `GOTO[I, A] = J`.
+
+\textbf{5. Check for Conflicts}\\
+
+An LR(1) grammar must have no parsing conflicts:
+
+Shift-Reduce Conflict: Occurs when a table entry requires both a shift and a reduce action for the same terminal.
+Reduce-Reduce Conflict: Occurs when a table entry requires more than one reduce action for the same terminal.
+
+\textbf{6. Determine if the Grammar is LR(1)}\\
+
+If the LR(1) parsing table has no conflicts (no shift-reduce or reduce-reduce conflicts), then the grammar is LR(1).
+
 
 \subsection{Languages}
 
