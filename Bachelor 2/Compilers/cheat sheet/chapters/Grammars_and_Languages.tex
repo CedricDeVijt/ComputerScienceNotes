@@ -1,91 +1,116 @@
 \subsection{Grammars}
 
 \subsubsection{LL(k)}
+1. Identify Production Rules for Each Non-Terminal
 
-1. No Left Recursion: No non-terminal should be able to derive itself through a sequence of productions that starts with the same non-terminal. For example, a rule like $A \rightarrow A\alpha$ (where $\alpha$  is any sequence of terminals and/or non-terminals) would be left-recursive.
+    1a. Initialization:
+    For each non-terminal \( A \), list all production rules of the form \( A \rightarrow \alpha_1 \) and \( A \rightarrow \alpha_2 \), where \( \alpha_1 \) and \( \alpha_2 \) are sequences of symbols (terminals and/or non-terminals).
+    1b. Compare Productions:
+    For each pair of distinct production rules \( A \rightarrow \alpha_1 \) and \( A \rightarrow \alpha_2 \):
+        Note that the possible right-hand sides are \( \alpha_1 \) and \( \alpha_2 \).
 
-2. Left Factoring: For any non-terminal $A$ and productions $A \rightarrow \alpha \beta_1$ and $A \rightarrow \alpha \beta_2$ where $\alpha$ is a common prefix, the grammar should be refactored to remove the common prefix. The left-factored form would be:
-   $A \rightarrow \alpha A'$\\
-   $A' \rightarrow \beta_1 \mid \beta_2$
+2. Analyze Derivations with Lookahead
 
-3. First/Follow Set Conditions: For each non-terminal $A$ and productions $A \rightarrow \alpha_1$ and $A \rightarrow \alpha_2$:
-   The sets of terminals that can appear as the first token of the strings derived from $\alpha_1$ and $\alpha_2$ (i.e., the FIRST sets) must be disjoint.
-   If $\alpha_i$ can derive the empty string $\epsilon$, then the FIRST set of $\alpha_i$ should not intersect with the FOLLOW set of $A$. The FOLLOW set of $A$ is the set of terminals that can appear immediately to the right of $A$ in some sentential form.
+    2a. Derive Sentential Forms:
+    For each pair \( (A \rightarrow \alpha_1, A \rightarrow \alpha_2) \), consider the derivations of the form:
+        \( S \Rightarrow^* w A \gamma \Rightarrow w \alpha_1 \gamma \Rightarrow^* w x_1 \)
+        \( S \Rightarrow^* w A \gamma \Rightarrow w \alpha_2 \gamma \Rightarrow^* w x_2 \)
+    Here, \( w \) is a prefix of terminals, and \( \gamma \) is a sequence of symbols.
+    2b. Compute Lookahead Sets:
+    Determine the lookahead sets \( \text{First}_k(x_1) \) and \( \text{First}_k(x_2) \) where \( x_1 \) and \( x_2 \) are terminal strings derived from \( \alpha_1 \gamma \) and \( \alpha_2 \gamma \), respectively.
+
+3. Check for Disambiguation
+
+    3a. Lookahead Comparison:
+    For each pair \( (A \rightarrow \alpha_1, A \rightarrow \alpha_2) \), compare the lookahead sets:
+        Check if \( \text{First}_k(x_1) \) equals \( \text{First}_k(x_2) \).
+    3b. Verify Consistency:
+    If \( \text{First}_k(x_1) = \text{First}_k(x_2) \), ensure that \( \alpha_1 \) and \( \alpha_2 \) are identical:
+        If \( \alpha_1 \neq \alpha_2 \) when the lookahead sets are equal, the grammar is not LL(k).
+
+4. Conclude LL(k) Status
+
+    If all pairs of distinct production rules for every non-terminal either have different lookahead sets or identical right-hand sides, the grammar is LL(k).
+    If any pair of rules has the same lookahead sets but different right-hand sides, the grammar is not LL(k).
 
 
+\subsection{Strong LL(k)}    
+A $CFG G= \langle V ,T ,P,S \rangle $ is strong LL(k) 
+iff, for all pairs of rules $A→ \alpha_1$ and $A→ \alpha_2$ in $P ($with $\alpha_1 = \alpha_2)$:
+$First^k ( \alpha_1 Follow^k (A) ) \cap First^k (\alpha_2 Followk (A) ) = \varnothing $
 
 %SLR(k)
 
 %LALR(k)
 
 \subsubsection{LR(k)}
-To determine if a grammar is LR(1), you need to check if it can be parsed using an LR(1) parser without conflicts. An LR(1) parser is a type of bottom-up parser that reads input from left to right and produces a rightmost derivation in reverse. The "1" in LR(1) indicates that the parser uses 1 lookahead token to make parsing decisions.
+%To determine if a grammar is LR(1), you need to check if it can be parsed using an LR(1) parser without conflicts. An LR(1) parser is a type of bottom-up parser that reads input from left to right and produces a rightmost derivation in reverse. The "1" in LR(1) indicates that the parser uses 1 lookahead token to make parsing decisions.
 
-Here's a step-by-step method to determine if a grammar is LR(1):
+%Here's a step-by-step method to determine if a grammar is LR(1):
 
-\textbf{1. Construct the LR(1) Items}\\
+%\textbf{1. Construct the LR(1) Items}\\
 
-LR(1) items are similar to LR(0) items but with an additional lookahead component. An LR(1) item is of the form `[A → α $\bullet$ β, a]` where:
+%LR(1) items are similar to LR(0) items but with an additional lookahead component. An LR(1) item is of the form `[A → α $\bullet$ β, a]` where:
 
-`A → αβ` is a production.
-`$\bullet$` indicates the current position in the production.
-`a` is a lookahead token (a terminal that may appear next in the input).
+%`A → αβ` is a production.
+%`$\bullet$` indicates the current position in the production.
+%`a` is a lookahead token (a terminal that may appear next in the input).
 
-To construct the LR(1) items:
+%To construct the LR(1) items:
 
-Start with an augmented grammar by adding a new start symbol \(S'\) with a production \(S' \to S\), where \(S\) is the original start symbol of the grammar.
+%Start with an augmented grammar by adding a new start symbol \(S'\) with a production \(S' \to S\), where \(S\) is the original start symbol of the grammar.
 
-Create the initial LR(1) item for the augmented production: `[(S' → $\bullet$S, $)]`, where `$` is the end-of-input marker.
+%Create the initial LR(1) item for the augmented production: `[(S' → $\bullet$S, $)]`, where `$` is the end-of-input marker.
 
-\textbf{2. Compute the Closure of LR(1) Items}\\
+%\textbf{2. Compute the Closure of LR(1) Items}\\
 
-The closure of a set of LR(1) items includes all items that could be valid in that parsing context. To compute the closure:
+%The closure of a set of LR(1) items includes all items that could be valid in that parsing context. To compute the closure:
 
-1. Start with an initial set of items (e.g., the initial LR(1) item).
-2. For each item `[A → α $\bullet$ Bβ, a]` in the set, if `$\bullet$` is before a non-terminal `B`, for every production `B → γ`:
-   For each terminal `b` in FIRST(βa), add the item `[B → $\bullet$γ, b]` to the set if it is not already present.
-3. Repeat until no more items can be added.
+%1. Start with an initial set of items (e.g., the initial LR(1) item).
+%2. For each item `[A → α $\bullet$ Bβ, a]` in the set, if `$\bullet$` is before a non-terminal `B`, for every production `B → γ`:
+%   For each terminal `b` in FIRST(βa), add the item `[B → $\bullet$γ, b]` to the set if it is not already present.
+%3. Repeat until no more items can be added.
 
-\textbf{3. Construct the Canonical Collection of LR(1) Sets}\\
+%\textbf{3. Construct the Canonical Collection of LR(1) Sets}\\
 
-The canonical collection is a set of all unique LR(1) item sets (states). To construct it:
+%The canonical collection is a set of all unique LR(1) item sets (states). To construct it:
 
-1. Start with the closure of the initial LR(1) item set as the first state.
-2. For each state and each grammar symbol (terminal or non-terminal), compute the goto for that symbol:
-   The goto of a set of items for a symbol `X` is a set of items you get by moving the `$\bullet$` past `X` in all items and then taking the closure of the resulting set.
-3. If the resulting set of items is new (i.e., not already in the collection), add it as a new state.
-4. Repeat until no new states can be added.
+%1. Start with the closure of the initial LR(1) item set as the first state.
+%2. For each state and each grammar symbol (terminal or non-terminal), compute the goto for that symbol:
+%   The goto of a set of items for a symbol `X` is a set of items you get by moving the `$\bullet$` past `X` in all items and then taking the closure of the resulting set.
+%3. If the resulting set of items is new (i.e., not already in the collection), add it as a new state.
+%4. Repeat until no new states can be added.
 
-\textbf{4. Construct the LR(1) Parsing Table}\\
+%\textbf{4. Construct the LR(1) Parsing Table}\\
 
-Using the canonical collection of LR(1) sets, construct the parsing table:
+%Using the canonical collection of LR(1) sets, construct the parsing table:
 
-Action Table: Specifies parser actions (shift, reduce, accept) for terminals.
-Goto Table: Specifies transitions between states for non-terminals.
+%Action Table: Specifies parser actions (shift, reduce, accept) for terminals.
+%Goto Table: Specifies transitions between states for non-terminals.
 
-To fill in the table:
+%To fill in the table:
 
-Shift: For each item `[A → α $\bullet$ aβ, b]` where `a` is a terminal, if `goto(I, a) = J`, then set `ACTION[I, a]` to "shift J".
-Reduce: For each item `[A → α $\bullet$, a]`, set `ACTION[I, a]` to "reduce A → α".
-Accept: If the item is `[S' → S$\bullet$, $]` in some state, set `ACTION[I, $]` to "accept".
-Goto: If `goto(I, A) = J` for non-terminal `A`, set `GOTO[I, A] = J`.
+%Shift: For each item `[A → α $\bullet$ aβ, b]` where `a` is a terminal, if `goto(I, a) = J`, then set `ACTION[I, a]` to "shift J".
+%Reduce: For each item `[A → α $\bullet$, a]`, set `ACTION[I, a]` to "reduce A → α".
+%Accept: If the item is `[S' → S$\bullet$, $]` in some state, set `ACTION[I, $]` to "accept".
+%Goto: If `goto(I, A) = J` for non-terminal `A`, set `GOTO[I, A] = J`.
 
-\textbf{5. Check for Conflicts}\\
+%\textbf{5. Check for Conflicts}\\
 
-An LR(1) grammar must have no parsing conflicts:
+%An LR(1) grammar must have no parsing conflicts:
 
-Shift-Reduce Conflict: Occurs when a table entry requires both a shift and a reduce action for the same terminal.
-Reduce-Reduce Conflict: Occurs when a table entry requires more than one reduce action for the same terminal.
+%Shift-Reduce Conflict: Occurs when a table entry requires both a shift and a reduce action for the same terminal.
+%Reduce-Reduce Conflict: Occurs when a table entry requires more than one reduce action for the same terminal.
 
-\textbf{6. Determine if the Grammar is LR(1)}\\
+%\textbf{6. Determine if the Grammar is LR(1)}\\
 
-If the LR(1) parsing table has no conflicts (no shift-reduce or reduce-reduce conflicts), then the grammar is LR(1).
+%If the LR(1) parsing table has no conflicts (no shift-reduce or reduce-reduce conflicts), then the grammar is LR(1).
 
 
-\subsection{Languages}
+%\subsection{Languages}
 
-\subsubsection{Regular langauges}
-Regular languages are those that can be recognized by a finite automaton or expressed by a regular expression.
+%\subsubsection{Regular langauges}
+%Regular languages are those that can be recognized by a finite automaton or expressed by a regular expression.
 
-\subsubsection{Context-free languages}
-Context-free languages are those that can be recognized by a pushdown automaton or expressed by a context-free grammar.
+%\subsubsection{Context-free languages}
+%Context-free languages are those that can be recognized by a pushdown automaton or expressed by a context-free grammar.
