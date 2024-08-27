@@ -1,33 +1,36 @@
 % DONE
 
-\subsection{First and Follow}
-\subsubsection{First}
-The $FIRST$ set of a non-terminal symbol A in a grammar is the set of terminal symbols that appear at the beginning of any string derived from A.
-
-\textbf{How to Compute:}
-For a non-terminal symbol A:
-    If A can derive a string that starts with a terminal symbol, include that terminal in $FIRST(A)$.
-    If A can derive $\epsilon$ (the empty string), include $\epsilon$ in $FIRST(A)$.
-    For a production $A \rightarrow B_1 B_2 \ldots B_n$ :
-    Include the $FIRST$ set of $B_1$ in $FIRST(A)$.
-    If $B_1$ can derive $\epsilon$, then include $FIRST(B_2)$ in $FIRST(A)$, and so on for subsequent $B_i$ until a non-$\epsilon$ deriving symbol is found or all $B_i$ derive $\epsilon$.
-
-\subsubsection{Follow}
-The FOLLOW set of a non-terminal symbol A is the set of terminal symbols that can appear immediately to the right of A in some sentential form derived from the start symbol of the grammar.
-
-
-\textbf{How to Compute:}
+\subsection{Calculate First and Follow}
+\subsubsection{First $^k(\alpha)$}
 1. Initialization:
-   Add \$ (the end-of-input marker) to FOLLOW set of the start symbol.
-2. For Each Production $A \rightarrow \alpha B \beta$:
-   Add $FIRST(\beta$) (excluding $\epsilon$) to $FOLLOW(B)$.
-   If $\beta$ can derive $\epsilon$ (or if $\beta$ is empty), add $FOLLOW(A)$ to $FOLLOW(B)$.
-3. Repeat Until No Changes:
-   Continue updating the FOLLOW sets until no more symbols can be added.
+   For every terminal $a$, set $First^k(a) = {a}$ (since a terminal generates only itself).
+   Initialize $First^k(A)$ to an empty set for every variable $A$.
+
+2. Iterative Update:
+   Repeat until no changes occur:
+     For each variable $A$ with a production rule $A → X_1 X_2 ... X_n$:
+     Compute $First^k(X_1)$, $First^k(X_2)$, ..., $First^k(X_n)$.
+     Concatenate elements from $First^k(X_1)$, $First^k(X_2)$, ..., $First^k(X_n)$ and truncate the results to length $k$.
+       Update $First^k(A)$ with these truncated elements if they are not already present.
+
+3. Completion:
+   The process stops when no $First^k$ sets are updated in an iteration, meaning all sets have stabilized.
+
+\subsubsection{Follow $^k(\alpha)$}
+Here's a step-by-step version of the algorithm to compute $Follow^k$ sets:
+
+1. Initialization:
+   Initialize $Follow^k(X)$ to an empty set for each variable $X$.
+
+2. Iterative Update:
+   Repeat until no changes occur:
+     For each rule $A → αBβ$:
+       Compute $First^k(β)$ (where β is the part of the right-hand side following $B$).
+       Add $First^k(β)$ elements to $Follow^k(B)$, completing them with $Follow^k(A)$ if needed to ensure they reach length $k$.
+       Update $Follow^k(B)$ with these completed elements if they are not already present.
+
+3. Completion:
+   The process stops when no $Follow^k$ sets are updated in an iteration, meaning all sets have stabilized.
 
 
-\subsubsection{ItemFollows}
-The $FIRST$ set of a string of symbols is the set of terminals that can appear as the first symbol of a string derived from the given string.
-
-The $FOLLOW$ set of a string of symbols is the set of terminals that can appear immediately to the right of the string in some sentential form derived from the start symbol of the grammar.
-
+%\subsubsection{ItemFollows}
