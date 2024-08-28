@@ -38,6 +38,8 @@ $R_A (x) = \frac {\langle x,Ax \rangle}{\|x\| ^2}$
 
 Computing eigenvalues:
 $det(A - \lambda I_n) = 0$
+Computing eigenvectors:
+$(A - \lambda I_n) \mathbf{x} = 0 \text{ for the non-zero vector } x$
 
 Relation eigenvalues and determinant
 $det(A) = \lambda _1  \lambda _2 ...  \lambda _n$
