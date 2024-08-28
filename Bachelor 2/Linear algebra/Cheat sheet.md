@@ -69,7 +69,7 @@ The row space $C(A^T )$ and the null space $N (A)$ are orthogonal
 Orthogonal complement
 Let $V$ be a subspace of $\mathbb{R}^n$. Then, the orthogonal complement of $V$ is a set of all vectors that are perpendicular to to $V$, which is denoted by $V^{\bot}$
 
-Orthogonal projection of b onto the line through a
+Orthogonal **projection** of b onto the line through a
 $p= \frac{\langle a,b \rangle}{\langle a,a \rangle}a$
 
 Orthogonal projection onto a subspace
