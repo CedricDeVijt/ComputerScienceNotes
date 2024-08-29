@@ -1,131 +1,24 @@
-\subsection{Grammars}
+\section{Grammars}
 
-\subsubsection{LL(k)}
-1. Identify Production Rules for Each Non-Terminal
+\subsection{LL(k) Grammar}
+A CFG is LL(k) if:
+The grammar can be parsed by a top-down parser with $k$ lookahead tokens.
+The parsing table has no ambiguity and is deterministic.
 
-    Initialization:
-    For each non-terminal \( A \), list all production rules of the form \( A \rightarrow \alpha_1 \) and \( A \rightarrow \alpha_2 \), where \( \alpha_1 \) and \( \alpha_2 \) are sequences of symbols (terminals and/or non-terminals).
-    Compare Productions:
-    For each pair of distinct production rules \( A \rightarrow \alpha_1 \) and \( A \rightarrow \alpha_2 \):
-        Note that the possible right-hand sides are \( \alpha_1 \) and \( \alpha_2 \).
-
-2. Analyze Derivations with Lookahead
-
-    Derive Sentential Forms:
-    For each pair \( (A \rightarrow \alpha_1, A \rightarrow \alpha_2) \), consider the derivations of the form:
-        \( S \Rightarrow^* w A \gamma \Rightarrow w \alpha_1 \gamma \Rightarrow^* w x_1 \)
-        \( S \Rightarrow^* w A \gamma \Rightarrow w \alpha_2 \gamma \Rightarrow^* w x_2 \)
-    Here, \( w \) is a prefix of terminals, and \( \gamma \) is a sequence of symbols.
-    Compute Lookahead Sets:
-    Determine the lookahead sets \( \text{First}_k(x_1) \) and \( \text{First}_k(x_2) \) where \( x_1 \) and \( x_2 \) are terminal strings derived from \( \alpha_1 \gamma \) and \( \alpha_2 \gamma \), respectively.
-
-3. Check for Disambiguation
-
-    Lookahead Comparison:
-    For each pair \( (A \rightarrow \alpha_1, A \rightarrow \alpha_2) \), compare the lookahead sets:
-        Check if \( \text{First}_k(x_1) \) equals \( \text{First}_k(x_2) \).
-    Verify Consistency:
-    If \( \text{First}_k(x_1) = \text{First}_k(x_2) \), ensure that \( \alpha_1 \) and \( \alpha_2 \) are identical:
-        If \( \alpha_1 \neq \alpha_2 \) when the lookahead sets are equal, the grammar is not LL(k).
-
-4. Conclude LL(k) Status
-
-    If all pairs of distinct production rules for every non-terminal either have different lookahead sets or identical right-hand sides, the grammar is LL(k).
-    If any pair of rules has the same lookahead sets but different right-hand sides, the grammar is not LL(k).
+\subsection{SLR(k) Grammar}
+A CFG is SLR(k) if:
+It is LR(k) (i.e., it can be parsed by an LR(k) parser).
+The parsing table has no shift/reduce or reduce/reduce conflicts when using the FOLLOW sets to resolve conflicts.
 
 
-\subsection{Strong LL(k)}    
-A $CFG G= \langle V ,T ,P,S \rangle $ is strong LL(k) 
-iff, for all pairs of rules $A→ \alpha_1$ and $A→ \alpha_2$ in $P ($with $\alpha_1 = \alpha_2)$:
-$First^k ( \alpha_1 Follow^k (A) ) \cap First^k (\alpha_2 Followk (A) ) = \varnothing $
+\subsection{LALR(k) Grammar}
+A CFG is LALR(k) if:
+It is LR(k).
+The parsing table can be constructed using LALR(k) lookahead by merging states with the same core (LALR(k) states).
 
-%SLR(k)
+LALR(k) is a refinement of SLR(k) that reduces the number of states while maintaining LR(k) power.
 
-%LALR(k)
-
-\subsubsection{LR(k)}
-The main limitation to the bottom-up
-parser we have just defined is that it is non-deterministic. There are two
-sources of non-determinism in this parser:
-
-Reduce-Reduce conflict: such conflicts occur when the top of the stack is
-the handle to two different rules, and the parser cannot decide which
-rule to reduce;
-
-Shift-Reduce conflicts: such conflicts occur when the top of the stack con-
-stitutes a handle to some rule, but the parser cannot determine whether
-it should continue shifting or whether it should reduce now.
-
-
-
-
-%To determine if a grammar is LR(1), you need to check if it can be parsed using an LR(1) parser without conflicts. An LR(1) parser is a type of bottom-up parser that reads input from left to right and produces a rightmost derivation in reverse. The "1" in LR(1) indicates that the parser uses 1 lookahead token to make parsing decisions.
-
-%Here's a step-by-step method to determine if a grammar is LR(1):
-
-%\textbf{1. Construct the LR(1) Items}\\
-
-%LR(1) items are similar to LR(0) items but with an additional lookahead component. An LR(1) item is of the form `[A → α $\bullet$ β, a]` where:
-
-%`A → αβ` is a production.
-%`$\bullet$` indicates the current position in the production.
-%`a` is a lookahead token (a terminal that may appear next in the input).
-
-%To construct the LR(1) items:
-
-%Start with an augmented grammar by adding a new start symbol \(S'\) with a production \(S' \to S\), where \(S\) is the original start symbol of the grammar.
-
-%Create the initial LR(1) item for the augmented production: `[(S' → $\bullet$S, $)]`, where `$` is the end-of-input marker.
-
-%\textbf{2. Compute the Closure of LR(1) Items}\\
-
-%The closure of a set of LR(1) items includes all items that could be valid in that parsing context. To compute the closure:
-
-%1. Start with an initial set of items (e.g., the initial LR(1) item).
-%2. For each item `[A → α $\bullet$ Bβ, a]` in the set, if `$\bullet$` is before a non-terminal `B`, for every production `B → γ`:
-%   For each terminal `b` in FIRST(βa), add the item `[B → $\bullet$γ, b]` to the set if it is not already present.
-%3. Repeat until no more items can be added.
-
-%\textbf{3. Construct the Canonical Collection of LR(1) Sets}\\
-
-%The canonical collection is a set of all unique LR(1) item sets (states). To construct it:
-
-%1. Start with the closure of the initial LR(1) item set as the first state.
-%2. For each state and each grammar symbol (terminal or non-terminal), compute the goto for that symbol:
-%   The goto of a set of items for a symbol `X` is a set of items you get by moving the `$\bullet$` past `X` in all items and then taking the closure of the resulting set.
-%3. If the resulting set of items is new (i.e., not already in the collection), add it as a new state.
-%4. Repeat until no new states can be added.
-
-%\textbf{4. Construct the LR(1) Parsing Table}\\
-
-%Using the canonical collection of LR(1) sets, construct the parsing table:
-
-%Action Table: Specifies parser actions (shift, reduce, accept) for terminals.
-%Goto Table: Specifies transitions between states for non-terminals.
-
-%To fill in the table:
-
-%Shift: For each item `[A → α $\bullet$ aβ, b]` where `a` is a terminal, if `goto(I, a) = J`, then set `ACTION[I, a]` to "shift J".
-%Reduce: For each item `[A → α $\bullet$, a]`, set `ACTION[I, a]` to "reduce A → α".
-%Accept: If the item is `[S' → S$\bullet$, $]` in some state, set `ACTION[I, $]` to "accept".
-%Goto: If `goto(I, A) = J` for non-terminal `A`, set `GOTO[I, A] = J`.
-
-%\textbf{5. Check for Conflicts}\\
-
-%An LR(1) grammar must have no parsing conflicts:
-
-%Shift-Reduce Conflict: Occurs when a table entry requires both a shift and a reduce action for the same terminal.
-%Reduce-Reduce Conflict: Occurs when a table entry requires more than one reduce action for the same terminal.
-
-%\textbf{6. Determine if the Grammar is LR(1)}\\
-
-%If the LR(1) parsing table has no conflicts (no shift-reduce or reduce-reduce conflicts), then the grammar is LR(1).
-
-
-%\subsection{Languages}
-
-%\subsubsection{Regular langauges}
-%Regular languages are those that can be recognized by a finite automaton or expressed by a regular expression.
-
-%\subsubsection{Context-free languages}
-%Context-free languages are those that can be recognized by a pushdown automaton or expressed by a context-free grammar.
+\subsection{LR(k) Grammar}
+A CFG is LR(k) if:
+It has no shift/reduce or reduce/reduce conflicts for a given k.
+The grammar can be parsed by an LR(k) parser using the complete parsing table.

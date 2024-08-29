@@ -1,61 +1,14 @@
-%TODO clean up
+%TODO Done
 
-\subsection{Canonical Finite State Machine}
-To construct the canonical finite-state machine (FSM) for the given grammar, we'll first convert the context-free grammar into a set of rules and then build the corresponding FSM. Let's analyze the grammar:
+\section{Canonical Finite State Machine Example}
+Grammar:\\
+$S \rightarrow A\$$\\
+$A \rightarrow aCD$\\
+$A \rightarrow ab$\\
+$C \rightarrow c$\\
+$D \rightarrow d$\\
 
+CFSM:\\
+\includegraphics[height=5cm]{./images/Screenshot 2024-08-29 at 10.23.12.png}
 
-\textbf{Grammar Rules}
-1. \( S \rightarrow A\$ \)
-2. \( A \rightarrow aCD \)
-3. \( A \rightarrow ab \)
-4. \( C \rightarrow c \)
-5. \( D \rightarrow d \)
-
-\textbf{Terminal Set}
-\( T = \{a, b, c, d, \$\} \)
-
-\textbf{Steps to Construct the Canonical FSM}
-
-1. Identify the States and Transitions:
-   Each grammar rule represents a potential state transition in the FSM.
-   The FSM starts in an initial state \(q_0\) representing the starting symbol \(S\).
-   Transitions occur based on the production rules until we reach the terminal symbol \( \$ \).
-
-2. Construct the States and Transitions:
-   Start with state \(q_0\) representing the start symbol \( S \). From \(q_0\), we transition to state \(q_1\) on recognizing the production \( S \rightarrow A\$ \).
-   From state \(q_1\), recognizing \(A\) gives two potential transitions: \( A \rightarrow aCD \) and \( A \rightarrow ab \). This will create states \(q_2\) and \(q_3\) respectively.
-   From state \(q_2\), reading \(a\) leads to state \(q_4\) representing \( C \) and \( D \).
-   From state \(q_3\), reading \(a\) then \(b\) leads to state \(q_7\).
-   States for \(C\) and \(D\) follow their respective productions \(C \rightarrow c\) (leading to state \(q_5\)) and \(D \rightarrow d\) (leading to state \(q_6\)).
-   Final state \(q_7\) represents recognizing the terminal \( \$ \).
-
-3. Create the Transitions:
-   \(q_0 \xrightarrow{A\$} q_1\)
-   \(q_1 \xrightarrow{aCD} q_2\), \(q_1 \xrightarrow{ab} q_3\)
-   \(q_2 \xrightarrow{a} q_4\)
-   \(q_3 \xrightarrow{a} q_4 \xrightarrow{b} q_7\)
-   \(q_4 \xrightarrow{c} q_5 \xrightarrow{d} q_6\)
-   \(q_5 \xrightarrow{d} q_6\)
-   \(q_6 \xrightarrow{\$} q_7\)
-
-4. Define Acceptance States:
-   The FSM accepts on state \(q_7\) which represents the full parsing of the input as per the grammar rules.
-
-\textbf{Canonical FSM Representation}
-
-Based on the above analysis, here is a state transition table or diagram representation:
-
-States: \(q_0, q_1, q_2, q_3, q_4, q_5, q_6, q_7\)
-Start State: \(q_0\)
-Accept State: \(q_7\)
-Transitions:
-  \(q_0 \xrightarrow{A} q_1\)
-  \(q_1 \xrightarrow{a} q_2, q_1 \xrightarrow{a} q_3\)
-  \(q_2 \xrightarrow{c} q_4\)
-  \(q_4 \xrightarrow{d} q_5\)
-  \(q_3 \xrightarrow{b} q_6\)
-  \(q_6 \xrightarrow{\$} q_7\)
-
-\textbf{Conclusion}
-
-This FSM effectively simulates the recognition process for the given grammar. Each transition represents moving from one non-terminal/terminal to another following the grammar's production rules until the terminal \( \$ \) is recognized, signifying acceptance of the string.
+The language of this grammar is LR(1).

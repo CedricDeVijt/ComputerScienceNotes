@@ -1,6 +1,6 @@
 %DONE
 
-\subsection{Example Languages}
+\section{Example Languages}
 \textbf{LR(0) language that is not LL(1)}\\
     $L = \{a^n b^n | n \geq 0\}$
 
@@ -10,11 +10,11 @@ $L = \{a^n b^n c^m | n, m \geq 1\} $\
 \textbf{LL(2) language that is not LL(1)}\\
 $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
 
-\textbf{CFL that in not LR(1)}\\
+\textbf{CFL that is not LR(1)}\\
     English language
 
 \subsection{Example Grammars}
-\textbf{LL(1) grammar that is not strongly LL(1)}\\
+\textbf{LL(1) grammar that is not strongly LL(1)}\\ % FALSE
     $S \rightarrow A | B$\\
     $A \rightarrow aA | a$\\
     $B \rightarrow bB | b$
@@ -30,7 +30,15 @@ $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
     $B \rightarrow b$\\
     $C \rightarrow c$
 
-\textbf{CFG that in not LR(1)}\\
+\textbf{CFG that is not LR(1)}\\
     $S\rightarrow aB|aDc$\\
     $B\rightarrow bBc|c$\\
     $D\rightarrow bc|c$
+
+\subsection{Special examples}
+\textbf{LL(1) language with a non-LL(1) grammar}
+$L = \{ w \mid w \text{ is a string of balanced parentheses} \}$\\
+Grammar:\\
+$S \rightarrow S S$\\
+$S \rightarrow ( S )$\\
+$S \rightarrow \epsilon$\\

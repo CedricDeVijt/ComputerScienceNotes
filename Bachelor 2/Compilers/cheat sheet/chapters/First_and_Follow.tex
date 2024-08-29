@@ -1,34 +1,25 @@
 % DONE
 
-\subsection{Calculate First and Follow}
-\subsubsection{First $^k(\alpha)$}
-1. Initialization:
-   For every terminal $a$, set $First^k(a) = {a}$ (since a terminal generates only itself).
-   Initialize $First^k(A)$ to an empty set for every variable $A$.
+\section{First and Follow}
+\subsection{Calculating FIRST}
+The $FIRST^k(\alpha)$ set for a non-terminal $S$ is defined as:
+    $FIRST^k(\alpha)$ includes terminals that appear as the first $k$ symbols in any derivation of $S$.\\
+    To compute $FIRST^k(\alpha)$:
+    \begin{enumerate}
+        \item For each production $S \to \alpha$, add the first terminal of $\alpha$ to $FIRST^k(\alpha)$.
+        \item If $\alpha$ starts with a non-terminal $A$, include $FIRST^k(A)$.
+        \item Consider $k$-length lookahead, ensuring that $FIRST^k(\alpha)$ captures all terminals up to $k$ symbols.
+    \end{enumerate}
 
-2. Iterative Update:
-   Repeat until no changes occur:
-     For each variable $A$ with a production rule $A → X_1 X_2 ... X_n$:
-     Compute $First^k(X_1)$, $First^k(X_2)$, ..., $First^k(X_n)$.
-     Concatenate elements from $First^k(X_1)$, $First^k(X_2)$, ..., $First^k(X_n)$ and truncate the results to length $k$.
-       Update $First^k(A)$ with these truncated elements if they are not already present.
-
-3. Completion:
-   The process stops when no $First^k$ sets are updated in an iteration, meaning all sets have stabilized.
-
-\subsubsection{Follow $^k(\alpha)$}
-1. Initialization:
-   Initialize $Follow^k(X)$ to an empty set for each variable $X$.
-
-2. Iterative Update:
-   Repeat until no changes occur:
-     For each rule $A → αBβ$:
-       Compute $First^k(β)$ (where β is the part of the right-hand side following $B$).
-       Add $First^k(β)$ elements to $Follow^k(B)$, completing them with $Follow^k(A)$ if needed to ensure they reach length $k$.
-       Update $Follow^k(B)$ with these completed elements if they are not already present.
-
-3. Completion:
-   The process stops when no $Follow^k$ sets are updated in an iteration, meaning all sets have stabilized.
+\subsection{Calculating FOLLOW}
+The $FOLLOW^k(\alpha)$ set for a non-terminal $S$ is defined as:
+    $FOLLOW^k(\alpha)$ includes terminals that can appear immediately after $S$ in some string derivable from the start symbol, considering up to $k$ symbols.\\
+    To compute $FOLLOW^k(\alpha)$:
+    \begin{enumerate}
+        \item For each production $A \to \alpha S \beta$, add $FIRST^k(\beta)$ to $FOLLOW^k(\alpha)$.
+        \item If $\beta$ can derive the empty string $\epsilon$, add $FOLLOW^k(A)$ to $FOLLOW^k(\alpha)$.
+        \item Ensure that $FOLLOW^k(\alpha)$ includes all possible terminals appearing after $S$ within $k$ symbols.
+    \end{enumerate}
 
 
 %\subsubsection{ItemFollows}
