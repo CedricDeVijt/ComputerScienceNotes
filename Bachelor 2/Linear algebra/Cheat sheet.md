@@ -103,6 +103,11 @@ _(Empty)_
 - **Diagonal Dominance**:
   If matrix $A$ is strictly diagonally dominant, then $A$ is positive definite.
 
+- **Property**:
+  If $A \in \mathbb{S}^{2 \times 2}$ then it's eigenvalues are positive if:
+    1. $a_{11} > 0$
+    2. $a_{11}a_{22}>a_{12}^2$
+    
 ### Positive Semidefinite Matrices
 - **Definition**:
   A symmetric matrix is positive semidefinite if its smallest eigenvalue is 0.
