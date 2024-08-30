@@ -1,5 +1,6 @@
 %DONE
 
+\begin{samepage}
 \section{Example Languages}
 \textbf{LR(0) language that is not LL(1)}\\
     $L = \{a^n b^n | n \geq 0\}$
@@ -12,8 +13,9 @@ $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
 
 \textbf{CFL that is not LR(1)}\\
     English language
-
+\end{samepage}
 \subsection{Example Grammars}
+\begin{samepage}
 \subsubsection{LL(k) Grammar}
 \textbf{LL(1) grammar that is not strongly LL(1)}\\ % Cursus p146 Theorem 5.4.
     Theorem 5.4 "All LL(1) grammars are also strong LL(1), i.e. the classes of LL(1) and strong LL(1) grammars coincide."
@@ -40,7 +42,8 @@ $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
     $S\rightarrow ab$\\
     $S\rightarrow ac$\\
     $S\rightarrow a$\\
-    
+\end{samepage}
+\begin{samepage}
 \subsubsection{LALR(k) Grammar}
 \textbf{LALR(1) grammar that is not SLR(1)}\\ % Cursus p197 Figure 6.17: An LALR(1) grammar that is not SLR(1) and not LL(1) but LL(2).
     $S \rightarrow Aa$\\
@@ -62,7 +65,8 @@ $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
     $S\rightarrow Bb^k d$\\
     $A\rightarrow a$\\
     $B\rightarrow a$\\
-
+\end{samepage}
+\begin{samepage}
 \subsubsection{Context Free Grammar}
 \textbf{CFG that is not LR(k)}\\ % Cursus p199 Figure 6.20: A grammar which is not LR(k) for any k.
     $S \rightarrow aAc$\\
@@ -73,7 +77,8 @@ $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
     $S \rightarrow a$\\
     $S \rightarrow abS$\\
     
-
+\end{samepage}
+\begin{samepage}
 \subsubsection{SLR(k) Grammar}
 \textbf{SLR(1) grammar that is not LR(0)}\\ % Cursus 176 + p197 "Figure 6.7 is SLR(1) but not LR(0)"
     $S\rightarrow Exp$\\
@@ -92,3 +97,4 @@ Grammar:\\
     $S \rightarrow ( S )$\\
     $S \rightarrow \epsilon$\\
 
+\end{samepage}
