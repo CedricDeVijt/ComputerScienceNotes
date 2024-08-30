@@ -8,3 +8,8 @@
 \textbf{LL(k) language}: if there is an LL(k) grammar G_L that accepts it, i.e.: L(G_L )= L.
 
 \textbf{Maximal munch}: the longest possible string that can be matched by a token is matched.
+
+
+\textbf{Strongly LL(k) Grammar}: A $CFG G = \langle V ,T ,P,S \rangle $ is strong LL(k) iff, for all pairs of rules $A \rightarrow \alpha_1$ and $A \rightarrow \alpha_2$ in $P$. (with $\alpha_1 \neq \alpha_2$$): 
+
+$First^k (\alpha_1 \cdot Follow^k (A)) \cap First^k (\alpha_2 \cdot Follow^k (A)) = \emptyset$
