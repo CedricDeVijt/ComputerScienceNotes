@@ -121,8 +121,26 @@ _(Empty)_
 
 ## Ch11 Singular Value Decomposition
 
+### Singular Values
+- **Definition**:
+  Let $A \in \mathbb{R}^{m \times n}$ be an arbitrary matrix. The singular values of $A$ are defined as the square roots of the non-negative eigenvalues of $A^T A$. If $\lambda_1, \lambda_2, \ldots, \lambda_r$ are the non-negative eigenvalues of $A^T A$, then the singular values $\sigma_i$ are:
+  $\sigma_i = \sqrt{\lambda_i} \quad \text{for } i = 1, 2, \ldots, r$
+
+### Left and Right Singular Vectors
+- **Left Singular Vectors**:
+  The left singular vectors $u_i$ are the eigenvectors of $A A^T$.
+- **Right Singular Vectors**:
+  The right singular vectors $v_i$ are the eigenvectors of $A^T A$.
+
+### Singular Value Decomposition
+- **Definition**:
+  Let $A \in \mathbb{R}^{m \times n}$ be an arbitrary matrix. The Singular Value Decomposition (SVD) of $A$ is given by:
+  $A = U \Sigma V^T$
+  where:
+  - $U \in \mathbb{R}^{m \times m}$ is an orthogonal matrix whose columns are the left singular vectors $u_i$.
+  - $\Sigma \in \mathbb{R}^{m \times n}$ is a diagonal matrix with the singular values $\sigma_i$ on the diagonal.
+  - $V \in \mathbb{R}^{n \times n}$ is an orthogonal matrix whose columns are the right singular vectors $v_i$.
 
 
- 
-Play some domino
+WOW you have reached the end. Play some domino!
 🁁🁂🁋
