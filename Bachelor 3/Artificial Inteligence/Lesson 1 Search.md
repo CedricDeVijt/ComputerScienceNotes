@@ -33,8 +33,6 @@
 ### State Space Graphs
 - Represent a **mathematical model** of a search problem.
 - **Nodes**: Represent states; **Arcs**: Represent actions.
-
-![[Pasted image 20241002133236.png]]
 ### Search Trees
 - A **search tree** represents "what if" scenarios.
 - The **root node** is the start state, and **children** are the successors.
@@ -43,15 +41,17 @@
 
 ![[Pasted image 20241002133435.png]]
 ## 1.4 Search Strategies
-
-The **fringe** is the collection of all nodes that are generated but not yet expanded.
-
+### Searching with a Search tree
+- Expand out potential plans (tree nodes)
+- Maintain a **fringe** (collection of all nodes that are generated but not yet expanded) of partial plans under consideration
+- Try to expand as few nodes as possible
 ### Depth-First Search (DFS)
 - Expands the **deepest node** first.
 - Fringe is managed as a **LIFO stack**.
 - **Properties**:
   - Space complexity: **O(bm)**.
   - **Not optimal**: Finds leftmost solution regardless of cost.
+![[Pasted image 20241002142152.png]]
 
 ### Breadth-First Search (BFS)
 - Expands the **shallowest node** first.
@@ -59,7 +59,9 @@ The **fringe** is the collection of all nodes that are generated but not yet exp
 - **Properties**:
   - **Complete** if a solution exists.
   - **Optimal** if all step costs are equal.
+![[Screenshot 2024-10-02 at 14.23.18.png]]
 
+![[Screenshot 2024-10-02 at 14.22.47.png]]
 ### Iterative Deepening
 - **Combines** advantages of DFS (space efficiency) and BFS (finding the shallowest solution).
 - Expands DFS to increasing depths until a solution is found.
@@ -70,6 +72,8 @@ The **fringe** is the collection of all nodes that are generated but not yet exp
 - Expands nodes based on **cumulative cost** using a **priority queue**.
 - Guarantees finding the **least-cost path** if costs are positive.
 - **Issues**: May expand in **all directions** without guidance towards the goal.
+![[Screenshot 2024-10-02 at 14.24.35.png]]
+![[Screenshot 2024-10-02 at 14.24.12.png]]
 
 ## 1.6 Informed Search
 
