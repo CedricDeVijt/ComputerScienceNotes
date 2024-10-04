@@ -11,12 +11,13 @@
 - A process includes:
   - **User Stack**: Manages procedure calls.
   - **Heap**: Memory for dynamic allocations.
-
 ## 1.2 Process Attributes
 - **Process Control Block (PCB)**: A data structure containing the essential attributes of a process:
-  - **Process Identification**: Unique ID, parent process info, user ID.
-  - **Processor State Information**: Reflects the contents of CPU registers.
-  - **Process Control Information**: Manages the process's resources, state, and scheduling data.
+  1. **Process Identification**: Unique ID, parent process info, user ID.
+  2. **Processor State Information**: Reflects the contents of CPU registers.
+  3. **Process Control Information**: Manages the process's resources, state, and scheduling data.
+
+![[Pasted image 20241004173346.png]]
 
 ### Process Image
 - The combination of **code**, **data**, **stack**, and **PCB** forms the **process image**.
@@ -31,6 +32,7 @@
   - **Exit**: Process has finished execution but may still hold data for debugging.
   - **Suspend**: Temporarily removed from memory and swapped out.
 
+![[Pasted image 20241004173919.png]]
 ### State Diagram
 - A typical OS manages state transitions using states like **Ready**, **Blocked**, **Running**, **New**, and **Exit**.
 - Example: **UNIX Process States** include finer distinctions, such as **Kernel Running** and **User Running** modes.
