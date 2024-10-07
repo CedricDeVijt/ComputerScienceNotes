@@ -1,5 +1,3 @@
-# 1 Processes
-
 ## 1.1 What is a Process?
 - **Definition**: A **process** represents a program in execution.
 - The operating system (OS) manages multiple processes to maximize **processor utilization**.
