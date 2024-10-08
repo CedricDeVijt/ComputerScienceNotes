@@ -13,13 +13,15 @@
 - **Cohesion**: How well the elements within a component work together.
   - Aim: Minimize coupling, maximize cohesion.
 
-
+### 3.1.4 Patterns
+- **Pattern**: The essence of a solution to a recurring problem in a particular context
+- **Pattern Form**: usually written down following a semi-structured template. They have a name and allow experts to have deep design discussions in a few words
 # 3.2 Macro Architectures
 
-### 3.2.1 Layered Architecture
+### 3.2.1 Layered Architecture d14
 - Layers separate **concerns**: each layer provides services to the one above and accesses the one below.
   
-### 3.2.2 Pipes and Filters
+### 3.2.2 Pipes and Filters d16
 - System is divided into **filters** that process data streams and **pipes** that connect them.
   - **Example**: UNIX commands, CGI scripts for web forms.
   
