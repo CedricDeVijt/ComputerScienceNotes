@@ -41,9 +41,6 @@
 ---
 
 # **Key Points to Remember**
-- **Checkers** was solved in 2007.
-- **Chess**: Deep Blue defeated Garry Kasparov in 1997.
-- **Go**: AlphaGo revolutionized Go strategies in 2016 using **Monte Carlo Tree Search**.
 - **Minimax Algorithm**: Alternates between players who maximize or minimize outcomes in a **zero-sum game**.
 - **Alpha-Beta Pruning** can drastically reduce the number of nodes evaluated in minimax without affecting the final result.
 - **Evaluation Functions** replace terminal values in depth-limited search, allowing for approximate game evaluations.
