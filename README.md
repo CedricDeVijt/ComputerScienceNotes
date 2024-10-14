@@ -8,3 +8,9 @@
 - Computer networks: 1001WETCON
 - Linear algebra: 1500WETLAL
 - Machines en berekenbaarheid: 1001WETMAB
+## Bachelor 3
+- Artificial Inteligence: 1500WETAIN
+- Software Engineering: 1001WETSEN
+
+## Korf Vakken
+- Media en digitale samenleving: 1006CPGVKA

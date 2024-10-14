@@ -19,11 +19,6 @@
   - **Start State** and **Goal Test**.
 - A **solution** is a sequence of actions leading from the start state to a goal state.
 
-### Example: Traveling in Romania
-- **State space**: Cities.
-- **Successor function**: Roads and distances.
-- **Goal test**: Reaching Bucharest.
-
 ### State Space Representation
 - The **world state** includes every last detail of the environment
 - In **search state**, include only the details needed for planning (abstraction).
@@ -38,7 +33,7 @@
 - The **root node** is the start state, and **children** are the successors.
 - Each **node** represents a **plan**, not just a state.
 - For most problems, we can never actually build the whole tree
-
+- Cyclic graphs from infinitely big search trees
 ![[Pasted image 20241002133435.png]]
 ## 1.4 Search Strategies
 ### Searching with a Search tree
@@ -66,6 +61,8 @@
 - **Combines** advantages of DFS (space efficiency) and BFS (finding the shallowest solution).
 - Expands DFS to increasing depths until a solution is found.
 
+![[Pasted image 20241014094908.png]]
+
 ## 1.5 Cost-Sensitive Search
 
 ### Uniform Cost Search (UCS)
@@ -74,7 +71,6 @@
 - **Issues**: May expand in **all directions** without guidance towards the goal.
 ![[Screenshot 2024-10-02 at 14.24.35.png]]
 ![[Screenshot 2024-10-02 at 14.24.12.png]]
-
 ## 1.6 Informed Search
 
 ### Heuristics
@@ -119,3 +115,23 @@
 - **Combines** backward (cost to state) and forward (estimate to goal) costs.
 - The **key** to A* efficiency is a **well-designed heuristic**.
 - **Graph Search** version of A* is optimal if heuristics are consistent.
+
+
+## 1.10 Complexity of Search Algorithm
+
+| **Algorithm**            | **Time Complexity**         | **Space Complexity**        | **Complete** | **Optimal**              |
+| ------------------------ | --------------------------- | --------------------------- | ------------ | ------------------------ |
+| **Depth-First Search**   | $O(b^m)$                    | $O(bm)$                     | No           | No                       |
+| **Breadth-First Search** | $O(b^s)$                    | $O(b^s)$                    | Yes          | Yes (if costs are equal) |
+| **Uniform Cost Search**  | $O(b^{(C*/ε)})$             | $O(b^{(C*/ε)})$             | Yes          | Yes                      |
+| **Iterative Deepening**  | $O(b^s)$                    | $O(bs)$                     | Yes          | Yes                      |
+| **Greedy Search**        | $O(b^m)$                    | $O(b^m)$                    | No           | No                       |
+| **A* Search**            | $O(b^m)$ or $O(b^{(C*/ε)})$ | $O(b^m)$ or $O(b^{(C*/ε)})$ | Yes          | Yes                      |
+
+- **b**: branching factor (average number of successors per state)
+- **m**: maximum depth of the search space
+- **s**: depth of the shallowest solution
+- **C***: cost of the optimal solution
+- **ε**: smallest arc cost
+
+![[Pasted image 20241014092213.png]]
