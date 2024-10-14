@@ -19,25 +19,84 @@ In a modern computer system, the OS coordinates tasks such as video file reprodu
 ## 1.5 What is a Process?  
 A **process** is a program in execution that consists of the program code, data, stack, and **Process Control Block (PCB)**, which holds critical information such as process ID, user ID, and state information.
 
-- **Process States**: 
-  - **Running**: Actively using the CPU.
-  - **Ready**: Ready to run but waiting for CPU time.
-  - **Blocked**: Waiting for I/O or other events.
+Each process is composed of several parts:
+- **Text (Code)**: The program code that the process is executing.
+- **Data**: Static and dynamic data that the process manipulates.
+- **User Stack**: Used to store temporary data such as function parameters, return addresses, and local variables.
+- **Kernel Stack**: Supports kernel mode operations such as system calls.
+- **Process Control Block (PCB)**: A data structure used by the operating system to store all the information about the process.
+## 1.6 Process Control Block (PCB)
+The **Process Control Block (PCB)** contains crucial data that the operating system uses to manage processes. It acts as a repository for information about the current state of the process and its characteristics. Key components of a PCB include:
 
+1. **Process Identification**:
+   - **Process ID (PID)**: A unique identifier for the process.
+   - **User ID**: The user that owns the process.
+   - **Parent Process ID**: ID of the process that spawned the current one.
+
+2. **Processor State Information**:
+   - Data related to the CPU state, including contents of all **registers** (e.g., program counter, stack pointer).
+
+3. **Process Control Information**:
+   - **Process State**: Current state (e.g., Running, Ready, Blocked).
+   - **Scheduling Information**: Priority, process queue pointers.
+   - **Memory Management Info**: Base and limit registers, page tables, segment tables
+# 1.7 Process states
+A process can exist in one of several states during its lifetime. These states are managed by the operating system to ensure efficient CPU utilization and task execution. Below are the main process states:
+
+- **New**:  
+  The process is being created. The operating system has recognized the process and is setting it up in memory, but it has not started executing yet.
+- **Running**:  
+  The process is currently being executed by the CPU. Only one process can be in the running state per CPU core at any given time.  
+  - The **process control block** is updated continuously to reflect the process's current execution state.
+- **Ready**:  
+  The process is ready to run but is waiting for CPU time. It has all the necessary resources and can execute when the CPU becomes available.
+  - The process is moved to the **ready queue** by the OS scheduler.
+- **Blocked (or Waiting)**:  
+  The process cannot proceed until some external event occurs, such as input/output operations or receiving a resource. It remains in this state until the event is resolved.
+  - Example: Waiting for a file to be read from disk or user input.
+- **Suspended (or Swapped)**:  
+  The process is temporarily moved from main memory (RAM) to secondary storage (disk) to free up memory. This happens when system memory is low, and the process is not immediately needed.
+  - **Blocked-Suspend**: A blocked process that is swapped out.
+  - **Ready-Suspend**: A ready process that is swapped out to allow more critical tasks to proceed.
+- **Terminated**:  
+  The process has finished execution and is removed from the process table. Its resources are freed, and the process ID (PID) is released.  
+  - The process can reach this state either after successful execution or due to errors/interruptions.
+
+![[Pasted image 20241004173919.png]]
 ## 1.6 Process Switching and Privilege Levels  
 - **Process Switch**: Occurs when the OS interrupts a running process, saves its state, and switches to another process.
 - **Mode Switch**: Involves switching between user mode and kernel mode, allowing the system to perform privileged operations.
 
+![[Pasted image 20241014172742.png]]
 ## 1.7 What are Threads?  
 Threads allow multiple sequences of execution within a process, sharing resources like code and data, but having their own stack. This improves efficiency, especially in lightweight, parallel tasks.
+
+![[Pasted image 20241014173209.png]]
 
 ## 1.8 Processes vs. Threads  
 - **Processes**: Slower in creation and switching, require kernel-level communication for shared resources.
 - **Threads**: Faster in creation and switching, but synchronization is not guaranteed.
 
+| **Criteria**                                     | **Multiple Processes**                                                                 | **Multiple Threads**                                                                   |
+|--------------------------------------------------|---------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| **Creation & Switching Speed**                   | Slower in creation, switching (10x) (-)                                                | Fast in creation, switching (+)                                                       |
+| **Communication & Sharing**                      | Requires process communication or sharing, which involves the kernel (-)               | Immediate information exchange (+)                                                    |
+| **Concurrency**                                  | Concurrency guaranteed by OS (+)                                                       | Synchronization and mutual exclusion not guaranteed (-)                               |
+| **Process States**                               | Different process states (+)                                                           | One process state (for user-level threads) (-)                                        |
+| **Swapping**                                     | Independently swapped (+)                                                             | Jointly swapped (-)                                                                   |
+
 ## 1.9 User-Level vs. Kernel-Level Threads  
 - **User-Level Threads (ULTs)**: Managed by the application, faster thread switching, but blocked processes can prevent further execution.
 - **Kernel-Level Threads (KLTs)**: Managed by the OS, allows multiple processors, but thread switching involves significant overhead.
+
+
+| **Criteria**                                         | **User-Level Threads (ULTs)**                                                          | **Kernel-Level Threads (KLTs)**                                                     |
+|------------------------------------------------------|----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **Thread Switching Speed**                           | Thread changes are fast (+)                                                            | Thread change/execution is slower (10-30x) due to OS scheduling (-)                |
+| **Scheduling**                                       | Application-specific scheduling (+)                                                    | OS-controlled scheduling (-)                                                      |
+| **Processor Utilization**                            | Processor independent (+)                                                              | Processor-dependent (-)                                                           |
+| **Blocking**                                         | Process is blocked by calling one thread unless jacketing (-)                          | A single thread blocked will not block others (+)                                 |
+| **Processor Use**                                    | Can only use 1 processor (-)                                                           | Can use multiple processors simultaneously (+)                                    |
 
 ---
 
@@ -64,5 +123,3 @@ Threads allow multiple sequences of execution within a process, sharing resource
 - **Process States**: Running, Ready, Blocked.
 - **User-Level Threads (ULTs)**: Fast but limited in CPU usage.
 - **Kernel-Level Threads (KLTs)**: Slow but allows for multiple processor usage.
-
-This outline should make studying operating systems easier by focusing on essential concepts and clear definitions.
