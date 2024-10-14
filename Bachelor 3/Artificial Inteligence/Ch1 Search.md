@@ -69,8 +69,7 @@
 - Expands nodes based on **cumulative cost** using a **priority queue**.
 - Guarantees finding the **least-cost path** if costs are positive.
 - **Issues**: May expand in **all directions** without guidance towards the goal.
-![[Screenshot 2024-10-02 at 14.24.35.png]]
-![[Screenshot 2024-10-02 at 14.24.12.png]]
+![[Screenshot 2024-10-02 at 14.24.35.png]] ![[Screenshot 2024-10-02 at 14.24.12.png]]
 ## 1.6 Informed Search
 
 ### Heuristics
@@ -81,6 +80,7 @@
 - Expands the node that **seems closest** to the goal.
 - May fail as it doesn't account for the actual cost to reach the goal.
 
+![[Pasted image 20241014101442.png |300]] ![[Pasted image 20241014101454.png |300 ]]
 ### A* Search
 - **Combines** UCS and Greedy Search:
   - **f(n) = g(n) + h(n)**: Total cost (g) + estimated cost to goal (h).
