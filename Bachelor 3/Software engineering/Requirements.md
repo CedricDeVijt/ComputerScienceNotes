@@ -57,6 +57,4 @@
 - **Student Interaction**: Enrollment management, personalized recommendations, interactive learning, assignment handling, and grading feedback.
 - **Scalability and Availability**: 99.99% uptime for video streaming, flexible infrastructure for varying demands.
 - **Data Management**: Secure storage, integration with existing systems, and compliance with data retention policies.
-- **Adaptability**: Platform must evolve with changing academic and administrative needs, with ease of adding features for IT developers. 
-
-These requirements collectively aim to ensure a modern, secure, and efficient online learning experience for students, faculty, and administrators at the University of Antwerp.
+- **Adaptability**: Platform must evolve with changing academic and administrative needs, with ease of adding features for IT developers.
