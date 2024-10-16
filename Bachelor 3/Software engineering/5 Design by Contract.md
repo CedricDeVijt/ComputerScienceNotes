@@ -84,9 +84,7 @@ You can substitute a subclass for any of its superclasses **if**:
 - **Consumer-driven contract testing** ensures that services work independently.
 - Contracts define the relationship between microservices.
 
-### **Banking Example**
-- **Customers** interact with their **accounts**: depositing, withdrawing, transferring money.
-- **Contracts** guarantee secure and reliable transactions using preconditions and postconditions.
+![[Pasted image 20241016121416.png]]
 
 ---
 # Key Points to Remember
