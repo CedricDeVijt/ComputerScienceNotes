@@ -12,6 +12,19 @@ From the system's perspective, the OS is a **resource manager**, ensuring effici
 The **kernel** is the core part of the OS, responsible for resource management, security, and process scheduling. It always runs on the system and interacts closely with hardware.
 
 ![[Pasted image 20241014163947.png]]
+
+### Differences kernel and OS
+
+| **Aspect**           | **Kernel**                                                      | **Operating System (OS)**                                                   |
+| -------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| **Scope**            | Core component managing hardware and low-level system resources | Complete software package managing hardware, software, and user interface   |
+| **Role**             | Manages CPU, memory, devices, and process control               | Provides a platform for user interaction and software execution             |
+| **User Interaction** | Typically not directly interacted with by users                 | Directly interacted with through GUIs or CLIs                               |
+| **Components**       | Handles process scheduling, memory, and hardware control        | Includes the kernel, system libraries, user interface, and system utilities |
+| **Example**          | Linux Kernel, Windows NT Kernel                                 | Linux OS (Ubuntu, Fedora), Windows 11, macOS                                |
+
+The **kernel** is the foundational core that controls all the interactions between hardware and software, while the **operating system** is the broader system that includes the kernel, utilities, and interfaces necessary for user and software interaction.
+
 ## 1.4 Modern Computer Systems  
 In a modern computer system, the OS coordinates tasks such as video file reproduction, where it manages **concurrency**, **memory**, and **I/O operations**.
 
