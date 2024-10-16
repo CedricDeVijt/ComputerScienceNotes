@@ -76,9 +76,11 @@
 - **Sprint Reviews**: Regular checkpoints to evaluate the progress.
 - **Definition of Done**: A checklist to ensure that all work meets quality standards.
 
+![[Screenshot 2024-10-15 at 15.39.58.png]]
 ### Scaling Scrum
 - Use **Scrum of Scrums** and **component/feature teams** to manage larger projects.
 
+![[Pasted image 20241015154050.png]]
 # 4.8: Conclusion
 - The goal of project management is not about creating a perfect plan but about detecting deviations early and making necessary adjustments.
 
