@@ -75,7 +75,3 @@
   - Attribute grammars offer a means of integrating semantics into syntax.
   - PDAs and CFGs define the same language class, but deterministic machines are preferred for efficiency.
   - Grammars can be simplified for parsing using automated tools.
-
-# Next up
-[[Lecture 3.1 LLVM IR, Specification]]
-

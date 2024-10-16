@@ -70,6 +70,3 @@
 ### Intermediate Representation (IR)
 - *Purpose*: Simplify target-dependent optimisations.
 - *Example*: LLVM IR, resembling almost-assembler instructions.
-
-# Up next
-[[Lecture 2 Regular and context-free tools (abridged)]]

@@ -25,6 +25,3 @@ Top-down traversal of the AST to create the symbol tables makes a single pass su
 ### Search-efficient tables
 - Use of hash tables for efficient symbol lookup.
 
-
-# Next up
-[[Lecture 4 Top-down parsing and parser generators]]

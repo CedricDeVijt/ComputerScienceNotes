@@ -57,6 +57,3 @@
   - Using node dominance and dominance frontier to characterise when Phi instructions are needed.
 - **Minimising register usage**:
   - Register allocation strategies, including Chaitin's algorithm and Sethi-Ullman algorithm.
-
-# Next up
-[[Lecture 3.2 ANTLR]]
