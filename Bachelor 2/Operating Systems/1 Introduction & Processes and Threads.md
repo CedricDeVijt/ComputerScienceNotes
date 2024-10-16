@@ -17,7 +17,7 @@ In a modern computer system, the OS coordinates tasks such as video file reprodu
 
 ![[Pasted image 20241014164011.png]]
 ## 1.5 What is a Process?  
-A **process** is a program in execution that consists of the program code, data, stack, and **Process Control Block (PCB)**, which holds critical information such as process ID, user ID, and state information.
+A **process** is a program in execution that consists of the program code, data, stack, and Process Control Block (PCB), which holds critical information such as process ID, user ID, and state information.
 
 Each process is composed of several parts:
 - **Text (Code)**: The program code that the process is executing.
