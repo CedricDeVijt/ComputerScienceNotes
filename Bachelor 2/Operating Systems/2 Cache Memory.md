@@ -19,32 +19,54 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 ![[Pasted image 20241014174501.png]]
 ## 2.3 Cache Operation
 ### 2.3.1 Locality of Reference
-- **Temporal Locality**: Recently accessed data is likely to be accessed again.
-- **Spatial Locality**: Data close to recently accessed data is likely to be accessed soon.
+- Locality of Reference helps the memory hierarchy function effectively. Two types are:
+	- **Spatial Locality**: Access to data elements that are stored close to each other (e.g., arrays).
+	- **Temporal Locality**: Access to the same data elements within a short period of time (e.g., variables within loops).
+
+- As we go deeper into the memory hierarchy (from cache to main memory), data request frequency decreases.
 ### 2.3.2 Cache Organization
 - **Memory is partitioned** into blocks, each containing words.
 - Cache stores data in **cache lines** and uses **tags** to identify each line.
 ### 2.3.3 Cache Connection to CPU
-- Cache sits between the CPU and main memory, connecting via a fast internal bus.
+- Cache memory is placed between the **CPU** and **Main Memory** to reduce data access time.
+- **Fast bus** (on-chip) connects the processor and the **L1 cache** for quick access.
+- **Slower shared bus** connects the cache to the main memory, transferring larger blocks of data (cache lines).
+
+- Memory is divided into **blocks** of data, and the cache is divided into **lines** that store these blocks.
+- Each cache line has a **tag** to identify which memory block it contains, along with a status bit to indicate if the line is currently in use.
+
 ### 2.3.4 Hit Ratio
-- **Hit**: When requested data is found in the cache.
-- **Miss**: When requested data isn’t in the cache, requiring access to main memory.
-- The **hit ratio** improves performance.
+- **Hit**: The data is in the cache, and the processor accesses it immediately.
+- **Miss**: The data is not in the cache, and it must be fetched from main memory.
+- **Hit Ratio (H)**: The ratio of cache hits to the total number of memory accesses. It's defined as $H = \frac{C}{M}$, where **C** is the number of cache lines, and **M** is the total number of memory blocks.
+
+### 2.3.5 Block Size Impact
+- **Small Block Size**: Increases the number of cache lines, reducing spatial locality effectiveness.
+- **Large Block Size**: Decreases the number of lines, eventually lowering the effectiveness of spatial locality.
+- 
+- Cache memory stores data in **blocks** to exploit the principle of locality.
+- **Cache lines** are used to store blocks, and each line is tagged to track which memory block it stores.
+- Data is transferred between memory and cache in **blocks**, with a larger block size improving spatial locality but reducing the number of available lines.
 
 ## 2.4 Mapping Techniques
 ### 2.4.1 Direct Mapping
 - Each memory block is mapped to exactly one cache line.
 - **Advantages**: Simple and fast to implement.
 - **Disadvantages**: High chance of collision (two blocks mapped to the same line).
+
+![[Screenshot 2024-10-17 at 10.00.20.png|500]]
 ### 2.4.2 Associative Mapping
 - A memory block can be placed anywhere in the cache.
 - **Advantages**: Reduces collisions.
 - **Disadvantages**: More complex lookup process (compares tags with all lines in parallel).
+
+![[Screenshot 2024-10-17 at 10.01.21.png|500]]
 ### 2.4.3 Set-Associative Mapping
 - A hybrid of direct and associative mapping. Cache is divided into sets, and each memory block can map to one set.
 - **Advantages**: Balances the trade-offs of direct and associative mapping.
 - **k-way Set Associative Mapping**: Typically k is small (e.g., 2-way or 4-way), reducing thrashing while keeping lookups manageable.
 
+![[Screenshot 2024-10-17 at 10.02.20.png|500]]
 ## 2.5 Cache Replacement Algorithms
 ### 2.5.1 Why Replacement Matters
 - On a cache miss, data must be brought into the cache, displacing older data. The choice of which data to replace affects performance.
@@ -54,7 +76,9 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 - **LRU (Least Recently Used)**: Replace the least recently accessed line (very effective but complex).
 - **Pseudo-LRU**: Approximation of LRU, balancing performance and simplicity.
   - **Tree-based Pseudo-LRU**: Organizes cache lines into a binary tree for tracking usage.
+  ![[Screenshot 2024-10-17 at 10.13.56.png|400]]
   - **Most Recently Used (MRU)**: Replaces the least recently accessed lines.
+![[Pasted image 20241017101510.png|400]]
 
 ## 2.6 Cache Write Policies
 ### 2.6.1 Write Through
@@ -78,7 +102,7 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 ### 2.8.1 Cache Benchmarking Process
 - Cache performance is tested by repeatedly requesting data from an array with different strides (gaps between accesses).
 - As the stride increases or the array size exceeds the cache size, **cache misses** increase, slowing performance.
-### 2.8.2 Key Observations** from Benchmarki
+### 2.8.2 Key Observations from Benchmarking
 - **Cache size** affects performance: Arrays smaller than the cache exhibit faster access times.
 - **Associative mapping**: More ways (higher k in k-way set associative caches) lead to fewer misses.
 
