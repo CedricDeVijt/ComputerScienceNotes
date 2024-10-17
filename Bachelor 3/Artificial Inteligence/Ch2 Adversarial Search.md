@@ -18,13 +18,19 @@
 - **Adversarial Game Trees**: Players alternate turns in a search tree, attempting to maximize or minimize the outcome.
 - **Minimax Search**: 
     - **Goal**: Find the best achievable utility against a rational opponent.
-    - **Efficiency**: Time complexity: O(b^m), Space: O(b^m), where `b` is branching factor and `m` is depth.
+    - **Efficiency**: Time complexity: $O(b^m)$, Space: $O(b^m)$, where `b` is branching factor and `m` is depth.
     - **Challenge**: Full-tree search impractical in large games like chess.
 
+![[Pasted image 20241017105228.png]]
+
+![[Pasted image 20241017105127.png|400]]
 ## 2.4: Alpha-Beta Pruning
 - **Alpha-Beta Pruning**: Improves the efficiency of minimax by cutting off branches that won't affect the final decision.
-    - **Best Case**: Time complexity can reduce to O(b^(m/2)) with perfect move ordering.
+    - **Best Case**: Time complexity can reduce to $O(b^{(m/2)})$ with perfect move ordering.
 
+![[Pasted image 20241017105253.png]]
+
+![[Pasted image 20241017105322.png]]
 ## 2.5: Resource Limits and Evaluation Functions
 - **Depth-Limited Search**: When the search tree is too large, cut off after a limited depth and use an evaluation function.
 - **Evaluation Function**: Scores non-terminal nodes, typically as a **weighted sum** of game features.
