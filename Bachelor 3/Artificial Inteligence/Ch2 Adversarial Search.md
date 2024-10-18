@@ -32,6 +32,7 @@
 ![[Pasted image 20241017105253.png]]
 
 ![[Pasted image 20241017105322.png]]
+
 ## 2.5: Resource Limits and Evaluation Functions
 - **Depth-Limited Search**: When the search tree is too large, cut off after a limited depth and use an evaluation function.
 - **Evaluation Function**: 
@@ -39,10 +40,9 @@
     - In practice: typically weighted linear sum of features 
     - The deeper in the tree the evaluation function is buried, the less the quality of the evaluation function matters
 
-
 ## 2.6 Synergies Between Evaluation Function and Alpha-Beta
 In the Alpha-Beta algorithm:
-    - Pruning occurs when a **Min-node's value** drops below the best value already found for **Max**.
+- Pruning occurs when a **Min-node's value** drops below the best value already found for **Max**.
 ### Pruning at Min-Nodes
 - **Min nodes**' values keep going down as worse alternatives are explored.
 - If the evaluation function estimates an upper bound at a Min-node, and this upper bound is already **lower** than the best option for Max, pruning can occur.
@@ -54,12 +54,12 @@ In the Alpha-Beta algorithm:
   
 - The better the evaluation function at guiding node expansion, the **more efficient Alpha-Beta pruning** becomes, reducing the overall number of nodes to explore.
 
-## 2.6: Expectimax Search
+## 2.7: Expectimax Search
 - **Expectimax Search**: Used when there’s randomness (e.g., dice rolls). Instead of minimax's worst-case strategy, **expectimax** calculates the **average** expected utility.
     - Includes **chance nodes** representing random events.
     - **Efficiency**: More expensive than minimax, as it needs to evaluate all possible outcomes probabilistically.
 
-## 2.7: Mixed and Multi-Agent Games
+## 2.8: Mixed and Multi-Agent Games
 - **Expectiminimax**: A combination of minimax and expectimax, where one layer of the tree involves chance events.
 - **Multi-Agent Utilities**: Used in games with more than two players where the game may not be zero-sum. Each agent tries to maximize its own utility, which can lead to dynamic cooperation or competition.
 
