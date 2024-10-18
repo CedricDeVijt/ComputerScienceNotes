@@ -18,7 +18,7 @@
 - **Adversarial Game Trees**: Players alternate turns in a search tree, attempting to maximize or minimize the outcome.
 - **Minimax Search**: 
     - **Goal**: Find the best achievable utility against a rational opponent.
-    - **Efficiency**: Time complexity: $O(b^m)$, Space: $O(b^m)$, where `b` is branching factor and `m` is depth.
+    - **Efficiency**: Time complexity: $O(b^m)$, Space: $O(b^m)$, where $b$ is branching factor and $m$ is depth.
     - **Challenge**: Full-tree search impractical in large games like chess.
 
 ![[Pasted image 20241017105228.png]]
@@ -27,13 +27,32 @@
 ## 2.4: Alpha-Beta Pruning
 - **Alpha-Beta Pruning**: Improves the efficiency of minimax by cutting off branches that won't affect the final decision.
     - **Best Case**: Time complexity can reduce to $O(b^{(m/2)})$ with perfect move ordering.
+    - Pruning has **no effect** on minimax value computed for the root
 
 ![[Pasted image 20241017105253.png]]
 
 ![[Pasted image 20241017105322.png]]
 ## 2.5: Resource Limits and Evaluation Functions
 - **Depth-Limited Search**: When the search tree is too large, cut off after a limited depth and use an evaluation function.
-- **Evaluation Function**: Scores non-terminal nodes, typically as a **weighted sum** of game features.
+- **Evaluation Function**: 
+    - Ideal function: returns the actual minimax value of the position
+    - In practice: typically weighted linear sum of features 
+    - The deeper in the tree the evaluation function is buried, the less the quality of the evaluation function matters
+
+
+## 2.6 Synergies Between Evaluation Function and Alpha-Beta
+In the Alpha-Beta algorithm:
+    - Pruning occurs when a **Min-node's value** drops below the best value already found for **Max**.
+### Pruning at Min-Nodes
+- **Min nodes**' values keep going down as worse alternatives are explored.
+- If the evaluation function estimates an upper bound at a Min-node, and this upper bound is already **lower** than the best option for Max, pruning can occur.
+  - This is because further exploration of the Min-node won’t affect the final outcome for Max, making it safe to stop evaluating that branch.
+### Combining Evaluation and Alpha-Beta
+- **Evaluation function synergy** with Alpha-Beta pruning is based on:
+  - **Good node ordering**: The evaluation function helps prioritize promising nodes, increasing the potential for pruning.
+  - **Early discovery of better moves**: By evaluating promising nodes first, the algorithm is more likely to find alternatives that allow for aggressive pruning.
+  
+- The better the evaluation function at guiding node expansion, the **more efficient Alpha-Beta pruning** becomes, reducing the overall number of nodes to explore.
 
 ## 2.6: Expectimax Search
 - **Expectimax Search**: Used when there’s randomness (e.g., dice rolls). Instead of minimax's worst-case strategy, **expectimax** calculates the **average** expected utility.
@@ -46,7 +65,7 @@
 
 ---
 
-# **Key Points to Remember**
+# Key Points to Remember
 - **Minimax Algorithm**: Alternates between players who maximize or minimize outcomes in a **zero-sum game**.
 - **Alpha-Beta Pruning** can drastically reduce the number of nodes evaluated in minimax without affecting the final result.
 - **Evaluation Functions** replace terminal values in depth-limited search, allowing for approximate game evaluations.
@@ -55,7 +74,7 @@
 
 ---
 
-# **Highlighted Concepts for Quick Review**
+# Highlighted Concepts for Quick Review
 - **Minimax Algorithm**: A core concept in adversarial search.
 - **Alpha-Beta Pruning**: Essential for optimizing search in complex games.
 - **Expectimax Search**: Deals with random elements in game outcomes.
