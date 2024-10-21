@@ -77,6 +77,8 @@ tar cf - .| gzip -cfbest| rsh hcoss dd
 - Evaluates risks and trade-offs between competing architectural decisions.
   - Focuses on **sensitivity points** (components critical to quality) and **tradeoff points** (conflicting qualities).
 
+![[Pasted image 20241021115057.png]]
+
 ### 3.5.2 Architecture in SCRUM
 - **Spike**: A short experiment to test architectural alternatives.
 - **Architecture Runway**: Extends architecture incrementally to accommodate future functionality.
