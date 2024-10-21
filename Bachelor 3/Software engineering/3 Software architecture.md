@@ -18,21 +18,34 @@
 - **Pattern Form**: usually written down following a semi-structured template. They have a name and allow experts to have deep design discussions in a few words
 # 3.2 Macro Architectures
 
-### 3.2.1 Layered Architecture d14
+### 3.2.1 Layered Architecture
 - Layers separate **concerns**: each layer provides services to the one above and accesses the one below.
-  
-### 3.2.2 Pipes and Filters d16
+
+![[Pasted image 20241021110428.png]]
+### 3.2.2 Pipes and Filters
 - System is divided into **filters** that process data streams and **pipes** that connect them.
   - **Example**: UNIX commands, CGI scripts for web forms.
+
+``` UNIX
+tar cf - .| gzip -cfbest| rsh hcoss dd
+```
   
 ### 3.2.3 Blackboard Architecture
 - Central repository (**blackboard**) with several **knowledge sources** that modify it.
   - Used for complex systems requiring partial solutions.
+
+![[Pasted image 20241021110306.png]]
   
 ### 3.2.4 Model-View-Controller (MVC)
-- **Model** handles data and logic, **View** displays it, and **Controller** manages input.
-  - Used in **interactive applications**.
+- **Model**: provides functional core (data)
+	- registers dependent views/controllers
+	- notifies dependent components about changes (send update)
+- **View**: creates and initializes associated controller + displays information
+	+ responds to notification events (receive update)
+- **Controller**: accepts user input events + translate events into requests to model and view
+	+ responds to notification events (receive update)
 
+- Used in **interactive applications**.
 
 # 3.3 Micro Architectures
 
