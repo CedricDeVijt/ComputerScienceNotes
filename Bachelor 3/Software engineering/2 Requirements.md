@@ -1,4 +1,4 @@
-## Introduction
+## 2.1 Introduction
 
 ### When, Why, Where, What are Requirements?
 
@@ -8,7 +8,7 @@
   - **Functional Requirements**: The functions demanded by end users.
   - **Non-functional Requirements**: Constraints like **performance**, **maintainability** and **usability**.
 
-## Use Cases and User Stories
+## 2.2 Use Cases and User Stories
 
 ### Use Case
 
@@ -49,7 +49,7 @@
 - **Inception & Elaboration Phases**:
   - Use cases work well in iterative development, often evolving from inception (scope definition) to elaboration (scenario refinement).
 
-## Scrum Requirements
+## 2.3 Scrum Requirements
 
 ### User Stories
 
@@ -81,7 +81,7 @@
   - **Feature**: Takes weeks and spans multiple sprints.
   - **Sprintable Stories**: Smaller chunks to be completed within a sprint.
 
-## Safety Critical Requirements
+## 2.4 Safety Critical Requirements
 
 ### Misuse Cases
 
