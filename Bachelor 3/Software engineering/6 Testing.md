@@ -11,6 +11,7 @@
 - **Verification**: Are we building the product right?
 - **Validation**: Are we building the right product?
 
+![[Pasted image 20241023112806.png]]
 # 6.2: Testing Techniques
 ## White Box Testing
 - Also known as **Structural Testing**.
