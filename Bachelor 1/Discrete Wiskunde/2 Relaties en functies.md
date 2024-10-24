@@ -11,6 +11,9 @@
 ### Inverse Relation
 - **Definition**: For a relation $R \subseteq A \times B$, its inverse is $R^{-1} \subseteq B \times A$.
 
+### Equipotent Relation
+- **Definition**: A relation $R \subseteq A \times B$ is equipotent if there exists a bijection between $A$ and $B$.
+
 ## 2.1.2 Properties of Relations
 - **Compositional Relations**: If $R \subseteq A \times B$ and $S \subseteq B \times C$, then the composition is $S \circ R \subseteq A \times C$.
 - **Key Properties**:
@@ -28,21 +31,39 @@
 
 # 2.2 Equivalence Relations
 ## 2.2.1 Definition
-An **equivalence relation** on a set $X$ is a relation that is:
+A relation $R \subseteq A \times A$ is an **equivalence relation** if it is:
 1. **Reflexive**: $x R x$ for all $x \in X$.
 2. **Symmetric**: $x R y$ implies $y R x$.
 3. **Transitive**: $x R y$ and $y R z$ imply $x R z$.
 
-### Equivalence Class
-- The set of all elements related to $a \in A$ is called the **equivalence class** of $a$, denoted $[a]$.
-  
+And is denoted as $a \sim b$ or $a \equiv b$.
+
+**Equivalence Class**: The set of all elements in $A$ that are equivalent to $a$. Defined as $[a] = \{b \in A | a \sim b\}$.
+
+**Quotient set**: The set of all equivalence classes. Defined as $A / \sim = \{[a] | a \in A\}$
+
+### Properties of Equivalence Relations
+1) $\forall a \in A: a \in [a]$. 
+    i.e., every element is in its own equivalence class.
+2) $\forall a \in A: [a] \neq \emptyset$ and $\cup_{a \in A} [a] = A$.
+    i.e., equivalence classes are non-empty and cover the entire set.
+3) $\forall a,b \in A[a] = [b] \iff a \sim b$.
+    i.e., equivalence classes are disjoint.
+4) $\forall a,b \in A: [a] \neq [b] \iff [a] \cap [b] = \emptyset$.
+    i.e., equivalence classes are disjoint.
+
 ## 2.2.2 Partitioning
-- A set can be partitioned into equivalence classes based on an equivalence relation.
+A partition $\mathscr{A} \subset 2^A$ is a partition of $A$ if:
+1) $\forall X \in \mathscr{A}: X \neq \emptyset$.
+2) $\forall X, Y \in \mathscr{A}: X \neq Y \implies X \cap Y = \emptyset$.
+3) $\cup_{X \in \mathscr{A}} X = A$.
 
 # 2.3 Partial and Total Orderings
-
 ## 2.3.1 Partial Order
 - A **partial order** is a relation $R \subseteq A \times A$ that is **reflexive**, **transitive**, and **antisymmetric**.
+- $\forall x,y \in X: xRy \text{ or } yRx$ 
+
+- 
 - **Hasse Diagrams**: A visual representation of partial orders where elements are connected by arrows to show relationships.
 
 ## 2.3.2 Total Order
