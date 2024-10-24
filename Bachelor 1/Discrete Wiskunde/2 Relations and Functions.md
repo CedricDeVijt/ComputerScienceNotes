@@ -63,18 +63,25 @@ A partition $\mathscr{A} \subset 2^A$ is a partition of $A$ if:
 - A **partial order** is a relation $R \subseteq A \times A$ that is **reflexive**, **transitive**, and **antisymmetric**.
 - $\forall x,y \in X: xRy \text{ or } yRx$ 
 
-- 
+## 2.3.2 Definitions
+- **Majorant**: $m \in A$ is a majorant of $X \subseteq A$ if $\forall x \in X: x \leq m$.
+- **Minorant**: $m \in A$ is a minorant of $X \subseteq A$ if $\forall x \in X: x \geq m$.
+- **Maximum**: $m \in A$ is a maximum of $X \subseteq A$ if $m \in X$ and $\forall x \in X: x \leq m$.
+- **Minimum**: $m \in A$ is a minimum of $X \subseteq A$ if $m \in X$ and $\forall x \in X: x \geq m$.
+- **Greatest Element**: $m \in A$ is a greatest element of $X \subseteq A$ if $\forall x \in X: x \leq m$.
+- **Least Element**: $m \in A$ is a least element of $X \subseteq A$ if $\forall x \in X: x \geq m$.
+
+- **Closed interval**: A set of elements $[a, b] = \{x \in A | a \leq x \leq b\}$.
+- **Open interval**: A set of elements $(a, b) = \{x \in A | a < x < b\}$.
+- **Half-open interval**: A set of elements $[a, b) = \{x \in A | a \leq x < b\}$.
+
+- **Supremum**: The least upper bound of a set $X \subseteq A$.
+- **Infimum**: The greatest lower bound of a set $X \subseteq A$.
+
 - **Hasse Diagrams**: A visual representation of partial orders where elements are connected by arrows to show relationships.
 
-## 2.3.2 Total Order
+## 2.3.3 Total Order
 - A **total order** requires that for every pair of elements $x, y \in A$, either $x R y$ or $y R x$.
-
-# 2.4 Special Functions
-## 2.4.1 Characteristic Function
-- Denoted as $1_X(a)$, it equals 1 if $a \in X$, and 0 otherwise.
-
-## 2.4.2 Absolute Value Function
-- Defined by $f(x) = |x|$, rewritten using characteristic functions.
 
 ---
 
