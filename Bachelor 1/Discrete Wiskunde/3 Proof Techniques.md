@@ -1,5 +1,4 @@
 # 3.1: Introduction to Mathematical Proofs
-
 ## 3.1.1 Definition of a Mathematical Proof
 - A mathematical proof is a sequence of logically connected arguments designed to convince a reader of the truth of a statement.
 - Arguments must be detailed enough to persuade the intended audience.
