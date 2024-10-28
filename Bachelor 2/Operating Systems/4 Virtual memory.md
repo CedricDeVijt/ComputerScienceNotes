@@ -1,7 +1,11 @@
 ## 4.1: Introduction to Virtual Memory
 - **Memory Management**: Process images aren’t stored as a single block. Some pages are loaded into memory, while others stay in swap space (disk).
 - **Logical to Virtual Address**: Logical addresses are converted to virtual addresses to manage larger process images.
-  
+
+![[Pasted image 20241028135433.png]]
+
+![[Pasted image 20241028135446.png]]
+
 ### Key Concepts
 - **Page Hit**: Similar to a cache hit, where the page is in main memory.
 - **Page Fault**: Like a cache miss, this requires OS intervention.
@@ -10,6 +14,8 @@
 ## 4.2: Virtual Memory Layout
 - **Page Table Organization**: Includes frame numbers for entries in memory.
 - **Segmentation Fault**: Error occurs when accessing unauthorized memory segments.
+
+![[Pasted image 20241028140214.png]]
 
 ## 4.3: Page Table Organization and Optimization
 - **Challenges**: Large page tables for high memory processes.
@@ -21,9 +27,14 @@
 1. **Multilevel Page Tables**:
    - Split into multiple levels (e.g., Level 1, Level 2).
    - Reduces memory requirements by storing only active page tables.
+
+![[Screenshot 2024-10-28 at 14.07.33.png]]
+
 2. **Inverted Page Tables**:
    - Utilizes fewer entries.
    - Employs hashing to optimize page lookup.
+
+![[Pasted image 20241028140949.png]]
 
 ## 4.4: Translation Lookaside Buffer (TLB)
 - **Purpose**: A cache reducing the need for frequent virtual-to-physical address translations.
