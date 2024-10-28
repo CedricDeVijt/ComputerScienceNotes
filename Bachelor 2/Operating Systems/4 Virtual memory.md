@@ -1,4 +1,4 @@
-## 4.1: Introduction to Virtual Memory
+ ## 4.1: Introduction to Virtual Memory
 - **Memory Management**: Process images aren’t stored as a single block. Some pages are loaded into memory, while others stay in swap space (disk).
 - **Logical to Virtual Address**: Logical addresses are converted to virtual addresses to manage larger process images.
 
@@ -41,6 +41,8 @@
 - **Operation**: Stores (VPN, frame number) pairs for quicker access during processes.
 - **Context Switching**: TLB must be flushed when switching processes.
 
+![[Pasted image 20241028142753.png]]
+
 ## 4.5: Software Support in Virtual Memory
 - **Address Translation**: Managed by hardware; page faults handled by OS.
 - **Frame Allocation**: OS determines which frame to load new pages.
@@ -48,7 +50,7 @@
   - **Replacement Algorithms**: Identifies which page to replace.
 
 ## 4.6: Page Replacement Algorithms
-- **Optimal Algorithm (MIN)**:
+- **Optimal Algorithm (OPT)**:
   - Replaces pages unlikely to be needed soon.
   - Used as a benchmark but isn’t feasible in real systems.
 - **Least Recently Used (LRU)**:
@@ -57,10 +59,15 @@
 - **First-In-First-Out (FIFO)**:
   - Replaces the oldest page.
   - May result in **Belady’s Anomaly** (more memory leading to more faults).
-- **Clock Algorithm**:
+- **Clock Algorithm (CLOCK)**:
   - Circular buffer approach with “use bits” to determine page replacement.
 
+![[Pasted image 20241028145346.png]]
+
+![[Pasted image 20241028142846.png]]
+
 ## 4.7: Resident Set Policy
+- Frames of the OS are never eligible for replacement
 - **Fixed vs. Variable Allocation**:
   - Fixed: Pages are restricted to a set number per process.
   - Variable: Pages can be dynamically allocated.
@@ -74,7 +81,7 @@
 - **Page Tables**: Efficient organization crucial for system performance.
 - **Address Translation**: Primarily hardware-managed; OS steps in on page faults.
 - **Replacement Algorithms**:
-  - **MIN**: Ideal but theoretical.
+  - **OPT**: Ideal but theoretical.
   - **LRU**: Practical but requires high maintenance.
   - **FIFO**: Simple, but susceptible to Belady’s Anomaly.
   - **Clock**: Balances between FIFO and LRU with fewer updates.
