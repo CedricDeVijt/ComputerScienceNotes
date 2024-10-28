@@ -109,7 +109,7 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 
 ---
 
-## **Highlighted Terms and Concepts for Quick Review**
+## Highlighted Terms and Concepts for Quick Review
 
 - **Memory Management**: Organizes processes in memory to optimize processor usage.
 - **Address Translation**: Converts logical addresses to physical addresses at different times (compile, load, run).
