@@ -53,17 +53,17 @@ The **Process Control Block (PCB)** contains crucial data that the operating sys
    - **Process State**: Current state (e.g., Running, Ready, Blocked).
    - **Scheduling Information**: Priority, process queue pointers.
    - **Memory Management Info**: Base and limit registers, page tables, segment tables
-# 1.7 Process states
+## 1.7 Process states
 A process can exist in one of several states during its lifetime. These states are managed by the operating system to ensure efficient CPU utilization and task execution. Below are the main process states:
 
 - **New**:  
   The process is being created. The operating system has recognized the process and is setting it up in memory, but it has not started executing yet.
-- **Running**:  
-  The process is currently being executed by the CPU. Only one process can be in the running state per CPU core at any given time.  
-  - The **process control block** is updated continuously to reflect the process's current execution state.
 - **Ready**:  
   The process is ready to run but is waiting for CPU time. It has all the necessary resources and can execute when the CPU becomes available.
   - The process is moved to the **ready queue** by the OS scheduler.
+- **Running**:  
+  The process is currently being executed by the CPU. Only one process can be in the running state per CPU core at any given time.  
+  - The **process control block** is updated continuously to reflect the process's current execution state.
 - **Blocked (or Waiting)**:  
   The process cannot proceed until some external event occurs, such as input/output operations or receiving a resource. It remains in this state until the event is resolved.
   - Example: Waiting for a file to be read from disk or user input.
@@ -76,17 +76,17 @@ A process can exist in one of several states during its lifetime. These states a
   - The process can reach this state either after successful execution or due to errors/interruptions.
 
 ![[Pasted image 20241004173919.png]]
-## 1.6 Process Switching and Privilege Levels  
+## 1.8 Process Switching and Privilege Levels  
 - **Process Switch**: Occurs when the OS interrupts a running process, saves its state, and switches to another process.
 - **Mode Switch**: Involves switching between user mode and kernel mode, allowing the system to perform privileged operations.
 
 ![[Pasted image 20241014172742.png]]
-## 1.7 What are Threads?  
+## 1.9 What are Threads?  
 Threads allow multiple sequences of execution within a process, sharing resources like code and data, but having their own stack. This improves efficiency, especially in lightweight, parallel tasks.
 
 ![[Pasted image 20241014173209.png]]
 
-## 1.8 Processes vs. Threads  
+## 1.10 Processes vs. Threads  
 - **Processes**: Slower in creation and switching, require kernel-level communication for shared resources.
 - **Threads**: Faster in creation and switching, but synchronization is not guaranteed.
 
@@ -98,7 +98,7 @@ Threads allow multiple sequences of execution within a process, sharing resource
 | **Process States**                               | Different process states (+)                                                           | One process state (for user-level threads) (-)                                        |
 | **Swapping**                                     | Independently swapped (+)                                                             | Jointly swapped (-)                                                                   |
 
-## 1.9 User-Level vs. Kernel-Level Threads  
+## 1.11 User-Level vs. Kernel-Level Threads  
 - **User-Level Threads (ULTs)**: Managed by the application, faster thread switching, but blocked processes can prevent further execution.
 - **Kernel-Level Threads (KLTs)**: Managed by the OS, allows multiple processors, but thread switching involves significant overhead.
 
