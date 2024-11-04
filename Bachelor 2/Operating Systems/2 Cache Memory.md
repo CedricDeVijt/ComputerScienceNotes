@@ -27,6 +27,11 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 ### 2.3.2 Cache Organization
 - **Memory is partitioned** into blocks, each containing words.
 - Cache stores data in **cache lines** and uses **tags** to identify each line.
+
+- A **block** (or cache line) is the basic unit of data transfer between the main memory and the cache. It is a contiguous chunk of memory that the cache loads from main memory at one time.
+- A **word** is the standard unit of data that the CPU processes at one time. The size of a word depends on the system architecture (e.g., 32-bit or 64-bit).
+
+![[Pasted image 20241104090740.png]]
 ### 2.3.3 Cache Connection to CPU
 - Cache memory is placed between the **CPU** and **Main Memory** to reduce data access time.
 - **Fast bus** (on-chip) connects the processor and the **L1 cache** for quick access.
@@ -38,12 +43,11 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 ### 2.3.4 Hit Ratio
 - **Hit**: The data is in the cache, and the processor accesses it immediately.
 - **Miss**: The data is not in the cache, and it must be fetched from main memory.
-- **Hit Ratio (H)**: The ratio of cache hits to the total number of memory accesses. It's defined as $H = \frac{C}{M}$, where **C** is the number of cache lines, and **M** is the total number of memory blocks.
+- **Hit Ratio (H)**: The ratio of cache hits to the total number of memory accesses. It's defined as $H = \frac{C}{M}$, where $C$ is the number of cache lines, and $M$ is the total number of memory blocks.
 
 ### 2.3.5 Block Size Impact
 - **Small Block Size**: Increases the number of cache lines, reducing spatial locality effectiveness.
-- **Large Block Size**: Decreases the number of lines, eventually lowering the effectiveness of spatial locality.
-- 
+- **Large Block Size**: Decreases the number of lines, eventually lowering the effectiveness of spatial locality. 
 - Cache memory stores data in **blocks** to exploit the principle of locality.
 - **Cache lines** are used to store blocks, and each line is tagged to track which memory block it stores.
 - Data is transferred between memory and cache in **blocks**, with a larger block size improving spatial locality but reducing the number of available lines.
