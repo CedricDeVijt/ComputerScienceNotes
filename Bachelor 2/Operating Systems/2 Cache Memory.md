@@ -53,6 +53,8 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 - Data is transferred between memory and cache in **blocks**, with a larger block size improving spatial locality but reducing the number of available lines.
 
 ## 2.4 Mapping Techniques
+
+**Cache mapping** is a placement policy, it specifies how a block of data from main memory is assigned a location in the cache.
 ### 2.4.1 Direct Mapping
 - Each memory block is mapped to exactly one cache line.
 - **Advantages**: Simple and fast to implement.
