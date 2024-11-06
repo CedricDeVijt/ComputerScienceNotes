@@ -27,19 +27,52 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 - **Disadvantages**:
   - Leads to **internal fragmentation** (unused space in partitions).
   - Limits the size and number of processes in memory.
-### 2. Variable Partitioning
+
+![[Pasted image 20241106140043.png| 400]]
+### 2. Fixed Partitioning (Variable Size)
 - **Description**: Memory is divided into partitions of variable size.
 - **Advantages**:
   - **Reduces internal fragmentation**.
   - Allows larger processes to fit into memory.
 - **Challenges**:
   - **External fragmentation** (unused memory between partitions).
+
+![[Pasted image 20241106140119.png|400]]
 ### 3. Dynamic Partitioning
 - **Description**: Partitions are created dynamically based on the size required by processes.
 - **Advantages**:
   - Maximizes memory usage.
 - **Challenges**:
   - Results in memory holes (gaps) between partitions, causing **external fragmentation**.
+
+![[Pasted image 20241106140200.png|400]]
+
+#### 50% rule
+- **H (Number of Holes)**: Represents gaps between processes in memory; **E(H)** is the average number of holes.
+
+- **50% Rule**: Estimates the distribution of holes, predicting that the number of processes is approximately **twice the number of holes**.
+
+- **Process Addition and Removal**:
+  - **When a process is added**: The number of holes **(H)** remains roughly constant.
+  - **When a process is removed**: **H** changes on average by **$H + p_0 - p_2$**, where $p_0$ and $p_2$ are probabilities of having 0 or 2 neighboring holes.
+
+- **Neighbor Balance**: Each process has, on average, **one hole as a neighbor**.
+
+#### Placement Algorithms
+- **First-Fit**: Allocates the first available partition large enough for the process.
+- **Best-Fit**: Fits a process into the smallest available partition.
+- **Worst-Fit**: Allocates the largest available partition.
+- **Next-Fit**: Similar to First-Fit, but starts searching from the last allocated partition.
+
+#### Buddy System
+- **Description**: Divides memory into blocks of size **2^k**.
+- **Advantages**:
+  - Efficient for dynamic memory allocation.
+  - **75% memory utilization** efficiency.
+- **Challenges**:
+  - **External fragmentation** may still occur.
+  
+![[Pasted image 20241106141134.png]]
 
 ## 3.5: Paging
 ### Description
