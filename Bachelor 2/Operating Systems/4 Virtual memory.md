@@ -80,7 +80,7 @@
 - **Fixed vs. Variable Allocation**:
   - Fixed: Pages are restricted to a set number per process.
   - Variable: Pages can be dynamically allocated.
-- **Active Working Set (W(t, ∆))**:
+- **Active Working Set W(t, ∆)**:
   - Defines pages needed in a recent period.
   - Monitored by page fault rates.
 

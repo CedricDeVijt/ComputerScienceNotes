@@ -3,3 +3,5 @@
 [[3 Software architecture]]
 [[4 Project Management]]
 [[5 Design by Contract]]
+[[6 Testing]]
+[[7 Formal Specification]]

@@ -1,104 +1,97 @@
-## Overview
-Processor scheduling in operating systems (OS) is the mechanism by which the OS decides which process or task should use the processor at any given time. It consists of three main scheduling types:
+## 5.1 Introduction to Processor Scheduling
+Processor scheduling determines how processes access the processor and ensures fair and efficient CPU utilization.
+### 5.Process States
+- **States**: Each process may be in a different state, such as **running**, **ready**, or **blocked**.
+- **Scheduling Mechanisms**: Scheduling mechanisms control state transitions.
+- **Types of Scheduling**:
+  - **Long-term scheduling**: Controls when a new process is added to the system.
+  - **Medium-term scheduling**: Handles suspended processes, often related to memory management.
+  - **Short-term scheduling**: Selects the next process to run from the ready queue.
 
-1. **Long-Term Scheduling**: Decides which processes are admitted to the system.
-2. **Medium-Term Scheduling**: Controls which processes are swapped out or in, often in response to memory management needs.
-3. **Short-Term Scheduling**: Determines which process in the ready queue gets the processor next, and is critical for performance.
+## 5.2 Types of Scheduling
+### 5.2.1 Long-Term Scheduling
+- Manages **New → Ready** transitions.
+- **Decisions**:
+  - When to activate a process.
+  - Which process to activate based on **processor** vs. **I/O-bound** types.
+- **Goals**:
+  - Balance active processes.
+  - Avoid excessive CPU or I/O-bound process activity.
+
+### 5.2.2 Medium-Term Scheduling
+- **Suspension** of processes, usually to manage memory.
+- Ensures balanced memory and CPU utilization.
+
+### 5.2.3 Short-Term Scheduling
+- Decides the next process to **execute** on the CPU.
+- **Algorithms**: FIFO, Round Robin, Shortest Process Next (SPN), and others, designed for different system goals and process types.
 
 ![[Screenshot 2024-11-04 at 13.56.56.png]]
-## 5.1: Types of Processor Scheduling
-### 5.1.1 Long-Term Scheduling
-- **Function**: Manages new processes entering the system (New → Ready state).
-- **Key Considerations**:
-  - Balancing processor-bound and I/O-bound processes.
-  - Preventing too many active processes to avoid resource overload.
-### 5.1.2 Medium-Term Scheduling
-- **Function**: Suspends or resumes processes, interacting with virtual memory management.
-- **Frequency**: Occurs more often than long-term scheduling.
-### 5.1.3 Short-Term Scheduling
-- **Function**: Selects the next process for processor execution from the ready queue.
-- **Techniques**: Uses various algorithms to optimize CPU utilization and response times.
 
-## 5.2: Performance Metrics for Scheduling
-### 5.2.1 Average Turnaround Time ($T_q$)
-- **Definition**: Time from process submission to completion, including wait times.
-- **Importance**: Measures system responsiveness.
-### 5.2.2 Response Time
-- **Definition**: Time taken for a process to begin execution after it is ready.
-- **Relevance**: Crucial in interactive systems where user feedback is essential.
-### 5.2.3 Fairness
-- **Goal**: Equitably distribute CPU resources among processes.
-- **Measurement**: Often subjective; sometimes assessed by normalized turnaround time.
-### 5.2.4 Predictability
-- **Goal**: Ensure processes have consistent execution times.
-- **Challenge**: Minimizing interference from other processes.
+## 5.3 Scheduling Performance Metrics
+### 5.3.1 Key Metrics
+- **Turnaround Time (Tq)**: Time taken for a process to complete, including waiting and execution.
+- **Response Time**: Time before a process starts executing.
+- **Fairness**: Ensures all processes get CPU time fairly, measured by **normalized turnaround time**.
+- **Predictability**: Consistent process execution time despite other processes.
 
-## 5.3: Scheduling Models & Notation
-### 5.3.1 Universal Notation
-- **Format**: `α | β | γ`
-  - **α (Machine Environment)**: Defines processor configuration (e.g., single (1) or multiple processors (Pm which are m identical machines/processors)).
-  - **β (Pre-conditions)**: Defines task conditions like release times (r$_j$), preemptions (pmtn), and precedence constraints (prec).
-  - **γ (Objective)**: Specifies the function to be minimized (e.g., $\Sigma c_j$ total completion time).
-### 5.3.2 Examples
-- **Single Processor with Precedence**: $1 | prec, r_j | ∑C_j$
+### 5.3.2 Notation and Models
+- **Universal Notation (α|β|γ)**:
+  - **α**: Machine environment, e.g., single or multiple processors.
+  - **β**: Constraints, e.g., arrival times, preemption, and precedence conditions.
+  - **γ**: Goal function to minimize, e.g., total completion time.
 
-## 5.4: Short-Term Scheduling Algorithms
-### 5.4.1 Non Real-Time Algorithms
-- **First-In First-Out (FIFO)**: Processes are served in arrival order.
-  - **Drawbacks**: High turnaround for small tasks; I/O-bound tasks suffer.
+## 5.4 Short-Term Scheduling Algorithms
+### 5.4.1 Non-Real-Time Scheduling Algorithms
+- **First-In, First-Out (FIFO)**:
+  - **Oldest process** runs first.
+  - Long processes may delay smaller tasks.
+
 ![[Pasted image 20241104142017.png | 400]]
-
-- **Round Robin (RR)**: Processes take turns with a fixed quantum time.
-  - **Advantages**: Reduces wait for small processes.
-  - **Challenges**: Quantum choice is crucial; may disadvantage I/O-bound processes. If q is too small, the processor switches more than it executes (processor sharing).
+- **Round Robin (RR)**:
+  - Each process gets a **time quantum (q)**; goes to the end of the queue when the quantum expires.
+  - Works better for **small processes** but can disadvantage I/O-bound tasks.
 
 ![[Screenshot 2024-11-04 at 14.20.51.png|500]]
-
 ### 5.4.2 Optimal Algorithms
-- **Shortest Process Next (SPN)**: Selects the process with the shortest execution time.
-  - **Optimal for**: Batch tasks arriving together.
-  - **Limitation**: Requires knowledge of task duration.
-  - **Formula**: $T_q = q_1 + (q_1+q_2) + \dots + (p_1+q_2+ \dots +q_N) = \sum\limits_{i=1}^{N} (N - i + 1) p_i$ (optimal if $p_0≤p_2 \dots ≤p_N$)
-- **Weighted Short Process Next (WSPN)**: a variant of SPN where each process is assigned a weight $w_j$ to prioritize processes based on importance or urgency.
-	- **Objective**: Minimize the weighted average turnaround time $T_q$ defined as: $T_q = \frac{1}{N} \sum_{j=1}^{N} w_j C_j$
-	  where $C_j$ is the completion time of process $j$.
-	- **Optimality**: WSPN is optimal for $1 || \sum w_j C_j$, meaning it effectively schedules a batch of processes arriving at the same time.
-	- **Smith’s Rule**: WSPN orders processes by the ratio $\frac{p_j}{w_j}$, selecting the process with the smallest value first.
-- **Shortest Remaining Time Next (SRTN)**: Chooses process with the least remaining execution time.
-  - **Properties**: Preemptive, optimal for minimizing average completion time.
-  - **Drawback**: Long tasks may starve.
-- **Non-Preemptive SRTN**: selects the process with the shortest remaining execution time and runs it to completion without interruption.
-	- **Objective**: Minimize the average completion time $T_q$ in scenarios where preemption is not possible.
-	- **Properties**:
-	  - **Optimality Context**: The algorithm minimizes total completion time in specific conditions where tasks do not need preemption.
-	  - **Complexity**: Finding the optimal order can be challenging, as the problem is NP-hard for larger sets of processes.
-	  - **Approximation**: Non-preemptive SRTN can achieve an order with a total completion time at most twice as large as the optimal (a 2-approximation).
-	- **Order Construction**: Given an optimal sequence, completion times are built based on the order in which processes are executed. If arrival times $r_j$ are involved, the processor might remain idle until the task with the shortest execution time arrives.
-- **Highest Response Ratio Next (HRRN)**: Chooses based on response ratio, balancing between short and long processes.
-  - **Application**: Effective for smaller tasks, avoids starvation.
+- **Shortest Process Next (SPN)**:
+  - Runs the **shortest task** first.
+  - Optimal for **single-batch processes** arriving simultaneously.
+  - Requires knowledge of each process’s execution time.
+- **Shortest Remaining Time Next (SRTN)**:
+  - **Preemptive**: Always selects the process with the least remaining time.
+  - Optimal for systems where processes arrive at different times.
+- **Weighted Shortest Process Next (WSPN)**:
+  - **Weighted priority** applied to processes.
+  - Optimal for minimizing weighted turnaround times in batch processing.
 
-## 5.5: Multilevel Feedback Queues
-- **Concept**: Processes move across priority queues based on their CPU usage.
-- **Structure**:
-  - Multiple queues, each with decreasing priority.
-  - Processes that consume more CPU time are moved to lower-priority queues.
-  - Last queue operates in a round-robin manner to prevent starvation.
-### Unix Scheduler Relation
-- **Implementation**: Similar to multilevel feedback with priority adjustments.
-- **Key Mechanism**: Uses factors like CPU usage and user-defined "nice" values to prevent large processes from starving.
+### 5.4.3 Advanced Algorithms
+- **Multilevel Feedback Queues**:
+  - Simulates multiple scheduling strategies.
+  - **Priority-based queues**: Longer time spent by a process reduces its priority.
+
+![[Pasted image 20241106175920.png|400]]
+
+- **Highest Response Ratio Next (HRRN)**:
+  - **Response ratio** (waiting time + execution time) / execution time.
+  - Favors processes with higher response ratios, balancing short and long tasks.
+
+## 5.5 UNIX Scheduler
+- **Multilevel Feedback with Priorities**:
+  - Divides time into intervals; each process has a **priority**.
+  - **Priority formula**: Adjusted periodically based on CPU usage and user-defined “nice” values.
+  - Ensures **fairness** and prevents **starvation**.
 
 ---
 
-## Key Points to Remember
-- **Types of Scheduling**: Long-term (New → Ready), Medium-term (Swapping), and Short-term (Ready → Running).
+# Key Points to Remember
+
+- **Scheduling Types**:
+  - Long-term, medium-term, and short-term scheduling play distinct roles.
+- **Short-Term Algorithms**:
+  - **FIFO** and **Round Robin** provide simple scheduling but may be unfair to I/O-bound processes.
+  - **SPN** and **SRTN** offer optimal scheduling for specific contexts but may require preemptive switching or known execution times.
 - **Performance Metrics**:
-  - **Turnaround Time (Tq)**: Total process completion time.
-  - **Response Time**: Time for process to start execution.
-  - **Fairness & Predictability**: Equitable resource distribution, consistent performance.
-- **Scheduling Notation**: `α | β | γ` (machine environment, conditions, minimization objective).
-- **Short-Term Scheduling Algorithms**:
-  - **FIFO**: Simple, fair but slow for smaller tasks.
-  - **Round Robin**: Fair with quantum adjustment, best for multitasking.
-  - **Optimal Strategies**: SPN, SRTN, HRRN, each with unique application scenarios.
-- **Multilevel Feedback Queues**: Adaptive priority for long-running processes, preventing starvation.
-- **Unix Scheduler**: Combines priority adjustments and fair CPU time distribution.
+  - **Turnaround Time (Tq)**, **Response Time**, and **Fairness** are core metrics.
+- **UNIX Scheduling**:
+  - Employs a multilevel feedback approach for balancing CPU usage and priorities across user processes.
