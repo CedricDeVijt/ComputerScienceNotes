@@ -8,8 +8,8 @@
 
 ### Key Concepts
 - **Page Hit**: Similar to a cache hit, where the page is in main memory.
-- **Page Fault**: Like a cache miss, this requires OS intervention.
-- **Page Table**: Manages the virtual-to-physical address translation.
+- **Page Fault**: Occurs when a page isn’t in memory and must be loaded.
+- **Page Table**: Maps virtual addresses to physical addresses.
 
 ## 4.2: Virtual Memory Layout
 - **Page Table Organization**: Includes frame numbers for entries in memory.
@@ -17,24 +17,33 @@
 
 ![[Pasted image 20241028140214.png]]
 
-## 4.3: Page Table Organization and Optimization
-- **Challenges**: Large page tables for high memory processes.
-- **Solutions**:
-  - **Multilevel Page Tables**: Divide page tables to reduce memory load.
-  - **Inverted Page Tables**: Uses fewer entries and requires hashing for efficiency.
+## 4.3: Organization and Optimization of Page Tables
+
+### Desirable Features:
+- The entire page table should reside in memory.
+- The starting address of the page table should be stored in a register.
+- The page number should be used as an index to the page table.
+
+### Problems:
+- Page tables can become very large.
+- Page numbers can no longer be directly used as an index.
+
+### Solutions:
+- **Multilevel Page Tables**: Divide the page table into multiple levels to reduce memory usage.
+- **Inverted Page Tables**: Use fewer entries and employ hashing for efficient page lookup.
 
 ### Types of Page Tables
 1. **Multilevel Page Tables**:
-   - Split into multiple levels (e.g., Level 1, Level 2).
-   - Reduces memory requirements by storing only active page tables.
+   - The page table is divided into multiple levels (e.g., Level 1, Level 2).
+   - This approach reduces memory requirements by storing only the active parts of the page table.
 
-![[Screenshot 2024-10-28 at 14.07.33.png]]
+   ![[Screenshot 2024-10-28 at 14.07.33.png]]
 
 2. **Inverted Page Tables**:
-   - Utilizes fewer entries.
-   - Employs hashing to optimize page lookup.
+   - This type of page table uses fewer entries.
+   - It employs hashing to optimize the page lookup process.
 
-![[Pasted image 20241028140949.png]]
+   ![[Pasted image 20241028140949.png]]
 
 ## 4.4: Translation Lookaside Buffer (TLB)
 - **Purpose**: A cache reducing the need for frequent virtual-to-physical address translations.
