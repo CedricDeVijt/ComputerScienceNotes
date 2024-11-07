@@ -1,6 +1,6 @@
 ## 5.1 Introduction to Processor Scheduling
 Processor scheduling determines how processes access the processor and ensures fair and efficient CPU utilization.
-### 5.Process States
+### Process States
 - **States**: Each process may be in a different state, such as **running**, **ready**, or **blocked**.
 - **Scheduling Mechanisms**: Scheduling mechanisms control state transitions.
 - **Types of Scheduling**:
@@ -36,7 +36,7 @@ Processor scheduling determines how processes access the processor and ensures f
 - **Predictability**: Consistent process execution time despite other processes.
 
 ### 5.3.2 Notation and Models
-- **Universal Notation (α|β|γ)**:
+- **Universal Notation (α | β | γ)**:
   - **α**: Machine environment, e.g., single or multiple processors.
   - **β**: Constraints, e.g., arrival times, preemption, and precedence conditions.
   - **γ**: Goal function to minimize, e.g., total completion time.
