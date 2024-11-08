@@ -36,7 +36,6 @@
 ### Calculating Risks
 - Estimate task durations using **Optimistic Time (OT)**, **Likely Time (LT)**, and **Pessimistic Time (PT)**.
 - Use **Critical Path Analysis** to identify where delays are most likely to occur.
-
 # 4.4: Resource Allocation
 ### Allocating Resources
 - **Staffing**: Assign team members based on required skills. Allocate tasks according to their expertise to optimize productivity.
@@ -58,9 +57,15 @@
 ### Monitoring Progress
 - Use **Slip Lines** and **Timeline Charts** to visualize the completion of tasks and adjust schedules accordingly.
 
+Slip line:
+![[Pasted image 20241108103602.png|500]]
+
+Timeline chart:
+![[Pasted image 20241108103624.png|500]]
+
 # 4.6: Team Structures and Leadership
 ### Belbin’s Team Roles
-- **Action-Oriented Roles**: Shaper, Implementer, Completer Finisher.
+- **Action-Oriented Roles**: Shaper, Implementer, Completer/Finisher.
 - **People-Oriented Roles**: Coordinator, Team Worker, Resource Investigator.
 - **Thought-Oriented Roles**: Plant, Monitor-Evaluator, Specialist.
   
@@ -71,6 +76,7 @@
 - **Hierarchical Teams**: Best for well-defined projects.
 - **Decentralized Teams**: Better for exploratory work.
 
+![[Pasted image 20241108103948.png]]
 # 4.7: Agile and Scrum
 ### Scrum Framework
 - **Sprint Reviews**: Regular checkpoints to evaluate the progress.
@@ -86,7 +92,7 @@
 
 ---
 
-## Key Points to Remember
+# Key Points to Remember
 
 - **Project Management Functions**: Planning, Organizing, Staffing, Directing, Monitoring.
 - **Milestones**: Verifiable goals critical for tracking progress.
@@ -97,11 +103,3 @@
 - **Risk Analysis**: Assess the likelihood of delays by estimating task times and their deviations.
 - **Belbin Team Roles**: Ensure your team has a balance of action, people, and thought-oriented members.
 - **Scrum**: A framework for iterative project development, with clear deliverables after each sprint.
-
---- 
-
-### Critical Concepts:
-- **Critical Path**: Delays in tasks on the critical path will delay the whole project.
-- **Known Unknowns**: Identified risks that can be mitigated.
-- **Slip Line & Timeline Charts**: Visual tools for tracking project progress.
-- **Definition of Done**: Ensures that tasks are truly complete and shippable.
