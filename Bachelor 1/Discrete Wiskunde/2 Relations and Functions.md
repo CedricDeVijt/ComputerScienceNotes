@@ -80,7 +80,7 @@ A partition $\mathscr{A} \subset 2^A$ is a partition of $A$ if:
 - **Hasse Diagrams**: A visual representation of partial orders where elements are connected by arrows to show relationships.
 
 ### 2.3.3 Total Order
-- A **total order** requires that for every pair of elements $x, y \in A$, either $x R y$ or $y R x$.
+- A **total order** requires that for each pair of elements $x, y \in A$, either $x R y$ or $y R x$.
 
 ---
 
