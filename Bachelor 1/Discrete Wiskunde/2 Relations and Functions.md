@@ -44,9 +44,9 @@ And is denoted as $a \sim b$ or $a \equiv b$.
 #### Properties of Equivalence Relations
 1) $\forall a \in A: a \in [a]$. 
     i.e., every element is in its own equivalence class.
-2) $\forall a \in A: [a] \neq \emptyset$ and $\cup_{a \in A} [a] = A$.
+2) $\forall a \in A: [a] \neq \emptyset$ and $\bigcup\limits_{a \in A} [a] = A$.
     i.e., equivalence classes are non-empty and cover the entire set.
-3) $\forall a,b \in A[a] = [b] \iff a \sim b$.
+3) $\forall a,b \in A: [a] = [b] \iff a \sim b$.
     i.e., equivalence classes are disjoint.
 4) $\forall a,b \in A: [a] \neq [b] \iff [a] \cap [b] = \emptyset$.
     i.e., equivalence classes are disjoint.
