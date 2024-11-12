@@ -3,3 +3,5 @@
 [[2 Adversarial Search]]
 [[3 Constraint satisfaction problems]]
 [[4 Bayesian Networks - part 1]]
+[[5 Bayesian Networks - part 2]]
+[[6 Hidden Markov Models - Part 1]]

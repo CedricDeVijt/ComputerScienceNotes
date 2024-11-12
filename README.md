@@ -2,18 +2,20 @@
 
 ## Bachelor 1
 - Calculus: 1001WETCAL
+- [[Discrete wiskunde]]: 1001WETDWI 
 ## Bachelor 2
-- Algorithms and complexity: 1001WETALC
-- Compilers: 1001WETCOP
-- Computer networks: 1001WETCON
+- [[Algorithms and complexity]]: 1001WETALC
+- [[Compilers]]: 1001WETCOP
+- [[Computer Networks]]: 1001WETCON
 - Linear algebra: 1500WETLAL
 - Machines en berekenbaarheid: 1001WETMAB
+- [[Operating Systems]]: 1500WETOPS
 ## Bachelor 3
-- Artificial Inteligence: 1500WETAIN
-- Software Engineering: 1001WETSEN
+- [[Artificial Inteligence]]: 1500WETAIN
+- [[Software engineering]]: 1001WETSEN
 
 ## Korf Vakken
-- Media en digitale samenleving: 1006CPGVKA
+- [[Media en digitale samenleving]]: 1006CPGVKA
 
 
 
