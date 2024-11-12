@@ -15,15 +15,14 @@
 - **Definition**: A relation $R \subseteq A \times B$ is equipotent if there exists a bijection between $A$ and $B$.
 
 ### 2.1.2 Properties of Relations
-- **Compositional Relations**: If $R \subseteq A \times B$ and $S \subseteq B \times C$, then the composition is $S \circ R \subseteq A \times C$.
 - **Key Properties**:
   - **Reflexive**: $aRa$ for all $a \in A$.
   - **Symmetric**: $aRb$ implies $bRa$.
   - **Transitive**: $aRb$ and $bRc$ imply $aRc$.
   - **Antisymmetric**: $aRb$ and $bRa$ imply $a = b$.
-
+- **Compositional Relations**: If $R \subseteq A \times B$ and $S \subseteq B \times C$, then the composition is $S \circ R \subseteq A \times C$.
 ### 2.1.3 Functions
-- **Definition**: A relation $F \subseteq A \times B$ is a function if for every $a \in A$, there exists a unique $b \in B$.
+- **Definition**: A relation $F \subseteq A \times B$ is a function if for all $a \in A$, there exists a unique $b \in B$.
 - **Types of Functions**:
   - **Injective (One-to-one)**: $F(a) = F(a')$ implies $a = a'$.
   - **Surjective (Onto)**: For every $b \in B$, there is some $a \in A$ such that $F(a) = b$.
