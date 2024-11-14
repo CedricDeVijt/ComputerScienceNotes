@@ -1,47 +1,47 @@
 # 5.1: Introduction to Design by Contract
 
-### **What is Design by Contract?**
+### What is Design by Contract?
 Design by Contract (DbC) formalizes the relationship between components in software as a **contract**, where each party has obligations and benefits.
 
 - **Client (caller)** has obligations (preconditions).
 - **Supplier (called method)** guarantees benefits (postconditions).
 
-### **Key Concepts**
+### Key Concepts
 - **Preconditions**: What must be true before a method is called.
 - **Postconditions**: What must be true after the method completes.
 - **Invariants**: Conditions that must always be true for a class.
 
-### **Benefits of DbC**
+### Benefits of DbC
 - **Prevention over detection**: Avoiding defects rather than finding them through testing.
 - Useful in **Object-Oriented Programming** for class interface validation.
 - Example: The **Ariane 5 crash** could have been avoided using DbC.
 
 # 5.2: Preconditions, Postconditions, and Invariants
 
-### **Preconditions**
+### Preconditions
 A contract's "promise" from the client. Example:
 ```java
 precondition: {x >= 9}
 ```
 If the precondition is false, the method shouldn't be called.
 
-### **Postconditions**
+### Postconditions
 The state guaranteed by the method after execution:
 ```java
 postcondition: {x >= 13}
 ```
 
-### **Invariants**
+### Invariants
 These are conditions that must remain true during the object's lifecycle, ensuring consistency.
 
 # 5.3: Assertions and Redundant Checks
 
-### **Assertions**
+### Assertions
 Assertions are boolean expressions that verify the correctness of code:
 - Example: `assert(!this.isEmpty())`
 
 They formalize **preconditions, postconditions, and invariants** in the code, helping maintain **documentation and correctness**.
-### **Redundant Checks**
+### Redundant Checks
 These should be avoided because:
 - **Complexity**: Increases unnecessary checks.
 - **Performance**: Slows down execution.
@@ -66,21 +66,21 @@ Using exceptions helps identify **violations** of preconditions or postcondition
 
 # 5.6: Subclassing, Subcontracting, and the Liskov Substitution Principle
 
-### **Subclassing and Contracts**
+### Subclassing and Contracts
 - **Subclasses** must follow the parent's contract but can **strengthen** postconditions or **weaken** preconditions.
 
-### **Liskov Substitution Principle (LSP)**
+### Liskov Substitution Principle (LSP)
 You can substitute a subclass for any of its superclasses **if**:
 - Invariant: `{I’} = {I}`
 - Precondition: `{P’} <= {P}`
 - Postcondition: `{Q’} >= {Q}`
 
-### **Behavioral Subtyping**
+### Behavioral Subtyping
 - A subtype must respect the contract of its supertype. For example, a **Square** cannot behave exactly like a **Rectangle** in all scenarios.
 
 # 5.7: Modern Applications – REST API and Banking Example
 
-### **REST API Contracts**
+### REST API Contracts
 - **Consumer-driven contract testing** ensures that services work independently.
 - Contracts define the relationship between microservices.
 
