@@ -19,10 +19,16 @@
   - **Basis Path Testing**: Analyzing the flow of control in the code.
   - **Condition Testing**: Ensuring that all **true/false** conditions are covered.
   - **Loop Testing**: Testing various iterations through loops.
+
+![[Pasted image 20241115111353.png|400]]
+
 ### Black Box Testing
 - Also known as **Functional Testing**.
 - Test cases are based on the external **specifications**.
 - **Equivalence Partitioning** and **Boundary Value Analysis** are common techniques.
+
+![[Pasted image 20241115111417.png|400]]
+
 ### Fuzz Testing
 - Injects random data (fuzz) into the system to discover vulnerabilities.
 
