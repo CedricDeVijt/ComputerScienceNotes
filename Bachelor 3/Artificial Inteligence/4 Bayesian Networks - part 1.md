@@ -39,7 +39,8 @@
 - **Example CPT**:
   $P(Alarm|Burglary, Earthquake)$
   If both burglary and earthquake occur, the alarm rings with 95% probability.
-
+  
+![[Pasted image 20241115093229.png|400]]
 ## 4.6: Structure of Bayes' Nets
 ### Size and Complexity
 - **Joint distribution over N Boolean variables**: Size = $2^N$

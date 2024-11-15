@@ -1,5 +1,4 @@
-# 4.1: Introduction to Project Management
-
+## 4.1 Introduction to Project Management
 ### When, Why, and What?
 - **Project Management** is essential to ensure that projects are delivered on time, within budget, and meet the desired objectives.
 - Software projects are **unique** and involve **conflicting goals** with **limited resources**.
@@ -12,7 +11,7 @@
 5. **Monitoring**: Track progress and adjust plans accordingly.
 
 
-# 4.2: Planning and Monitoring
+## 4.2 Planning and Monitoring
 ### Tasks and Milestones
 - **Tasks** should be broken down into smaller subtasks, each with an **estimated duration**.
 - **Milestones** are verifiable goals indicating task completion. They are essential for tracking progress.
@@ -28,7 +27,7 @@
 - **Not** for **task interdependencies**
 
 ![[Pasted image 20241015142007.png]]
-# 4.3: Risk Management
+## 4.3 Risk Management
 ### Risk and Uncertainty
 - Address **known knowns** (what you know), **known unknowns** (what you are aware of but unsure about), and **unknown unknowns** (what you don't foresee).
 - Plan for risks early by tackling **critical risks** and setting **achievable milestones**.
@@ -36,7 +35,8 @@
 ### Calculating Risks
 - Estimate task durations using **Optimistic Time (OT)**, **Likely Time (LT)**, and **Pessimistic Time (PT)**.
 - Use **Critical Path Analysis** to identify where delays are most likely to occur.
-# 4.4: Resource Allocation
+
+## 4.4 Resource Allocation
 ### Allocating Resources
 - **Staffing**: Assign team members based on required skills. Allocate tasks according to their expertise to optimize productivity.
 - Gantt charts can be adjusted to ensure **smooth resource distribution** over time.
@@ -47,7 +47,7 @@
   - Prioritizing important functionality.
   - Extending deadlines when necessary.
 
-# 4.5: Monitoring Techniques
+## 4.5 Monitoring Techniques
 ### Earned Value Analysis
 - **Earned Value (EV)** methods help track task completion:
   - **0/100 Technique**: 0% credit until a task is completed.
@@ -63,7 +63,7 @@ Slip line:
 Timeline chart:
 ![[Pasted image 20241108103624.png|500]]
 
-# 4.6: Team Structures and Leadership
+## 4.6 Team Structures and Leadership
 ### Belbin’s Team Roles
 - **Action-Oriented Roles**: Shaper, Implementer, Completer/Finisher.
 - **People-Oriented Roles**: Coordinator, Team Worker, Resource Investigator.
@@ -77,7 +77,8 @@ Timeline chart:
 - **Decentralized Teams**: Better for exploratory work.
 
 ![[Pasted image 20241108103948.png]]
-# 4.7: Agile and Scrum
+
+## 4.7 Agile and Scrum
 ### Scrum Framework
 - **Sprint Reviews**: Regular checkpoints to evaluate the progress.
 - **Definition of Done**: A checklist to ensure that all work meets quality standards.
@@ -87,7 +88,8 @@ Timeline chart:
 - Use **Scrum of Scrums** and **component/feature teams** to manage larger projects.
 
 ![[Pasted image 20241015154050.png]]
-# 4.8: Conclusion
+
+## 4.8 Conclusion
 - The goal of project management is not about creating a perfect plan but about detecting deviations early and making necessary adjustments.
 
 ---

@@ -1,4 +1,4 @@
-# 3.1 Introduction to Software Architecture
+## 3.1 Introduction to Software Architecture
 
 ### 3.1.1 When, Why, and What?
 - **Software architecture** is necessary for large-scale systems to organize work in development teams.
@@ -16,7 +16,7 @@
 ### 3.1.4 Patterns
 - **Pattern**: The essence of a solution to a recurring problem in a particular context
 - **Pattern Form**: usually written down following a semi-structured template. They have a name and allow experts to have deep design discussions in a few words
-# 3.2 Macro Architectures
+## 3.2 Macro Architectures
 
 ### 3.2.1 Layered Architecture
 - Layers separate **concerns**: each layer provides services to the one above and accesses the one below.
@@ -47,7 +47,7 @@ tar cf - .| gzip -cfbest| rsh hcoss dd
 
 - Used in **interactive applications**.
 
-# 3.3 Micro Architectures
+## 3.3 Micro Architectures
 
 ### 3.3.1 Observer Pattern
 - Decouple an object (subject) from its dependents (observers).
@@ -60,7 +60,7 @@ tar cf - .| gzip -cfbest| rsh hcoss dd
 - Converts an interface into another one that a client expects.
 
 
-# 3.4 Other Patterns
+## 3.4 Other Patterns
 
 ### 3.4.1 Security Patterns: Single Access Point
 - Ensure system integrity by defining a **single entry point** for external access.
@@ -71,7 +71,7 @@ tar cf - .| gzip -cfbest| rsh hcoss dd
   - Benefits: **scalability**, **independent deployment**.
 
 
-# 3.5 Architecture Evaluation
+## 3.5 Architecture Evaluation
 
 ### 3.5.1 Architecture Tradeoff Analysis Method (ATAM)
 - Evaluates risks and trade-offs between competing architectural decisions.
@@ -84,7 +84,7 @@ tar cf - .| gzip -cfbest| rsh hcoss dd
 - **Architecture Runway**: Extends architecture incrementally to accommodate future functionality.
 
 
-# 3.6 Correctness and Traceability
+## 3.6 Correctness and Traceability
 
 - **Correctness**: Ensures the architecture addresses **non-functional requirements**.
 - **Traceability**: The ability to trace from **requirements to architecture** and implementation.
