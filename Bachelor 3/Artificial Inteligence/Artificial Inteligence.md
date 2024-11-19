@@ -5,3 +5,4 @@
 [[4 Bayesian Networks - part 1]]
 [[5 Bayesian Networks - part 2]]
 [[6 Hidden Markov Models - Part 1]]
+[[7 Hidden Markov Models - Part 2]]
