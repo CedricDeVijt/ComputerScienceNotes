@@ -5,3 +5,5 @@
 [[5 Design by Contract]]
 [[6 Testing]]
 [[7 Formal Specification]]
+[[8 Domain Modeling]]
+[[9 Software Quality]]
