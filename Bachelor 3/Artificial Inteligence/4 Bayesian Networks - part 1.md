@@ -16,10 +16,10 @@
 
 ## 4.3: Independence in Probability
 ### Independence Concepts
-- **X and Y are independent** if $P(X, Y) = P(X)P(Y)$.
+- **X and Y are independent** $P(X, Y) = P(X)P(Y)$.
+- **Product rule**: $P(x,y)=P(x|y)\cdot P(y)$
 - **Conditional Independence**: X and Y are conditionally independent given Z if:
   $P(X, Y|Z) = P(X|Z)P(Y|Z)$
-  
 ### Examples of Independence
 - **Coin flips**: Each flip is independent.
 - **Traffic and rain**: They may be dependent but can be modeled with conditional independence.
@@ -28,7 +28,6 @@
 ### Big Picture
 - **Problem with full joint distributions**: Hard to estimate and manage when dealing with many variables.
 - **Solution**: Bayes' nets, which use **local conditional probabilities** to describe complex joint distributions.
-
 ### Components of a Bayes' Net
 - **Nodes**: Represent variables.
 - **Edges**: Represent dependencies.

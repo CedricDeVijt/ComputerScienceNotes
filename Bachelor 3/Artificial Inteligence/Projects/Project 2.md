@@ -26,19 +26,18 @@ $P(−e∣+a)=P(−e∣+b)⋅P(+b∣+a)+P(−e∣−b)⋅P(−b∣+a)=(0.75⋅0.
 
 ## Independence
 a) $T⊥⊥Y$: Not Guaranteed
-	There are two active paths: t->v->y and t->w->y
+	There are two active paths: $t-> v-> y$ and $t-> w-> y$
 b) $T⊥⊥Y|W$: Not Guaranteed
-	There is still an active path: t->w->y
+	There is still an active path: $t-> v-> y$
 c) $U ⊥⊥T$: Guaranteed
-	The path u->x<-t is blocked by the collider x
+	The path $u-> x <- t$ is blocked by the collider x
 d) $U ⊥⊥T |Z$: Not Guaranteed
-	The path u->x<-t is not blocked by the x node because it's descendent is a conditioned node.
+	The path $u-> x <- t$ is not blocked by the x node because it's descendent is a conditioned node.
 e) $Z ⊥⊥U$: Not Guaranteed
-	The path z<-x<-u is an active path.
+	The path $u -> x-> z$ is an active path.
 f) $Z ⊥⊥Y |V$: Not Guaranteed
-	The path z<-x<-t->w->y is an active path.
+	The path $z<- x<- t-> w-> y$ is an active path.
 g) $Z ⊥⊥Y |T, W$: Guaranteed
-	The path z<-x<-t->w->y is blocked because the fork t is conditioned.
+	The path $z<- x<- t-> w-> y$ is blocked because the fork t is conditioned.
 h) $Z ⊥⊥W$: Not Guaranteed
-	The path z<-x<-t->w is an active path.
-
+	The path $z<- x<- t-> w$ is an active path.

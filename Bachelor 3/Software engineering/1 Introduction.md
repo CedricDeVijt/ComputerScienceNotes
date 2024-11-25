@@ -31,7 +31,7 @@
 ### Unified Modeling Language (UML):
 - **Usage:** Standardized notation for modeling software systems, useful for managing complexity and supporting lifecycle processes.
 
-# 1.4 Why Software Engineering?
+## 1.4 Why Software Engineering?
 - Questions to consider:
   - Where do the requirements come from?
   - How do we validate and verify the specifications?
@@ -64,7 +64,7 @@
 ### Example: Failure Mode and Effects Analysis (FMEA)
 - Identify potential failure modes, their effects, causes, and criticality to manage risk effectively.
 
-# 1.7 Prototyping
+## 1.7 Prototyping
 - **Purpose:** To test, explore, or validate a hypothesis to reduce risks.
 - **Types:**
   - **Exploratory Prototype (Throwaway):** To validate requirements or explore design choices.
@@ -113,7 +113,7 @@
 - **Collaboration Diagrams:** Represent relationships with messages between objects.
 
 
-## You should know the answers to these questions:
+# You should know the answers to these questions:
 
 ### 1. How does Software Engineering differ from programming?
 **Software Engineering** is a systematic, disciplined, and quantifiable approach to the development, operation, and maintenance of software. It includes requirements analysis, system design, testing, deployment, and maintenance. **Programming**, on the other hand, is just one aspect of software engineering, which involves writing code to implement specific functions or solutions. In short, software engineering encompasses the entire software development lifecycle, while programming is only a part of it.

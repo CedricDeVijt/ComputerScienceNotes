@@ -55,8 +55,14 @@
 ### The V-Model in Agile
 - The **V-Model** is flipped to accommodate continuous testing.
 - **Automation** is key for faster feedback loops.
+
+![[Pasted image 20241125092100.png]]
+
 ### Agile Testing Quadrants
 - Tests are divided into **four quadrants** based on their focus (technology vs. business) and how they are conducted (manual vs. automated).
+
+![[Pasted image 20241125092202.png]]
+
 ### Test Automation
 - Test automation is essential in an agile environment to ensure rapid feedback and **continuous integration**.
 
