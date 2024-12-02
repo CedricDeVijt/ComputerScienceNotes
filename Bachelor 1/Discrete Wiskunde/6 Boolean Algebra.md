@@ -1,40 +1,41 @@
-# Chapter 6: Boolean Algebra
-
 ## 6.1 Boolean Expressions and Functions
 
 ### Definition of Boolean Variables
 
 - **Boolean Variable**: A discrete variable constrained to the binary values **0** or **1**.
 - **Boolean Expression**: A formal combination of Boolean variables interconnected by the following operators:
+
   - **Complement ($\overline{x}$)**: The unary operation yielding **1** when the input is **0**, and vice versa.
   - **Sum ($x + y$)**: Defined by the following truth table:
-```markdown
+
     | $x$ | $y$ | $x + y$ |
-    |-----|-----|---------|
-    | 0 | 0 | 0 |
-    | 0 | 1 | 1 |
-    | 1 | 0 | 1 |
-    | 1 | 1 | 1 |
-    
-```
+    | --- | --- | ------- |
+    | 0   | 0   | 0       |
+    | 0   | 1   | 1       |
+    | 1   | 0   | 1       |
+    | 1   | 1   | 1       |
+
   - **Product ($x \cdot y$)**: Defined by the following truth table:
+
     | $x$ | $y$ | $x \cdot y$ |
-    | ----- | ----- | ------------- |
-    | 0 | 0 | 0 |
-    | 0 | 1 | 0 |
-    | 1 | 0 | 0 |
-    | 1 | 1 | 1 |
+    | --- | --- | ----------- |
+    | 0   | 0   | 0           |
+    | 0   | 1   | 0           |
+    | 1   | 0   | 0           |
+    | 1   | 1   | 1           |
 
 ### Boolean Functions
 
 - A **Boolean function** is a mapping from an $n$-dimensional Boolean vector space to a single Boolean value.
+
   - Example: - Function: $F(x, y, z) = x + y + x \cdot z$. - Truth Table:
+
     | $x$ | $y$ | $z$ | $x + y$ | $x \cdot z$ | $F(x, y, z)$ |
-    |-----|-----|-----|---------|-------------|-------------|
-    | 1 | 1 | 1 | 1 | 1 | 1 |
-    | 1 | 1 | 0 | 1 | 0 | 1 |
-    | 1 | 0 | 1 | 1 | 1 | 1 |
-    | 0 | 0 | 0 | 0 | 0 | 0 |
+    | --- | --- | --- | ------- | ----------- | ------------ |
+    | 1   | 1   | 1   | 1       | 1           | 1            |
+    | 1   | 1   | 0   | 1       | 0           | 1            |
+    | 1   | 0   | 1   | 1       | 1           | 1            |
+    | 0   | 0   | 0   | 0       | 0           | 0            |
 
 ### Key Properties
 
@@ -74,11 +75,14 @@
 ### Karnaugh Maps
 
 - A systematic method for simplifying Boolean expressions by spatially organizing truth table outputs into adjacent groupings, facilitating term elimination.
+
   - Example:
+
     | $\overline{x}y\overline{z}$ | $\overline{x}y$ | $xy$ | $xy\overline{z}$ |
-    |-------------------------------|-----------------|------|------------------|
-    | X | X | | X |
-    | X | | X | |
+    | --------------------------- | --------------- | ---- | ---------------- |
+    | X                           | X               |      | X                |
+    | X                           |                 | X    |                  |
+
   - Simplified Expression: $F(x, y, z) = xz + y$.
 
 ## 6.3 Logical Circuits
