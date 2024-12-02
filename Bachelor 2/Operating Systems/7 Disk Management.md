@@ -99,16 +99,21 @@ Disk management constitutes an integral domain within modern operating systems, 
 
 ### RAID Levels
 1. **RAID 0**: Implements data striping to maximize throughput but lacks redundancy.
+	![[Pasted image 20241202150312.png|300]]
 2. **RAID 1**: Employs mirroring to replicate data, ensuring high fault tolerance but with reduced write efficiency.
+	![[Pasted image 20241202150342.png|300]]
 3. **RAID 3 & 4**:
    - **RAID 3**: Optimized for sequential reads using synchronized disk heads.
    - **RAID 4**: Adapts to random access patterns by maintaining independent disk heads.
-4. **RAID 5 & 6**:
+	![[Pasted image 20241202150432.png|300]]
+1. **RAID 5 & 6**:
    - **RAID 5**: Balances performance and reliability via distributed parity.
    - **RAID 6**: Augments fault tolerance with additional parity redundancy.
-5. **Hybrid Configurations**:
+   ![[Pasted image 20241202150451.png|300]]
+1. **Hybrid Configurations**:
    - **RAID 0+1**: Combines striping and mirroring, prioritizing performance.
    - **RAID 1+0**: Inverts the layering of striping and mirroring for enhanced robustness.
+	![[Pasted image 20241202150553.png|300]]
 
 ---
 
