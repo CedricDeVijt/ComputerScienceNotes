@@ -8,12 +8,15 @@
 - **Boolean Expression**: A formal combination of Boolean variables interconnected by the following operators:
   - **Complement ($\overline{x}$)**: The unary operation yielding **1** when the input is **0**, and vice versa.
   - **Sum ($x + y$)**: Defined by the following truth table:
+```markdown
     | $x$ | $y$ | $x + y$ |
     |-----|-----|---------|
     | 0 | 0 | 0 |
     | 0 | 1 | 1 |
     | 1 | 0 | 1 |
     | 1 | 1 | 1 |
+    
+```
   - **Product ($x \cdot y$)**: Defined by the following truth table:
     | $x$ | $y$ | $x \cdot y$ |
     | ----- | ----- | ------------- |
