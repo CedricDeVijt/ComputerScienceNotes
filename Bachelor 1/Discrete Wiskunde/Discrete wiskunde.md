@@ -2,3 +2,4 @@
 [[2 Relations and Functions]]
 [[3 Proof Techniques]]
 [[4 Counting]]
+[[5 Probability Theory]]

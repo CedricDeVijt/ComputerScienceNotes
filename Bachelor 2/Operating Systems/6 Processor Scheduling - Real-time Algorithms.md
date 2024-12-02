@@ -9,8 +9,6 @@ Processor scheduling determines which processes get CPU time in a system. It inc
 1. **Static Scheduling**: Predefined orders based on tasks.
 2. **Dynamic Scheduling**: Decisions are made during runtime.
 
-
-
 ## 6.2: Short-Term Scheduling Algorithms
 ### Real-Time Algorithms
 - Focus on tasks with deadlines (**hard** vs. **soft** deadlines).
@@ -25,17 +23,15 @@ Processor scheduling determines which processes get CPU time in a system. It inc
 - **Example**: If two tasks have deadlines $d_1$ and $d_2$, prioritize the task with $\min(d_1, d_2)$.
 
 ### **Moore-Hodgson Algorithm (MHA)**
-- Objective: Minimize the sum of unmet deadlines $\Sigma U_j$.
+- Objective: Minimize the sum of unmet deadlines $\sum U_j$.
 - **Steps**:
   1. Sort tasks by EDF.
   2. Identify late tasks.
   3. Remove the task with the highest processing time and repeat.
 
-
-
 ## 6.3: Preconditions for Scheduling
 ### Release/Arrival Times
-- EDF is optimal for the problem $1|r_j, \text{pmtn}| \Sigma U_j$, where $r_j$ is the release time.
+- EDF is optimal for the problem $1|r_j, \text{pmtn}| \sum U_j$, where $r_j$ is the release time.
 - Load factor $u$ is critical:
   - If $u \leq 1$, all deadlines are feasible.
   - Otherwise, minimize unmet deadlines.
@@ -46,8 +42,6 @@ Processor scheduling determines which processes get CPU time in a system. It inc
   1. Identify tasks with no dependencies (nodes with no outgoing edges).
   2. Select the task with the latest deadline.
   3. Assign priorities, remove the task, and repeat.
-
-
 
 ## 6.4: Periodic Task Scheduling
 ### **EDF for Periodic Tasks**
@@ -65,7 +59,6 @@ Processor scheduling determines which processes get CPU time in a system. It inc
 ---
 
 ## Key Points to Remember
-
 - **Earliest Deadline First (EDF)**:
   - Optimal when deadlines are feasible ($L_{\text{max}} \leq 0$).
   - Effective for periodic tasks if $U \leq 1$.

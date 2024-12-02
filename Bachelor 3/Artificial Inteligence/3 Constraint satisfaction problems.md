@@ -1,4 +1,4 @@
-## 3.1: Introduction to CSPs
+## 3.1 Introduction to CSPs
 ### Definition
 - **CSP**: A type of search problem where the state is defined by **variables** and their **domains**. The goal is to find assignments of values to variables that satisfy all **constraints**.
 
@@ -13,7 +13,7 @@
 3. **Cryptarithmetic**: Assign digits to letters to satisfy arithmetic operations.
 4. **Sudoku**: Fill the grid with numbers so that rows, columns, and regions have unique values.
 
-## 3.2: Solving CSPs
+## 3.2 Solving CSPs
 ### Standard Search Formulation
 - **States**: Partial assignments of variables.
 - **Initial State**: Empty assignment.
@@ -30,7 +30,7 @@
 2. **Value Ordering**: Choose the least constraining value to minimize future conflicts.
 3. **Constraint Propagation**: Methods like **Forward Checking** and **Arc Consistency** prune domains early to avoid future conflicts.
 
-## 3.3: Filtering Techniques
+## 3.3 Filtering Techniques
 ### Filtering:
 - **Forward Checking**: Eliminates values from variable domains that violate constraints with already assigned variables.
   
@@ -41,7 +41,7 @@
 ### Limitations:
 - Even with arc consistency, CSPs might still have multiple solutions or no solution at all, so further search is necessary.
 
-## 3.4: Advanced Search Techniques
+## 3.4 Advanced Search Techniques
 ### Improving Search Efficiency
 - **Ordering**: Use heuristic approaches like MRV and **Least Constraining Value** (LCV) to prioritize search.
   
@@ -53,7 +53,7 @@
 ### Cutset Conditioning
 - When a CSP is not tree-structured, it can be converted by selecting a **cutset** (a set of variables that, when instantiated, turns the remaining graph into a tree).
 
-## 3.5: Local Search Methods
+## 3.5 Local Search Methods
 ### Iterative Improvement
 - **Min-Conflicts Heuristic**: Works by continuously reassigning values to variables to minimize the number of conflicts (unsatisfied constraints).
   

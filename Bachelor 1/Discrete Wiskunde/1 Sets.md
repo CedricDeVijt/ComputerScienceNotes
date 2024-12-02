@@ -56,7 +56,7 @@
 
 ---
 
-**Key Points to Remember**
+## Key Points to Remember
 
 - **Set**: A collection of elements denoted with uppercase letters.
 - **Subset**: $B \subseteq A$ means all elements in $B$ are in $A$.

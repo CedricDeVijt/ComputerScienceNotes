@@ -1,4 +1,4 @@
-## 7.1: Particle Filtering
+## 7.1 Particle Filtering
 ### Overview
 - **Purpose**: Approximates solutions for problems where state space \(|X|\) is too large or continuous to use exact inference.
 - **Key Idea**: Tracks a sample of states (called **particles**) instead of a full probability distribution.
@@ -21,7 +21,7 @@
    - Particles are resampled based on weights to normalize distributions.
    - Ensures high-weight samples are prioritized.
 
-## 7.2: Applications of Particle Filtering
+## 7.2 Applications of Particle Filtering
 ### **Robot Localization**
 - **Problem**: Locating a robot within a known map using sensor readings (e.g., sonar or laser).
 - **Challenge**: Continuous state space prohibits storing full distributions.
@@ -34,7 +34,7 @@
   - Particle methods
   - Kalman filtering (for Gaussian HMMs)
 
-## 7.3: HMM Queries and Algorithms
+## 7.3 HMM Queries and Algorithms
 ### Most Likely Explanation
 - **Query**: Find the sequence of states with the highest joint probability given observations.
 - **Algorithm**: Viterbi algorithm
@@ -49,7 +49,7 @@
 - **Viterbi Algorithm**:
   - Identifies the single most probable sequence of states.
 
-## 7.4: Dynamic Bayes Nets (DBNs)
+## 7.4 Dynamic Bayes Nets (DBNs)
 ### Overview
 - **Purpose**: Generalization of HMMs to track multiple variables over time.
 - **Structure**:
