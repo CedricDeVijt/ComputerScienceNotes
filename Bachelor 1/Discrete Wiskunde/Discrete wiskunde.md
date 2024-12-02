@@ -3,3 +3,4 @@
 [[3 Proof Techniques]]
 [[4 Counting]]
 [[5 Probability Theory]]
+[[6 Boolean Algebra]]
