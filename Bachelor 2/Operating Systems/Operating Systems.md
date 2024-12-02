@@ -1,6 +1,7 @@
 [[1 Introduction & Processes and Threads]]
 [[2 Cache Memory]]
-[[3 Memory managment]]
+[[3 Memory Management]]
 [[4 Virtual Memory]]
 [[5 Processor Scheduling]]
 [[6 Processor Scheduling - Real-time Algorithms]]
+[[7 Disk Management]]
