@@ -13,7 +13,7 @@
 ### Perceptron Basics
 - **Functionality**:
   - Takes inputs and computes output based on weights and an activation function.
-  - Example function: \( f(x) = 1 \) if \( wx + b > 0 \), otherwise \( f(x) = 0 \).
+  - Example function: $f(x) = 1$ if $wx + b > 0$, otherwise $f(x) = 0$.
 ### Perceptron Learning Algorithm
 1. Initialize weights randomly.
 2. Iterate until convergence:
@@ -28,13 +28,13 @@
 ## 9.3: Learning as Optimization
 ### Loss Functions
 1. **Quadratic Loss**:
-   \[ L = \frac{1}{2}(h(x) - y)^2 \]
+   $L = \frac{1}{2}(h(x) - y)^2$
 2. **Cross-Entropy Loss**:
-   \[ L = -[y \log(h(x)) + (1-y) \log(1-h(x))] \]
+   $L = -[y \log(h(x)) + (1-y) \log(1-h(x))]$
 
 ### Gradient Descent
 - Update weights using:
-  \[ w = w - \alpha \nabla_w J \]
+  $w = w - \alpha \nabla_w J$
 - **Epoch**: One complete iteration over the dataset.
 
 ## 9.4: Multi-Layer Perceptrons (MLPs)
@@ -56,8 +56,8 @@
 3. Activation function
 4. Loss function
 ### Activation Functions
-1. **Sigmoid**: \( \sigma(x) = \frac{1}{1 + e^{-x}} \)
-2. **ReLU**: \( f(x) = \max(0, x) \)
+1. **Sigmoid**: $\sigma(x) = \frac{1}{1 + e^{-x}}$
+2. **ReLU**: $f(x) = \max(0, x)$
 3. **Softmax**: Normalizes outputs for multi-class classification.
 
 ## 9.6: Convolutional Neural Networks (CNNs)
