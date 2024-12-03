@@ -1,4 +1,4 @@
- ## 4.1: Introduction to Virtual Memory
+## 4.1: Introduction to Virtual Memory
 - **Memory Management**: Process images aren’t stored as a single block. Some pages are loaded into memory, while others stay in swap space (disk).
 - **Logical to Virtual Address**: Logical addresses are converted to virtual addresses to manage larger process images.
 
