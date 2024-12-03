@@ -7,3 +7,5 @@
 [[7 Formal Specification]]
 [[8 Domain Modeling]]
 [[9 Software Quality]]
+[[10 Metrics]]
+[[11 Refactoring]]

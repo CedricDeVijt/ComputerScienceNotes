@@ -25,6 +25,9 @@
 
 ## 11.3: Refactoring in Action
 ### Example: Internet Banking System
+
+![[Pasted image 20241203141606.png]]
+
 #### Requirements:
 - **Functional**:
   - Customers own accounts for deposits, withdrawals, transfers.
@@ -37,6 +40,8 @@
 #### Expanding for Concurrent Access:
 - Add attributes: `transactionId`, `workingBalance`.
 - Add methods: `lock`, `commit`, `abort`, `isLocked`.
+
+![[Pasted image 20241203141721.png]]
 
 ## 11.4: Supporting Tools and Best Practices
 ### Tool Support
