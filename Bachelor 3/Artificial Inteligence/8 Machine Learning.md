@@ -1,120 +1,156 @@
-# Study Notes: Deep Learning
+## 8.1: Basics of Machine Learning
+### Key Concepts:
+- **Machine Learning Goals**:
+  - Learn models from data/experience.
+  - Use models for optimal decision-making.
+- Types of learning:
+  - **Parameter learning**: Estimating probabilities.
+  - **Structure learning**: Discovering dependencies (e.g., Bayesian Networks).
+  - **Hidden concepts**: Clustering and neural networks.
 
-## Chapter 1: Introduction to Neural Networks
+### Applications:
+1. **Spam Filtering**:
+   - Input: Email
+   - Output: Spam or Ham
+   - Features: Keywords, patterns, sender information.
+2. **Digit Recognition**:
+   - Input: Pixel grids (images).
+   - Output: Digits (0-9).
+   - Features: Pixel values, shape patterns.
+3. **Other Classification Tasks**:
+   - Medical diagnosis, fraud detection, essay grading.
 
-### Neural Networks and Perceptrons
-- Neural Networks mimic the structure of the human brain, consisting of billions of neurons connected by synapses. These networks are capable of learning and adapting to tasks by adjusting their internal parameters.
-- **Perceptron**: The foundational building block of neural networks, modeled as a simplified neuron. It serves as the basic unit for understanding how networks learn.
-  - Accepts multiple weighted inputs and computes a single output based on an activation function, such as a step function or sigmoid.
-  - Provides the basis for more complex architectures like multi-layer perceptrons and deep networks.
-- Perceptrons are trained to classify data by iteratively adjusting weights to minimize errors, ensuring that the output matches expected results. This process is known as supervised learning.
-- Perceptrons are limited to solving linearly separable problems, making them a stepping stone to more complex models.
+## 8.2: Model-Based Classification
+### Naïve Bayes:
+- Assumes features are independent given the label.
+- **Key Steps**:
+  - Compute posterior distribution $P(Y|F_1,...,F_n)$.
+  - Use the formula: $P(Y|X) = \frac{P(X|Y)P(Y)}{P(X)}$.
+### Strengths:
+- Simple, scalable.
+- Often works well even with simplifying assumptions.
+### Weaknesses:
+- Assumes independence between features.
 
----
+## 8.3: Training and Testing
+### Principles:
+1. **Empirical Risk Minimization**:
+   - Aim: Minimize loss on training data to approximate true distribution.
+   - Risks: Overfitting (when the model memorizes rather than generalizes).
 
-## Chapter 2: Learning as Optimization
+2. **Experimentation Cycle**:
+   - Train on **training set**.
+   - Tune using **held-out set**.
+   - Evaluate on **test set**.
 
-### Loss Functions and Gradient Descent
-- Optimization in Neural Networks is the process of minimizing a loss function to improve the model's predictive accuracy. The loss function quantifies the error between predicted and actual values.
-  - Common loss functions include:
-    - **Quadratic Loss**: Penalizes squared differences between predictions and actual values, often used in regression tasks.
-    - **Cross-Entropy Loss**: Measures the divergence between predicted probabilities and true class labels, widely used in classification tasks.
-- **Gradient Descent** is an iterative algorithm for updating model weights to minimize the loss function. Key variants include:
-  - **Stochastic Gradient Descent (SGD)**: Updates weights for each training sample, making it faster but noisier.
-  - **Batch Gradient Descent**: Updates weights using the average gradient of the entire dataset, ensuring stability but requiring more computation.
-  - **Mini-batch Gradient Descent**: Combines advantages of SGD and batch methods by using small batches of data.
-- Advanced optimization techniques, such as momentum and adaptive learning rates, further enhance gradient descent's efficiency.
+3. **Evaluation Metrics**:
+   - Accuracy: Fraction of correctly classified instances.
 
----
+## 8.4: Overfitting and Generalization
+### Overfitting:
+- Definition: Model fits training data too closely, failing on unseen data.
+- Causes:
+  - High model complexity.
+  - Insufficient training data.
+### Solutions:
+1. **Regularization**:
+   - Penalize overly complex models.
+2. **Smoothing**:
+   - Techniques like **Laplace smoothing** adjust probabilities for unseen events.
 
-## Chapter 3: Multi-layer Perceptrons (MLPs)
+## 8.5: Decision Trees
+### Key Concepts:
+- **Tree Structure**:
+  - Nodes represent decisions.
+  - Leaves represent outcomes.
+- **Hunt’s Algorithm**:
+  - Splits data until all tuples have the same label.
+### Steps:
+1. **Split Criterion**: Optimize impurity measures (e.g., GINI index).
+2. **Stopping Criteria**:
+   - Nodes are pure (homogeneous class distribution).
+   - Minimum number of data points at a node.
+### Example:
+- **GINI Index**: Measures impurity; lower values indicate purer nodes.
 
-### Structure and Backpropagation
-- Multi-layer Perceptrons (MLPs) are neural networks with multiple layers, consisting of input, hidden, and output layers.
-  - Hidden layers transform raw inputs into higher-level features, enabling the network to learn non-linear decision boundaries.
-  - Activation functions like **sigmoid**, **tanh**, and **ReLU** introduce non-linearity, allowing the network to model complex patterns.
-- **Backpropagation** is the core algorithm for training MLPs:
-  - Forward propagation computes the outputs for a given input.
-  - Backward propagation calculates gradients of the loss function with respect to weights using the chain rule.
-  - Gradients are used to update weights, reducing the error in subsequent iterations.
-- MLPs are universal function approximators, capable of representing any continuous function given sufficient neurons and layers.
+## 8.6: Advanced Decision Tree Techniques
+### **Node Impurity Measures**
+- **Gini Index**: Measures the impurity of a node:
+  $GINI(t) = 1 - \sum_{j} p(j|t)^2$
+  - Maximum impurity: $1 - \frac{1}{n_c}$ (when classes are equally distributed).
+  - Minimum impurity: $0$ (when all records belong to a single class).
+- **Entropy**: Evaluates the randomness in class distribution.
+- **Misclassification Error**: Measures the proportion of incorrect classifications.
 
----
+### **Splitting Criteria**
+- For **Nominal Attributes**:
+  - **Multi-way Split**: Partition data into subsets based on all unique attribute values.
+  - **Binary Split**: Group attribute values into two subsets to minimize impurity.
+- For **Numerical Attributes**:
+  - Determine split points (e.g., $A < a$).
+  - Efficient computation: Sort and sweep through potential split points (complexity $O(n \log n)$).
 
-## Chapter 4: Deep Neural Networks (DNNs)
+### **Stopping Criteria**
+- Stop tree growth when:
+  - All instances in a node belong to the same class.
+  - Impurity measures do not improve with further splits.
+  - A predefined minimum number of instances per node is reached.
 
-### Features and Challenges
-- Deep Neural Networks extend MLPs with many layers, forming deep architectures that capture hierarchical features from data.
-  - Early layers extract low-level features (e.g., edges in images), while deeper layers capture high-level abstractions (e.g., objects in images).
-- **Advantages**:
-  - Automatic feature engineering eliminates the need for manual design of features.
-  - Capable of modeling highly complex relationships between inputs and outputs.
-- **Challenges**:
-  - Require vast amounts of labeled data for effective training.
-  - High computational demands necessitate specialized hardware like GPUs.
-  - Prone to overfitting due to large capacity, mitigated by techniques like early stopping, regularization, and dropout.
-- The **Universal Approximation Theorem** ensures that deep networks can approximate any function, making them highly versatile across domains.
+## 8.7: Handling Overfitting in Decision Trees
+### **Overfitting Concerns**
+- Results in complex trees that fit training data but fail to generalize.
+- Causes:
+  - Noise in the data.
+  - Lack of regularization or pruning.
 
----
+### **Techniques to Address Overfitting**
+1. **Pre-Pruning (Early Stopping)**:
+   - Stop tree growth based on restrictive conditions:
+     - All instances in a node have the same class.
+     - Attribute values do not further refine the split.
+     - Minimum number of data points reached.
+2. **Post-Pruning**:
+   - Grow the tree fully, then prune unnecessary nodes:
+     - Use a validation set to assess the impact of pruning on generalization.
+     - Replace sub-trees with leaf nodes based on majority class.
 
-## Chapter 5: Convolutional Neural Networks (CNNs)
+## 8.8: Logistic Regression
+### **Core Concept**
+- Logistic regression models the probability of a binary outcome as a linear function:
+  $logit(p) = \ln \left( \frac{p}{1-p} \right) = w^T x + b$
+  - $p$: Probability of the positive class.
+  - $w$: Coefficients (weights).
+  - $x$: Features.
 
-### CNN Components and Applications
-- CNNs are specifically designed for processing spatial data, such as images and videos.
-  - **Convolutional Layers** apply kernels (small filters) to extract localized features like edges and textures.
-  - **Pooling Layers** downsample feature maps, reducing dimensionality while retaining key information.
-  - Fully connected layers map features to output predictions, such as class labels.
-- **Advantages**:
-  - Require fewer parameters compared to fully connected networks, reducing the risk of overfitting.
-  - Capture spatial hierarchies, making them ideal for image and video processing.
-- **Applications**:
-  - Object recognition, facial detection, and medical imaging are just a few domains where CNNs excel.
+### **Interpretation**
+- Coefficients $w_i$ indicate the change in the odds ratio for a unit change in $x_i$:
+  $Odds = \exp(w_i)$
+- Example:
+  - $P[Y=1|X] = \sigma(0.067 \cdot \text{Age} + 0.21 \cdot \text{BMI} - 15.23)$
+  - A one-unit increase in BMI multiplies the odds of $Y=1$ by $e^{0.21} \approx 1.23$.
 
-### Examples of CNN Architectures
-- **AlexNet (2012)**:
-  - Introduced innovations like ReLU activations and dropout, winning the ImageNet competition.
-- **ResNet (2015)**:
-  - Solved the vanishing gradient problem with skip connections, enabling the training of very deep networks.
+### **Training the Model**
+- Use **maximum likelihood estimation**:
+  $\text{Maximize: } P_M(Y|X)$
+- Often solved via **gradient descent**:
+  - Update rule: $w = w - \alpha \nabla J(w)$ (where $\alpha$ is the learning rate).
 
----
+### **Regularization**
+- Add regularization terms to prevent overfitting:
+  - Ridge Regression ($L_2$): Penalizes $\sum w_i^2$.
+  - LASSO ($L_1$): Penalizes $\sum |w_i|$.
 
-## Chapter 6: Advanced Topics in Deep Learning
-
-### Hyperparameters and Regularization
-- **Hyperparameters** include:
-  - Learning rate: Controls the step size in gradient descent.
-  - Network architecture: Determines the number and size of layers.
-  - Activation and loss functions: Impact how networks process and evaluate data.
-- **Regularization Techniques**:
-  - L1 and L2 regularization add penalties to the loss function to discourage overfitting.
-  - **Dropout** randomly disables neurons during training, improving generalization.
-  - **Data Augmentation** increases training data diversity through transformations like rotation, scaling, and flipping.
-
-### Pre-training and Transfer Learning
-- **Pre-training** uses models trained on large datasets to initialize weights for related tasks, reducing the need for extensive labeled data.
-  - Examples include fine-tuning ImageNet-trained models for specialized tasks like medical image analysis.
-- Transfer learning has become a cornerstone in leveraging existing knowledge for efficient training in resource-constrained scenarios.
-
----
 
 ## Key Points to Remember
-
-- **Perceptron**:
-  - Simplest form of a neural network, solving linearly separable problems.
-  - Forms the basis for more advanced architectures like MLPs and CNNs.
-- **Loss Functions**:
-  - Quadratic loss is suitable for regression tasks, while cross-entropy is preferred for classification.
-- **Gradient Descent**:
-  - Iteratively minimizes loss, with backpropagation enabling efficient weight updates in multi-layer networks.
-- **Deep Learning**:
-  - Excels in capturing complex patterns but requires substantial data and computation.
-  - Universal Approximation Theorem guarantees versatility.
-- **Convolutional Neural Networks**:
-  - Efficiently process spatial data through localized feature extraction.
-  - Key architectures like AlexNet and ResNet demonstrate CNNs' power in computer vision.
-- **Overfitting Solutions**:
-  - Regularization, dropout, and data augmentation are effective strategies.
-- **Pre-trained Models**:
-  - Accelerate training and reduce data requirements by leveraging existing knowledge.
-- Deep learning continues to revolutionize fields from computer vision to natural language processing, with advancements promising even greater impact in the future.
-
+#### Advanced Decision Tree Techniques
+- **Impurity Measures**: Gini Index, Entropy, and Misclassification Error help decide splits.
+- **Splitting**: Multi-way and binary splits optimize based on impurity for nominal and numerical attributes.
+- **Stopping Criteria**: Stop if further splits don’t improve impurity or meet minimum data thresholds.
+- **Overfitting Solutions**: 
+  - **Pre-pruning**: Stop growth early.
+  - **Post-pruning**: Fully grow and then prune using validation sets.
+#### Logistic Regression
+- **Model**: Predicts binary outcomes using the logistic function $logit(p) = w^T x + b$.
+- **Odds Ratio**: Coefficients show how odds change for a unit increase in features.
+- **Training**: Use maximum likelihood and optimize with gradient descent.
+- **Regularization**: Prevent overfitting with Ridge ($L_2$) or LASSO ($L_1$) penalties.
