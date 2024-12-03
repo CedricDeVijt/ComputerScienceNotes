@@ -1,8 +1,8 @@
 ## 11.1: Introduction to Refactoring
 ### What is Refactoring?
 - **Definition**:
-  - **Verb**: Process of changing a software system to improve internal structure without altering external behavior (**[Fowler99]**).
-  - **Noun**: A behavior-preserving source-to-source program transformation (**[Robe98]**).
+  - **Verb**: Process of changing a software system to improve internal structure without altering external behavior.
+  - **Noun**: A behavior-preserving source-to-source program transformation.
 ### Why Refactoring?
 - **Reasons**:
   - Adaptability for **new requirements**.
@@ -69,18 +69,14 @@
 - **When to Refactor**:
   - Code smells.
   - Increasing maintenance costs.
-
 - **Core Techniques**:
   - Add, rename, move, and extract methods or classes.
   - Composite refactorings like Extract Superclass.
-
 - **Practical Example**:
   - Internet Banking expanded for secure, concurrent transactions.
-
 - **Key Tools**:
   - Regression testing.
   - Version management.
-
 - **Best Practices**:
   - Consolidate after each expansion.
   - Use code smells as guides.
