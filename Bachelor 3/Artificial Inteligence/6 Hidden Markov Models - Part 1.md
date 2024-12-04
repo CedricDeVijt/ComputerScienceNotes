@@ -37,16 +37,16 @@
 
 ### Belief State
 - The **belief state** is a probability distribution over all possible states, representing our uncertainty about the system's state at a given time.
-- Denoted as \( b(X) \), where \( X \) is the set of all possible states.
-- The belief state \( b_t(X) \) at time \( t \) is updated as new evidence is observed, reflecting the likelihood of each state given the sequence of observations up to time \( t \).
+- Denoted as $b(X)$, where $X$ is the set of all possible states.
+- The belief state $b_t(X)$ at time $t$ is updated as new evidence is observed, reflecting the likelihood of each state given the sequence of observations up to time $t$.
 
-### The \( b(X) \) Functions
-- **Initial Belief State**: \( b_1(X) \) is the initial probability distribution over states, often based on prior knowledge or assumed to be uniform if no prior information is available.
+### The $b(X)$ Functions
+- **Initial Belief State**: $b_1(X)$ is the initial probability distribution over states, often based on prior knowledge or assumed to be uniform if no prior information is available.
 - **Belief Update**: As time progresses and new observations are made, the belief state is updated using the transition and emission models.
-  - **Transition Update**: \( b_{t+1}(X) = \sum_{X'} P(X | X') b_t(X') \)
-    - This step involves summing over all possible previous states \( X' \) to compute the probability of transitioning to the current state \( X \).
-  - **Observation Update**: \( b_{t+1}(X) \propto P(E_{t+1} | X) b_{t+1}(X) \)
-    - This step involves reweighting the belief state by the likelihood of the new observation \( E_{t+1} \) given the current state \( X \).
+  - **Transition Update**: $b_{t+1}(X) = \sum_{X'} P(X | X') b_t(X')$
+    - This step involves summing over all possible previous states $X'$ to compute the probability of transitioning to the current state $X$.
+  - **Observation Update**: $b_{t+1}(X) \propto P(E_{t+1} | X) b_{t+1}(X)$
+    - This step involves reweighting the belief state by the likelihood of the new observation $E_{t+1}$ given the current state $X$.
 
 ### Key Inference Algorithms
 1. **Kalman Filter**: For continuous spaces and linear-Gaussian models.
