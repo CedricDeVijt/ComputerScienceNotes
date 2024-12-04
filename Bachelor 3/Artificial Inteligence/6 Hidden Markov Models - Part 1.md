@@ -1,5 +1,6 @@
 ## 6.1 Introduction to Hidden Markov Models (HMMs)
 ### Overview
+- **Markov chains** are mathematical systems that experiences transitions from one state to another according to certain probabilistic rules.
 - **Hidden Markov Models (HMMs)** help in reasoning with **uncertainty over time**.
 - **States** are unobserved (hidden), and observations are made indirectly.
 - HMMs use a **Markov chain** where each state depends only on the previous state, and outputs are generated based on these states.
@@ -12,6 +13,9 @@
 1. **Initial State Distribution** (`P(X1)`)
 2. **Transition Model** (`P(Xt | Xt-1)`): Probabilities for moving between states.
 3. **Emission Model** (`P(E | X)`): Probabilities of observed evidence given the hidden state.
+
+![[Pasted image 20241204115650.png]]
+![[Pasted image 20241204115632.png|400]]
 
 ### Important Properties
 - **Conditional Independence**:
@@ -30,6 +34,19 @@
 - **Process**: 
   - Start with an initial belief, often uniform.
   - Update the belief over time and with new observations.
+
+### Belief State
+- The **belief state** is a probability distribution over all possible states, representing our uncertainty about the system's state at a given time.
+- Denoted as \( b(X) \), where \( X \) is the set of all possible states.
+- The belief state \( b_t(X) \) at time \( t \) is updated as new evidence is observed, reflecting the likelihood of each state given the sequence of observations up to time \( t \).
+
+### The \( b(X) \) Functions
+- **Initial Belief State**: \( b_1(X) \) is the initial probability distribution over states, often based on prior knowledge or assumed to be uniform if no prior information is available.
+- **Belief Update**: As time progresses and new observations are made, the belief state is updated using the transition and emission models.
+  - **Transition Update**: \( b_{t+1}(X) = \sum_{X'} P(X | X') b_t(X') \)
+    - This step involves summing over all possible previous states \( X' \) to compute the probability of transitioning to the current state \( X \).
+  - **Observation Update**: \( b_{t+1}(X) \propto P(E_{t+1} | X) b_{t+1}(X) \)
+    - This step involves reweighting the belief state by the likelihood of the new observation \( E_{t+1} \) given the current state \( X \).
 
 ### Key Inference Algorithms
 1. **Kalman Filter**: For continuous spaces and linear-Gaussian models.
