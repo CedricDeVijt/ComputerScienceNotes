@@ -47,12 +47,12 @@ Processor scheduling determines how processes access the processor and ensures f
   - **Oldest process** runs first.
   - Long processes may delay smaller tasks.
 
-![[Pasted image 20241104142017.png | 400]]
+	![[Pasted image 20241104142017.png | 400]]
 - **Round Robin (RR)**:
   - Each process gets a **time quantum (q)**; goes to the end of the queue when the quantum expires.
   - Works better for **small processes** but can disadvantage I/O-bound tasks.
 
-![[Screenshot 2024-11-04 at 14.20.51.png|500]]
+	![[Screenshot 2024-11-04 at 14.20.51.png|500]]
 ### 5.4.2 Optimal Algorithms
 - **Shortest Process Next (SPN)**:
   - Runs the **shortest task** first.
@@ -70,7 +70,7 @@ Processor scheduling determines how processes access the processor and ensures f
   - Simulates multiple scheduling strategies.
   - **Priority-based queues**: Longer time spent by a process reduces its priority.
 
-![[Pasted image 20241106175920.png|400]]
+	![[Pasted image 20241106175920.png|400]]
 
 - **Highest Response Ratio Next (HRRN)**:
   - **Response ratio** (waiting time + execution time) / execution time.
