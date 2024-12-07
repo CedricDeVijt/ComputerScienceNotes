@@ -4,3 +4,4 @@
 [[4 Counting]]
 [[5 Probability Theory]]
 [[6 Boolean Algebra]]
+[[7 Generating Functions]]
