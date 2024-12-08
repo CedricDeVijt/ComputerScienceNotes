@@ -73,6 +73,14 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 - **k-way Set Associative Mapping**: Typically k is small (e.g., 2-way or 4-way), reducing thrashing while keeping lookups manageable.
 
 ![[Screenshot 2024-10-17 at 10.02.20.png|500]]
+
+
+| **Cache Type**    | **Bits for Index**              | **Bits for Tag**                          | **Bits for Offset**         |     |
+| ----------------- | ------------------------------- | ----------------------------------------- | --------------------------- | --- |
+| Direct-Mapped     | Determined by number of lines   | Remaining bits after index and offset     | $\log_2(\text{Block size})$ |     |
+| Fully Associative | 0 (no index)                    | Remaining bits after offset (all for tag) | $\log_2(\text{Block size})$ |     |
+| Set-Associative   | $\log_2(\text{Number of sets})$ | Remaining bits after index and offset     | $\log_2(\text{Block size})$ |     |
+
 ## 2.5 Cache Replacement Algorithms
 ### 2.5.1 Why Replacement Matters
 - On a cache miss, data must be brought into the cache, displacing older data. The choice of which data to replace affects performance.
@@ -112,7 +120,7 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 - **Cache size** affects performance: Arrays smaller than the cache exhibit faster access times.
 - **Associative mapping**: More ways (higher k in k-way set associative caches) lead to fewer misses.
 
----
+
 
 # Key Points to Remember
 
