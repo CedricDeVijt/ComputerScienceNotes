@@ -74,17 +74,15 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 
 ![[Screenshot 2024-10-17 at 10.02.20.png|500]]
 
-
 $s=$ total number of address bits
 $d=$ number of sets
 $w=$ number of lines per set
 
-| **Cache Type**    | **Bits for Index**                 | **Bits for Tag**                          | **Bits for Offset**         |
-| ----------------- | ---------------------------------- | ----------------------------------------- | --------------------------- |
+| **Cache Type**    | **Bits for Index**                         | **Bits for Tag**                            | **Bits for Offset**         |
+| ----------------- | ------------------------------------------ | ------------------------------------------- | --------------------------- |
 | Direct-Mapped     | $s - \text{Tag bits} - \text{Offset bits}$ | $s - \log_2(d) - \log_2(\text{Block size})$ | $\log_2(\text{Block size})$ |
-| Fully Associative | 0 (no index)                      | $s - \text{Offset bits}$              | $\log_2(\text{Block size})$ |
+| Fully Associative | $0 \text{ (no index)}$                               | $s - \text{Offset bits}$                    | $\log_2(\text{Block size})$ |
 | Set-Associative   | $s - \text{Tag bits} - \text{Offset bits}$ | $s - \log_2(d) - \log_2(\text{Block size})$ | $\log_2(\text{Block size})$ |
-
 
 ## 2.5 Cache Replacement Algorithms
 ### 2.5.1 Why Replacement Matters
