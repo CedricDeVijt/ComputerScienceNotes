@@ -15,6 +15,8 @@
 - Maintain a variable for each CS.
 - Issues: Not atomic, busy waiting.
 
+	![[Pasted image 20241209141255.png|400]]
+
 ### Dekker’s Algorithm
 1. **1st Attempt**: Uses a turn variable to alternate access to the CS.
    - **Issue**: Faster processes get delayed.
