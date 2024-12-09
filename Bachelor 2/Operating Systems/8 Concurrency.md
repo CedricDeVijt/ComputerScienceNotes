@@ -271,7 +271,7 @@ signal(wsem);
 
 #### Adjusted Reader Process
 
-```pseudo
+```Pascal
 wait(rsem);
 wait(x);
 // Same as standard reader process
@@ -281,7 +281,7 @@ signal(rsem);
 
 #### Adjusted Writer Process
 
-```pseudo
+```Pascal
 wait(y);
    wcount := wcount + 1;
    if wcount = 1 then wait(rsem);
