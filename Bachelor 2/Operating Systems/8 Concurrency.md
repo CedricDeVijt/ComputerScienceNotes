@@ -163,6 +163,8 @@ Introduced by **Dijkstra**, semaphores are synchronization tools used to control
   - **Critical Section**
   - **Exit**: `signal(s);`
 
+	![[Pasted image 20241209150706.png|300]]
+
 ## 8.4: Producers/Consumers Problem
 
 ### Problem Description
