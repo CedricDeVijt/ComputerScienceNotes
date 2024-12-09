@@ -25,10 +25,12 @@
   - Set `bit = 1` upon entry.
   - Set `bit = 0` upon exit.
 - **Issues**:
+
   - **Non-Atomic Operations**: Testing and setting the bit aren't atomic; interruptions can occur between them.
   - **Busy Waiting**: Processes constantly check the bit, consuming CPU resources.
 
-	![[Pasted image 20241209141255.png|300]]
+  ![[Pasted image 20241209141255.png|300]]
+
 ### Dekker's Algorithm
 
 A pioneering solution for achieving mutual exclusion between two processes.
@@ -37,41 +39,42 @@ A pioneering solution for achieving mutual exclusion between two processes.
 
 - **Use**: A global variable `turn` indicating whose turn it is to enter the critical section.
 - **Issue**: Can cause delays for faster processes and may favor one process over the other.
-	
-	![[Pasted image 20241209142936.png|500]]
+
+  ![[Pasted image 20241209142936.png|500]]
 
 #### Second Attempt
 
 - **Use**: Individual flags `flag[0]` and `flag[1]` to show intent to enter the critical section.
 - **Issue**: Mutual exclusion isn't guaranteed if a process is interrupted after the while loop.
-	
-	![[Pasted image 20241209142956.png|500]]
+
+  ![[Pasted image 20241209142956.png|500]]
 
 #### Third Attempt
 
 - **Modification**: Switch the order of setting the flag and checking the other's flag.
 - **Issue**: Can lead to a **deadlock** where both processes are stuck indefinitely.
-	
-	![[Pasted image 20241209143020.png|500]]
+
+  ![[Pasted image 20241209143020.png|500]]
 
 #### Fourth Attempt
 
 - **Addition**: Introduce a pause mechanism to reset the flag and retry after some delay.
 - **Issue**: **Unbounded Waiting Time**; no guarantee on when a process can proceed.
-	
-	![[Pasted image 20241209143044.png|500]]
-	
+
+  ![[Pasted image 20241209143044.png|500]]
+
 #### Final Solution
 
 - **Combination**: Use both `flag` variables and a `turn` variable.
 - **Mechanism**:
   - If both processes want to enter, one yields based on the `turn` variable.
 - **Properties**:
+
   - **Ensures Mutual Exclusion**.
   - **Prevents Deadlocks**.
   - **Not Easily Scalable** to multiple processes.
-	
-	![[Pasted image 20241209143104.png|500]]
+
+  ![[Pasted image 20241209143104.png|500]]
 
 ### Peterson's Algorithm
 
@@ -84,10 +87,11 @@ An elegant solution that works for two or more processes.
   - Set `turn = j` to allow the other process to proceed if needed.
   - Wait while `flag[j]` is true and `turn == j`.
 - **Advantages**:
+
   - **Simple** and easy to understand.
   - **Ensures Mutual Exclusion**.
 
-	![[Pasted image 20241209143355.png|400]]
+  ![[Pasted image 20241209143355.png|400]]
 
 #### N-Process Version
 
@@ -98,17 +102,19 @@ An elegant solution that works for two or more processes.
   - Processes wait at each stage unless they're allowed to proceed.
 - **Note**: Requires more complex management but achieves mutual exclusion for multiple processes.
 
-	![[Pasted image 20241209143417.png|400]]
+  ![[Pasted image 20241209143417.png|400]]
+
 ## 8.3: Hardware-Based Solutions
 
 ### Disabling Interrupts
 
 - **Method**: Prevent context switches during the critical section by disabling interrupts.
 - **Disadvantages**:
+
   - **Not Suitable** for large critical sections.
   - **Limited** to single-processor systems.
 
-	![[Pasted image 20241209145430.png|300]]
+  ![[Pasted image 20241209145430.png|300]]
 
 ### Machine Instruction Support (Spinlocks)
 
@@ -159,11 +165,12 @@ Introduced by **Dijkstra**, semaphores are synchronization tools used to control
 
 - **Initialization**: Semaphore `s` is set to `1`.
 - **Protocol**:
+
   - **Entry**: `wait(s);`
   - **Critical Section**
   - **Exit**: `signal(s);`
 
-	![[Pasted image 20241209150706.png|300]]
+  ![[Pasted image 20241209150706.png|300]]
 
 ## 8.4: Producers/Consumers Problem
 
@@ -185,24 +192,21 @@ Introduced by **Dijkstra**, semaphores are synchronization tools used to control
 
 #### Producer Process
 
-```pseudo
+```Pascal
 repeat
    produce item v;
-   wait(s);
-   append v to buffer;
-   signal(s);
-   signal(n);
+   b[in]:=v;
+   in:=in+1;
 forever;
 ```
 
 #### Consumer Process
 
-```pseudo
+```Pascal
 repeat
-   wait(n);
-   wait(s);
-   remove item w from buffer;
-   signal(s);
+   while in ≤ out do {nothing};
+   w := b[out];
+   out := out +1;
    consume item w;
 forever;
 ```
@@ -232,7 +236,7 @@ forever;
 
 #### Reader Process
 
-```pseudo
+```Pascal
 wait(x);
    rcount := rcount + 1;
    if rcount = 1 then wait(wsem);
@@ -246,7 +250,7 @@ signal(x);
 
 #### Writer Process
 
-```pseudo
+```Pascal
 wait(wsem);
 WRITE;
 signal(wsem);

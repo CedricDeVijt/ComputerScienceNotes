@@ -1,13 +1,16 @@
 ## 7.1 Particle Filtering
+
 ### Overview
+
 - **Purpose**: Approximates solutions for problems where state space \(|X|\) is too large or continuous to use exact inference.
 - **Key Idea**: Tracks a sample of states (called **particles**) instead of a full probability distribution.
-- **Advantages**: 
+- **Advantages**:
   - Memory efficient: List of particles replaces state probabilities.
   - Time complexity per step is linear in the number of samples.
 - **Trade-Off**: Requires a large number of particles for accuracy.
 
 ### Process
+
 1. **Representation**:
    - Use $N$ particles to approximate $P(X)$.
    - Probability $P(x)$ is proportional to the number of particles with value $x$.
@@ -22,12 +25,15 @@
    - Ensures high-weight samples are prioritized.
 
 ## 7.2 Applications of Particle Filtering
+
 ### **Robot Localization**
+
 - **Problem**: Locating a robot within a known map using sensor readings (e.g., sonar or laser).
 - **Challenge**: Continuous state space prohibits storing full distributions.
 - **Solution**: Particle filtering is used to approximate position probabilities.
 
 ### **Simultaneous Localization and Mapping (SLAM)**
+
 - **Problem**: Simultaneously estimate both the map and the robot's location.
 - **State Space**: Combines robot position and map details.
 - **Techniques**:
@@ -35,7 +41,9 @@
   - Kalman filtering (for Gaussian HMMs)
 
 ## 7.3 HMM Queries and Algorithms
+
 ### Most Likely Explanation
+
 - **Query**: Find the sequence of states with the highest joint probability given observations.
 - **Algorithm**: Viterbi algorithm
   - Uses a **state trellis**, where:
@@ -44,19 +52,23 @@
     - Maximum-weight paths represent the most probable sequences.
 
 ### Forward vs. Viterbi Algorithms
+
 - **Forward Algorithm**:
   - Calculates the sum of probabilities over all paths for evidence sequences.
 - **Viterbi Algorithm**:
   - Identifies the single most probable sequence of states.
 
 ## 7.4 Dynamic Bayes Nets (DBNs)
+
 ### Overview
+
 - **Purpose**: Generalization of HMMs to track multiple variables over time.
 - **Structure**:
   - Repeated Bayesian network structure across time steps.
   - $t$-th step depends on $(t-1)$-th step.
 
 ### Exact Inference
+
 1. **Procedure**:
    - Unroll the network for $T$ steps.
    - Apply variable elimination to compute $P(X_T|e_{1:T})$.
@@ -65,6 +77,7 @@
    - Store current factors only.
 
 ### Particle Filters in DBNs
+
 - A **particle** represents a complete state sample at a time step.
 - Process:
   1. **Initialize**: Generate prior samples.
@@ -75,6 +88,7 @@
 ---
 
 ## Key Points to Remember
+
 - **Particle Filtering**:
   - Tracks samples (particles) to approximate state distributions.
   - Key steps: Transition (elapse time), weighting (observation), resampling.

@@ -1,10 +1,12 @@
 ## 8.1: Introduction to Domain Modeling
+
 - **Purpose of Domain Modeling**: Validates and analyzes requirements to confirm that we understand the problem domain and that we are building the correct system.
 - **Challenges**:
   - **Customer Ambiguity**: Customers often lack clarity or change their requirements.
-  - **Adaptability**: Use cases and requirements can evolve over time, necessitating flexible models that focus on *what* rather than *how* a process is done.
+  - **Adaptability**: Use cases and requirements can evolve over time, necessitating flexible models that focus on _what_ rather than _how_ a process is done.
 
 ## 8.2: CRC (Class-Responsibility-Collaboration) Cards
+
 - **Definition**: CRC cards are used to model domain concepts by defining classes, their responsibilities, and collaborations.
 - **Benefits**:
   - Compact, manipulable, and easy to modify or discard.
@@ -17,6 +19,7 @@
 ![[Pasted image 20241112140604.png]]
 
 ## 8.3: Problem Decomposition
+
 - **Functional vs. Object-Oriented Decomposition**:
   - **Functional**:
     - Centralized responsibilities, stable for single-function systems.
@@ -30,6 +33,7 @@
 ![[Pasted image 20241112140929.png]]
 
 ## 8.4: Identifying Objects and Responsibilities
+
 - **Object Identification Techniques**:
   - **Noun and Verb Phrase Analysis**: Nouns often suggest objects, while verbs indicate responsibilities.
   - **Class Enumeration and Role Definition**: List and organize potential classes and their interactions.
@@ -38,6 +42,7 @@
   - Collaborations represent the relationships or dependencies between objects.
 
 ## 8.5: Hierarchies in Domain Modeling
+
 - **Hierarchical Organization**:
   - **Liskov Substitution Principle**: Ensures subclasses can replace superclasses without issue.
   - **Guidelines**:
@@ -45,6 +50,7 @@
     - Factor out common responsibilities and strive for shallow, broad hierarchies.
 
 ## 8.6: Feature Models and Product Lines
+
 - **Feature Models**: Visual representations of features, showing commonalities and variations in product lines.
   - **Feature Diagram Components**:
     - **Mandatory Features**: Essential for all product variations.
@@ -55,6 +61,7 @@
   - **Example**: Linux kernel with configurable features allows for customized variants.
 
 ## 8.7: Clone-and-Own Approach
+
 - **Definition**: Creating a new product variant by copying and modifying an existing one.
 - **Advantages**:
   - Time efficiency and independence in production.
@@ -64,10 +71,12 @@
   - Risk of duplicated efforts and bugs across variants.
 
 ## 8.8: Social Coding and Variant Forks
+
 - **Social Forks**: Temporary forks for development, patches, and features, often merged back into the main project.
 - **Variant Forks**: Permanent, maintained separately to meet specific requirements, resulting in divergent development paths.
 
 ## 8.9: Ensuring Correctness and Traceability
+
 - **Correctness**: Ensures that models are accurate and address the actual needs of the customer.
   - Achieved through scenario walkthroughs and role-playing.
 - **Traceability**:
@@ -77,6 +86,7 @@
 ---
 
 ## Key Points to Remember
+
 - **Domain Modeling** is essential to validate and capture requirements accurately.
 - **CRC Cards** facilitate brainstorming by assigning responsibilities and collaborators to objects.
 - **Object-Oriented Decomposition** is preferable for systems with evolving requirements due to its flexibility and encapsulation.
