@@ -87,6 +87,8 @@ An elegant solution that works for two or more processes.
   - **Simple** and easy to understand.
   - **Ensures Mutual Exclusion**.
 
+	![[Pasted image 20241209143355.png|400]]
+
 #### N-Process Version
 
 - **Mechanism**:
@@ -96,6 +98,7 @@ An elegant solution that works for two or more processes.
   - Processes wait at each stage unless they're allowed to proceed.
 - **Note**: Requires more complex management but achieves mutual exclusion for multiple processes.
 
+	![[Pasted image 20241209143417.png|400]]
 ## 8.3: Hardware-Based Solutions
 
 ### Disabling Interrupts
@@ -104,6 +107,8 @@ An elegant solution that works for two or more processes.
 - **Disadvantages**:
   - **Not Suitable** for large critical sections.
   - **Limited** to single-processor systems.
+
+	![[Pasted image 20241209145430.png|300]]
 
 ### Machine Instruction Support (Spinlocks)
 
@@ -117,6 +122,8 @@ An elegant solution that works for two or more processes.
 ### Semaphores
 
 Introduced by **Dijkstra**, semaphores are synchronization tools used to control access to shared resources.
+
+![[Pasted image 20241209145541.png|500]]
 
 #### Counting Semaphores
 
