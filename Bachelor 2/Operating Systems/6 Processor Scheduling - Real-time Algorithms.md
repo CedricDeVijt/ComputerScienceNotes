@@ -55,6 +55,7 @@ Processor scheduling determines which processes get CPU time in a system. It inc
   3. Assign priorities, remove the task, and repeat.
 
 	![[Pasted image 20241211160103.png|200]]
+
 ## 6.4: Periodic Task Scheduling
 
 ### **EDF for Periodic Tasks**
