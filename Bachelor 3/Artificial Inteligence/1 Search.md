@@ -41,6 +41,7 @@
 - Each **node** represents a **plan**, not just a state.
 - For most problems, we can never actually build the whole tree
 - Cyclic graphs from infinitely big search trees
+
   ![[Pasted image 20241002133435.png]]
 
 ## 1.4 Search Strategies
