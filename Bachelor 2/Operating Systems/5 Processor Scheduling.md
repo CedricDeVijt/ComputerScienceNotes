@@ -46,11 +46,19 @@ Processor scheduling determines how processes access the processor and ensures f
 
 ### 5.3.2 Notation and Models
 
-- **Universal Notation (α | β | γ)**:
+- **Universal Notation ($α | β | γ$)**:
   - **α**: Machine environment, e.g., single or multiple processors.
   - **β**: Constraints, e.g., arrival times, preemption, and precedence conditions.
   - **γ**: Goal function to minimize, e.g., total completion time.
-
+- Machine environment ($α$)
+	- α = 1, there is just 1 machine/processor
+	- α = Pm, there are m identical machines/processors
+	- β = $rj$, the processes have arrival/release times.
+	- β = $pmtn$, preemption is possible.
+	- β = $prec$, precedence conditions are applicable. ($p0 → pf$)
+- Pre-conditions ($β$)
+	- ...
+- Function to be minimized ($γ$)
 ## 5.4 Short-Term Scheduling Algorithms
 
 ### 5.4.1 Non-Real-Time Scheduling Algorithms
