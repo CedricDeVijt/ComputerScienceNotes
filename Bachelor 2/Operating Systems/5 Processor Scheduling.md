@@ -50,15 +50,26 @@ Processor scheduling determines how processes access the processor and ensures f
   - **α**: Machine environment, e.g., single or multiple processors.
   - **β**: Constraints, e.g., arrival times, preemption, and precedence conditions.
   - **γ**: Goal function to minimize, e.g., total completion time.
-- Machine environment ($α$)
-	- α = 1, there is just 1 machine/processor
-	- α = Pm, there are m identical machines/processors
-	- β = $rj$, the processes have arrival/release times.
-	- β = $pmtn$, preemption is possible.
-	- β = $prec$, precedence conditions are applicable. ($p0 → pf$)
-- Pre-conditions ($β$)
-	- ...
-- Function to be minimized ($γ$)
+
+- **Machine environment** ($α$)
+  - $α = 1$, there is just 1 machine/processor
+  - $α = Pm$, there are m identical machines/processors
+
+- **Pre-conditions** ($β$)
+  - $β = rj$, the processes have arrival/release times.
+  - $β = pmtn$, preemption is possible.
+  - $β = prec$, precedence conditions are applicable. ($p0 → pf$)
+
+- **Function to be minimized** ($γ$)
+  - Total completion time ($\sum C_j$)
+  - Number of tasks that do not meet a deadline ($\sum U_j$)
+
+- Example: $1 | prec, r_j |\sum C_j$
+	- A single-processor environment.
+	- Not all the tasks arrive at time $t=0$.
+	- There are certain tasks that must finish before certain others may start. (usually indicated via a precedence graph)
+	- We want to minimize the total completion time
+
 ## 5.4 Short-Term Scheduling Algorithms
 
 ### 5.4.1 Non-Real-Time Scheduling Algorithms
