@@ -65,7 +65,7 @@ Disk management constitutes an integral domain within modern operating systems, 
 
 ## 7.5: Disk Scheduling Algorithms
 
-### First-In First-Out (FIFO)
+### First-In First-Out (FIFO) (aka FCFS)
 
 - **Mechanism**: Sequentially processes I/O requests in the order of arrival.
 - **Characteristics**:
@@ -74,7 +74,6 @@ Disk management constitutes an integral domain within modern operating systems, 
   - Suboptimal for non-sequential, random reads due to higher seek overheads.
 
 ![[Pasted image 20241202142515.png|500]]
-
 ### Shortest Seek Time First (SSTF)
 
 - **Mechanism**: Prioritizes the request necessitating the shortest seek distance.
@@ -82,7 +81,6 @@ Disk management constitutes an integral domain within modern operating systems, 
 - **Drawbacks**: Can result in request starvation, particularly for data located on distant tracks.
 
 ![[Pasted image 20241202142544.png|500]]
-
 ### SCAN and Cyclic-SCAN (C-SCAN)
 
 - **SCAN**:
@@ -93,7 +91,7 @@ Disk management constitutes an integral domain within modern operating systems, 
   - Mitigates unfairness for centrally located requests.
 
 ![[Pasted image 20241202144746.png|500]]
-
+*Example of SCAN*
 ### LOOK and C-LOOK
 
 - **LOOK**:
@@ -119,7 +117,7 @@ Disk management constitutes an integral domain within modern operating systems, 
 
 ### RAID Levels
 
-1. **RAID 0**: Implements data striping to maximize throughput but lacks redundancy.
+1. **RAID 0**: Implements data striping to maximize throughput but lacks redundancy (aka AID).
    ![[Pasted image 20241202150312.png|300]]
 2. **RAID 1**: Employs mirroring to replicate data, ensuring high fault tolerance but with reduced write efficiency.
    ![[Pasted image 20241202150342.png|300]]
