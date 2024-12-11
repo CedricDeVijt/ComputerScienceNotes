@@ -109,7 +109,7 @@ Processor scheduling determines how processes access the processor and ensures f
   - **Priority-based queues**: Longer time spent by a process reduces its priority.
 
   ![[Pasted image 20241106175920.png|400]]
-
+  
 - **Highest Response Ratio Next (HRRN)**:
   - **Response ratio** (waiting time + execution time) / execution time.
   - Favors processes with higher response ratios, balancing short and long tasks.

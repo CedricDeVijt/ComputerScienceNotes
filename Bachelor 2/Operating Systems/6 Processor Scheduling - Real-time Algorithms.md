@@ -24,7 +24,7 @@ Processor scheduling determines which processes get CPU time in a system. It inc
 
 - **Definition**: Schedule tasks based on ascending deadlines.
 - **Key Characteristics**:
-  - Minimizes lateness: $L_{\text{max}} = \max(C_j - d_j)$.
+  - Minimizes lateness $L_{\text{max}} = \max(C_j - d_j)$.
   - Ensures feasibility if $L_{\text{max}} \leq 0$.
   - Optimal when all deadlines are feasible.
 - **Example**: If two tasks have deadlines $d_1$ and $d_2$, prioritize the task with $\min(d_1, d_2)$.
@@ -54,6 +54,7 @@ Processor scheduling determines which processes get CPU time in a system. It inc
   2. Select the task with the latest deadline.
   3. Assign priorities, remove the task, and repeat.
 
+	![[Pasted image 20241211160103.png|200]]
 ## 6.4: Periodic Task Scheduling
 
 ### **EDF for Periodic Tasks**
