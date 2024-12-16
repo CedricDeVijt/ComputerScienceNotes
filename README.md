@@ -32,5 +32,5 @@ Take the following text and make it such  that is optimized for study purposes. 
 
 3. **Highlighted Sections for Study**: Bold or highlight crucial terms, definitions, dates, and concepts that are essential for quick review.
 
-Ensure the final output is easy to navigate and ready to be used as effective study material and covers all the material.
+Ensure the final output is easy to navigate and ready to be used as effective study material and covers all the material. The subsections should be named after the content in the subsection, don’t use summary and key concepts as subsections.
 ```
