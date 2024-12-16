@@ -39,7 +39,7 @@ Cache memory is a type of high-speed memory that sits between the CPU and main m
 - **Memory is partitioned** into blocks, each containing words.
 - Cache stores data in **cache lines** and uses **tags** to identify each line.
 
-- A **block** (or cache line) is the basic unit of data transfer between the main memory and the cache. It is a contiguous chunk of memory that the cache loads from main memory at one time.
+- A **block** is the basic unit of data transfer between the main memory and the cache. It is a contiguous chunk of memory that the cache loads from main memory at one time.
 - A **word** is the standard unit of data that the CPU processes at one time. The size of a word depends on the system architecture (e.g., 32-bit or 64-bit).
 
 ![[Pasted image 20241104090740.png]]
