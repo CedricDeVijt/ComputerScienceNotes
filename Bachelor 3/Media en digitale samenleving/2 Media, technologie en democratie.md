@@ -69,6 +69,8 @@
 - **Materiële uitdagingen**: Democratische procedures kunnen worden beïnvloed door technologie.
 - **Fundamentele uitdagingen**: Democratische principes kunnen onder druk komen te staan door technologische ontwikkelingen zoals AI.
 
+---
+
 ## Key Points to Remember
 
 - **Democratie** vereist vrijheid, gelijkheid, participatie en pluralisme.

@@ -91,5 +91,3 @@ Dit college richt zich op de impact van media en technologie op het welzijn, met
 - **Kinderrechten** benadrukken veilige en vrije toegang tot digitale media voor jongeren.
 - **Empirisch bewijs** toont dat niet alle jongeren even kwetsbaar zijn voor sociale media.
 - **Aanbevelingen** voor ouders: vrije speeltijd stimuleren, smartphones en socialmediagebruik uitstellen bij jonge kinderen.
-
-**Cruciale Begrippen**: sociale deprivatie, The Great Rewiring, UNICEF-rapport, Project AWeSoMe, ouderlijke supervisie, vrij spel, morele paniek.

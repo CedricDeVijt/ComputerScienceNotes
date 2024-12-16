@@ -107,7 +107,7 @@
 
 ---
 
-# Key Points to Remember
+## Key Points to Remember
 
 - **Cybercrime** is een steeds groter probleem door anonimiteit en globalisering.
 - **Cybercrime-as-a-service (CaaS)** maakt het makkelijker voor criminelen om tools te kopen en te gebruiken.
