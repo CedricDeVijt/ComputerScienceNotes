@@ -1,6 +1,4 @@
-# Filesystems: Organized Study Guide
-
-## 9.1: Introduction to Filesystems
+## 9.1 Introduction to Filesystems
 
 ### Filesystem Attributes
 
@@ -14,7 +12,7 @@
 - Filesystem is foundational for data storage and retrieval.
 - Each file is defined by attributes stored in directories.
 
-## 9.2: File Operations and Open-File Tables
+## 9.2 File Operations and Open-File Tables
 
 ### File Operations
 
@@ -30,7 +28,7 @@
   - **System-wide table**: Tracks global file information.
 - Avoids redundant directory searches.
 
-## 9.3: Directory Structures
+## 9.3 Directory Structures
 
 ### Types of Structures
 
@@ -44,7 +42,7 @@
 - **Binary Tree**: Faster searches, more management.
 - **Hash Function**: Efficient but relies on clustering.
 
-## 9.4: Access and Allocation Methods
+## 9.4 Access and Allocation Methods
 
 ### Access Methods
 
@@ -60,7 +58,7 @@
 3. **Indexed**:
    - Combines benefits with a tradeoff on overhead.
 
-## 9.5: UNIX Inodes
+## 9.5 UNIX Inodes
 
 ### Structure of Inodes
 
@@ -69,7 +67,7 @@
 - Multilevel indexing manages large files.
 - Placement of inodes near data optimizes performance.
 
-## 9.6: Free-Space Management
+## 9.6 Free-Space Management
 
 ### Techniques for Free-Space Management
 
@@ -77,7 +75,7 @@
 2. **Linked List**: Efficient but less flexible.
 3. **Indexing**: Organizes free blocks into multilevel structures.
 
-## 9.7: Journaling
+## 9.7 Journaling
 
 ### Journaling Process
 
