@@ -63,7 +63,7 @@ Example:
 - Used to find a formula for a sequence when it is known that the sequence can be represented by a polynomial.
 
 Example:
-- Given the sequence $ -1, -1, 1, 5, 11, 19, 29, \ldots $, derive the polynomial $P(x) = x^2 - 3x + 1$.
+- Given the sequence $-1, -1, 1, 5, 11, 19, 29, \ldots$, derive the polynomial $P(x) = x^2 - 3x + 1$.
 
 ### 3.4.3 Guessing Closed Formulas
 - Converting recursive relations into closed formulas by transforming the recursive equation into an algebraic equation.
