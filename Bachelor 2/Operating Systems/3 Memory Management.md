@@ -31,7 +31,7 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 
 ## 3.4: Partitioning
 
-### 1. Fixed Partitioning (Fixed Size)
+### Fixed Partitioning (Fixed Size)
 
 - **Description**: Divides memory into fixed-size partitions.
 - **Advantages**:
@@ -42,7 +42,7 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 
 ![[Pasted image 20241106140043.png| 400]]
 
-### 2. Fixed Partitioning (Variable Size)
+### Fixed Partitioning (Variable Size)
 
 - **Description**: Memory is divided into partitions of variable size.
 - **Advantages**:
@@ -53,7 +53,7 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 
 ![[Pasted image 20241106140119.png|400]]
 
-### 3. Dynamic Partitioning
+### Dynamic Partitioning
 
 - **Description**: Partitions are created dynamically based on the size required by processes.
 - **Advantages**:
