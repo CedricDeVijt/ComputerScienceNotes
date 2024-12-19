@@ -1,11 +1,25 @@
-## 3.1: Introduction to Memory Management
+# Operating Systems Study Guide
+
+## 3.1 Memory Management
+
+### Introduction
 
 Memory management is critical for optimizing the use of the processor by allowing **multiple processes** to share the system's memory. The operating system (OS) is responsible for determining:
 
 1. **Which processes are present in memory**.
 2. **How these processes are organized**.
 
-## 3.2: Address Translation
+Key tasks include determining which processes remain in memory, logically and physically organizing them, and managing virtual memory.
+
+### Loading and Linking
+
+- **Absolute Addressing**: Object code uses fixed addresses; loaders have limited flexibility.
+- **Relocatable Addressing**: Logical addresses are translated to physical ones at load time, allowing dynamic relocation.
+- **Run-Time Address Translation**: Hardware translates logical to physical addresses during execution, enabling flexible memory placement.
+
+![[Pasted image 20241219174024.png|400]]
+
+## 3.2 Address Translation
 
 ### Compile Time
 
@@ -19,7 +33,9 @@ Memory management is critical for optimizing the use of the processor by allowin
 
 - The location of **relative/logical addresses** is flexible and can change as processes run.
 
-## 3.3: Memory Organization
+![[Pasted image 20241219174154.png|400]]
+
+## 3.3 Memory Organization
 
 ### Main Approaches
 
@@ -29,9 +45,11 @@ Memory management is critical for optimizing the use of the processor by allowin
 
 In most systems, part of the memory is reserved for the OS, while the remaining memory is shared by different user processes.
 
-## 3.4: Partitioning
+## 3.4 Partitioning
 
-### Fixed Partitioning (Fixed Size)
+### Fixed Partitioning
+
+#### Fixed Size
 
 - **Description**: Divides memory into fixed-size partitions.
 - **Advantages**:
@@ -40,9 +58,7 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
   - Leads to **internal fragmentation** (unused space in partitions).
   - Limits the size and number of processes in memory.
 
-![[Pasted image 20241106140043.png| 400]]
-
-### Fixed Partitioning (Variable Size)
+#### Variable Size
 
 - **Description**: Memory is divided into partitions of variable size.
 - **Advantages**:
@@ -51,7 +67,7 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 - **Challenges**:
   - **External fragmentation** (unused memory between partitions).
 
-![[Pasted image 20241106140119.png|400]]
+![[Pasted image 20241219174400.png|400]]
 
 ### Dynamic Partitioning
 
@@ -61,47 +77,9 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 - **Challenges**:
   - Results in memory holes (gaps) between partitions, causing **external fragmentation**.
 
-![[Pasted image 20241106140200.png|400]]
+![[Pasted image 20241219174429.png|400]]
 
-## 3.5: Paging
-
-### Description
-
-- Divides both **memory** and **processes** into fixed-size blocks called **page frames** and **pages**, respectively.
-- **Fragmentation**:
-  - **No external fragmentation**.
-  - **Small internal fragmentation** when a process’s size isn’t divisible by the frame size.
-
-![[Pasted image 20241106144012.png|400]]
-
-### Memory Translation
-
-- Logical address: **page number + offset**.
-- Translation through **process page table**.
-
-![[Screenshot 2024-11-06 at 14.41.08.png|400]]
-
-## 3.6: Segmentation
-
-### Description
-
-- Similar to paging but uses **variable-sized segments** instead of fixed pages.
-- **Fragmentation**:
-  - **No internal fragmentation**.
-  - **External fragmentation** may still occur, though less frequently than with partitioning.
-
-![[Pasted image 20241106144757.png|400]]
-
-### Memory Translation
-
-- Logical address: **segment number + offset**.
-- Translation is checked through the **process segment table**.
-
-![[Screenshot 2024-11-06 at 14.48.52.png|400]]
-
-## 3.7: Placement Algorithms
-
-### Fixed Partitioning
+#### Placement Algorithms
 
 1. **Best-Fit**: Fits a process into the smallest available partition.
    - Produces small holes, leading to fragmentation.
@@ -110,18 +88,60 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 4. **Worst-Fit**: Allocates the largest available partition.
    - May block future processes from fitting into memory.
 
-### Dynamic Partitioning
+![[Pasted image 20241219174520.png|400]]
 
-- **Buddy System**:
-  - Divides memory recursively into smaller blocks.
-  - If a block is released, it merges with its buddy to form a larger block.
-  - Effective in managing **dynamic memory allocation** with **75% memory usage** efficiency.
+#### Compaction
 
-![[Pasted image 20241106141134.png]]
+- Consolidates free memory blocks by relocating processes, reducing fragmentation but requiring significant processing time.
 
-## 3.8: x86 Architecture
+### Buddy System
 
-### Paging in x86
+- Memory divided into power-of-2-sized blocks.
+- Blocks split or merged based on process requirements.
+- Provides flexibility while ensuring efficient memory use.
+- Effective in managing **dynamic memory allocation** with **75% memory usage** efficiency.
+
+![[Pasted image 20241219174556.png|400]]
+
+## 3.5 Paging
+
+### Description
+
+- Divides both **memory** and **processes** into fixed-size blocks called **page frames** and **pages**, respectively.
+- **Fragmentation**:
+  - **No external fragmentation**.
+  - **Small internal fragmentation** when a process’s size isn’t divisible by the frame size.
+
+### Address Translation
+
+- Logical address: **page number + offset**.
+- Translation through **process page table**.
+- Hardware performs translations efficiently.
+
+### Key Considerations
+
+- Modern processors (e.g., x86) use hierarchical or inverted page tables to reduce memory overhead.
+
+## 3.6 Segmentation
+
+### Description
+
+- Similar to paging but uses **variable-sized segments** instead of fixed pages.
+- **Fragmentation**:
+  - **No internal fragmentation**.
+  - **External fragmentation** may still occur, though less frequently than with partitioning.
+
+### Memory Translation
+
+- Logical address: **segment number + offset**.
+- Translation is checked through the **process segment table**.
+
+### Comparison with Paging
+
+- **Paging** is simpler and causes only internal fragmentation.
+- **Segmentation** is more intuitive but may suffer from external fragmentation.
+
+### Implementation in x86
 
 - **32-bit architecture**:
   - Frames of **4096 bytes**.
@@ -129,39 +149,33 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
     - **P bit**: Page presence in memory.
     - **R/W bit**: Write permissions.
     - **D bit**: Indicates if the page has been modified.
-
-### Segmentation in x86
-
-- **Real and protected modes** are used to manage segmentation.
-- Segmentation is controlled through **4 segment registers**:
-  - Program code (2), stack (1), and data (1).
+- Early x86 systems combined segmentation and paging.
+- Modern x86 systems often operate in **flat mode**, making segmentation largely transparent.
 
 ---
 
 ## Key Points to Remember
 
-- **Address Translation**:
-  - Done during **compile time**, **load time**, and **run time**.
+- **Memory Management**:
+
+  - Efficient memory sharing and protection are critical.
+  - Address translation (logical to physical) ensures flexible resource use.
+
 - **Partitioning**:
+
   - **Fixed**: Easy but leads to internal fragmentation.
   - **Dynamic**: More efficient but leads to external fragmentation.
   - **Buddy System**: Efficient for dynamic memory allocation with 75% memory utilization.
+
 - **Paging**:
+
   - Breaks memory into fixed-size pages.
   - No external fragmentation, but there is **small internal fragmentation**.
+
 - **Segmentation**:
+
   - Uses variable-sized segments, causing **external fragmentation**, but avoids internal fragmentation.
+
 - **x86 Paging and Segmentation**:
   - Paging: 4096-byte frames, page tables manage memory access and permissions.
   - Segmentation: Uses **segment registers** and **protected mode** to manage memory regions.
-
----
-
-## Highlighted Terms and Concepts for Quick Review
-
-- **Memory Management**: Organizes processes in memory to optimize processor usage.
-- **Address Translation**: Converts logical addresses to physical addresses at different times (compile, load, run).
-- **Partitioning**: Divides memory into partitions, either fixed or variable-sized.
-- **Paging**: Divides memory into fixed-size pages to avoid external fragmentation.
-- **Segmentation**: Divides memory into variable-sized segments, reducing internal fragmentation.
-- **Buddy System**: Dynamic memory allocation technique that merges and divides blocks based on process requirements.
