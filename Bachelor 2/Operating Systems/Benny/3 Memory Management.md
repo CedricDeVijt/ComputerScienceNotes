@@ -80,28 +80,9 @@ Segmentation organizes memory into logical units (**segments**) like code, data,
 
 ## Key Points to Remember
 
-- **Memory Management**:
-
-  - Efficient memory sharing and protection are critical.
-  - Address translation (logical to physical) ensures flexible resource use.
-
-- **Partitioning**:
-
-  - Fixed partitioning is simple but wasteful.
-  - Dynamic partitioning reduces waste but introduces complexity.
-
-- **Paging**:
-
-  - Eliminates external fragmentation.
-  - Logical addresses are translated using page tables.
-
-- **Segmentation**:
-
-  - Organizes memory into logical units.
-  - Can lead to external fragmentation but provides flexibility.
-
-- **Buddy System**:
-
-  - Balances fixed and dynamic approaches for efficient use of memory.
-
+- **Memory Management**: Efficient memory sharing and protection are critical. Address translation (logical to physical) ensures flexible resource use.
+- **Partitioning**: Fixed partitioning is simple but wasteful. Dynamic partitioning reduces waste but introduces complexity.
+- **Paging**: Eliminates external fragmentation. Logical addresses are translated using page tables.
+- **Segmentation**: Organizes memory into logical units. Can lead to external fragmentation but provides flexibility.
+- **Buddy System**: Balances fixed and dynamic approaches for efficient use of memory.
 - Modern systems favor paging over segmentation for memory management due to simplicity and scalability.
