@@ -22,18 +22,18 @@
 
 ## 4.3: Organization and Optimization of Page Tables
 
-### Desirable Features:
+### Desirable Features
 
 - The entire page table should reside in memory.
 - The starting address of the page table should be stored in a register.
 - The page number should be used as an index to the page table.
 
-### Problems:
+### Problems
 
 - Page tables can become very large.
 - Page numbers can no longer be directly used as an index.
 
-### Solutions:
+### Solutions
 
 - **Multilevel Page Tables**: Divide the page table into multiple levels to reduce memory usage.
 - **Inverted Page Tables**: Use fewer entries and employ hashing for efficient page lookup.
