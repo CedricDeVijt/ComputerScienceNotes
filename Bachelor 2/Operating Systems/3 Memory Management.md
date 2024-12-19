@@ -1,5 +1,3 @@
-# Operating Systems Study Guide
-
 ## 3.1 Memory Management
 
 ### Introduction
@@ -123,7 +121,7 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 ### Key Considerations
 
 - Modern processors (e.g., x86) use hierarchical or inverted page tables to reduce memory overhead.
-
+![[Pasted image 20241219182402.png]]
 ## 3.6 Segmentation
 
 ### Description
