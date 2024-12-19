@@ -118,6 +118,8 @@ In most systems, part of the memory is reserved for the OS, while the remaining 
 - Translation through **process page table**.
 - Hardware performs translations efficiently.
 
+![[Pasted image 20241219182144.png|400]]
+
 ### Key Considerations
 
 - Modern processors (e.g., x86) use hierarchical or inverted page tables to reduce memory overhead.
