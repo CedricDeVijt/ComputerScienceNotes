@@ -1,46 +1,58 @@
-**Study Plan for Math and Operating Systems**
+#### December 20th - December 26th (Foundation Phase)
+**Goal**: Cover new material from chapters 4-5 for both subjects, integrating exercises while studying.
+- **December 20th**: 
+  - Math: Chapter 4 (Counting, study material and solve exercises simultaneously)
+  - OS: Chapter 4 (Virtual Memory, study and solve exercises)
+- **December 21st**: 
+  - Math: Chapter 4 (Counting, continued with integrated exercises)
+  - OS: Chapter 5 (Processor Scheduling, study and solve exercises)
+- **December 22nd**: 
+  - Math: Chapter 5 (Probability Theory, study material and solve exercises)
+- **December 23rd**: 
+  - Math: Chapter 5 (Probability Theory, continued with integrated exercises)
+  - OS: Chapter 6 (Processor Scheduling - Real-time Algorithms, study and solve exercises)
+- **December 24th**: 
+  - Math: Chapter 6 (Boolean Algebra, study material and solve exercises)
+  - OS: Chapter 7 (Disk Management, study and solve exercises)
+- **December 25th**: 
+  - Math: Chapter 6 (Boolean Algebra, continued with integrated exercises)
+  - OS: Chapter 9 (Filesystems, study and solve exercises)
+- **December 26th**: 
+  - Math: Chapter 7 (Generating Functions, study material and solve exercises)
+  - OS: Deep dive into Chapters 7-9 connections, with integrated exercises
 
----
+#### December 27th - January 1st (Advanced Topics)
+**Goal**: Focus on completing remaining material and integrating more exercises during study.
+- **December 27th**: 
+  - Math: Chapter 7 (Generating Functions, continued with integrated exercises)
+  - OS: Chapter 9 (Filesystems, continued with integrated exercises)
+- **December 28th**: 
+  - Math: Revisit challenging sections of Chapters 4-5 with exercises
+  - OS: Revisit challenging sections of Chapters 4-6 with exercises
+- **December 29th**: 
+  - Math: Revisit challenging sections of Chapters 6-7 with exercises
+  - OS: Revisit challenging sections of Chapters 7-9 with exercises
+- **December 30th**: 
+  - Math: Deep dive into Chapters 1-3 with integrated exercises
+  - OS: Deep dive into Chapters 1-3 with integrated exercises
+- **December 31st**: 
+  - Math: Focus on difficult topics and remaining exercises from all chapters
+  - OS: Focus on difficult topics and remaining exercises from all chapters
+- **January 1st**: 
+  - Math: Finalize understanding and remaining exercises for Chapters 1-7
+  - OS: Finalize understanding and remaining exercises for Chapters 1-9
 
-### General Guidelines
-1. **Priority Allocation**:
-   - Discrete Math: 60% study load.
-   - Operating Systems: 40% study load.
-2. **Study Schedule**:
-   - Dedicated days for single subjects unless beneficial otherwise.
-   - Allocate review days for earlier chapters.
+#### January 2nd - January 5th (Focused Review and Practice for Math)
+**Goal**: Review all Math chapters with targeted practice.
+- **January 2nd**: Math: Targeted review and exercises for Chapters 1-2
+- **January 3rd**: Math: Targeted review and exercises for Chapter 3
+- **January 4th**: Math: Targeted review and exercises for Chapters 4-5
+- **January 5th**: Math: Targeted review and exercises for Chapters 6-7
 
-### Schedule Overview
+#### January 6th - January 7th (Math Finals)
+- **January 6th**: Morning practice for Exercises (focus on Chapters 4-7)
+- **January 7th**: Morning practice for Theory (focus on Chapters 1-3)
 
-#### December 20 - 22: Chapter 4 for Both Subjects
-- **December 20 (Math)**: Discrete Math Chapter 4 (Counting).
-- **December 21 (OS)**: Operating Systems Chapter 4 (Virtual Memory).
-- **December 22 (Math)**: Discrete Math Chapter 5 (Probability Theory).
-
-#### December 23 - 25: Mid-level Chapters
-- **December 23 (OS)**: Operating Systems Chapter 5 (Processor Scheduling).
-- **December 24 (Math)**: Discrete Math Chapter 6 (Boolean Algebra).
-- **December 25 (OS)**: Operating Systems Chapter 6 (Real-time Algorithms).
-
-#### December 26 - 28: Advanced Chapters
-- **December 26 (Math)**: Discrete Math Chapter 7 (Generating Functions).
-- **December 27 (OS)**: Operating Systems Chapter 7 (Disk Management).
-
-#### December 29 - January 1: Reviewing Chapters 1-3
-- **December 29 (Math)**: Discrete Math Chapters 1-3 (Sets, Relations and Functions, Proof Techniques).
-- **December 30 (OS)**: Operating Systems Chapters 1-3 (Introduction, Cache Memory, Memory Management).
-- **December 31 (Math)**: Discrete Math Chapters 1-3 (Review and Exercises).
-- **January 1 (OS)**: Operating Systems Chapters 1-3 (Review and Exercises).
-
-#### January 2 - 5: Final Chapters
-- **January 2 (OS)**: Operating Systems Chapter 9 (Filesystems).
-- **January 3 (Math)**: Discrete Math Full Review.
-- **January 4 (OS)**: Operating Systems Full Review.
-- **January 5 (Math)**: Discrete Math Final Exercises and Mock Test.
-
-#### January 6 - 9: Exams and Final Preparation
-- **January 6 (Math)**: Discrete Math Exercises (Exam).
-- **January 7 (Math)**: Discrete Math Theory (Exam).
-- **January 8 (OS)**: Operating Systems Review of Key Concepts.
-- **January 9 (OS)**: Operating Systems Final Exam.
-
+#### January 8th - January 9th (Final Review and Practice for OS)
+- **January 8th**: OS: Full review and integrated exercises for Chapters 4-9
+- **January 9th**: Morning review and exercises before OS final
