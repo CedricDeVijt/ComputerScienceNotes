@@ -66,7 +66,7 @@
 ## 4.8 Newton's Binomial Theorem
 1. **Newton’s Binomial Theorem (Theorem 4.24)**  
    - For $(x + y)^n$:  
-     $(x + y)^n = \sum_{k=0}^n \binom{n}{k} x^k y^{n-k}$
+     $(x + y)^n = \sum\limits_{k=0}^n \binom{n}{k} x^k y^{n-k}$
 
 2. **Multinomial Theorem (Theorem 4.26)**  
    - For more than two terms $(x_1 + x_2 + \dots + x_r)^n$:  
