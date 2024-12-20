@@ -1,75 +1,46 @@
-**Overview:**
+**Study Plan for Math and Operating Systems**
 
-- Exam for Discrete Math: 6th + 7th January 2025
-- Exam for Operating Systems: 9th January 2025
-- Discrete Math workload: 50% more than Operating Systems.
+---
 
-**Plan Details:**
+### General Guidelines
+1. **Priority Allocation**:
+   - Discrete Math: 60% study load.
+   - Operating Systems: 40% study load.
+2. **Study Schedule**:
+   - Dedicated days for single subjects unless beneficial otherwise.
+   - Allocate review days for earlier chapters.
 
-### December 2024
+### Schedule Overview
 
-**20th December**
-- DM: Chapter 4 (Counting)
+#### December 20 - 22: Chapter 4 for Both Subjects
+- **December 20 (Math)**: Discrete Math Chapter 4 (Counting).
+- **December 21 (OS)**: Operating Systems Chapter 4 (Virtual Memory).
+- **December 22 (Math)**: Discrete Math Chapter 5 (Probability Theory).
 
-**21st December**
-- DM: Chapter 4 (Counting)
+#### December 23 - 25: Mid-level Chapters
+- **December 23 (OS)**: Operating Systems Chapter 5 (Processor Scheduling).
+- **December 24 (Math)**: Discrete Math Chapter 6 (Boolean Algebra).
+- **December 25 (OS)**: Operating Systems Chapter 6 (Real-time Algorithms).
 
-**22nd December**
-- DM: Chapter 5 (Probability Theory)
+#### December 26 - 28: Advanced Chapters
+- **December 26 (Math)**: Discrete Math Chapter 7 (Generating Functions).
+- **December 27 (OS)**: Operating Systems Chapter 7 (Disk Management).
 
-**23rd December**
-- OS: Chapter 4 (Virtual Memory)
+#### December 29 - January 1: Reviewing Chapters 1-3
+- **December 29 (Math)**: Discrete Math Chapters 1-3 (Sets, Relations and Functions, Proof Techniques).
+- **December 30 (OS)**: Operating Systems Chapters 1-3 (Introduction, Cache Memory, Memory Management).
+- **December 31 (Math)**: Discrete Math Chapters 1-3 (Review and Exercises).
+- **January 1 (OS)**: Operating Systems Chapters 1-3 (Review and Exercises).
 
-**24th December**
-- DM: Chapter 5 (Probability Theory, continued)
-- OS: Chapter 5 (Processor Scheduling)
+#### January 2 - 5: Final Chapters
+- **January 2 (OS)**: Operating Systems Chapter 9 (Filesystems).
+- **January 3 (Math)**: Discrete Math Full Review.
+- **January 4 (OS)**: Operating Systems Full Review.
+- **January 5 (Math)**: Discrete Math Final Exercises and Mock Test.
 
-**25th December** (Light study day)
-- DM: Chapter 6 (Boolean Algebra)
+#### January 6 - 9: Exams and Final Preparation
+- **January 6 (Math)**: Discrete Math Exercises (Exam).
+- **January 7 (Math)**: Discrete Math Theory (Exam).
+- **January 8 (OS)**: Operating Systems Review of Key Concepts.
+- **January 9 (OS)**: Operating Systems Final Exam.
 
-**26th December**
-- OS: Chapter 6 (Real-time Algorithms)
-
-**27th December**
-- DM: Chapter 6 (Boolean Algebra, continued)
-
-**28th December**
-- OS: Chapter 7 (Disk Management)
-
-**29th December**
-- DM: Chapter 7 (Generating Functions)
-
-**30th December**
-- OS: Chapter 8 (Concurrency)
-
-**31st December** (New Year’s Eve)
-- Review: DM Chapters 4-5
-
-### January 2025
-
-**1st January** (New Year’s Day)
-- Review: OS Chapters 4-6
-
-**2nd January**
-- DM: Chapter 7 (Generating Functions, continued)
-- OS: Chapter 9 (Filesystems)
-
-**3rd January**
-- Review: DM Chapters 6-7
-
-**4th January**
-- Review: OS Chapters 7-9
-
-**5th January**
-- Intensive Review: DM (All chapters)
-
-**6th January** (Exam: Discrete Math)
-- Theory review: DM
-
-**7th January** (Exam: Discrete Math)
-- Theory review: DM
-
-**8th January**
-- Intensive Review: OS
-
-**9th January** (Exam: Operating Systems)
