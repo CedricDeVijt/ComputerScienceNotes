@@ -6,49 +6,51 @@
   - December 7th (Theory)
 - **Operating Systems Final**: January 9th
 
+#### Study Goals
+- **Discrete Math**: Focus on chapters 4-7, with review time for chapters 1-3.
+- **Operating Systems**: Focus on chapters 4-9, with review time for chapters 1-3.
+
+The load for Math will be 50% higher than OS, and less time will be spent on review to allow for more focus on learning new material and integrating exercises into the study sessions.
+
+---
+
 ### Planning
 
-#### December 21st - December 26th (Foundation Phase)
+#### December 23rd - December 26th (Foundation Phase)
 **Goal**: Cover new material from chapters 5-7 for Math and chapters 4-9 for OS, integrating exercises while studying.
-- **December 21st**: 
+- **December 23rd**: 
   - OS: Chapter 4 (Virtual Memory, study and solve exercises)
   - Math: Chapter 5 (Probability Theory, study material and solve exercises simultaneously)
-- **December 22nd**: 
+- **December 24th**: 
   - OS: Chapter 5 (Processor Scheduling, study and solve exercises)
   - Math: Chapter 5 (Probability Theory, continued with integrated exercises)
-- **December 23rd**: 
+- **December 25th**: 
   - OS: Chapter 6 (Processor Scheduling - Real-time Algorithms, study and solve exercises)
   - Math: Chapter 6 (Boolean Algebra, study material and solve exercises)
-- **December 24th**: 
+- **December 26th**: 
   - OS: Chapter 7 (Disk Management, study and solve exercises)
   - Math: Chapter 6 (Boolean Algebra, continued with integrated exercises)
-- **December 25th**: 
-  - OS: Chapter 9 (Filesystems, study and solve exercises)
-  - Math: Chapter 7 (Generating Functions, study material and solve exercises)
-- **December 26th**: 
-  - OS: Deep dive into Chapters 7-9 connections, with integrated exercises
-  - Math: Chapter 7 (Generating Functions, continued with integrated exercises)
 
 #### December 27th - January 1st (Advanced Topics)
 **Goal**: Focus on completing remaining material and integrating more exercises during study.
 - **December 27th**: 
+  - OS: Chapter 9 (Filesystems, study and solve exercises)
+  - Math: Chapter 7 (Generating Functions, study material and solve exercises)
+- **December 28th**: 
+  - OS: Deep dive into Chapters 7-9 connections, with integrated exercises
+  - Math: Chapter 7 (Generating Functions, continued with integrated exercises)
+- **December 29th**: 
   - Math: Revisit challenging sections of Chapters 5-6 with exercises
   - OS: Revisit challenging sections of Chapters 4-6 with exercises
-- **December 28th**: 
+- **December 30th**: 
   - Math: Revisit challenging sections of Chapter 7 with exercises
   - OS: Revisit challenging sections of Chapters 7-9 with exercises
-- **December 29th**: 
+- **December 31st**: 
   - Math: Deep dive into Chapters 1-3 with integrated exercises
   - OS: Deep dive into Chapters 1-3 with integrated exercises
-- **December 30th**: 
+- **January 1st**: 
   - Math: Review and integrate exercises for all chapters (1-7)
   - OS: Review and integrate exercises for all chapters (1-9)
-- **December 31st**: 
-  - Math: Finalize understanding and remaining exercises for Chapters 1-7
-  - OS: Finalize understanding and remaining exercises for Chapters 1-9
-- **January 1st**: 
-  - Math: Wrap up and finalize challenging sections across all chapters
-  - OS: Wrap up and finalize challenging sections across all chapters
 
 #### January 2nd - January 5th (Focused Review and Practice for Math)
 **Goal**: Review all Math chapters with targeted practice.
