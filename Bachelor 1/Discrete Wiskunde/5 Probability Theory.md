@@ -77,10 +77,12 @@
 ### **Expectation (E[X])**:
 - $E[X] = \sum x \cdot P(X = x)$
 - **Example**: For a die, $E[X] = \frac{1}{6} \sum\limits_{i=1}^{6} i = 3.5$.
+- **Binomial Distribution**: $E[X] = n \cdot p$
 
 ### **Variance (Var[X])**:
-- $Var[X] = E[X^2] - (E[X])^2$.
+- $Var[X] = E[X^2] - (E[X])^2$
 - Measures spread of $X$.
+- **Binomial Distribution**: $Var[X] = n \cdot p \cdot (1-p)$
 
 ---
 
