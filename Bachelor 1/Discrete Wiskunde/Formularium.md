@@ -1,12 +1,6 @@
 ## Chapter 5: Probability
 
-### 1. **Basic Probability**
-- Probability of an event $A$:
-  $$
-  P(A) = \frac{|A|}{|S|}
- $$
-  where $|A|$ is the number of favorable outcomes and $|S|$ is the total number of outcomes in the sample space.
-
+### 1. Basics
 - Conditional probability:
   $$
   P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad \text{if } P(B) > 0
@@ -22,13 +16,13 @@
   P(A \cup B) = P(A) + P(B) - P(A \cap B)
  $$
 
-### 2. **Bayes' Theorem**
+### 2. Bayes' Theorem
 - Bayesian formula for events $A_i$ given $B$:
   $$
   P(A_i | B) = \frac{P(A_i) \cdot P(B | A_i)}{\sum_{j=1}^{n} P(A_j) \cdot P(B | A_j)}
  $$
 
-### 3. **Random Variables and Distributions**
+### 3. Random Variables and Distributions
 
 #### Uniform Distribution
 - Discrete uniform distribution:
@@ -41,14 +35,8 @@
   $$
   P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k = 0, 1, \dots, n
  $$
-- Expected value:
-  $$
-  E[X] = np
- $$
-- Variance:
-  $$
-  \text{Var}(X) = np(1-p)
- $$
+- Expected value: $E[X] = np$
+- Variance: $\text{Var}(X) = np(1-p)$
 
 #### Negative Binomial Distribution
 - PMF for $k \geq n$:
@@ -61,13 +49,10 @@
   $$
   P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}
  $$
-- Expected value and variance:
-  $$
-  E[X] = \lambda, \quad \text{Var}(X) = \lambda
- $$
+
 $$\lambda = np$$
 
-### 4. **General Properties**
+### 4. General Properties
 - Variance of a random variable:
   $$
   \text{Var}(X) = E[X^2] - (E[X])^2
