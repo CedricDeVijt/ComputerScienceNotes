@@ -73,6 +73,8 @@ $$\lambda = np$$
   \text{Var}(X) = E[X^2] - (E[X])^2
  $$
 - Standard deviation:
+  $$
+  \sigma = \sqrt{np(1-p)}
+ $$
 $$\mu = np$$
-$$ 
 
