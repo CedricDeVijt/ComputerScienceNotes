@@ -78,3 +78,4 @@ $$\lambda = np$$
  $$
 $$\mu = np$$
 
+$$Z = \frac{x - \mu}{\sigma}$$
