@@ -65,6 +65,7 @@
   $$
   E[X] = \lambda, \quad \text{Var}(X) = \lambda
  $$
+$$\lambda = np$$
 
 ### 4. **General Properties**
 - Variance of a random variable:
