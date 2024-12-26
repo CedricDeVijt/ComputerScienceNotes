@@ -72,6 +72,6 @@
   \text{Var}(X) = E[X^2] - (E[X])^2
  $$
 - Standard deviation:
-  $$
-  \sigma(X) = \sqrt{\text{Var}(X)}
- $$
+$$\mu = np$$
+$$ 
+
