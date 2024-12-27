@@ -15,6 +15,7 @@ coefficients of terms like $x^r$ reveal the number of ways to choose $r$ objects
 - **Example 7.2**: A basket with 2 apples, 1 pear, 1 plum, and 1 banana. The generating function becomes:
 
   $$(1+x+x^2)(1+x)(1+x)(1+x) = 1+4x+7x^2+7x^3+4x^4+x^5.$$
+  $$(0 \, \text{apples} + 1 \, \text{apple} + 2 \, \text{apples})(0 \, \text{pears} + 1 \, \text{pear})(0 \, \text{plums} + 1 \, \text{plum})(0 \, \text{bananas} + 1 \, \text{banana})$$
 
 ### Definition
 If a finite sequence $(a_0, a_1, \ldots, a_n)$ is given such that $a_n = a_{n+1} = a_{n+2} = \ldots = 0$, the generating function is:
