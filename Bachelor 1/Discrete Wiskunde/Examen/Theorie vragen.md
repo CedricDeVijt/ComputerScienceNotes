@@ -141,12 +141,94 @@ $$
 $\square$
 
 ## Wat is inductie? Geef alle verschillende soorten inductie. Bewijs via inductie: $\sum_{i=0}^n k^2 = \frac{n(n+1)(2n+1)}{6}$.
-Soorten inductie:
-1. **Directe inductie**: Bewijs dat $P(n)$ waar is voor alle $n \in \mathbb{N}$.
-2. **Inductie op een verzameling**: Bewijs dat $P(n)$ waar is voor alle $n \in S$, waar $S$ een verzameling is.
-3. **Inductie op een structuur**: Bewijs dat $P(n)$ waar is voor alle $n$ in een structuur, zoals een boom of graaf.
+### Wat is inductie?
 
+Inductie is een wiskundige techniek om stellingen te bewijzen die gelden voor een oneindige reeks objecten, vaak genummerd door natuurlijke getallen. Het idee is om te bewijzen dat een eigenschap geldt voor een basisgeval (zoals $n = 0$ of $n = 1$) en dat, als het geldt voor een willekeurige waarde $n = k$, het ook geldt voor $n = k+1$.
 
+### Soorten inductie:
+1. **Directe inductie**:
+   - Hierbij worden eigendommen bewezen van natuurlijke getallen, vaak met een eenvoudige stapsgewijze redenering.
+   - **Stappen**:
+     - Basisgeval: Toon dat de eigenschap geldt voor $n = 0$ of $n = 1$.
+     - Inductiestap: Ga ervan uit dat de eigenschap geldt voor $n = k$ (inductiehypothese) en bewijs dat het ook geldt voor $n = k+1$.
+  
+2. **Inductie op een structuur**:
+   - Deze vorm van inductie wordt gebruikt op objecten die zijn opgebouwd uit kleinere substructuren, zoals bomen of grafen.
+   - Het idee is om te bewijzen dat de eigenschap geldt voor de "basisstructuren" en dat het behoudt als een grotere structuur wordt opgebouwd uit kleinere met de inductiehypothese.
+
+### Bewijs via directe inductie:
+Bewijs dat:
+
+$$
+\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}.
+$$
+
+#### **Stap 1: Basisgeval ($n = 0$)**
+Als $n = 0$, dan is de som $\sum_{i=0}^0 i^2 = 0^2 = 0$.
+
+Aan de rechterkant van de vergelijking:
+$$
+\frac{0(0+1)(2\cdot 0 + 1)}{6} = \frac{0 \cdot 1 \cdot 1}{6} = 0.
+$$
+
+Het basisgeval klopt.
+
+#### **Stap 2: Inductiestap**
+Veronderstel dat de stelling geldt voor een willekeurige $n = k$. Dat wil zeggen:
+$$
+\sum_{i=0}^k i^2 = \frac{k(k+1)(2k+1)}{6}.
+$$
+
+We moeten bewijzen dat de stelling ook geldt voor $n = k+1$, dus:
+$$
+\sum_{i=0}^{k+1} i^2 = \frac{(k+1)(k+2)(2(k+1)+1)}{6}.
+$$
+
+**Berekening**:
+
+De som tot $k+1$ kunnen we splitsen:
+$$
+\sum_{i=0}^{k+1} i^2 = \sum_{i=0}^k i^2 + (k+1)^2.
+$$
+
+Vervang de inductiehypothese:
+$$
+\sum_{i=0}^{k+1} i^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2.
+$$
+
+Neem $(k+1)^2$ in de berekening op:
+$$
+\sum_{i=0}^{k+1} i^2 = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}.
+$$
+
+Factoriseer $(k+1)$ uit beide termen:
+$$
+\sum_{i=0}^{k+1} i^2 = \frac{(k+1) \left[ k(2k+1) + 6(k+1) \right]}{6}.
+$$
+
+Werk de termen binnen de haakjes uit:
+$$
+k(2k+1) + 6(k+1) = 2k^2 + k + 6k + 6 = 2k^2 + 7k + 6.
+$$
+
+Factoriseer $2k^2 + 7k + 6$:
+$$
+2k^2 + 7k + 6 = (k+2)(2k+3).
+$$
+
+Dus:
+$$
+\sum_{i=0}^{k+1} i^2 = \frac{(k+1)(k+2)(2k+3)}{6}.
+$$
+
+Dit is precies de vorm van de oorspronkelijke stelling, maar nu voor $n = k+1$.
+
+#### **Conclusie**:
+Met de basisstap en de inductiestap is bewezen dat:
+$$
+\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6},
+$$
+voor alle $n \geq 0$.
 
 # H4: Tellen
 
