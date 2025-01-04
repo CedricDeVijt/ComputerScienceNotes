@@ -73,6 +73,53 @@ Conclusie: $\mathbb{N} \times \mathbb{N}$ is aftelbaar.
 
 # H2: Relaties en functies
 
+## (2x) Wat is een functie en een injectieve functie (in symbolen)? Neem $f$, $g$ injectief, bewijs dat $f \circ g$ injectief is of geef een tegenvoorbeeld als dit niet altijd zo is.
+
+### Definitie van een functie en een injectieve functie in symbolen
+
+1. **Functie**: Een functie $f$ van een verzameling $A$ naar een verzameling $B$ is een relatie waarbij elk element van $A$ precies één beeld heeft in $B$. Dit wordt genoteerd als:
+
+   $$
+   f: A \to B, \quad \text{met } \forall a \in A, \, \exists! b \in B \text{ zodat } f(a) = b.
+   $$
+
+2. **Injectieve functie**: Een functie $f: A \to B$ is injectief (of één-op-één) als verschillende elementen in $A$ verschillende beelden in $B$ hebben. Symbolisch:
+   $$
+   f \text{ is injectief} \iff \forall a_1, a_2 \in A, \, f(a_1) = f(a_2) \implies a_1 = a_2.
+   $$
+
+### Stelling: Samenstelling van injectieve functies
+
+#### Bewering:
+
+Als $f$ en $g$ injectieve functies zijn, dan is de samenstelling $f \circ g$ ook injectief.
+
+#### Bewijs:
+
+1. Laat $g: A \to B$ en $f: B \to C$ injectief zijn.
+2. Beschouw $f \circ g: A \to C$, gedefinieerd door $(f \circ g)(x) = f(g(x))$ voor alle $x \in A$.
+3. Om te bewijzen dat $f \circ g$ injectief is, moeten we aantonen:
+   $$
+   \forall x_1, x_2 \in A, \, (f \circ g)(x_1) = (f \circ g)(x_2) \implies x_1 = x_2.
+   $$
+4. Stel dat $(f \circ g)(x_1) = (f \circ g)(x_2)$. Dan geldt:
+   $$
+   f(g(x_1)) = f(g(x_2)).
+   $$
+5. Omdat $f$ injectief is, volgt hieruit dat:
+   $$
+   g(x_1) = g(x_2).
+   $$
+6. Omdat $g$ injectief is, volgt hieruit dat:
+   $$
+   x_1 = x_2.
+   $$
+7. Dus is $f \circ g$ injectief.
+
+#### Conclusie:
+
+De samenstelling van twee injectieve functies is altijd injectief.
+
 ## Wat is een partieel geordende verzameling? Wat is reflexief, anti-symmetrisch, transitief (symbolisch), stel een gegeven verzameling, toon aan dat deze reflexief, anti-symmetrisch en of transitief is. Is dit een totale orde?
 
 Een **partieel geordende verzameling** (of poset, _partially ordered set_) is een verzameling $P$ samen met een binaire relatie $\leq$ die voldoet aan de volgende eigenschappen:
@@ -123,59 +170,6 @@ $$
 3. **Transitiviteit**: Als $2^x \leq 2^y$ en $2^y \leq 2^z$, dan $2^x \leq 2^z$, want $x \leq y$ en $y \leq z$ impliceren $x \leq z$.
 
 Daarom is $(V, \leq)$ een **partiële ordening**.
-
-## Wat is een functie en een injectieve functie (in symbolen)? Neem $f$, $g$ injectief, bewijs dat $f \circ g$ injectief is of geef een tegenvoorbeeld als dit niet altijd zo is.
-
-### Definitie van een functie en een injectieve functie in symbolen
-
-1. **Functie**: Een functie $f$ van een verzameling $A$ naar een verzameling $B$ is een relatie waarbij elk element van $A$ precies één beeld heeft in $B$. Dit wordt genoteerd als:
-
-   $$
-   f: A \to B, \quad \text{met } \forall a \in A, \, \exists! b \in B \text{ zodat } f(a) = b.
-   $$
-
-2. **Injectieve functie**: Een functie $f: A \to B$ is injectief (of één-op-één) als verschillende elementen in $A$ verschillende beelden in $B$ hebben. Symbolisch:
-   $$
-   f \text{ is injectief} \iff \forall a_1, a_2 \in A, \, f(a_1) = f(a_2) \implies a_1 = a_2.
-   $$
-
-### Stelling: Samenstelling van injectieve functies
-
-#### Bewering:
-
-Als $f$ en $g$ injectieve functies zijn, dan is de samenstelling $f \circ g$ ook injectief.
-
-#### Bewijs:
-
-1. Laat $g: A \to B$ en $f: B \to C$ injectief zijn.
-2. Beschouw $f \circ g: A \to C$, gedefinieerd door $(f \circ g)(x) = f(g(x))$ voor alle $x \in A$.
-3. Om te bewijzen dat $f \circ g$ injectief is, moeten we aantonen:
-   $$
-   \forall x_1, x_2 \in A, \, (f \circ g)(x_1) = (f \circ g)(x_2) \implies x_1 = x_2.
-   $$
-4. Stel dat $(f \circ g)(x_1) = (f \circ g)(x_2)$. Dan geldt:
-   $$
-   f(g(x_1)) = f(g(x_2)).
-   $$
-5. Omdat $f$ injectief is, volgt hieruit dat:
-   $$
-   g(x_1) = g(x_2).
-   $$
-6. Omdat $g$ injectief is, volgt hieruit dat:
-   $$
-   x_1 = x_2.
-   $$
-7. Dus is $f \circ g$ injectief.
-
-#### Conclusie:
-
-De samenstelling van twee injectieve functies is altijd injectief.
-
-### Tegenvoorbeeld als $f$ of $g$ niet injectief is:
-
-Als $f$ of $g$ niet injectief is, dan is $f \circ g$ mogelijk ook niet injectief.
-
-**Voorbeeld**: Laat $g: \{1, 2\} \to \{a, b\}$ met $g(1) = g(2) = a$ (niet injectief) en $f: \{a, b\} \to \{x, y\}$ met $f(a) = x, f(b) = y$ (injectief). Dan is $f \circ g(1) = f(a) = x$ en $f \circ g(2) = f(a) = x$, dus $f \circ g$ is niet injectief.
 
 ## Wat is een relatie, equivalentierelatie en equivalentieklasse? Toon aan dat twee verschillende equivalentieklassen disjunct zijn.
 
@@ -288,54 +282,6 @@ We tonen aan dat twee verschillende equivalentieklassen $[a]$ en $[b]$ elkaar ni
 De vereniging van alle equivalentieklassen is gelijk aan $A$. Elk element $a \in A$ behoort per definitie tot zijn eigen equivalentieklasse $[a]$, en dus is $A = \bigcup_{a \in A} [a]$.
 
 **Conclusie:** De equivalentieklassen van een equivalentierelatie vormen een partitie van $A$.
-
-## Wat is een functie en een injectieve functie (in symbolen)? Neem $f$, $g$ injectief, bewijs dat $f \circ g$ injectief is of geef een tegenvoorbeeld als dit niet altijd zo is.
-
-### Definitie van een functie en een injectieve functie
-
-Een **functie** $f: A \to B$ is een relatie die elk element $a \in A$ afbeeldt op precies één element $b \in B$.
-
-Een **injectieve functie** (of injectie) is een functie waarbij elk element in het domein $A$ wordt afgebeeld op een uniek element in het codomein $B$. Symbolisch betekent dit:
-
-$$
-f: A \to B \text{ is injectief} \iff \forall x_1, x_2 \in A, \, f(x_1) = f(x_2) \implies x_1 = x_2.
-$$
-
-### Probleem: Samenstelling van injectieve functies
-
-Gegeven $f: B \to C$ en $g: A \to B$ beide injectief, is de samenstelling $f \circ g: A \to C$ ook injectief?
-
-#### Bewijs:
-
-We willen laten zien dat als $f$ en $g$ injectief zijn, dan is $f \circ g$ ook injectief.
-
-1. Neem aan dat $f$ en $g$ injectief zijn.
-2. Laat $x_1, x_2 \in A$ en neem aan dat:
-   $$
-   (f \circ g)(x_1) = (f \circ g)(x_2).
-   $$
-   Uit de definitie van de samenstelling volgt:
-   $$
-   f(g(x_1)) = f(g(x_2)).
-   $$
-3. Omdat $f$ injectief is, geldt:
-   $$
-   g(x_1) = g(x_2).
-   $$
-4. Omdat $g$ injectief is, geldt:
-   $$
-   x_1 = x_2.
-   $$
-
-Dus hebben we aangetoond dat $f \circ g$ injectief is:
-
-$$
-\forall x_1, x_2 \in A, \, (f \circ g)(x_1) = (f \circ g)(x_2) \implies x_1 = x_2.
-$$
-
-#### Conclusie:
-
-Als $f$ en $g$ injectief zijn, is de samenstelling $f \circ g$ ook injectief.
 
 # H3: Bewijstechnieken
 
