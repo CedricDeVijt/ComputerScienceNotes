@@ -119,25 +119,34 @@ Als $a, b, c$ niet vergelijkbaar zijn, is $\leq$ geen totale orde. Bijvoorbeeld,
 ## (3x) Bewijs via inductie het Binomium van Newton.
 Voor $n \in \mathbb{N}$ en $x, y \in \mathbb{R}$ geldt:
 $$
-(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k.
+(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n-k}.
 $$
 
 **Bewijs:**
-We bewijzen via inductie naam $nn. Voor nn = 0$ klopt de stelling overduidelijk ($LR = 1 = LL$). 
-Veronderstel nu dat stelling bewezen tot en met $n$. We kijken nu naar de formule voor n + 1:
+We bewijzen via inductie naam $n$. Voor $n = 0$ klopt de stelling overduidelijk ($LR = 1 = LL$). 
+Veronderstel nu dat stelling bewezen tot en met $n$. We kijken nu naar de formule voor $n + 1$:
+
 $$
 \begin{aligned}
 (x + y)^{n+1} &= (x + y)^n (x + y)\\
-&= \left(\sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k \right)(x + y)\\
-&= \sum_{k=0}^{n} \binom{n}{k} x^{n-k+1} y^k + \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^{k+1}\\
-
-
-
+&= \left(\sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n-k} \right)(x + y)\\
+&= \sum_{k=0}^{n} \binom{n}{k} x^{k+1} y^{n-k} + \sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n-k+1}\\
+&= \sum_{l=1}^{n+1} \binom{n}{l-1} x^{l} y^{n-l+1} + \sum_{k=1}^{n} \binom{n}{k} x^{k} y^{n-k+1} + \binom{n}{0}y^{n+1}\\
+&= \binom{n}{n} x^{n+1} y^{0} + \sum_{l=1}^{n} \binom{n}{l-1} x^{l} y^{n-l+1} + \sum_{k=1}^{n} \binom{n}{k} x^{k} y^{n-k+1} + \binom{n}{0}y^{n+1}\\
+&= \binom{n+1}{n+1} x^{n+1} + \sum_{l=1}^{n} \left[\binom{n}{l-1} + \binom{n}{l}\right] x^{l} y^{n-l+1} + \binom{n+1}{0}y^{n+1}\\
+&= \binom{n+1}{n+1} x^{n+1} + \sum_{l=1}^{n} \binom{n+1}{l} x^{l} y^{n-l+1} + \binom{n+1}{0}y^{n+1}\\
+&= \sum_{l=0}^{n+1} \binom{n+1}{l} x^{l} y^{n+1-l}.
 \end{aligned}
 $$
-
+$\square$
 
 ## Wat is inductie? Geef alle verschillende soorten inductie. Bewijs via inductie: $\sum_{i=0}^n k^2 = \frac{n(n+1)(2n+1)}{6}$.
+Soorten inductie:
+1. **Directe inductie**: Bewijs dat $P(n)$ waar is voor alle $n \in \mathbb{N}$.
+2. **Inductie op een verzameling**: Bewijs dat $P(n)$ waar is voor alle $n \in S$, waar $S$ een verzameling is.
+3. **Inductie op een structuur**: Bewijs dat $P(n)$ waar is voor alle $n$ in een structuur, zoals een boom of graaf.
+
+
 
 # H4: Tellen
 
