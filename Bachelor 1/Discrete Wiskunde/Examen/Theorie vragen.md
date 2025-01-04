@@ -328,11 +328,9 @@ $$
 &= \binom{n}{n} x^{n+1} y^{0} + \sum_{l=1}^{n} \binom{n}{l-1} x^{l} y^{n-l+1} + \sum_{k=1}^{n} \binom{n}{k} x^{k} y^{n-k+1} + \binom{n}{0}y^{n+1}\\
 &= \binom{n+1}{n+1} x^{n+1} + \sum_{l=1}^{n} \left[\binom{n}{l-1} + \binom{n}{l}\right] x^{l} y^{n-l+1} + \binom{n+1}{0}y^{n+1}\\
 &= \binom{n+1}{n+1} x^{n+1} + \sum_{l=1}^{n} \binom{n+1}{l} x^{l} y^{n-l+1} + \binom{n+1}{0}y^{n+1}\\
-&= \sum_{l=0}^{n+1} \binom{n+1}{l} x^{l} y^{n+1-l}.
+&= \sum_{l=0}^{n+1} \binom{n+1}{l} x^{l} y^{n+1-l}
 \end{aligned}
 $$
-
-$\square$
 
 ## Wat is inductie? Geef alle verschillende soorten inductie. Bewijs via inductie: $\sum_{i=0}^n k^2 = \frac{n(n+1)(2n+1)}{6}$.
 
