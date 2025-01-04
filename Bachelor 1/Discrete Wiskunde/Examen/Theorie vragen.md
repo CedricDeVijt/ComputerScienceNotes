@@ -105,8 +105,8 @@ Dus deze relatie $\leq$ is een **partiële ordening**. Als we verder aannemen da
 ## Wat is minimum en minimaal element? Stel $v = 2^x$ en $x = {a, b, c}$: Bewijs dat dit een partiële ordening is.
 ### Minima en minimaal element
 
-2. **Minimum (of kleinste element)**: $\forall y \in Y : a \neq y$
-1. **Minimaal element**: Een element $m \in P$ is minimaal als er geen ander $x \in P$ is zodat $x \leq m$ en $x \neq m$.
+1. **Minimum (of kleinste element)**: $a \in Y$ is minimum $\iff \forall y \in Y : a \leq y$
+2. **Minimaal element**: $a \in Y$ is minimaal elemenent $\iff \forall y \in Y : y \leq a \Rightarrow a = y$
 
 ### Stel $v = 2^x$ en $x = \{a, b, c\}$
 
