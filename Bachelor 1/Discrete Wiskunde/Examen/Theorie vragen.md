@@ -101,8 +101,8 @@ $$
 
 Dus deze relatie $\leq$ is een **partiële ordening**. Als we verder aannemen dat $a, b, c$ allemaal vergelijkbaar zijn ($a \leq b \leq c$), dan is het ook een **totale ordening**.
 
-
 ## Wat is minimum en minimaal element? Stel $v = 2^x$ en $x = {a, b, c}$: Bewijs dat dit een partiële ordening is.
+
 ### Minima en minimaal element
 
 1. **Minimum (of kleinste element)**: $a \in Y$ is minimum $\iff \forall y \in Y : a \leq y$
@@ -123,15 +123,6 @@ $$
 3. **Transitiviteit**: Als $2^x \leq 2^y$ en $2^y \leq 2^z$, dan $2^x \leq 2^z$, want $x \leq y$ en $y \leq z$ impliceren $x \leq z$.
 
 Daarom is $(V, \leq)$ een **partiële ordening**.
-
-#### Is dit een totale ordening?
-
-Als $a, b, c$ niet vergelijkbaar zijn, is $\leq$ geen totale orde. Bijvoorbeeld, als $a$ en $b$ niet met elkaar in relatie staan, dan kunnen $2^a$ en $2^b$ ook niet met elkaar vergeleken worden.
-
-#### Minimum en minimaal element:
-
-- **Minimum**: Als $a \leq b$ en $a \leq c$, dan is $2^a$ het minimum.
-- **Minimaal element**: Als $a$ niet door een ander element voorafgegaan wordt, is $2^a$ minimaal.
 
 ## Wat is een functie en een injectieve functie (in symbolen)? Neem $f$, $g$ injectief, bewijs dat $f \circ g$ injectief is of geef een tegenvoorbeeld als dit niet altijd zo is.
 
