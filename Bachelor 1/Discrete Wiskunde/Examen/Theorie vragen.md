@@ -59,16 +59,84 @@ Ja, $\mathbb{N} \times \mathbb{N}$ is aftelbaar. We bewijzen dit door een opsomm
 Conclusie: $\mathbb{N} \times \mathbb{N}$ is aftelbaar.
 
 # H2: Relaties en functies
-## Wat is een partieel geordende verzameling? Wat is reflexief, anti-symmetrisch, transitief (symbolisch), stel een gegeven verzameling, toon aan dat deze reflexief, anti-symmetrisch en of transitief is. Is dit een totale orde? Wat is minima en minimaal element? Stel $v = 2^x$ en $x = {a, b, c}$: Bewijs dat dit een partiële ordening is.
+## Wat is een partieel geordende verzameling? Wat is reflexief, anti-symmetrisch, transitief (symbolisch), stel een gegeven verzameling, toon aan dat deze reflexief, anti-symmetrisch en of transitief is. Is dit een totale orde? Wat is minimaal en minimaal element? Stel $v = 2^x$ en $x = {a, b, c}$: Bewijs dat dit een partiële ordening is.
+Een **partieel geordende verzameling** (of poset, *partially ordered set*) is een verzameling $P$ samen met een binaire relatie $\leq$ die voldoet aan de volgende eigenschappen:
 
+1. **Reflexiviteit**: Voor alle $x \in P$, geldt $x \leq x$.  
+2. **Anti-symmetrie**: Voor alle $x, y \in P$, als $x \leq y$ en $y \leq x$, dan $x = y$.  
+3. **Transitiviteit**: Voor alle $x, y, z \in P$, als $x \leq y$ en $y \leq z$, dan $x \leq z$.  
+
+Als een relatie aan deze drie voorwaarden voldoet, noemen we de relatie een **partiële ordening** en noemen we $(P, \leq)$ een partieel geordende verzameling.
+
+Een **totale orde** is een speciale vorm van een partiële ordening, waarbij elk paar elementen vergelijkbaar is. Dit betekent dat voor alle $x, y \in P$, geldt $x \leq y$ of $y \leq x$. Als niet alle elementen vergelijkbaar zijn, is het geen totale orde.
+
+### Voorbeeld
+
+Laten we een verzameling $X = \{a, b, c\}$ nemen en een binaire relatie $\leq$ definiëren:  
+$$
+a \leq b, \quad b \leq c, \quad a \leq c.
+$$
+
+#### Eigenschappen:
+1. **Reflexief**: Elk element is gerelateerd aan zichzelf ($a \leq a, b \leq b, c \leq c$).
+2. **Anti-symmetrisch**: Als $x \leq y$ en $y \leq x$, dan $x = y$. Hier is dit waar, want er zijn geen cirkels of situaties waarin $x \neq y$ en $x \leq y$ en $y \leq x$.
+3. **Transitief**: Als $a \leq b$ en $b \leq c$, dan $a \leq c$. Dit geldt voor de gegeven relatie.
+
+Dus deze relatie $\leq$ is een **partiële ordening**. Als we verder aannemen dat $a, b, c$ allemaal vergelijkbaar zijn ($a \leq b \leq c$), dan is het ook een **totale ordening**.
+
+### Minima en minimaal element
+1. **Minimaal element**: Een element $m \in P$ is minimaal als er geen ander $x \in P$ is zodat $x \leq m$ en $x \neq m$.
+2. **Minimum (of kleinste element)**: Een element $m \in P$ is het minimum als $m \leq x$ voor alle $x \in P$.
+
+### Stel $v = 2^x$ en $x = \{a, b, c\}$
+
+Neem de verzameling $V = \{2^a, 2^b, 2^c\}$ en definieer een relatie $\leq$ als:  
+$$
+2^x \leq 2^y \iff x \leq y.
+$$
+
+#### Bewijs dat dit een partiële ordening is:
+1. **Reflexiviteit**: Voor $x \in \{a, b, c\}$, geldt $2^x \leq 2^x$, want $x \leq x$.
+2. **Anti-symmetrie**: Als $2^x \leq 2^y$ en $2^y \leq 2^x$, dan $x = y$, dus $2^x = 2^y$.
+3. **Transitiviteit**: Als $2^x \leq 2^y$ en $2^y \leq 2^z$, dan $2^x \leq 2^z$, want $x \leq y$ en $y \leq z$ impliceren $x \leq z$.
+
+Daarom is $(V, \leq)$ een **partiële ordening**.
+
+#### Is dit een totale ordening?
+Als $a, b, c$ niet vergelijkbaar zijn, is $\leq$ geen totale orde. Bijvoorbeeld, als $a$ en $b$ niet met elkaar in relatie staan, dan kunnen $2^a$ en $2^b$ ook niet met elkaar vergeleken worden.
+
+#### Minimum en minimaal element:
+- **Minimum**: Als $a \leq b$ en $a \leq c$, dan is $2^a$ het minimum.
+- **Minimaal element**: Als $a$ niet door een ander element voorafgegaan wordt, is $2^a$ minimaal.
 
 ## Wat is een functie en een injectieve functie (in symbolen)? Neem $f$, $g$ injectief, bewijs dat $f \circ g$ injectief is of geef een tegenvoorbeeld als dit niet altijd zo is.
+
 ## Wat is een relatie, equivalentierelatie en equivalentieklasse? Toon aan dat twee verschillende equivalentieklassen disjunct zijn.
 ## Geef de definitie van een relatie, equivalentieklassen en een partitie. Toon aan dat alle equivalentierelaties partities zijn.
 ## Wat is een functie en een injectieve functie (in symbolen)? Neem $f$, $g$ injectief, bewijs dat $f \circ g$ injectief is of geef een tegenvoorbeeld als dit niet altijd zo is.
 
 # H3: Bewijstechnieken
 ## (3x) Bewijs via inductie het Binomium van Newton.
+Voor $n \in \mathbb{N}$ en $x, y \in \mathbb{R}$ geldt:
+$$
+(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k.
+$$
+
+**Bewijs:**
+We bewijzen via inductie naam $nn. Voor nn = 0$ klopt de stelling overduidelijk ($LR = 1 = LL$). 
+Veronderstel nu dat stelling bewezen tot en met $n$. We kijken nu naar de formule voor n + 1:
+$$
+\begin{aligned}
+(x + y)^{n+1} &= (x + y)^n (x + y)\\
+&= \left(\sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k \right)(x + y)\\
+&= \sum_{k=0}^{n} \binom{n}{k} x^{n-k+1} y^k + \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^{k+1}\\
+
+
+
+\end{aligned}
+$$
+
+
 ## Wat is inductie? Geef alle verschillende soorten inductie. Bewijs via inductie: $\sum_{i=0}^n k^2 = \frac{n(n+1)(2n+1)}{6}$.
 
 # H4: Tellen
