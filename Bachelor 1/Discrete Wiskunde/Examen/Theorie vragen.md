@@ -333,113 +333,78 @@ $$
 $$
 
 ## Wat is inductie? Geef alle verschillende soorten inductie. Bewijs via inductie: $\sum_{i=0}^n k^2 = \frac{n(n+1)(2n+1)}{6}$.
-
 ### Wat is inductie?
 
-Inductie is een wiskundige techniek om stellingen te bewijzen die gelden voor een oneindige reeks objecten, vaak genummerd door natuurlijke getallen. Het idee is om te bewijzen dat een eigenschap geldt voor een basisgeval (zoals $n = 0$ of $n = 1$) en dat, als het geldt voor een willekeurige waarde $n = k$, het ook geldt voor $n = k+1$.
+Inductie is een wiskundige techniek die wordt gebruikt om uitspraken of stellingen te bewijzen die gelden voor een oneindige verzameling van gevallen, meestal de natuurlijke getallen. Het idee achter inductie is gebaseerd op de volgende twee stappen: 
+
+1. **Basisstap**: Laat zien dat de uitspraak geldt voor het kleinste element in de verzameling, meestal $n = 0$ of $n = 1$.  
+2. **Inductiestap**: Laat zien dat als de uitspraak geldt voor een willekeurig $n = k$, deze ook geldt voor $n = k + 1$.
+
+Als beide stappen zijn aangetoond, volgt volgens het inductieprincipe dat de uitspraak waar is voor alle natuurlijke getallen.
 
 ### Soorten inductie:
 
-1. **Directe inductie**:
+1. **Volledige inductie**:
+   - Dit is de standaardvorm van inductie, zoals hierboven beschreven. Het wordt gebruikt om uitspraken te bewijzen voor natuurlijke getallen.
 
-   - Hierbij worden eigendommen bewezen van natuurlijke getallen, vaak met een eenvoudige stapsgewijze redenering.
-   - **Stappen**:
-     - Basisgeval: Toon dat de eigenschap geldt voor $n = 0$ of $n = 1$.
-     - Inductiestap: Ga ervan uit dat de eigenschap geldt voor $n = k$ (inductiehypothese) en bewijs dat het ook geldt voor $n = k+1$.
+2. **Structurele inductie**:
+   - Deze vorm van inductie wordt gebruikt in situaties waar de objecten die worden bewezen een recursieve of gelaagde structuur hebben (zoals bomen of grafen).  
+   - Het werkt door te bewijzen dat de uitspraak waar is voor de basisstructuren (de kleinste gevallen) en vervolgens dat de uitspraak behouden blijft bij het combineren van kleinere structuren volgens de recursieve definitie.
 
-2. **Inductie op een structuur**:
-   - Deze vorm van inductie wordt gebruikt op objecten die zijn opgebouwd uit kleinere substructuren, zoals bomen of grafen.
-   - Het idee is om te bewijzen dat de eigenschap geldt voor de "basisstructuren" en dat het behoudt als een grotere structuur wordt opgebouwd uit kleinere met de inductiehypothese.
+### Bewijs via inductie: $\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}$
 
-### Bewijs via directe inductie:
+We bewijzen de stelling met volledige inductie.
 
-Bewijs dat:
+1. **Basisstap ($n = 0$)**:
+   - Voor $n = 0$, geldt de som $\sum_{i=0}^0 i^2 = 0^2 = 0$.  
+   - De rechterkant is $\frac{0(0+1)(2\cdot 0 + 1)}{6} = \frac{0}{6} = 0$.  
+   - Beide kanten zijn gelijk, dus de basisstap klopt.
 
-$$
-\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}.
-$$
+2. **Inductiestap**:
+   - Neem aan dat de stelling geldt voor $n = k$. Dat wil zeggen,  
+     $$
+     \sum_{i=0}^k i^2 = \frac{k(k+1)(2k+1)}{6}.
+    $$
+   - We moeten bewijzen dat de stelling ook geldt voor $n = k + 1$. De som wordt:  
+     $$
+     \sum_{i=0}^{k+1} i^2 = \sum_{i=0}^k i^2 + (k+1)^2.
+    $$
+   - Gebruik de inductieaanname:  
+     $$
+     \sum_{i=0}^{k+1} i^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2.
+    $$
+   - Neem $(k+1)^2$ samen in de breukvorm:  
+     $$
+     \sum_{i=0}^{k+1} i^2 = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}.
+    $$
+   - Vereenvoudig en factoriseer $(k+1)$:  
+     $$
+     \sum_{i=0}^{k+1} i^2 = \frac{(k+1) \left[k(2k+1) + 6(k+1)\right]}{6}.
+    $$
+   - Werk de haakjes uit:  
+     $$
+     \sum_{i=0}^{k+1} i^2 = \frac{(k+1) \left[2k^2 + k + 6k + 6\right]}{6}.
+    $$
+   - Vereenvoudig:  
+     $$
+     \sum_{i=0}^{k+1} i^2 = \frac{(k+1)(2k^2 + 7k + 6)}{6}.
+    $$
+   - Factoriseer $2k^2 + 7k + 6$:  
+     $$
+     2k^2 + 7k + 6 = (k+2)(2k+3).
+    $$
+   - Dus:  
+     $$
+     \sum_{i=0}^{k+1} i^2 = \frac{(k+1)(k+2)(2k+3)}{6}.
+    $$
+   - Dit is precies de vorm van de oorspronkelijke formule voor $n = k+1$.
 
-#### **Stap 1: Basisgeval ($n = 0$)**
-
-Als $n = 0$, dan is de som $\sum_{i=0}^0 i^2 = 0^2 = 0$.
-
-Aan de rechterkant van de vergelijking:
-
-$$
-\frac{0(0+1)(2\cdot 0 + 1)}{6} = \frac{0 \cdot 1 \cdot 1}{6} = 0.
-$$
-
-Het basisgeval klopt.
-
-#### **Stap 2: Inductiestap**
-
-Veronderstel dat de stelling geldt voor een willekeurige $n = k$. Dat wil zeggen:
-
-$$
-\sum_{i=0}^k i^2 = \frac{k(k+1)(2k+1)}{6}.
-$$
-
-We moeten bewijzen dat de stelling ook geldt voor $n = k+1$, dus:
-
-$$
-\sum_{i=0}^{k+1} i^2 = \frac{(k+1)(k+2)(2(k+1)+1)}{6}.
-$$
-
-**Berekening**:
-
-De som tot $k+1$ kunnen we splitsen:
-
-$$
-\sum_{i=0}^{k+1} i^2 = \sum_{i=0}^k i^2 + (k+1)^2.
-$$
-
-Vervang de inductiehypothese:
-
-$$
-\sum_{i=0}^{k+1} i^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2.
-$$
-
-Neem $(k+1)^2$ in de berekening op:
-
-$$
-\sum_{i=0}^{k+1} i^2 = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}.
-$$
-
-Factoriseer $(k+1)$ uit beide termen:
-
-$$
-\sum_{i=0}^{k+1} i^2 = \frac{(k+1) \left[ k(2k+1) + 6(k+1) \right]}{6}.
-$$
-
-Werk de termen binnen de haakjes uit:
-
-$$
-k(2k+1) + 6(k+1) = 2k^2 + k + 6k + 6 = 2k^2 + 7k + 6.
-$$
-
-Factoriseer $2k^2 + 7k + 6$:
-
-$$
-2k^2 + 7k + 6 = (k+2)(2k+3).
-$$
-
-Dus:
-
-$$
-\sum_{i=0}^{k+1} i^2 = \frac{(k+1)(k+2)(2k+3)}{6}.
-$$
-
-Dit is precies de vorm van de oorspronkelijke stelling, maar nu voor $n = k+1$.
-
-#### **Conclusie**:
-
-Met de basisstap en de inductiestap is bewezen dat:
-
-$$
-\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6},
-$$
-
-voor alle $n \geq 0$.
+3. **Conclusie**:
+   Door de basisstap en inductiestap hebben we bewezen dat  
+   $$
+   \sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}
+  $$
+   voor alle natuurlijke getallen $n$.
 
 # H4: Tellen
 
