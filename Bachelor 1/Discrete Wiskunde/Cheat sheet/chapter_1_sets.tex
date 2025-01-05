@@ -1,0 +1,82 @@
+\section{Sets}
+
+\subsection{Definitions and Notations}
+
+\textbf{Set}: A collection of objects, called \textit{elements}.
+\begin{itemize}
+    \item \textbf{Notation}: Sets are represented by uppercase letters; elements by lowercase letters.
+    \item Example: If $a$ is in set $A$, we write $a \in A$. If not, $a \notin A$.
+\end{itemize}
+
+\textbf{Subset}: A set $B$ is a subset of $A$ if every element in $B$ is also in $A$.
+\begin{itemize}
+    \item \textbf{Notation}: $B \subseteq A$.
+    \item \textbf{Extensionality Principle}: Two sets are equal if they contain the same elements.
+    \item Equality: $A = B$ if $A \subseteq B$ and $B \subseteq A$.
+\end{itemize}
+
+\textbf{Set Representation}:
+\begin{itemize}
+    \item \textbf{Listing Elements}: $\{ a_1, a_2, \ldots, a_n \}$.
+    \item \textbf{Describing by Properties}: $\{ x \mid x \text{ satisfies } P \}$.
+\end{itemize}
+
+\subsection{Set Operations}
+
+\begin{itemize}
+    \item \textbf{Union} ($A \cup B$): Elements in $A$ or $B$.
+    \item \textbf{Intersection} ($A \cap B$): Elements in both $A$ and $B$.
+    \item \textbf{Difference} ($A \setminus B$): Elements in $A$ but not in $B$.
+    \item \textbf{Symmetric Difference} ($A \Delta B$): Elements in either $A$ or $B$, but not in both.
+\end{itemize}
+
+\textbf{Properties of Set Operations}:
+\begin{itemize}
+    \item \textbf{Associative}: $(A \cup B) \cup C = A \cup (B \cup C)$
+    \item \textbf{Commutative}: $A \cup B = B \cup A$
+    \item \textbf{Distributive}: $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+\end{itemize}
+
+\subsection{Important Set Types}
+
+\begin{itemize}
+    \item \textbf{Empty Set} ($\emptyset$): The unique set with no elements.
+    \item \textbf{Singleton}: A set with only one element.
+    \item \textbf{Universal Set} ($V$): The fixed larger set within which all sets are considered.
+    \item \textbf{Complement}: For a set $A$ in the universal set $V$, the complement $\overline{A} = V \setminus A$.
+\end{itemize}
+
+\textbf{Complement Properties}:
+\begin{itemize}
+    \item \textbf{Identity}: $A \cup \emptyset = A$, $A \cap V = A$.
+    \item \textbf{Double Complement}: $\overline{(\overline{A})} = A$.
+    \item \textbf{De Morgan’s Laws}:
+    \begin{itemize}
+        \item $\overline{A \cup B} = \overline{A} \cap \overline{B}$.
+        \item $\overline{A \cap B} = \overline{A} \cup \overline{B}$.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Families of Sets}
+
+\textbf{Definition}: A collection of sets, often denoted as $\mathcal{A}, \mathcal{B}$, etc.
+\begin{itemize}
+    \item \textbf{Union of Families}: $\bigcup \mathcal{A} = \{ x \mid \exists A \in \mathcal{A} : x \in A \}$.
+    \item \textbf{Intersection of Families}: $\bigcap \mathcal{A} = \{ x \mid \forall A \in \mathcal{A} : x \in A \}$.
+\end{itemize}
+
+\subsection{Power Set}
+
+\textbf{Definition}: The set of all subsets of a set $A$, including $\emptyset$ and $A$ itself.
+\begin{itemize}
+    \item \textbf{Notation}: $2^A$ or $\mathcal{P}(A)$.
+    \item \textbf{Example}: For $A = \{0,1\}$, $\mathcal{P}(A) = \{\emptyset, \{0\}, \{1\}, \{0,1\}\}$.
+\end{itemize}
+
+\subsection{Cartesian Product}
+
+\textbf{Definition}: An ordered pair where order matters, denoted as $(a, b)$.
+\begin{itemize}
+    \item For sets $A_1, \ldots, A_n$, the \textbf{Cartesian product} is $A_1 \times \cdots \times A_n = \{ (a_1, \ldots, a_n) \mid a_i \in A_i \}$.
+    \item \textbf{Example}: If $A = \{1,2\}$ and $B = \{x, y\}$, $A \times B = \{(1, x), (1, y), (2, x), (2, y)\}$.
+\end{itemize}

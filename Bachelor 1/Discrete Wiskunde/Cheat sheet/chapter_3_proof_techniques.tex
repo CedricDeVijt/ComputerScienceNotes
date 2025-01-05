@@ -1,0 +1,60 @@
+\section{Proof Techniques}
+
+\subsection*{Definition of a Proof}
+\textbf{Definition 3.1 (Informal Definition):} A proof of a mathematical statement is a sequence of valid arguments demonstrating its truth. These arguments must be sufficiently detailed to convince the intended audience.
+
+\subsection*{Trivial Proof}
+\textbf{Definition:} A proof requiring no further work. This might arise if the statement follows directly from the given information or from the principle: \emph{Anything follows from a falsehood.}
+\begin{itemize}
+    \item If $P \implies Q$ and $P$ is false, $Q$ is true.
+\end{itemize}
+\textbf{Examples:}
+\begin{itemize}
+    \item If $x^2 + 1 = 0$, then $x^4 = 0$.
+    \item Every human with five heads is a genius.
+    \item If $n > 0$ and $n$ is even, then $n > 0$.
+\end{itemize}
+
+\subsection*{Direct Proof}
+\textbf{Method:} To prove a statement $S_n$, find a sequence $S_1, S_2, \dots, S_{n-1}, S_n$ where each $S_k$ follows logically from the preceding statements and known hypotheses.
+\textbf{Example 3.3:} If $n$ is composite, it has at least one prime factor $p$ such that $p \leq \sqrt{n}$.
+\begin{proof}
+Since $n$ is composite, there exist integers $a, b > 1$ such that $n = ab$. Assume $a \leq b$. Then $n = ab \geq a^2$, so $a \leq \sqrt{n}$. If $a$ is prime, we are done. Otherwise, $a$ has a prime divisor $p$ such that $p \leq a \leq \sqrt{n}$.
+\end{proof}
+
+\subsection*{Proof by Contraposition}
+\textbf{Method:} To prove $P \implies Q$, prove its contrapositive $\neg Q \implies \neg P$.
+\textbf{Example 3.4:} If $p > 1$ is an integer with no divisor $d$ such that $1 < d \leq \sqrt{p}$, then $p$ is prime.
+\begin{proof}
+This is the contrapositive of Example 3.3 and was proven earlier.
+\end{proof}
+
+\subsection*{Proof by Contradiction}
+\textbf{Method:} Assume the negation of the statement to be proven. If this assumption leads to a contradiction, the original statement is true.
+\textbf{Example 3.5:} $\sqrt{2}$ is irrational.
+\begin{proof}
+Assume $\sqrt{2}$ is rational. Then $\sqrt{2} = \frac{a}{b}$ with integers $a, b$ (where $\gcd(a, b) = 1$). Squaring both sides gives $2b^2 = a^2$, so $a^2$ is even. This implies $a$ is even, say $a = 2c$. Substituting gives $2b^2 = 4c^2 \implies b^2 = 2c^2$, so $b^2$ is even, and hence $b$ is even. This contradicts $\gcd(a, b) = 1$.
+\end{proof}
+
+\subsection*{Proof by Cases}
+\textbf{Method:} Divide the statement into exhaustive cases and prove each separately.
+\textbf{Example 3.6:} For all integers $n$, $n^3 - n$ is divisible by 2.
+\begin{proof}
+\begin{itemize}
+    \item If $n$ is even, $n = 2k$ for some integer $k$. Then $n^3 - n = 2k(4k^2 - 1)$, which is even.
+    \item If $n$ is odd, $n = 2k + 1$. Then $n^3 - n = 2(4k^3 + 6k^2 + 2k)$, which is even.
+\end{itemize}
+\end{proof}
+
+\subsection*{Proof by Induction}
+\textbf{Principle:} To prove $P(n)$ for all $n \geq n_0$:
+\begin{itemize}
+    \item Base Case: Prove $P(n_0)$.
+    \item Inductive Step: Assume $P(k)$ is true (induction hypothesis). Prove $P(k + 1)$.
+\end{itemize}
+\textbf{Example 3.9:} The sum of the first $n$ positive integers is $\frac{n(n+1)}{2}$.
+\begin{proof}
+Base Case: For $n = 1$, $1 = \frac{1(1+1)}{2}$.
+Inductive Step: Assume $\sum_{i=1}^k i = \frac{k(k+1)}{2}$. Then
+\[ \sum_{i=1}^{k+1} i = \sum_{i=1}^k i + (k+1) = \frac{k(k+1)}{2} + (k+1) = \frac{(k+1)(k+2)}{2}. \]
+\end{proof}

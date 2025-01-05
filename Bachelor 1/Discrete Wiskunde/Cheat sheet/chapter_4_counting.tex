@@ -1,0 +1,74 @@
+\section{Counting}
+
+\subsection{Basic Techniques}
+
+\subsubsection*{Sum Rule}
+\textbf{Property 4.1 (Sum Rule)}: If there are $n(A)$ ways to perform $A$ and $n(B)$ ways to perform $B$, then the total number of ways to perform $A$ \textbf{or} $B$ is $n(A) + n(B)$. This extends to multiple events:
+\begin{itemize}
+    \item $n(A) + n(B) + n(C)$ ways to perform $A$, $B$, or $C$, etc.
+\end{itemize}
+
+\subsubsection*{Product Rule}
+\textbf{Property 4.2 (Product Rule)}: If there are $n(A)$ ways to perform $A$ and $n(B)$ ways to perform $B$, and these are independent, the total number of ways to perform $A$ \textbf{and} $B$ is $n(A) \cdot n(B)$. This generalizes as:
+\begin{itemize}
+    \item $n(A) \cdot n(B) \cdot n(C)$ ways to perform $A$, $B$, and $C$, etc.
+\end{itemize}
+
+\subsubsection*{Division Rule}
+\textbf{Property 4.3 (Division Rule)}: If there is a $k$-to-1 correspondence between objects of type $A$ and type $B$, and there are $n(A)$ objects of type $A$, then there are $n(B) = \frac{n(A)}{k}$ objects of type $B$.
+
+\subsection{Inclusion-Exclusion Principle}
+
+\textbf{Example 4.4}: In a class, 20 students have a driver’s license, 16 have a bus pass, and 7 have both. How many students have a bus pass or a driver’s license?
+\begin{itemize}
+    \item Add 20 and 16, then subtract the overlap: $20 + 16 - 7 = 29$.
+\end{itemize}
+
+\textbf{Property 4.5 (Inclusion-Exclusion for 2 Sets)}:
+\begin{align*}
+    |A \cup B| = |A| + |B| - |A \cap B|
+\end{align*}
+
+\textbf{Property 4.6 (Inclusion-Exclusion for 3 Sets)}:
+\begin{align*}
+    |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|
+\end{align*}
+
+For $n$ sets, a generalization is:
+\begin{align*}
+    \left| \bigcup_{i=1}^n A_i \right| = \sum_{i=1}^n |A_i| - \sum_{1 \leq i < j \leq n} |A_i \cap A_j| + \dots + (-1)^{n-1} \left| \bigcap_{i=1}^n A_i \right|.
+\end{align*}
+
+\subsection{Decision Trees}
+
+\textbf{Example 4.8}: A staircase has 4 steps. How many ways can you climb it, taking 1, 2, 3, or 4 steps at a time?
+\begin{itemize}
+    \item Draw a tree for possibilities. Each complete path to the top corresponds to a way. Total: 8 ways.
+\end{itemize}
+
+\subsection{Permutations and Combinations}
+
+\subsubsection*{Variations}
+\textbf{Definition 4.9}: A variation of $k$ objects from $n$ is an ordered selection of $k$ objects from $n$, without repetition. If $n = k$, it’s a permutation.
+\begin{itemize}
+    \item Number of variations:
+    \begin{align*}
+        V_k^n = \frac{n!}{(n-k)!}
+    \end{align*}
+    \item Permutations: $P_n = n!$
+\end{itemize}
+
+\subsubsection*{Combinations}
+\textbf{Definition 4.11}: A combination of $k$ objects from $n$ is a selection of $k$ objects without regard to order, without repetition.
+\begin{itemize}
+    \item Number of combinations:
+    \begin{align*}
+        C_k^n = \binom{n}{k} = \frac{n!}{k!(n-k)!}
+    \end{align*}
+\end{itemize}
+
+\subsubsection*{Generalizations}
+\textbf{Definition 4.12}: Allowing repetitions:
+\begin{align*}
+    D_k^n = C_k^n = \binom{n+k-1}{k}
+\end{align*}

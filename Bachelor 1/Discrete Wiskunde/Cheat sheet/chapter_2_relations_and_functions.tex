@@ -1,0 +1,113 @@
+\section{Relations and Functions}
+
+\subsection{Relations and Functions}
+
+\subsubsection*{Relation}
+\textbf{Definition}: A relation between two sets $A$ and $B$ is a subset of their Cartesian product $A \times B$. Denoted as $R \subseteq A \times B$.
+\begin{itemize}
+    \item \textbf{Notation}: If $(a, b) \in R$, write it as $a R b$.
+    \item \textbf{Example}: A relation from the set of integers to the set of natural numbers.
+\end{itemize}
+
+\textbf{Domain and Range}:
+\begin{itemize}
+    \item \textbf{Domain}: Set of all elements in $A$ that relate to some element in $B$.
+    \item \textbf{Range}: Set of all elements in $B$ related to at least one element in $A$.
+\end{itemize}
+
+\textbf{Inverse Relation}:
+\begin{itemize}
+    \item \textbf{Definition}: For a relation $R \subseteq A \times B$, its inverse is $R^{-1} \subseteq B \times A$.
+\end{itemize}
+
+\textbf{Equipotent Relation}:
+\begin{itemize}
+    \item \textbf{Definition}: A relation $R \subseteq A \times B$ is equipotent if there exists a bijection between $A$ and $B$.
+\end{itemize}
+
+\subsubsection*{Properties of Relations}
+\begin{itemize}
+    \item \textbf{Reflexive}: $a R a$ for all $a \in A$.
+    \item \textbf{Symmetric}: $a R b$ implies $b R a$.
+    \item \textbf{Transitive}: $a R b$ and $b R c$ imply $a R c$.
+    \item \textbf{Antisymmetric}: $a R b$ and $b R a$ imply $a = b$.
+    \item \textbf{Compositional Relations}: If $R \subseteq A \times B$ and $S \subseteq B \times C$, then the composition is $S \circ R \subseteq A \times C$.
+\end{itemize}
+
+\subsubsection*{Functions}
+\textbf{Definition}: A relation $F \subseteq A \times B$ is a function if for all $a \in A$, there exists a unique $b \in B$.
+\begin{itemize}
+    \item \textbf{Injective (One-to-one)}: $F(a) = F(a')$ implies $a = a'$.
+    \item \textbf{Surjective (Onto)}: For every $b \in B$, there is some $a \in A$ such that $F(a) = b$.
+    \item \textbf{Bijective}: Both injective and surjective.
+\end{itemize}
+
+\subsection{Equivalence Relations}
+
+\subsubsection*{Definition}
+A relation $R \subseteq A \times A$ is an \textbf{equivalence relation} if it is:
+\begin{itemize}
+    \item \textbf{Reflexive}: $x R x$ for all $x \in A$.
+    \item \textbf{Symmetric}: $x R y$ implies $y R x$.
+    \item \textbf{Transitive}: $x R y$ and $y R z$ imply $x R z$.
+\end{itemize}
+
+\textbf{Equivalence Class}: The set of all elements in $A$ that are equivalent to $a$. Defined as $[a] = \{b \in A \mid a \sim b\}$.
+
+\textbf{Quotient Set}: The set of all equivalence classes. Defined as $A / \sim = \{[a] \mid a \in A\}$.
+
+\textbf{Properties of Equivalence Relations}:
+\begin{itemize}
+    \item $\forall a \in A: a \in [a]$.
+    \item $\forall a \in A: [a] \neq \emptyset$ and $\bigcup\limits_{a \in A} [a] = A$.
+    \item $\forall a,b \in A: [a] = [b] \iff a \sim b$.
+    \item $\forall a,b \in A: [a] \cap [b] = \emptyset$ if $[a] \neq [b]$.
+\end{itemize}
+
+\subsubsection*{Partitioning}
+A partition $\mathscr{A} \subseteq 2^A$ is a partition of $A$ if:
+\begin{itemize}
+    \item $\forall X \in \mathscr{A}: X \neq \emptyset$.
+    \item $\forall X, Y \in \mathscr{A}: X \cap Y = \emptyset$ if $X \neq Y$.
+    \item $\bigcup_{X \in \mathscr{A}} X = A$.
+\end{itemize}
+
+\subsection{Partial and Total Orderings}
+
+\subsubsection*{Partial Order}
+\begin{itemize}
+    \item \textbf{Definition}: A partial order is a relation $R \subseteq A \times A$ that is \textbf{reflexive}, \textbf{transitive}, and \textbf{antisymmetric}.
+    \item \textbf{Example}: $\leq$ on the set of real numbers.
+\end{itemize}
+
+\textbf{Key Terms}:
+\begin{itemize}
+
+    \item \textbf{Majorant}: $m \in A$ is a majorant of $X \subseteq A$ if $\forall x \in X: x \leq m$.
+    \item \textbf{Minorant}: $m \in A$ is a minorant of $X \subseteq A$ if $\forall x \in X: x \geq m$.
+    \item \textbf{Supremum}: The least upper bound of a set $X \subseteq A$.
+    \item \textbf{Infimum}: The greatest lower bound of a set $X \subseteq A$.
+\end{itemize}
+
+\subsubsection*{Total Order}
+\textbf{Definition}: A total order requires that for each pair of elements $x, y \in A$, either $x R y$ or $y R x$.
+
+\subsubsection*{Hasse Diagrams}
+
+\textbf{Definition}: A Hasse diagram is a simplified graph representing a finite poset, showing the partial order without reflexive, transitive, or redundant relations.
+
+\textbf{Construction Steps}:
+1. **Start with a Poset**: Identify the set $A$ and the partial order $R$.
+2. **Simplify Relations**: Remove reflexive and transitive edges.
+3. **Arrange Vertically**: Position elements so $a R b$ implies $a$ is below $b$.
+4. **Draw Edges**: Connect elements with direct relations.
+
+\textbf{Example}:  
+For $A = \{1, 2, 3, 4\}$ with $R$ defined by divisibility:  
+- $1 \mid 2, 1 \mid 3, 1 \mid 4, 2 \mid 4$.  
+- The diagram shows $1 \to 2 \to 4$ and $1 \to 3$.
+
+\textbf{Key Features}:
+- Highlights immediate relations.
+- Simplifies hierarchy visualization.
+- Useful for subsets, divisibility, and dependency graphs.

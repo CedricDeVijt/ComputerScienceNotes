@@ -1,0 +1,83 @@
+\section{Generating Functions}
+
+\subsection*{Definitions and Concepts}
+
+\textbf{Generating Function for a Sequence:}
+Given a sequence $a_0, a_1, a_2, \dots$, the generating function $G(x)$ is defined as:
+\[
+G(x) = a_0 + a_1x + a_2x^2 + \dots = \sum_{n=0}^\infty a_nx^n.
+\]
+
+\textbf{Formal Power Series:}
+A formal power series is an expression of the form:
+\[
+a_0 + a_1x + a_2x^2 + a_3x^3 + \dots,
+\]
+where coefficients $a_n$ are given but the series may not converge.
+
+\subsection*{Useful Generating Functions}
+
+\begin{itemize}
+    \item \textbf{Geometric Series:}
+    \[ \sum_{n=0}^\infty x^n = \frac{1}{1-x}, \quad |x| < 1. \]
+
+    \item \textbf{Generalized Geometric Series:}
+    \[ \sum_{n=0}^\infty c^nx^n = \frac{1}{1-cx}, \quad |cx| < 1. \]
+
+    \item \textbf{Powers of $(1-x)^{-m}$:}
+    \[ \frac{1}{(1-x)^m} = \sum_{n=0}^\infty \binom{n+m-1}{m-1}x^n, \quad |x| < 1. \]
+
+    \item \textbf{Derivative Formulas:}
+    \[ \frac{x}{(1-x)^2} = \sum_{n=1}^\infty nx^n, \]
+    \[ \frac{1}{(1-x)^2} = \sum_{n=0}^\infty (n+1)x^n. \]
+
+    \item \textbf{Exponential Generating Function:}
+    \[ \sum_{n=0}^\infty \frac{x^n}{n!} = e^x. \]
+
+    \item \textbf{Alternate Series:}
+    \[ \sum_{n=0}^\infty (-1)^n x^n = \frac{1}{1+x}. \]
+\end{itemize}
+
+\subsection*{Examples}
+
+\textbf{Example 1: Fruit Selection}
+\begin{align*}
+    &\text{Given a fruit basket with 2 apples, 1 pear, 1 plum, and 1 banana, the generating function is:} \\
+    &\quad G(x) = (1+x+x^2)(1+x)(1+x)(1+x).
+\end{align*}
+The coefficient of $x^2$ in $G(x)$ gives the number of ways to choose 2 fruits.
+
+\textbf{Example 2: Pastries}
+\begin{align*}
+    &\text{For 3 cheese pastries, 2 apricot pastries, and 4 strawberry pastries, the generating function is:} \\
+    &\quad G(x) = (1+x+x^2+x^3)(1+x+x^2)(1+x+x^2+x^3+x^4).
+\end{align*}
+
+\subsection*{Operations on Generating Functions}
+
+\textbf{Addition:} If $A(x)$ and $B(x)$ are generating functions, their sum corresponds to termwise addition of coefficients:
+\[ (a_0 + a_1x + \dots) + (b_0 + b_1x + \dots) = (a_0 + b_0) + (a_1 + b_1)x + \dots. \]
+
+\textbf{Multiplication:} The product of generating functions corresponds to convolution of coefficients:
+\[ A(x)B(x) = \sum_{n=0}^\infty \left( \sum_{k=0}^n a_k b_{n-k} \right)x^n. \]
+
+\subsection*{Inverse Generating Functions}
+
+A generating function $S(x)$ with $S(0) \neq 0$ has an inverse $T(x)$ such that:
+\[ S(x)T(x) = 1. \]
+
+Example:
+\[ S(x) = 1+2x+3x^2+\dots \implies T(x) = 1-2x+x^2. \]
+
+\subsection*{Applications}
+
+\textbf{Solving Recurrence Relations:}
+Generating functions can transform recurrence relations into algebraic equations. For example:
+\begin{align*}
+    h_n &= 2h_{n-1} + 1, \quad h_0 = 0. \\
+    \text{Generating function: } H(x) &= \frac{x}{(1-x)(1-2x)}.
+\end{align*}
+
+\textbf{Finding Closed Forms:}
+For a recurrence $s_n = -s_{n-1} + 6s_{n-2}$ with $s_0 = 1, s_1 = 1$, we get:
+\[ S(x) = \frac{1+2x}{(1+3x)(1-2x)}. \]

@@ -1,0 +1,76 @@
+\section{Probability}
+\subsection*{Basics}
+\subsubsection*{Fundamental Rules}
+\begin{itemize}
+\item For any event $A$: $0 \leq P(A) \leq 1$
+\item Complement: $P(A^c) = 1 - P(A)$
+\item Conditional Probability:
+    $P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad P(B) > 0$
+\item Independence: $P(A|B) = P(A)$
+\end{itemize}
+
+\subsubsection*{Set Operations}
+\begin{itemize}
+\item Intersection:
+    $P(A \cap B) = P(A|B)P(B) = P(B|A)P(A)$
+\item Union:
+    $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+\item General Union:
+    $P(\bigcup_{i=1}^n A_i) = \sum_{i=1}^n P(A_i) - \sum_{i<j} P(A_i \cap A_j) + \cdots$
+\end{itemize}
+
+\subsubsection*{Bayes' Theorem}
+\begin{itemize}
+\item Basic form:
+    $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
+\item Partition form:
+    $P(A_i|B) = \frac{P(A_i)P(B|A_i)}{\sum_{j=1}^n P(A_j)P(B|A_j)}$
+\end{itemize}
+
+\subsection*{Discrete Distributions}
+
+\subsubsection*{Uniform Distribution}
+$P(X = x) = \frac{1}{n}, \quad x \in \{x_1, \ldots, x_n\}$
+$E[X] = \frac{a + b}{2}, \quad Var(X) = \frac{(b-a+1)^2-1}{12}$
+
+\subsubsection*{Binomial Distribution}
+$X \sim B(n,p)$
+$P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}$
+$E[X] = np, \quad Var(X) = np(1-p)$
+
+\subsubsection*{Poisson Distribution}
+$X \sim Pois(\lambda)$
+$P(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}, \quad k \geq 0$
+$E[X] = Var(X) = \lambda$
+
+\subsubsection*{Negative Binomial}
+$X \sim NB(r,p)$
+$P(X = k) = \binom{k-1}{r-1}p^r(1-p)^{k-r}$
+$E[X] = \frac{r}{p}, \quad Var(X) = \frac{r(1-p)}{p^2}$
+
+\subsection*{Continuous Distributions}
+
+\subsubsection*{Normal Distribution}
+$X \sim N(\mu,\sigma^2)$
+$f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$
+$Z = \frac{X-\mu}{\sigma} \sim N(0,1)$
+
+\subsubsection*{Exponential Distribution}
+$X \sim Exp(\lambda)$
+$f(x) = \lambda e^{-\lambda x}, \quad x \geq 0$
+$E[X] = \frac{1}{\lambda}, \quad Var(X) = \frac{1}{\lambda^2}$
+
+\subsection*{Properties}
+\subsubsection*{Expected Value}
+\begin{itemize}
+\item Linearity: $E[aX + b] = aE[X] + b$
+\item Product: $E[XY] = E[X]E[Y]$ if independent
+\end{itemize}
+
+\subsubsection*{Variance}
+\begin{itemize}
+\item Definition: $Var(X) = E[X^2] - (E[X])^2$
+\item Properties:
+    $Var(aX + b) = a^2Var(X)$
+    $Var(X + Y) = Var(X) + Var(Y) \text{ if independent}$
+\end{itemize}

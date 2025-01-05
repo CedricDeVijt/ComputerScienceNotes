@@ -1,0 +1,40 @@
+\section{boolean algebra}
+\subsection*{Boolean expressions}
+$\overline{\overline{x}} = x$ Law of double complement \\
+$x + x = x$ $+$ is idempotent \\
+$x \cdot x = x$  $\cdot$ is idempotent \\
+$x + 0 = x$ Identity law \\ 
+$x \cdot 1 = x$ Identity law \\
+$x + 1 = 1$ 1 absorbing element for $+$ \\
+$x \cdot 0 = 0$  0 absorbing element for $\cdot$ \\
+$x + y = y + x$ \\
+$x \cdot y = y \cdot x$ Commutativity \\
+$x + (y + z) = (x + y) + z$ \\
+ $x (y z) = (x y) z$ Associativity \\
+$x + y z = (x + y)(x + z)$ \\
+ $x (y + z) = x y + x z$ Distributivity \\
+$\overline{x y} = \overline{x} + \overline{y}$ \\
+ $\overline{x + y} = \overline{x} \cdot \overline{y}$ De Morgan's law \\
+$x + x y = x$ \\
+ $x (x + y) = x$ Absorption law \\
+$x + \overline{x} = 1$ \\ $x \cdot \overline{x} = 0$ Unity law \\
+
+\subsection*{DNF and CNF}
+
+\textbf{Disjunctive Normal Form (DNF)}: A Boolean expression is in DNF if it is a disjunction (OR, \(+\)) of conjunctions (AND, \(\cdot\)) of literals. Example:
+\[
+(A \cdot B) + (\overline{A} \cdot C) + (\overline{B} \cdot \overline{C})
+\]
+
+
+\textbf{Conjunctive Normal Form (CNF)}: A Boolean expression is in CNF if it is a conjunction (AND, \(\cdot\)) of disjunctions (OR, \(+\)) of literals. Example:
+\[
+(A + \overline{B}) \cdot (B + C + \overline{D}) \cdot (\overline{A} + D)
+\]
+
+
+\textbf{Key Differences}:
+\begin{itemize}
+    \item \textbf{DNF}: OR of ANDs (Sum of Products).
+    \item \textbf{CNF}: AND of ORs (Product of Sums).
+\end{itemize}
