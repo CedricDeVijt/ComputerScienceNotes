@@ -1,6 +1,7 @@
 ## 7.1 Finite Generating Functions
 
 ### Overview
+
 Generating functions provide a new perspective on counting problems. Using polynomial expansions, such as the Binomial Theorem:
 
 $$(1+x)^n = \binom{n}{0} + \binom{n}{1}x + \cdots + \binom{n}{r}x^r + \cdots + \binom{n}{n}x^n,$$
@@ -8,6 +9,7 @@ $$(1+x)^n = \binom{n}{0} + \binom{n}{1}x + \cdots + \binom{n}{r}x^r + \cdots + \
 coefficients of terms like $x^r$ reveal the number of ways to choose $r$ objects from $n$ objects.
 
 ### Examples
+
 - **Example 7.1**: Choosing 2 fruits from a basket of 5 distinct fruits. Coefficient of $x^2$ in $(1+x)^5$:
 
   $$\binom{5}{2} = 10$$
@@ -18,6 +20,7 @@ coefficients of terms like $x^r$ reveal the number of ways to choose $r$ objects
   $$(0 \, \text{apples} + 1 \, \text{apple} + 2 \, \text{apples})(0 \, \text{pears} + 1 \, \text{pear})(0 \, \text{plums} + 1 \, \text{plum})(0 \, \text{bananas} + 1 \, \text{banana})$$
 
 ### Definition
+
 If a finite sequence $(a_0, a_1, \ldots, a_n)$ is given such that $a_n = a_{n+1} = a_{n+2} = \ldots = 0$, the generating function is:
 
 $$a_0 + a_1x + a_2x^2 + \ldots + a_nx^n.$$
@@ -25,11 +28,13 @@ $$a_0 + a_1x + a_2x^2 + \ldots + a_nx^n.$$
 ## 7.2 Formal Power Series
 
 ### Infinite Sequences
+
 Formal power series extend generating functions to infinite sequences, like $(a_0, a_1, \ldots)$:
 
 $$a_0 + a_1x + a_2x^2 + \ldots$$
 
 ### Operations
+
 1. **Addition**:
    $$(a_0 + a_1x + \ldots) + (b_0 + b_1x + \ldots) = (a_0+b_0) + (a_1+b_1)x + \ldots$$
 
@@ -39,9 +44,18 @@ $$a_0 + a_1x + a_2x^2 + \ldots$$
 ## 7.3 Inverse Generating Functions
 
 ### Definition
+
 A generating function $S = s_0 + s_1x + s_2x^2 + \ldots$ with $s_0 \neq 0$ has an inverse $T$, satisfying:
 
 $$S \cdot T = 1.$$
+
+
+### Solving Recurrences
+$\frac{1}{1-a} = \sum\limits_{k=0}^\infty a^k$
+$\frac{1}{(1-a)^m} = \sum\limits_{k=0}^\infty \binom{m+k-1}{k} a^k$
+$\frac{x}{1-x^2} = \sum\limits_{k=0}^\infty kx^k$
+$(1+x)^c = \sum\limits_{k=0}^\infty \binom{c}{k} x^k$
+$e^x = \sum\limits_{k=0}^\infty \frac{x^k}{k!}$
 
 ---
 
