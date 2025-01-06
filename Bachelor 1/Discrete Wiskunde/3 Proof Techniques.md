@@ -16,7 +16,7 @@
 - A trivial proof requires no work because the statement is inherently true or follows directly from given information.
 
 Example:
-- If $x$ is a real number such that $x^2 + 1 = 0$, then $x^4 = 0$.
+- If $x$ is a real number such that $x^2 - 1 = 0$, then $x = 1$.
 
 ### 3.2.2 Direct Proof
 - Direct proofs involve showing that each step logically follows from the previous one, starting with known facts and definitions.
