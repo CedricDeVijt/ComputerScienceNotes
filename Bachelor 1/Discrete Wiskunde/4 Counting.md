@@ -23,6 +23,7 @@
 
 ## 4.3 Decision Trees
 - **Example 4.8**: Decision trees can illustrate all possible outcomes of a series of choices. For instance, a staircase problem where each step can be climbed in several different ways can be visualized as a decision tree, helping to count total unique paths.
+	![[Pasted image 20250106100732.png]]
 
 ## 4.4 Permutations and Combinations
 1. **Variation**  

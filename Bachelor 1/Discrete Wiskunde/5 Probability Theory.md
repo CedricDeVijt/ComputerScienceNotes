@@ -75,7 +75,7 @@
 
 ## 5.5 Expectation and Variance
 ### **Expectation (E[X])**:
-- $E[X] = \sum x \cdot P(X = x)$
+- $E[X] = \sum\limits_{i} x_i \cdot P(X = x_i)$
 - **Example**: For a die, $E[X] = \frac{1}{6} \sum\limits_{i=1}^{6} i = 3.5$.
 - **Binomial Distribution**: $E[X] = n \cdot p$
 
@@ -83,6 +83,8 @@
 - $Var[X] = E[X^2] - (E[X])^2$
 - Measures spread of $X$.
 - **Binomial Distribution**: $Var[X] = n \cdot p \cdot (1-p)$
+- $\sqrt{Var[X]}$ is the standard deviation ($\sigma$).
+- $\sigma = 
 
 ---
 
