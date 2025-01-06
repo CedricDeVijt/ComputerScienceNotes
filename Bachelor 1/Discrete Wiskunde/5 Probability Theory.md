@@ -83,8 +83,7 @@
 - $Var[X] = E[X^2] - (E[X])^2$
 - Measures spread of $X$.
 - **Binomial Distribution**: $Var[X] = n \cdot p \cdot (1-p)$
-- $\sqrt{Var[X]}$ is the standard deviation ($\sigma$).
-- $\sigma = 
+- $\sigma = \sqrt{Var[X]}$
 
 ---
 

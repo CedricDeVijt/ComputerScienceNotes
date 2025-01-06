@@ -43,36 +43,6 @@ A generating function $S = s_0 + s_1x + s_2x^2 + \ldots$ with $s_0 \neq 0$ has a
 
 $$S \cdot T = 1.$$
 
-### Example 7.14
-Find the inverse of $S = 1+2x+3x^2+\ldots$:
-
-1. Write $T = t_0 + t_1x + t_2x^2 + \ldots$.
-2. Solve:
-   $$s_0t_0 = 1, \quad s_0t_1+s_1t_0 = 0, \quad \text{etc.}$$
-3. Result:
-   $$S^{-1} = \frac{1}{1-2x+x^2}.$$
-
-## 7.4 Solving Recurrence Relations
-
-### Example 7.19: Towers of Hanoi
-The recurrence for the minimum moves $h_n$ is:
-
-$$h_n = \begin{cases} 0, & n=0, \\ 2h_{n-1} + 1, & n \geq 1. \end{cases}$$
-
-Using generating functions, $H = \sum_{n=0}^\infty h_nx^n$:
-
-$$H(1-2x) = x/(1-x).$$
-
-Solution:
-
-$$h_n = 2^n - 1.$$
-
-## 7.5 Practice Problems
-
-1. **Books**: Find the generating function for selecting $r$ books from 7 distinct books and 5 identical ones.
-2. **Currency**: Find the generating function for spending $r$ euros using coins of 7$$, 9$$, and other denominations.
-3. **Goldbach Conjecture**: Count ways to write $r = p+q$, where $p,q$ are primes.
-
 ---
 
 ## Key Points to Remember
