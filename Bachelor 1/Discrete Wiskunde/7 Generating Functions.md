@@ -49,13 +49,17 @@ A generating function $S = s_0 + s_1x + s_2x^2 + \ldots$ with $s_0 \neq 0$ has a
 
 $$S \cdot T = 1.$$
 
-
 ### Solving Recurrences
-$\frac{1}{1-a} = \sum\limits_{k=0}^\infty a^k$
-$\frac{1}{(1-a)^m} = \sum\limits_{k=0}^\infty \binom{m+k-1}{k} a^k$
-$\frac{x}{1-x^2} = \sum\limits_{k=0}^\infty kx^k$
-$(1+x)^c = \sum\limits_{k=0}^\infty \binom{c}{k} x^k$
-$e^x = \sum\limits_{k=0}^\infty \frac{x^k}{k!}$
+
+$$
+\begin{align*}
+\frac{1}{1-a} &= \sum\limits_{k=0}^\infty a^k\\
+\frac{1}{(1-a)^m} &= \sum\limits_{k=0}^\infty \binom{m+k-1}{k} a^k\\
+\frac{x}{1-x^2} &= \sum\limits_{k=0}^\infty kx^k\\
+(1+x)^c &= \sum\limits_{k=0}^\infty \binom{c}{k} x^k\\
+e^x &= \sum\limits_{k=0}^\infty \frac{x^k}{k!}\\
+\end{align*}
+$$
 
 ---
 
