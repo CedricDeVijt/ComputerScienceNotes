@@ -5,7 +5,7 @@ An **Operating System (OS)** acts as an intermediary between users and computer 
 - **Single-user OS**: Designed for one user, it focuses on **high performance** with low resource utilization.
 - **Multi-user OS**: Multiple users share resources, leading to **high resource utilization** but potentially lower performance.
 
-![[Pasted image 20241014163909.png]]
+![[Pasted image 20241014163909.png|500]]
 
 ## 1.2 System Perspective
 
@@ -15,7 +15,7 @@ From the system's perspective, the OS is a **resource manager**, ensuring effici
 
 The **kernel** is the core part of the OS, responsible for resource management, security, and process scheduling. It always runs on the system and interacts closely with hardware.
 
-![[Pasted image 20241014163947.png]]
+![[Pasted image 20241014163947.png|500]]
 
 ### Differences kernel and OS
 
