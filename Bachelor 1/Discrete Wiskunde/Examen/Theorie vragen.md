@@ -836,7 +836,7 @@ $$
 P(X = k) = \binom{n+k-1}{k} p^n (1-p)^k, \quad k = 0, 1, 2, \ldots
 $$
 
-### Bewijs dat $\sum\_{X} P(X) = 1$
+### Bewijs dat $\sum_{X} P(X) = 1$
 
 We willen aantonen dat de kansen van alle mogelijke uitkomsten $X$ optellen tot 1, wat een noodzakelijke eigenschap is van elke kansverdeling.
 
@@ -863,13 +863,13 @@ $$
 We herkennen hier een bekende eigenschap van de negatieve binomiale reeks. Voor $|1-p| < 1$ geldt:
 
 $$
-\sum\_{k=0}^\infty \binom{n+k-1}{k} (1-p)^k = \frac{1}{p^n}.
+\sum_{k=0}^\infty \binom{n+k-1}{k} (1-p)^k = \frac{1}{p^n}.
 $$
 
 Hieruit volgt:
 
 $$
-\sum\_{k=0}^\infty P(X = k) = p^n \cdot \frac{1}{p^n} = 1.
+\sum_{k=0}^\infty P(X = k) = p^n \cdot \frac{1}{p^n} = 1.
 $$
 
 ### Conclusie
@@ -956,13 +956,13 @@ waarbij $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ het aantal manieren is om $k$ succe
 De verwachtingswaarde van $X$ wordt gedefinieerd als:
 
 $$
-E(X) = \sum\_{k=0}^n k \cdot P(X = k).
+E(X) = \sum_{k=0}^n k \cdot P(X = k).
 $$
 
 Substitueer de kansfunctie van de binomiale verdeling:
 
 $$
-E(X) = \sum\_{k=0}^n k \cdot \binom{n}{k} p^k (1-p)^{n-k}.
+E(X) = \sum_{k=0}^n k \cdot \binom{n}{k} p^k (1-p)^{n-k}.
 $$
 
 We herschrijven $k \cdot \binom{n}{k}$ met de eigenschap:
@@ -974,25 +974,25 @@ $$
 waardoor:
 
 $$
-E(X) = \sum\_{k=1}^n n \cdot \binom{n-1}{k-1} p^k (1-p)^{n-k}.
+E(X) = \sum_{k=1}^n n \cdot \binom{n-1}{k-1} p^k (1-p)^{n-k}.
 $$
 
 Vervang $j = k-1$, wat betekent $k = j+1$ en de somlimieten veranderen:
 
 $$
-E(X) = n \sum\_{j=0}^{n-1} \binom{n-1}{j} p^{j+1} (1-p)^{n-1-j}.
+E(X) = n \sum_{j=0}^{n-1} \binom{n-1}{j} p^{j+1} (1-p)^{n-1-j}.
 $$
 
 Splits $p^{j+1}$ op in $p \cdot p^j$:
 
 $$
-E(X) = n \cdot p \sum\_{j=0}^{n-1} \binom{n-1}{j} p^j (1-p)^{(n-1)-j}.
+E(X) = n \cdot p \sum_{j=0}^{n-1} \binom{n-1}{j} p^j (1-p)^{(n-1)-j}.
 $$
 
 De som in deze uitdrukking is de binomiale expansie van $(p + (1-p))^{n-1} = 1$:
 
 $$
-\sum\_{j=0}^{n-1} \binom{n-1}{j} p^j (1-p)^{n-1-j} = 1.
+\sum_{j=0}^{n-1} \binom{n-1}{j} p^j (1-p)^{n-1-j} = 1.
 $$
 
 Dus:
@@ -1053,7 +1053,7 @@ Dit is de regel van Bayes.
 De somregel wordt als volgt geformuleerd:
 
 $$
-P(B) = \sum\_{i} P(B \cap A_i),
+P(B) = \sum_{i} P(B \cap A_i),
 $$
 
 waar $\{A_i\}$ een partitie van de uitkomstenruimte $\Omega$ vormt.
