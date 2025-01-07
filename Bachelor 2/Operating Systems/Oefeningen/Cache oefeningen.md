@@ -606,21 +606,23 @@ Veronderstel eveneens:
 **Afleidingen:**
 
 1. **Aantal cacheblocks:**
+
    $$
    \text{Aantal cacheblocks} = \frac{\text{Cache size}}{\text{Block size}} = \frac{4096}{32} = 128 \text{ blocks}.
-  $$
+   $$
 
 2. **Aantal floats per cacheblock:**
+
    $$
    \text{Aantal floats per cacheblock} = \frac{\text{Block size}}{\text{Float size}} = \frac{32}{4} = 8 \text{ floats}.
-  $$
+   $$
 
 3. **Direct-mapped cache:**
 
    - Elke cacheblock heeft een vaste plek in de cache, bepaald door:
      $$
      \text{Index} = (\text{Memory address} / \text{Block size}) \mod \text{Aantal cacheblocks}.
-    $$
+     $$
    - Dit betekent dat floats met een afstand van 128 cacheblocks elkaar zullen verdringen (cache conflict).
 
 4. **Gegeven over arrays $a$ en $b$:**
@@ -637,11 +639,11 @@ Bij direct-mapped caching worden blokken van $a$ en $b$ mogelijk naar dezelfde c
    - $a$ en $b$ samen gebruiken:
      $$
      \text{Geheugengrootte van $a$ en $b$} = 4096 \, \text{(voor $a$)} + 4096 \, \text{(voor $b$)} = 8192 \, \text{bytes}.
-    $$
+     $$
    - Aantal blokken in het geheugen:
      $$
      \frac{\text{Geheugengrootte van $a$ en $b$}}{\text{Block size}} = \frac{8192}{32} = 256 \text{ blokken}.
-    $$
+     $$
 
 2. **Conflict tussen $a[i]$ en $b[i]$:**
 
@@ -660,12 +662,12 @@ Bij direct-mapped caching worden blokken van $a$ en $b$ mogelijk naar dezelfde c
    - Elke $b[i]$ toegang resulteert eveneens in een miss.
    - Dit betekent dat de **hit rate = 0%.**
 
-
 ### Als we een 4-way set-associatief geheugen met random replacement veronderstellen, bereken de (benaderde) hit rate.
 
 ### Analyse van de situatie bij een 4-way set-associatieve cache
 
 **Gegeven:**
+
 - **Cache configuratie:**
   - Cache size = $4096$ bytes
   - Block size = $32$ bytes
@@ -674,14 +676,15 @@ Bij direct-mapped caching worden blokken van $a$ en $b$ mogelijk naar dezelfde c
     - Aantal sets in de cache:
       $$
       \text{Aantal sets} = \frac{\text{Cache size} / \text{Block size}}{\text{Aantal ways}} = \frac{4096 / 32}{4} = 32 \text{ sets}.
-     $$
+      $$
 
 **Afleidingen:**
+
 - Het geheugen wordt opgedeeld in blokken van 32 bytes.
 - De **set-index** wordt bepaald door:
   $$
   \text{Set-index} = (\text{Memory address} / \text{Block size}) \mod \text{Aantal sets}.
- $$
+  $$
 - Blokken $a[i]$ en $b[i]$ kunnen nu in dezelfde set vallen, maar doordat een set 4 slots bevat, kunnen blokken van zowel $a$ als $b$ samen in de cache passen zonder elkaar direct te vervangen.
 
 ---
@@ -689,6 +692,7 @@ Bij direct-mapped caching worden blokken van $a$ en $b$ mogelijk naar dezelfde c
 ### Gedrag van de cache tijdens de iteraties
 
 1. **Eerste 8 iteraties:**
+
    - **Geheugenstructuur:**
      - Blok $a[0] \ldots a[7]$ en blok $b[0] \ldots b[7]$ worden geaccessed.
    - **Cachetoestand:**
@@ -704,14 +708,17 @@ Bij direct-mapped caching worden blokken van $a$ en $b$ mogelijk naar dezelfde c
 ---
 
 ### Hit rate berekening
+
 Om de benaderde hit rate te bepalen, bekijken we de **boomstructuur** van het gedrag:
 
 #### De eerste 8 iteraties:
+
 - Bij de eerste toegang tot een blok van $a$, treedt een miss op.
 - Bij de eerste toegang tot een blok van $b$, treedt een miss op.
 - Na deze iteraties bevinden zich zowel $a[i]$ als $b[i]$ in de cache. Verdere toegang tot $a$ of $b$ is een **hit**, tenzij er een random vervanging optreedt.
 
 #### Boomstructuur:
+
 - **Linkertak:** "Beide blokken ($a$ en $b$) blijven in de cache."
 - **Rechtertak:** "Een blok ($a$ of $b$) wordt vervangen."
 
@@ -720,15 +727,18 @@ De kans dat een blok wordt vervangen is relatief klein omdat er meerdere vrije p
 ---
 
 ### Benadering van de hit rate
+
 1. **Misses in de eerste iteraties:**
-   - Elke blok wordt 1 keer ingeladen: $2 \text{ misses (voor $a[0]$ en $b[0]$)}$.
+
+   - Elke blok wordt 1 keer ingeladen: 2 misses (voor $a[0]$ en $b[0]$).
    - Voor de eerste $8$ iteraties: $16$ elementen worden geaccessed, wat neerkomt op **4 blokken** ($a$) en **4 blokken** ($b$).
 
    $$
    \text{Aantal misses in eerste 8 iteraties} = 8 \text{ misses (4 voor $a$ en 4 voor $b$)}.
-  $$
+   $$
 
 2. **Hits en misses na de eerste iteraties:**
+
    - Kans op een miss per access wordt kleiner omdat beide blokken meestal in de cache aanwezig zijn.
    - Aangenomen dat er een kleine kans op vervanging is, schatten we:
      - $\text{Hit rate na eerste iteraties} \approx 90\%$.
@@ -738,7 +748,73 @@ De kans dat een blok wordt vervangen is relatief klein omdat er meerdere vrije p
    - De totale **gemiddelde hit rate** (rekening houdend met de eerste misses) wordt geschat op:
      $$
      \text{Hit rate} \approx 85\%.
-    $$
+     $$
 
 **Conclusie:**
 De geschatte **hit rate is ongeveer 85%.**
+
+### Pas je antwoord op vorige 2 vragen aan, als je weet dat beide arrays elk slechts 256 elementen bevatten. Doe dit eveneens voor 1536.
+
+#### Geval: **256 elementen per array**
+
+- **Relatieve positie in het geheugen:**
+
+  - Elk array gebruikt $256 \times 4 = 1024$ bytes.
+  - Samen gebruiken ze $2 \times 1024 = 2048$ bytes, wat gelijk is aan $\frac{1}{4}$ van de cachegrootte ($4096$ bytes).
+  - De blokken van $a[i]$ en $b[i]$ worden dus **op dezelfde sets gemapt**.
+
+- **Gedrag van de cache:**
+
+  - Thrashing (conflicten) treedt **niet meer op** omdat $a[i]$ en $b[i]$ afzonderlijk in de sets passen.
+  - Elk blok bevat $8$ floats. Na de eerste miss in een blok volgen $7$ hits bij toegang tot dezelfde array.
+
+- **Hit rate:**
+
+  - Per blok is de hit rate $\frac{7}{8}$ (7 hits, 1 miss).
+  - Omdat er geen thrashing optreedt, geldt dit ook voor de gehele berekening.
+
+  **Conclusie voor 256 elementen bij direct mapping:**
+  **Hit rate = $7/8$ = 87.5%.**
+
+---
+
+#### Geval: **1536 elementen per array**
+
+- **Relatieve positie in het geheugen:**
+
+  - Elk array gebruikt $1536 \times 4 = 6144$ bytes.
+  - Samen gebruiken ze $2 \times 6144 = 12288$ bytes, wat gelijk is aan $\frac{6}{4}$ van de cachegrootte.
+  - Dit is een veelvoud van $\frac{1}{4}$ van de cachegrootte, dus $a[i]$ en $b[i]$ worden opnieuw **op dezelfde sets gemapt**.
+
+- **Gedrag van de cache:**
+
+  - Net als bij $256$ elementen is er geen thrashing omdat de cache voldoende groot is om de benodigde blokken te behouden.
+
+- **Hit rate:**
+
+  - Per blok is de hit rate $\frac{7}{8}$ (7 hits, 1 miss), hetzelfde gedrag als bij 256 elementen.
+
+  **Conclusie voor 1536 elementen bij direct mapping:**
+  **Hit rate = $7/8$ = 87.5%.**
+
+---
+
+#### **4-way set-associative cache**
+
+Voor zowel $256$ als $1536$ elementen blijft het gedrag hetzelfde als in het oorspronkelijke scenario met $1024$ elementen. Dit komt omdat:
+
+1. Beide arrays worden op dezelfde sets gemapt, maar de 4-way associativiteit biedt genoeg ruimte om blokken van zowel $a[i]$ als $b[i]$ in dezelfde set te bewaren zonder conflicten.
+2. Random replacement blijft zeldzaam, dus de **gemiddelde hit rate** na de initiële misses blijft hoog.
+
+**Conclusie voor 256 en 1536 elementen bij 4-way set-associative cache:**
+**Hit rate $\approx 85%$.**
+
+---
+
+### Samenvatting
+
+| **Scenario**             | **Direct Mapping Hit Rate** | **4-way Set-Associative Hit Rate** |
+| ------------------------ | --------------------------- | ---------------------------------- |
+| 256 elementen per array  | 87.5%                       | 85%                                |
+| 1024 elementen per array | 0%                          | 85%                                |
+| 1536 elementen per array | 87.5%                       | 85%                                |
