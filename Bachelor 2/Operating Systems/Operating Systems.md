@@ -1,7 +1,7 @@
 [[1 Introduction & Processes and Threads]]
 [[Bachelor 2/Operating Systems/2 Cache Memory]]
 [[Bachelor 2/Operating Systems/3 Memory Management]]
-[[4 Virtual Memory]]
+[[Bachelor 2/Operating Systems/4 Virtual memory]]
 [[5 Processor Scheduling]]
 [[6 Processor Scheduling - Real-time Algorithms]]
 [[7 Disk Management]]
