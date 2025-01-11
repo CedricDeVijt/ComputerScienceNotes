@@ -46,7 +46,7 @@
   - In practice: typically weighted linear sum of features
   - The deeper in the tree the evaluation function is buried, the less the quality of the evaluation function matters
 
-## 2.6Synergies Between Evaluation Function and Alpha-Beta
+## 2.6 Synergies Between Evaluation Function and Alpha-Beta
 
 In the Alpha-Beta algorithm:
 
