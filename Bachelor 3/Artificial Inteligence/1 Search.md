@@ -107,6 +107,8 @@
 - **Combines** UCS and Greedy Search:
   - **f(n) = g(n) + h(n)**: Total cost (g) + estimated cost to goal (h).
 - **Optimal** if the heuristic is **admissible** (never overestimates the true cost).
+- The **key** to A\* efficiency is a **well-designed heuristic**.
+- **Graph Search** version of A\* is optimal if heuristics are consistent.
 
 ## 1.7 Optimality and Heuristics
 
@@ -135,15 +137,7 @@
 - The **max of admissible heuristics** is also admissible.
 - Use of heuristics involves balancing **computation cost** and **accuracy**.
 
-## 1.9 A\*
-
-### Properties of A\*
-
-- **Combines** backward (cost to state) and forward (estimate to goal) costs.
-- The **key** to A\* efficiency is a **well-designed heuristic**.
-- **Graph Search** version of A\* is optimal if heuristics are consistent.
-
-## 1.10 Complexity of Search Algorithm
+## 1.9 Complexity of Search Algorithm
 
 | **Algorithm**            | **Time Complexity**         | **Space Complexity**        | **Complete** | **Optimal**              |
 | ------------------------ | --------------------------- | --------------------------- | ------------ | ------------------------ |
