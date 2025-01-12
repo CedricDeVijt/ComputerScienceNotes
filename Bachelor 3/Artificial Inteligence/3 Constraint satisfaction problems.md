@@ -61,7 +61,7 @@
 
 ### Tree-Structured CSPs
 
-- CSPs with a **tree structure** can be solved in **linear time** (O(n d²)) by:
+- CSPs with a **tree structure** can be solved in **linear time** ($O(n d^2)$) by:
   1. Ensuring arc consistency in a backward pass.
   2. Assigning values in a forward pass without backtracking.
 
@@ -81,7 +81,7 @@
 
 ---
 
-## Key Points to Remember:
+## Key Points to Remember
 
 - **Constraint Satisfaction Problems (CSPs)** involve assigning values to variables such that a set of constraints is satisfied.
 - **Backtracking Search** is the basic uninformed method but can be optimized using:
@@ -90,13 +90,3 @@
   - **MRV & LCV**: Heuristics for choosing variables and values to reduce search space.
 - **Tree-structured CSPs** can be solved efficiently, and **cutset conditioning** can turn cyclic graphs into tree-structured CSPs.
 - **Iterative local search (min-conflicts)** is a powerful method for large CSPs like the **n-queens problem**.
-
----
-
-## Study Highlights:
-
-- **CSPs** are more structured than general search problems, allowing specialized algorithms.
-- **Backtracking** with optimizations like **ordering** and **filtering** significantly speeds up the solution process.
-- **Arc Consistency** (AC-3) is a crucial technique in pruning domains and ensuring efficient CSP resolution.
-- **Tree-structured CSPs** offer a clear path to fast solutions, but most real-world problems require more complex approaches like **cutset conditioning**.
-- **Local Search** with the **min-conflicts** heuristic is a practical method for solving large-scale CSPs.
