@@ -1,15 +1,3 @@
-## 2.1 Introduction to Game Playing
-
-- **Game Playing State-of-the-Art**
-  - **Checkers**: 1950 - First computer player; 1994 - Chinook ended a 40-year reign of human champion Marion Tinsley; 2007 - Checkers solved.
-  - **Chess**: 1997 - Deep Blue defeated Garry Kasparov in a six-game match.
-  - **Go**: 2016 - AlphaGo defeated human champions using **Monte Carlo Tree Search**.
-- **Axes of Games**:
-  - **Deterministic** or **stochastic**
-  - One, two, or more players
-  - **Zero-sum** games
-  - **Perfect information** or hidden information
-
 ## 2.2 Deterministic Games and Zero-Sum Games
 
 - **Deterministic Games**: Players take turns, each state has actions leading to new states.
