@@ -135,7 +135,7 @@
 - The **max of admissible heuristics** is also admissible.
 - Use of heuristics involves balancing **computation cost** and **accuracy**.
 
-## 1.9 Summary of A\*
+## 1.9 A\*
 
 ### Properties of A\*
 
