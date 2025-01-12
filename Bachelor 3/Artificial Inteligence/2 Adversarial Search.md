@@ -1,10 +1,10 @@
-## 2.2 Deterministic Games and Zero-Sum Games
+## 2.1 Deterministic Games and Zero-Sum Games
 
 - **Deterministic Games**: Players take turns, each state has actions leading to new states.
 - **Zero-Sum Games**: Players have opposite utilities, where one player's gain is the other's loss.
 - **General Games**: Can include cooperation or competition.
 
-## 2.3 Adversarial Search
+## 2.2 Adversarial Search
 
 - **Adversarial Game Trees**: Players alternate turns in a search tree, attempting to maximize or minimize the outcome.
 - **Minimax Search**:
@@ -16,7 +16,7 @@
 
 ![[Pasted image 20241017105127.png|400]]
 
-## 2.4 Alpha-Beta Pruning
+## 2.3 Alpha-Beta Pruning
 
 - **Alpha-Beta Pruning**: Improves the efficiency of minimax by cutting off branches that won't affect the final decision.
   - **Best Case**: Time complexity can reduce to $O(b^{(m/2)})$ with perfect move ordering.
@@ -26,7 +26,7 @@
 
 ![[Pasted image 20241017105322.png]]
 
-## 2.5 Resource Limits and Evaluation Functions
+## 2.4 Resource Limits and Evaluation Functions
 
 - **Depth-Limited Search**: When the search tree is too large, cut off after a limited depth and use an evaluation function.
 - **Evaluation Function**:
@@ -34,7 +34,7 @@
   - In practice: typically weighted linear sum of features
   - The deeper in the tree the evaluation function is buried, the less the quality of the evaluation function matters
 
-## 2.6 Synergies Between Evaluation Function and Alpha-Beta
+## 2.5 Synergies Between Evaluation Function and Alpha-Beta
 
 In the Alpha-Beta algorithm:
 
@@ -55,13 +55,13 @@ In the Alpha-Beta algorithm:
 
 - The better the evaluation function at guiding node expansion, the **more efficient Alpha-Beta pruning** becomes, reducing the overall number of nodes to explore.
 
-## 2.7 Expectimax Search
+## 2.6 Expectimax Search
 
 - **Expectimax Search**: Used when there’s randomness (e.g., dice rolls). Instead of minimax's worst-case strategy, **expectimax** calculates the **average** expected utility.
   - Includes **chance nodes** representing random events.
   - **Efficiency**: More expensive than minimax, as it needs to evaluate all possible outcomes probabilistically.
 
-## 2.8 Mixed and Multi-Agent Games
+## 2.7 Mixed and Multi-Agent Games
 
 - **Expectiminimax**: A combination of minimax and expectimax, where one layer of the tree involves chance events.
 - **Multi-Agent Utilities**: Used in games with more than two players where the game may not be zero-sum. Each agent tries to maximize its own utility, which can lead to dynamic cooperation or competition.
@@ -75,12 +75,3 @@ In the Alpha-Beta algorithm:
 - **Evaluation Functions** replace terminal values in depth-limited search, allowing for approximate game evaluations.
 - **Expectimax Search**: Used for games with uncertainty (e.g., dice rolls or unpredictable opponents).
 - **Resource Limits**: Limit the depth of search trees to fit within real-time constraints (common in chess, Go, etc.).
-
----
-
-## Highlighted Concepts for Quick Review
-
-- **Minimax Algorithm**: A core concept in adversarial search.
-- **Alpha-Beta Pruning**: Essential for optimizing search in complex games.
-- **Expectimax Search**: Deals with random elements in game outcomes.
-- **Evaluation Function**: Used when a full game tree search isn't feasible due to depth limits.
