@@ -324,9 +324,10 @@ Speler A's eerste zet wordt bepaald door de minimax-evaluatie:
 Dus:
 Laatste stokje Punten A Punten B Punten C
 genomen door
-|A | -1 | 1 | 0 |
-| - | - | - | - |
-|B | 0 | -1 | 1 |
-|C | 1 | 0 | -1 |
+|  A  | -1  |  1  |  0  |
+| --- | --- | --- | --- |
+| B | 0 | -1 | 1 |
+| C | 1 | 0 | -1 |
+
 
 Gebruik de generalisatie van minimax voor meerdere spelers om de beste beginzet van A te bepalen.
