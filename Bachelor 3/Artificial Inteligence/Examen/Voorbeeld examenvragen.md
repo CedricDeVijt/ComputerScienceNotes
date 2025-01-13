@@ -1,4 +1,4 @@
-# Uninformed en informed search
+# 1 Uninformed en informed search
 
 ## Vul volgende tabel aan. De tabel bevat voor verschillende zoekalgoritmes de tijds- en ruimtecomplexiteit, of het algoritme al dan niet compleet is (steeds een doelnode vindt als die er is), en al dan niet optimaal is (steeds het kortste pad naar de meest dichtstbijzijnde doelnode vindt). Veronderstel dat de doelnode gezocht wordt in een eindige boom met diepte m, waarbij elke node die geen blad is, b kinderen heeft:
 
@@ -75,7 +75,7 @@ Best First Search selecteert de volgende te verkennen knoop op basis van een **e
    h(n) \leq c(n, n') + h(n')
    $$
    waarbij $h(n)$ de geschatte kost is van $n$ naar het doel, en $c(n, n')$ de werkelijke kost tussen $n$ en $n'$.
-2. **Heuristiek is minimaal**: Dit betekent dat $h(n) \leq h^{*}_(n)$, waarbij $h^_(n)$ de werkelijke minimale kost is van $n$ naar het doel.
+2. **Heuristiek is minimaal**: Dit betekent dat $h(n) \leq h^*(n)$, waarbij $h^*_(n)$ de werkelijke minimale kost is van $n$ naar het doel.
 
 Als de heuristiek inconsistent is of overschat, kan BFS een suboptimaal pad kiezen omdat het verkeerde knopen prioriteert.
 
@@ -113,251 +113,220 @@ Het kortste pad is $A \to B \to D$ met totale kost $1 + 10 = 11$. Echter, BFS ki
 
 Het Best First Search algoritme is niet optimaal tenzij een consistente en minimale heuristiek wordt gebruikt. In het bovenstaande tegenvoorbeeld toont de inconsistente heuristiek aan dat BFS een suboptimaal pad kiest.
 
-## In het populaire spelletje “Rush hour” moet je een wagentje proberen te bevrijden uit een parking waarbij je de wagens enkel vooruit of achteruit mag bewegen. In de volgende beginsituatie moet je de oranje wagen uit de uitgang rechts zien te rijden.
+# 2 Adversarial search
 
-Dit kan je als volgt doen:
+## Beschrijf hoe je een AI-speler voor het spel "Mens erger je niet" zou implementeren. Punten worden bepaald door de efficiëntie van jouw oplossing en volledigheid van jouw beschrijving.
 
-1. Rijd de blauwe wagen 1 plaats naar boven
-2. Rijd de grijze wagen helemaal naar rechts
-3. Beweeg de grote gele wagen 1 plaats naar onder
-4. Nu kan de oranje wagen drie plaatsen vooruit
-5. Beweeg de grote gele wagen terug 1 plaats naar boven
-6. De grijze wagen gaat 1 plaatsje terug naar links
-7. Blauw terug naar beneden
-8. De oranje wagen kan nu buitenrijden
+Om een AI-speler voor het spel **"Mens erger je niet"** te implementeren, maken we gebruik van een combinatie van beslissingslogica, heuristieken en simulatie om optimale zetten te bepalen. De AI moet keuzes maken die de kans vergroten om de pionnen naar de eindcirkels te brengen, terwijl ze tegelijkertijd de voortgang van tegenstanders probeert te dwarsbomen. Hieronder wordt stap voor stap uitgelegd hoe dit kan worden gerealiseerd.
 
-Let op: het aantal stappen om het probleem op te lossen, wordt geteld als het aantal bewegingen. Een wagen 3 plaatsen naar voor schuiven telt als 1 stap. Een wagen 1 stap vooruit en vervolgens terug 1 stap achteruit rijden, telt als 2 stappen. De oplossing hierboven telt dus 8 stappen.
+### 1. **Representatie van de speltoestand**
 
-Hier zijn een aantal vragen mogelijk:
+Om de AI-speler te laten werken, moet de huidige speltoestand volledig worden gemodelleerd:
 
-1. Met welke techniek die we in de les zagen zou je dit probleem oplossen? Dat is: vind een manier, bij voorkeur de kortste, om de wagen te bevrijden uit de parking. Om volledige punten te krijgen moet jouw oplossingsmethode de efficiëntste zijn die we zagen en voldoende gedetailleerd beschreven zijn. 1
-2. Welke van volgende heuristieken voor dit probleem zijn admissiebel? Welke consistent?
-   a. H1 : het aantal vakjes dat de oranje wagen verwijderd is van de uitgang
-   b. H2: het aantal wagens die op het rechtstreekse pad van de te bevrijden wagen
-   staan.
-   c. H3: het aantal wagens waarvan minstens 1 blokje zich rechts van de te bevrijden wagen bevindt
+- **Spelbord**: Een array van 40 velden (voor de gemeenschappelijke baan) plus 4 sets van 4 velden (eindcirkels) per speler.
+- **Thuisbasis**: Elke speler heeft een aparte "thuisbasis" waar 0 tot 4 pionnen kunnen staan.
+- **Actieve pionnen**: Pionnen die zich op het gemeenschappelijke bord of in de eindcirkels bevinden.
+- **Dobbelsteenworp**: Het resultaat van de worp (1–6).
 
-### Vraag 1: Oplossingstechniek
+De speltoestand wordt bijgehouden als een data-structuur, bijvoorbeeld een Python-object of een dictionary.
 
-Om het probleem van "Rush Hour" op te lossen, gebruiken we een **heuristische zoekalgoritme**, bij voorkeur het **A\*-algoritme**. HetA\*-algoritme garandeert dat we de kortste weg vinden, zolang de gebruikte heuristiek **admissiebel** en **consistent** is. Het algoritme werkt als volgt:
+### 2. **Doelen van de AI**
 
-1. **Toestandsruimte modelleren**:
+De AI heeft de volgende prioriteiten:
 
-   - Elke toestand beschrijft de huidige posities van alle voertuigen op de parkeerplaats.
-   - Een toestand heeft een starttoestand en een doeltoestand (de oranje wagen moet naar de uitgang rechts bewegen).
+1. Breng pionnen naar de eindcirkels.
+2. Bescherm eigen pionnen tegen slaan.
+3. Sla pionnen van tegenstanders als dat mogelijk is.
+4. Minimaliseer het aantal zetten dat nodig is om alle pionnen naar de eindcirkels te krijgen.
 
-2. **Acties definiëren**:
+### 3. **Beslissingslogica**
 
-   - Elke actie is een beweging van een voertuig naar voren of naar achteren binnen de grenzen van het raster, zonder andere voertuigen te raken.
+De AI moet beslissingen nemen op basis van de huidige toestand van het spel en de dobbelsteenworp. De logica kan worden geordend in de volgende stappen:
 
-3. **Kostenfunctie**:
+#### a. **Opties genereren**
 
-   - Elke beweging (ongeacht de afstand) telt als één stap. De kosten $g(n)$ van een pad is het aantal bewegingen dat nodig is om de huidige toestand $n$ te bereiken.
+- Voor elke pion bepalen welke bewegingen mogelijk zijn op basis van de dobbelsteenworp.
+- Mogelijke scenario's:
+  - Pion uit de thuisbasis brengen (indien de worp 6 is en er een pion in de thuisbasis staat).
+  - Een pion verplaatsen op het gemeenschappelijke bord.
+  - Een pion in de eindcirkels verplaatsen (indien toegestaan door de worp).
+  - Een pion slaan als deze op het doelveld van de worp staat.
 
-4. **Heuristiek kiezen**:
+#### b. **Prioriteiten toewijzen**
 
-   - Gebruik een heuristiek $h(n)$ die de geschatte kost tot het bereiken van de doeltoestand inschat. Een goede heuristiek maakt het algoritme efficiënter.
+Elke mogelijke zet krijgt een prioriteitsscore. De prioriteit wordt bepaald door een reeks heuristieken:
 
-5. **Totale evaluatiefunctie**:
+1. **Slaan van een tegenstander**: Als een zet resulteert in het slaan van een tegenstander, krijgt deze hoge prioriteit.
+2. **Beschermen van eigen pionnen**: Vermijd zetten die een eigen pion blootstellen aan slaan.
+3. **Voortgang naar eindcirkels**: Bewegingen die een pion dichter bij de eindcirkels brengen, krijgen een hogere prioriteit.
+4. **Gebruik van een pion in de thuisbasis**: Als een pion in de thuisbasis staat en de worp 6 is, moet deze pion worden verplaatst.
+5. **Blokkeren van tegenstanders**: Zet een pion op een veld dat strategisch belangrijk is voor tegenstanders (bijvoorbeeld hun thuisbasis).
 
-   - HetA\*-algoritme gebruikt $f(n) = g(n) + h(n)$, waarbij $g(n)$ de al gemaakte kosten zijn en $h(n)$ de geschatte resterende kosten.
+#### c. **Beslissing nemen**
 
-6. **Zoekproces**:
-   - Begin bij de starttoestand, plaats deze in een prioriteitswachtrij gesorteerd op $f(n)$.
-   - Kies de toestand met de laagste $f(n)$, genereer opvolgende toestanden door toegestane acties, en herhaal tot de doeltoestand is bereikt.
+- Sorteer alle mogelijke zetten op basis van hun prioriteitsscores.
+- Kies de zet met de hoogste prioriteit.
+- Bij gelijke prioriteit: kies willekeurig of op basis van aanvullende regels.
 
-HetA\*-algoritme is de efficiëntste methode die we hebben gezien omdat het de kortste oplossing vindt binnen een aanvaardbare tijd, zolang de heuristiek goed gekozen is.
+### 4. **Simulatie en evaluatie**
 
-### Vraag 2: Heuristieken
+Een meer geavanceerde AI kan zet-opties simuleren en evalueren:
 
-#### Heuristieken analyseren:
+- **Monte Carlo-simulatie**: Simuleer verschillende scenario's voor een zet en kies de optie met het beste gemiddelde resultaat.
+- **Minimax-algoritme met heuristieken**: Gebruik een boomstructuur om toekomstige speltoestanden te evalueren en bepaal de optimale zet (eventueel met een dieptebeperking).
 
-Om een heuristiek te gebruiken metA\*, moet deze aan de volgende eigenschappen voldoen:
+### 5. **Implementatiedetails**
 
-- **Admissiebel**: Een heuristiek is admissiebel als ze de werkelijke kosten naar de oplossing nooit overschat. Dit garandeert dat hetA\*-algoritme de optimale oplossing vindt.
-- **Consistent**: Een heuristiek is consistent als voor elke overgang van toestand $n$ naar toestand $n'$ geldt: $h(n) \leq c(n, n') + h(n')$, waarbij $c(n, n')$ de werkelijke kost is van de overgang. Consistentie garandeert dat $f(n)$ nooit daalt langs een pad.
+#### a. **Data-structuren**
 
-#### Analyseren van de gegeven heuristieken:
+- **Spelbord**: Een array met statusinformatie voor elk veld (leeg, bezet door een specifieke speler).
+- **Pionnen**: Objecten met attributen zoals huidige positie, status (op het bord, in eindcirkel, in thuisbasis).
+- **Speltoestand**: Object dat alle bovenstaande informatie bevat, inclusief de dobbelsteenworp en de actieve speler.
 
-**a. H1: Het aantal vakjes dat de oranje wagen verwijderd is van de uitgang**
+#### b. **Heuristieken**
 
-- **Admissiebel**: Ja, omdat de oranje wagen minstens zoveel vakjes moet verplaatsen om de uitgang te bereiken. Dit overschat de werkelijke kosten niet.
-- **Consistent**: Ja, omdat de afstand tot de uitgang niet kan toenemen bij een geldige beweging.
-
-**b. H2: Het aantal wagens die op het rechtstreekse pad van de te bevrijden wagen staan**
-
-- **Admissiebel**: Ja, omdat elk voertuig op het pad minstens één keer moet bewegen. Dit is een ondergrens van de werkelijke kosten.
-- **Consistent**: Ja, omdat het verwijderen van een voertuig nooit meer kost dan één stap per beweging.
-
-**c. H3: Het aantal wagens waarvan minstens één blokje zich rechts van de te bevrijden wagen bevindt**
-
-- **Admissiebel**: Nee, omdat niet al deze wagens noodzakelijkerwijs op het pad van de oranje wagen liggen of bewegen. Dit kan leiden tot een overschatting.
-- **Consistent**: Nee, omdat het aantal wagens rechts van de oranje wagen kan afnemen zonder directe actie, wat inconsistente waarden van $h$ kan opleveren.
-
-#### Conclusie:
-
-- $H1$ en $H2$ zijn admissiebel en consistent, en kunnen worden gebruikt metA\*.
-- $H3$ is noch admissiebel noch consistent en is niet geschikt.
-
-## Is elke admissiebele heuristiek consistent? Bewijs of geef een tegenvoorbeeld.
-
-Een **admissibele heuristiek** is een heuristiek die nooit de werkelijke kosten onderschat. Formeel betekent dit dat voor een heuristiek $h(n)$ geldt:
+Een voorbeeld van een scorefunctie om prioriteiten te berekenen:
 
 $$
-h(n) \leq h^{*}(n) \quad \forall n,
+\text{Score} = w_1 \cdot \text{Voortgang naar eindcirkels} + w_2 \cdot \text{Slaan tegenstander} - w_3 \cdot \text{Risico eigen pion}
 $$
 
-waarbij $h^*(n)$ de werkelijke minimale kosten zijn van de huidige toestand $n$ naar een doeltoestand.
+Waar $w_1, w_2, w_3$ gewichten zijn die het belang van elke factor bepalen.
 
-De vraag of elke admissibele heuristiek **consistent** is, vereist dat we de definitie van consistentie bekijken. Een heuristiek is consistent (of monotoon) als deze voldoet aan de volgende eigenschap:
+#### c. **Iteratieve ontwikkeling**
 
-$$
-h(n) \leq c(n, n') + h(n'),
-$$
+- Begin met een eenvoudige regelgebaseerde AI.
+- Voeg simulaties toe om toekomstige zetten te evalueren.
+- Optimaliseer de AI door de gewichten en prioriteiten empirisch aan te passen.
 
-voor elke toestand $n$, elke opvolger $n'$ van $n$, en de werkelijke kosten $c(n, n')$ van de overgang van $n$ naar $n'$. Dit betekent dat de heuristiekwaarde van een toestand nooit groter mag zijn dan de kosten van de stap plus de heuristiekwaarde van de opvolger.
+### 6. **Voorbeeldscenario**
 
-### Bewijs of tegenvoorbeeld
+1. **Starttoestand**:
+   - Pionnen: Eén pion in de thuisbasis, twee op het bord, één in de eindcirkel.
+   - Worp: 6.
+2. **Opties**:
+   - Pion uit de thuisbasis brengen.
+   - Eén van de pionnen op het bord verplaatsen.
+3. **Evaluatie**:
+   - Prioriteit 1: Breng de pion uit de thuisbasis.
+   - Prioriteit 2: Verplaats een pion op het bord dichter naar de eindcirkels.
+4. **Beslissing**: Breng de pion uit de thuisbasis.
 
-Laten we onderzoeken of elke admissibele heuristiek consistent is.
+### 7. **Conclusie**
 
-#### Tegenvoorbeeld
+De AI-speler wordt geïmplementeerd met een combinatie van eenvoudige regels en strategische simulaties. Door gebruik te maken van heuristieken en evaluatiemethoden kan de AI flexibel reageren op de veranderende speltoestand en zowel offensieve als defensieve strategieën toepassen.
 
-Een heuristiek kan admissibel zijn zonder consistent te zijn. Overweeg het volgende voorbeeld:
+## Twee spelers, A en B, hebben een stapel met 6 stokjes tussen hen in liggen. Om de beurten mogen ze 1 of 2 stokjes oprapen. De speler die het laatste stokje opraapt, verliest het spel. Speler A mag starten.
 
-1. Stel dat we een graaf hebben met toestanden $A$, $B$, en $C$.
-2. De werkelijke kosten zijn:
-   - Van $A$ naar $B$: $c(A, B) = 1$,
-   - Van $B$ naar $C$: $c(B, C) = 1$,
-   - Van $A$ naar $C$: $c(A, C) = 2$.
-3. Definieer de heuristiekwaarden als volgt:
-   - $h(A) = 2$,
-   - $h(B) = 2$,
-   - $h(C) = 0$.
+Bijvoorbeeld:
 
-De heuristiek $h$ is admissibel omdat:
+1. A start met 1 stokje op te rapen. Er liggen er nog 5;
+2. B raapt er 2 op, er liggen nog 3;
+3. A raapt 2 op, er ligt er nog 1;
+4. B moet her laatste stokje oprapen en verliest.
 
-$$
-h(n) \leq h^{*}(n) \quad \forall n.
-$$
+Geef de volledige game tree en laat zoek hoe met minimax de eerste zet van speler A bepaald kan worden. Welke speler wint indien volledig rationeel wordt gespeeld door beide spelers?
 
-- Voor $A$, $h(A) = 2 = h^*(A)$ (de werkelijke minimale kosten naar $C$),
-- Voor $B$, $h(B) = 2 = h^*(B)$ (de werkelijke minimale kosten naar $C$),
-- Voor $C$, $h(C) = 0 = h^*(C)$.
+Om de game tree te maken en de oplossing met minimax te vinden, moeten we de mogelijke zetten voor beide spelers systematisch bekijken en evalueren. Hier is een gestructureerde aanpak:
 
-Echter, $h$ is niet consistent omdat:
+---
 
-$$
-h(A) = 2 \nleq c(A, B) + h(B) = 1 + 2 = 3.
-$$
+### **Game Tree Uitleg**
 
-Hier schendt de heuristiek de consistentie-eis.
+1. **Startpositie:**
 
-### Conclusie
+   - Begin met 6 stokjes. Speler A heeft de keuze om 1 of 2 stokjes te nemen.
 
-Niet elke admissibele heuristiek is consistent. Het bovenstaande tegenvoorbeeld toont een situatie waarin een heuristiek admissibel is, maar niet consistent.
+2. **Volgende niveau:**
 
-## Is elke consistente heuristiek admissiebel? Bewijs of geef een tegenvoorbeeld.
+   - Na elke zet van A, heeft speler B de keuze om 1 of 2 stokjes te nemen. Dit herhaalt zich totdat er geen stokjes meer over zijn.
 
-Een consistente heuristiek is niet noodzakelijkerwijs admissiebel, omdat consistentie niet automatisch betekent dat de heuristiek nooit een waarde overschat. Laten we dit zorgvuldig onderzoeken en bewijzen of ontkrachten met behulp van een tegenvoorbeeld.
+3. **Verliesconditie:**
 
-### Definitie van begrippen:
+   - De speler die het laatste stokje moet oprapen, verliest.
 
-1. **Consistente heuristiek**:
+4. **Minimax-algoritme:**
+   - Maximaliseer de winst voor de speler aan zet en minimaliseer de winst van de tegenstander.
+   - Bij een terminale toestand (0 stokjes over) krijgt de speler die aan zet is een negatieve score.
 
-   - Voor een heuristiek $h(n)$ geldt consistentie als:
-     $$
-     h(n) \leq c(n, n') + h(n')
-     $$
-     voor elke overgang van knoop $n$ naar $n'$, waarbij $c(n, n')$ de kosten zijn van de overgang van $n$ naar $n'$.
-   - Bovendien moet $h(n) \leq h^{*}_(n)$ bij de doelknoop $n$, waar $h^_(n)$ de exacte kost is.
+---
 
-2. **Admissibele heuristiek**:
-   - Een heuristiek $h(n)$ is admissiebel als:
-     $$
-     h(n) \leq h^{*}_{n}
-     $$
-     voor elke knoop $n$, waar $h^_(n)$ de exacte minimale kost is van $n$ naar een doelknoop.
+### **Game Tree**
 
-### Bewijs of tegenvoorbeeld:
-
-We moeten bepalen of consistentie altijd admissie betekent.
-
-#### Eigenschap 1: Consistentie impliceert admissie
-
-Een consistente heuristiek voldoet automatisch aan $h(n) \leq h^{*}(n)$, omdat de consistentie-eigenschap $h(n) \leq c(n, n') + h(n')$ voorkomt dat de heuristiek ooit een waarde kan overschatten ten opzichte van de werkelijke kosten. Dit kan formeel worden aangetoond door inductie langs een pad van de startknoop naar de doelknoop:
-
-1. Bij de doelknoop $n$: $h(n) = 0$, wat altijd kleiner is dan of gelijk aan $h^{*}(n)$.
-2. Voor elke andere knoop $n$ en zijn opvolger $n'$: $h(n) \leq c(n, n') + h(n')$, en door inductie geldt dat $h(n') \leq h^_(n')$. Dit leidt ertoe dat $h(n) \leq h^{*}_(n)$.
-
-#### Conclusie:
-
-Elke consistente heuristiek is per definitie ook admissiebel. Dit betekent dat een consistente heuristiek nooit een overschatting zal geven van de werkelijke kosten naar de doelknoop, en dus altijd admissiebel is.
-
-**Er is geen tegenvoorbeeld mogelijk waarin een consistente heuristiek niet admissiebel is, omdat consistentie sterker is dan admissie.**
-
-## Het A\* algoritme in een graaf die geen boom is, is niet gegarandeerd optimaal als de heuristiek admissiebel is; geef een voorbeeld dat dit illustreert.
-
-Het A*-algoritme is gegarandeerd optimaal als de heuristiek **admissibel** is (d.w.z. dat de heuristiek nooit de werkelijke kosten overschat) en **consistent** (monotoon). Als de heuristiek alleen admissibel is, maar niet consistent, kan het A*-algoritme suboptimale paden genereren in een graaf die geen boom is.
-
-### Voorbeeld
-
-Laten we een voorbeeld beschouwen waarin hetA\*-algoritme faalt bij een admissibele, maar inconsistente heuristiek.
-
-#### Graafstructuur
-
-We hebben de volgende gewogen graaf:
+De game tree voor dit spel ziet er als volgt uit (A en B nemen respectievelijk 1 of 2 stokjes):
 
 ```
-        (A)
-      /  |  \
-   1 /   |2   \3
-    /    |     \
- (B)---4---(C)---2---(D)
-           \
-            \1
-             \
-             (E)
+6 stokjes (Start)
+ ├─ A neemt 1 (5 stokjes)
+ │    ├─ B neemt 1 (4 stokjes)
+ │    │    ├─ A neemt 1 (3 stokjes)
+ │    │    │    ├─ B neemt 1 (2 stokjes)
+ │    │    │    │    ├─ A neemt 1 (1 stokje, B verliest)
+ │    │    │    │    └─ A neemt 2 (0 stokjes, A verliest)
+ │    │    │    └─ B neemt 2 (1 stokje, A verliest)
+ │    │    └─ A neemt 2 (2 stokjes)
+ │    │         ├─ B neemt 1 (1 stokje, A verliest)
+ │    │         └─ B neemt 2 (0 stokjes, B verliest)
+ │    └─ B neemt 2 (3 stokjes)
+ │         ├─ A neemt 1 (2 stokjes)
+ │         │    ├─ B neemt 1 (1 stokje, A verliest)
+ │         │    └─ B neemt 2 (0 stokjes, B verliest)
+ │         └─ A neemt 2 (1 stokje, B verliest)
+ └─ A neemt 2 (4 stokjes)
+      ├─ B neemt 1 (3 stokjes)
+      │    ├─ A neemt 1 (2 stokjes)
+      │    │    ├─ B neemt 1 (1 stokje, A verliest)
+      │    │    └─ B neemt 2 (0 stokjes, B verliest)
+      │    └─ A neemt 2 (1 stokje, B verliest)
+      └─ B neemt 2 (2 stokjes)
+           ├─ A neemt 1 (1 stokje, B verliest)
+           └─ A neemt 2 (0 stokjes, A verliest)
 ```
 
-- **Knopen**: A, B, C, D, E
-- **Kosten** van de randen worden weergegeven in de graaf.
-- De startknoop is **A**, en de doelknoop is **D**.
+---
 
-#### Heuristiek $h(n)$:
+### **Minimax Evaluatie**
 
-De heuristiek is admissibel, maar niet consistent:
+We evalueren de boom van onder naar boven om te bepalen welke speler een winnende strategie heeft:
 
-- $h(A) = 4$
-- $h(B) = 2$
-- $h(C) = 1$
-- $h(D) = 0$ (altijd 0 bij het doel)
-- $h(E) = 3$
+1. **Terminale Toestanden:**
 
-#### Werkelijke kortste pad
+   - Als er 0 stokjes zijn, verliest de speler aan zet. Dit zijn de "bladeren" van de boom.
 
-Het werkelijke kortste pad van $A$ naar $D$ is:
-$A \to C \to D$ met totale kosten van $2 + 2 = 4$.
+2. **Evaluatie van Beslissingen:**
 
-#### Gedrag van hetA\*-algoritme
+   - Een speler kiest de zet die ervoor zorgt dat de tegenstander een verliezende zet moet doen.
+   - Markeer elke beslissing als winst of verlies, afhankelijk van wie de verliezende zet kan afdwingen.
 
-Bij gebruik van deze heuristiek:
+3. **Strategie:**
+   - Als beide spelers rationeel spelen, probeert elke speler de tegenstander te dwingen het laatste stokje te nemen.
 
-1. **Begin bij A**:
+---
 
-   - $f(A) = g(A) + h(A) = 0 + 4 = 4$
+### **Eerste Zet voor Speler A**
 
-2. **Kandidaten vanuit A**:
+Speler A's eerste zet wordt bepaald door de minimax-evaluatie:
 
-   - $B$: $f(B) = g(B) + h(B) = 1 + 2 = 3$
-   - $C$: $f(C) = g(C) + h(C) = 2 + 1 = 3$
-   - $D$: $f(D) = g(D) + h(D) = 3 + 0 = 3$
+- Als A **1 stokje neemt (5 over):**
 
-   $B$, $C$, en $D$ hebben dezelfde $f$-waarde. Stel dat $A*$ eerst $B$ kiest.
+  - B kan 1 of 2 nemen. In elk geval kan A B dwingen om het laatste stokje te nemen, wat resulteert in een winst voor A.
 
-3. **Vanuit B**:
-   - Knoop $B$ heeft geen directe verbinding naar $D$ die korter is dan via $A$, dus $A*$ blijft $B$ overwegen, terwijl $C \to D$ overgeslagen wordt.
+- Als A **2 stokjes neemt (4 over):**
+  - B kan 1 of 2 nemen. Met optimale zetten kan A opnieuw een winnende strategie afdwingen.
 
-#### Resultaat
+**Conclusie:**
 
-Vanwege de inconsistente heuristiek kiestA\* een suboptimaal pad, afhankelijk van de volgorde waarin knopen worden geëvalueerd. Dit toont aan dat admissibiliteit alleen niet voldoende is om optimale paden te garanderen in een niet-boomstructuur.
+- Beide opties (1 of 2 nemen) kunnen tot winst leiden voor A, maar 2 stokjes nemen minimaliseert de complexiteit van het spel.
+- Speler A wint als beide spelers rationeel spelen.
+
+## Nu maken we een variant van dit spel met drie spelers A, B en C. Eerst speelt A, daarna B, dan C. Daarna herhaalt deze volgorde zich. De persoon die het laatste stokje neemt, krijgt 1 minpunt. De speler die niet net voor de verliezende speler komt, krijgt 1 pluspunt.
+
+Dus:
+Laatste stokje Punten A Punten B Punten C
+genomen door
+|A | -1 | 1 | 0 |
+| - | - | - | - |
+|B | 0 | -1 | 1 |
+|C | 1 | 0 | -1 |
+
+Gebruik de generalisatie van minimax voor meerdere spelers om de beste beginzet van A te bepalen.
