@@ -7,4 +7,5 @@
 [[6 Hidden Markov Models - Part 1]]
 [[7 Hidden Markov Models - Part 2]]
 [[8 Machine Learning]]
-[[9 Deep Learning]]
+[[9 Likelihood]]
+[[10 Deep Learning]]

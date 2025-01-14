@@ -1,6 +1,6 @@
-## 9.1 Perceptrons
+## 10.1 Perceptrons
 
-### 9.1.1 Definition and Function
+### Definition and Function
 
 - **Perceptron**: A simplified model of a biological neuron.
   - Receives **input** from sensors or other neurons.
@@ -20,12 +20,12 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 - Step function.
 - Sigmoid or ReLU for extended applications.
 
-### 9.1.2 Examples
+### Examples
 
 - Changing weights $w$ and bias $b$ alters the function a perceptron computes.
   - E.g., $w_1 = 1, w_2 = -1, b = 0$ maps inputs $(x_1, x_2)$ to a binary decision.
 
-### 9.1.3 Learning Algorithm
+### Learning Algorithm
 
 1. **Objective**: Find weights and biases that approximate the dataset.
 2. **Steps**:
@@ -34,21 +34,21 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
      $$w \leftarrow w + \Delta w$$
    - Stop when performance is "good enough."
 
-## 9.2 Learning as Optimization
+## 10.2 Learning as Optimization
 
-### 9.2.1 Loss Functions
+### Loss Functions
 
 - Measure prediction quality.
 - Examples:
   - **Quadratic Loss**: $L = \frac{1}{2}(h(x) - y)^2$
   - **Cross-Entropy**: $L = -[y \log(h(x)) + (1-y) \log(1-h(x))]$
 
-### 9.2.2 Risk and Empirical Risk
+### Risk and Empirical Risk
 
 - **Risk ($R(h)$)**: Expected loss across all possible inputs.
 - **Empirical Risk ($R\_{emp}(h)$)**: Average loss over a finite test dataset.
 
-### 9.2.3 Gradient Descent
+### Gradient Descent
 
 - Optimize weights $w$ to minimize loss:
   - Compute gradients $\nabla J$.
@@ -58,9 +58,9 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 - Training with **batches** improves efficiency.
   - One complete pass over the dataset = **epoch**.
 
-## 9.3 Multi-layer Perceptrons
+## 10.3 Multi-layer Perceptrons
 
-### 9.3.1 Structure
+### Structure
 
 - Consists of:
   - Input layer.
@@ -68,16 +68,16 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
   - Output layer.
 - **Hidden Layer Role**: Partitions input space into more manageable regions.
 
-### 9.3.2 Training
+### Training
 
 - Uses **backpropagation**:
   - Compute error at the output layer.
   - Propagate error back to earlier layers.
   - Update weights using gradients from all layers.
 
-## 9.4 Deep Neural Networks
+## 10.4 Deep Neural Networks
 
-### 9.4.1 Hyperparameters
+### Hyperparameters
 
 - **Network Structure**: Number of layers and neurons per layer.
 - **Learning Rate ($\alpha$)**.
@@ -90,22 +90,22 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 $$\text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}$$
 Ensures output probabilities sum to 1.
 
-### 9.4.2 Universal Function Approximation
+### Universal Function Approximation
 
 - **Theorem**: A sufficiently large two-layer NN can approximate any continuous function.
 - Practical issues:
   - Risk of overfitting.
   - Requires early stopping or regularization.
 
-## 9.5 Convolutional Neural Networks
+## 10.5 Convolutional Neural Networks
 
-### 9.5.1 Structure and Advantages
+### Structure and Advantages
 
 - **Key Difference**: Uses **kernels** to connect layers.
   - Reduces number of parameters.
   - Increases spatial awareness.
 
-### 9.5.2 Applications
+### Applications
 
 - **Image Recognition**:
   - Kernel slides over the image to extract features.
