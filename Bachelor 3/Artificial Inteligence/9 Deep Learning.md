@@ -1,132 +1,147 @@
-## 9.1: Introduction to Neural Networks
+## 9.1 Perceptrons
 
-### Definition
+### 9.1.1 Definition and Function
 
-- A **perceptron** is a simplified model of a biological neuron.
-- Components:
-  - Inputs (e.g., from sensors or other neurons)
-  - Weights for each input
-  - Activation function
+- **Perceptron**: A simplified model of a biological neuron.
+  - Receives **input** from sensors or other neurons.
+  - Emits a signal (spike) if the total input exceeds a **threshold**.
+- **Components**:
+  - **Inputs** $x_1, x_2, \ldots, x_n$
+  - **Weights** $w_1, w_2, \ldots, w_n$
+  - **Bias** $b$
+  - **Activation Function**
 
-### Key Concepts
+#### Perceptron Formula
 
-- If the total weighted input exceeds a threshold, the neuron spikes.
-- Human brain has ~86 billion neurons.
+$$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 
-## 9.2: Perceptron
+#### Activation Function Examples
 
-### Perceptron Basics
+- Step function.
+- Sigmoid or ReLU for extended applications.
 
-- **Functionality**:
-  - Takes inputs and computes output based on weights and an activation function.
-  - Example function: $f(x) = 1$ if $wx + b > 0$, otherwise $f(x) = 0$.
+### 9.1.2 Examples
 
-### Perceptron Learning Algorithm
+- Changing weights $w$ and bias $b$ alters the function a perceptron computes.
+  - E.g., $w_1 = 1, w_2 = -1, b = 0$ maps inputs $(x_1, x_2)$ to a binary decision.
 
-1. Initialize weights randomly.
-2. Iterate until convergence:
-   - For each training example, adjust weights to improve prediction.
-   - Example dataset:
-     ```
-     x1 x2 y
-     1  3  0
-     4  2  1
-     ```
+### 9.1.3 Learning Algorithm
 
-## 9.3: Learning as Optimization
+1. **Objective**: Find weights and biases that approximate the dataset.
+2. **Steps**:
+   - Start with random weights.
+   - Adjust weights iteratively using training examples:
+     $$w \leftarrow w + \Delta w$$
+   - Stop when performance is "good enough."
 
-### Loss Functions
+---
 
-1. **Quadratic Loss**:
-   $L = \frac{1}{2}(h(x) - y)^2$
-2. **Cross-Entropy Loss**:
-   $L = -[y \log(h(x)) + (1-y) \log(1-h(x))]$
+## 9.2 Learning as Optimization
 
-### Gradient Descent
+### 9.2.1 Loss Functions
 
-- Update weights using:
-  $w = w - \alpha \nabla_w J$
-- **Epoch**: One complete iteration over the dataset.
+- Measure prediction quality.
+- Examples:
+  - **Quadratic Loss**: $L = \frac{1}{2}(h(x) - y)^2$
+  - **Cross-Entropy**: $L = -[y \log(h(x)) + (1-y) \log(1-h(x))]$
 
-## 9.4: Multi-Layer Perceptrons (MLPs)
+### 9.2.2 Risk and Empirical Risk
 
-### Structure
+- **Risk ($R(h)$)**: Expected loss across all possible inputs.
+- **Empirical Risk ($R\_{emp}(h)$)**: Average loss over a finite test dataset.
 
-- Combines multiple perceptrons with **hidden layers**.
-- Hidden layers act as space partitioners, enabling complex mappings.
+### 9.2.3 Gradient Descent
 
-### Optimization
+- Optimize weights $w$ to minimize loss:
+  - Compute gradients $\nabla J$.
+  - Update weights iteratively:
+    $$w \leftarrow w - \alpha \nabla J$$
+  - **Learning Rate ($\alpha$)**: Controls step size.
+- Training with **batches** improves efficiency.
+  - One complete pass over the dataset = **epoch**.
 
-- Use **backpropagation**:
-  1. Forward pass: Compute outputs.
-  2. Backward pass: Compute gradients and update weights.
+---
 
-## 9.5: Deep Neural Networks (DNNs)
+## 9.3 Multi-layer Perceptrons
 
-### Key Features
+### 9.3.1 Structure
 
-- Learn large, complex mappings.
-- Require significant data and computational power.
+- Consists of:
+  - Input layer.
+  - One or more **hidden layers**.
+  - Output layer.
+- **Hidden Layer Role**: Partitions input space into more manageable regions.
 
-### Hyperparameters
+### 9.3.2 Training
 
-1. Network structure
-2. Learning rate
-3. Activation function
-4. Loss function
+- Uses **backpropagation**:
+  - Compute error at the output layer.
+  - Propagate error back to earlier layers.
+  - Update weights using gradients from all layers.
 
-### Activation Functions
+---
 
-1. **Sigmoid**: $\sigma(x) = \frac{1}{1 + e^{-x}}$
-2. **ReLU**: $f(x) = \max(0, x)$
-3. **Softmax**: Normalizes outputs for multi-class classification.
+## 9.4 Deep Neural Networks
 
-## 9.6: Convolutional Neural Networks (CNNs)
+### 9.4.1 Hyperparameters
 
-### Basics
+- **Network Structure**: Number of layers and neurons per layer.
+- **Learning Rate ($\alpha$)**.
+- **Activation Functions**:
+  - Sigmoid: Outputs between $[0, 1]$.
+  - ReLU: $\text{max}(0, x)$.
 
-- Used for image classification.
-- Instead of full connections, uses small **kernels** to scan inputs spatially.
+#### Softmax for Multi-class Classification
 
-### Advantages
+$$\text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}$$
+Ensures output probabilities sum to 1.
 
-- Fewer parameters to optimize.
-- Efficient and less prone to overfitting.
+### 9.4.2 Universal Function Approximation
 
-### Applications
+- **Theorem**: A sufficiently large two-layer NN can approximate any continuous function.
+- Practical issues:
+  - Risk of overfitting.
+  - Requires early stopping or regularization.
 
-- Examples: **AlexNet (2012)**, **ResNet (2015)**
+---
 
-## 9.7: Overfitting and Regularization
+## 9.5 Convolutional Neural Networks
 
-### Causes
+### 9.5.1 Structure and Advantages
 
-- Too many parameters relative to data.
+- **Key Difference**: Uses **kernels** to connect layers.
+  - Reduces number of parameters.
+  - Increases spatial awareness.
 
-### Solutions
+### 9.5.2 Applications
 
-1. **Regularization**: Add penalty to loss function.
-2. **Dropout layers**: Randomly disable connections.
-3. **Data augmentation**: Create new data samples (e.g., rotate images).
-
-## 9.8: Conclusion
-
-### Benefits of Neural Networks
-
-- Universal Function Approximators.
-- Learn complex patterns with minimal feature engineering.
-
-### Challenges
-
-- High data and computational requirements.
+- **Image Recognition**:
+  - Kernel slides over the image to extract features.
+  - **Advantages over traditional NNs**:
+    - Fewer weights.
+    - Reduced computational cost.
 
 ---
 
 ## Key Points to Remember
 
-- **Perceptron**: Foundation of neural networks.
-- **Loss functions**: Define model optimization goals.
-- **Gradient descent**: Core of learning algorithms.
-- **DNNs and CNNs**: Key architectures for different problems.
-- **Overfitting**: Mitigated with regularization and data augmentation.
-- **Activation functions**: Choose based on task.
+- **Perceptrons**:
+  - Simplest neural model.
+  - Basis for more complex networks.
+- **Learning**:
+  - Optimization via gradient descent.
+  - Loss functions determine training goals.
+- **Deep Learning**:
+  - Requires large datasets and computational resources.
+  - Benefits include minimal feature engineering.
+- **Convolutional Neural Networks**:
+  - Efficient for spatial data like images.
+  - Reduce overfitting with fewer parameters.
+- **Activation Functions**:
+  - Sigmoid for bounded outputs.
+  - ReLU for internal layers to mitigate vanishing gradients.
+- **Softmax**: Essential for multi-class classification.
+
+---
+
+This study guide is structured for quick revision, emphasizing key concepts and formulas for effective learning.
