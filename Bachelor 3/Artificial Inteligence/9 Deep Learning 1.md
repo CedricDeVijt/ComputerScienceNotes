@@ -123,7 +123,7 @@ Ensures output probabilities sum to 1.
 
 ---
 
-## 9.6 Key Points to Remember
+## Key Points to Remember
 
 - **Perceptrons**:
   - Simplest neural model.
