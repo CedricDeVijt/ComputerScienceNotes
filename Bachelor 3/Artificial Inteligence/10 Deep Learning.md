@@ -13,7 +13,12 @@
 
 #### Perceptron Formula
 
-$$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
+$$y = \text{Activation}(\sum\limits_{i=1}^{n} w_i \cdot x_i + b)$$
+
+With 
+- $w_i$: weights
+- $x_i$: inputs
+- $b$: bias
 
 #### Activation Function Examples
 
