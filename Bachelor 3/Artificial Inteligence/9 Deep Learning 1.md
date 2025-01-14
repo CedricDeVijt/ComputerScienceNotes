@@ -1,6 +1,6 @@
-## Perceptrons
+## 9.1 Perceptrons
 
-### Definition and Function
+### 9.1.1 Definition and Function
 
 - **Perceptron**: A simplified model of a biological neuron.
   - Receives **input** from sensors or other neurons.
@@ -20,12 +20,12 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 - Step function.
 - Sigmoid or ReLU for extended applications.
 
-### Examples
+### 9.1.2 Examples
 
 - Changing weights $w$ and bias $b$ alters the function a perceptron computes.
   - E.g., $w_1 = 1, w_2 = -1, b = 0$ maps inputs $(x_1, x_2)$ to a binary decision.
 
-### Learning Algorithm
+### 9.1.3 Learning Algorithm
 
 1. **Objective**: Find weights and biases that approximate the dataset.
 2. **Steps**:
@@ -36,21 +36,21 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 
 ---
 
-## Learning as Optimization
+## 9.2 Learning as Optimization
 
-### Loss Functions
+### 9.2.1 Loss Functions
 
 - Measure prediction quality.
 - Examples:
   - **Quadratic Loss**: $L = \frac{1}{2}(h(x) - y)^2$
   - **Cross-Entropy**: $L = -[y \log(h(x)) + (1-y) \log(1-h(x))]$
 
-### Risk and Empirical Risk
+### 9.2.2 Risk and Empirical Risk
 
 - **Risk ($R(h)$)**: Expected loss across all possible inputs.
 - **Empirical Risk ($R\_{emp}(h)$)**: Average loss over a finite test dataset.
 
-### Gradient Descent
+### 9.2.3 Gradient Descent
 
 - Optimize weights $w$ to minimize loss:
   - Compute gradients $\nabla J$.
@@ -62,9 +62,9 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 
 ---
 
-## Multi-layer Perceptrons
+## 9.3 Multi-layer Perceptrons
 
-### Structure
+### 9.3.1 Structure
 
 - Consists of:
   - Input layer.
@@ -72,7 +72,7 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
   - Output layer.
 - **Hidden Layer Role**: Partitions input space into more manageable regions.
 
-### Training
+### 9.3.2 Training
 
 - Uses **backpropagation**:
   - Compute error at the output layer.
@@ -81,9 +81,9 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 
 ---
 
-## Deep Neural Networks
+## 9.4 Deep Neural Networks
 
-### Hyperparameters
+### 9.4.1 Hyperparameters
 
 - **Network Structure**: Number of layers and neurons per layer.
 - **Learning Rate ($\alpha$)**.
@@ -96,7 +96,7 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 $$\text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}$$
 Ensures output probabilities sum to 1.
 
-### Universal Function Approximation
+### 9.4.2 Universal Function Approximation
 
 - **Theorem**: A sufficiently large two-layer NN can approximate any continuous function.
 - Practical issues:
@@ -105,15 +105,15 @@ Ensures output probabilities sum to 1.
 
 ---
 
-## Convolutional Neural Networks
+## 9.5 Convolutional Neural Networks
 
-### Structure and Advantages
+### 9.5.1 Structure and Advantages
 
 - **Key Difference**: Uses **kernels** to connect layers.
   - Reduces number of parameters.
   - Increases spatial awareness.
 
-### Applications
+### 9.5.2 Applications
 
 - **Image Recognition**:
   - Kernel slides over the image to extract features.
@@ -123,7 +123,7 @@ Ensures output probabilities sum to 1.
 
 ---
 
-## Key Points to Remember
+## 9.6 Key Points to Remember
 
 - **Perceptrons**:
   - Simplest neural model.
