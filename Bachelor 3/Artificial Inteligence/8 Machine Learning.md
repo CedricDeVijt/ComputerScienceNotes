@@ -90,7 +90,7 @@ This formula is central to computing the posterior probabilities for classificat
   - **Nodes** represent decisions.
   - **Leaves** represent outcomes.
 - **Hunt’s Algorithm**:
-  - Splits data until all tuples have the same label.
+  - Is used to construct decision trees by recursively splitting data based on features to classify data into categories.
 
 ### Steps
 
@@ -113,11 +113,11 @@ This formula is central to computing the posterior probabilities for classificat
 ### Node Impurity Measures
 
 1. **Gini Index**:
-   - Formula: $GINI(t) = 1 - \sum_{j} p(j|t)^2$.
+   $$GINI(t) = 1 - \sum_{j} p(j|t)^2$$
 2. **Entropy**:
-   - Evaluates randomness in class distribution.
+   $$Ent(t) = -\sum_{j} p(j|t) \log(p(j|t))$$
 3. **Misclassification Error**:
-   - Measures the proportion of incorrect classifications.
+   $$MCE(t) = 1 - \max_j (p(j|t))$$
 
 ### Splitting Criteria
 
