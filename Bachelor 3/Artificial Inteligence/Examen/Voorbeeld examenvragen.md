@@ -113,13 +113,13 @@ Het kortste pad is $A \to B \to D$ met totale kost $1 + 10 = 11$. Echter, BFS ki
 
 Het Best First Search algoritme is niet optimaal tenzij een consistente en minimale heuristiek wordt gebruikt. In het bovenstaande tegenvoorbeeld toont de inconsistente heuristiek aan dat BFS een suboptimaal pad kiest.
 
-# 2 Adversarial search
+# 1 Adversarial search
 
 ## Beschrijf hoe je een AI-speler voor het spel "Mens erger je niet" zou implementeren. Punten worden bepaald door de efficiëntie van jouw oplossing en volledigheid van jouw beschrijving.
 
 Om een AI-speler voor het spel **"Mens erger je niet"** te implementeren, maken we gebruik van een combinatie van beslissingslogica, heuristieken en simulatie om optimale zetten te bepalen. De AI moet keuzes maken die de kans vergroten om de pionnen naar de eindcirkels te brengen, terwijl ze tegelijkertijd de voortgang van tegenstanders probeert te dwarsbomen. Hieronder wordt stap voor stap uitgelegd hoe dit kan worden gerealiseerd.
 
-### 1. **Representatie van de speltoestand**
+### 1.0.1. **Representatie van de speltoestand**
 
 Om de AI-speler te laten werken, moet de huidige speltoestand volledig worden gemodelleerd:
 
@@ -130,7 +130,7 @@ Om de AI-speler te laten werken, moet de huidige speltoestand volledig worden ge
 
 De speltoestand wordt bijgehouden als een data-structuur, bijvoorbeeld een Python-object of een dictionary.
 
-### 2. **Doelen van de AI**
+### 1.0.2. **Doelen van de AI**
 
 De AI heeft de volgende prioriteiten:
 
@@ -139,7 +139,7 @@ De AI heeft de volgende prioriteiten:
 3. Sla pionnen van tegenstanders als dat mogelijk is.
 4. Minimaliseer het aantal zetten dat nodig is om alle pionnen naar de eindcirkels te krijgen.
 
-### 3. **Beslissingslogica**
+### 1.0.3. **Beslissingslogica**
 
 De AI moet beslissingen nemen op basis van de huidige toestand van het spel en de dobbelsteenworp. De logica kan worden geordend in de volgende stappen:
 
@@ -168,14 +168,14 @@ Elke mogelijke zet krijgt een prioriteitsscore. De prioriteit wordt bepaald door
 - Kies de zet met de hoogste prioriteit.
 - Bij gelijke prioriteit: kies willekeurig of op basis van aanvullende regels.
 
-### 4. **Simulatie en evaluatie**
+### 1.0.4. **Simulatie en evaluatie**
 
 Een meer geavanceerde AI kan zet-opties simuleren en evalueren:
 
 - **Monte Carlo-simulatie**: Simuleer verschillende scenario's voor een zet en kies de optie met het beste gemiddelde resultaat.
 - **Minimax-algoritme met heuristieken**: Gebruik een boomstructuur om toekomstige speltoestanden te evalueren en bepaal de optimale zet (eventueel met een dieptebeperking).
 
-### 5. **Implementatiedetails**
+### 1.0.5. **Implementatiedetails**
 
 #### a. **Data-structuren**
 
@@ -199,7 +199,7 @@ Waar $w_1, w_2, w_3$ gewichten zijn die het belang van elke factor bepalen.
 - Voeg simulaties toe om toekomstige zetten te evalueren.
 - Optimaliseer de AI door de gewichten en prioriteiten empirisch aan te passen.
 
-### 6. **Voorbeeldscenario**
+### 1.0.6. **Voorbeeldscenario**
 
 1. **Starttoestand**:
    - Pionnen: Eén pion in de thuisbasis, twee op het bord, één in de eindcirkel.
@@ -212,7 +212,7 @@ Waar $w_1, w_2, w_3$ gewichten zijn die het belang van elke factor bepalen.
    - Prioriteit 2: Verplaats een pion op het bord dichter naar de eindcirkels.
 4. **Beslissing**: Breng de pion uit de thuisbasis.
 
-### 7. **Conclusie**
+### 1.0.7. **Conclusie**
 
 De AI-speler wordt geïmplementeerd met een combinatie van eenvoudige regels en strategische simulaties. Door gebruik te maken van heuristieken en evaluatiemethoden kan de AI flexibel reageren op de veranderende speltoestand en zowel offensieve als defensieve strategieën toepassen.
 
@@ -330,3 +330,11 @@ genomen door
 | C   | 1   | 0   | -1  |
 
 Gebruik de generalisatie van minimax voor meerdere spelers om de beste beginzet van A te bepalen.
+
+# 1 Constraint Satisfaction Problems
+
+# 1 Hidden Markov Models
+
+# 1 Machine Learning
+
+# 1 Deep Learning
