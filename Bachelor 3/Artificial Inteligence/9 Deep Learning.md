@@ -34,8 +34,6 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
      $$w \leftarrow w + \Delta w$$
    - Stop when performance is "good enough."
 
----
-
 ## 9.2 Learning as Optimization
 
 ### 9.2.1 Loss Functions
@@ -60,8 +58,6 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
 - Training with **batches** improves efficiency.
   - One complete pass over the dataset = **epoch**.
 
----
-
 ## 9.3 Multi-layer Perceptrons
 
 ### 9.3.1 Structure
@@ -78,8 +74,6 @@ $$y = \text{Activation}(\sum\_{i=1}^{n} w_i \cdot x_i + b)$$
   - Compute error at the output layer.
   - Propagate error back to earlier layers.
   - Update weights using gradients from all layers.
-
----
 
 ## 9.4 Deep Neural Networks
 
@@ -102,8 +96,6 @@ Ensures output probabilities sum to 1.
 - Practical issues:
   - Risk of overfitting.
   - Requires early stopping or regularization.
-
----
 
 ## 9.5 Convolutional Neural Networks
 
@@ -141,7 +133,3 @@ Ensures output probabilities sum to 1.
   - Sigmoid for bounded outputs.
   - ReLU for internal layers to mitigate vanishing gradients.
 - **Softmax**: Essential for multi-class classification.
-
----
-
-This study guide is structured for quick revision, emphasizing key concepts and formulas for effective learning.

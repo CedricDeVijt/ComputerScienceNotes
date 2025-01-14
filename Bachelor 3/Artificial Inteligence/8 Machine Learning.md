@@ -27,10 +27,48 @@
 
 ### Naïve Bayes
 
-- **Assumption**: Features are independent given the label.
-- **Key Formula**:
-  $$P(Y|X) = \frac{P(X|Y)P(Y)}{P(X)}$$
-  Where $X = \{F_1, F_2, ..., F_n\}$.
+In a Naive Bayes classifier, the key formula is based on **Bayes' theorem** and the **naive assumption** that features $F_1, F_2, \dots, F_n$ are conditionally independent given the class $Y$. Let’s break it down:
+
+#### Bayes' Theorem:
+
+$$
+P(Y|X) = \frac{P(X|Y)P(Y)}{P(X)},
+$$
+
+where:
+
+- $P(Y|X)$: Posterior probability of class $Y$ given features $X$.
+- $P(X|Y)$: Likelihood of features $X$ given class $Y$.
+- $P(Y)$: Prior probability of class $Y$.
+- $P(X)$: Evidence (normalizing constant, often ignored in classification since it is the same for all classes).
+
+#### Naive Bayes Assumption:
+
+The naive assumption states that the features $F_1, F_2, \dots, F_n$ are conditionally independent given $Y$. This simplifies the joint probability $P(X|Y)$ as:
+
+$$
+P(X|Y) = P(F_1, F_2, \dots, F_n | Y) = \prod_{i=1}^n P(F_i | Y).
+$$
+
+#### Combined Formula:
+
+Substituting the naive assumption into Bayes' theorem, we get:
+
+$$
+P(Y|X) \propto P(Y) \prod_{i=1}^n P(F_i | Y),
+$$
+
+where $P(Y|X)$ is proportional to $P(Y) \prod_{i=1}^n P(F_i | Y)$ because $P(X)$ is constant across all classes.
+
+#### Joint Probability:
+
+The joint probability of $Y$ and all features is given by:
+
+$$
+P(Y, F_1, F_2, \dots, F_n) = P(Y) \prod_{i=1}^n P(F_i | Y).
+$$
+
+This formula is central to computing the posterior probabilities for classification tasks in the Naive Bayes framework.
 
 ### Strengths
 
