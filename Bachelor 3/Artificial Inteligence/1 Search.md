@@ -17,9 +17,10 @@
 ### Defining a Search Problem
 
 - **Components**:
-  - **State Space**: Set of all possible states.
-  - **Successor Function**: Defines possible actions and their costs.
-  - **Start State** and **Goal Test**.
+  - **State Space**: Set of all possible states
+  - **Successor Function**: Defines possible actions and their costs
+  - **Start State**
+  - **Goal Test**
 - A **solution** is a sequence of actions leading from the start state to a goal state.
 
 ### State Space Representation
@@ -31,8 +32,9 @@
 
 ### State Space Graphs
 
-- Represent a **mathematical model** of a search problem.
-- **Nodes**: Represent states; **Arcs**: Represent actions.
+- Represent a **mathematical model** of a search problem
+- **Nodes**: Represent states
+- **Arcs**: Represent actions
 
 ### Search Trees
 
@@ -42,7 +44,7 @@
 - For most problems, we can never actually build the whole tree
 - Cyclic graphs from infinitely big search trees
 
-  ![[Pasted image 20241002133435.png]]
+  ![[Pasted image 20241002133435.png|500]]
 
 ## 1.4 Search Strategies
 
@@ -59,7 +61,8 @@
 - **Properties**:
   - Space complexity: **O(bm)**.
   - **Not optimal**: Finds leftmost solution regardless of cost.
-    ![[Pasted image 20241002142152.png]]
+
+![[Pasted image 20241002142152.png|500]]
 
 ### Breadth-First Search (BFS)
 
@@ -68,16 +71,17 @@
 - **Properties**:
   - **Complete** if a solution exists.
   - **Optimal** if all step costs are equal.
-    ![[Screenshot 2024-10-02 at 14.23.18.png]]
 
-![[Screenshot 2024-10-02 at 14.22.47.png]]
+![[Screenshot 2024-10-02 at 14.23.18.png|500]]
+
+![[Screenshot 2024-10-02 at 14.22.47.png|500]]
 
 ### Iterative Deepening
 
 - **Combines** advantages of DFS (space efficiency) and BFS (finding the shallowest solution).
 - Expands DFS to increasing depths until a solution is found.
 
-![[Pasted image 20241014094908.png]]
+![[Pasted image 20241014094908.png|500]]
 
 ## 1.5 Cost-Sensitive Search
 
