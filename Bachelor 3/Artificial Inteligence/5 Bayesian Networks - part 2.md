@@ -1,16 +1,4 @@
-## 5.1 Introduction to Bayesian Networks
-
-### Recap and Motivating Example
-
-- **Objective**: Model medical scenarios (e.g., using Bayesian Networks to predict systemic inflammation based on symptoms like asthma, blood cell count, etc.).
-- **Main Question**: How can we model knowledge and make inferences about medical conditions?
-
-### Key Concepts
-
-- **Bayesian Network (Bayes' Net)**: A graphical model representing variables and their conditional dependencies.
-- **Inference**: Determining the probability of a hypothesis (query) given evidence.
-
-## 5.2 Inference in Bayesian Networks
+## 5.1 Inference in Bayesian Networks
 
 ### Basic Inference
 
@@ -22,7 +10,7 @@
 - **Variable Elimination**: Optimizes inference by eliminating unnecessary variables through re-arrangement.
 - **Conditional Independence**: Uses the Bayes' Net structure to determine which variables are independent, simplifying calculations.
 
-## 5.3 D-Separation and Independence in Bayesian Networks
+## 5.2 D-Separation and Independence in Bayesian Networks
 
 ### Concept of D-Separation
 
@@ -32,7 +20,7 @@
   - **Common Cause**: Shared causes influence multiple variables.
   - **Common Effect (Collider)**: When two variables affect a third, observing the effect can link them.
 
-## 5.4 Sampling Methods in Bayesian Networks
+## 5.3 Sampling Methods in Bayesian Networks
 
 ### Sampling Methods Overview
 
@@ -50,7 +38,7 @@
 - **Likelihood Weighting**: Applies weights to samples based on evidence, making it suitable when evidence is unlikely.
 - **Gibbs Sampling**: Adjusts samples iteratively for both upstream and downstream evidence.
 
-## 5.5 Causality in Bayesian Networks
+## 5.4 Causality in Bayesian Networks
 
 ### Causality vs. Correlation
 
