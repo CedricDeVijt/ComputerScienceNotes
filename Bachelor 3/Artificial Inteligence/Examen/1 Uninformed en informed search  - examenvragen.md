@@ -92,10 +92,10 @@ Als samenvatting:
 ### 3.1 Minimaliseren van aantal stappen om een auto te parkeren
 
 **Beste zoekalgoritme:**
-A\* Search
+Iterative Deepening
 
 **Reden:**
-A\* Search is geschikt voor situaties waarbij de kosten van stappen variëren en er een heuristiek beschikbaar is om de resterende kosten te schatten. In het geval van het parkeren van een auto, waarbij de afstand tot de parkeerplaats een goede schatting is van de resterende kosten, kan A\* Search de kortste route vinden.
+...
 
 ### 3.2 Vinden van de kortste pad in een doolhof
 
