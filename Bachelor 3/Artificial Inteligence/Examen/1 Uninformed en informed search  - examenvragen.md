@@ -71,10 +71,10 @@ Stel dat de heuristiek suggereert om een pad te volgen dat dichter bij het doel 
 Ja, zolang de heuristiek consistent (monotoon) is en de kosten positief zijn.
 
 **Reden:**
-A\* combineert UCS (minimale kosten) en een heuristiek (schatting van resterende kosten). Als de heuristiek consistent is, is A\* gegarandeerd optimaal omdat het de kosten van elk pad systematisch onderzoekt en alleen stopt wanneer de goedkoopste oplossing is gevonden.
+A* combineert UCS (minimale kosten) en een heuristiek (schatting van resterende kosten). Als de heuristiek consistent is, is A* gegarandeerd optimaal omdat het de kosten van elk pad systematisch onderzoekt en alleen stopt wanneer de goedkoopste oplossing is gevonden.
 
 **Bewijs:**
-A\* houdt een prioriteitsqueue bij en gebruikt de functie $f(n) = g(n) + h(n)$, waarbij $g(n)$ de huidige kost is en $h(n)$ de heuristische schatting van de resterende kosten. Een consistente heuristiek zorgt ervoor dat A\* geen suboptimale oplossing accepteert.
+A* houdt een prioriteitsqueue bij en gebruikt de functie $f(n) = g(n) + h(n)$, waarbij $g(n)$ de huidige kost is en $h(n)$ de heuristische schatting van de resterende kosten. Een consistente heuristiek zorgt ervoor dat A* geen suboptimale oplossing accepteert.
 
 Als samenvatting:
 
@@ -89,21 +89,71 @@ Als samenvatting:
 
 ## 3 Gegeven een spel geef het beste zoekalgoritme
 
-### 3.1 Minimaliseren van aantal stappen om een auto te parkeren
+### 3.1 Minimaliseren van aantal stappen om auto's te verschuiven zodat een specifieke auto de uitgang bereikt
 
 **Beste zoekalgoritme:**
 Iterative Deepening
 
 **Reden:**
-...
+Iterative Deepening combineert de voordelen van Breadth-First Search (BFS) en Depth-First Search (DFS). Het doorzoekt de zoekruimte in toenemende diepte, waardoor het de oplossing vindt met het minimale aantal stappen. Dit is cruciaal voor spellen zoals Rush Hour, waar de oplossing vaak afhankelijk is van de kortste reeks zetten. Omdat het volledige niveau’s doorzoekt, is het gegarandeerd optimaal en efficiënt in geheugengebruik.
 
-### 3.2 Vinden van de kortste pad in een doolhof
+**Hoe te gebruiken:**
+
+1. Stel een maximale diepte in en begin vanaf diepte 0.
+2. Gebruik DFS tot de ingestelde diepte.
+3. Verhoog de diepte iteratief en herhaal het proces.
+4. Stop wanneer de oplossing is gevonden.
+
+### 3.2 Bepalen van de beste zet in een schaakpositie (minimax met alpha-beta pruning)
 
 **Beste zoekalgoritme:**
-Breadth-First Search
+Minimax met Alpha-Beta Pruning
 
 **Reden:**
-Breadth-First Search is ideaal voor het vinden van de kortste paden in een doolhof, omdat het alle paden van een bepaalde lengte onderzoekt voordat het naar langere paden gaat. Hierdoor vindt het gegarandeerd de kortste route.
+Dit algoritme is specifiek ontworpen voor beslissingsproblemen met twee spelers. Minimax analyseert mogelijke zetten en hun gevolgen door de zoekboom te evalueren. Alpha-Beta Pruning optimaliseert dit proces door delen van de boom te elimineren die niet bijdragen aan het eindresultaat. Dit bespaart tijd zonder dat het de nauwkeurigheid beïnvloedt.
+
+**Hoe te gebruiken:**
+
+1. Genereer de zoekboom van mogelijke zetten.
+2. Gebruik de minimax-strategie om elk niveau van de boom te evalueren:
+   - Maximaliseer de score voor jouw zetten.
+   - Minimaliseer de score voor de tegenstander.
+3. Pas Alpha-Beta Pruning toe om onnodige berekeningen te vermijden.
+4. Selecteer de zet met de hoogste score.
+
+### 3.3 Het oplossen van een puzzel waarbij alle stukken in een specifieke volgorde moeten worden geplaatst (bijvoorbeeld Sudoku)
+
+**Beste zoekalgoritme:**
+Constraint Satisfaction Problem (CSP)-technieken met Backtracking
+
+**Reden:**
+CSP-technieken zijn ideaal voor puzzels waarin variabelen moeten voldoen aan specifieke beperkingen. Backtracking is een systematische manier om alle mogelijke combinaties te proberen totdat de oplossing is gevonden. Door slimme technieken zoals Forward Checking en Constraint Propagation toe te passen, kan het algoritme efficiënter zoeken.
+
+**Hoe te gebruiken:**
+
+1. Definieer de variabelen en beperkingen van de puzzel.
+2. Begin met een lege puzzel en probeer waarden toe te wijzen aan elke variabele:
+   - Controleer telkens of de huidige toewijzing voldoet aan de beperkingen.
+3. Als een beperking wordt geschonden, maak een stap terug (backtracking).
+4. Ga door tot de puzzel is opgelost.
+
+### 3.4 Verkennen van een onbekende omgeving (bijvoorbeeld een doolhof)
+
+**Beste zoekalgoritme:**
+A\*
+
+**Reden:**
+A\* is een heuristisch zoekalgoritme dat gebruik maakt van een kostenfunctie om efficiënt door een onbekende ruimte te navigeren. Het combineert de daadwerkelijke kosten (g) en een geschatte kost (h) om de optimale oplossing te vinden. Het is vooral krachtig in doolhoven of vergelijkbare situaties waarin de kortste route moet worden bepaald.
+
+**Hoe te gebruiken:**
+
+1. Definieer een startpunt en een eindpunt.
+2. Stel de kostenfunctie in:
+   - g: de afstand van het startpunt naar het huidige punt.
+   - h: een heuristische schatting van de afstand naar het eindpunt.
+3. Gebruik een prioriteitsqueue om punten met de laagste geschatte totale kosten (f = g + h) te onderzoeken.
+4. Beweeg naar het volgende punt met de laagste f-waarde.
+5. Stop wanneer het eindpunt is bereikt.
 
 ## 4 Heuristieken
 
