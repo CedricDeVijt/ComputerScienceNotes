@@ -33,13 +33,8 @@ Voor "Mens erger je niet" (een bordspel met een sterk stochastisch element door 
 
 ### 1.4 Nim met muntopgooien (kop = 1 extra stokje)
 
-**Algoritme:** Stochastische dynamische programmering.
-
-- **Waarom:** De munt introduceert een stochastisch element. Dynamische programmering kan hier omgaan met de onzekerheid van extra stokjes.
-- **Hoe:**
-  1. Modelleer de speltoestand als een Markov Decision Process (MDP).
-  2. Bereken de verwachte waarde van elke mogelijke zet met behulp van probabilistische uitkomsten van de munt.
-  3. Maak zetten die de verwachte waarde maximaliseren.
+**Algoritme:** Expectiminimax
+...
 
 ### 1.5 Schaken
 
