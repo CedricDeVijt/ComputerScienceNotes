@@ -18,7 +18,7 @@ Voor "Mens erger je niet" (een bordspel met een sterk stochastisch element door 
 - **Waarom:** Nim heeft een bekende wiskundige oplossing gebaseerd op de **Nim-som** (XOR van stapelgroottes). Voor een AI-speler is het voldoende om deze regel toe te passen.
 - **Hoe:**
   1. Bereken de Nim-som van de huidige stapels.
-  2. Indien de Nim-som ≠ 0, maak een zet zodat de Nim-som = 0.
+  2. Indien de Nim-som $\neq$ 0, maak een zet zodat de Nim-som = 0.
   3. Indien de Nim-som = 0, speel willekeurig (verlies is gegarandeerd als de tegenstander foutloos speelt).
 
 ### 1.3 Nim (3 spelers, 6 stokjes)

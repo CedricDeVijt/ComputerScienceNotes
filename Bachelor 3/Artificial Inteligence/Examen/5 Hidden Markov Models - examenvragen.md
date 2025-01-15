@@ -6,7 +6,7 @@
 
    - Stel de toestanden (Γ) vast.
    - Stel de observaties (Ω) vast.
-   - Bepaal de startkansen (π), de transitiekansen (A), en de emissiekansen (B).
+   - Bepaal de startkansen ($\pi$), de transitiekansen (A), en de emissiekansen (B).
 
 2. **Bepaal de observatiereeks**:
 
@@ -15,7 +15,7 @@
 3. **Gebruik het Forward-algoritme**:
 
    - Initialisatie: Bereken de initiële waarschijnlijkheid van elke toestand gebaseerd op de eerste observatie.
-     $$α_1(i) = π_i B_i(O_1)$$
+     $$α_1(i) = \pi_i B_i(O_1)$$
    - Recursie: Bereken de cumulatieve waarschijnlijkheid voor elke toestand en iedere volgende observatie:
      $$αt(j) = \sum\limits_{i} α{t-1}(i) A*{ij} B_j(O_t)$$
    - Terminatie: Sommeer de waarden voor de laatste observatie:
@@ -66,7 +66,7 @@ Het Viterbi-algoritme wordt gebruikt om de meest waarschijnlijke volgorde van to
 1. **Initialisatie**:
 
    - Bereken de waarschijnlijkheid van de eerste observatie in elke toestand:
-     $$\delta_1(i) = π_i B_i(O_1)$$
+     $$\delta_1(i) = \pi_i B_i(O_1)$$
    - Sla de vorige toestanden op.
 
 2. **Recursie**:
@@ -94,7 +94,7 @@ Het Forward-algoritme berekent de waarschijnlijkheid van een observatiereeks, zo
 
 1. **Initialisatie**:
 
-   - Bereken $α_1(i) = π_i B_i(O_1)$.
+   - Bereken $α_1(i) = \pi_i B_i(O_1)$.
 
 2. **Recursie**:
 
