@@ -18,6 +18,7 @@ Nee, Depth-First Search is niet optimaal.
 
 **Reden:**
 DFS kan een oplossing vinden, maar het zoekt niet systematisch naar de goedkoopste of kortste oplossing. Het kan een oplossing vinden die veel duurder is dan een andere.
+
 **Tegenvoorbeeld:**
 Beschouw een graaf waarin het eerste pad dat DFS tegenkomt, een totale kost van 10 heeft, maar er is een ander pad met een kost van 2 dat DFS niet onderzoekt omdat het te diep in een ander deel van de graaf zoekt.
 
