@@ -1,6 +1,6 @@
 ## 1.1 Why and What of Software Engineering
 
-### 1.1.1 Definition of Software Engineering
+### Definition of Software Engineering
 
 - **"State of the art of developing quality software on time and within budget."**
   - Trade-off between perfection and physical constraints.
@@ -11,7 +11,7 @@
 - **"Different from other engineering disciplines."**
   - Not constrained by physical laws; influenced by human and political factors.
 
-### 1.1.2 Key Questions in Software Development
+### Key Questions in Software Development
 
 1. Where do specifications come from?
 2. How to ensure specifications match user needs?
@@ -22,7 +22,7 @@
 
 ## 1.2 Software Product and Process
 
-### 1.2.1 What is a Software Product?
+### What is a Software Product?
 
 - Delivered to the customer.
 - Includes:
@@ -30,7 +30,7 @@
   - System implementation.
   - Documentation and manuals.
 
-### 1.2.2 What is a Software Process?
+### What is a Software Process?
 
 - **Definition**: Collection of activities leading to a product.
 - **Evaluation Criteria**:
@@ -42,7 +42,7 @@
 
 ## 1.3 Software Development Lifecycles
 
-### 1.3.1 Waterfall Model
+### Waterfall Model
 
 - **Advantages**:
   - Clear visibility and control over progress.
@@ -51,7 +51,7 @@
   - Unrealistic for large projects.
   - Difficult and costly to adapt to requirement changes.
 
-### 1.3.2 Iterative and Incremental Development
+### Iterative and Incremental Development
 
 - **Iterative Development**:
   - Reworking parts to improve them.
@@ -62,7 +62,7 @@
 
 ## 1.4 Risk Management in Software Engineering
 
-### 1.4.1 Risk Analysis Process
+### Risk Analysis Process
 
 1. **Risk Identification**: Using a checklist to identify risks.
    - Examples: staffing risk, technical challenges, market demand.
@@ -72,13 +72,13 @@
    - Prioritize important risks based on appetite.
    - Develop mitigation strategies.
 
-### 1.4.2 Risk Projection Formula
+### Risk Projection Formula
 
 - **Risk = Impact \* Likelihood**
 - Incorporates urgency when needed:
   - Less time = higher risk priority.
 
-### 1.4.3 Failure Mode and Effects Analysis (FMEA)
+### Failure Mode and Effects Analysis (FMEA)
 
 - **Definition**: Identifying potential failures and their impact.
 - **Failure Modes**:
@@ -95,7 +95,7 @@
 
 ## 1.5 Agile and Extreme Programming
 
-### 1.5.1 Agile Principles
+### Agile Principles
 
 - Values:
   1. Individuals and interactions over processes and tools.
@@ -103,7 +103,7 @@
   3. Customer collaboration over contract negotiation.
   4. Responding to change over following a plan.
 
-### 1.5.2 Extreme Programming (XP)
+### Extreme Programming (XP)
 
 - **Core Practices**:
   - Pair programming, test-driven development, and continuous integration.
@@ -111,7 +111,7 @@
 - **Key Values**:
   - Sustainable pace, coding standards, and customer involvement.
 
-### 1.5.3 Scrum
+### Scrum
 
 - **Structure**:
   - Sprint: 2-4 week iterations creating a working product increment.
@@ -123,7 +123,7 @@
 
 ## 1.6 Unified Modeling Language (UML)
 
-### 1.6.1 Static UML
+### Static UML
 
 - **Class Diagrams**:
   - Represent classes, attributes, and operations.
@@ -132,7 +132,7 @@
   - Aggregation: Whole-part relationship; parts can exist independently.
   - Composition: Parts cannot exist without the whole.
 
-### 1.6.2 Dynamic UML
+### Dynamic UML
 
 - **Sequence Diagrams**:
   - Show object interactions over time.

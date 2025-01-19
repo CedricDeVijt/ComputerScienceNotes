@@ -65,7 +65,7 @@ Technical stories address non-functional requirements (e.g., performance, securi
 ### Explain briefly the three levels of detail for Product Backlog Items (Epic, Features, Stories).
 
 1.  **Epic:** Large objectives taking months; spans multiple releases.
-2.  **Features:** Medium-sized, spanning weeks; achieved in a sprint.
+2.  **Features:** Medium-sized, spanning weeks; bigger than a sprint.
 3.  **Stories:** Small, actionable items; completed within days.
 
 ### What is a minimum viable product?
@@ -101,7 +101,10 @@ Distinguishing them ensures the system is tested for both ideal and exceptional 
 **Advantages:**
 
 - Clear communication of system behavior.
-- Traceability to requirements. **Disadvantages:**
+- Traceability to requirements.
+
+**Disadvantages:**
+
 - May become complex for large systems.
 - Hard to maintain consistency across iterations.
 
