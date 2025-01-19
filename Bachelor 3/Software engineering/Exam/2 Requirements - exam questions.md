@@ -12,7 +12,7 @@ A requirements specification must:
 
 - **Use Case:** A generic description of a transaction to achieve a goal, involving one or more actors.
 - **Scenario:** An instance of a use case. It shows a typical example of execution. Scenarios include:
-  - Primary (happy path)
+  - Primary (happy day path)
   - Secondary (alternate paths or error cases).
 
 ### Can you give 3 criteria to evaluate a system scope description? Why do you select these 3?
@@ -44,10 +44,10 @@ At least one actor must benefit to justify the use case’s inclusion in the sys
 - **Primary Scenario:** Describes the main, successful path to achieving the goal.
 - **Secondary Scenario:** Describes alternate paths, error handling, or exceptional conditions.
 
-### What’s the direction of the <<extends>> and <<includes>> dependencies?
+### What’s the direction of the \<\<extends\>\> and \<\<includes\>\> dependencies?
 
-- **<<extends>>:** From the base use case to the extending use case, showing optional or conditional behavior.
-- **<<includes>>:** From the including use case to the included use case, showing mandatory behavior.
+- **\<\<extends\>\>:** From the base use case to the extending use case, showing optional or conditional behavior.
+- **\<\<includes\>\>:** From the including use case to the included use case, showing mandatory behavior.
 
 ### What is the purpose of technical stories in scrum?
 

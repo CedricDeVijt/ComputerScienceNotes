@@ -1,5 +1,3 @@
-# Study Guide: Requirements Engineering
-
 ## 2.1 Introduction to Requirements
 
 ### When to Define Requirements?
@@ -64,6 +62,10 @@ Key questions include:
   - As a , I want to , so that .
 - **Conditions of Satisfaction**: Define criteria for acceptance.
 
+### Technical stories
+
+express non-functional requirements in story form
+
 ### INVEST Criteria for User Stories
 
 - **Independent**: Avoid dependencies.
@@ -72,6 +74,10 @@ Key questions include:
 - **Estimable**: Facilitate cost evaluation.
 - **Small**: Fit into a single iteration.
 - **Testable**: Provide clear acceptance criteria.
+
+### Definition of Ready (DoR)
+
+A checklist of the properties that must be satisfied before an item inthe product back log can be moved into a sprint.
 
 ### Product Backlog Levels
 
@@ -96,9 +102,11 @@ Key questions include:
 ### Safety Stories
 
 - **Template Variants**:
-  - **Ubiquitous**: "The shall ."
-  - **Event-Driven**: "When , the shall ."
-  - **State-Driven**: "While , the shall ."
+  - **Ubiquitous**: The \<component name\> shall \<response\>.
+  - **Event-Driven**: When \<trigger\>, the \<system name\>
+  - **State-Driven**: While \<in a specific state\> the \<system name\> shall \<system response\>.
+  - **State Option**: Where \<feature is included\> the \<system name\> shall \<system response\>
+  - **Unwanted Behavior**: If \<optional preconditions\> \<trigger\>, then the \<system name\> shall \<system response\>
 
 ## 2.5 Planning and Risk Management
 
