@@ -78,6 +78,21 @@
 - Incorporates urgency when needed:
   - Less time = higher risk priority.
 
+### 1.4.3 Failure Mode and Effects Analysis (FMEA)
+
+- **Definition**: Identifying potential failures and their impact.
+- **Failure Modes**:
+  - **Failure**: Any deviation from the expected behavior.
+  - **Failure Mode**: Specific way a failure can occur.
+- **Effects Analysis**:
+  - **Impact**: Consequences of a failure.
+  - **Severity**: Degree of impact on the system.
+- **Steps**:
+  1. Identify potential failures.
+  2. Analyze the impact of each failure.
+  3. Prioritize failures based on risk.
+  4. Develop mitigation strategies.
+
 ## 1.5 Agile and Extreme Programming
 
 ### 1.5.1 Agile Principles
