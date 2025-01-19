@@ -24,7 +24,7 @@
 
 - **Precondition**: The subclass can weaken or maintain the precondition but cannot strengthen it. This ensures compatibility with clients using the superclass.
 - **Postcondition**: The subclass must maintain or strengthen the postcondition.
-- **Class Invariant**: The subclass must maintain the class invariant or strengthen it but never weaken it.
+- **Class Invariant**: The subclass must maintain the class invariant.
 
 ### Compare Testing and Design by contract using the criteria “Correctness” and “Traceability”.
 
