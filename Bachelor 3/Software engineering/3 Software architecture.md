@@ -34,7 +34,7 @@
 - System is divided into **filters** that process data streams and **pipes** that connect them.
   - **Example**: UNIX commands, CGI scripts for web forms.
 
-```UNIX
+```bash
 tar cf - .| gzip -cfbest| rsh hcoss dd
 ```
 
