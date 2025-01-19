@@ -1,128 +1,134 @@
-## 2.1 Introduction
+# Study Guide: Requirements Engineering
 
-### When, Why, Where, What are Requirements?
+## 2.1 Introduction to Requirements
 
-- **When**: Requirements should be established at the inception of a project to clearly define goals and scope.
-- **Why**: Helps balance **numerous stakeholders** and **limited resources**.
-- **Where**: Requirements are divided into:
-  - **Functional Requirements**: The functions demanded by end users.
-  - **Non-functional Requirements**: Constraints like **performance**, **maintainability** and **usability**.
+### When to Define Requirements?
 
-## 2.2 Use Cases and User Stories
+- **Understandable**: Helps in deciding in-scope and out-of-scope elements.
+- **Precise**: Allows agreement and testing.
+- **Open**: Enables developers to choose optimal solutions by focusing on "what" not "how".
 
-### Use Case
+### Why Requirements Matter?
 
-- A **Use Case** a use case describes how a user interacts with the system to achieve a specific goal.
-- It is a **generic description** of a complete transaction to achieve a specific goal involving one or more **actors**.
+- Aligns numerous stakeholders despite limited resources.
+- Ensures clarity in project goals and scope.
 
-### Actor
+### Where Requirements Fit?
 
-- An **Actor** represents any entity that interacts with the system:
-  - Can be **people, external systems**, or other components.
-  - **Primary Actors** have unmet goals needing system assistance.
-  - **Secondary Actors** provide help in achieving these goals.
+- **Functional Requirements**: Address end-user demands.
+- **Non-Functional Requirements**: Focus on system constraints and quality attributes (e.g., performance, usability).
 
-### Scenario
+## 2.2 Use Cases
 
-- A **Scenario** is a specific instance of a **use case**:
-  - **Primary Scenario**: Represents a typical successful outcome.
-  - **Secondary Scenario**: Shows alternate paths or error handling, detailing how the system reacts to specific situations.
+### What are Use Cases?
 
-### Iteratively Developing Use Cases
+- **Definition**: Describe visible requirements of the system.
+- **Components**:
 
-- **Inception Phase**: Define system scope, including:
-  - **Scope Definition**: Clear statement outlining what lies inside and outside the system.
-  - **Risk Identification**: Early identification of risks such as competitors, market trends, and technical dependencies.
-- **Elaboration Phase**:
-  - **Scenarios**: Use cases are broken into **primary (success)** and **secondary (alternative)** scenarios.
+  - Actor:
 
-#### Kinds of Use Cases
+    - An **Actor** represents any entity that interacts with the system:
+    - Can be **people, external systems**, or other components.
+    - **Primary Actors** have unmet goals needing system assistance.
+    - **Secondary Actors** provide help in achieving these goals.
 
-- **Scope**: Can range from brainstorming ideas to a fully-detailed specification.
-- **Granularity**:
-  - **Brief Use Case**: High-level overview.
-  - **Fully Dressed Use Case**: Detailed, with all steps included.
-- **Black-box vs. White-box**: Depending on knowledge about the processes involved.
+  - Scenario
+    - A **Scenario** is a specific instance of a **use case**:
+    - **Primary Scenario**: Represents a typical successful outcome.
+    - **Secondary Scenario**: Shows alternate paths or error handling, detailing how the system reacts to specific situations.
 
-### Unified Process
+* **Scope**: Brainstorming to detailed specifications.
+* **Audience**: End-users vs. developers.
+* **Granularity**: From summaries to detailed steps.
+* **Perspective**: Black-box (external view) vs. white-box (process view).
 
-- **Inception & Elaboration Phases**:
-  - Use cases work well in iterative development, often evolving from inception (scope definition) to elaboration (scenario refinement).
+### System Scope and Boundaries
 
-## 2.3 Scrum Requirements
+- **Define Scope**: Short, clear description with end-user commitment.
+- **Identify Boundaries**:
+  - Internal functionality (use cases).
+  - External dependencies (actors).
 
-### User Stories
+### Identifying Actors and Use Cases
 
-- Stories describe features from the perspective of different user roles:
-  - Template:
-    - "As a `<user role>`, I want to `<goal>`, so that `<benefit>`."
-- **Conditions of Satisfaction**: Details used to verify the story's completeness.
+Key questions include:
 
-#### INVEST Criteria for User Stories
+- Who uses, installs, or maintains the system?
+- What external systems or events interact with the system?
 
-- **I - Independent**: Each story should be independent of others.
-- **N - Negotiable**: Avoid too much detail that limits discussion.
-- **V - Valuable**: Must deliver value to the customer.
-- **E - Estimable**: Size of the story should be estimable.
-- **S - Small**: Should fit within a single iteration.
-- **T - Testable**: Clearly defined acceptance criteria.
+## 2.3 Agile and Scrum Approaches
 
-### Definition of Ready
+### User Stories in Scrum
 
-- Checklist to determine if a Product Backlog Item is ready to be moved to a sprint:
-  - **Business value is articulated**.
-  - **Dependencies are identified**.
-  - **Acceptance criteria are clear and testable**.
+- **Template**:
+  - As a , I want to , so that .
+- **Conditions of Satisfaction**: Define criteria for acceptance.
 
-### Product Backlog and Roadmap
+### INVEST Criteria for User Stories
 
-- **Levels of Detail**:
-  - **Epic**: Takes months and spans beyond a release.
-  - **Feature**: Takes weeks and spans multiple sprints.
-  - **Sprintable Stories**: Smaller chunks to be completed within a sprint.
+- **Independent**: Avoid dependencies.
+- **Negotiable**: Encourage discussions with customers.
+- **Valuable**: Deliver customer benefits.
+- **Estimable**: Facilitate cost evaluation.
+- **Small**: Fit into a single iteration.
+- **Testable**: Provide clear acceptance criteria.
 
-## 2.4 Safety Critical Requirements
+### Product Backlog Levels
+
+- **Epics**: Broad features (months).
+- **Features**: Mid-level tasks (weeks).
+- **Stories**: Sprint-ready items (days).
+
+### Minimum Viable Product (MVP)
+
+- **Definition**: Early version with just enough features for feedback.
+- **Purpose**: Gather insights for future development.
+
+## 2.4 Safety-Critical Requirements
 
 ### Misuse Cases
 
-- Describes potential hostile actions against the system.
-- **Negative Scenarios**: Also known as **Failure Mode and Effects Analysis (FMEA)**.
-- **Mitigates/Threatens Relationships**: Specify how certain features mitigate or are threatened by hostile use cases.
-
-#### Example of Misuse Case
-
-- **Car Theft Scenario**:
-  - **Driver locks car** (mitigates)
-  - **Thief shortcuts ignition** (threatens)
+- **Definition**: Negative scenarios focusing on hostile intent.
+- **Elements**:
+  - **Misuse Case**: Threatens ordinary use cases.
+  - **Mitigates Relationship**: Indicates controls to counteract threats.
 
 ### Safety Stories
 
-- Stories aimed at preventing hazards or reducing impact.
-- **Extended Template (EARS)**:
-  - **Ubiquitous**: "The component shall respond."
-  - **Event Driven**: "When [trigger], the system shall respond."
-  - **State Driven**: "While in a specific state, the system shall respond."
+- **Template Variants**:
+  - **Ubiquitous**: "The shall ."
+  - **Event-Driven**: "When , the shall ."
+  - **State-Driven**: "While , the shall ."
 
-## Conclusion and Correctness
+## 2.5 Planning and Risk Management
 
-- **Correctness and Traceability**:
-  - **Validation**: Ensuring the solution matches requirements via tests.
-  - **Traceability**: Linking requirements to system elements, ensuring milestones are met.
+### Risk Identification
+
+- Examples of risk factors:
+  - Competitors and market trends.
+  - Technical dependencies and team expertise.
+  - Potential disasters (e.g., supply chain issues).
+
+### Project Planning
+
+- Use scope and risk factors to prioritize use cases.
+- Follow two rules:
+  - Developers estimate costs.
+  - Customers assign priorities.
 
 ---
 
 ## Key Points to Remember
 
-- **Requirements are critical** to set expectations and define project scope.
-- **Use Cases**:
-  - Describe **transactions** between actors to achieve a goal.
-  - **Scenarios** provide specific examples of use case execution.
-- **Scrum User Stories**:
-  - Should follow the **INVEST criteria** for efficient development.
-  - Are validated by **Conditions of Satisfaction**.
-- **Definition of Ready** ensures backlog items are prepared for development.
-- **Misuse Cases**:
-  - Represent potential threats.
-  - Useful for safety and security analysis.
-- **Safety Stories**:
-  - Aim to mitigate hazards, ensuring system safety.
+1. **Requirements Characteristics**:
+   - Understandable, precise, and open.
+2. **Use Case Components**:
+   - Actors, scenarios, and system boundaries.
+3. **Agile Principles**:
+   - INVEST criteria and backlog hierarchy.
+4. **MVP**:
+   - Early feedback mechanism.
+5. **Safety-Critical Practices**:
+   - Misuse cases and safety stories for risk mitigation.
+6. **Planning and Risk**:
+   - Prioritize based on cost estimates and customer priorities.
