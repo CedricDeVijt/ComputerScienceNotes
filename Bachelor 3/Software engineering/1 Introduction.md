@@ -1,143 +1,139 @@
-## 1.1 Software Engineering
+## 1.1 Why and What of Software Engineering
 
-### Why & What:
+### 1.1.1 Definition of Software Engineering
 
-- **Product vs. Process:**
-  - **Product:** What is delivered to the customer.
-  - **Process:** Activities leading to the product, involving iterative and incremental development to manage risks.
+- **"State of the art of developing quality software on time and within budget."**
+  - Trade-off between perfection and physical constraints.
+  - Requires lifelong learning as best practices evolve.
+- **"Multi-person construction of multi-version programs."**
+  - Emphasizes teamwork and adaptability.
+  - Software systems must evolve or perish.
+- **"Different from other engineering disciplines."**
+  - Not constrained by physical laws; influenced by human and political factors.
 
-### Correctness & Traceability:
+### 1.1.2 Key Questions in Software Development
 
-- **Correctness:** Building the product right (Verification) and building the right product (Validation).
-- **Traceability:** Ability to track relationships between requirements and product components.
+1. Where do specifications come from?
+2. How to ensure specifications match user needs?
+3. How to structure programs effectively?
+4. Ensuring the program meets the specifications.
+5. Addressing changing user needs.
+6. Collaborating in multi-person teams.
 
-## 1.2 Software Process
+## 1.2 Software Product and Process
 
-### Key Activities:
+### 1.2.1 What is a Software Product?
 
-- **Requirements Collection**
-- **Analysis** (defining "what")
-- **Design** (defining "how")
-- **Implementation**, **Testing**, **Maintenance**, and **Quality Assurance**
+- Delivered to the customer.
+- Includes:
+  - Requirements Specification.
+  - System implementation.
+  - Documentation and manuals.
 
-### Development Models:
+### 1.2.2 What is a Software Process?
 
-- **Waterfall Model:**
-  - Step-by-step process.
-  - **Limitations:** Unrealistic for large projects, hard to manage changes, and late delivery of working versions.
-    ![[Pasted image 20240930104129.png]]
-- **Iterative and Incremental Development:**
-  - **Iterative:** Reworking to improve.
-  - **Incremental:** Small, tangible steps to produce early results.
+- **Definition**: Collection of activities leading to a product.
+- **Evaluation Criteria**:
+  - **Correctness**:
+    - Are we building the right product? (Validation)
+    - Are we building the product right? (Verification)
+  - **Traceability**:
+    - Can we identify which product components are affected by changes?
 
-### Sample Processes:
+## 1.3 Software Development Lifecycles
 
-- **Unified Process, Spiral Model, Agile Development (XP, Scrum)**
+### 1.3.1 Waterfall Model
 
-## 1.3 Software Product
+- **Advantages**:
+  - Clear visibility and control over progress.
+  - Useful for bidding and contract negotiations.
+- **Disadvantages**:
+  - Unrealistic for large projects.
+  - Difficult and costly to adapt to requirement changes.
 
-### Unified Modeling Language (UML):
+### 1.3.2 Iterative and Incremental Development
 
-- **Usage:** Standardized notation for modeling software systems, useful for managing complexity and supporting lifecycle processes.
+- **Iterative Development**:
+  - Reworking parts to improve them.
+  - Encourages learning through experimentation.
+- **Incremental Development**:
+  - Progress in small steps.
+  - Always have a running version for validation.
 
-## 1.4 Why Software Engineering?
+## 1.4 Risk Management in Software Engineering
 
-- Questions to consider:
-  - Where do the requirements come from?
-  - How do we validate and verify the specifications?
-  - How do we adapt to changes?
-  - **Teamwork:** Managing communication and scale challenges in multi-person projects.
+### 1.4.1 Risk Analysis Process
 
-### Definitions and Issues:
+1. **Risk Identification**: Using a checklist to identify risks.
+   - Examples: staffing risk, technical challenges, market demand.
+2. **Risk Projection**: Estimating likelihood and impact.
+   - Likert scales for impact and likelihood.
+3. **Risk Assessment**:
+   - Prioritize important risks based on appetite.
+   - Develop mitigation strategies.
 
-- **"State of the art"**: Constantly evolving, demands **life-long learning**.
-- **Teamwork** and **Multi-Version Development**: Software must evolve continuously.
+### 1.4.2 Risk Projection Formula
 
-## 1.5 Product and Process
+- **Risk = Impact \* Likelihood**
+- Incorporates urgency when needed:
+  - Less time = higher risk priority.
 
-### Key Differences:
+## 1.5 Agile and Extreme Programming
 
-- **Product:** System delivered to the customer.
-- **Process:** Activities to create the product.
+### 1.5.1 Agile Principles
 
-### Evaluation Criteria:
+- Values:
+  1. Individuals and interactions over processes and tools.
+  2. Working software over comprehensive documentation.
+  3. Customer collaboration over contract negotiation.
+  4. Responding to change over following a plan.
 
-- **Validation (Correctness):** Are we building the right product?
-- **Verification:** Are we building the product correctly?
+### 1.5.2 Extreme Programming (XP)
 
-## 1.6 Risk Analysis and Management
+- **Core Practices**:
+  - Pair programming, test-driven development, and continuous integration.
+  - Small releases and collective code ownership.
+- **Key Values**:
+  - Sustainable pace, coding standards, and customer involvement.
 
-### Risk Types:
+### 1.5.3 Scrum
 
-- **Project Risks:** E.g., staffing risks.
-- **Technical Risks:** E.g., new technology.
-- **Business Risks:** E.g., market demand uncertainty.
+- **Structure**:
+  - Sprint: 2-4 week iterations creating a working product increment.
+  - Daily stand-ups and reviews.
+- **Roles**:
+  - Product Owner: Prioritize backlog.
+  - Scrum Master: Facilitate team.
+  - Development Team: Build the product increment.
 
-### Risk Assessment Process:
+## 1.6 Unified Modeling Language (UML)
 
-- **Risk Identification, Projection (Estimation), Assessment**
-- **Impact and Likelihood:** Measured on scales to prioritize risks.
+### 1.6.1 Static UML
 
-### Example: Failure Mode and Effects Analysis (FMEA)
+- **Class Diagrams**:
+  - Represent classes, attributes, and operations.
+  - Highlight relationships like inheritance and associations.
+- **Aggregation vs. Composition**:
+  - Aggregation: Whole-part relationship; parts can exist independently.
+  - Composition: Parts cannot exist without the whole.
 
-- Identify potential failure modes, their effects, causes, and criticality to manage risk effectively.
+### 1.6.2 Dynamic UML
 
-## 1.7 Prototyping
+- **Sequence Diagrams**:
+  - Show object interactions over time.
+- **Collaboration Diagrams**:
+  - Show associations and messages between objects.
 
-- **Purpose:** To test, explore, or validate a hypothesis to reduce risks.
-- **Types:**
-  - **Exploratory Prototype (Throwaway):** To validate requirements or explore design choices.
-  - **Evolutionary Prototype:** Evolving into the final product through iterations.
+---
 
-## 1.8 Agile Development
+## Key Points to Remember
 
-### Agile Manifesto Values:
+- Software engineering focuses on teamwork, adaptability, and evolution.
+- Evaluation criteria: Correctness (validation and verification) and traceability.
+- Waterfall model provides structure but lacks flexibility for changes.
+- Agile promotes responsiveness and collaboration through iterative development.
+- Extreme Programming emphasizes testing, refactoring, and continuous integration.
+- Risk management requires identifying, estimating, and mitigating potential issues.
+- UML serves as a standard for visualizing and modeling software systems.
 
-- **Individuals & Interactions > Processes & Tools**
-- **Working Software > Comprehensive Documentation**
-- **Customer Collaboration > Contract Negotiation**
-- **Responding to Change > Following a Plan**
-
-### eXtreme Programming (XP):
-
-- **Key Principles:**
-  - **Fine Scale Feedback:** Pair programming, test-driven development.
-  - **Continuous Process:** Continuous integration, refactoring.
-  - **Shared Understanding:** Collective code ownership, simple design.
-  - **Programmer Welfare:** Sustainable pace.
-
-## 1.9 Scrum Process
-
-### Key Concepts:
-
-- **Sprint:** 2-4 week period to create a working product increment.
-- **Daily Stand-up Meetings**
-
-### Roles in Scrum:
-
-- **Product Owner:** Prioritizes the backlog.
-- **Scrum Master:** Facilitator.
-- **Development Team:** 5-9 members responsible for increment delivery, **self-organizing**.
-
-### Planning and Monitoring:
-
-- **Task Points, Sprint Backlog, and Poker Planning**
-
-# 1.10 Unified Modeling Language (UML)
-
-### History and Evolution:
-
-- **First Generation:** Booch, OMT.
-- **Second Generation:** Fusion of proven ideas.
-- **Third Generation:** Unified Modeling Language for a consistent and adaptable notation system.
-
-### Static UML:
-
-- **Classes and Associations:**
-  - Represent relationships, aggregation, and composition.
-  - **Generalization** represents inheritance.
-
-### Dynamic UML:
-
-- **Sequence Diagrams:** Show object interactions over time.
-- **Collaboration Diagrams:** Represent relationships with messages between objects.
+This structured format ensures the content is clear, concise, and optimized for study purposes.
