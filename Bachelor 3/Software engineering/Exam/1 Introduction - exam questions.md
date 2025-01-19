@@ -42,7 +42,12 @@
 
 ### List the 6 principles of extreme programming.
 
-- Fine-scale feedback, continuous process improvement, shared understanding, programmer welfare, coding, and testing principles.
+1. Fine-scale feedback
+2. continuous process improvement
+3. shared understanding
+4. programmer welfare
+5. coding
+6. testing
 
 ### What is a “sprint” in the SCRUM process?
 

@@ -150,5 +150,3 @@
 - Extreme Programming emphasizes testing, refactoring, and continuous integration.
 - Risk management requires identifying, estimating, and mitigating potential issues.
 - UML serves as a standard for visualizing and modeling software systems.
-
-This structured format ensures the content is clear, concise, and optimized for study purposes.
