@@ -59,6 +59,9 @@
 - **Scrum Master:** Facilitates the process and removes impediments.
 - **Development Team:** Delivers the product increment.
 
+
+## You should be able to complete the following tasks
+
 ### Draw a UML class diagram modelling marriages in cultures with monogamy (1 wife marries 1 husband), polygamy (persons can be married with more than one other person), polyandry (1 woman can be married to more than one man) and polygyny (1 man can be married to more than one woman).
 
 ...
