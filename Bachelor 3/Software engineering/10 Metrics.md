@@ -36,7 +36,7 @@
 2. **Analogical Estimation**: Based on comparisons with similar projects.
 3. **Algorithmic Cost Modeling**: Uses formulas calibrated with historical data.
    - Example: **COCOMO Model**:
-     - **Effort = C × (Size)^S**
+     - **Effort = $C  (Size)^S$**
      - Varies based on project complexity (Organic, Semi-Detached, Embedded).
 
 ### Putnam’s Model

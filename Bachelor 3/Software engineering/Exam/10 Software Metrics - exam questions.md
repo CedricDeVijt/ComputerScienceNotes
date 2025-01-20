@@ -3,15 +3,23 @@
 ### Can you give three possible problems of metrics usage in software engineering? How does the measurement theory address them?
 
 - **Problems**:
-  - Preciseness: Difficulty in defining consistent units for metrics.
-  - Representation Condition: Whether the metric truly reflects the attribute it measures (e.g., does "code size" indicate "code quality"?).
-  - Scale Types: Misinterpretation of data due to incorrect scale usage (e.g., ordinal vs. ratio scales).
+  1. Preciseness: Difficulty in defining consistent units for metrics.
+  2. Representation Condition: Whether the metric truly reflects the attribute it measures (e.g., does "code size" indicate "code quality"?).
+  3. Scale Types: Misinterpretation of data due to incorrect scale usage (e.g., ordinal vs. ratio scales).
 - **Measurement Theory** addresses these issues by defining valid scales, representation conditions, and clear domain-to-range mappings.
 
 ### What’s the distinction between a measure and a metric?
 
 - A **measure** is a mapping of a real-world attribute to a symbol set with known mathematical relationships.
-- A **metric** satisfies additional mathematical properties: m(x,x)\=0m(x,x) = 0m(x,x)\=0, m(x,y)\=m(y,x)m(x,y) = m(y,x)m(x,y)\=m(y,x), and m(x,z)$\leq$m(x,y)+m(y,z)m(x,z) \\leq m(x,y) + m(y,z)m(x,z)$\leq$m(x,y)+m(y,z).
+- A **metric** satisfies additional mathematical properties:
+
+$$
+\begin{align*}
+m(x,x) &= 0\\
+m(x,y) &= m(y,x)\\
+m(x,z) & \leq m(x,y) + m(y,z)\\
+\end{align*}
+$$
 
 ### Can you give an example of a direct and an indirect measure?
 
