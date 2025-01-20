@@ -37,11 +37,13 @@ $$
 
 ### Fill in the blanks in the following sentence. Explain briefly, based on the Putnam’s model. If you want to finish earlier (= decrease scheduled time), you should ... the effort ... .
 
-- Increase the effort **a lot**, according to Putnam’s model.
+- Increase the effort **a lot**. Reducing time increases effort disproportionately (time to the power of 4).
 
 ### Give three metrics for measuring size of a software product.
 
-- Lines of Code (LOC), Function Points (FP), Use Case Points (UCP).
+1. Lines of Code (LOC)
+2. Function Points (FP)
+3. Use Case Points (UCP).
 
 ### Discuss the main advantages and disadvantages of Function Points.
 
@@ -54,7 +56,9 @@ $$
 
 ### Can you give 3 examples of impreciseness in Lines of Code measurements?
 
-- Defining what counts as a line, code reuse or duplication, verbosity differences.
+1. Defining what counts as a line
+2. code reuse or duplication
+3. verbosity differences.
 
 ## You should be able to complete the following tasks
 
