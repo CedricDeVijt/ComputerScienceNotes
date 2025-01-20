@@ -16,8 +16,8 @@
 
 ### If you have to implement an operation on a class, would you prefer weak or strong conditions for pre- and postcondition? And what about the class invariant?
 
-- **Precondition**: Strong preconditions make implementation easier as they constrain the input. However, weak preconditions are preferred by clients because they reduce constraints on the input.
-- **Postcondition**: Strong postconditions are ideal as they provide detailed guarantees of the output state.
+- **Precondition**: Strong preconditions make implementation easier as they constrain the input.
+- **Postcondition**: Weak postconditions are preferable as they allow more flexibility in the implementation.
 - **Class Invariant**: Must remain strong to ensure the consistency of the class across all operations.
 
 ### If a subclass overrides an operation, what is it allowed to do with the pre- and postcondition? And what about the class invariant?
