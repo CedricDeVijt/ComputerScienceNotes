@@ -43,9 +43,9 @@
 
 ### Name 3 techniques to identify responsibilities.
 
-1.  **Scenario walk-throughs and role-play.**
-2.  **Verb phrase identification in requirements.**
-3.  **Class enumeration and hierarchy analysis**.
+1.  Scenario walk-throughs and role-play.
+2.  Verb phrase identification in requirements.
+3.  Class enumeration and hierarchy analysis.
 
 ### What do feature models define?
 
@@ -66,7 +66,7 @@
 ### Explain the main difference between a social fork and a variant fork
 
 - **Social fork**: Created for contributions or improvements, usually reintegrated via pull requests.
-- **Variant fork**: Maintained separately, often duplicating effort like bug fixes across variants.
+- **Variant fork**: Created to establish a separate project that deviates significantly from the original
 
 ### How does domain modeling help to achieve correctness? Traceability?
 
