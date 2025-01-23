@@ -48,7 +48,7 @@
 
 ## 1.4 Overlap tussen Daders en Slachtoffers
 
-- **Geldzels**: Vaak kwetsbare personen die onder dwang geld witwassen, waardoor de grens tussen dader en slachtoffer vervaagt.
+- **Geldezels**: Vaak kwetsbare personen die onder dwang geld witwassen, waardoor de grens tussen dader en slachtoffer vervaagt.
 - **Belangrijke Studies**: Kerstens & Jansen (2016) en Weulen Kranenbarg et al. (2019) benadrukken bidirectionele relaties in financiële cybercrime.
 
 ## 1.5 Belangrijke Onderzoeksthema’s (ESC Cybercrime Working Group Enquête)
@@ -75,6 +75,6 @@
 
 - **Daders**: Longitudinale studies tonen IT-begaafde jongeren en hybride online/offline criminele carrières. Preventie vereist maatwerkinterventies (bijv. Hack_Right).
 - **Slachtoffers**: MKB-bedrijven en individuen lopen grotere risico’s; symptoomgerichte enquêtes verbeteren meetnauwkeurigheid.
-- **Overlap**: Geldzels illustreren de dader-slachtofferdualiteit, wat een genuanceerde juridische/politieke aanpak vereist.
+- **Overlap**: Geldezels illustreren de dader-slachtofferdualiteit, wat een genuanceerde juridische/politieke aanpak vereist.
 - **Onderzoeksprioriteiten**: Focus op longitudinale data, experimentele methoden en interdisciplinaire benaderingen.
 - **Toekomstige Trends**: De integratie van cybercrime met traditionele criminaliteit vereist een adaptieve, technologisch onderbouwde criminologie.
