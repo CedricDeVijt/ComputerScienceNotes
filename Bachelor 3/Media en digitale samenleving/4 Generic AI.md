@@ -97,7 +97,7 @@
 - 52% van de Amerikanen vindt telefoongebruik acceptabel in autonome voertuigen.
 - Traditionele auto's veroorzaken 1,3 miljoen doden per jaar vs. ~100 voor Tesla (geëxtrapoleerd).
 
-## 4.9 Belangrijkste Punten om te Onthouden
+## Key Points to Remember
 
 - **AI vs. ML**: AI is het bredere veld; ML richt zich op data-gedreven leren.
 - **Wiskundige Kern**: AI-modellen zijn gebaseerd op polynoomfuncties en parameteroptimalisatie.
