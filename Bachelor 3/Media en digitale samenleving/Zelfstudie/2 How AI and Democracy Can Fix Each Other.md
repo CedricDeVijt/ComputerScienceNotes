@@ -76,6 +76,7 @@
 - Each technological leap creates an opportunity to rethink how we live and govern together.
 - The story of technology and democracy is still unfolding.
 
+---
 ## Key Points to Remember
 
 - Democracy is not a problem; it is a solution to challenges posed by transformative technologies.
