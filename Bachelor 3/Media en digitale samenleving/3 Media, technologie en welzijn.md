@@ -23,7 +23,7 @@
 
 ### Kritiek op Haidts Stellingen
 
-- **Correlatie ≠ causaliteit**: Geen sluitend bewijs dat sociale media direct mentale problemen veroorzaken (p.12).
+- **Correlatie $\neq$ causaliteit**: Geen sluitend bewijs dat sociale media direct mentale problemen veroorzaken (p.12).
 - **Regionale verschillen**: In Europa is de daling in mentaal welzijn minder duidelijk dan in de VS (p.13).
 - **Individuele kwetsbaarheid**: Effecten variëren sterk per persoon (88% geen effect, 4% positief, 8% negatief) (p.17).
 
