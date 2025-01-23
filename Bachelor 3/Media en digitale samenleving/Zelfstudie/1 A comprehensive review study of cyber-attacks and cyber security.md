@@ -1,5 +1,3 @@
-# 1 Cyber-Attacks and Cybersecurity: Emerging Trends and Developments
-
 ## 1.1 Cyberspace Evolution and Security Challenges
 
 ### Role of the Internet in Modern Society
