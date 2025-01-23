@@ -77,6 +77,7 @@
 - The story of technology and democracy is still unfolding.
 
 ---
+
 ## Key Points to Remember
 
 - Democracy is not a problem; it is a solution to challenges posed by transformative technologies.
