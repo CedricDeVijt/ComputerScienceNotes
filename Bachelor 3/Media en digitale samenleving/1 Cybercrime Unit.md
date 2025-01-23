@@ -1,120 +1,101 @@
-## 1.1 Introductie in Cybercrime
+## 1.1 Inleiding tot Cybercrime
 
-### Wat is Cybercrime?
+### Definitie en Relevantie
 
-- **Cybercrime** is een misdaad die wordt gepleegd met en gericht op informaticasystemen.
-- Enkele kenmerken:
-  - **Anonimiteit**
-  - **Financieel lucratief**
-  - **Laag risico, hoge opbrengst**
-  - **Cybercrime-as-a-service (CaaS)** maakt het toegankelijk voor meer criminelen.
+- **Cybercrime**: Misdaad gepleegd met of gericht op informatiesystemen.
+- **Groeiende Probleem**: Anonimiteit, laagdrempeligheid, financieel lucratief, globalisering, gebrek aan bewustzijn, en Cybercrime-as-a-Service (CaaS).
 
-### Waarom is Cybercrime een Groeiend Probleem?
+### Actuele Context
 
-- **Laagdrempeligheid** en **globalisering** maken cybercrime aantrekkelijk.
-- Er is een gebrek aan **bewustzijn** over cyberveiligheid, en de psychologische factoren maken slachtoffers kwetsbaar (zoals social engineering).
+- **Trends**: Toename phishing, ransomware, en AI-gerelateerde aanvallen (bijv. deepfakes).
+- **Impact**: Belgische slachtoffers verloren €40 miljoen aan phishing in 2023; ransomware-aanvallen stegen met 176% in 2023.
 
-## 1.2 Cybercrime-as-a-Service (CaaS)
-
-### Wat is CaaS?
-
-- Een **ondergrondse economie** waarbij criminelen IT-expertise verkopen.
-- Voorbeelden: **Malware**, **Phishing**, en **Ransomware** als service.
-- **Rekruteren van experts** is onderdeel van dit professionele model.
-
-## 1.3 Basisbegrippen van Cybercrime
+## 1.2 Cybercrime Fundamentals
 
 ### Malware
 
-- **Malicious Software** die schade aanricht aan computersystemen.
-- Soorten:
-  - **Rootkits**: Geeft externe toegang.
-  - **Worms**: Vermenigvuldigen zichzelf.
-  - **Ransomware**: Blokkeert toegang tot data tot losgeld wordt betaald.
-  - **Spyware**: Verzamelt data zonder toestemming.
+- **Definitie**: Schadelijke software (spyware, ransomware, Trojaanse paarden, cryptojackers).
+- **Soorten**:
+  - **Worm**: Verspreidt zich via zelfkopiëring.
+  - **Ransomware**: Blokkeert toegang tot data tot losgeld betaald wordt.
+  - **Rootkits**: Externe toegang tot systemen.
 
 ### Hacking
 
-- **Hacking** is het ongeoorloofd toegang verschaffen tot een systeem.
-- Soorten hackers:
-  - **White Hats**: Legale hackers die systemen verbeteren.
-  - **Black Hats**: Criminelen die systemen uitbuiten.
-  - **Grey Hats**: Hacken zonder toestemming maar richten geen schade aan.
-
-## 1.4 Populaire Cybercrime Tactieken
+- **Typen Hackers**:
+  - **White Hat**: Ethisch hacken voor beveiligingsverbetering.
+  - **Black Hat**: Kwaadwillige exploitatie van kwetsbaarheden.
+  - **Grey Hat**: Infiltreert systemen zonder toestemming, maar zonder schade.
+- **Belgische Wetgeving**: Alle hacking is strafbaar tenzij vooraf toegestaan door organisatie.
 
 ### Phishing
 
-- **Phishing** is een poging om gevoelige informatie te verkrijgen via misleidende berichten.
-- Herkennen van phishing:
-  - Berichten zijn vaak **dringend**, **dwingend**, en **onverwacht**.
+- **Definitie**: Misleidende berichten om gevoelige informatie te stelen.
+- **Vormen**: E-mail, SMS, social media, voice cloning.
+- **Herkenning**: Dringende taal, onverwachte verzoeken, slechte grammatica.
 
 ### Ransomware
 
-- **Ransomware** gijzelt een systeem en eist betaling om toegang terug te geven.
-- Trends:
-  - **Afpersing met gegevens**.
-  - **Zero-day kwetsbaarheden**.
+- **Proces**: Verkenning → Inbraak → Data-exfiltratie → Afpersing.
+- **Trends**: Focus op datadiefstal i.p.v. alleen blokkering; gebruik van zero-day kwetsbaarheden.
 
-## 1.5 Digitale Bewijsvoering
+## 1.3 Digitale Bewijsvoering en Onderzoek
 
-### Wat is Digitale Bewijsvoering?
+### Proces
 
-- Het proces van **verzamelen**, **analyseren**, en **presenteren** van digitale informatie als bewijs.
-- **Start van onderzoek** kan via aangiftes, klachten of ambtshalve procedures.
+**Acquisitie**: Verzamelen van digitale gegevens (apparaten, netwerkdata).
+**Analyse**: Onderzoek van bestanden, metadata, en transacties.
+**Chain of Custody**: Documentatie van bewijsketen om authenticiteit te garanderen.
 
-### Soorten Digitaal Bewijs
+### Uitdagingen
 
-- **Netwerkactiviteiten**, **metadata**, **digitale bestanden**, **apparaatdata**.
+- **Mobiele Forensics**: Encryptie, cloudopslag, diversiteit in hardware/software.
+- **IoT Forensics**: Smart devices (bijv. slimme horloges, beveiligingscamera’s) als bron van bewijs.
 
-### Forensische Methodes
+### Casestudy: SKY ECC
 
-- **Acquisitie**: Verzamelen van data.
-- **Analyse**: Onderzoeken van gegevens.
-- **Chain of custody**: Zorgen voor een ononderbroken keten van bewijsvoering.
+- **Resultaten**: 48 arrestaties, >500 dossiers, 1 miljard berichten onderschept (2021–2023).
 
-## 1.6 Ontwikkelingen en Trends in Cybercrime
+## 1.4 Ontwikkelingen en Trends
 
-### Data
+### AI in Cybercrime
 
-- De hoeveelheid digitale data neemt exponentieel toe. In 2023 wordt er dagelijks 328,77 miljoen TB gegenereerd.
+- **Aanvallen**: Automatisering van phishing, malwarecreatie met tools zoals ChatGPT.
+- **Deepfakes**: Misbruik voor identiteitsfraude en desinformatie.
+- **Verdediging**: AI voor malware-detectie en netwerkanalyse.
 
-### Internet of Things (IoT)
+### IoT Risico’s
 
-- **IoT Forensics** onderzoekt gegevens van slimme apparaten (zoals smartwatches, AirTags) om te bepalen wat er op de crime scene is gebeurd.
-- **IoT Crime** neemt toe door slechte beveiliging van deze apparaten.
+- **Kwetsbaarheden**: Default credentials, botnets (bijv. Mirai), ransomware op slimme apparaten.
+- **Impact**: Manipulatie van industriële systemen (bijv. Stuxnet, 2010).
 
-### Artificiële Intelligentie (AI)
+### Data Explosie
 
-- **AI** wordt ingezet voor:
-  - **Malware detectie**
-  - **Netwerkanalyse**
-  - **Taalverwerking** en **beeldanalyse**
+- **Volume**: 120 zettabytes gegenereerd in 2023; 60% van internetverkeer via mobiel.
 
-## 1.7 Veilig Online
+## 1.5 Veilig Online
 
-### Basismaatregelen
+### Basisprincipes
 
-- **Antivirus** up-to-date houden.
-- Regelmatige **back-ups** maken.
-- Gebruik een **sterk wachtwoord** en **2FA**.
+- **Technisch**: Up-to-date antivirus, regelmatige backups, encryptie.
+- **Gedrag**: Gezonde scepsis (geen verdachte links klikken), privacy-instellingen optimaliseren.
 
 ### Paswoordbeheer
 
-- Gebruik lange wachtwoorden met speciale tekens.
-- Verschillende wachtwoorden voor verschillende accounts.
-- Gebruik een **offline wachtwoordmanager**.
+- **Regels**: Lange wachtwoorden met speciale tekens; gebruik van password managers.
+- **Tools**: Offline managers zoals KeePass.
 
----
+### Data Privacy
 
+- **Risico’s**: Data brokers verzamelen persoonlijke informatie (adres, inkomen, gezondheidsdata).
+- **Preventie**: Meld datalekken via CERT.be of Safeonweb.
+
+--- 
 ## Key Points to Remember
-
-- **Cybercrime** is een steeds groter probleem door anonimiteit en globalisering.
-- **Cybercrime-as-a-service (CaaS)** maakt het makkelijker voor criminelen om tools te kopen en te gebruiken.
-- **Malware** en **phishing** zijn de populairste vormen van cybercrime.
-- **Hacking** kan zowel legaal (white hats) als illegaal (black hats) zijn.
-- **Ransomware** is een veelgebruikte techniek waarbij criminelen systemen gijzelen voor losgeld.
-- **Digitale bewijsvoering** speelt een cruciale rol bij het opsporen en vervolgen van cybercriminelen.
-- **Internet of Things (IoT)** biedt nieuwe mogelijkheden voor cyberaanvallen door slecht beveiligde apparaten.
-- **AI** kan zowel worden gebruikt voor cybercrimebestrijding als voor het faciliteren van cybercrime.
-- **Goede digitale hygiëne**, zoals het gebruik van sterke wachtwoorden en antivirussoftware, is essentieel om cyberaanvallen te voorkomen.
+- **Cybercrime-definitie**: Misdaad via of gericht op informatiesystemen.
+- **Phishing**: Meest voorkomende vorm; herkenbaar aan dringende taal.
+- **Ransomware Flow**: Verkenning → Inbraak → Afpersing.
+- **Ethisch Hacken**: Strafbaar in België zonder toestemming.
+- **IoT Risico’s**: Default credentials en botnets zijn grootste bedreigingen.
+- **AI Dual Use**: Zowel tool voor aanval (deepfakes) als verdediging (malware-detectie).
+- **Preventie**: Up-to-date software, sterke wachtwoorden, bewustzijn van sociale engineering.

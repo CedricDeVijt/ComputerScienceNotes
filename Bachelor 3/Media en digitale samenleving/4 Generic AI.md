@@ -1,101 +1,108 @@
-## 4.1: Introduction to AI
+## 4.1 Inleiding tot AI en Belangrijke Concepten
 
-### What is AI About?
+### Kunstmatige Intelligentie (AI) vs. Machine Learning (ML)
 
-Artificial Intelligence (AI) is fundamentally about creating systems that can perform tasks requiring human intelligence. At its core, AI is rooted in **mathematics** and involves developing algorithms that learn patterns from data to make predictions or decisions.
+- **AI**: Breed veld gericht op het creëren van systemen die menselijke intelligentie nabootsen.
+- **ML**: Subset van AI waarbij algoritmen patronen uit data leren.
+- **Deep Learning**: Gebruikt neurale netwerken met meerdere lagen.
+- **Generatieve AI**: Creëert nieuwe inhoud (bijv. tekst, afbeeldingen).
+- **Large Language Models (LLMs)**: Geavanceerde modellen zoals ChatGPT die mensachtige tekst genereren.
 
-**Key Example**: Predicting the price of bread over time using mathematical formulas:
-$\text{Price}(x) = 1.61 + x \cdot ((2.94 - 1.61) / 20)$
+## 4.2 Wiskundige Grondslagen van AI
 
-### AI vs. Machine Learning (ML)
+### Modelleren met Polynoomfuncties
 
-- **AI**: Broad field encompassing all efforts to make machines intelligent.
-- **ML**: A subset of AI focused on systems that learn from data.
+- AI kan worden gezien als een wiskundige formule.
+- Voorbeeld: Voorspellen van de prijs van brood over tijd:
+  $$\text{Prijs}(x) = 1.61 + x \cdot \frac{(2.94 - 1.61)}{20}$$
+- Algemene polynoomfunctie:
+  $$y = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n$$
 
-### Steps to Develop AI Functions:
+### Complexiteit in Multi-Variabele Modellen
 
-1. **Define Mathematical Functions**: Combine variables to form a predictive model.
-2. **Parameter Optimization**: Minimize errors using regression techniques.
-3. **Leverage Model Complexity**: Learn correlations and discover patterns beyond human reasoning.
+- Voor $m$-variabele polynomen van orde $n$:
+  $$\text{Parameters} = \frac{(n + m)!}{n! \cdot m!}$$
+- Het oplossen van hoogdimensionale systemen is rekenintensief.
 
-## 4.2: Generative AI and Language Models (LLMs)
+## 4.3 Neurale Netwerken en Functiebenadering
 
-### How LLMs Work
+### Self-Organizing Maps (SOM)
 
-Large Language Models (LLMs) generate text by predicting the next word based on context. Key steps include:
+- Neurale netwerken benaderen functies door gewichten ($w$) aan te passen:
+  $$\text{Uitvoer} = \text{SOM}(w \cdot O_x)$$
+- **Training**: Minimaliseer fouten door iteratieve aanpassingen (bijv. gradient descent).
 
-1. **Tokenization**: Breaking down text into smaller units (e.g., "Unbelievably fantastic!" becomes "Un", "believ", "ably", "fantastic", "!").
-2. **Encoding**: Representing tokens in a multi-dimensional space using embeddings.
-3. **Neural Networks**: Applying attention mechanisms to consider context and predict outcomes.
+## 4.4 Large Language Models (LLMs)
 
-**Example**: "The athlete crossed the finish line, raising their arms in _victory_."
+### Tekstgeneratieproces
 
-### Challenges in Generative AI
+1. **Tokenisatie**: Verdeel tekst in tokens (bijv. "Ongelooflijk" → ["On", "geloof", "lijk"]).
+2. **Embedding**: Map tokens naar hoogdimensionale vectoren (bijv. GPT-3 gebruikt 12.288 dimensies).
+3. **Attention Mechanism**: Pas woordgewichten aan op basis van context (bijv. "koning" vs. "koningin").
+4. **Voorspelling**: Neuraal netwerk voorspelt waarschijnlijkheden van het volgende woord.
 
-- Requires vast computational resources (e.g., building LLAMA3 took **3 months** using **24,000 NVIDIA H100 GPUs**).
-- Energy consumption: Operating such systems can consume as much energy as a small city.
+### Technische Specificaties van GPT-3
 
-## 4.3: Challenges in AI Development
+- **Lagen**: 96
+- **Attention Heads**: 96
+- **Parameters**: 175 miljard
+- **Trainingskosten**: ~75 miljoen euro (24.000 NVIDIA H100 GPU's).
 
-### Challenge #1: Algorithm Accuracy
+## 4.5 Bouwen en Inzetten van Generatieve AI
 
-- Ensuring models produce reliable and unbiased results (e.g., recognizing images correctly).
+### Training vs. Inferentie
 
-### Challenge #2: Energy Consumption
+- **Training**:
+  - Voorbeeld: Meta’s LLaMA-3 duurde 3 maanden op 24.000 GPU's.
+  - Energie: ~550 MW/dag (gelijk aan het voeden van 75.000 huishoudens).
+- **Inferentie**:
+  - OpenAI gebruikt 30.000 GPU's voor real-time taken.
+  - Energie: ~615 MW/dag (gelijk aan het voeden van 110.000 huishoudens).
 
-- Developing sustainable AI technologies is critical due to high computational and energy demands.
+## 4.6 Uitdagingen in AI-ontwikkeling
 
-### Challenge #3: Ethical Concerns
+### Belangrijke Technische Uitdagingen
 
-- **Bias in Data**:
-  1. Training on non-representative datasets (e.g., facial recognition biased towards white males).
-  2. Historical biases perpetuated in models.
-  3. Unethical use cases.
+1. **Nauwkeurigheid van Algoritmen**: Fouten in beeld-/tekstgeneratie (bijv. verkeerd gelabelde objecten).
+2. **Energieverbruik**: Hoge energiebehoefte voor training/inferentie.
+3. **Gedistribueerde Intelligentie**: Coördinatie van AI over gedecentraliseerde systemen.
+4. **Controle en Veiligheid**: Voorkomen van irrationeel gedrag (bijv. adversarial attacks op Tesla Autopilot).
 
-## 4.4: Pitfalls in AI Deployment
+## 4.7 Ethische Overwegingen en Valkuilen
 
-### Pitfall #1: Change Management
+### Bias in AI-systemen
 
-- Organizations must adapt to AI-driven processes effectively.
+1. **Dataset Bias**:
+   - Gezichtsherkenning getraind op niet-diverse datasets.
+   - Historische data die oneerlijke praktijken in stand houden.
+2. **Onethische Toepassingen**:
+   - AI-modellen gebruikt voor schadelijke doeleinden (bijv. chatbots die zelfmoordgedachten aanmoedigen).
 
-### Pitfall #2: Misuse
+### Casestudy's
 
-- Using AI for unethical purposes, such as mass surveillance.
+- **Tesla Autopilot**: Kleine stickers misleidden het systeem om van baan te wisselen.
+- **Dodelijke Ongevallen**: Zelfrijdende auto's betrokken bij fatale ongevallen (bijv. Uber’s incident in 2018).
 
-### Pitfall #3: Bias
+## 4.8 Toekomstige Richtingen en Verantwoord Gebruik
 
-- Ensuring fairness requires diverse datasets and team composition.
+### Actiepunten voor Ethische AI
 
-### Pitfall #4: Fear of Technology
+- Train teams in ethische AI-implementatie.
+- Valideer modellen met onafhankelijke teams om bias te verminderen.
+- Monitor databronnen voor veranderingen in populatie.
+- Gebruik diverse teams voor ontwikkeling en testen.
 
-- Misconceptions about AI (e.g., autonomous vehicles) can hinder adoption despite safety benefits.
+### Publieke Perceptie en Veiligheid
 
-## 4.5: Innovating Responsibly with AI
+- 52% van de Amerikanen vindt telefoongebruik acceptabel in autonome voertuigen.
+- Traditionele auto's veroorzaken 1,3 miljoen doden per jaar vs. ~100 voor Tesla (geëxtrapoleerd).
 
-### Steps to Stay in Control:
+## 4.9 Belangrijkste Punten om te Onthouden
 
-1. Foster **teamwide AI understanding** and ethical awareness.
-2. Validate models using independent teams to prevent biases.
-3. Monitor **model drift** and performance changes over time.
-4. Maintain **diverse teams** to bring varied perspectives.
-
-**Action Points**:
-
-- Regularly test and validate models.
-- Ensure compliance with ethical guidelines.
-- Leverage tools for bias detection and mitigation.
-
----
-
-## Key Points to Remember
-
-- **AI is rooted in mathematics**: It simplifies complex systems and uncovers new patterns.
-- **LLMs predict text based on context**: Attention mechanisms play a key role.
-- **Challenges**:
-  - Algorithm accuracy.
-  - Energy consumption.
-  - Ethical concerns, especially bias.
-- **Pitfalls**:
-  - Fear and misuse of technology.
-  - Lack of change management.
-- **Responsible innovation**: Ethics, validation, and diverse teams are critical.
+- **AI vs. ML**: AI is het bredere veld; ML richt zich op data-gedreven leren.
+- **Wiskundige Kern**: AI-modellen zijn gebaseerd op polynoomfuncties en parameteroptimalisatie.
+- **LLM Mechanica**: Tokenisatie, embedding en attention sturen tekstgeneratie aan.
+- **Energiekosten**: Het trainen van GPT-3 verbruikt energie gelijk aan een kleine stad.
+- **Bias Mitigatie**: Representatieve datasets en ethische validatie zijn cruciaal.
+- **Veiligheidsuitdagingen**: Adversarial attacks en controleproblemen vereisen robuuste veiligheidsmaatregelen.
+- **Ethische Inzet**: Diverse teams en continue monitoring zorgen voor verantwoord gebruik.

@@ -1,93 +1,72 @@
-## 3.1: Inleiding tot Media, Technologie en Welzijn
+## 3.1 Impact van Sociale Media op Mentale Gezondheid
 
-### Overzicht
+### Risico's en Negatieve Effecten
 
-Dit college richt zich op de impact van media en technologie op het welzijn, met een speciale focus op **sociale media** en de invloed hiervan op **jongeren**.
+- **TikTok en zelfmoordgevallen**: Franse families klaagden TikTok aan na zelfmoorden en zelfbeschadiging onder tieners door schadelijke inhoud (p.5).
+- **Slaapgebrek en sociale vergelijking**: Sociale media leiden tot slaapstoornissen en perfectionisme, vooral bij meisjes (p.11).
+- **Pathologisch gebruik**: 11% van adolescenten vertoont verslavingsgedrag (ontwenningsverschijnselen, verwaarlozing van andere activiteiten) (p.15).
 
-- **Kernonderwerpen**:
-  - Sociale media en mentale gezondheid
-  - Rol van technologie in welzijnsbevordering
-  - Kritische bespreking van de invloed van media op zelfbeeld en gedrag
+### Platformverantwoordelijkheid
 
-## 3.2: Sociale Media en Welzijn van Jongeren
+- **"Drinkfluencers"**: Sociale media bevorderen risicogedrag zoals alcoholgebruik (p.3).
+- **Schadelijke trends**: TikTok-video’s die zonnecrème afraden, leiden tot gezondheidsrisico’s (p.8).
+- **Juridische aansprakelijkheid**: Oproep om techbedrijven verantwoordelijk te houden voor schade aan minderjarigen (p.5, p.21).
 
-### Thema’s
+## 3.2 Wetenschappelijke Debatten over Technologiegebruik
 
-1. **Impact van sociale media op mentale gezondheid**:
+### Jonathan Haidts Argumenten
 
-   - **UNICEF-rapport**: "Schermgeluk en Schermverdriet" onderzoekt de invloed van sociale media op de **mentale gezondheid van jongeren**.
-   - **Problemen**: Toename van **angst, depressie**, en **zelfbeschadiging** sinds de vroege jaren 2010, voornamelijk bij adolescenten.
+- **"The Anxious Generation"**: Smartphones en sociale media veroorzaken een epidemie van angst en depressie door:
+  - Afname van vrije speeltijd.
+  - Constante sociale vergelijking (p.11, p.14).
+- **Aanbevelingen**: Verbied smartphones bij jonge kinderen en stimuleer offline interactie (p.14).
 
-2. **Platformverantwoordelijkheid**:
-   - **Juridische verantwoordelijkheid van platforms** zoals TikTok, vooral wanneer het gaat om bescherming van minderjarigen.
+### Kritiek op Haidts Stellingen
 
-### Q&A Experts
+- **Correlatie ≠ causaliteit**: Geen sluitend bewijs dat sociale media direct mentale problemen veroorzaken (p.12).
+- **Regionale verschillen**: In Europa is de daling in mentaal welzijn minder duidelijk dan in de VS (p.13).
+- **Individuele kwetsbaarheid**: Effecten variëren sterk per persoon (88% geen effect, 4% positief, 8% negatief) (p.17).
 
-- **Dr. Sofie Vranken** (KU Leuven): sociale media en **alcoholgebruik**.
-- **Dr. Ilse Vranken** (PXL): effecten van sociale media op **carrières en werk**.
+## 3.3 Technologie als Hulpmiddel voor Welzijn
 
-## 3.3: The Great Rewiring en Mentale Gezondheidscrisis
+### Potentiële Positieve Toepassingen
 
-### Oorzaken
+- **Digitale interventies**: Apps, VR en serious games helpen bij depressie, angst en sociale vaardigheden (p.22).
+- **Meta-analyse**: Technologie heeft een matig positief effect (effectgrootte = 0.83) op mentale gezondheid (p.22).
 
-1. **Afnemende vrije speeltijd**: Minder ongestructureerde speeltijd sinds de jaren ’80 beperkt de ontwikkeling van **sociale vaardigheden** en **veerkracht**.
-2. **Toename smartphone- en socialmediagebruik**: Constante sociale vergelijking en afleiding die bijdragen aan mentale problemen.
+### Uitdagingen en Voorwaarden
 
-### Specifieke Effecten
+- **Leeftijdsafhankelijkheid**: Interventies moeten aansluiten bij ontwikkelingsfases (p.23).
+- **Empathische AI**: Technologie moet transparant zijn en emotionele ondersteuning bieden (p.23).
+- **Adoptie door ouders/zorgverleners**: Cruciaal voor succes (p.19, p.23).
 
-- **Slaaptekort** en **aandachtsfragmentatie**
-- **Sociale deprivatie** en **technologieverslaving**
+## 3.4 Maatschappelijke en Juridische Reacties
 
-### Gender Verschillen
+### Overheidsbeleid en Preventie
 
-- **Meisjes**: Lijden meer onder sociale vergelijking en perfectionisme.
-- **Jongens**: Neiging om zich terug te trekken in virtuele werelden zoals **gaming**.
+- **Bart De Wever**: Pleit voor educatie over verantwoord mediagebruik i.p.v. verbod (p.4).
+- **UNICEF-rapport**: Schermtijd beïnvloedt zelfbeeld en sociale verbondenheid (p.2, p.16).
 
-## 3.4: Kritiek en Nuanceringen
+### Kinderrechten in de Digitale Wereld
 
-### Kritiek op Eenzijdige Interpretaties
+- **EU en VN**: Digitale rechten omvatten privacy, participatie en bescherming tegen schade (p.21).
+- **Ouderlijk toezicht**: Tools zoals Instagram’s "Parental Supervision" verminderen risico’s (p.20).
 
-1. **Morele paniek**: Historische angst voor nieuwe media is niet altijd terecht.
-2. **Gebrek aan causaliteit**: Correlaties zijn niet per se oorzaken.
+## 3.5 Conclusies en Aanbevelingen
 
-### Nuanceringen
-
-- **Regionale verschillen**: In Europa minder neergang in welzijn ondanks toename mediagebruik.
-- **Effect op individueel niveau**: Kwetsbare individuen zijn mogelijk gevoeliger, dus geen algemeen effect.
-
-### Haidt’s Aanbevelingen
-
-- **Vrij spel en fysieke interactie** zonder constante supervisie.
-- **Smartphones vermijden** bij jonge kinderen, socialmediagebruik uitstellen.
-
-## 3.5: Empirisch Onderzoek en Kinderrechten
-
-### Belang van Kinderrechten
-
-- **EU & VN-kinderrechten**: Kinderen hebben recht op digitale vrijheid en bescherming.
-- **Ouders en toezicht**: Effectieve ouderlijke supervisie is cruciaal voor veilige digitale omgevingen.
-
-### Onderzoeksprojecten
-
-- **Project AWeSoMe** (Universiteit Amsterdam): Onderzoekt de complexe relatie tussen sociale media en mentale gezondheid.
-
-## 3.6: Technologie ter Verbetering van Welzijn
-
-### Potentieel van Digitale Technologie
-
-- **Voordelen**: Kan mentale gezondheid bij jongeren ondersteunen.
-- **Uitdagingen**: Afstemming op leeftijd, transparantie in AI, en empathische technologie.
-
-- **Implementatie door zorgverleners** is belangrijk voor duurzaam welzijn.
+- **Complexe relatie**: Sociale media hebben zowel positieve als negatieve effecten, afhankelijk van context en individu (p.19).
+- **Preventieve maatregelen**:
+  - Versterk digitale geletterdheid bij jongeren en ouders.
+  - Techbedrijven moeten schadelijke algoritmen aanpassen.
+  - Combineer technologische interventies met offline ondersteuning (p.19, p.23).
 
 ---
 
-# Key Points to Remember
+## Key Points to Remember
 
-- **Sociale media** hebben zowel positieve als negatieve invloeden op welzijn; effecten variëren per individu.
-- **Mentale gezondheidsproblemen** bij jongeren zijn sinds de jaren 2010 sterk toegenomen.
-- **Afnemende vrije speeltijd** en sociale media dragen bij aan fragmentatie in aandacht en slaapgebrek.
-- **Kritiek**: Niet alle problemen kunnen direct aan sociale media worden toegeschreven.
-- **Kinderrechten** benadrukken veilige en vrije toegang tot digitale media voor jongeren.
-- **Empirisch bewijs** toont dat niet alle jongeren even kwetsbaar zijn voor sociale media.
-- **Aanbevelingen** voor ouders: vrije speeltijd stimuleren, smartphones en socialmediagebruik uitstellen bij jonge kinderen.
+- **Risico’s sociale media**: Zelfmoordrisico’s, slaapgebrek, pathologisch gebruik (5,8,15).
+- **Haidts kritiek**: Smartphones verstoren ontwikkeling, maar regionale verschillen weerleggen algemene causaliteit (11,13).
+- **Individuele verschillen**: 88% van adolescenten ervaart geen/noemenswaardig effect van sociale media (17).
+- **Positieve technologie**: Apps en VR verminderen angst (effectgrootte 0.83) (22).
+- **Kinderrechten**: Digitale participatie én bescherming zijn fundamenteel (21).
+- **Preventie**: Educatie, transparante AI en ouderlijke betrokkenheid (19,23).

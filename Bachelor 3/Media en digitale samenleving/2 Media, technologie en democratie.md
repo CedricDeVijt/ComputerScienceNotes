@@ -1,82 +1,86 @@
-## 2.1 Democratie en de Rol van Media
+## 2.1 Rol van Media in een Democratie
 
-### Kernwaarden van Democratie
+### Kernwaarden en Functies
 
-- **Vrijheid**, **gelijkheid**, **participatie**, en **pluralisme** zijn essentieel voor een democratie.
-- Democratie vereist een **gemeenschappelijk gevoel** en **respect voor verschillende meningen**.
+- **Kernwaarden democratie**: vrijheid, gelijkheid, participatie, pluralisme, publieke ruimte.
+- **Mediafuncties**:
+  - **Informatiefunctie**: Burgers informeren.
+  - **Controlefunctie**: Machthebbers controleren.
+  - **Forumfunctie**: Publiek debat faciliteren.
+- **Voorwaarden voor media**: Onafhankelijkheid, betrouwbaarheid, toegankelijkheid, verantwoording.
 
-### De Rol van Nieuwsmedia in een Democratie
+### Uitdagingen door Platformisering
 
-- Media vervullen een cruciale functie binnen democratieën door de volgende taken te vervullen:
+- **Nieuwe mediasysteem**: Algoritmes selecteren content op populariteit.
+- **Commerciële druk**: Personalisatie en aandachtseconomie ondermijnen diversiteit en pluralisme.
+- **Gevolgen**: Polarisatie, verminderd gemeenschappelijk gevoel.
 
-  - **Informatiefunctie**: Burgers voorzien van informatie.
-  - **Controlefunctie**: Controleren van machtige instituties.
-  - **Forumfunctie**: Creëren van een publieke ruimte voor meningsvorming.
+## 2.2 Sociale Media en Democratie: Diagnose
 
-- Voor het ondersteunen van democratische processen moeten de media voldoen aan de volgende voorwaarden:
-  - **Onafhankelijkheid**
-  - **Betrouwbaarheid**
-  - **Toegankelijkheid**
-  - **Verantwoording**
+### Empirische Bevindingen over Polarizatie
 
-## 2.2 Platformisering en de Uitdagingen voor Media
+- **Facebookstudies**:
+  - **Nyhan et al. (2023)**: 50,4% van content op Facebook komt van gelijkgestemden, maar politieke content vormt slechts ~7%. Polarizatie niet direct gekoppeld aan algoritmes.
+  - **Gonzalez-Bailon et al. (2023)**: Ideologische segregatie in nieuwsconsumptie neemt toe met engagement.
+- **Consensus onder gebruikers**: Algoritmes benadrukken polariserende content, terwijl gebruikers meer genuanceerde informatie willen.
 
-### Invloed van Platformisering
+### Affectieve Polarizatie
 
-- De opkomst van nieuwe media-infrastructuren en algoritmes introduceert uitdagingen zoals:
-  - **Populariteit gedreven door algoritmes** als selectiecriterium.
-  - **Commerciële belangen** die de overhand nemen op redactionele keuzes.
-  - **Polarisatie** door personalisatie en focus op extreme, emotionele content.
+- Definitie: Antipathie tegenover andersdenkenden + voorkeur voor gelijkgestemden.
+- **Curvilineair verband (Janssen & Turkenburg, 2023)**: Matige polarisatie verhoogt steun voor democratie; extreme polarisatie schaadt.
 
-### Kloof tussen Generaties
-
-- Jongere generaties gebruiken media anders dan oudere generaties, wat kan leiden tot een verdeeld medialandschap.
-
-## 2.3 Sociale Media en Democratische Waarden
-
-### Sociale Media en Affectieve Polarisatie
-
-- **Affectieve polarisatie** verwijst naar de groeiende antipathie tegenover mensen met verschillende politieke opvattingen.
-  - Onderzoek toont aan dat Facebook-gebruikers vooral berichten ontvangen van **gelijkgestemde bronnen** (50,4% tegenover 14,7%).
-
-### Ideologische Segregatie
-
-- Uit onderzoek tijdens de Amerikaanse presidentsverkiezingen blijkt dat er sprake is van **ideologische segregatie** in nieuwsconsumptie, die toeneemt met betrokkenheid.
-
-### Wat Mensen Zeggen over Algoritmes
-
-- Gebruikers menen dat algoritmes voornamelijk posts promoten die **polariseren**, zoals:
-  - **Moral outrage** en **negatieve inhoud**.
-  - In plaats daarvan zouden ze liever **positieve berichten** en **educatieve inhoud** willen zien.
-
-## 2.4 Technologische Oplossingen voor Democratische Problemen
+## 2.3 Oplossingsrichtingen voor Sociale Media
 
 ### Algoritmische Aanpassingen
 
-- Onderzoek suggereert dat het verminderen van blootstelling aan gelijkgestemde berichten via algoritmes mogelijk geen significante impact heeft op polarisatie.
+- **Experimenten**:
+  - Minder content van gelijkgestemden leidde niet tot verminderde polarisatie (Nyhan et al., 2023).
+  - Korte experimentele periode en beperkte geografische reikwijdte zijn beperkingen.
+- **Belang van transparantie**: Techbedrijven moeten data en algoritmische wijzigingen openbaar maken.
 
-### AI en Democratie
+### Gedragsinterventies
 
-- **AI-systemen** kunnen helpen bij het verbeteren van democratisch debat. Een studie toont aan dat een chatbot mensen kan helpen om beter begrip te tonen voor andere standpunten zonder hun eigen mening te veranderen.
+- **Ontvolgen van hyperpartijdige influencers** (Rathje et al., 2024):
+  - Vermindert animositeit tegenover andere partijen met 23,5%.
+  - Verbetert nieuwsnauwkeurigheid en tevredenheid over feeds.
 
-## 2.5 Gevaren van Big Tech
+## 2.4 AI en Democratie: Kansen en Risico’s
 
-- Sociale mediabedrijven beheersen niet alleen de toegang tot gegevens voor onderzoekers, maar kunnen ook experimenten manipuleren door hun algoritmes aan te passen.
+### Drie Uitdagingen
 
-## 2.6 Toekomstige Uitdagingen voor Democratie
+1. **Epistemisch**: Belemmering van geïnformeerde keuzes (bv. desinformatie).
+2. **Materieel**: Impact op verkiezingsprocedures (bv. deepfakes).
+3. **Fundamenteel**: Ondermijning van democratische principes.
 
-- **Epistemische uitdagingen**: De mogelijkheid voor burgers om geïnformeerde keuzes te maken.
-- **Materiële uitdagingen**: Democratische procedures kunnen worden beïnvloed door technologie.
-- **Fundamentele uitdagingen**: Democratische principes kunnen onder druk komen te staan door technologische ontwikkelingen zoals AI.
+### Potentiële Toepassingen
+
+- **Chatbots voor democratisch debat** (Argyle et al., 2023):
+  - Herformuleren van berichten verbetert wederzijds begrip, zonder mening te veranderen.
+- **Stemtesten met AI**: Verhoogt toegankelijkheid, maar risico op partijdigheid (bv. rechtse chatbots als tegenreactie).
+
+## 2.5 Toekomstperspectieven
+
+### Beleidsaanbevelingen
+
+- **Regulering techbedrijven**: Verplichte datatoegang voor onderzoekers.
+- **Technologie-ontwerp**: AI-systemen ontwerpen die democratische waarden ondersteunen.
+- **Burgerschapseducatie**: Mediawijsheid en kritisch denken bevorderen.
+
+### Belangrijke Studies en Evenementen
+
+- **Podcasts (zelfstudie)**: Wisselwerking media & democratie + AI & democratie.
+- **Q&A met Van den Bulck (30/10)**: Discussie over mediagebruik en verkiezingen in de VS.
+- **Onderzoeksrapporten**: Mediagedrag jongeren en Amerikanen tijdens presidentsverkiezingen.
 
 ---
 
 ## Key Points to Remember
 
-- **Democratie** vereist vrijheid, gelijkheid, participatie en pluralisme.
-- Media spelen een essentiële rol door het bieden van informatie, controle en forum voor meningsvorming.
-- **Platformisering** en **algoritmes** brengen uitdagingen met zich mee, zoals polarisatie en de dominantie van commercie.
-- **Sociale media** versterken vaak polarisatie door het aanbieden van content van gelijkgestemden.
-- **Algoritmische aanpassingen** zoals het verminderen van gelijkgestemde content hebben beperkte impact op het verminderen van polarisatie.
-- **AI** kan potentieel bijdragen aan democratisch debat door begrip te bevorderen tussen verschillende meningen.
-- De invloed van **Big Tech** op democratie en onderzoek naar sociale media moet kritisch bekeken worden.
+- **Mediafuncties**: Informeren, controleren, debat faciliteren. Platformisering bedreigt deze.
+- **Sociale media**: Algoritmes bevorderen gelijkgestemde content, maar directe polarisatie is complex.
+- **Empirische resultaten**:
+  - Ontvolgen van partijdige influencers vermindert polarisatie.
+  - AI-chatbots kunnen respect in debatten verbeteren.
+- **AI-uitdagingen**: Epistemisch, materieel, fundamenteel.
+- **Toekomst**: Combinatie van regulering, transparantie en educatie nodig.
+- **Belangrijke data**: Zelfstudie 23/10, Q&A 30/10.
