@@ -59,6 +59,8 @@
 - Vaste routines opbouwen: lees een boek i.p.v. schermtijd
 - "If-Then"-plannen: "Als het 22:00 uur is, dan start ik mijn slaapritueel"
 
+---
+
 ## Key Points to Remember
 
 - **Zelfcontrole is eindig**: Gebruik overdag (werk, dieet) vermindert 's avonds de weerstand tegen verleidingen.

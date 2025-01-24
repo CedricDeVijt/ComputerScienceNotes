@@ -72,7 +72,9 @@
 - **Transparantiemandaten**: Maak gegevensbronnen, doelstellingen en testprotocollen openbaar.
 - **Mens-in-de-lus-systemen**: Zorg ervoor dat eindbeslissingen (bijv. arrestaties, leningen) door mensen worden beoordeeld.
 
-# 4 Key Points to Remember
+---
+
+## Key Points to Remember
 
 - **Vooroordelen in gezichtsherkenning**: Foutmarges zijn het hoogst voor vrouwen met een donkere huid door niet-representatieve trainingsdata.
 - **Proxydiscriminatie**: Algoritmen gebruiken correlaties (bijv. winkelgedrag, postcodes) om indirect beschermde groepen te targeten.

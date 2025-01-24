@@ -79,6 +79,8 @@
   - Example: A European pen-test company uses an employee-elected committee to resolve ethical dilemmas.
   - Binding decisions to block projects conflicting with societal/personal ethics.
 
+---
+
 ## Key Points to Remember
 
 - **Evolution of Hackers**: From ideology-driven (1960s) to profit/society-driven (modern).

@@ -95,6 +95,8 @@
 - Het vraagstuk of alle efficiënt verifieerbare problemen ook efficiënt oplosbaar zijn, blijft onbewezen.
 - Een doorbraak zou verstrekkende gevolgen hebben voor cryptografie en informatica.
 
+---
+
 ## Key Points to Remember
 
 - Cryptografie evolueerde van elitair gereedschap naar algemene beschermingstechnologie.

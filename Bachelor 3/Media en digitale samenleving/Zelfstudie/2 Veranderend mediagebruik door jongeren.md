@@ -96,6 +96,8 @@
   - **Financiering van publieke media**: Zorg voor toegankelijk, niet-commercieel nieuws (bijv. NOS).
   - **Regulering van algoritmes**: Zorg voor eerlijkheid in contentdistributie.
 
+---
+
 ## Key Points to Remember
 
 - **Platformdominantie**: 71% van de jongeren checkt sociale media voor nieuws vs. 44% van 35+.

@@ -55,6 +55,8 @@
 - **Hogere sociale klassen**: Streven naar expressieve individualiteit (bijv. unieke persoonlijkheid tonen).
 - **Lagere sociale klassen**: Blijven gericht op traditionele "perfecte plaatjes".
 
+---
+
 ## Key Points to Remember
 
 - **Kortetermijneffecten**: Emotionele staat bepaalt reactie op sociale media (negatieve vergelijking vs. inspiratie).

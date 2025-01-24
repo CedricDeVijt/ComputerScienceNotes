@@ -52,6 +52,8 @@
 - **Historisch succes**: Journalistiek bloeide toen het verbonden was met democratische bewegingen.
 - **Moderne mislukkingen**: Commercialisering en staatscontrole ondermijnen democratische idealen.
 
+---
+
 ## Key Points to Remember
 
 - **Historische wortels**: Journalistiek ontstond als tegenkracht tegen monarchie en werd vastgelegd in democratische grondwetten.

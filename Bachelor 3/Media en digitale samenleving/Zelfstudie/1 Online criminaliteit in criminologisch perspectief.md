@@ -71,6 +71,8 @@
 - **Aanpassing**: Reageer op nieuwe vormen van criminaliteit (bijv. AI-gedreven aanvallen, social engineering).
 - **Beleidsintegratie**: Bevorder cyberweerbaarheidskaders en samenwerking tussen sectoren.
 
+---
+
 ## Key Points to Remember
 
 - **Daders**: Longitudinale studies tonen IT-begaafde jongeren en hybride online/offline criminele carrières. Preventie vereist maatwerkinterventies (bijv. Hack_Right).
