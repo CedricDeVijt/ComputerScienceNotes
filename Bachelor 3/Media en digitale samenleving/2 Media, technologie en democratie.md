@@ -66,11 +66,6 @@
 - **Technologie-ontwerp**: AI-systemen ontwerpen die democratische waarden ondersteunen.
 - **Burgerschapseducatie**: Mediawijsheid en kritisch denken bevorderen.
 
-### Belangrijke Studies en Evenementen
-
-- **Podcasts (zelfstudie)**: Wisselwerking media & democratie + AI & democratie.
-- **Q&A met Van den Bulck (30/10)**: Discussie over mediagebruik en verkiezingen in de VS.
-- **Onderzoeksrapporten**: Mediagedrag jongeren en Amerikanen tijdens presidentsverkiezingen.
 
 ---
 
