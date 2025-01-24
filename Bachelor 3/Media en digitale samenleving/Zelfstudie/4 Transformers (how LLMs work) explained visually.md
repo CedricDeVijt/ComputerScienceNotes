@@ -63,8 +63,8 @@
 
 - Words mapped to points in 12,288D space
 - Semantic relationships emerge through vector positions:
-  - Gender: woman - man ≈ queen - king
-  - Nationality: Italy - Germany + Hitler ≈ Mussolini
+  - Gender: woman - man $\approx$ queen - king
+  - Nationality: Italy - Germany + Hitler $\approx$ Mussolini
   - Plurality: cats - cat direction encodes number
 
 ### Dot Product Analysis
