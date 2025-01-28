@@ -1,0 +1,10 @@
+[book]
+title = "University Notes"
+authors = ["Cedric De Vijt"]
+language = "en"
+multilingual = false
+src = "."
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
