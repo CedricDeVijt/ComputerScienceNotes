@@ -1,100 +1,93 @@
-# 3 **Elementaire Statistiek**
+# 3 Steekproefgemiddelde en Centrale Limietstelling
 
-## 3.1 **Hoofdstuk 1: Het Schatten van Parameters**
+## 3.1 Definitie en Eigenschappen van het Steekproefgemiddelde
 
-### **1.1 Inleiding**
+- **Steekproefgemiddelde**: Een schatter voor het populatiegemiddelde, gedefinieerd als:
+  $$
+  \overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i
+  $$
+  waarbij $X_1, \ldots, X_n$ onafhankelijke en identiek verdeelde (i.i.d.) stochastische variabelen zijn.
+- **Verwachting**:
+  $$
+  \mathrm{E}[\overline{X}_n] = \mathrm{E}[X_1] = \mu
+  $$
+- **Variantie**:
+  $$
+  \mathrm{Var}[\overline{X}_n] = \frac{\sigma^2}{n}
+  $$
 
-Statistische modellen bevatten vaak onbekende parameters zoals:
+## 3.2 Verdeling van het Steekproefgemiddelde
 
-- **µ en σ²** in het normale model
-- **α** in het Poisson model
-- **p** in het binomiale model
+- Voor **normaal verdeelde populaties** ($X_i \sim \mathcal{N}(\mu, \sigma^2)$):
+  $$
+  \overline{X}\_n \sim \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right)
+  $$
+- Voor niet-normale populaties benadert de verdeling van $\overline{X}\_n$ een normale verdeling voor grote $n$ (zie CLT).
 
-Deze parameters worden geschat aan de hand van steekproeven. In dit hoofdstuk behandelen we:
+## 3.3 Centrale Limietstelling (CLT)
 
-1. Het verkrijgen van schattingen uit steekproeven
-2. De betrouwbaarheid van deze schattingen
+- **Voorwaarden**:
+  - $X_1, X_2, \ldots$ zijn i.i.d. met $\mathrm{E}[X_i] = \mu$ en $\mathrm{Var}[X_i] = \sigma^2 < \infty$.
+- **Resultaat**:
+  $$
+  \frac{\sqrt{n}(\overline{X}\_n - \mu)}{\sigma} \xrightarrow{D} \mathcal{N}(0,1) \quad \text{als } n \rightarrow \infty
+  $$
+- **Implicatie**:
+  $$
+  \overline{X}\_n \approx \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right) \quad \text{voor grote } n
+  $$
 
-### **1.2 Steekproefgemiddelde als Schatter**
+# 3 Puntschatters en hun Eigenschappen
 
-Het **steekproefgemiddelde (X̄n)** is een schatting van het **populatiegemiddelde (E[X])**. Omdat het afhankelijk is van de steekproef, is het een **stochastische veranderlijke (s.v.)**.
+## 3.4 Definitie van Schatters en Statistieken
 
-Formules:
+- **Statistiek**: Een functie van de steekproef ($T(X_1, \ldots, X_n)$) die geen afhankelijkheid heeft van onbekende parameters.
+- **Schatter**: Een statistiek gebruikt om een parameter $\theta$ te schatten.
+- **Schatting**: De concrete waarde van een schatter voor een gegeven steekproef.
 
-- **Steekproefgemiddelde (X̄n):**
-  $$X̄n = \frac{1}{n} \sum\_{i=1}^{n} X_i$$
-- **Verwachtingswaarde:**
-  $$E[X̄n] = E[X]$$
-- **Variantie:**
-  $$Var[X̄n] = \frac{σ²}{n}$$
-  Dit betekent dat een grotere steekproef leidt tot een kleinere variantie.
+## 3.5 Eigenschappen van Schatters
 
-### **1.3 Centrale Limietstelling (CLS)**
+1. **Zuiverheid (Onvertekendheid)**:
+   $$
+   \mathrm{E}[T] = \theta \quad \forall \theta
+   $$
+   - Voorbeeld: $\overline{X}\_n$ is zuiver voor $\mu$.
+2. **Mean Squared Error (MSE)**:
+   $$
+   \mathrm{MSE}(T) = (\text{bias}(T))^2 + \mathrm{Var}(T)
+   $$
+   - Voor zuivere schatters: $\mathrm{MSE}(T) = \mathrm{Var}(T)$.
 
-De CLS stelt dat als **X1, X2, ..., Xn** onafhankelijke en identiek verdeelde s.v. zijn, dan geldt:
+## 3.6 Schatten van Parameters in Normale Verdeling
 
-- Voor voldoende grote n:
-  $$X̄n \approx N(µ, \frac{σ²}{n})$$
-- Voor de gestandaardiseerde som:
-  $$\frac{X̄n - µ}{σ / \sqrt{n}} \approx N(0,1)$$
-  Dit impliceert dat de verdeling van het gemiddelde voor grote steekproeven naar een normale verdeling neigt.
+- **Populatiegemiddelde $\mu$**:
+  - Zuivere schatter: $\overline{X}\_n$.
+  - MSE: $\frac{\sigma^2}{n}$.
+  - Optimale schatter onder normaliteit (kleinste variantie).
+- **Populatievariantie $\sigma^2$**:
+  - Zuivere schatter:
+    $$
+    S^2 = \frac{1}{n-1} \sum\_{i=1}^n (X_i - \overline{X}\_n)^2
+    $$
+  - Verdeling: $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2\_{n-1}$ (Helmert's stelling).
 
-## 3.2 **Hoofdstuk 2: Puntschatters**
+## 3.7 Schatten van Proporties (Bernoulli Verdeling)
 
-### **2.1 Wat is een Schatter?**
+- **Proportie $p$**:
+  $$
+  \widehat{P} = \overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i \quad (X_i \sim \text{Bernoulli}(p))
+  $$
+- **Eigenschappen**:
+  $$
+  \mathrm{E}[\widehat{P}] = p, \quad \mathrm{Var}[\widehat{P}] = \frac{p(1-p)}{n}
+  $$
+- Voor grote $n$: $\widehat{P} \approx \mathcal{N}\left(p, \frac{p(1-p)}{n}\right)$.
 
-Een **schatter** is een functie van een steekproef die een onbekende parameter **θ** benadert. Formeel:
+## Key Points to Remember
 
-- **Definitie:** Een schatter T is een toevalsveranderlijke die alleen afhangt van de steekproef en niet van de onbekende parameter θ.
-
-**Voorbeeld:**
-
-- Steekproefgemiddelde $X̄n$ is een schatter voor $µ$
-- Steekproefmediaan kan ook een schatter voor $µ$ zijn
-
-### **2.2 Eigenschappen van een Goede Schatter**
-
-Een goede schatter heeft de volgende eigenschappen:
-
-- **Onvertekendheid (unbiasedness):**
-  $$E[T] = θ$$
-  Dit betekent dat de schatter gemiddeld genomen de juiste waarde geeft.
-- **Minimale variantie:** De schatter moet zo min mogelijk spreiding hebben.
-- **Mean Squared Error (MSE):**
-  $$MSE(T) = Var(T) + (Bias(T))²$$
-  Een schatter met lage MSE is beter.
-
-### **2.3 Schatten van de Parameters van een Normale Verdeling**
-
-Voor een normale populatie N(µ, σ²) worden de volgende schatters gebruikt:
-
-- **Steekproefgemiddelde:**
-  $$X̄n = \frac{1}{n} \sum\_{i=1}^{n} X_i$$
-  Dit is een onvertekende schatter van **µ**.
-- **Steekproefvariantie:**
-  $$S² = \frac{1}{n-1} \sum\_{i=1}^{n} (X_i - X̄n)²$$
-  Dit is een onvertekende schatter van **σ²**.
-
-**Opmerking:** X̄n en S² zijn onafhankelijk volgens de **Stelling van Helmert**.
-
-### **2.4 Schatten van Proporties**
-
-Voor een rij onafhankelijke Bernoulli-variabelen met succes-kans **p** wordt **p** geschat met:
-
-- **Relatieve frequentie:**
-  $$\hat{P} = \frac{1}{n} \sum\_{i=1}^{n} X_i$$
-  Dit is een onvertekende schatter van **p**.
-- **Variantie:**
-  $$Var(\hat{P}) = \frac{p(1-p)}{n}$$
-  Hoe groter **n**, hoe kleiner de variantie.
-
-**Benadering met de Centrale Limietstelling:**
-$$\frac{\hat{P} - p}{\sqrt{p(1-p)/n}} \approx N(0,1)$$
-
-## 3.3 **Belangrijkste Kernpunten**
-
-- **Steekproefgemiddelde (X̄n) is een schatter voor populatiegemiddelde (µ).**
-- **CLS: Voor grote n wordt het gemiddelde normaal verdeeld.**
-- **Een goede schatter is onvertekend, heeft minimale variantie en lage MSE.**
-- **Voor een normale populatie is X̄n de beste schatter van µ en S² de beste schatter van σ².**
-- **Bij Bernoulli-variabelen is $\hat{P}$ een schatter voor de kans p.**
+- Het **steekproefgemiddelde** $\overline{X}\_n$ is een zuivere schatter voor $\mu$ met variantie $\sigma^2/n$.
+- De **Centrale Limietstelling** stelt dat $\overline{X}\_n$ normaal verdeeld is voor grote $n$, ongeacht de oorspronkelijke verdeling.
+- **Zuivere schatters** hebben een bias van 0; de variantie bepaalt hun nauwkeurigheid.
+- **MSE** combineert bias en variantie: $\mathrm{MSE} = \text{bias}^2 + \mathrm{Var}$.
+- Voor $\sigma^2$ gebruik je $S^2 = \frac{1}{n-1} \sum (X_i - \overline{X}\_n)^2$ om zuiverheid te garanderen.
+- Proporties worden geschat met $\widehat{P}$, dat normaal benaderd wordt voor grote steekproeven.
