@@ -13,13 +13,6 @@
 
 ![[Pasted image 20250214111039.png]]
 
-### Exercises & Applications
-
-1. **Sort adjacency lists** in $O(|V| + |E|)$.
-2. **Reverse edges** of a directed graph in $O(|V| + |E|)$.
-3. **Interpret $\frac{1}{6} \sum (A^3)_{ii}$** as the number of triangles in an undirected graph.
-4. **Find universal sinks** (vertices with $|V|-1$ incoming edges, 0 outgoing) in $O(|V|)$.
-
 ## 1.2 Breadth-First Search (BFS)
 
 ### Algorithm Overview
