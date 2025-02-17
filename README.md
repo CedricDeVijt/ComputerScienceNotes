@@ -7,7 +7,9 @@
 - [[Algorithms and complexity]]: 1001WETALC
 - [[Compilers]]: 1001WETCOP
 - [[Computer Networks]]: 1001WETCON
+- [[Elementaire statistieken]]
 - Linear algebra: 1500WETLAL
+- [[Numerieke analyse]]
 - Machines en berekenbaarheid: 1001WETMAB
 - [[Operating Systems]]: 1500WETOPS
 ## Bachelor 3
