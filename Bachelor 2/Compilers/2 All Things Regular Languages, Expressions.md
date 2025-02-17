@@ -4,9 +4,9 @@
 
 - A language $L$ is **regular** iff it can be defined recursively using:
   - Base cases: $\emptyset$, $\{\epsilon\}$, or $\{a\}$ for $a \in \Sigma$.
-  - Operations: Union ($L_1 \cup L_2$), concatenation ($L_1 \cdot L_2$), Kleene closure ($L_1^\*$).
+  - Operations: Union ($L_1 \cup L_2$), concatenation ($L_1 \cdot L_2$), Kleene closure ($L_1^*$).
 - **Examples**:
-  - All binary words ($\{0,1\}^\*$).
+  - All binary words ($\{0,1\}^*$).
   - Finite languages (e.g., $\{\text{abc}, \text{def}\}$).
   - Non-regular languages: Well-parenthesized strings (require unbounded counting).
 
@@ -21,11 +21,11 @@
 
 - **Syntax**:
   - Base: $\phi$ (empty), $\epsilon$, $a \in \Sigma$.
-  - Operators: $+$ (union), $\cdot$ (concatenation), $\*$ (Kleene star).
+  - Operators: $+$ (union), $\cdot$ (concatenation), $*$ (Kleene star).
 - **Semantics**:
   - $L(r_1 + r_2) = L(r_1) \cup L(r_2)$.
   - $L(r_1 \cdot r_2) = L(r_1) \cdot L(r_2)$.
-  - $L(r^_) = (L(r))^_$.
+  - $L(r) = (L(r))$.
 
 ### Extended Regular Expressions (ERE)
 
