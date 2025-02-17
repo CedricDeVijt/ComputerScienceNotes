@@ -12,26 +12,26 @@
 
 ### Basic Definitions
 
-- **Alphabet (Σ)**: Finite set of symbols (e.g., `{a, b}`, `{0, 1}`).
-- **Word**: Finite sequence of symbols from Σ (e.g., `abba`, `101`). The empty word is denoted `ε`.
-- **Language**: Set of words over Σ. Examples:
-  - `L_Cid`: Valid C identifiers (e.g., `sum`, not starting with digits).
-  - `L_odd`: Binary numbers ending with `1` (odd numbers).
+- **Alphabet (Σ)**: Finite set of symbols (e.g., ${a, b}$, ${0, 1}$).
+- **Word**: Finite sequence of symbols from Σ (e.g., `abba`, `101`). The empty word is denoted $ε$.
+- **Language**: Set of words over $\Sigma$. Examples:
+  - $L_{Cid}$: Valid C identifiers (e.g., `sum`, not starting with digits).
+  - $L_{odd}$: Binary numbers ending with $1$ (odd numbers).
   - **Dyck Language**: Well-parenthesized strings (e.g., `(())`, but not `)(`).
 
 ### The Membership Problem
 
-- **Problem**: Determine if a word `w` belongs to a language `L`.
+- **Problem**: Determine if a word $w$ belongs to a language $L$.
 - **Applications**:
-  - Validate C identifiers (`L_Cid`).
-  - Check syntax of expressions (`L_alg`).
-  - Detect terminating programs (`L_Cterm` – proven undecidable via the Halting Problem).
+  - Validate C identifiers ($L_{Cid}$).
+  - Check syntax of expressions ($L_{alg}$).
+  - Detect terminating programs ($L_{Cterm}$ – proven undecidable via the Halting Problem).
 
 ## 1.2 Formal Languages and Automata
 
 ### Language Classes
 
-- **Regular Languages**: Recognizable by finite automata with limited memory. Examples: `L_Cid`, `L_odd`.
+- **Regular Languages**: Recognizable by finite automata with limited memory. Examples: $L_{Cid}$, $L_{odd}$.
 - **Context-Free Languages**: Require unbounded memory (e.g., stacks). Example: Dyck language (`L_()`).
 
 ### Lexical Analysis (Scanning)
@@ -44,7 +44,7 @@
 
 - **Abstract Syntax Tree (AST)**: Hierarchical representation of code structure.
 - **Scoping**: Managed via nested symbol tables. Example:
-  - Global variable `i` vs. local `i` in a function.
+  - Global variable $i$ vs. local $i$ in a function.
 - **Grammar**: Specifies syntax rules (e.g., BNF for expressions).
 
 ## 1.3 Compiler Design Phases
@@ -84,15 +84,15 @@
 
 ### Word Operations
 
-- **Concatenation**: `w · v` (e.g., `aa · bb = aabb`).
-- **Exponentiation**: `w^n` (e.g., `a^3 = aaa`).
+- **Concatenation**: $w · v$ (e.g., `aa · bb = aabb`).
+- **Exponentiation**: $w^n$ (e.g., `a^3 = aaa`).
 
 ### Language Operations
 
-- **Concatenation**: `L₁ · L₂ = {w₁w₂ | w₁ ∈ L₁, w₂ ∈ L₂}`.
-- **Kleene Closure**: `L*` (all concatenations of 0+ words from `L`).
-  - Example: `{a}* = {ε, a, aa, ...}`.
-- **Positive Closure**: `L+` (excludes `ε` unless `L` contains it).
+- **Concatenation**: $L_1 · L_2 = \{w_1w_2 | w_1 \in L_1, w_2 \in L_2\}$.
+- **Kleene Closure**: $L*$ (all concatenations of 0+ words from $L$).
+  - Example: $\{a\}* = \{\epsilon, a, aa, ... \}$.
+  - **Positive Closure**: $L+$ (excludes $ε$ unless $L$ contains it).
 
 ---
 
@@ -107,5 +107,5 @@
   - **Semantic Analysis**: Type/scope checks.
   - **Synthesis**: Optimizes and generates code.
 - **Membership Problem**: Undecidable for semantic criteria (e.g., program termination).
-- **Language Operations**: Concatenation, Kleene star (`L*`), and closures.
+- **Language Operations**: Concatenation, Kleene star ($L*$), and closures.
 - **Intermediate Languages**: Simplify code generation (e.g., LLVM IR).
