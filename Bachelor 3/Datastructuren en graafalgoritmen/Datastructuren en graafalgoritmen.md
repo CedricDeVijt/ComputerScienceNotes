@@ -1,0 +1,7 @@
+[[1 Graph Searching]]
+[[2 Flow Networks]]
+[[3 Bipartite Matching Algorithms]]
+[[4 Disjoint-sets Data Structures]]
+[[5 Spanning Trees]]
+[[6 Fibonacci Heaps]]
+[[7 Shortest Path Problems]]
