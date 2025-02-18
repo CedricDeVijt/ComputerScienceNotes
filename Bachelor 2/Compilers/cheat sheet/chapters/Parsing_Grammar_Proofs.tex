@@ -1,0 +1,46 @@
+\section{Parsing Grammar Proofs}
+
+\subsection{LL(k) Proof}
+A grammar is \textbf{LL(k)} if:
+\begin{enumerate}
+  \item No left recursion exists.
+  \item For every non-terminal \(A\) with productions \(A \to \alpha \mid \beta\):
+  \[
+  \text{FIRST}_k(\alpha \cdot \text{FOLLOW}_k(A)) \cap \text{FIRST}_k(\beta \cdot \text{FOLLOW}_k(A)) = \emptyset
+  \]
+  (If \(\alpha\)/\(\beta\) can derive \(\epsilon\), include \(\text{FOLLOW}_k(A)\).)
+\end{enumerate}
+
+\subsection{SLR(k) Proof}
+A grammar is \textbf{SLR(k)} if:
+\begin{enumerate}
+  \item Construct SLR(1) states (LR(0) items + \text{FOLLOW} for reduce actions).
+  \item No \textit{shift-reduce} or \textit{reduce-reduce} conflicts in the parsing table.
+  \item Conflicts tested using \text{FOLLOW} sets (not lookaheads).
+\end{enumerate}
+
+\subsection{LR(k) Proof}
+A grammar is \textbf{LR(k)} if:
+\begin{enumerate}
+  \item Construct canonical LR(k) states (with full lookaheads).
+  \item No conflicts in the parsing table (even with precise lookaheads).
+\end{enumerate}
+
+\subsection{LALR(k) Proof}
+A grammar is \textbf{LALR(k)} if:
+\begin{enumerate}
+  \item Merge LR(1) states with identical \textit{cores} (same productions, different lookaheads).
+  \item Ensure no conflicts arise after merging (common in practice but weaker than LR).
+\end{enumerate}
+
+\subsubsection*{Hierarchy}
+\[
+\text{SLR} \subset \text{LALR} \subset \text{LR}, \quad \text{LL} \subset \text{CFG (non-overlapping)}
+\]
+
+
+\textbf{Key Notes}:
+- For \textbf{LL(k)}: Compute \(\text{FIRST}_k\) and \(\text{FOLLOW}_k\) rigorously.
+- For \textbf{SLR}: Conflicts = overlap between shift terminals and \(\text{FOLLOW}\) of reduced non-terminal.
+- \textbf{LALR} merges LR(1) states; conflicts here imply not LALR but might still be LR.
+- \textbf{Left recursion} invalidates LL(k); \textbf{ambiguity} invalidates all.
