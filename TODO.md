@@ -20,7 +20,7 @@
 
 ## Datastructuren en graafalgoritmen
 
-- [ ] 1 Graph Searching
+- [ ] ==1 Graph Searching==
 - [ ] 2 Flow Networks
 - [ ] 3 Bipartite Matching Algorithms
 - [ ] 4 Disjoint-sets Data Structures
@@ -34,10 +34,10 @@
 
 ## Elementaire statistiek
 
-- [ ] 1 Belangrijke verdelingen
-- [ ] 2 Beschrijvende statistiek
-- [ ] 3 Het schatten van parameters
-- [ ] 4 Intervalschattingen
+- [ ] ==1 Belangrijke verdelingen==
+- [ ] ==2 Beschrijvende statistiek==
+- [ ] ==3 Het schatten van parameters==
+- [ ] ==4 Intervalschattingen==
 - [ ] 5 Hypothesetesten
 - [ ] 6 Vergelijkingstesten
 - [ ] 7 Verdelingstoetsen
@@ -46,7 +46,7 @@
 
 ## Numerieke analyse
 
-- [ ] 1 Inleiding
+- [ ] ==1 Inleiding==
 - [ ] 2 Niet-lineaire vergelijkingen
 - [ ] 3 Interpolatie
 - [ ] 4 Numerieke integratie

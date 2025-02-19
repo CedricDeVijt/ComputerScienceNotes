@@ -7,20 +7,20 @@
 - [[Algorithms and complexity]]: 1001WETALC
 - [[Compilers]]: 1001WETCOP
 - [[Computer Networks]]: 1001WETCON
-- [[Elementaire statistieken]]
+- [[Elementaire statistieken]]: 1001WETEST
 - Linear algebra: 1500WETLAL
-- [[Numerieke analyse]]
+- [[Numerieke analyse]]: 1001WETNAN
 - Machines en berekenbaarheid: 1001WETMAB
 - [[Operating Systems]]: 1500WETOPS
 ## Bachelor 3
 - [[Artificial Inteligence]]: 1500WETAIN
-- [[Datastructuren en graafalgoritmen]]
+- [[Datastructuren en graafalgoritmen]]: 1500WETDGR
 - [[Software engineering]]: 1001WETSEN
 
 ## Korf Vakken
 - [[Media en digitale samenleving]]: 1006CPGVKA
 
-## Get same summaries with chatGPT
+## Get same summaries with chatGPT or Deepseek
 Use the follwing prompt:
 
 ```
