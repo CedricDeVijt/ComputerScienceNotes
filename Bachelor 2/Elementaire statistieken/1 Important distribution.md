@@ -51,15 +51,15 @@
 
 ### Poisson Distribution
 
-- **Definition**: Models the number of events in a fixed interval with rate $\alpha$.
+- **Definition**: Models the number of events in a fixed interval with rate $\lambda$.
 - **PMF**:
   $$
-  P(X = j) = \frac{\alpha^j}{j!} e^{-\alpha}, \quad j = 0, 1, 2, \ldots
+  P(X = k) = \frac{e^{-\lambda}\lambda^k}{j!} , \quad k = 0, 1, 2, \ldots
   $$
-- **Notation**: $X \sim \mathcal{P}(\alpha)$
-- **Expectation**: $E[X] = \alpha$
-- **Variance**: $\text{Var}[X] = \alpha$
-- **Additivity**: If $X_1 \sim \mathcal{P}(\alpha_1)$ and $X_2 \sim \mathcal{P}(\alpha_2)$ are independent, then $X_1 + X_2 \sim \mathcal{P}(\alpha_1 + \alpha_2)$.
+- **Notation**: $X \sim \mathcal{P}(\lambda)$
+- **Expectation**: $E[X] = \lambda$
+- **Variance**: $\text{Var}[X] = \lambda$
+- **Additivity**: If $X_1 \sim \mathcal{P}(\lambda_1)$ and $X_2 \sim \mathcal{P}(\lambda_2)$ are independent, then $X_1 + X_2 \sim \mathcal{P}(\lambda_1 + \lambda_2)$.
 
 ## 1.2 Continuous Univariate Distributions
 

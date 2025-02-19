@@ -1,5 +1,3 @@
-# 5 **Hypothesetesten**
-
 ## 5.1 **Hoofdstuk 1: Inleiding tot Hypothesetesten**
 
 ### **1.1 Wat is een Hypothesetest?**

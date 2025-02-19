@@ -1,5 +1,3 @@
-# 4 **Intervalschattingen**
-
 ## 4.1 **Hoofdstuk 1: Betrouwbaarheidsintervallen**
 
 ### **1.1 Inleiding**

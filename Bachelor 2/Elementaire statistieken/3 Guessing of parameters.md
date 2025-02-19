@@ -1,5 +1,3 @@
-# 3 Steekproefgemiddelde en Centrale Limietstelling
-
 ## 3.1 Definitie en Eigenschappen van het Steekproefgemiddelde
 
 - **Steekproefgemiddelde**: Een schatter voor het populatiegemiddelde, gedefinieerd als:
