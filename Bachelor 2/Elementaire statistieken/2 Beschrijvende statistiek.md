@@ -21,32 +21,32 @@
 
 ### Frequentietabellen en Staafdiagrammen
 
-- **Absolute frequentie** (`nj`): Aantal observaties per categorie.
-- **Relatieve frequentie** (`hj = nj/n`): Proportie per categorie.
+- **Absolute frequentie** ($nj$): Aantal observaties per categorie.
+- **Relatieve frequentie** ($hj = nj/n$): Proportie per categorie.
 - **Voorbeeld**: 60 steden verdeeld over 5 regio’s met relatieve frequenties in een staafdiagram.
 
 ### Histogrammen voor Kwantitatieve Data
 
 - **Klassenindeling**: Groepeer data in intervallen (bijv. snelheden in klassen van 5 km/u).
-- **Klassenmidden** (`cj`): Middenpunt van elk interval.
-- **Dichtheidshistogram**: Hoogte = `hj / klassebreedte` om vertekening bij ongelijke breedtes tegen te gaan.
+- **Klassenmidden** ($cj$): Middenpunt van elk interval.
+- **Dichtheidshistogram**: Hoogte = $hj / klassebreedte$ om vertekening bij ongelijke breedtes tegen te gaan.
 
 ## 2.4 Centrum- en Spreidingsmaten
 
 ### Centrummaten
 
-1. **Gemiddelde** (`x̄`):
-   `x̄ = (Σxi) / n` of `x̄ = (Σnjcj) / n` voor gegroepeerde data.
-2. **Mediaan**: Middelste waarde na ordening; bij even `n`: gemiddelde van twee middelste waarden.
+1. **Gemiddelde** ($x̄$):
+   $x̄ = (Σxi) / n$ of $x̄ = (Σnjcj) / n$ voor gegroepeerde data.
+2. **Mediaan**: Middelste waarde na ordening; bij even $n$: gemiddelde van twee middelste waarden.
 3. **Modus**: Meest voorkomende waarde of klasse (modale klasse).
 
 ### Spreidingsmaten
 
-1. **Variantie** (`s²`):
-   `s² = Σ(xi - x̄)² / (n-1)` voor ruwe data; `Σnj(cj - x̄)² / (n-1)` voor gegroepeerde data.
-2. **Standaardafwijking** (`s`): `s = √s²`.
+1. **Variantie** ($s^2$):
+   $s^2 = Σ(xi - x̄)^2 / (n-1)$ voor ruwe data; $Σnj(cj - x̄)^2 / (n-1)$ voor gegroepeerde data.
+2. **Standaardafwijking** ($s$): $s = \sqrt{s^2}$.
 3. **Interkwartielafstand (IQR)**:
-   `IQR = Q3 - Q1` (verschil tussen 75e en 25e percentiel).
+   $IQR = Q3 - Q1$ (verschil tussen 75e en 25e percentiel).
 4. **MAD**: Mediaan van absolute afwijkingen t.o.v. mediaan.
 
 ## 2.5 Grafische Technieken voor Data-analyse
@@ -54,13 +54,13 @@
 ### Boxplot (Tukey, 1977)
 
 - Visualiseert mediaan, kwartielen, IQR en uitschieters.
-- **Uitschieters**: Waarnemingen buiten `[Q1 - 1.5×IQR, Q3 + 1.5×IQR]`.
+- **Uitschieters**: Waarnemingen buiten $[Q1 - 1.5×IQR, Q3 + 1.5×IQR]$.
 - **Interpretatie**: Symmetrie, staartgedrag en spreiding.
 
 ### Scatterplot en Correlatie
 
 - **Scatterplot**: Toont verband tussen twee kwantitatieve variabelen.
-- **Pearson-correlatie** (`r`): Meet lineair verband (-1 ≤ `r` ≤ 1).
+- **Pearson-correlatie** ($r$): Meet lineair verband (-1 ≤ $r$ ≤ 1).
 
 ### Kruistabellen voor Kwalitatieve Data
 
