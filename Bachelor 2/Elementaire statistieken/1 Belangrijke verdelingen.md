@@ -80,7 +80,9 @@
 - **Definitie**: Verhouding van twee chi-kwadraat verdeelde variabelen. Notatie: $X \sim F\_{m,n}$.
 - **Eigenschap**: $F*{m,n}(x) = 1 - F*{n,m}(\frac{1}{x})$.
 
-## 1.3 Belangrijkste Punten om te Onthouden
+---
+
+## Key Points to Remember
 
 - **Discrete Verdelingen**:
   - Uniform: Gelijkmatige kansen over eindige uitkomsten.

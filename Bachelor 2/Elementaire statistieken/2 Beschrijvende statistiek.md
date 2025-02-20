@@ -1,118 +1,84 @@
-## 2.1 Introduction to Descriptive Statistics
+## 2.1 Inleiding tot Beschrijvende Statistiek en EDA
 
-- **Purpose**: Summarize and visualize data using numerical measures and graphical representations.
-- **Exploratory Data Analysis (EDA)**: Identifies patterns and structures using computer-generated plots (e.g., boxplots, QQ-plots).
-- **Population vs. Sample**:
-  - **Population**: Complete set of data (e.g., all UN-recognized states).
-  - **Sample**: Subset of the population (size $n$) used for analysis. Samples must be representative.
+- **Beschrijvende statistiek**: Richt zich op het samenvatten en visueel weergeven van gegevens via tabellen en grafieken (bijv. histogrammen, staafdiagrammen).
+- **Exploratieve Data Analyse (EDA)**: Moderne methode (sinds 1970) om patronen en structuren te detecteren met computergestuurde visualisaties (QQ-plot, boxplot).
+  Divisionele focus: Analyseert steekproeven uit populaties vanwege praktische beperkingen (tijd, kosten, onmogelijkheid om volledige populaties te meten).
 
-## 2.2 Variable Types
+## 2.2 Typen Variabelen en Dataverzameling
 
-### Qualitative Variables
+### Kwalitatieve Variabelen
 
-- **Nominal**: Categories without order (e.g., gender, nationality).
-- **Ordinal**: Categories with order but no meaningful arithmetic (e.g., education level, rankings).
+- **Nominale variabelen**: Categorieën zonder rangorde (bijv. geslacht, nationaliteit).
+- **Ordinale variabelen**: Categorieën met rangorde (bijv. opleidingsniveau, productkwaliteit).
 
-### Quantitative Variables
+### Kwantitatieve Variabelen
 
-- **Discrete**: Finite/infinite numerical values (e.g., number of children).
-- **Continuous**: Measurable numerical values (e.g., height, speed).
+- Numerieke waarden waarvoor rekenkundige bewerkingen zinvol zijn (bijv. leeftijd, snelheid).
+- **Continu**: Oneindig aantal mogelijke waarden (bijv. lengte).
+- **Discreet**: Eindige of telbare waarden (bijv. aantal kinderen).
 
-## 2.3 Frequency Distributions
+## 2.3 Frequentieverdelingen en Grafische Voorstellingen
 
-### Frequency Tables and Bar Charts
+### Frequentietabellen en Staafdiagrammen
 
-- **Absolute Frequency ($n_j$)**: Count of observations in category $j$.
-- **Relative Frequency ($h_j$)**: $h_j = \frac{n_j}{n}$, where $n = \text{total observations}$.
-- **Graphical Representations**:
-  - **Bar Chart**: Height = frequency.
-  - **Pie Chart**: Proportions via angles.
+- **Absolute frequentie** (`nj`): Aantal observaties per categorie.
+- **Relatieve frequentie** (`hj = nj/n`): Proportie per categorie.
+- **Voorbeeld**: 60 steden verdeeld over 5 regio’s met relatieve frequenties in een staafdiagram.
 
-### Histograms
+### Histogrammen voor Kwantitatieve Data
 
-- **Classic Histogram**: Equal bin widths; height = frequency.
-- **Density Histogram**: Adjusts for unequal bin widths. Height = $\frac{h_j}{\Delta_j}$ (ensures area = 1).
-- **Cumulative Frequency Polygon**: Plots cumulative percentages against class boundaries.
+- **Klassenindeling**: Groepeer data in intervallen (bijv. snelheden in klassen van 5 km/u).
+- **Klassenmidden** (`cj`): Middenpunt van elk interval.
+- **Dichtheidshistogram**: Hoogte = `hj / klassebreedte` om vertekening bij ongelijke breedtes tegen te gaan.
 
-## 2.4 Measures of Central Tendency
+## 2.4 Centrum- en Spreidingsmaten
 
-### Mean ($\overline{x}$)
+### Centrummaten
 
-- **Ungrouped Data**: $\overline{x} = \frac{1}{n} \sum x_i$.
-- **Grouped Data**: $\overline{x} = \frac{1}{n} \sum n_j c_j$, where $c_j = \text{class midpoint}$.
+1. **Gemiddelde** (`x̄`):
+   `x̄ = (Σxi) / n` of `x̄ = (Σnjcj) / n` voor gegroepeerde data.
+2. **Mediaan**: Middelste waarde na ordening; bij even `n`: gemiddelde van twee middelste waarden.
+3. **Modus**: Meest voorkomende waarde of klasse (modale klasse).
 
-### Median
+### Spreidingsmaten
 
-- **Ungrouped Data**: Middle value (or average of two middle values).
-- **Grouped Data**: Linear interpolation using cumulative frequencies:
-  $\text{Median} = L + \left(\frac{50\% - F}{f}\right) \times \Delta$,
-  where $L$ = lower boundary of median class, $F$ = cumulative frequency before $L$, $f$ = frequency of median class.
+1. **Variantie** (`s²`):
+   `s² = Σ(xi - x̄)² / (n-1)` voor ruwe data; `Σnj(cj - x̄)² / (n-1)` voor gegroepeerde data.
+2. **Standaardafwijking** (`s`): `s = √s²`.
+3. **Interkwartielafstand (IQR)**:
+   `IQR = Q3 - Q1` (verschil tussen 75e en 25e percentiel).
+4. **MAD**: Mediaan van absolute afwijkingen t.o.v. mediaan.
 
-### Mode
+## 2.5 Grafische Technieken voor Data-analyse
 
-- **Modus**: Most frequent value (for raw data).
-- **Modal Class**: Class with highest frequency (for grouped data).
+### Boxplot (Tukey, 1977)
 
-## 2.5 Measures of Spread
+- Visualiseert mediaan, kwartielen, IQR en uitschieters.
+- **Uitschieters**: Waarnemingen buiten `[Q1 - 1.5×IQR, Q3 + 1.5×IQR]`.
+- **Interpretatie**: Symmetrie, staartgedrag en spreiding.
 
-### Variance ($s^2$) and Standard Deviation ($s$)
+### Scatterplot en Correlatie
 
-- **Ungrouped Data**:
-  $s^2 = \frac{1}{n-1} \sum (x_i - \overline{x})^2$, $s = \sqrt{s^2}$.
-- **Grouped Data**:
-  $s^2 = \frac{1}{n-1} \sum n_j (c_j - \overline{x})^2$.
+- **Scatterplot**: Toont verband tussen twee kwantitatieve variabelen.
+- **Pearson-correlatie** (`r`): Meet lineair verband (-1 ≤ `r` ≤ 1).
 
-### Interquartile Range (IQR)
+### Kruistabellen voor Kwalitatieve Data
 
-- $IQR = Q_3 - Q_1$, where $Q_1 = 25^{th}$ percentile, $Q_3 = 75^{th}$ percentile.
+- Tabel met frequenties per combinatie van categorieën (bijv. regio vs. inkomensklasse).
+- Analyse van onafhankelijkheid via verwachte vs. geobserveerde frequenties.
 
-### Median Absolute Deviation (MAD)
+### QQ-plot
 
-- $MAD = \text{median}(|x_i - \text{median}(x)|)$.
-
-## 2.6 Boxplots
-
-- **Components**:
-  - **Box**: $Q_1$ to $Q_3$ (length = IQR).
-  - **Whiskers**: Extend to non-outlier extremes.
-  - **Outliers**: Defined as $< Q_1 - 1.5IQR$ or $> Q_3 + 1.5IQR$.
-- **Interpretation**:
-  - **Skewness**: Median position within the box.
-  - **Tail Heaviness**: Number of outliers.
-
-## 2.7 Covariance and Correlation
-
-### Covariance
-
-- $\text{cov}(x,y) = \frac{1}{n-1} \sum (x_i - \overline{x})(y_i - \overline{y})$.
-
-### Pearson Correlation ($r$)
-
-- $r = \frac{\text{cov}(x,y)}{s_x s_y}$ ($-1 \leq r \leq 1$).
-
-## 2.8 Cross-Tables
-
-- **Purpose**: Analyze relationships between two qualitative variables.
-- **Expected Frequencies**:
-  $\text{Expected} = \frac{\text{row total} \times \text{column total}}{n}$.
-- **Chi-Square Test**: Compares observed vs. expected frequencies (see hypothesis testing).
-
-## 2.9 QQ-Plots
-
-- **Purpose**: Assess if data follows a theoretical distribution (e.g., normality).
-- **Method**: Plot empirical quantiles ($\widehat{Q}_n(p)$) vs. theoretical quantiles ($F^{-1}(p)$).
-- **Interpretation**:
-  - Linear points → Distribution matches.
-  - Curved patterns → Transformation needed (e.g., log).
+- Vergelijkt empirische kwantielen met theoretische (bijv. normale verdeling).
+- **Normaliteitstest**: Punten op een rechte lijn suggereren normaliteit.
 
 ---
 
 ## Key Points to Remember
 
-- **Variables**: Qualitative (nominal/ordinal) vs. quantitative (discrete/continuous).
-- **Central Tendency**: Mean (sensitive to outliers), median (robust), mode (modal class for grouped data).
-- **Spread**: Variance/SD (measure deviation from mean), IQR (robust spread), MAD (median-based).
-- **Boxplots**: Show median, IQR, outliers, and skewness.
-- **Covariance vs. Correlation**: Covariance is unit-dependent; correlation is standardized ($-1$ to $1$).
-- **Cross-Tables**: Use expected frequencies to test independence.
-- **QQ-Plots**: Check distributional assumptions; linearity indicates alignment with theoretical distribution.
+- **Steekproef vs. Populatie**: Steekproef moet representatief zijn voor betrouwbare conclusies.
+- **Klassenindeling**: Kies 5–20 klassen; voorkom te piekige of vlakke histogrammen.
+- **Gemiddelde vs. Mediaan**: Mediaan robuuster bij scheve data.
+- **Variantie & Standaardafwijking**: Meet spreiding t.o.v. gemiddelde.
+- **Correlatie≠Causaliteit**: Correlatie wijst op associatie, niet noodzakelijk oorzakelijk verband.
+- **QQ-plot**: Hulpmiddel om verdeling (bv. normaliteit) visueel te beoordelen.

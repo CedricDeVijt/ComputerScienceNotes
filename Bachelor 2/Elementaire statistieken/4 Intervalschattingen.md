@@ -1,109 +1,112 @@
-## 4.1 **Hoofdstuk 1: Betrouwbaarheidsintervallen**
+## 4.1 Inleiding tot Betrouwbaarheidsintervallen
 
-### **1.1 Inleiding**
+- **Doel**: Nauwkeurigheid van puntschatters evalueren door een interval te construeren waarin de parameter met bepaalde zekerheid ligt.
+- **Definitie**: Een interval $[L, R]$ is een $(1-\alpha)$-betrouwbaarheidsinterval (BI) als
+  $P(\theta \in [L, R]) = 1 - \alpha$.
+  Hierbij is $1 - \alpha$ het betrouwbaarheidsniveau (b.v. 0.95) en $\alpha$ het significantieniveau.
 
-Een betrouwbaarheidsinterval (BI) is een methode om een schatting te geven voor een onbekende parameter met een bepaalde zekerheid.
+### Typen Betrouwbaarheidsintervallen
 
-#### **Definitie**
+1. **Tweezijdig BI**:
+   $P(\theta < L) = P(\theta > R) = \alpha/2$.
+2. **Eenzijdig BI**:
+   - Links: $[-\infty, R]$
+   - Rechts: $[L, \infty]$.
 
-Een interval [L(X₁, ..., Xₙ), R(X₁, ..., Xₙ)] is een (1 - α) BI indien:
+## 4.2 Constructiestrategie voor Betrouwbaarheidsintervallen
 
-$$P(\theta \in [L(X_1, ..., X_n), R(X_1, ..., X_n)]) = 1 - \alpha$$
+1. **Kies een schatter $T$** voor $\theta$.
+2. **Bepaal de verdeling** van een functie $h(T, \theta)$ die onafhankelijk is van $\theta$.
+3. **Vind kwartielen $a$ en $b$** zodat $P(a \leq h(T, \theta) \leq b) = 1 - \alpha$.
+4. **Herrangschik de ongelijkheid** om $\theta$ in het midden te isoleren.
 
-waarbij:
+## 4.3 Gemiddelde van Normale Verdeling met Bekende Variantie
 
-- $1 - \alpha$ het **betrouwbaarheidsniveau** is (bijvoorbeeld 90%, 95%, 99%)
-- $\alpha$ het **significantieniveau** is
+### Aannames
 
-Een BI is niet uniek en kan **tweezijdig** of **eenzijdig** zijn:
+- Steekproef: $X_1, \dots, X_n \sim N(\mu, \sigma^2)$ met $\sigma^2$ bekend.
+- Schatter: Steekproefgemiddelde $\bar{X}_n \sim N\left(\mu, \frac{\sigma^2}{n}\right)$.
 
-- **Tweezijdig:** $P(\theta < L(X_1, ..., X_n)) = P(\theta > R(X_1, ..., X_n)) = \alpha/2$
-- **Linkseenzijdig:** $[-\infty, R(X_1, ..., X_n)]$
-- **Rechtseenzijdig:** $[L(X_1, ..., X_n), \infty]$
+### Betrouwbaarheidsinterval
 
-### **1.2 Algemene strategie voor BI-constructie**
+$$
+\left[ \bar{x}_n - z_{1-\alpha/2} \frac{\sigma}{\sqrt{n}},\ \bar{x}_n + z_{1-\alpha/2} \frac{\sigma}{\sqrt{n}} \right]
+$$
 
-1. Kies een geschikte schatter T voor $\theta$.
-2. Bepaal de verdeling van een functie $h(T, \theta)$, onafhankelijk van $\theta$.
-3. Zoek geschikte kwartielen $a$ en $b$ zodat:
-   $$P(a \leq h(T, \theta) \leq b) = 1 - \alpha$$
-4. Herformuleer de ongelijkheid zodat $\theta$ in het midden staat.
+- **Interpretatie**: In 95% van de herhaalde steekproeven bevat het interval $\mu$.
 
-## 4.2 **Hoofdstuk 2: Betrouwbaarheidsintervallen voor specifieke parameters**
+### Voorbeeld
 
-### **2.1 Gemiddelde van een normale verdeling met bekende variantie**
+- $\sigma = 2$, $n = 16$, $\bar{x}_n = 3118.5$:
+  95% BI = $[3118.5 \pm 1.96 \cdot \frac{2}{\sqrt{16}}] = [3117.52, 3119.48]$.
 
-We nemen een steekproef van grootte $n$ uit een normale verdeling $N(\mu, \sigma^2)$ waarbij $\sigma$ bekend is.
+## 4.4 Variantie van Normale Verdeling
 
-#### **Betrouwbaarheidsinterval**
+### Aannames
 
-Uit de standaardisering van de steekproefgemiddelde volgt:
-$$Z = \frac{X_n - \mu}{\sigma / \sqrt{n}} \sim N(0,1)$$
+- Steekproef: $X_1, \dots, X_n \sim N(\mu, \sigma^2)$ met $\mu$ en $\sigma^2$ onbekend.
+- Schatter: Steekproefvariantie $S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X}_n)^2$.
 
-Voor een 95% BI geldt:
-$$P(-1.96 \leq Z \leq 1.96) = 95%$$
-$$P(X_n - 1.96 \frac{\sigma}{\sqrt{n}} \leq \mu \leq X_n + 1.96 \frac{\sigma}{\sqrt{n}}) = 95%$$
+### Verdeling en Betrouwbaarheidsinterval
 
-#### **Voorbeeld**
+- $(n-1)\frac{S^2}{\sigma^2} \sim \chi^2_{n-1}$.
+- BI voor $\sigma^2$:
+  $$
+  \left[ \frac{(n-1)s^2}{\chi^2_{n-1, 1-\alpha/2}},\ \frac{(n-1)s^2}{\chi^2_{n-1, \alpha/2}} \right]
+  $$
+- BI voor $\sigma$: Neem vierkantswortel van bovenstaande.
 
-Bij een bergmeting met $\sigma = 2m$, $n = 16$, en $X_n = 3118.5m$, is het 95% BI:
-$$[3117.52m, 3119.48m]$$
+### Voorbeeld
 
-### **2.2 Variantie van een normale verdeling**
+- $n = 16$, $s^2 = 5.76$:
+  95% BI voor $\sigma = \left[\sqrt{\frac{15 \cdot 5.76}{27.488}},\ \sqrt{\frac{15 \cdot 5.76}{6.262}}\right] = [1.77, 3.72]$.
 
-We willen een BI voor $\sigma^2$ wanneer zowel $\mu$ als $\sigma$ onbekend zijn.
+## 4.5 Gemiddelde van Normale Verdeling met Onbekende Variantie
 
-#### **Betrouwbaarheidsinterval**
+### Aannames
 
-We gebruiken de steekproefvariantie:
-$$S^2 = \frac{1}{n-1} \sum (X*i - X_n)^2$$
-Uit de verdeling $\chi^2$ volgt:
-$$P\left( \frac{(n-1)S^2}{\chi^2*{n-1,1-\alpha/2}} \leq \sigma^2 \leq \frac{(n-1)S^2}{\chi^2\_{n-1,\alpha/2}} \right) = 1 - \alpha$$
+- $\sigma^2$ wordt geschat via $S^2$.
+- Schatter: $T = \frac{\bar{X}_n - \mu}{S/\sqrt{n}} \sim t_{n-1}$.
 
-#### **Voorbeeld**
+### Betrouwbaarheidsinterval
 
-Bij 16 metingen met steekproefvariantie $S^2 = 5.76cm^2$, is het 95% BI:
-$$[1.77cm, 3.72cm]$$
+$$
+\left[ \bar{x}_n - t_{n-1, 1-\alpha/2} \frac{s}{\sqrt{n}},\ \bar{x}_n + t_{n-1, 1-\alpha/2} \frac{s}{\sqrt{n}} \right]
+$$
 
-### **2.3 Gemiddelde van een normale verdeling (onbekende variantie)**
+### Voorbeeld
 
-Wanneer $\sigma$ onbekend is, gebruiken we de Student t-verdeling.
+- Paasei-gewichten: $n = 12$, $\bar{x} = 177.66$, $s = 4.774$:
+  95% BI = $[177.66 \pm 2.201 \cdot \frac{4.774}{\sqrt{12}}] = [174.6, 180.7]$.
 
-#### **Betrouwbaarheidsinterval**
+## 4.6 Betrouwbaarheidsinterval voor Proportie
 
-Uit:
-$$T = \frac{X*n - \mu}{S / \sqrt{n}} \sim t*{n-1}$$
-volgt:
-$$P(X*n - t*{n-1,1-\alpha/2} \frac{S}{\sqrt{n}} \leq \mu \leq X*n + t*{n-1,1-\alpha/2} \frac{S}{\sqrt{n}}) = 1 - \alpha$$
+### Aannames
 
-#### **Voorbeeld**
+- Steekproefgrootte $n \geq 30$, $np \geq 5$, $n(1-p) \geq 5$.
+- Schatter: $\hat{p} = \frac{\text{aantal successen}}{n} \approx N\left(p, \frac{p(1-p)}{n}\right)$.
 
-Bij een steekproef van 12 metingen van paasei-gewichten met $X_n = 177.66g$ en $S = 4.774g$, is het 95% BI:
-$$[174.6g, 180.7g]$$
+### Betrouwbaarheidsinterval
 
-### **2.4 Proportie**
+$$
+\left[ \hat{p} - z_{1-\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\ \hat{p} + z_{1-\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \right]
+$$
 
-Voor een binaire variabele (succes/mislukking) met proportie $p$ geldt:
-$$\hat{P} = \frac{X}{n}$$
-Bij grote steekproeven ($n > 30$, $np > 5$, $nq > 5$) kunnen we de normale benadering gebruiken:
-$$\hat{P} \sim N(p, \frac{pq}{n})$$
+### Voorbeeld
 
-#### **Betrouwbaarheidsinterval**
+- Enquête: $n = 200$, $\hat{p} = 0.55$:
+  95% BI = $[0.55 \pm 1.96 \cdot 0.0352] = [0.481, 0.619]$.
 
-$$P(\hat{P} - z*{1-\alpha/2} \sqrt{\frac{\hat{P}(1-\hat{P})}{n}} \leq p \leq \hat{P} + z*{1-\alpha/2} \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}) = 1 - \alpha$$
+---
 
-#### **Voorbeeld**
+## Key Points to Remember
 
-Bij een verkiezingsenquête met $\hat{P} = 55\%$, $n = 200$:
-
-- **95% BI**: $[48.1\%, 61.9\%]$
-- **99% BI**: $[45.9\%, 64.1\%]$
-
-## 4.3 **Hoofdstuk 3: Belangrijke punten om te onthouden**
-
-- **Betrouwbaarheidsintervallen** geven een schatting van een onbekende parameter met een kans van $1 - \alpha$.
-- **Voor een normaal gemiddelde met bekende variantie** gebruiken we de standaardnormale verdeling.
-- **Voor een normaal gemiddelde met onbekende variantie** gebruiken we de Student t-verdeling.
-- **Voor variantie van een normale verdeling** gebruiken we de $\chi^2$-verdeling.
-- **Voor proporties** kunnen we een normale benadering gebruiken bij grote steekproeven.
-- **BI’s worden smaller bij grotere steekproeven** en breder bij hogere betrouwbaarheid.
+- **Betrouwbaarheidsniveau**: $1 - \alpha$ geeft de kans dat het interval de parameter bevat bij herhaalde steekproeven.
+- **Z-score vs. t-score**:
+  - Gebruik $z$ bij bekende $\sigma$, $t$ bij onbekende $\sigma$ (met $n-1$ vrijheidsgraden).
+- **Chi-kwadraatverdeling**: Voor variantie-intervallen, let op asymmetrische kwantielen.
+- **Proporties**: Benadering via normale verdeling vereist grote $n$ en $np \geq 5$.
+- **Breedte van BI**:
+  - Afneemt met $\sqrt{n}$.
+  - Toeneemt bij hogere betrouwbaarheid (lagere $\alpha$).
+- **Interpretatie**: Een 95% BI betekent niet dat $\mu$ met 95% kans in het interval ligt, maar dat 95% van de intervallen $\mu$ bevatten bij herhaling.
