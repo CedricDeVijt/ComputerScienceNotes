@@ -36,14 +36,14 @@
 ### Centrummaten
 
 1. **Gemiddelde** ($x̄$):
-   $x̄ = (Σxi) / n$ of $x̄ = (Σnjcj) / n$ voor gegroepeerde data.
+   $x̄ = (\Sigma xi) / n$ of $x̄ = (\Sigma njcj) / n$ voor gegroepeerde data.
 2. **Mediaan**: Middelste waarde na ordening; bij even $n$: gemiddelde van twee middelste waarden.
 3. **Modus**: Meest voorkomende waarde of klasse (modale klasse).
 
 ### Spreidingsmaten
 
 1. **Variantie** ($s^2$):
-   $s^2 = Σ(xi - x̄)^2 / (n-1)$ voor ruwe data; $Σnj(cj - x̄)^2 / (n-1)$ voor gegroepeerde data.
+   $s^2 = \Sigma (xi - x̄)^2 / (n-1)$ voor ruwe data; $\Sigma nj(cj - x̄)^2 / (n-1)$ voor gegroepeerde data.
 2. **Standaardafwijking** ($s$): $s = \sqrt{s^2}$.
 3. **Interkwartielafstand (IQR)**:
    $IQR = Q3 - Q1$ (verschil tussen 75e en 25e percentiel).
