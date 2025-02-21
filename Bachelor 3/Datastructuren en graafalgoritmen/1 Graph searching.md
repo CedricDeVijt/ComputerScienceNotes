@@ -32,6 +32,8 @@
 2. **Diameter Calculation**: Run BFS from all nodes (complexity $O(|V|(|V| + |E|))$).
 3. **Shortest Path in Unweighted Graphs**: Directly use BFS distances.
 
+![[Pasted image 20250221112312.png|500]]![[Pasted image 20250221112336.png|500]]
+
 ## 1.3 Depth-First Search (DFS)
 
 ### Algorithm Overview
