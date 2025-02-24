@@ -10,7 +10,7 @@
 
 ## Compilers
 
-- [ ] 1 Introduction
+- [ ] ==1 Introduction==
 - [ ] 2 All Things Regular Languages, Expressions
 - [ ] 3 Grammars
 - [ ] 4 All things context free
@@ -30,7 +30,7 @@
 
 ## Distributed systems
 
-- [ ] …
+- [ ] ==Introduction==
 
 ## Elementaire statistiek
 
