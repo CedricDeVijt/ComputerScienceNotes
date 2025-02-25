@@ -1,4 +1,4 @@
-## 2.2 Algorithms and Deciders
+## 2.1 Algorithms and Deciders
 
 ### Definition of an Algorithm
 
@@ -20,7 +20,7 @@
 - **Recognizable Languages**: Accepted by TMs (may not halt on all inputs).
 - **Undecidable/Unrecognizable Languages**: No TM exists (e.g., $A_{TM}$).
 
-## 2.3 Example of a Decider: Palindrome Recognition
+## 2.2 Example of a Decider: Palindrome Recognition
 
 ### Machine $M_p$
 
@@ -42,12 +42,12 @@
 - Symmetry check by erasing matching symbols from both ends.
 - Halts on all inputs, confirming $L(M_p)$ is decidable.
 
-## 2.4 Time Complexity and Asymptotic Analysis
+## 2.3 Time Complexity and Asymptotic Analysis
 
 - **Time complexity** measures the number of steps a TM takes relative to input size.
 - **Asymptotic notation** (e.g., $O, \Theta, \Omega$) classifies runtime efficiency.
 
-## 2.5 Decision Problems
+## 2.4 Decision Problems
 
 - Problems framed as "yes/no" questions. A decider solves a decision problem if it halts with the correct answer.
 
