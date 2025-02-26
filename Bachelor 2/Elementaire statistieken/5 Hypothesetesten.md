@@ -65,7 +65,8 @@
 ### Benaderende test (grote steekproef)
 
 - Teststatistiek:
-  $$Z = \frac{̂p - p_0}{\sqrt{p_0(1-p_0)/n}} \sim N(0,1)$$
+  $$Z = \frac{\widehat{P} - p}{\sqrt{\frac{p(1-p)}{n}}} \sim N(0,1)\\$$
+
 - $H_0$ verwerpen als $|Z| > z_{1-\alpha/2}$.
 
 ### Exacte test (kleine steekproef)
