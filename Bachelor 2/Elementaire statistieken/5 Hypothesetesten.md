@@ -25,29 +25,29 @@
   - $H_0: \mu = \mu_0$
   - $H_1: \mu \neq \mu_0$
 - Teststatistiek:
-  $$Z = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1)$$
+  $$Z = \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1)$$
 - Beslissingsregel:
-  - $H_0$ verwerpen als Z in $[−z_{1−\alpha /2},z_{1− \alpha/2}]$
+  - $H_0$ verwerpen als $|Z| > z_{1-\alpha/2}$
 
 #### Eenzijdige z-test
 
 - Hypothesen:
-  - Rechsteenzijdig: $H_0: \mu \le \mu_0, H_1: \mu \gt \mu_0$
-  - Linkseenzijdig: $H_0: \mu \ge \mu_0, H_1: \mu \lt \mu_0$
+  - Rechtseenzijdig: $H_0: \mu \leq \mu_0, H_1: \mu > \mu_0$
+  - Linkseenzijdig: $H_0: \mu \geq \mu_0, H_1: \mu < \mu_0$
 - Beslissingsregel:
-  - $H_0$ verwerpen als $Z \gt z\left(1-\alpha\right)$ of $Z \lt -z*{1-\alpha}$.
+  - $H_0$ verwerpen als $Z > z_{1-\alpha}$ of $Z < -z_{1-\alpha}$.
 
 ### Gemiddelde van een normale verdeling met onbekende variantie
 
 #### Tweezijdige t-test
 
 - Teststatistiek:
-  $$T = \frac{X - \mu*0}{S / \sqrt{n}} \sim t*{n-1}$$
-- $H_0$ verwerpen als $|T| > t\_{n-1,1-\alpha/2}$.
+  $$T = \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \sim t_{n-1}$$
+- $H_0$ verwerpen als $|T| > t_{n-1,1-\alpha/2}$.
 
 #### Eenzijdige t-test
 
-- $H_0$ verwerpen als $T > t*{n-1,1-\alpha}$ of $T < -t*{n-1,1-\alpha}$.
+- $H_0$ verwerpen als $T > t_{n-1,1-\alpha}$ of $T < -t_{n-1,1-\alpha}$.
 
 ### P-waarde
 
@@ -58,14 +58,14 @@
 
 - **Chi-kwadraat test** om varianties te vergelijken.
 - Teststatistiek:
-  $$X^2 = \frac{(n-1)S^2}{σ*0^2} \sim χ^2*{n-1}$$
+  $$\chi^2 = \frac{(n-1)S^2}{\sigma_0^2} \sim \chi^2_{n-1}$$
 
 ## 5.4 Hypothesetesten voor proporties
 
 ### Benaderende test (grote steekproef)
 
 - Teststatistiek:
-  $$Z = \frac{\widehat{P} - p}{\sqrt{\frac{p(1-p)}{n}}} \sim N(0,1)\\$$
+  $$Z = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} \sim N(0,1)$$
 
 - $H_0$ verwerpen als $|Z| > z_{1-\alpha/2}$.
 
