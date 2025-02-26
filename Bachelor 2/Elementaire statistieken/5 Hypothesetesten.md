@@ -1,90 +1,90 @@
-## 5.1 **Hoofdstuk 1: Inleiding tot Hypothesetesten**
+## 5.1 Inleiding tot Hypothesetesten
 
-### **1.1 Wat is een Hypothesetest?**
+### Wat is een Hypothesetest?
 
 - Beslissingsprobleem: kiezen tussen twee tegengestelde hypothesen.
-- Nulhypothese (**H0**) versus alternatieve hypothese (**H1**).
-- Doel: **H0 verwerpen ten gunste van H1**, indien er voldoende bewijs is.
+- Nulhypothese (**$H_0$**) versus alternatieve hypothese (**$H_1$**).
+- Doel: **$H_0$ verwerpen ten gunste van $H_1$**, indien er voldoende bewijs is.
 
-### **1.2 De vier stappen van een hypothesetest**
+### De vier stappen van een hypothesetest
 
-1. **Hypothesen opstellen**: H0 en H1 formuleren.
+1. **Hypothesen opstellen**: $H_0$ en $H_1$ formuleren.
 2. **Teststatistiek definiëren**: een grootheid berekenen uit de steekproef.
-3. **Beslissingsregel bepalen**: significantieniveau (α) en criterium vaststellen.
+3. **Beslissingsregel bepalen**: significantieniveau ($\alpha$) en criterium vaststellen.
 4. **Fouten identificeren**:
-   - Type I fout (α): H0 onterecht verwerpen.
-   - Type II fout (β): H0 onterecht behouden.
+   - Type I fout ($\alpha$): $H_0$ onterecht verwerpen.
+   - Type II fout ($\beta$): $H_0$ onterecht behouden.
 
-## 5.2 **Hoofdstuk 2: Hypothesetesten voor het gemiddelde**
+## 5.2 Hypothesetesten voor het gemiddelde
 
-### **2.1 Gemiddelde van een normale verdeling met bekende variantie**
+### Gemiddelde van een normale verdeling met bekende variantie
 
-#### **2.1.1 Tweezijdige z-test**
+#### Tweezijdige z-test
 
 - Hypothesen:
-  - H0: μ = μ0
-  - H1: μ ≠ μ0
+  - $H_0: \mu = \mu_0$
+  - $H_1: \mu \neq \mu_0$
 - Teststatistiek:
-  $$Z = \frac{X - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1)$$
+  $$Z = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1)$$
 - Beslissingsregel:
-  - H0 verwerpen als $|Z| > z\_{1-α/2}$
+  - $H_0$ verwerpen als Z in $[−z_{1−\alpha /2},z_{1− \alpha/2}]$
 
-#### **2.1.2 Eenzijdige z-test**
+#### Eenzijdige z-test
 
 - Hypothesen:
-  - Rechsteenzijdig: H0: μ ≤ μ0, H1: μ > μ0
-  - Linkseenzijdig: H0: μ ≥ μ0, H1: μ < μ0
+  - Rechsteenzijdig: $H_0: \mu \le \mu_0, H_1: \mu \gt \mu_0$
+  - Linkseenzijdig: $H_0: \mu \ge \mu_0, H_1: \mu \lt \mu_0$
 - Beslissingsregel:
-  - H0 verwerpen als $Z > z*{1-α}$ of $Z < -z*{1-α}$.
+  - $H_0$ verwerpen als $Z \gt z\left(1-\alpha\right)$ of $Z \lt -z*{1-\alpha}$.
 
-### **2.2 Gemiddelde van een normale verdeling met onbekende variantie**
+### Gemiddelde van een normale verdeling met onbekende variantie
 
-#### **2.2.1 Tweezijdige t-test**
+#### Tweezijdige t-test
 
 - Teststatistiek:
   $$T = \frac{X - \mu*0}{S / \sqrt{n}} \sim t*{n-1}$$
-- H0 verwerpen als $|T| > t\_{n-1,1-α/2}$.
+- $H_0$ verwerpen als $|T| > t\_{n-1,1-\alpha/2}$.
 
-#### **2.2.2 Eenzijdige t-test**
+#### Eenzijdige t-test
 
-- H0 verwerpen als $T > t*{n-1,1-α}$ of $T < -t*{n-1,1-α}$.
+- $H_0$ verwerpen als $T > t*{n-1,1-\alpha}$ of $T < -t*{n-1,1-\alpha}$.
 
-### **2.3 P-waarde**
+### P-waarde
 
 - Kans om een waarde minstens zo extreem als de geobserveerde testwaarde te verkrijgen.
-- H0 verwerpen als $p < α$.
+- $H_0$ verwerpen als $p < \alpha$.
 
-## 5.3 **Hoofdstuk 3: Hypothesetesten voor variantie**
+## 5.3 Hypothesetesten voor variantie
 
 - **Chi-kwadraat test** om varianties te vergelijken.
 - Teststatistiek:
   $$X^2 = \frac{(n-1)S^2}{σ*0^2} \sim χ^2*{n-1}$$
 
-## 5.4 **Hoofdstuk 4: Hypothesetesten voor proporties**
+## 5.4 Hypothesetesten voor proporties
 
-### **4.1 Benaderende test (grote steekproef)**
+### Benaderende test (grote steekproef)
 
 - Teststatistiek:
   $$Z = \frac{̂p - p_0}{\sqrt{p_0(1-p_0)/n}} \sim N(0,1)$$
-- H0 verwerpen als $|Z| > z\_{1-α/2}$.
+- $H_0$ verwerpen als $|Z| > z_{1-\alpha/2}$.
 
-### **4.2 Exacte test (kleine steekproef)**
+### Exacte test (kleine steekproef)
 
 - Gebaseerd op de binomiaalverdeling.
-- Directe kansberekening onder H0.
+- Directe kansberekening onder $H_0$.
 
-## 5.5 **Hoofdstuk 5: Normaliteitsassumptie**
+## 5.5 Normaliteitsassumptie
 
 - QQ-plot gebruiken om normaliteit te beoordelen.
 - Tests zoals Shapiro-Wilk test.
 - Indien niet normaal: transformaties of niet-parametrische testen overwegen.
 
-## 5.6 **Belangrijke punten om te onthouden**
+## Key Points to Remember
 
 - Hypothesetesten helpen bij besluitvorming onder onzekerheid.
 - Een **type I fout** betekent dat een correcte nulhypothese wordt verworpen.
 - Een **type II fout** betekent dat een foutieve nulhypothese niet wordt verworpen.
-- **P-waarde**: hoe kleiner, hoe sterker het bewijs tegen H0.
+- **P-waarde**: hoe kleiner, hoe sterker het bewijs tegen $H_0$.
 - **Z-test** wordt gebruikt als de variantie bekend is, **t-test** als de variantie onbekend is.
 - **Bij kleine steekproeven** is een exacte test nodig voor proporties.
 - **Normaliteitsveronderstelling** is belangrijk, vooral bij kleine steekproeven.

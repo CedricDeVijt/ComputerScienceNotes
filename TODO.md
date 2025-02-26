@@ -34,11 +34,11 @@
 
 ## Elementaire statistiek
 
-- [ ] ==1 Belangrijke verdelingen==
+- [x] ==1 Belangrijke verdelingen==
 - [ ] ==2 Beschrijvende statistiek==
 - [ ] ==3 Het schatten van parameters==
 - [ ] ==4 Intervalschattingen==
-- [ ] 5 Hypothesetesten
+- [ ] ==5 Hypothesetesten==
 - [ ] 6 Vergelijkingstesten
 - [ ] 7 Verdelingstoetsen
 - [ ] 8 Toetsen van onafhankelijkheid
