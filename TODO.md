@@ -1,6 +1,6 @@
 ## Algoritmen en complexiteit
 
-- [ ] ==1 Turing machines==
+- [x] ==1 Turing machines==
 - [ ] ==2 Algoritmen & beslissers==
 - [ ] 3 Tijdscomplexiteit
 - [ ] 4 Asymptotische analyse
