@@ -1,65 +1,84 @@
-## 2.1 Algorithms and Deciders
+## 2.1 Voorbeeld van een Turing Machine
 
-### Definition of an Algorithm
+### Transitiespecificatie
 
-- An **algorithm** is a Turing machine that **halts on every input**.
-- A TM is called a **decider** if it halts on all inputs.
+- **Toestandsovergangen**:
+  $\delta (q_0, 0) = (q_1, \sqcup , \to )$
+  $\delta (q_0, 1) = (q_0, \sqcup , \to )$
+  $\delta (q_1, 0) = (q_0, \sqcup , \to )$
+  $\delta (q_1, 1) = (q_1, \sqcup , \to )$
+  $\delta (q_0, \sqcup ) = (q_{accept}, \sqcup , \to )$
+  $\delta (q_1, \sqcup ) = (q_{reject}, \sqcup , \to )$
+- **Aanvaarding/Verwerping**:
+  - $q_{accept}$ en $q_{reject}$ zijn eindtoestanden.
 
-### Decidable Languages
+## 2.2 Uitvoering van een Turing Machine
 
-- A language $L$ is **Turing-decidable (recursive)** if there exists a decider TM $M$ such that $L(M) = L$.
-- **Example**:
-  $L = \{ w \in \{0,1\}^* \mid w \text{ has an even number of 0s} \}$ is decidable.
-  $A_{TM}$ (Acceptance Problem) is **not decidable**.
+### Voorbeeldrun met input $00010$
 
-### Language Hierarchy
+1. **Startconfiguratie**: $q_0 0 0 0 1 0$
+2. **Stap 1**: Verwijder eerste $0$, ga naar $q_1 \to  \sqcup  q_1 0 0 1 0$
+3. **Stap 2**: Verwijder volgende $0$, terug naar $q_0 \to \sqcup  \sqcup  q_0 0 1 0$
+4. **Vervolgstappen**:
+   - Herhaal patroon tot lege tape.
+   - **Resultaat**: Machine bereikt $q_{accept}$, aanvaardt $w = 00010$.
 
-- **Regular Languages**: Recognized by finite automata.
-- **Context-Free Languages (CFLs)**: Defined by context-free grammars (CFGs).
-- **Decidable Languages**: Solved by decider TMs.
-- **Recognizable Languages**: Accepted by TMs (may not halt on all inputs).
-- **Undecidable/Unrecognizable Languages**: No TM exists (e.g., $A_{TM}$).
+## 2.3 Aanvaarding van Talen
 
-## 2.2 Example of a Decider: Palindrome Recognition
+### Definitie
+
+- Een Turing Machine **aanvaardt** een woord $w$ als er een reeks configuraties $C₁ \to  C₂ \to  ... \to  C_k$ bestaat waarbij:
+  1. $C₁$ is de startconfiguratie voor $w$.
+  2. Elke stap volgt uit $\delta$.
+  3. $C_k$ bevat $q_{accept}$.
+- **Aanvaarde taal**:
+  $$L(M) = \{ w \in \Sigma^* \mid M \text{ aanvaardt } w \}$$
+
+## 2.4 Turing-Herkenbaarheid en Beslisbaarheid
+
+### Turing-Herkenbare Talen
+
+- Een taal is **Turing-herkenbaar** (recursief opnoembaar) als er een Turing Machine bestaat die alle woorden in de taal aanvaardt.
+  - **Voorbeeld**: $A\_{TM} = \{(M, w) \mid M \text{ aanvaardt } w \}$
+  - **Niet herkenbaar**: $\overline{A}_{TM}$ (complement van $A_{TM}$).
+
+### Turing-Beslisbare Talen
+
+- Een Turing Machine is een **beslisser** als hij stopt op **elke input**.
+- **Voorbeeld**:
+  $$L(M) = \{ w \in \{0,1\}^* \mid w \text{ heeft een even aantal } 0 \}$$
+  - **Niet beslisbaar**: $A\_{TM}$.
+
+## 2.5 Voorbeeld van een Beslisser: Palindrome Checker
 
 ### Machine $M_p$
 
-- **Input**: A string $w \in \{0,1\}^*$.
-- **Language**: $L(M_p) = \{ w \mid w \text{ is a palindrome} \}$.
+1. **Stappen**:
+   - Als $w$ leeg is: aanvaard.
+   - Vergelijk eerste en laatste symbool:
+     - Gelijk? Vervang door $\sqcup $ en herhaal.
+     - Ongelijk? Verwerp.
+2. **Aanvaarde taal**:
+   $$L(M_p) = \{ w \in \{0,1\}^* \mid w \text{ is een palindroom} \}$$
 
-### Steps of $M_p$
+## 2.6 Classificatie van Talen
 
-1. **Empty input**: Accept immediately.
-2. **Non-empty input**:
-   - Replace the first symbol (0 or 1) with a blank ($\sqcup$) and move to the end.
-   - Check if the last symbol matches the original first symbol. If not, reject.
-   - Replace the last symbol with $\sqcup$.
-   - Repeat until all symbols are checked or mismatched.
-3. **Acceptance**: If all symbol pairs match, accept; otherwise, reject.
+### Overzicht
 
-### Key Mechanism
-
-- Symmetry check by erasing matching symbols from both ends.
-- Halts on all inputs, confirming $L(M_p)$ is decidable.
-
-## 2.3 Time Complexity and Asymptotic Analysis
-
-- **Time complexity** measures the number of steps a TM takes relative to input size.
-- **Asymptotic notation** (e.g., $O, \Theta, \Omega$) classifies runtime efficiency.
-
-## 2.4 Decision Problems
-
-- Problems framed as "yes/no" questions. A decider solves a decision problem if it halts with the correct answer.
+- **Reguliere talen**: Herkend door eindige automaten.
+- **Contextvrije talen**: Herkend door pushdown automaten.
+- **Beslisbare talen**: Turing Machines die altijd stoppen.
+- **Herkenbare talen**: Turing Machines die stoppen bij aanvaarding.
+- **Onherkenbare talen**: Geen TM kan ze herkennen.
 
 ## Key Points to Remember
 
-- **Decider**: A TM that halts on all inputs.
-- **Turing-decidable language**: A language for which a decider exists.
-- **Example decidable languages**:
-  - Strings with even 0s.
-  - Palindromes over $\{0,1\}$.
-- **Undecidable problems**: $A_{TM}$ (no decider exists).
-- **Algorithm**: Synonymous with a decider TM.
-- **Multi-tape TMs**: Equivalent in power to single-tape TMs but more efficient for specific tasks.
-- **Non-deterministic TMs**: Can simulate deterministic TMs with a time overhead.
-- **Language hierarchy**: Regular ⊂ CFLs ⊂ Decidable ⊂ Recognizable.
+- **Turing Machine (TM)**: Kan aanvaarden, verwerpen, of oneindig doorlopen.
+- **Beslisser**: TM die **altijd stopt** (beslisbare taal).
+- **Aanvaarding vs. Beslissing**:
+  - Aanvaarding: TM stopt alleen bij $q_{accept}$.
+  - Beslissing: TM stopt altijd, met $q_{accept}$ of $q_{reject}$.
+- **Voorbeelden**:
+  - $A\_{TM}$ is herkenbaar maar niet beslisbaar.
+  - Palindroomchecker is een beslisser.
+- **Taalhiërarchie**: Regulier ⊂ Contextvrij ⊂ Beslisbaar ⊂ Herkenbaar.
