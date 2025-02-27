@@ -10,7 +10,7 @@
 - Een **Turingmachine (TM)** stopt op elke input.
 - **Stap van een TM**: Uitvoeren van één instructie uit de transitiefunctie.
 - **Worst-case tijdscomplexiteit**:
-  $$t_M(n) = \max\{ \textit{time}\_M(w) \mid w \in \Sigma^* \text{ en } |w| = n \}$$
+  $$t_M(n) = \max\{ \textit{time}_M(w) \mid w \in \Sigma^* \text{ en } |w| = n \}$$
   Hierbij is $|w|$ de lengte van de input.
 
 ## 3.2 Analyse van een Voorbeeld-Turingmachine (Mp)
