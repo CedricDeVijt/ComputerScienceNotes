@@ -58,11 +58,20 @@
 
 ## 1.4 Topological Sorting
 
+- A linear ordering of all vertices in a directed acyclic graph (DAG) such that for every directed edge $(u, v)$, vertex $u$ comes before vertex $v$ in the ordering.
+
+- **Properties**:
+
+  - Only possible for DAGs (graphs with no cycles).
+  - Not unique - multiple valid topological orderings may exist.
+  - Represents a valid sequence that respects all dependencies.
+
+- **Intuition**: If we view edges as dependencies (e.g., $(u, v)$ means "$u$ must come before $v$"), a topological sort gives an order that satisfies all dependencies simultaneously.
+
 ### Algorithm
 
 - **Step 1**: Run DFS and record finish times.
 - **Step 2**: Sort nodes in decreasing order of $f(u)$.
-- **Validity**: For DAGs only. All edges $(u, v)$ will have $u$ appear before $v$.
 
 ### Applications
 
@@ -70,6 +79,14 @@
 8. **Path Counting**: Use dynamic programming on topological order.
 
 ## 1.5 Strongly Connected Components (SCCs)
+
+- **Definition**: A strongly connected component (SCC) in a directed graph is a maximal set of vertices C ⊆ V such that for every pair of vertices u and v in C, there exists a path from u to v and a path from v to u.
+
+- **Properties**:
+  - **Maximality**: No additional vertex can be included in an SCC without breaking its property of mutual reachability.
+  - **Partition of Graph**: The SCCs of a graph partition the vertex set, meaning every vertex belongs to exactly one SCC.
+  - **Condensation Graph**: Collapsing each SCC into a single node produces a directed acyclic graph (DAG), which highlights the structure between components.
+  - **Mutual Reachability**: Within each SCC, every vertex is reachable from every other vertex.
 
 ### Kosaraju’s Algorithm
 
