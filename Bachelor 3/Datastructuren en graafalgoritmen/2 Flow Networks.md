@@ -12,8 +12,8 @@
 - A **flow** $f$ is a function $V \times V \rightarrow \mathbb{R}$ satisfying:
   1. **Capacity constraint**: $f(u,v) \leq c(u,v)$.
   2. **Skew symmetry**: $f(u,v) = -f(v,u)$.
-  3. **Flow conservation**: $\sum\_{v \in V} f(u,v) = 0$ for $u \neq s,t$.
-- **Value of flow** $|f| = \sum\_{v \in V} f(s,v)$.
+  3. **Flow conservation**: $\sum\limits_{v \in V} f(u,v) = 0$ for $u \in U \setminus \{s,t\}$.
+- **Value of flow** $|f| = \sum\limits_{v \in V} f(s,v)$.
 
 ### Multiple Sources/Sinks Reduction
 

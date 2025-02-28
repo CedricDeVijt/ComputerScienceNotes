@@ -103,7 +103,6 @@ A **topological sort** arranges vertices in a linear order where for every direc
 
 ![[Pasted image 20250228111956.png|600]]
 
-
 ---
 
 ## Key Points to Remember
