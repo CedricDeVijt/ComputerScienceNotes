@@ -56,50 +56,53 @@
 5. **Topological Sorting**: Order nodes by decreasing $f(u)$.
 6. **SCC Identification**: Via Kosaraju’s algorithm (two DFS passes).
 
-## 1.4 Topological Sorting
+## 1.4 Topological Sorting in Directed Acyclic Graphs (DAGs)
 
-- A linear ordering of all vertices in a directed acyclic graph (DAG) such that for every directed edge $(u, v)$, vertex $u$ comes before vertex $v$ in the ordering.
+### Definition and Purpose
 
-- **Properties**:
+A **topological sort** arranges vertices in a linear order where for every directed edge (u → v), vertex **u** precedes vertex **v**. This ordering is **only possible in directed acyclic graphs (DAGs)**, as cycles create unresolvable dependencies.
 
-  - Only possible for DAGs (graphs with no cycles).
-  - Not unique - multiple valid topological orderings may exist.
-  - Represents a valid sequence that respects all dependencies.
+### Key Properties
 
-- **Intuition**: If we view edges as dependencies (e.g., $(u, v)$ means "$u$ must come before $v$"), a topological sort gives an order that satisfies all dependencies simultaneously.
+- **DAG Exclusivity**: Impossible in cyclic graphs.
+- **Non-Unique Orderings**: Multiple valid sequences may exist.
+- **Dependency Resolution**: Ensures all directed relationships are honored.
 
-### Algorithm
+### Algorithm Using Depth-First Search (DFS)
 
-- **Step 1**: Run DFS and record finish times.
-- **Step 2**: Sort nodes in decreasing order of $f(u)$.
+1. **DFS Traversal**: Perform DFS, marking each vertex’s discovery (`d[u]`) and finish times (`f[u]`).
+2. **Order Generation**: Sort vertices by **decreasing finish times** to produce a topological order.
 
-### Applications
+### Practical Applications
 
-7. **Task Scheduling**: Ensure dependencies are respected.
-8. **Path Counting**: Use dynamic programming on topological order.
+- **Project Scheduling**: Execute tasks with dependencies (e.g., course prerequisites).
+- **Dynamic Programming**: Optimize path counting or resource allocation by processing nodes in topological order.
 
 ## 1.5 Strongly Connected Components (SCCs)
 
-- **Definition**: A strongly connected component (SCC) in a directed graph is a maximal set of vertices C ⊆ V such that for every pair of vertices u and v in C, there exists a path from u to v and a path from v to u.
+### Core Concepts
 
-- **Properties**:
-  - **Maximality**: No additional vertex can be included in an SCC without breaking its property of mutual reachability.
-  - **Partition of Graph**: The SCCs of a graph partition the vertex set, meaning every vertex belongs to exactly one SCC.
-  - **Condensation Graph**: Collapsing each SCC into a single node produces a directed acyclic graph (DAG), which highlights the structure between components.
-  - **Mutual Reachability**: Within each SCC, every vertex is reachable from every other vertex.
+- **SCC Definition**: A maximal subset of vertices where every pair is mutually reachable via directed paths.
+- **Condensation Graph**: Collapsing SCCs into single nodes forms a DAG.
+- **Graph Partition**: Each vertex belongs to exactly one SCC.
 
-### Kosaraju’s Algorithm
+### Kosaraju’s Algorithm for SCC Detection
 
-9. **Step 1**: Run DFS on $G$, record $f(u)$.
-10. **Step 2**: Reverse $G$ to form $G'$.
-11. **Step 3**: Run DFS on $G'$ in decreasing order of $f(u)$.
+1. **First DFS Pass**: Run DFS on the original graph to record finish times.
+2. **Graph Reversal**: Construct the transpose graph (reverse all edges).
+3. **Second DFS Pass**: Process nodes in **decreasing order of finish times** from the first DFS. Each DFS tree in the transposed graph represents an SCC.
 
-- **Runtime**: $O(|V| + |E|)$.
+### Algorithmic Insights
 
-### Key Insights
+- **Runtime**: O(|V| + |E|) due to two DFS passes and linear-time reversal.
+- **Edge Analysis**: Maximum edges between SCCs C₁ and C₂ = |C₁| × |C₂|.
 
-- SCCs form subtrees in DFS forests.
-- **Max SCC Edges**: For two SCCs $C_1, C_2$, max edges = $|C_1| \cdot |C_2|$.
+### Applications
+
+- **Network Analysis**: Identify clusters in social networks or functional groups in software dependencies.
+
+![[Pasted image 20250228111956.png|600]]
+
 
 ---
 
