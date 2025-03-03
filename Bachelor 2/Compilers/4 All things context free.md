@@ -40,7 +40,7 @@
 
 ### Deterministic PDAs (DPDAs)
 
-- **Limitations**: Cannot recognize all CFLs (e.g., $L\_{pal} = \{ww^R \mid w \in \{0,1\}^\*\}$ requires non-determinism).
+- **Limitations**: Cannot recognize all CFLs (e.g., $L\_{pal} = \{ww^R \mid w \in \{0,1\}^*\}$ requires non-determinism).
 - **DCFL**: Languages recognized by DPDAs. Strict subset of CFLs.
 
 ## 4.3 Closure Properties and Deterministic CFLs
