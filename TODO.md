@@ -10,8 +10,8 @@
 
 ## Compilers
 
-- [ ] ==1 Introduction==
-- [ ] 2 All Things Regular Languages, Expressions
+- [x] 1 Introduction
+- [x] 2 All Things Regular Languages, Expressions
 - [ ] 3 Grammars
 - [ ] 4 All things context free
 - [ ] 5 Top-down parsers
