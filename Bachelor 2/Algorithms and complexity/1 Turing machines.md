@@ -1,95 +1,103 @@
-## 1.1 Inleiding tot Berekeningsmodellen
+## 1.1 Foundations of Turing Machines
 
-- **Eindige automaten**: Beperkt geheugen; modelleert reguliere talen.
-- **Pushdown automaten**: Oneindig geheugen als stack; modelleert contextvrije talen.
-- **Turing Machines (TM)**: Universeel model voor algoritmen; formaliseert alle bekende berekeningen (Church-Turingthese: _Algoritme = TM_).
+### Core Components
 
-## 1.2 Definitie van een Deterministische Turing Machine
+- **Structure**: Defined by a 7-tuple $(Q, \Sigma, \Gamma, \delta, q_0, q_{\text{accept}}, q_{\text{reject}})$:
+  - $Q$: Finite set of states.
+  - $\Sigma$: Input alphabet (excluding $\vdash$ and $\sqcup$).
+  - $\Gamma$: Tape alphabet (includes $\Sigma \cup \{\vdash, \sqcup\}$).
+  - $\delta$: Transition function (deterministic) or relation (non-deterministic).
+  - $q_0, q_{\text{accept}}, q_{\text{reject}}$: Initial, accept, and reject states.
+- **Tape**: Infinite, with symbols $\vdash$ (left end-marker) and $\sqcup$ (blank).
+- **Head**: Reads/writes symbols and moves left ($\leftarrow$), right ($\rightarrow$), or stays ($\square$).
 
-Een TM bestaat uit:
+### Church-Turing Thesis
 
-- **Eindige toestanden (Q)**: Inclusief starttoestand $q_0$, aanvaardings- ($q_{accept}$) en verwerpingstoestanden ($q_{reject}$).
-- **Tape**:
-  - Oneindig in beide richtingen.
-  - Bevat symbolen uit het tape-alfabet $\Gamma$, inclusief input-alfabet $\Sigma$, lege symbool $\cup$, en markeringen $\vdash$ (startpositie) en $\bot$.
-- **Lees/schrijfkop**: Beweegt links, rechts, of blijft staan.
-- **Transitiefunctie $\delta$**:
-  $$
-  \delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{\leftarrow, \square, \rightarrow\}
-  $$
-  - Voor $\delta(q, a) = (q', b, X)$:
-    - Schrijf $b$, verander naar toestand $q'$, beweeg volgens $X$.
+- **Key Assertion**: Any algorithm can be implemented by a Turing Machine (TM).
+- **Implications**:
+  - TMs formalize the intuitive notion of computation.
+  - All computational models (e.g., lambda calculus, cellular automata) are equivalent to TMs.
 
-## 1.3 Configuraties en Berekeningen
+## 1.2 Deterministic Turing Machines (DTMs)
 
-### Configuratie Representatie
+### Configurations
 
-- **Notatie**: $u \, q \, v$, waarbij:
-  - $u$: Tapeinhoud links van de kop.
-  - $q$: Huidige toestand.
-  - $v$: Tapeinhoud vanaf de kop.
-- **Startconfiguratie**: $\vdash q_0 w$ (input $w$ op posities 1 tot $n$, overige posities $\cup$).
+- Represented as $C = \vdash u q v$, where:
+  - $u, v$: Tape content left/right of the head.
+  - $q$: Current state.
+- **Start Configuration**: $\vdash q_0 w$ for input $w$.
+- **Accept/Reject States**: Halt computation immediately.
 
-### Overgangsregels
+### Transition Function
 
-- Voor $u a q_i b v$:
-  - **Beweging links**: $u q_j a c v$ als $\delta(q_i, b) = (q_j, c, \leftarrow)$.
-  - **Beweging rechts**: $u a c q_j v$ als $\delta(q_i, b) = (q_j, c, \rightarrow)$.
-  - **Blijven staan**: $u a q_j c v$ als $\delta(q_i, b) = (q_j, c, \square)$.
+- $\delta(q, a) = (q', b, X)$:
+  - In state $q$, read $a$, write $b$, move $X$, transition to $q'$.
+- **Example**: Checking even number of 0s:
+  - States alternate between $q_0$ (even) and $q_1$ (odd).
+  - Transitions overwrite symbols with $\sqcup$ and count parity.
 
-## 1.4 Aanvaarding van Talen
+## 1.3 Language Acceptance and Decidability
 
-- **Aanvaardingsvoorwaarde**: TM bereikt $q_{accept}$.
-- **Verwerping**: TM bereikt $q_{reject}$.
-- **Taal van TM $M$**:
-  $$
-  L(M) = \{ w \in \Sigma^* \mid M \text{ aanvaardt } w \}
-  $$
-- **Turing-herkenbaarheid**: Een taal $L$ is Turing-herkenbaar als er een TM bestaat die $L$ aanvaardt.
-  **Voorbeeld**: $A_{TM} = \{ (M, w) \mid M \text{ aanvaardt } w \}$ is herkenbaar, maar zijn complement niet.
+### Definitions
 
-## 1.5 Voorbeeld: TM voor Even Aantal Nullen
+- **Turing-Recognizable (Recursively Enumerable)**: A language $L$ is accepted by a TM that halts on inputs in $L$ (may loop otherwise).
+- **Turing-Decidable (Recursive)**: A language $L$ is decided by a TM that halts on all inputs.
+- **Example**: $A\_{\text{TM}} = \{(M, w) \mid M \text{ accepts } w\}$ is recognizable but undecidable.
 
-### Specificatie
+### Deciders vs. Recognizers
 
-- **Toestanden**: $Q = \{ q_0, q_1, q_{accept}, q_{reject} \}$
-- **Transities**:
-  - $\delta(q_0, 0) = (q_1, \cup, \rightarrow)$
-  - $\delta(q_0, 1) = (q_0, \cup, \rightarrow)$
-  - $\delta(q_1, 0) = (q_0, \cup, \rightarrow)$
-  - $\delta(q_1, 1) = (q_1, \cup, \rightarrow)$
-  - $\delta(q_0, \cup) = (q_{accept}, \cup, \rightarrow)$
-  - $\delta(q_1, \cup) = (q_{reject}, \cup, \rightarrow)$
+- **Decider**: Halts on all inputs (algorithm).
+- **Recognizer**: May loop on inputs not in the language.
 
-### Uitvoering op Input $w = 00010$
+## 1.4 Time Complexity and Asymptotic Analysis
 
-1. Start: $\vdash q_0 00010$
-2. Stappen:
-   - $q_0 \rightarrow q_1$ (na eerste 0).
-   - $q_1 \rightarrow q_0$ (na tweede 0).
-   - Herhaal tot einde tape; eindigt in $q_{accept}$.
+### Key Concepts
 
-## 1.6 Belangrijke Concepten
+- **Worst-Case Time**: $t_M(n) = \max\{\text{steps}(M) \text{ on inputs of length } n\}$.
+- **Big-O Notation**: $f(n) = O(g(n))$ if $f$ grows at most as fast as $g$ asymptotically.
+- **Example**: Palindrome checking on a 1-tape DTM has $O(n^2)$ time.
 
-### Church-Turingthese
+### Multi-Tape TM Simulation
 
-- Elke algoritmisch oplosbaar probleem kan door een TM worden geïmplementeerd.
+- **Theorem**: A $k$-tape TM running in $O(t(n))$ time can be simulated by a 1-tape TM in $O(t(n)^2)$ time.
+- **Proof Sketch**: Use a single tape with virtual tracks for each tape and marked head positions.
 
-### Halting Probleem
+## 1.5 Non-Deterministic Turing Machines (NTMs)
 
-- $\tilde{A}_{TM}$ (complement van $A_{TM}$) is niet Turing-herkenbaar.
+### Definition
 
-### Tapesymbolen en Beperkingen
+- **Transition Relation**: $\delta \subseteq Q \times \Gamma \times Q \times \Gamma \times \{\leftarrow, \square, \rightarrow\}$.
+- **Computation Tree**: All possible runs branch non-deterministically.
+- **Acceptance**: At least one path in the tree leads to $q\_{\text{accept}}$.
 
-- $\vdash$ kan niet overschreven worden, behalve op positie 0.
-- Beweging links van $\vdash$ is onmogelijk.
+### Equivalence to DTMs
+
+- **Theorem**: An NTM running in $O(t(n))$ time can be simulated by a DTM in $2^{O(t(n))}$ time.
+- **Proof Sketch**: Use breadth-first search (BFS) over computation paths.
+
+## 1.6 Key Decision Problems and Examples
+
+### Palindrome Recognition
+
+- **DTM Approach**: Compare symbols from both ends, overwriting matched symbols (time $O(n^2)$.
+- **2-Tape DTM Optimization**: Copy input to second tape, compare in $O(n)$ time.
+
+### SAT Problem
+
+- **Definition**: Determine if a Boolean formula has a satisfying assignment.
+- **Complexity**: NP-complete (efficiently solvable by NTMs, no known efficient DTM solution).
+
+---
 
 ## Key Points to Remember
 
-- **Componenten van een TM**: Eindige toestanden, oneindige tape, transitiefunctie.
-- **Church-Turingthese**: TM's modelleren alle algoritmen.
-- **Configuraties**: Worden gerepresenteerd als $u \, q \, v$.
-- **Aanvaarding**: Input wordt aanvaard als $q_{accept}$ bereikt wordt.
-- **Turing-herkenbaarheid**: Vereist dat de TM stopt voor aanvaarde inputs, maar niet noodzakelijk voor verworpen inputs.
-- **Voorbeeld-TM**: Checkt even aantal nullen door toestanden te wisselen bij elke 0.
-- **Halting Probleem**: Toont de beperkingen van TM's (niet alle talen zijn beslisbaar).
+- **TM Components**: Infinite tape, finite control, read/write head, and halting states.
+- **Church-Turing Thesis**: All computational models are equivalent to TMs.
+- **Decidability**: A language is decidable if a TM halts on all inputs for it.
+- **Time Complexity**:
+  - Multi-tape TMs can be simulated with quadratic overhead.
+  - Non-determinism introduces exponential time overhead in simulations.
+- **Critical Problems**:
+  - $A\_{\text{TM}}$ is recognizable but undecidable.
+  - Palindromes are decidable in $O(n^2)$ time on 1-tape DTMs.
+  - SAT is in NP, with no known polynomial-time DTM algorithm.

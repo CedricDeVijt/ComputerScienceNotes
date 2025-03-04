@@ -1,18 +1,13 @@
 ## Algoritmen en complexiteit
 
-- [x] ==1 Turing machines==
-- [ ] ==2 Algoritmen & beslissers==
-- [ ] 3 Tijdscomplexiteit
-- [ ] 4 Asymptotische analyse
-- [ ] 5 Beslissingsproblemen
-- [ ] 6 Deterministische Turing machines met meerdere tapes
-- [ ] 7 Niet-Deterministische Turing machines
-
+- [ ] ==1 Turing machines==
+- [ ] 2 Tijdscomplexiteit
+- [ ] 3 Plaatscomplexiteit
 ## Compilers
 
 - [x] 1 Introduction
 - [x] 2 All Things Regular Languages, Expressions
-- [ ] 3 Grammars
+- [x] 3 Grammars
 - [ ] 4 All things context free
 - [ ] 5 Top-down parsers
 - [ ] 6 Bottom-up parsers
