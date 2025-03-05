@@ -34,7 +34,7 @@
 - [ ] ==3 Het schatten van parameters==
 - [ ] ==4 Intervalschattingen==
 - [ ] ==5 Hypothesetesten==
-- [ ] 6 Vergelijkingstesten
+- [ ] ==6 Vergelijkingstesten==
 - [ ] 7 Verdelingstoetsen
 - [ ] 8 Toetsen van onafhankelijkheid
 - [ ] 9 Enkelvoudige lineaire regressie

@@ -1,9 +1,9 @@
-[[1 Belangrijke verdelingen]]
-[[2 Beschrijvende statistiek]]
-[[3 Het schatten van parameters]]
-[[4 Intervalschattingen]]
-[[5 Hypothesetesten]]
-[[6 Vergelijkingstesten]]
-[[7 Verdelingstoetsen]]
-[[8 Toetsen van onafhankelijkheid]]
-[[9 Enkelvoudige lineaire regressie]]
+[1 Belangrijke verdelingen](Bachelor%202/Elementaire%20statistieken/1%20Belangrijke%20verdelingen.md)
+[2 Beschrijvende statistiek](Bachelor%202/Elementaire%20statistieken/2%20Beschrijvende%20statistiek.md)
+[3 Het schatten van parameters](Bachelor%202/Elementaire%20statistieken/3%20Het%20schatten%20van%20parameters.md)
+[4 Intervalschattingen](Bachelor%202/Elementaire%20statistieken/4%20Intervalschattingen.md)
+[5 Hypothesetesten](Bachelor%202/Elementaire%20statistieken/5%20Hypothesetesten.md)
+[6 Vergelijkingstesten](Bachelor%202/Elementaire%20statistieken/6%20Vergelijkingstesten.md)
+[7 Verdelingstoetsen](Bachelor%202/Elementaire%20statistieken/7%20Verdelingstoetsen.md)
+[8 Toetsen van onafhankelijkheid](Bachelor%202/Elementaire%20statistieken/8%20Toetsen%20van%20onafhankelijkheid.md)
+[9 Enkelvoudige lineaire regressie](Bachelor%202/Elementaire%20statistieken/9%20Enkelvoudige%20lineaire%20regressie.md)
