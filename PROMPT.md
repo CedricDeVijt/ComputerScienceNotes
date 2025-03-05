@@ -4,4 +4,4 @@ Take the following text and make it such  that it is optimized for study purpose
 
 2. **Key Points to Remember**: At the end, create a bulleted list of key points that highlight the most important concepts and facts.
 
-Ensure the final output is easy to navigate and ready to be used as effective study material and covers all the material. 
+Ensure the final output is easy to navigate and ready to be used as effective study material and covers all the material.
