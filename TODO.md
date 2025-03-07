@@ -25,7 +25,8 @@
 
 ## Distributed systems
 
-- [ ] ==Introduction==
+- [ ] ==1 Introduction==
+- [ ] ==2 Middleware and Communication==
 
 ## Elementaire statistiek
 
