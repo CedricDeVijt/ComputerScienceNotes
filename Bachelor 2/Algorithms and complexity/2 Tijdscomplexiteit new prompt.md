@@ -1,38 +1,36 @@
-## Deterministic Polynomial Time (PTIME)
+## 2.1 Deterministic Polynomial Time (PTIME)
 
 ### Definition and Core Concepts
 
 **PTIME** ($DTIME(n^k)$) represents problems solvable by deterministic Turing machines in polynomial time. It's considered the class of "efficiently solvable" problems. Key distinctions:
 
-- Polynomial vs exponential growth: $O(n³)$ vs O(2ⁿ) (Page 5 table shows 2ⁿ becomes impractical for n=100)
+- Polynomial vs exponential growth: $O(n^3)$ vs $O(2^n)$ (Page 5 table shows $2^n$ becomes impractical for $n=100$)
 - All deterministic computation models are polynomially equivalent
 
 ### PTIME Algorithms in Practice
 
 #### Example 1: PATH Problem
 
-**Problem**: Determine if path exists from s to t in directed graph
+**Problem**: Determine if path exists from $s$ to $t$ in directed graph
 **Algorithm**: Breadth-First Search (BFS)
 
-- Marks nodes reachable from s in O(m) steps (m = nodes)
+- Marks nodes reachable from $s$ in $O(m)$ steps ($m$ = nodes)
 - Proof: Pages 9-10 show step-by-step marking process
 
 #### Example 2: RELPRIME
 
-**Problem**: Check if x and y are coprime
+**Problem**: Check if $x$ and $y$ are coprime
 **Algorithm**: Euclidean GCD
 
-- Time complexity: O(log max(x,y)) due to halving property
-- Key insight: gcd(x,y) = gcd(y, x mod y)
+- Time complexity: $O(\log \max(x,y))$ due to halving property
+- Key insight: $\gcd(x,y) = \gcd(y, x \mod y)$
 
 ### Polynomial Equivalence
 
 - Unary vs binary encoding matters: Binary avoids exponential input bloat
 - All "reasonable" encoding schemes are polynomially convertible
 
----
-
-## Non-Deterministic Polynomial Time (NP)
+## 2.2 Non-Deterministic Polynomial Time (NP)
 
 ### Definition and Verification
 
@@ -50,34 +48,32 @@
 
 #### CLIQUE
 
-- Verification: Check k-node subgraph is fully connected
+- Verification: Check $k$-node subgraph is fully connected
 - Reduction from 3SAT shown
 
 ### NP vs PTIME Relationship
 
-- Million-dollar question: PTIME = NP?
-- Known: PTIME ⊆ NP ⊆ EXPTIME
+- Million-dollar question: $\text{PTIME} = \text{NP}$?
+- Known: $\text{PTIME} \subseteq \text{NP} \subseteq \text{EXPTIME}$
 
----
-
-## Reductions and Completeness
+## 2.3 Reductions and Completeness
 
 ### Polynomial-Time Reductions
 
-**Key Principle**: If A ≤ₚ B and B ∈ PTIME, then A ∈ PTIME
+**Key Principle**: If $A \leq_p B$ and $B \in \text{PTIME}$, then $A \in \text{PTIME}$
 
-- Transitivity property: A ≤ₚ B ≤ₚ C ⇒ A ≤ₚ C
+- Transitivity property: $A \leq_p B \leq_p C \Rightarrow A \leq_p C$
 
 ### NP-Completeness Framework
 
 1. **NP-Hard**: All NP problems reduce to it
-2. **NP-Complete**: NP-Hard + ∈ NP
+2. **NP-Complete**: NP-Hard + $\in \text{NP}$
 
 #### Cook-Levin Theorem
 
 - **SAT is NP-Complete**: Proof via tableau construction
 - Encodes TM computation as Boolean formula variables:
-  - xᵢⱼₛ = "Cell (i,j) contains symbol s"
+  - $x_{ijs} = \text{"Cell (i,j) contains symbol s"}$
   - Four formula components: cell, start, move, accept
 
 ### Reduction Examples
@@ -86,15 +82,13 @@
 
 - Clause groups become graph nodes
 - Edges represent non-conflicting literals
-- k-clique ⇨ satisfiable assignment
+- $k$-clique $\Rightarrow$ satisfiable assignment
 
 #### HAMPATH → UHAMPATH (Undirected)
 
-- Node splitting: u → {uⁱⁿ, uᵐⁱᵈ, uᵒᵘᵗ}
+- Node splitting: $u \rightarrow \{u^{in}, u^{mid}, u^{out}\}$
 
----
-
-## NP-Complete Problem Landscape
+## 2.4 NP-Complete Problem Landscape
 
 ### Key Problems and Reductions
 
@@ -115,29 +109,19 @@
 ## Key Points to Remember
 
 - **PTIME vs NP** ★★★★★
-
   - PTIME: Efficiently solvable | NP: Efficiently verifiable
   - Mnemonic: "P = Problems we can Polish off quickly"
-
 - **Reduction Strategy** ★★★★☆
-
   - To prove NP-hardness: Reduce from known NP-complete problem
   - TRAP Method: Transitive Reduction Analysis Protocol
-
 - **Cook-Levin Insight** ★★★★☆
-
   - Any NP problem → Boolean formula structure
   - Critical concept: Computation as formula
-
 - **2SAT Exception** ★★★☆☆
-
   - In P despite being SAT variant
   - Key structure: Implication graph acyclicity
-
 - **Encodings Matter** ★★☆☆☆
-
   - Binary vs unary impacts complexity
-  - Example: RELPRIME input size = O(log max(x,y))
-
+  - Example: RELPRIME input size = $O(\log \max(x,y))$
 - **Common Pitfall**
   - Confusing PTIME-completeness (trivial) with NP-completeness
