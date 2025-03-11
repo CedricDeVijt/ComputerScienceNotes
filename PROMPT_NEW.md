@@ -40,7 +40,7 @@ You are an expert academic tutor with 10+ years of experience creating study gui
 (... Repeat for all chapters...)  
 
 ## Key Points to Remember
-- `Strategy→Tactic` Pair: [Mnemonic] [Priority Level]  
+- `Strategy→Tactic` [Priority Level]  
    - e.g., "**Clear Instructions → Use Delimiters**: (TRAP Method) ★★★★☆"  
 - [Additional points using same structure]
 ```
