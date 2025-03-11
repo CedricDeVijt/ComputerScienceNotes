@@ -4,7 +4,7 @@
 
 - **Deterministic Turing Machine (DTM):**
   Space complexity $space_M(w)$ = number of tape cells scanned by TM $M$ on input $w$.
-  Worst-case space complexity: $s_M(n) = \max{space_M(w) | |w|=n}$.
+  Worst-case space complexity: $s_M(n) = \max\{space_M(w) | |w|=n\}$.
 - **Non-deterministic Turing Machine (NTM):**
   Space complexity = maximum cells scanned in any computation branch.
 
@@ -21,7 +21,7 @@
 
 ### Savitch’s Theorem
 
-- **Statement:** If $s(n) ≥ n$, then $NSPACE(s(n)) ⊆ DSPACE(s^2(n))$.
+- **Statement:** If $s(n) ≥ n$, then $NSPACE(s(n)) \subseteq DSPACE(s^2(n))$.
 - **Corollary:** $PSPACE = NPSPACE$.
 - **Proof Idea:** Simulate NTM paths using a recursive $IsReachable$ procedure with $O(s^2(n))$ space.
 
@@ -49,7 +49,7 @@
 - **Definition:** Decide if a fully quantified Boolean formula is true.
 - **PSPACE-Completeness:**
   - **Proof:** Recursive evaluation of quantifiers with $O(n)$ stack depth.
-  - **Example:** $∀y∃x(x∨y)∧(¬x∨¬y)$ evaluates via backtracking.
+  - **Example:** $\forall y\exists x(x∨y)∧(¬x∨¬y)$ evaluates via backtracking.
 
 ### ALLₙꜰₐ (Universality of NFA)
 
@@ -61,12 +61,12 @@
 ## 3.4 Relationships Between Complexity Classes
 
 1. **Hierarchy:**
-   $PTIME ⊆ NP ⊆ PSPACE = NPSPACE ⊆ EXPTIME$.
+   $PTIME \subseteq NP \subseteq PSPACE = NPSPACE \subseteq EXPTIME$.
 2. **LOGSPACE vs. NLOGSPACE:**
-   - $LOGSPACE ⊆ NLOGSPACE ⊆ PTIME$.
+   - $LOGSPACE \subseteq NLOGSPACE \subseteq PTIME$.
    - It is unknown if $LOGSPACE = NLOGSPACE$.
 3. **PSPACE vs. EXPTIME:**
-   $PSPACE ⊆ EXPTIME$ due to the exponential time required to explore all configurations.
+   $PSPACE \subseteq EXPTIME$ due to the exponential time required to explore all configurations.
 
 ## 3.5 Completeness and Reductions
 
@@ -109,8 +109,8 @@
 - **PSPACE-Completeness:** TQBF and games like Geography are canonical PSPACE-complete problems.
 - **NLOGSPACE-Completeness:** PATH is the fundamental NLOGSPACE-complete problem.
 - **Hierarchy Inclusions:**
-  - $PTIME ⊆ NP ⊆ PSPACE ⊆ EXPTIME$.
-  - $LOGSPACE ⊆ NLOGSPACE ⊆ PTIME$.
+  - $PTIME \subseteq NP \subseteq PSPACE \subseteq EXPTIME$.
+  - $LOGSPACE \subseteq NLOGSPACE \subseteq PTIME$.
 - **Reductions:** LOGSPACE reductions are critical for defining completeness in logarithmic space classes.
 - **Key Problems:**
   - **3SAT \in DSPACE(n)** (linear space).
