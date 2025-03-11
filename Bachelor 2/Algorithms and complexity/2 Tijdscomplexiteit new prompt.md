@@ -1,92 +1,143 @@
-## 2.1 Foundations of Polynomial Time Computation (PTIME)
+## Deterministic Polynomial Time (PTIME)
 
-### Defining Efficiency in Computation
+### Definition and Core Concepts
 
-**Polynomial time (PTIME)** classifies problems solvable by deterministic Turing machines in O(n^k) steps. Key distinction: Separates tractable (n^3) from intractable (2^n) problems. Why does this matter? Exponential time implies impractical resource growth for large inputs.
+**PTIME** ($DTIME(n^k)$) represents problems solvable by deterministic Turing machines in polynomial time. It's considered the class of "efficiently solvable" problems. Key distinctions:
 
-#### DTIME and Complexity Classes
+- Polynomial vs exponential growth: $O(n³)$ vs O(2ⁿ) (Page 5 table shows 2ⁿ becomes impractical for n=100)
+- All deterministic computation models are polynomially equivalent
 
-- **DTIME(t(n))**: Languages decidable in O(t(n)) time. Example: Palindromes ∈ DTIME(n²) using a two-pointer approach.
-- **PTIME = ∪ DTIME(n^k)**: Union over all polynomial time bounds. Represents "efficiently solvable" problems.
+### PTIME Algorithms in Practice
 
-#### Practical Implications
+#### Example 1: PATH Problem
 
-- **CPU Time Table**: Shows drastic differences between polynomial (n³) and exponential (2ⁿ) runtimes. At n=100, 2ⁿ takes ~4e13 years vs. 1 ms for n³.
-- **Key Insight**: Polynomial algorithms often have small exponents (n, n²), making them feasible in practice.
+**Problem**: Determine if path exists from s to t in directed graph
+**Algorithm**: Breadth-First Search (BFS)
 
-### PTIME Problem Examples
+- Marks nodes reachable from s in O(m) steps (m = nodes)
+- Proof: Pages 9-10 show step-by-step marking process
 
-#### PATH Problem
+#### Example 2: RELPRIME
 
-- **Definition**: {(G,s,t) | G has a path from s to t}.
-- **Algorithm**: Breadth-First Search (BFS) runs in O(m) time (m = edges). Steps: Mark nodes iteratively from s until reaching t.
+**Problem**: Check if x and y are coprime
+**Algorithm**: Euclidean GCD
 
-#### RELPRIME Problem
+- Time complexity: O(log max(x,y)) due to halving property
+- Key insight: gcd(x,y) = gcd(y, x mod y)
 
-- **Definition**: {(x,y) | gcd(x,y)=1}.
-- **Algorithm**: Euclidean algorithm computes gcd in O(log max(x,y)) iterations. Each iteration reduces problem size by ~half.
+### Polynomial Equivalence
 
-## 2.2 Non-Deterministic Polynomial Time (NP)
+- Unary vs binary encoding matters: Binary avoids exponential input bloat
+- All "reasonable" encoding schemes are polynomially convertible
 
-### Verifiers and Certificates
+---
 
-**NP** contains problems with polynomial-time verifiable proofs (certificates). Example: SAT certificates are truth assignments validating formulas.
+## Non-Deterministic Polynomial Time (NP)
 
-#### Formal Definition
+### Definition and Verification
 
-- **Verifier**: TM V accepts (w,c) in poly-time if w ∈ L. Example: CLIQUE verifier checks if a k-node subgraph is fully connected.
-- **NTM Connection**: NP = ∪ NTIME(n^k). NTMs "guess" certificates (e.g., paths for HAMPATH) followed by deterministic checks.
+**NP** contains problems where solutions can be **verified** in polynomial time. Two equivalent characterizations:
 
-### NP-Complete Problems
+1. Languages with polynomial-time verifiers
+2. Decidable by non-deterministic TM in poly-time
 
-#### Key Examples
+### Key NP Problems
 
-- **SAT**: Boolean formula satisfiability. ↗ See Section 3.2 for Cook-Levin proof.
-- **CLIQUE**: Existence of k-node complete subgraph. Reduces from 3SAT using graph construction.
-- **HAMPATH**: Hamiltonian path existence. Reduces from 3SAT via diamond-structured graphs.
+#### HAMPATH (Hamiltonian Path)
 
-#### Implications of NP-Completeness
+- Verification: Check path visits all nodes exactly once
+- Non-deterministic algorithm: Guess permutation + validate
 
-- **Hardness**: If any NP-complete problem is in PTIME, then P=NP. Current status: No poly-time algorithms found despite extensive research.
+#### CLIQUE
 
-## 2.3 Reductions and Completeness
+- Verification: Check k-node subgraph is fully connected
+- Reduction from 3SAT shown
+
+### NP vs PTIME Relationship
+
+- Million-dollar question: PTIME = NP?
+- Known: PTIME ⊆ NP ⊆ EXPTIME
+
+---
+
+## Reductions and Completeness
 
 ### Polynomial-Time Reductions
 
-**Reduction (A ≤ₚ B)**: Transform A-instances to B-instances efficiently. Proves B is at least as hard as A.
+**Key Principle**: If A ≤ₚ B and B ∈ PTIME, then A ∈ PTIME
 
-#### Example: 3SAT ≤ₚ CLIQUE
+- Transitivity property: A ≤ₚ B ≤ₚ C ⇒ A ≤ₚ C
 
-- **Construction**: Convert clauses to graph groups. Edges connect non-conflicting literals across clauses.
-- **Correctness**: Satisfying assignment ⇨ k-clique (one literal per clause). No edges between conflicting literals ensure validity.
+### NP-Completeness Framework
 
-### Cook-Levin Theorem
+1. **NP-Hard**: All NP problems reduce to it
+2. **NP-Complete**: NP-Hard + ∈ NP
 
-**SAT is NP-Complete**: Every NP problem reduces to SAT.
+#### Cook-Levin Theorem
 
-- **Proof Sketch**: Encode NTM computation as boolean formula (tableau). Variables represent cell states; clauses enforce legal transitions.
+- **SAT is NP-Complete**: Proof via tableau construction
+- Encodes TM computation as Boolean formula variables:
+  - xᵢⱼₛ = "Cell (i,j) contains symbol s"
+  - Four formula components: cell, start, move, accept
 
-#### Tableau Construction
+### Reduction Examples
 
-- **Rows**: Configurations of NTM on input w.
-- **Windows**: 2x3 cell blocks ensuring local transition legality. Illegal windows ⇒ unsatisfiable formula.
+#### 3SAT → CLIQUE
 
-### Other NP-Complete Problems
+- Clause groups become graph nodes
+- Edges represent non-conflicting literals
+- k-clique ⇨ satisfiable assignment
 
-#### Vertex Cover
+#### HAMPATH → UHAMPATH (Undirected)
 
-- **Reduction from CLIQUE**: Complement graph + size adjustment (k-clique ⇨ |V|-k vertex cover).
+- Node splitting: u → {uⁱⁿ, uᵐⁱᵈ, uᵒᵘᵗ}
 
-#### Travelling Salesman (TSP)
+---
 
-- **Reduction from HAMCIRCUIT**: Assign edge weights (0=exists, 1=missing). Hamiltonian cycle ⇨ TSP tour with cost 0.
+## NP-Complete Problem Landscape
 
-#---
+### Key Problems and Reductions
+
+| Problem      | Reduction From | Key Technique          |
+| ------------ | -------------- | ---------------------- |
+| 3SAT         | SAT            | Clause gadgets         |
+| VERTEX-COVER | CLIQUE         | Complement graph       |
+| TSP          | HAMCIRCUIT     | Weight encoding        |
+| SUBSET-SUM   | 3SAT           | Base-10 digit encoding |
+
+### Special Cases in P
+
+- **2SAT**: Solvable via implication graph + SCC analysis
+- **HORN-SAT**: Unit propagation algorithm
+
+---
 
 ## Key Points to Remember
 
-- **P vs NP**: Unsolved million-dollar question. PTIME ⊆ NP ⊆ EXPTIME. ★★★★★
-- **Reduction Strategy**: 3SAT → CLIQUE → Vertex Cover → TSP forms a common proof chain. (Mnemonic: **"3CVT"**) ★★★★☆
-- **Cook-Levin Insight**: Every NP computation can be encoded as SAT formula. Basis for all NP-completeness proofs. ★★★★☆
-- **Critical Distinction**: PTIME (solve) vs NP (verify). Example: PATH ∈ PTIME vs HAMPATH ∈ NP. ★★★★☆
-- **Common Pitfall**: Confusing NP-hard (hardness) with NP-complete (hardness + NP-membership). ↗ See Section 3.1 for clarification.
+- **PTIME vs NP** ★★★★★
+
+  - PTIME: Efficiently solvable | NP: Efficiently verifiable
+  - Mnemonic: "P = Problems we can Polish off quickly"
+
+- **Reduction Strategy** ★★★★☆
+
+  - To prove NP-hardness: Reduce from known NP-complete problem
+  - TRAP Method: Transitive Reduction Analysis Protocol
+
+- **Cook-Levin Insight** ★★★★☆
+
+  - Any NP problem → Boolean formula structure
+  - Critical concept: Computation as formula
+
+- **2SAT Exception** ★★★☆☆
+
+  - In P despite being SAT variant
+  - Key structure: Implication graph acyclicity
+
+- **Encodings Matter** ★★☆☆☆
+
+  - Binary vs unary impacts complexity
+  - Example: RELPRIME input size = O(log max(x,y))
+
+- **Common Pitfall**
+  - Confusing PTIME-completeness (trivial) with NP-completeness
