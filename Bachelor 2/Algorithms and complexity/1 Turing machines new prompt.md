@@ -1,94 +1,112 @@
-## 1.1 Fundamentals of Turing Machines
-### Core Components
-A **Turing Machine (TM)** consists of:  
-- Finite control unit with states (`Q`)  
-- Infinite tape with read/write head  
-- Alphabet symbols (`Σ` for input, `Γ` for tape)  
-- Transition function `δ` governing state/symbol changes  
-- Accept/reject halting states  
+## 1.1 Foundations of Turing Machines
 
-**Key Mechanism**: The tape extends infinitely rightward, starting with input `w ∈ Σ*` followed by blanks (`⊔`). The head begins at position 1.
+### Why Turing Machines?
 
-### Formal Definition
-A deterministic TM is a 7-tuple:  
-$$(Q, Σ, Γ, δ, q_0, q_{accept}, q_{reject})$$  
-Where:  
-- `δ: Q × Γ → Q × Γ × {←, □, →}` dictates state transitions  
-- Special symbols: `⊢` marks tape position 0; `⊔` represents blank  
+**Turing Machines (TMs)** formalize computation by modeling:
 
-#### Example: Even Zero Counter
-TM states alternate between `q₀` (even zeros) and `q₁` (odd zeros). Transitions overwrite symbols with `⊔` and move right. Accepts if `⊔` is read in `q₀`.
+- Finite control (states)
+- Infinite tape with read/write head
+- Acceptance/rejection states
+  **Key principle**: Church-Turing Thesis ("Algorithm = TM implementation").
 
-## 1.2 Computation and Acceptance
+#### Core Components
+
+Components of a deterministic TM $(Q, \Sigma, \Gamma, \delta, q_0, q_{accept}, q_{reject})$:
+
+- $Q$: Finite states
+- $\Gamma$: Tape alphabet (includes $\vdash$, $\sqcup$)
+- $\delta$: Transition function $Q \times \Gamma \to Q \times \Gamma \times \{\leftarrow, \square, \rightarrow\}$
+
+#### Limitations of Simpler Models
+
+Pushdown automata and finite automata are **too restrictive** for general computation:
+
+- Stack-based memory (PDA) ≠ arbitrary tape access
+- Can't model recursive languages (e.g., $\{0^n1^n0^n\}$)
+
+## 1.2 Computation and Configurations
+
+### Tape Initialization Rules
+
+- Input $w \in \Sigma^*$ starts at tape position 1
+- All positions $>|w|$ contain $\sqcup$ (blank)
+- Head starts at position 1
+
 ### Configurations
-A **configuration** represents machine state as:  
-$$⊢uqv$$  
-Where:  
-- `u`: Left tape content  
-- `q`: Current state  
-- `v`: Right tape content with head at first symbol  
 
-### Acceptance Criteria
-A TM **accepts** input `w` if any sequence of configurations leads to `q_{accept}`. The language recognized is:  
-$$L(M) = \{w ∈ Σ^* | M \text{ accepts } w\}$$  
+A configuration $C = \vdash u q v$ represents:
 
-#### Example: Palindrome Checker
-1. Compare first/last symbols via multitape copying  
-2. Time complexity: `O(n²)` for single-tape vs. `O(n)` for 2-tape TM  
+- Current state $q$
+- Tape content $uv$ (with head on first symbol of $v$)
+  **Example**: $\vdash 101q_3001$ indicates head at position 4.
 
-**Key Proof Concept**: 1-tape TMs require Ω(n²) steps for palindromes due to crossing sequences (back-and-forth head movements).
+#### Transition Rules
 
-## 1.3 Time Complexity Analysis
+For $\delta(q, a) = (q', b, X)$:
+
+- **Write** $b$, **move** $X$, **transition** to $q'$
+- Special handling for $\vdash$: Can't overwrite or move left
+
+## 1.3 Language Recognition vs. Decision
+
+### Turing-Recognizable Languages
+
+A language $L$ is **recognizable** if some TM halts on all $w \in L$.
+
+- Example: $A_{TM} = \{(M,w) \mid M \text{ accepts } w\}$
+- **Critical gap**: Recognizable ≠ Decidable (e.g., $\overline{A_{TM}}$ isn't recognizable)
+
+### Deciders and Algorithms
+
+A **decider** is a TM that halts on all inputs.
+
+- Example: TM for $\{w \mid w \text{ has even 0s}\}$ is a decider
+- Non-decider example: TMs for $A\_{TM}$ may loop
+
+## 1.4 Time Complexity Analysis
+
 ### Measuring Complexity
-- **Time_M(w)**: Steps taken by TM `M` on input `w`  
-- **Worst-case complexity**:  
-  $$t_M(n) = \max\{time_M(w) | |w| = n\}$$  
 
-### Asymptotic Notation
-- **Big-O**: Upper bound growth rate  
-- **Big-Ω**: Lower bound growth rate  
+- **Time$\_M(w)$**: Steps taken by TM $M$ on input $w$
+- **Worst-case complexity**: $t_M(n) = \max\{\text{Time}\_M(w) \mid |w|=n\}$
 
-#### Example: Palindrome TM Analysis
-Single-tape palindrome checker has `O(n²)` complexity due to nested loops comparing symbols.
+#### Asymptotic Notation
 
-## 1.4 Multitape Turing Machines
-### Definition and Operation
-A **k-tape TM** uses:  
-- `k` independent tapes with separate heads  
-- Extended transition function:  
-  $$δ: Q × Γ^k → Q × Γ^k × {←, □, →}^k$$  
+- $f(n) = \mathcal{O}(g(n))$: Upper bound
+- $f(n) = \Omega(g(n))$: Lower bound
+  **Example**: Palindrome-checking TM runs in $\mathcal{O}(n^2)$.
 
-### Simulation by Single-Tape TM
-**Theorem**: Any k-tape TM running in `O(t(n))` time can be simulated by a 1-tape TM in `O(t(n)²)` time.  
+### Crossing Sequences & Lower Bounds
 
-#### Simulation Strategy:
-1. Encode k tapes with virtual heads using marker symbols  
-2. Track head positions via modified alphabet `Γ' = Γ ∪ {#} ∪ {̃a | a ∈ Γ}`  
-3. Simulate each k-tape step via two passes (read heads → update tapes)
+For 1-tape TMs recognizing palindromes:
 
-**Critical Trade-off**: Multitape TMs offer speed gains (e.g., linear-time palindrome check) but require quadratic overhead when simulated.
+- Requires $\Omega(n^2)$ time due to **back-and-forth head movements**
+- Proof uses counting of state transitions across tape positions
 
-## 1.5 Non-Deterministic Turing Machines (NTM)
-### Definition
-An NTM uses a **transition relation** instead of function:  
-$$δ ⊆ Q × Γ × Q × Γ × {←, □, →}$$  
-**Acceptance**: At least one computation path reaches `q_{accept}`.
+## 1.5 Multi-Tape and Non-Deterministic TMs
 
-### Time Complexity
-- **NTM time**: Maximum steps across all paths  
-- **Deterministic Simulation**: Requires `2^{O(t(n))}` time via breadth-first search of computation tree  
+### Multi-Tape TMs
 
-#### Example: Satisfiability (SAT)
-NTMs "guess" variable assignments, but deterministic simulation faces exponential blowup.
+**Definition**: $k$-tape TM with transition function $\delta: Q \times \Gamma^k \to Q \times \Gamma^k \times \{\leftarrow, \square, \rightarrow\}^k$
+
+- **Simulation**: 1-tape TM can simulate $k$-tape TM with $\mathcal{O}(t(n)^2)$ overhead
+
+### Non-Deterministic TMs (NTM)
+
+**Definition**: Transition **relation** allows branching computations.
+
+- Accepts $w$ if **any** computation path accepts
+- **Simulation cost**: Deterministic TM requires $2^{\mathcal{O}(t(n))}$ time
 
 ---
 
 ## Key Points to Remember
-- **Church-Turing Thesis**: All computable functions = TM-computable (CHURCH mnemonic) ★★★★★  
-- **Tape Trade-offs**: Multitape → speed; Single-tape → space efficiency ↗ See Section 4.2  
-- **PAL-O(n²)**: 1-tape palindromes require quadratic time due to crossing sequences ★★★★☆  
-- **Non-Det Blowup**: NTM→DTM conversion has exponential overhead ★★★☆☆  
-- **Config Notation**: ⊢uqv encodes state + tape position ★★★★☆  
-- **Big-O Hierarchy**: `O(1) < O(n) < O(n²) < O(2^n)` ★★★★★  
 
-**Mnemonic**: "TMs PAL Around Quadratic Time" → highlights palindrome complexity constraint.
+- **Church-Turing Thesis → Universality**: All computational models reduce to TMs ★★★★★
+- **Decidable vs. Recognizable**: Deciders always halt; recognizers may loop on rejects ★★★★☆
+- **Time Complexity Tradeoffs**:
+  - Multi-tape → Single-tape: Quadratic overhead ★★★☆☆
+  - Non-deterministic → Deterministic: Exponential overhead ★★★★☆
+- **Palindrome Lower Bound**: 1-tape TMs require $\Omega(n^2)$ time (TRAP mnemonic: **T**ape **R**estrictions **A**ffect **P**erformance) ★★★★☆
+- **Configuration Encoding**: $\vdash u q v$ format captures state, tape, and head position ★★★☆☆
+- **Asymptotic Analysis**: Use Big-O/Ω for scalability, not exact step counts ★★★★☆
