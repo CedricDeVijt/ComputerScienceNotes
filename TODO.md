@@ -27,6 +27,7 @@
 
 - [ ] ==1 Introduction==
 - [ ] ==2 Middleware and Communication==
+- [ ] ==3 Service Oriented Architectures==
 
 ## Elementaire statistiek
 
