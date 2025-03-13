@@ -42,7 +42,7 @@
 
 - **Turing-Recognizable (Recursively Enumerable)**: A language $L$ is accepted by a TM that halts on inputs in $L$ (may loop otherwise).
 - **Turing-Decidable (Recursive)**: A language $L$ is decided by a TM that halts on all inputs.
-- **Example**: $A\_{\text{TM}} = \{(M, w) \mid M \text{ accepts } w\}$ is recognizable but undecidable.
+- **Example**: $A_{\text{TM}} = \{(M, w) \mid M \text{ accepts } w\}$ is recognizable but undecidable.
 
 ### Deciders vs. Recognizers
 
@@ -68,7 +68,7 @@
 
 - **Transition Relation**: $\delta \subseteq Q \times \Gamma \times Q \times \Gamma \times \{\leftarrow, \square, \rightarrow\}$.
 - **Computation Tree**: All possible runs branch non-deterministically.
-- **Acceptance**: At least one path in the tree leads to $q\_{\text{accept}}$.
+- **Acceptance**: At least one path in the tree leads to $q_{\text{accept}}$.
 
 ### Equivalence to DTMs
 
@@ -98,6 +98,6 @@
   - Multi-tape TMs can be simulated with quadratic overhead.
   - Non-determinism introduces exponential time overhead in simulations.
 - **Critical Problems**:
-  - $A\_{\text{TM}}$ is recognizable but undecidable.
+  - $A_{\text{TM}}$ is recognizable but undecidable.
   - Palindromes are decidable in $O(n^2)$ time on 1-tape DTMs.
   - SAT is in NP, with no known polynomial-time DTM algorithm.

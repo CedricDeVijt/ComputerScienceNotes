@@ -72,7 +72,7 @@
 
 - **Strict Hierarchy**: $\text{LL}(k) \subsetneq \text{LL}(k+1)$.
 - **LL(1) vs. Strong LL(1)**: All LL(1) grammars are strong LL(1), but this fails for $k \geq 2$.
-- **DCFL Relationship**: $\bigcup\_{k \geq 0} \text{LL}(k) \subsetneq \text{DCFL}$.
+- **DCFL Relationship**: $\bigcup_{k \geq 0} \text{LL}(k) \subsetneq \text{DCFL}$.
 
 ### Example
 

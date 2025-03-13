@@ -40,7 +40,7 @@
 
 ### Deterministic PDAs (DPDAs)
 
-- **Limitations**: Cannot recognize all CFLs (e.g., $L\_{pal} = \{ww^R \mid w \in \{0,1\}^*\}$ requires non-determinism).
+- **Limitations**: Cannot recognize all CFLs (e.g., $L_{pal} = \{ww^R \mid w \in \{0,1\}^*\}$ requires non-determinism).
 - **DCFL**: Languages recognized by DPDAs. Strict subset of CFLs.
 
 ## 4.3 Closure Properties and Deterministic CFLs
@@ -48,7 +48,7 @@
 ### Closure Properties
 
 - **Closed Under**: Union, concatenation, Kleene star.
-- **Not Closed Under**: Intersection, complement. Example: $L\_{abc} = \{a^n b^n c^n\}$ is not a CFL, but $L_1 = \{a^n b^n c^k\}$ and $L_2 = \{a^k b^n c^n\}$ are CFLs.
+- **Not Closed Under**: Intersection, complement. Example: $L_{abc} = \{a^n b^n c^n\}$ is not a CFL, but $L_1 = \{a^n b^n c^k\}$ and $L_2 = \{a^k b^n c^n\}$ are CFLs.
 
 ### Deterministic Context-Free Languages (DCFLs)
 

@@ -490,7 +490,7 @@ Vraag 2 Indien de hit rate in de L2 cache.6 is, wat is dan de hit rate in de L1 
 
 ### Vraag 1: Gemiddelde toegangstijd berekenen
 
-We berekenen de gemiddelde toegangstijd $\text{T}\_{\text{avg}}$ gegeven:
+We berekenen de gemiddelde toegangstijd $\text{T}_{\text{avg}}$ gegeven:
 
 - Hit rate in L1 cache: $H_1 = 0.9$
 - Hit rate in L2 cache: $H_2 = 0.5$
@@ -501,13 +501,13 @@ We berekenen de gemiddelde toegangstijd $\text{T}\_{\text{avg}}$ gegeven:
 De formule is als volgt:
 
 $$
-\text{T}\_{\text{avg}} = H_1 \cdot T_1 + (1 - H_1) \cdot H_2 \cdot (T_1 + T_2) + (1 - H_1) \cdot (1 - H_2) \cdot (T_1 + T_2 + T_M)
+\text{T}_{\text{avg}} = H_1 \cdot T_1 + (1 - H_1) \cdot H_2 \cdot (T_1 + T_2) + (1 - H_1) \cdot (1 - H_2) \cdot (T_1 + T_2 + T_M)
 $$
 
 Invullen van waarden:
 
 $$
-\text{T}\_{\text{avg}} = 0.9 \cdot 20 + (1 - 0.9) \cdot 0.5 \cdot (20 + 100) + (1 - 0.9) \cdot (1 - 0.5) \cdot (20 + 100 + 400)
+\text{T}_{\text{avg}} = 0.9 \cdot 20 + (1 - 0.9) \cdot 0.5 \cdot (20 + 100) + (1 - 0.9) \cdot (1 - 0.5) \cdot (20 + 100 + 400)
 $$
 
 Stap voor stap uitwerken:
@@ -519,20 +519,20 @@ Stap voor stap uitwerken:
 Totaal:
 
 $$
-\text{T}\_{\text{avg}} = 18 + 6 + 26 = 50 \, \text{nsec}
+\text{T}_{\text{avg}} = 18 + 6 + 26 = 50 \, \text{nsec}
 $$
 
-### Vraag 2: Hit rate in L1 berekenen gegeven $\text{T}\_{\text{avg}} = 33 \, \text{nsec}$
+### Vraag 2: Hit rate in L1 berekenen gegeven $\text{T}_{\text{avg}} = 33 \, \text{nsec}$
 
 We lossen nu $H_1$ op, gegeven dat:
 
-- $\text{T}\_{\text{avg}} = 33$
+- $\text{T}_{\text{avg}} = 33$
 - $H_2 = 0.6$
 
 De formule blijft:
 
 $$
-\text{T}\_{\text{avg}} = H_1 \cdot T_1 + (1 - H_1) \cdot H_2 \cdot (T_1 + T_2) + (1 - H_1) \cdot (1 - H_2) \cdot (T_1 + T_2 + T_M)
+\text{T}_{\text{avg}} = H_1 \cdot T_1 + (1 - H_1) \cdot H_2 \cdot (T_1 + T_2) + (1 - H_1) \cdot (1 - H_2) \cdot (T_1 + T_2 + T_M)
 $$
 
 Invullen:

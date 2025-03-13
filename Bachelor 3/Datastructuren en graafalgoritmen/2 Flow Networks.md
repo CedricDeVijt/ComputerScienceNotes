@@ -67,7 +67,7 @@
 
 - **Preflow**: Relaxed flow with:
   1. Capacity and skew symmetry constraints.
-  2. **Excess flow** $e(u) = \sum\_{v \in V} f(v,u) \geq 0$.
+  2. **Excess flow** $e(u) = \sum_{v \in V} f(v,u) \geq 0$.
 
 ### Operations
 

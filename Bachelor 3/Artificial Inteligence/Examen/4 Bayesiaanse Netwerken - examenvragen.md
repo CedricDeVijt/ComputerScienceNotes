@@ -43,7 +43,7 @@
 
    - Als je een marginale kans wilt berekenen, som of integreer je over de niet-relevante variabelen:
      $$
-     P(X) = \sum\_{Y} P(X, Y)
+     P(X) = \sum_{Y} P(X, Y)
      $$
 
 4. **Gebruik conditionele kansregels:**

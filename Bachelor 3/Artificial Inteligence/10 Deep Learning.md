@@ -51,7 +51,7 @@ With
 ### Risk and Empirical Risk
 
 - **Risk ($R(h)$)**: Expected loss across all possible inputs.
-- **Empirical Risk ($R\_{emp}(h)$)**: Average loss over a finite test dataset.
+- **Empirical Risk ($R_{emp}(h)$)**: Average loss over a finite test dataset.
 
 ### Gradient Descent
 

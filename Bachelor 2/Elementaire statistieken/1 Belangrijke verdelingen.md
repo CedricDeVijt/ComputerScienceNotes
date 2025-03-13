@@ -56,7 +56,7 @@
 
 - **Standaardnormaal**: $Z \sim \mathcal{N}(0, 1)$ met dichtheid $\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$.
 - **Algemene Normaalverdeling**: $X \sim \mathcal{N}(\mu, \sigma^2)$ via $X = \sigma Z + \mu$.
-  - Dichtheid: $f\_{\mu,\sigma}(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$.
+  - Dichtheid: $f_{\mu,\sigma}(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$.
   - $\mathrm{E}[X] = \mu$, $\mathrm{Var}[X] = \sigma^2$.
 - **Eigenschap**: Lineaire combinaties van normale verdelingen zijn ook normaal.
 
@@ -77,7 +77,7 @@
 
 ### F-Verdeling
 
-- **Definitie**: Verhouding van twee chi-kwadraat verdeelde variabelen. Notatie: $X \sim F\_{m,n}$.
+- **Definitie**: Verhouding van twee chi-kwadraat verdeelde variabelen. Notatie: $X \sim F_{m,n}$.
 - **Eigenschap**: $F*{m,n}(x) = 1 - F*{n,m}(\frac{1}{x})$.
 
 ---

@@ -103,7 +103,7 @@ Het Forward-algoritme berekent de waarschijnlijkheid van een observatiereeks, zo
 
 3. **Terminatie**:
    - Sommeer de waarden voor de laatste tijdstap:
-     $$P(O|\lambda) = \sum\_{i} α_T(i)$$
+     $$P(O|\lambda) = \sum_{i} α_T(i)$$
 
 ### 3.3 Backward
 
@@ -118,7 +118,7 @@ Het Backward-algoritme wordt gebruikt om de waarschijnlijkheid van de resterende
 2. **Recursie**:
 
    - Bereken $β*t(i)$ voor eerdere tijdstappen:
-     $$β_t(i) = \sum*{j} A*{ij} B_j(O*{t+1}) β\_{t+1}(j)$$
+     $$β_t(i) = \sum*{j} A*{ij} B_j(O*{t+1}) β_{t+1}(j)$$
 
 3. **Resultaat**:
    - Combineer met Forward om posterior kansen te berekenen:

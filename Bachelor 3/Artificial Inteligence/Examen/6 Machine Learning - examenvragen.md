@@ -51,12 +51,12 @@ Smoothing wordt gebruikt om problemen met nulwaarschijnlijkheden te vermijden, d
 Een populaire smoothingtechniek is **Laplace smoothing**, waarbij we een kleine constante toevoegen aan de teller en de noemer:
 
 $$
-P(X|C) = \frac{n\_{X,C} + \alpha}{n_C + \alpha |V|}
+P(X|C) = \frac{n_{X,C} + \alpha}{n_C + \alpha |V|}
 $$
 
 waarbij:
 
-- $n\_{X,C}$ het aantal keren is dat X voorkomt in klasse C.
+- $n_{X,C}$ het aantal keren is dat X voorkomt in klasse C.
 - $n_C$ het totale aantal waarnemingen in klasse C.
 - $\alpha$ de smoothing-parameter (bijvoorbeeld 1).
 - $|V|$ de grootte van de uitkomstruimte van X.

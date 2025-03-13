@@ -61,14 +61,14 @@ A language $L$ is **recognizable** if some TM halts on all $w \in L$.
 A **decider** is a TM that halts on all inputs.
 
 - Example: TM for $\{w \mid w \text{ has even 0s}\}$ is a decider
-- Non-decider example: TMs for $A\_{TM}$ may loop
+- Non-decider example: TMs for $A_{TM}$ may loop
 
 ## 1.4 Time Complexity Analysis
 
 ### Measuring Complexity
 
-- **Time$\_M(w)$**: Steps taken by TM $M$ on input $w$
-- **Worst-case complexity**: $t_M(n) = \max\{\text{Time}\_M(w) \mid |w|=n\}$
+- **Time$_M(w)$**: Steps taken by TM $M$ on input $w$
+- **Worst-case complexity**: $t_M(n) = \max\{\text{Time}_M(w) \mid |w|=n\}$
 
 #### Asymptotic Notation
 
