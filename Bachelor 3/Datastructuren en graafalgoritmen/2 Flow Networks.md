@@ -108,12 +108,6 @@
 - $\lambda(G)$ (edge connectivity) via $|V|$ max-flow computations.
 - $\kappa(G)$ (vertex connectivity) via $O(|V|\kappa(G))$ max-flow runs.
 
-### Practical Applications
-
-- Matrix rearrangement (Exercises 3.1.2–3.1.3).
-- Project scheduling (Exercise 3.1.4).
-- Graph coloring (Exercise 3.1.5).
-
 ## Key Points to Remember
 
 - **Flow Network**: Directed graph with capacities, source, and sink.
