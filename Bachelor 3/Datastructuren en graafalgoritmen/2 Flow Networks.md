@@ -55,6 +55,8 @@
 - Fails to terminate for irrational capacities (e.g., Figure 8 with $r = (\sqrt{5}-1)/2$).
 - **Rational capacities**: Terminates by scaling to integers.
 
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Pasted image 20250314110413.png]]
+
 ### Edmonds-Karp Algorithm
 
 - Uses BFS to find shortest augmenting paths.
