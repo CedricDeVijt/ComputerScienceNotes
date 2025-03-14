@@ -27,7 +27,6 @@
 
 - **Client**: Connects to a server, sends requests, and reads responses.
 - **Server**: Listens for connections, processes requests, and returns responses.
-- Code snippets demonstrate sending a string and receiving its uppercase version.
 
 ## 2.3 Remote Invocation and RPC
 

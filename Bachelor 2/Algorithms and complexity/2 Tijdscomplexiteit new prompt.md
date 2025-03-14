@@ -4,7 +4,7 @@
 
 **PTIME** ($DTIME(n^k)$) represents problems solvable by deterministic Turing machines in polynomial time. It's considered the class of "efficiently solvable" problems. Key distinctions:
 
-- Polynomial vs exponential growth: $O(n^3)$ vs $O(2^n)$ (Page 5 table shows $2^n$ becomes impractical for $n=100$)
+- Polynomial vs exponential growth: $O(n^3)$ vs $O(2^n)$
 - All deterministic computation models are polynomially equivalent
 
 ### PTIME Algorithms in Practice

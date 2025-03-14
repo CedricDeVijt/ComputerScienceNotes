@@ -1,6 +1,6 @@
 ## Algoritmen en complexiteit
 
-- [ ] ==1 Turing machines==
+- [x] ==1 Turing machines==
 - [ ] 2 Tijdscomplexiteit
 - [ ] 3 Plaatscomplexiteit
 ## Compilers
@@ -25,7 +25,7 @@
 
 ## Distributed systems
 
-- [ ] ==1 Introduction==
+- [x] ==1 Introduction==
 - [ ] ==2 Middleware and Communication==
 - [ ] ==3 Service Oriented Architectures==
 
