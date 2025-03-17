@@ -79,8 +79,8 @@
 
 | Semantics         | Fault Tolerance Measures          | Execution Guarantee     |
 | ----------------- | --------------------------------- | ----------------------- |
-| **Maybe**         | None                              | No guarantees           |
 | **At-least-once** | Retransmit requests, no filtering | Method executed ≥1 time |
+| **Maybe**         | None                              | No guarantees           |
 | **At-most-once**  | Retransmit + duplicate filtering  | Method executed ≤1 time |
 
 ### Techniques
