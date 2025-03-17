@@ -57,15 +57,28 @@
 
 ### Example
 
-- For the grammar $A \rightarrow aaa \mid Bbb \mid Cdd$, compute:
-  - First$^1$(A) = {a, b, c, d}
-  - Follow$^1$(C) = {d} (from context in $A \rightarrow Cdd$).
+- For the grammar
+  $$
+  \begin{align}
+  A &\rightarrow aaa\\
+  &\rightarrow Bbb\\
+  &\rightarrow Cdd\\
+  B&\rightarrow b\\
+  C&\rightarrow c\\
+  &\rightarrow ε\\
+  \end{align}
+  $$
+
+compute:
+
+- $First^1(A) = {a, b, c, d}$
+- Follow$^1$(C) = {d} (from context in $A \rightarrow Cdd$).
 
 ## 5.5 LL(k) Grammars
 
 ### Definition and Conditions
 
-- **LL(k) Grammar**: For every pair of derivations $S \Rightarrow^\* wA\gamma$, the next $k$ symbols uniquely determine the rule to apply.
+- **LL(k) Grammar**: For every pair of derivations $S \Rightarrow^* wA\gamma$, the next $k$ symbols uniquely determine the rule to apply.
 - **Strong LL(k)**: A stricter syntactic condition requiring $\text{First}^k(\alpha \cdot \text{Follow}^k(A))$ for distinct rules $A \rightarrow \alpha_1$ and $A \rightarrow \alpha_2$ to be disjoint.
 
 ### Hierarchy and Relationships
