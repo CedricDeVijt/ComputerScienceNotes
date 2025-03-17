@@ -1,139 +1,160 @@
-## 2.1 Introduction to Middleware
+## 2.1 Middleware Fundamentals in Distributed Systems
 
-### Definition and Role
+### Core Characteristics of Middleware
 
-- Middleware acts as the "plumbing" of distributed systems, providing a standard way to connect components.
-- Key roles:
-  - Invisible infrastructure for communication.
-  - Simplifies complex system integration.
-  - Allows developers to focus on core tasks.
+**Middleware** acts as the "plumbing" connecting distributed components. Key features:
 
-### Core Characteristics
+- Provides standardized communication patterns
+- Abstracts network complexity (e.g., socket management)
+- Enables focus on application logic rather than infrastructure
 
-1. Standardizes communication.
-2. Abstracts network complexity.
-3. Supports interoperability across heterogeneous systems.
+#### Four Defining Properties
 
-## 2.2 Basic Communication with Sockets
+1. **Invisibility**: Operates transparently beneath application layer
+2. **Standardization**: Offers uniform APIs for common tasks
+3. **Integration**: Binds heterogeneous system components
+4. **Productivity Boost**: Handles cross-cutting concerns like marshalling
 
-### Socket Fundamentals
+### Communication Building Blocks: Sockets
 
-- **Socket pairs**: Defined by a 4-tuple: `{ip_src, port_src, ip_dst, port_dst}`.
-- **Socket API**:
-  - `socket()`, `bind()`, `listen()`, `accept()`, `connect()`, `send()`, `receive()`, `close()`.
-- Enables inter-process communication (IPC) over a network.
+**Sockets** are OS-provided endpoints for inter-process communication.
 
-### Java Socket Example
+#### Socket Programming Essentials
 
-- **Client**: Connects to a server, sends requests, and reads responses.
-- **Server**: Listens for connections, processes requests, and returns responses.
+- **4-Tuple Identifier**: $\{ip_{src}, port_{src}, ip_{dst}, port_{dst}\}$
+- Key Operations (Berkeley Sockets API):
+  ```
+  socket() → bind() → listen()/connect() → send()/receive() → close()
+  ```
+- Java Implementation:
+  - Client: `Socket()` + I/O streams
+  - Server: `ServerSocket()` with `accept()` blocking
 
-## 2.3 Remote Invocation and RPC
+### Remote vs Local Invocations
 
-### Remote Procedure Calls (RPC)
+#### Local Method Execution
 
-- Enables calling methods on remote machines as if they were local.
-- **Components**:
-  - **Client stub**: Marshals requests.
-  - **Server skeleton**: Unmarshals requests and invokes methods.
-- **Steps**:
-  1. Convert arguments to a bitstream (marshalling).
-  2. Transmit over the network.
-  3. Unmarshal and execute remotely.
-  4. Return results to the client.
+```java
+// Within same JVM
+object.add(5,3); → Direct memory access
+```
 
-### Challenges
+#### Remote Method Challenges
 
-- Argument serialization.
-- Network latency and fault handling.
+```java
+// Cross-machine execution
+b.add(5,3); → Requires:
+1. Argument marshalling
+2. Network transport via middleware
+3. Result unmarshalling
+```
 
-## 2.4 Middleware Architecture Components
+## 2.2 Remote Procedure Calls (RPC) Architecture
 
-### Proxy and Skeleton
+### RPC Components
 
-- **Proxy**: Acts as a local object for the client, forwards requests to the remote object.
-- **Skeleton**: Receives requests, invokes methods on the server, and returns results.
+#### Proxy (Client-Side)
 
-### Marshalling
+- Mimics local object interface
+- **Marshals** requests into network messages
+- Example Flow:
+  `Client call → Proxy → Request message → Network`
 
-- Converts objects to bitstreams for transmission.
-- Standards: CORBA CDR, Java Serialization, Protocol Buffers.
+#### Skeleton (Server-Side)
 
-### Communication Module
+- Unmarshals requests into method calls
+- **Returns** results via reply messages
+- Example Flow:
+  `Network → Skeleton → Method invocation → Result marshalling`
 
-- Implements request-reply protocols.
-- Manages sockets and ensures invocation semantics.
+### Marshalling/Unmarshalling
 
-### Dispatcher and Remote Reference Module
+**Process**: Serialization/deserialization of objects to byte streams.
 
-- **Dispatcher**: Routes requests to the correct skeleton.
-- **Remote Reference Module**: Maps local proxies to remote objects and vice versa.
+- **Standards**:
+  - Java Serialization
+  - Protocol Buffers (Google)
+  - CORBA CDR
 
-## 2.5 Fault Tolerance and Invocation Semantics
+#### Data Representation Challenges
+
+- Endianness (byte order)
+- Platform-specific data types
+- Versioning compatibility
+
+## 2.3 Fault Tolerance & Invocation Semantics
 
 ### Failure Modes in RPC
 
-- Client/server crashes, message loss, duplicates.
+- Client crashes before reply
+- Duplicate requests from retries
+- Network packet loss
 
-### Invocation Semantics
+### Invocation Guarantees
 
-| Semantics         | Fault Tolerance Measures          | Execution Guarantee     |
-| ----------------- | --------------------------------- | ----------------------- |
-| **At-least-once** | Retransmit requests, no filtering | Method executed ≥1 time |
-| **Maybe**         | None                              | No guarantees           |
-| **At-most-once**  | Retransmit + duplicate filtering  | Method executed ≤1 time |
+What guarantees are given on the number of executions of remote method invocations?
 
-### Techniques
+| Semantic          | Retry? | Duplicate Filter? | Execution Count     |
+| ----------------- | ------ | ----------------- | ------------------- |
+| **Maybe**         | No     | No                | 0 or 1 (unreliable) |
+| **At-least-once** | Yes    | No                | ≥1                  |
+| **At-most-once**  | Yes    | Yes               | ≤1                  |
 
-- Retry requests, duplicate filtering, re-execute or retransmit results.
+#### Implementation Tactics
 
-## 2.6 Remote Objects and References
+- **History Tables**: Store previous replies for retransmission
+- **Unique Request IDs**: Detect duplicates
 
-### Remote Object Characteristics
+## 2.4 Middleware Architecture Layers
 
-- **Remote Interface**: Defines methods accessible remotely (e.g., via IDL).
-- **Remote Object Reference**: Globally unique identifier containing:
-  - IP address, port, creation time, object number, interface type.
+### Core Components
 
-### Local vs. Remote Invocation
+1. **Communication Module**: Manages request-reply protocols
+2. **Dispatcher**: Routes requests to correct skeletons
+3. **Remote Reference Module**: Maintains object reference tables
 
-- **Local**: Direct method calls within the same address space.
-- **Remote**: Limited to remote interface methods; requires middleware.
+#### Binding Service
 
-## 2.7 Binding Services and IDL
+- **DNS-like Resolution**: Maps logical names (e.g., "Adder") to remote references
+- Registration Process:
+  ```plaintext
+  Server: register("Adder", objRef)
+  Client: lookup("Adder") → Proxy creation
+  ```
 
-### Binding Service
+### Transparency vs Awareness
 
-- Resolves remote object references (e.g., DNS for RPC).
-- **Options**:
-  1. Direct server contact.
-  2. Centralized binding service (e.g., dictionary).
+- **Hidden Aspects**:
+  - Network location
+  - Marshalling details
+- **Exposed Aspects**:
+  - Latency (async vs sync calls)
+  - Potential failures (requires exception handling)
 
-### Interface Definition Language (IDL)
-
-- Generates proxies, skeletons, and dispatchers automatically.
-- Examples: Java RMI, Apache Thrift.
-
-## 2.8 Example Workflow: Remote Addition
-
-### Steps
-
-1. Define remote interface (IDL).
-2. Implement methods on the server.
-3. Middleware generates proxies and skeletons.
-4. Client invokes `remote.add(2,5)`.
-5. Proxy marshals request, sends via sockets.
-6. Server skeleton unmarshals, executes method, returns result.
+---
 
 ## Key Points to Remember
 
-- **Middleware** abstracts network complexity, enabling transparent communication.
-- **Sockets** are the foundation for basic IPC (APIs: `bind`, `listen`, `accept`).
-- **RPC/RMI** rely on proxies (client) and skeletons (server) for remote method execution.
-- **Marshalling** converts data for transmission; standards include Protocol Buffers.
-- **Invocation Semantics**:
-  - _At-least-once_: Retries without duplication checks.
-  - _At-most-once_: Ensures no duplicate executions.
-- **Remote References** uniquely identify objects globally (IP, port, creation time).
-- **Binding Services** resolve object references (e.g., centralized directory).
-- **IDL** generates middleware components automatically, reducing boilerplate code.
+- **Middleware Role→Abstraction** ★★★★★
+
+  - _Critical distinction_: Middleware hides network complexity but doesn't eliminate physical constraints like latency.
+
+- **RPC Semantics→Fault Handling** ★★★★☆
+
+  - _Pitfall_: At-least-once may execute duplicates; At-most-once requires state tracking.
+
+- **Marshalling→Data Consistency** ★★★★☆
+
+  - Use standardized formats (e.g., Protobuf) to avoid endianness/versioning issues.
+
+- **Proxy/Skeleton Pattern→Location Transparency** ★★★★☆
+
+  - Proxies mimic local objects; skeletons reverse the process on servers.
+
+- **Socket Basics→4-Tuple Uniqueness** ★★★☆☆
+
+  - Unique connection identifier: $\{ip_{src}, port_{src}, ip_{dst}, port_{dst}\}$
+
+- **Binding Service→Naming Resolution** ★★★☆☆
+
+  - Analogous to DNS but for distributed object references.
