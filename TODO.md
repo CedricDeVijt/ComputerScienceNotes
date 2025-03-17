@@ -3,6 +3,7 @@
 - [x] ==1 Turing machines==
 - [ ] 2 Tijdscomplexiteit
 - [ ] 3 Plaatscomplexiteit
+
 ## Compilers
 
 - [x] 1 Introduction
@@ -26,7 +27,7 @@
 ## Distributed systems
 
 - [x] ==1 Introduction==
-- [ ] ==2 Middleware and Communication==
+- [x] ==2 Middleware and Communication==
 - [ ] ==3 Service Oriented Architectures==
 
 ## Elementaire statistiek

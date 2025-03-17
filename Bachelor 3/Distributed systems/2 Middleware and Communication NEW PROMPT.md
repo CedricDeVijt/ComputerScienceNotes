@@ -92,6 +92,8 @@ b.add(5,3); → Requires:
 
 ### Invocation Guarantees
 
+What guarantees are given on the number of executions of remote method invocations?
+
 | Semantic          | Retry? | Duplicate Filter? | Execution Count     |
 | ----------------- | ------ | ----------------- | ------------------- |
 | **Maybe**         | No     | No                | 0 or 1 (unreliable) |
@@ -102,12 +104,6 @@ b.add(5,3); → Requires:
 
 - **History Tables**: Store previous replies for retransmission
 - **Unique Request IDs**: Detect duplicates
-
-**Mnemonic (MAR)**:
-
-- **M**aybe (No guarantees)
-- **A**t-least-once (Assured execution)
-- **R**obust At-most-once (Reliable)
 
 ## 2.4 Middleware Architecture Layers
 
@@ -157,11 +153,8 @@ b.add(5,3); → Requires:
 
 - **Socket Basics→4-Tuple Uniqueness** ★★★☆☆
 
-  - Unique connection identifier: `\{ip_{src}, port_{src}, ip_{dst}, port_{dst}\}` [❓ Verify Context]
+  - Unique connection identifier: $\{ip_{src}, port_{src}, ip_{dst}, port_{dst}\}$
 
 - **Binding Service→Naming Resolution** ★★★☆☆
 
   - Analogous to DNS but for distributed object references.
-
-- **MAR Mnemonic→Invocation Semantics** ★★★★★
-  - Remember Maybe/At-least/At-most guarantees using "MAR".
