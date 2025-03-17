@@ -119,18 +119,6 @@ compute:
           consume terminals and call sub-functions
   ```
 
-## 5.7 Exercises
-
-### First and Follow Sets
-
-1. Compute First$^1$ and Follow$^1$ for variables in a given grammar.
-2. Derive First$^2$ and Follow$^2$ for specific non-terminals.
-
-### LL(k) Grammars
-
-1. Determine if grammars are LL(1) by analyzing rule conflicts.
-2. Construct LL(1) action tables for provided grammars.
-
 ---
 
 ## Key Points to Remember
