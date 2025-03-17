@@ -38,9 +38,60 @@ A grammar is \textbf{LALR(k)} if:
 \text{SLR} \subset \text{LALR} \subset \text{LR}, \quad \text{LL} \subset \text{CFG (non-overlapping)}
 \]
 
-
 \textbf{Key Notes}:
 - For \textbf{LL(k)}: Compute \(\text{FIRST}_k\) and \(\text{FOLLOW}_k\) rigorously.
 - For \textbf{SLR}: Conflicts = overlap between shift terminals and \(\text{FOLLOW}\) of reduced non-terminal.
 - \textbf{LALR} merges LR(1) states; conflicts here imply not LALR but might still be LR.
 - \textbf{Left recursion} invalidates LL(k); \textbf{ambiguity} invalidates all.
+
+\subsection{Constructing an LR Parsing Table}
+To determine whether a grammar is LR, SLR, or LALR, an LR parsing table must be constructed. The steps are as follows:
+
+\begin{enumerate}
+  \item \textbf{Augment the Grammar}: Add a new start symbol \(S'\) and production \(S' \to S\), where \(S\) is the original start symbol. This ensures the parser recognizes when it has fully parsed the input.
+
+  \item \textbf{Compute LR(0) Items}: Create the set of LR(0) items for the grammar. Each item represents a position within a production (e.g., \(A \to \alpha \cdot \beta\)). 
+
+  \item \textbf{Closure Operation}: For each item \(A \to \alpha \cdot B \beta\), add all productions of \(B\) with a dot at the beginning (\(B \to \cdot \gamma\)) to the closure. Repeat until no new items can be added.
+
+  \item \textbf{Goto Function}: For each item set \(I\) and each grammar symbol \(X\) (terminal or non-terminal), compute the \textit{goto}(I, X) by advancing the dot over \(X\) in all items of \(I\) and taking the closure of the result.
+
+  \item \textbf{Build the Canonical Collection}: Start with the initial state \(I_0 = \text{closure}(\{S' \to \cdot S\})\). Use the \textit{goto} function to generate all reachable states. This forms the canonical collection of LR(0) item sets.
+
+  \item \textbf{Action and Goto Tables}:
+  \begin{itemize}
+    \item For each state \(I_i\) and terminal \(a\), if \textit{goto}(I_i, a) leads to state \(I_j\), add a \textbf{shift} action to the parsing table: \(\text{ACTION}[i, a] = \text{shift } j\).
+    \item For each state \(I_i\) containing an item \(A \to \alpha \cdot\) (complete production), add a \textbf{reduce} action: \(\text{ACTION}[i, a] = \text{reduce } A \to \alpha\) for all \(a \in \text{FOLLOW}(A)\) (for SLR). For LR(1) and LALR, use the lookahead symbols associated with the item.
+    \item For the state containing \(S' \to S \cdot\), add an \textbf{accept} action: \(\text{ACTION}[i, \$] = \text{accept}\).
+    \item For each state \(I_i\) and non-terminal \(A\), if \textit{goto}(I_i, A) leads to state \(I_j\), add \(\text{GOTO}[i, A] = j\).
+  \end{itemize}
+
+  \item \textbf{Check for Conflicts}:
+  \begin{itemize}
+    \item \textbf{Shift-Reduce Conflict}: Occurs if a state has both a shift and reduce action for the same terminal.
+    \item \textbf{Reduce-Reduce Conflict}: Occurs if a state has multiple reduce actions for the same terminal.
+    \item If no conflicts exist, the grammar is:
+    \begin{itemize}
+      \item \textbf{SLR}: If conflicts are resolved using \(\text{FOLLOW}\) sets.
+      \item \textbf{LR(1)}: If conflicts are resolved using precise lookahead symbols.
+      \item \textbf{LALR}: If the grammar remains conflict-free after merging LR(1) states with identical cores.
+    \end{itemize}
+  \end{itemize}
+
+  \item \textbf{Example Construction}:
+  Consider the grammar:
+  \[
+  S \to E \\
+  E \to E + T \mid T \\
+  T \to T * F \mid F \\
+  F \to (E) \mid id
+  \]
+  Augment the grammar, compute the LR(0) items, build the canonical collection, and populate the parsing table. Check for conflicts to classify the grammar.
+
+\end{enumerate}
+
+\textbf{Notes on Classification}:
+- If the grammar has no conflicts in the LR(0) table, it is \textbf{LR(0)}.
+- If conflicts are resolved using \(\text{FOLLOW}\) sets, it is \textbf{SLR}.
+- If conflicts are resolved using precise lookaheads, it is \textbf{LR(1)}.
+- If merging LR(1) states resolves conflicts, it is \textbf{LALR}.
