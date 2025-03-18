@@ -49,6 +49,24 @@ A **handle** is the RHS α of a production rule A→α appearing on stack top. P
 
 2. **Goto Function**: Compute state transitions for symbols (Algorithm 9).
 
+#### Example
+
+Grammar:
+
+$$
+\begin{align}
+S &→ A$\\
+A &→ aC D\\
+  &→ ab\\
+C &→ c\\
+D &→ d\\
+\end{align}
+$$
+
+CFSM:
+
+![[Bachelor 2/Compilers/images/Pasted image 20250317175419.png]]
+
 ### Item Types
 
 - **Kernel Items**: Initial items defining a state's core
