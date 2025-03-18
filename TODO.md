@@ -10,7 +10,7 @@
 - [x] 2 All Things Regular Languages, Expressions
 - [x] 3 Grammars
 - [x] 4 All things context free
-- [ ] 5 Top-down parsers
+- [x] 5 Top-down parsers
 - [ ] 6 Bottom-up parsers
 - [ ] 7 Semantic analysis
 
