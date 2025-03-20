@@ -116,5 +116,3 @@ SOA focuses on **loosely coupled, reusable services** (e.g., order processing, p
   Predictable URIs enhance API discoverability.
 - **JSON vs. XML → Flexibility**: ★★★★☆
   JSON’s lightweight structure dominates modern REST APIs.
-
-[❓ Verify Context] WS-\* extensions (e.g., WS-Security) are mentioned but not detailed in the source.
