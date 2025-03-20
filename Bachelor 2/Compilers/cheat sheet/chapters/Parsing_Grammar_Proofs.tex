@@ -50,7 +50,7 @@ To determine whether a grammar is LR, SLR, or LALR, an LR parsing table must be 
 \begin{enumerate}
   \item \textbf{Augment the Grammar}: Add a new start symbol \(S'\) and production \(S' \to S\), where \(S\) is the original start symbol. This ensures the parser recognizes when it has fully parsed the input.
 
-  \item \textbf{Compute LR(0) Items}: Create the set of LR(0) items for the grammar. Each item represents a position within a production (e.g., \(A \to \alpha \cdot \beta\)). 
+  \item \textbf{Compute LR(0) Items}: Create the set of LR(0) items for the grammar. Each item represents a position within a production (e.g., \(A \to \alpha \cdot \beta\)).
 
   \item \textbf{Closure Operation}: For each item \(A \to \alpha \cdot B \beta\), add all productions of \(B\) with a dot at the beginning (\(B \to \cdot \gamma\)) to the closure. Repeat until no new items can be added.
 
@@ -60,7 +60,7 @@ To determine whether a grammar is LR, SLR, or LALR, an LR parsing table must be 
 
   \item \textbf{Action and Goto Tables}:
   \begin{itemize}
-    \item For each state \(I_i\) and terminal \(a\), if \textit{goto}(I_i, a) leads to state \(I_j\), add a \textbf{shift} action to the parsing table: \(\text{ACTION}[i, a] = \text{shift } j\).
+    \item For each state $I_i$ and terminal $a$, if $\textit{goto}(I_i, a)$ leads to state \(I_j\), add a \textbf{shift} action to the parsing table: \(\text{ACTION}[i, a] = \text{shift } j\).
     \item For each state \(I_i\) containing an item \(A \to \alpha \cdot\) (complete production), add a \textbf{reduce} action: \(\text{ACTION}[i, a] = \text{reduce } A \to \alpha\) for all \(a \in \text{FOLLOW}(A)\) (for SLR). For LR(1) and LALR, use the lookahead symbols associated with the item.
     \item For the state containing \(S' \to S \cdot\), add an \textbf{accept} action: \(\text{ACTION}[i, \$] = \text{accept}\).
     \item For each state \(I_i\) and non-terminal \(A\), if \textit{goto}(I_i, A) leads to state \(I_j\), add \(\text{GOTO}[i, A] = j\).
