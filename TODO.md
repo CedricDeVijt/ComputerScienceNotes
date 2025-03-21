@@ -19,7 +19,7 @@
 - [x] ==1 Graph Searching==
 - [ ] ==2 Flow Networks==
 - [ ] ==3 Bipartite Matching Algorithms==
-- [ ] 4 Disjoint-sets Data Structures
+- [ ] ==4 Disjoint-sets Data Structures==
 - [ ] 5 Spanning Trees
 - [ ] 6 Fibonacci Heaps
 - [ ] 7 Shortest Path Problems
@@ -29,6 +29,7 @@
 - [x] ==1 Introduction==
 - [x] ==2 Middleware and Communication==
 - [ ] ==3 Service Oriented Architectures==
+- [ ] ==Web Services==
 
 ## Elementaire statistiek
 
