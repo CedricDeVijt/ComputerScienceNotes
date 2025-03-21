@@ -2,14 +2,14 @@
 
 ### Operations
 
-- **MakeSet(x)**: Creates a set containing only $x$ $(O(1)$ time. $x$ becomes the representative.
-- **FindSet(x)**: Returns the representative of the set containing $x$ $(O(1)$ time via root pointer.
+- **MakeSet(x)**: Creates a set containing only $x$ ($O(1)$ time). $x$ becomes the representative.
+- **FindSet(x)**: Returns the representative of the set containing $x$ ($O(1)$ time via root pointer).
 - **Union(x, y)**: Merges the sets containing $x$ and $y$. Appends the shorter list to the longer one to minimize root pointer updates.
 
 ### Time Complexity Analysis
 
 - **Theorem 1.1**: A sequence of $m$ operations (including $n$ MakeSet) has a worst-case cost of $O(m + n \log n)$.
-  - **Proof**: Each item’s root pointer is updated ≤ log₂n times (doubling set size with each update). Total Union cost is $O(n \log n)$.
+  - **Proof**: Each item’s root pointer is updated $≤ log_2 n$ times (doubling set size with each update). Total Union cost is $O(n \log n)$.
 
 ### Drawbacks Without Optimization
 
@@ -26,14 +26,14 @@
 ### Time Complexity Without Path Compression
 
 - **Theorem 2.1**: Worst-case cost for $m$ operations is $O(m \log n)$.
-  - **Proof**: Tree height ≤ log₂n (since rank increases only when merging equal-rank trees).
+  - **Proof**: Tree height $≤ log_2n$ (since rank increases only when merging equal-rank trees).
 
 ### Time Complexity With Path Compression
 
 - **Theorem 2.2**: Worst-case cost reduces to $O(m α(m, n))$, where $\alpha$ is the inverse Ackermann function (effectively ≤ 4 in practice).
   - **Proof Sketch**:
-    - Partition ranks into blocks based on log\* (iterated logarithm).
-    - Block costs ($O(m \log * n)$) and path costs ($O(n \log * n)$) dominate.
+    - Partition ranks into blocks based on $\log^*$ (iterated logarithm).
+    - Block costs ($O(m \log^* n)$) and path costs ($O(n \log^* n)$) dominate.
 
 ### Key Heuristics
 
@@ -43,7 +43,7 @@
 ## 4.3 Union-by-Weight vs Union-by-Rank
 
 - **Union-by-Weight**: Merge smaller sets into larger ones (based on size).
-- **Non-Equivalence**: Union-by-rank focuses on tree height, while union-by-weight uses set size. Worst-case FindSet time remains $O(log n) for both, but structures differ.
+- **Non-Equivalence**: Union-by-rank focuses on tree height, while union-by-weight uses set size. Worst-case FindSet time remains $O(\log n)$ for both, but structures differ.
 
 ## 4.4 Applications and Algorithms
 
@@ -53,11 +53,11 @@
   1. Initialize sets for all vertices.
   2. For each edge $(u, v)$, check if $FindSet(u) == FindSet(v)$. If yes, return `False` (cycle detected).
   3. Union sets if no cycle.
-- **Efficiency**: Use disjoint-sets forest with path compression and union by rank for $O(α(|E|, |V|)) time per operation.
+- **Efficiency**: Use disjoint-sets forest with path compression and union by rank for $O(\alpha(|E|, |V|))$ time per operation.
 
 ### Connected Components
 
-- **Algorithm**: Use disjoint-sets to track components. Number of MakeSet, Union, and FindSet operations is $O(|V| + |E| α(|V|))$.
+- **Algorithm**: Use disjoint-sets to track components. Number of MakeSet, Union, and FindSet operations is $O(|V| + |E| \alpha(|V|))$.
 
 ## Key Points to Remember
 
