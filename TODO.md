@@ -29,7 +29,7 @@
 - [x] ==1 Introduction==
 - [x] ==2 Middleware and Communication==
 - [ ] ==3 Service Oriented Architectures==
-- [ ] ==Web Services==
+- [ ] ==4 Web Services==
 
 ## Elementaire statistiek
 
