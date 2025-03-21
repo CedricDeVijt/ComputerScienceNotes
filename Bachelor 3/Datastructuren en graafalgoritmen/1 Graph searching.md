@@ -32,7 +32,7 @@
 2. **Diameter Calculation**: Run BFS from all nodes (complexity $O(|V|(|V| + |E|))$).
 3. **Shortest Path in Unweighted Graphs**: Directly use BFS distances.
 
-![[Pasted image 20250221112312.png|500]]![[Pasted image 20250221112336.png|500]]
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Pasted image 20250321161222.png]]
 
 ## 1.3 Depth-First Search (DFS)
 
@@ -52,9 +52,11 @@
 
 ### Applications
 
-4. **Cycle Detection**: Presence of back edges indicates cycles.
-5. **Topological Sorting**: Order nodes by decreasing $f(u)$.
-6. **SCC Identification**: Via Kosaraju’s algorithm (two DFS passes).
+1. **Cycle Detection**: Presence of back edges indicates cycles.
+2. **Topological Sorting**: Order nodes by decreasing $f(u)$.
+3. **SCC Identification**: Via Kosaraju’s algorithm (two DFS passes).
+
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Pasted image 20250321161150.png]]
 
 ## 1.4 Topological Sorting in Directed Acyclic Graphs (DAGs)
 
@@ -101,7 +103,7 @@ A **topological sort** arranges vertices in a linear order where for every direc
 
 - **Network Analysis**: Identify clusters in social networks or functional groups in software dependencies.
 
-![[Pasted image 20250228111956.png|600]]
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Pasted image 20250321161704.png]]
 
 ---
 
