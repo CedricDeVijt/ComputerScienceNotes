@@ -1,7 +1,7 @@
 ## Algoritmen en complexiteit
 
 - [x] ==1 Turing machines==
-- [ ] 2 Tijdscomplexiteit
+- [ ] ==2 Tijdscomplexiteit==
 - [ ] 3 Plaatscomplexiteit
 
 ## Compilers
@@ -18,7 +18,7 @@
 
 - [x] ==1 Graph Searching==
 - [ ] ==2 Flow Networks==
-- [ ] 3 Bipartite Matching Algorithms
+- [ ] ==3 Bipartite Matching Algorithms==
 - [ ] 4 Disjoint-sets Data Structures
 - [ ] 5 Spanning Trees
 - [ ] 6 Fibonacci Heaps

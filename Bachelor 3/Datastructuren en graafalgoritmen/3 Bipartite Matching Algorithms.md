@@ -6,6 +6,8 @@
 - **Maximum Matching**: A matching $M$ where no other matching $M'$ satisfies $|M'| > |M|$.
 - **Bipartite Graph**: A graph $\bar{G} = (\bar{V}, \bar{E})$ partitioned into sets $L$ (left) and $R$ (right), with edges only between $L$ and $R$.
 
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Pasted image 20250321104854.png]]
+
 ## 3.2 Network Flow Solution for Bipartite Matching
 
 ### Flow Network Construction
