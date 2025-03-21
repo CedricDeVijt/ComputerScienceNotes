@@ -32,8 +32,8 @@
 
 - **Theorem 2.2**: Worst-case cost reduces to $O(m α(m, n))$, where $\alpha$ is the inverse Ackermann function (effectively ≤ 4 in practice).
   - **Proof Sketch**:
-    - Partition ranks into blocks based on $\log^*$ (iterated logarithm).
-    - Block costs ($O(m \log^* n)$) and path costs ($O(n \log^* n)$) dominate.
+    - Partition ranks into blocks based on $\log_*$ (iterated logarithm).
+    - Block costs ($O(m \log_* n)$) and path costs ($O(n \log_* n)$) dominate.
 
 ### Key Heuristics
 
