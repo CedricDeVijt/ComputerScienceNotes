@@ -28,7 +28,7 @@
   - Uses integer-valued flows (0 or 1 for edges).
   - Complexity: $O(|V||E|)$ using Edmonds-Karp (BFS for shortest augmenting paths).
 
-## 3.3 Hopcroft-Karp Algorithm (1973)
+## 3.3 Hopcroft-Karp Algorithm (Optional)
 
 ### Key Concepts
 
@@ -55,18 +55,6 @@
 - **Theorem 3.2**: After augmenting with shortest paths, new shortest paths are strictly longer.
 - **Lemma 3.2**: Maximum matching size is bounded by $|M| + |V|/l$, where $l$ is the shortest augmenting path length.
 
-## 3.4 Applications and Exercises
-
-### Hall’s Theorem
-
-- **Statement**: A bipartite graph $G$ with $|L| = |R|$ has a perfect matching iff $|A| \leq |\Gamma(A)|$ for all $A \subseteq L$.
-- **Proof Approach**: Use min-cut max-flow duality.
-
-### Other Results
-
-- **Regular Bipartite Graphs**: If every node has degree $d$, a perfect matching exists.
-- **Dense Graphs**: If each vertex has $\geq n/2$ neighbors (for $|L| = |R| = n$), a perfect matching exists.
-- **Vertex Cover**: Min vertex cover size equals max flow in the constructed network (Konig’s theorem).
 
 ---
 
