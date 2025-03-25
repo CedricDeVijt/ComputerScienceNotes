@@ -26,7 +26,7 @@
   - **Successor Function**: Moves the dot past a symbol to form new states.
 - **Example**: For the grammar `S → A$ | aCD | ab`, the CFSM tracks progress through rules and resolves conflicts via state transitions.
 
-![[Bachelor 2/Compilers/Pasted image 20250324170916.png]]
+![[Bachelor 2/Compilers/images/Pasted image 20250324170916.png]]
 
 ## 6.4 LR(0) Parsers
 
