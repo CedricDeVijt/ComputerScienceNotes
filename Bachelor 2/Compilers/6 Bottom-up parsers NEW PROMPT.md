@@ -141,10 +141,10 @@ Uses **Follow sets** to resolve conflicts:
 
 ## Key Points to Remember
 
-- **Shift-Reduce Conflict→Use Lookahead**: SLR(1) uses Follow sets; LR(k) uses precise contexts ★★★★
-- **Viable Prefixes→CFSM States**: Critical for tracking valid reductions ★★★☆
-- **LALR Efficiency**: Merges LR(k) states but risks conflicts ★★★☆
+- **Shift-Reduce Conflict→Use Lookahead**: SLR(1) uses Follow sets; LR(k) uses precise contexts ★★★★☆
+- **Viable Prefixes→CFSM States**: Critical for tracking valid reductions ★★★☆☆
+- **LALR Efficiency**: Merges LR(k) states but risks conflicts ★★★☆☆
 - **Grammar Power**: Bottom-up > Top-down (LR handles left recursion/ambiguity) ★★★★★
-- **DCFL = LR(1)**: All deterministic CFLs have LR(1) grammars ★★★★
-- **Endmarker $**: Enables LR(0) parsing for DCFL+$ languages ★★★
-- **Undecidability**: No algorithm detects if grammar is LR(k) for any k ★★
+- **DCFL = LR(1)**: All deterministic CFLs have LR(1) grammars ★★★★☆
+- **Endmarker $**: Enables LR(0) parsing for DCFL+$ languages ★★★☆☆
+- **Undecidability**: No algorithm detects if grammar is LR(k) for any k ★★☆☆☆
