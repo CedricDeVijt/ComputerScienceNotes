@@ -9,6 +9,8 @@
 - **Vertical scaling** (adding CPU/memory) has physical limits.
 - **Horizontal scaling** (replicating monoliths) wastes resources and complicates load balancing.
 
+![[Bachelor 3/Distributed systems/images/Untitled.png]]
+
 ### Transitioning to Microservices
 
 **Microservices** decompose applications into **independent, business-capability-aligned services**. Each service:
@@ -16,6 +18,8 @@
 - Runs in its own process.
 - Uses lightweight protocols (e.g., REST, message queues).
 - Employs **polyglot persistence** (different databases per service).
+
+![[Bachelor 3/Distributed systems/images/Picture1.webp]]
 
 #### Key Design Shifts
 
