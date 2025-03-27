@@ -19,7 +19,7 @@
 - Uses lightweight protocols (e.g., REST, message queues).
 - Employs **polyglot persistence** (different databases per service).
 
-![[Bachelor 3/Distributed systems/images/Picture1.webp]]
+![[Bachelor 3/Distributed systems/images/Picture1.webp|5000]]
 
 #### Key Design Shifts
 
