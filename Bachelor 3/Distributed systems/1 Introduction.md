@@ -31,14 +31,14 @@
    - Pros: Reduced interfaces, easy layer replacement.
    - Cons: Duplication, complexity.
 
-  ![](/Bachelor%203/Distributed%20systems/images/Pasted%20image%2020250220150049.png)
+![](/Bachelor%203/Distributed%20systems/images/Pasted%20image%2020250220150049.png)
 
 1. **Decoupled**:
    - Loosely linked components (e.g., event-based, data-centric).
    - Pros: Flexibility, integration of legacy systems.
    - Cons: Bottlenecks, locking issues.
 
-  ![](/Bachelor%203/Distributed%20systems/images/Pasted%20image%2020250220150106.png)
+![](/Bachelor%203/Distributed%20systems/images/Pasted%20image%2020250220150106.png)
 
 ### System Architectures
 
