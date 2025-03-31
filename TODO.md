@@ -30,6 +30,7 @@
 - [x] ==2 Middleware and Communication==
 - [ ] ==3 Service Oriented Architectures==
 - [ ] ==4 Web Services==
+- [ ] ==5 Microservices==
 
 ## Elementaire statistiek
 
@@ -39,13 +40,13 @@
 - [ ] ==4 Intervalschattingen==
 - [ ] ==5 Hypothesetesten==
 - [ ] ==6 Vergelijkingstesten==
-- [ ] 7 Verdelingstoetsen
-- [ ] 8 Toetsen van onafhankelijkheid
-- [ ] 9 Enkelvoudige lineaire regressie
+- [ ] ==7 Verdelingstoetsen==
+- [ ] ==8 Toetsen van onafhankelijkheid==
+- [ ] ==9 Enkelvoudige lineaire regressie==
 
 ## Numerieke analyse
 
 - [ ] ==1 Inleiding==
 - [ ] ==2 Niet-lineaire vergelijkingen==
-- [ ] 3 Interpolatie
+- [ ] ==3 Interpolatie==
 - [ ] 4 Numerieke integratie
