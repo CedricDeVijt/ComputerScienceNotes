@@ -1,91 +1,150 @@
 ## 6.1 Principles of Bottom-Up Parsing
 
-- **Definition**: Bottom-up parsers construct parse trees starting from leaves (input tokens) and moving upward to the root (start symbol). They reverse the derivation process using **shift-reduce** actions.
-- **Key Actions**:
-  - **Shift**: Move a terminal from the input to the stack.
-  - **Reduce**: Replace a handle (sequence matching a production rule’s RHS) on the stack with the corresponding non-terminal.
-- **Goal**: End with only the start symbol on the stack and empty input.
-- **Rightmost Derivation**: Bottom-up parsers build a rightmost derivation in reverse.
+### Core Parsing Strategy
 
-## 6.2 Shift-Reduce Parsers and Conflicts
+Bottom-up parsers **construct parse trees from leaves to root** by reversing derivation rules. Unlike top-down approaches starting with start symbols, they use **shift-reduce actions** on terminal symbols from input strings. Key components: stack for partial reductions and input buffer.
 
-- **Shift-Reduce Workflow**:
-  - **Shift** terminals to the stack until a handle is identified.
-  - **Reduce** the handle to a non-terminal using grammar rules.
-- **Conflicts**:
-  - **Reduce-Reduce**: Multiple rules can reduce the same handle.
-  - **Shift-Reduce**: Ambiguity between shifting a terminal or reducing a handle.
-- **Example**: Parsing `id + id * id` requires resolving conflicts by prioritizing reductions for operator precedence.
+#### Key Operations
+
+- **Shift**: Move terminal from input to stack
+- **Reduce**: Replace handle (RHS of rule) on stack with LHS non-terminal
+- Accept when stack contains only start symbol and input is empty.
+
+### Comparison with Top-Down Parsing
+
+- **Power**: Bottom-up methods handle broader grammar classes (e.g., left-recursive rules)
+- **Efficiency**: Decisions based on actual input rather than predictions
+- **Derivation Type**: Builds **rightmost derivation in reverse** (Example 6.1: `Id + Id * Id` reduction sequence).
+
+## 6.2 Shift-Reduce Parsers and Handle Identification
+
+### Handle Detection Mechanics
+
+A **handle** is the RHS α of a production rule A→α appearing on stack top. Parsers must:
+
+1. Identify valid handles using grammar rules
+2. Choose between shifting or reducing (conflict resolution critical).
+
+#### Conflict Types
+
+- **Shift-Reduce**: Handle detected but next input could extend potential handle
+- **Reduce-Reduce**: Multiple valid handles for stack top (Example 6.10: Arithmetic expression ambiguity).
+
+### Viable Prefixes
+
+**Definition**: Prefixes of right-sentential forms that can appear on parser stack during valid reductions. The CFSM (Section 6.2) recognizes these prefixes to guide parsing decisions.
 
 ## 6.3 Canonical Finite State Machine (CFSM)
 
-- **Purpose**: Recognizes **viable prefixes** (stack contents that can lead to successful parsing).
-- **Construction**:
-  - **Items**: Grammar rules with a dot (·) indicating parsing progress (e.g., `A → α·β`).
-  - **Closure Operation**: Adds items for all productions of non-terminals following the dot.
-  - **Successor Function**: Moves the dot past a symbol to form new states.
-- **Example**: For the grammar `S → A$ | aCD | ab`, the CFSM tracks progress through rules and resolves conflicts via state transitions.
+### Construction Algorithm
 
-![[Bachelor 2/Compilers/images/Pasted image 20250324170916.png]]
+1. **Closure Operation**: Expand items with all possible productions for non-terminals following dot
+
+   ```python
+   def closure(I):
+       repeat:
+           for A→α·Bβ in I:
+               add B→·γ for all B→γ
+   ```
+
+2. **Goto Function**: Compute state transitions for symbols (Algorithm 9).
+
+#### Example
+
+Grammar:
+
+$$
+\begin{align}
+S &→ A$\\
+A &→ aC D\\
+  &→ ab\\
+C &→ c\\
+D &→ d\\
+\end{align}
+$$
+
+CFSM:
+
+![[Bachelor 2/Compilers/images/Pasted image 20250317175419.png]]
+
+### Item Types
+
+- **Kernel Items**: Initial items defining a state's core
+- **Non-Kernel Items**: Added via closure (e.g., state 0 in Figure 6.3 includes closure items for A→aCD and A→ab).
 
 ## 6.4 LR(0) Parsers
 
-- **Features**:
-  - No look-ahead; decisions based solely on the current state.
-  - **Action Table**: Maps states to shift/reduce/accept actions.
-- **Limitations**:
-  - Fails on grammars with conflicts (e.g., overlapping handles).
-- **Example**: The grammar `S → ε | SaSb` is LR(0) because reductions are unambiguous.
+### Deterministic Parsing Without Lookahead
+
+- **Action Table**: Maps CFSM states to shift/reduce/accept actions
+- **State Stack**: Tracks CFSM states instead of symbols for efficiency (Figure 6.4).
+
+#### Limitations
+
+- Fails on grammars needing lookahead (Example 6.10: Shift/Reduce conflict in state 1).
 
 ## 6.5 SLR(1) Parsers
 
-- **Improvement over LR(0)**:
-  - Uses **Follow sets** to resolve conflicts with 1-symbol look-ahead.
-  - Reduces ambiguity by checking if the next symbol is in the Follow set of the non-terminal.
-- **Example**: In `Exp → Exp + Prod | Prod`, Follow(Prod) = {+, \*, $} ensures reductions occur only when valid.
+### Simple Lookahead Resolution
+
+Uses **Follow sets** to resolve conflicts:
+
+- Reduce only if lookahead ∈ Follow(A) for rule A→α
+- Shift if lookahead ∈ First(β) for incomplete item A→α·aβ.
+
+#### Table Construction
+
+- Augment LR(0) table with Follow-set checks (Algorithm 12).
 
 ## 6.6 LR(k) Parsers
 
-- **Generalization**:
-  - Uses **k symbols of look-ahead** to resolve conflicts.
-  - **LR(1) Items**: Augmented with look-ahead tokens (e.g., `A → α·β, a`).
-- **Construction**:
-  - **Closure with Look-Ahead**: Computes expected terminals after reducing a rule.
-  - **Action Table**: Combines shift/reduce actions based on look-ahead.
-- **Example**: The grammar `S → L=R | R` requires LR(1) to distinguish between `=` and `$` in look-ahead.
+### Precise Lookahead Handling
+
+- **Items**: Augmented with lookahead strings (e.g., A→α·β, {u})
+- **CFSM States**: Split based on specific lookahead contexts (Example 6.15: Distinct states for $ vs =).
+
+### LR(k) Grammars
+
+**Formal Definition**: No ambiguous reductions when k-symbol lookahead distinguishes between valid handles (Definition 6.19). Non-LR(k) example: Knuth's `S→aAbc | aBbd` (Figure 6.20).
 
 ## 6.7 LALR(k) Parsers
 
-- **Optimization**:
-  - Merges LR(k) states with identical **hearts** (LR(0) items) but different look-aheads.
-  - Reduces table size while retaining most LR(k) power.
-- **Trade-off**: May introduce conflicts not present in LR(k).
-- **Example**: Merging states in `S → aAd | aBe` reduces the parser’s size but risks unresolved ambiguities.
+### State Merging for Efficiency
 
-## 6.8 Hierarchy of Grammars and Languages
+- Merge LR(k) states with **identical hearts** (LR(0) items) but different lookaheads
+- Preserves deterministic behavior while reducing table size (Proposition 6.4: Same state count as LR(0)).
 
-- **Grammar Classes**:
-  - **LR(0) ⊂ SLR(1) ⊂ LALR(1) ⊂ LR(1) ⊂ ...**: Increasing look-ahead improves coverage.
-  - **LL(k) ⊂ LR(k)**: Bottom-up parsers handle more grammars than top-down.
-- **Language Classes**:
-  - **DCFL (Deterministic CFL)**: All LR(k) languages fall into this category.
-  - **Practical Relevance**: Most programming languages are LALR(1).
+#### Tradeoffs
 
-## 6.9 Practical Considerations
+- May reintroduce conflicts absent in LR(k) (Example 6.26: Merged states 9 & 19 in Table 6.4).
 
-- **Parser Generators**: Tools like Yacc/Bison generate LALR(1) parsers due to efficiency.
-- **End-of-File Marker ($)**: Simplifies parsing by ensuring unambiguous termination.
+## 6.8 Bottom-Up Hierarchy
+
+### Grammar Classes
+
+- **Inclusions**: LR(0) ⊂ SLR(1) ⊂ LALR(1) ⊂ LR(1) (Theorem 6.6)
+- **Undecidable**: Whether a grammar is LR(k) for some k (Knuth 1965).
+
+### Language Classes
+
+- **DCFL = LR(1)**: All deterministic CFLs have LR(1) grammars (Theorem 6.8)
+- **Endmarker Trick**: $ suffix enables LR(0) parsing for DCFLs (Theorem 6.9).
+
+## 6.9 Top-Down vs Bottom-Up
+
+### Syntactic Power
+
+- **LL(k) ⊂ LR(k)**: All LL(k) grammars are LR(k), but not vice versa (Theorem 6.10)
+- **Hierarchy Collapse**: LR(k) lang = DCFL vs infinite LL(k) hierarchy.
 
 ---
 
 ## Key Points to Remember
 
-- **Shift-Reduce Actions**: Core mechanism for bottom-up parsing.
-- **Viable Prefixes**: Valid stack contents tracked by the CFSM.
-- **Conflicts**:
-  - **Reduce-Reduce**: Multiple valid reductions.
-  - **Shift-Reduce**: Ambiguity between shifting and reducing.
-- **LR Hierarchy**: LR(0) < SLR(1) < LALR(1) < LR(1).
-- **Look-Ahead**: Critical for resolving conflicts (SLR uses Follow sets; LR(k) uses k symbols).
-- **DCFL**: All LR(k) languages are deterministic context-free.
-- **Practical Use**: LALR(1) balances power and efficiency, making it standard in tools.
+- **Shift-Reduce Conflict→Use Lookahead**: SLR(1) uses Follow sets; LR(k) uses precise contexts ★★★★☆
+- **Viable Prefixes→CFSM States**: Critical for tracking valid reductions ★★★☆☆
+- **LALR Efficiency**: Merges LR(k) states but risks conflicts ★★★☆☆
+- **Grammar Power**: Bottom-up > Top-down (LR handles left recursion/ambiguity) ★★★★★
+- **DCFL = LR(1)**: All deterministic CFLs have LR(1) grammars ★★★★☆
+- **Endmarker $**: Enables LR(0) parsing for DCFL+$ languages ★★★☆☆
+- **Undecidability**: No algorithm detects if grammar is LR(k) for any k ★★☆☆☆
