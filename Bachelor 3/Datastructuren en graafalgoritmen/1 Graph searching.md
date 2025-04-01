@@ -10,6 +10,13 @@
 - **Adjacency Matrix**:
   - $|V| \times |V|$ matrix with 1 at $(u, v)$ if $(u, v) \in E$.
   - **Pros**: Edge existence check in $O(1)$. **Cons**: $O(|V|^2)$ space.
+- **Notations**:
+  - $d(u)$: number of vertices needed to get from u to the source vertex s
+  - $\Gamma(u)$: set of neighbors of u
+  - $\pi(u):$ parent of u in the BFS tree
+  - $\delta(s, u)$: shortest path length from s to u
+  - $f(u)$: finish time of u in DFS
+  - $d(u)$: discovery time of u in DFS
 
 ![[Pasted image 20250214111039.png]]
 
