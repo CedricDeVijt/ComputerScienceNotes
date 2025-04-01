@@ -127,4 +127,4 @@
 
 ## Extra material
 
-- [Maximum flow - Ford-Fulkerson and Edmonds-Karp](https://cp-algorithms.com/graph/edmonds_karp.html)
+- [Maximum flow - Ford-Fulkerson and Edmonds-Karp | cp-algorithms.com](https://cp-algorithms.com/graph/edmonds_karp.html)
