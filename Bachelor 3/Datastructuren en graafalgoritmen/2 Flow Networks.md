@@ -124,3 +124,7 @@
 - **Preflow-Push**: $O(|V|^2|E|)$, uses height labels and push/lift operations.
 - **Critical Edges**: Increasing/decreasing capacity affects max flow.
 - **Applications**: Connectivity, matrix problems, scheduling.
+
+## Extra material
+
+- [Maximum flow - Ford-Fulkerson and Edmonds-Karp](https://cp-algorithms.com/graph/edmonds_karp.html)
