@@ -7,6 +7,8 @@
   - Edge capacities $c(u,v) \geq 0$.
   - All nodes $v \in V$ lie on a path from $s$ to $t$.
 
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Network_Flow_Cropped2_-_revised.png]]
+
 ### Flow
 
 - A **flow** $f$ is a function $V \times V \rightarrow \mathbb{R}$ satisfying:
