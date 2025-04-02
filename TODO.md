@@ -19,7 +19,7 @@
 - [x] ==1 Graph Searching==
 - [x] ==2 Flow Networks==
 - [x] ==3 Bipartite Matching Algorithms==
-- [ ] ==4 Disjoint-sets Data Structures==
+- [x] ==4 Disjoint-sets Data Structures==
 - [ ] ==5 Spanning Trees==
 - [ ] 6 Fibonacci Heaps
 - [ ] 7 Shortest Path Problems

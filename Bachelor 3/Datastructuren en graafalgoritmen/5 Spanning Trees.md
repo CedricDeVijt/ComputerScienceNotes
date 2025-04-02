@@ -55,12 +55,31 @@ A **spanning tree** $T \subseteq G$ covers all vertices $V(G)$. In weighted grap
 - **Dense graphs**: Prim's (Fibonacci heaps) outperforms Kruskal's.
 - **Sparse graphs**: Kruskal's is faster due to efficient sorting.
 
-## 5.4 Advanced MST Algorithms and Optimizations
+## 5.4 Differences Between Kruskal's and Prim's Algorithms
+
+| **Aspect**              | **Kruskal's Algorithm**                          | **Prim's Algorithm**                                |
+| ----------------------- | ------------------------------------------------ | --------------------------------------------------- |
+| **Approach**            | Edge-based: Adds edges in sorted order.          | Vertex-based: Grows the MST from a starting vertex. |
+| **Cycle Detection**     | Uses Union-Find to avoid cycles.                 | Naturally avoids cycles by growing a tree.          |
+| **Starting Point**      | Does not require a starting vertex.              | Requires a starting vertex.                         |
+| **Data Structure**      | Uses Union-Find (disjoint-set).                  | Uses a priority queue (min-heap).                   |
+| **Time Complexity**     | $O(E \log E)$ or $O(E \log V)$.                  | $O(E \log V)$ (with binary heap).                   |
+| **Best For**            | Sparse graphs (fewer edges).                     | Dense graphs (more edges).                          |
+| **Disconnected Graphs** | Can handle disconnected graphs (finds a forest). | Works only on connected graphs.                     |
+
+### **When to Use Which Algorithm?**
+
+- **Kruskal's Algorithm** is preferred for sparse graphs (where $E$ is small) because it focuses on edges and benefits from efficient sorting and Union-Find operations.
+- **Prim's Algorithm** is preferred for dense graphs (where $E$ is large) because it focuses on vertices and can be optimized with advanced priority queues like Fibonacci heaps.
+
+Both algorithms will always produce the same MST (in terms of total weight) for a given graph, assuming edge weights are distinct. If edge weights are not distinct, the MST may not be unique, but both algorithms will still produce a valid MST.
+
+## 5.5 Advanced MST Algorithms and Optimizations
 
 ### Graph Preprocessing for Sparse Graphs
 
 - **Boruvka-like steps**: Contract components by adding cheapest edges.
-- **Time savings**: Reduces graph size by ≥50% per iteration (Figure 16-17 [❓ Verify Context]).
+- **Time savings**: Reduces graph size by ≥50% per iteration
 
 ### Fredman-Tarjan $O(|E|\log^*|V|)$ Algorithm
 
