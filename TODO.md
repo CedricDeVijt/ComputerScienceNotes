@@ -17,10 +17,10 @@
 ## Datastructuren en graafalgoritmen
 
 - [x] ==1 Graph Searching==
-- [ ] ==2 Flow Networks==
-- [ ] ==3 Bipartite Matching Algorithms==
+- [x] ==2 Flow Networks==
+- [x] ==3 Bipartite Matching Algorithms==
 - [ ] ==4 Disjoint-sets Data Structures==
-- [ ] 5 Spanning Trees
+- [ ] ==5 Spanning Trees==
 - [ ] 6 Fibonacci Heaps
 - [ ] 7 Shortest Path Problems
 

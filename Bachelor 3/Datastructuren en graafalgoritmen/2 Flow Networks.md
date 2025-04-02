@@ -134,6 +134,6 @@
 - **Critical Edges**: Increasing/decreasing capacity affects max flow.
 - **Applications**: Connectivity, matrix problems, scheduling.
 
-## Extra material
+## Useful resources
 
-- [Maximum flow - Ford-Fulkerson and Edmonds-Karp | cp-algorithms.com](https://cp-algorithms.com/graph/edmonds_karp.html)
+[Maximum flow - Ford-Fulkerson and Edmonds-Karp | cp-algorithms.com](https://cp-algorithms.com/graph/edmonds_karp.html)

@@ -66,3 +66,9 @@
 - **Hall’s Condition**: Necessary and sufficient for perfect matchings in bipartite graphs.
 - **Vertex Cover Duality**: Min vertex cover size equals max matching size in bipartite graphs (Konig’s theorem).
 - **Ford-Fulkerson**: Guarantees integer flows for bipartite matching, enabling $O(|V||E|)$ solutions.
+
+## Useful resources
+
+### Video's
+
+![Unweighted Bipartite Matching | Network Flow | Graph Theory](https://www.youtube.com/watch?v=GhjwOiJ4SqU)
