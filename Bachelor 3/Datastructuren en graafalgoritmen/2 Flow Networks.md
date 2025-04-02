@@ -7,7 +7,7 @@
   - Edge capacities $c(u,v) \geq 0$.
   - All nodes $v \in V$ lie on a path from $s$ to $t$.
 
-![[Bachelor 3/Datastructuren en graafalgoritmen/images/Network_Flow_Cropped2_-_revised.png]]
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/flow_1.png]]
 
 ### Flow
 
@@ -16,6 +16,9 @@
   2. **Skew symmetry**: $f(u,v) = -f(v,u)$.
   3. **Flow conservation**: $\sum\limits_{v \in V} f(u,v) = 0$ for $u \in U \setminus \{s,t\}$.
 - **Value of flow** $|f| = \sum\limits_{v \in V} f(s,v)$.
+- Maximum flow
+
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Flow9_converted.png]]
 
 ### Multiple Sources/Sinks Reduction
 
@@ -30,6 +33,9 @@
 - **Residual network** $G_f = (V, E_f)$:
   - Residual capacity $c_f(u,v) = c(u,v) - f(u,v)$.
   - Edges $(u,v) \in E_f$ if $c_f(u,v) > 0$.
+  
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Flow2_converted.png]]![[Bachelor 3/Datastructuren en graafalgoritmen/images/Flow3_converted.png]]
+
 
 ### Augmenting Paths
 
@@ -49,6 +55,9 @@
   1. $f$ is a maximum flow.
   2. $G_f$ has no augmenting paths.
   3. $|f| = c(S,T)$ for some cut $(S,T)$.
+- The network below shows that the capacity of the cut  $\{s, A, D\}$  and  $\{B, C, t\}$  is  $5 + 3 + 2 = 10$ , which is equal to the maximum flow. Other cuts will have a bigger capacity, like the capacity between  $\{s, A\}$  and  $\{B, C, D, t\}$  is  $4 + 3 + 5 = 12$ .
+
+![[Bachelor 3/Datastructuren en graafalgoritmen/images/Cut.jpeg]]
 
 ## 2.3 Performance of Ford-Fulkerson
 
