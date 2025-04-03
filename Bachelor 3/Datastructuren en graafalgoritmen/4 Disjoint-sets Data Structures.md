@@ -73,3 +73,8 @@
   - α(m, n) grows extremely slowly, making disjoint-sets forest practically optimal.
 - **Cycle Detection**:
   - Disjoint-sets forest is optimal for Kruskal’s algorithm and cycle checking in graphs.
+
+## Useful resources
+
+[Disjoint Set Data Structures](https://www.geeksforgeeks.org/disjoint-set-data-structures/)
+[Disjoint Set Union](https://cp-algorithms.com/data_structures/disjoint_set_union.html)
