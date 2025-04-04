@@ -10,7 +10,7 @@ A **tree** is a connected graph where removing any edge disconnects it. Six equi
 
 #### Weighted Graphs and Spanning Trees
 
-A **spanning tree** $T \subseteq G$ covers all vertices $V(G)$. In weighted graphs, the tree weight is $\alpha(T) = \sum_{e \in E(T)} \alpha(e)$. Minimizing $\alpha(T)$ solves real-world problems like network cost reduction.
+A **spanning tree** $T \subseteq G$ covers all vertices $V(G)$. In weighted graphs, the tree weight is $\alpha(T) = \sum\limits _{e \in E(T)} \alpha(e)$. Minimizing $\alpha(T)$ solves real-world problems like network cost reduction.
 
 ![[Bachelor 3/Datastructuren en graafalgoritmen/images/146b47a.jpg]]
 
