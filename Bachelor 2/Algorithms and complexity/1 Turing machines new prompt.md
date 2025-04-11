@@ -40,6 +40,8 @@ A configuration $C = \vdash u q v$ represents:
 - Tape content $uv$ (with head on first symbol of $v$)
   **Example**: $\vdash 101q_3001$ indicates head at position 4.
 
+![[Bachelor 2/Algorithms and complexity/images/Pasted image 20250411091327.png]]
+
 #### Transition Rules
 
 For $\delta(q, a) = (q', b, X)$:
