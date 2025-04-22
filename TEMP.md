@@ -12,6 +12,8 @@ Computational complexity theory analyzes the resources required to solve computa
 - Exponential time ($O(2^n)$) grows rapidly, making large inputs computationally infeasible.
 - Example: A computer performing 100 million steps per second takes 0.1 microseconds for $t(n) = n$ at $n = 10$, but $4 \times 10^{13}$ years for $t(n) = 2^n$ at $n = 100$ (↗ See Section 2.2 for detailed table).
 
+
+
 ### Deterministic Time Complexity Class: DTIME
 
 The **DTIME** class defines languages decided by a deterministic Turing machine in $O(t(n))$ time. For instance, the language of palindromes is in $\text{DTIME}(n^2)$. Why is this formalism useful? It provides a rigorous way to classify problems based on their computational requirements.
