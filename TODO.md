@@ -49,4 +49,4 @@
 - [ ] ==1 Inleiding==
 - [ ] ==2 Niet-lineaire vergelijkingen==
 - [ ] ==3 Interpolatie==
-- [ ] 4 Numerieke integratie
+- [ ] ==4 Numerieke integratie==
