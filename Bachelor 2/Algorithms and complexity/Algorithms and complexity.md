@@ -3,4 +3,4 @@
 [[3 Plaatscomplexiteit]]
 
 ## Examen
-[[Exam 07-2024]]
+[[Bachelor 2/Algorithms and complexity/examen/Exam 2024-06]]
