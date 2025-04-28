@@ -1,7 +1,7 @@
 ## Algoritmen en complexiteit
 
 - [x] ==1 Turing machines==
-- [ ] ==2 Tijdscomplexiteit==
+- [x] ==2 Tijdscomplexiteit==
 - [ ] 3 Plaatscomplexiteit
 
 ## Compilers
@@ -31,6 +31,7 @@
 - [ ] ==3 Service Oriented Architectures==
 - [ ] ==4 Web Services==
 - [ ] ==5 Microservices==
+- [ ] ==6 Distributed Storage==
 
 ## Elementaire statistiek
 
