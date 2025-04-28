@@ -35,7 +35,7 @@
 
 ### Functional Decomposition
 
-Split by business capabilities (e.g., "User Authentication," "Product Catalog"). Example from slide 13:
+Split by business capabilities (e.g., "User Authentication," "Product Catalog"). Example:
 
 ```
 User → Account | Content | Product | Price | Config
@@ -48,7 +48,7 @@ This reduces interdependencies and enables targeted scaling.
 ### SOA Characteristics
 
 - **Enterprise Service Bus (ESB)**: Centralized message routing/choreography.
-- **Large, reusable services** risk becoming **"monolithic entities"** (slide 18).
+- **Large, reusable services** risk becoming **"monolithic entities"**.
 
 ### Microservices Differentiation
 
@@ -95,7 +95,7 @@ This reduces interdependencies and enables targeted scaling.
 ### The Reactive Manifesto
 
 - **Responsive**: Sub-second latency (e.g., lazy loading in UIs).
-- **Elastic**: Auto-scale based on demand (slide 45).
+- **Elastic**: Auto-scale based on demand.
 - **Resilient**: Fail gracefully (e.g., Netflix reverting to popular movies if recommendations fail).
 
 ### Netflix’s Simian Army
