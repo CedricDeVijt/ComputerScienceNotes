@@ -153,9 +153,3 @@ The class **NP** includes problems where solutions can be verified in polynomial
 - **NP-Completeness → Reductions**: Use **3SAT** reductions to prove **NP-completeness** (e.g., **VERTEX-COVER**, **HAMPATH**), showing interconnected hardness. ★★★★★
 - **Common Pitfall → Brute-Force Inefficiency**: Avoid exponential brute-force (e.g., $m^m$ for **PATH**); use techniques like dynamic programming or breadth-first search. ★★★★☆
 - **Critical Distinction → Polynomial Equivalence**: Deterministic models are polynomially equivalent, but nondeterministic models may require exponential time deterministically. ★★★★☆
-
-### Validation Notes
-- **Completeness Check**: All key concepts (Big-O, small-o, **P**, **NP**, **NP-completeness**, example problems, and theorems) are included. Specific algorithms ($M_1, M_2, M_3$) and reductions (e.g., **3SAT** to **VERTEX-COVER**) are preserved with detailed analyses.
-- **Ambiguities**: 
-  - [❓ Verify Context]: The exact problem referenced in “Problem 7.49” (regular languages in $o(n \log n)$) is not detailed in the provided text. Assumed correct based on context.
-  - [❓ Verify Context]: Truncated text in **COMPOSITES** definition; assumed complete based on standard definition.
