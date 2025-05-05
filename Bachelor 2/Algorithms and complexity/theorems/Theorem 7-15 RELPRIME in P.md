@@ -1,0 +1,33 @@
+## PROOF IDEA
+
+One algorithm that solves this problem searches through all possible divisors of both numbers and accepts if none are greater than 1. However, the magnitude of a number represented in binary, or in any other base k notation for k≥2, is exponential in the length of its representation. Therefore, this brute-force algorithm searches through an exponential number of potential divisors and has an exponential running time.
+
+Instead, we solve this problem with an ancient numerical procedure, called the Euclidean algorithm, for computing the greatest common divisor. The greatest common divisor of natural numbers x and y, written gcd(x,y), is the largest integer that evenly divides both xand y. For example, gcd(18,24) = 6. Obviously, xand y are relatively prime iff gcd(x,y) = 1. We describe the Euclidean algorithm as algorithm E in the proof. It uses the mod function, where xmod yis the remainder after the integer division of xby y.
+
+## PROOF
+
+The Euclidean algorithm Eis as follows.
+
+E= “On input ⟨x,y⟩, where xand yare natural numbers in binary:
+
+1. Repeat until y= 0:
+
+2. Assign x←xmod y.
+
+3. Exchange xand y.
+
+4. Output x.
+
+”
+
+Algorithm R solves RELPRIME, using Eas a subroutine.
+
+R= “On input ⟨x,y⟩, where xand yare natural numbers in binary:
+
+1. Run Eon ⟨x,y⟩.
+
+2. If the result is 1, accept. Otherwise, reject.”
+
+Clearly, if E runs correctly in polynomial time, so does R and hence we only need to analyze Efor time and correctness. The correctness of this algorithm is well known so we won’t discuss it further here.
+
+To analyze the time complexity of E, we first show that every execution of stage 2 (except possibly the first) cuts the value of xby at least half. After stage 2 is executed, x < y because of the nature of the mod function. After stage 3, x>ybecause the two have been exchanged. Thus, when stage 2 is subsequently executed, x > y. If x/2 ≥y, then xmod y < y ≤x/2 and xdrops by at least half. If x/2 <y, then xmod y= x−y<x/2 and xdrops by at least half. The values of xand y are exchanged every time stage 3 is executed, so each of the original values of x and y are reduced by at least half every other time through the loop. Thus, the maximum number of times that stages 2 and 3 are executed is the lesser of 2 log2 xand 2 log2 y. These logarithms are proportional to the lengths of the representations, giving the number of stages executed as O(n). Each stage of E uses only polynomial time, so the total running time is polynomial.

@@ -9,12 +9,12 @@ To get a polynomial time algorithm for PATH, we must do something thatavoids bru
 ## PROOF
 
 A polynomial time algorithm M for PATH operates as follows.
-M=“On input ⟨G,s,t⟩, where Gis a directed graph with nodes sand t:
+M="On input ⟨G,s,t⟩, where Gis a directed graph with nodes sand t:
 
 1. Place a mark on node s.
 2. Repeat the following until no additional nodes are marked:
 3. Scan all the edges of G. If an edge (a,b) is found going froma marked node ato an unmarked node b, mark node b.
-4. If tis marked, accept. Otherwise, reject.
+4. If tis marked, accept. Otherwise, reject."
 
 Now we analyze this algorithm to show that it runs in polynomial time. Obviously, stages 1 and 4 are executed only once. Stage 3 runs at most m timesbecause each time except the last it marks an additional node in G. Thus, thetotal number of stages used is at most 1 + 1 + m, giving a polynomial in the sizeof G.
 
