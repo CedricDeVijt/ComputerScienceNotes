@@ -14,8 +14,8 @@
 - **NSPACE(s(n)):** Languages decidable by an NTM using $O(s(n))$ space.
 - **PSPACE:** $⋃_k DSPACE(n^k)$.
 - **NPSPACE:** $⋃_k NSPACE(n^k)$.
-- **LOGSPACE:** $DSPACE(log n)$.
-- **NLOGSPACE:** $NSPACE(log n)$.
+- **LOGSPACE:** $DSPACE(\log n)$.
+- **NLOGSPACE:** $NSPACE(\log n)$.
 
 ## 3.2 Key Theorems and Results
 
