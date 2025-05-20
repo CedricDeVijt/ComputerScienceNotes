@@ -32,10 +32,10 @@ SOA focuses on **loosely coupled, reusable services** (e.g., order processing, p
 
 | HTTP Method | CRUD Action | Example Usage           |
 | ----------- | ----------- | ----------------------- |
-| POST        | **C**reate      | Add new employee        |
-| GET         | **R**ead        | Retrieve employee data  |
-| PUT         | **U**pdate      | Modify employee details |
-| DELETE      | **D**elete      | Remove employee record  |
+| POST        | **C**reate  | Add new employee        |
+| GET         | **R**ead    | Retrieve employee data  |
+| PUT         | **U**pdate  | Modify employee details |
+| DELETE      | **D**elete  | Remove employee record  |
 
 #### Case Study: Facebook Graph API
 
