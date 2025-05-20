@@ -63,14 +63,14 @@ SOA is a **design style** where capabilities are exposed as reusable, loosely co
 
 - **Characteristics**: Interaction via event buses or shared data spaces.
 - **Advantages**: Easier scalability, fault isolation.
-- **Example**: SOA’s service bus model (↗ See Section 2.1.1).
+- **Example**: SOA’s service bus model.
 
 ## 3.5 Cloud Computing Models and Deployment
 
 ### Service Models (XaaS)
 
 - **IaaS**: Virtualized infrastructure (e.g., AWS EC2).
-- **PaaS**: Development environments with built-in scaling (e.g., Heroku).
+- **PaaS**: Development environments (platfrom) with built-in scaling (e.g., Heroku).
 - **SaaS**: Provider-managed applications (e.g., Salesforce).
 
 **Hierarchy**: SaaS → PaaS → IaaS (increasing provider control).
