@@ -25,7 +25,7 @@ SOA focuses on **loosely coupled, reusable services** (e.g., order processing, p
 #### URI Design Best Practices
 
 - Use **nouns** (e.g., `/employees/21` instead of `/getEmployee`).
-- Ensure URIs are **predictable** and **hackable** (e.g., `/uantwerp/courses/` → `/computer-science`).
+- Ensure URIs are **predictable** and **hackable** (e.g., `/uantwerp/courses/` → `/uantwerp/courses/calculus`).
 - Avoid verbs in URIs; reserve query parameters for filtering.
 
 ### HTTP Methods and CRUD

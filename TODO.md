@@ -2,7 +2,7 @@
 
 - [x] ==1 Turing machines==
 - [x] ==2 Tijdscomplexiteit==
-- [ ] 3 Plaatscomplexiteit
+- [ ] ==3 Plaatscomplexiteit==
 
 ## Compilers
 
@@ -21,17 +21,19 @@
 - [x] ==3 Bipartite Matching Algorithms==
 - [x] ==4 Disjoint-sets Data Structures==
 - [ ] ==5 Spanning Trees==
-- [ ] 6 Fibonacci Heaps
+- [ ] ==6 Fibonacci Heaps==
 - [ ] 7 Shortest Path Problems
 
 ## Distributed systems
 
 - [x] ==1 Introduction==
 - [x] ==2 Middleware and Communication==
-- [ ] ==3 Service Oriented Architectures==
-- [ ] ==4 Web Services==
+- [x] ==3 Service Oriented Architectures==
+- [x] ==4 Web Services==
 - [ ] ==5 Microservices==
 - [ ] ==6 Distributed Storage==
+- [ ] ==7 Replication==
+- [ ] 8 Coordination
 
 ## Elementaire statistiek
 
