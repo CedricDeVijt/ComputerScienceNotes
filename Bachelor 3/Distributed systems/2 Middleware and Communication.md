@@ -94,11 +94,11 @@ b.add(5,3); → Requires:
 
 What guarantees are given on the number of executions of remote method invocations?
 
-| Semantic          | Retry? | Duplicate Filter? | Execution Count     |
-| ----------------- | ------ | ----------------- | ------------------- |
-| **Maybe**         | No     | No                | 0 or 1 (unreliable) |
-| **At-least-once** | Yes    | No                | ≥1                  |
-| **At-most-once**  | Yes    | Yes               | ≤1                  |
+| Semantic          | Retransmit request<br><br>message | Duplicate<br><br>filtering | Re-execute procedure<br><br>or retransmit reply |
+| ----------------- | --------------------------------- | -------------------------- | ----------------------------------------------- |
+| **Maybe**         | No                                | Not applicable             | Not applicable                                  |
+| **At-least-once** | Yes                               | No                         | Re-execute procedure                            |
+| **At-most-once**  | Yes                               | Yes                        | Retransmit old reply                            |
 
 #### Implementation Tactics
 
