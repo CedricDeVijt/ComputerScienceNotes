@@ -30,7 +30,7 @@
 - [x] ==2 Middleware and Communication==
 - [x] ==3 Service Oriented Architectures==
 - [x] ==4 Web Services==
-- [ ] ==5 Microservices==
+- [x] ==5 Microservices==
 - [ ] ==6 Distributed Storage==
 - [ ] ==7 Replication==
 - [ ] 8 Coordination
