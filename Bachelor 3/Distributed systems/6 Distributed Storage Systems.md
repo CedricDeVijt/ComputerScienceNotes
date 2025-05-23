@@ -26,7 +26,7 @@
 #### Execution Phases
 
 1. **Map**: Processes <key,value> pairs (e.g., `(line_number, text) → (word, 1)`)
-2. **Shuffle**: Sorts and groups intermediate results by key [❓ Verify Context: Page 29 shows unclear phase boundaries]
+2. **Shuffle**: Sorts and groups intermediate results by key
 3. **Reduce**: Aggregates values per key (e.g., word counts)
 
 #### Limitations
