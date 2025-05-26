@@ -1,0 +1,114 @@
+## Proof: TQBF is PSPACE-complete
+
+### Overview
+
+To establish that TQBF is PSPACE-complete, we must prove:
+
+1. **TQBF is in PSPACE**: Provide a polynomial-space algorithm that decides TQBF.
+2. **TQBF is PSPACE-hard**: Show that any language $A \in \text{PSPACE}$ reduces to TQBF in polynomial time.
+
+### Part 1: TQBF is in PSPACE
+
+#### Algorithm Description
+
+We design a recursive algorithm $T$ that decides whether a fully quantified Boolean formula $\phi$ is true. The algorithm operates as follows:
+
+1. **Base Case**: If $\phi$ has no quantifiers, it is a Boolean expression with only constants. Evaluate $\phi$:
+   - If true, accept.
+   - If false, reject.
+2. **Existential Quantifier**: If $\phi = \exists x \psi$, recursively evaluate $\psi$ with $x = 0$ and $x = 1$:
+   - If *either* evaluation accepts, accept.
+   - Otherwise, reject.
+3. **Universal Quantifier**: If $\phi = \forall x \psi$, recursively evaluate $\psi$ with $x = 0$ and $x = 1$:
+   - If *both* evaluations accept, accept.
+   - Otherwise, reject.
+
+#### Space Complexity Analysis
+
+- **Recursion Depth**: The recursion depth is at most the number of variables $m$ in $\phi$.
+- **Space per Level**: Each recursive call stores the value of one variable (constant space).
+- **Total Space**: The space used is $O(m)$, linear in the number of variables.
+- **Conclusion**: Since $m$ is bounded by the input size, algorithm $T$ runs in polynomial space, so TQBF $\in \text{PSPACE}$.
+
+### Part 2: TQBF is PSPACE-hard
+
+#### Reduction Overview
+
+To show TQBF is PSPACE-hard, we reduce any language $A \in \text{PSPACE}$ to TQBF in polynomial time. Let $A$ be decided by a Turing machine $M$ that uses $O(n^k)$ space for some constant $k$. For an input string $w$, we construct a quantified Boolean formula $\phi$ such that $\phi$ is true if and only if $M$ accepts $w$.
+
+#### Construction Strategy
+
+We aim to construct $\phi$ to simulate $M$ on $w$. A naive approach, similar to the Cook–Levin theorem, would encode an accepting tableau for $M$. However:
+
+- **Tableau Size**: The tableau has width $O(n^k)$ (space used by $M$) but height exponential in $n^k$ (since $M$ may run for exponential time).
+- **Issue**: A formula encoding the entire tableau would be exponential in size, which is not feasible for a polynomial-time reduction.
+
+Instead, we use a technique inspired by Savitch’s theorem to construct a concise formula by dividing the computation into halves and reusing formula components with universal quantifiers.
+
+#### Formula Construction
+
+We define a formula $\phi_{c_1, c_2, t}$ that takes two configurations $c_1$ and $c_2$ (encoded as collections of variables) and a number $t > 0$, and is true if and only if $M$ can go from $c_1$ to $c_2$ in at most $t$ steps. The final formula is $\phi = \phi_{c_{\text{start}}, c_{\text{accept}}, h}$, where:
+
+- $c_{\text{start}}$: The initial configuration of $M$ on $w$.
+- $c_{\text{accept}}$: An accepting configuration of $M$.
+- $h = 2^{d f(n)}$, where $f(n) = n^k$ and $d$ is a constant ensuring $M$ has at most $2^{d f(n)}$ configurations.
+
+For simplicity, assume $t$ is a power of 2.
+
+##### Configuration Encoding
+
+- Each configuration has $O(n^k)$ cells.
+- Each cell is encoded with variables representing possible tape symbols and states, as in the Cook–Levin theorem, using $O(n^k)$ variables per configuration.
+
+##### Case: $t = 1$
+
+If $t = 1$, $\phi_{c_1, c_2, 1}$ checks if:
+
+1. $c_1 = c_2$ (the configurations are identical), or
+2. $c_2$ follows from $c_1$ in one step of $M$.
+
+- **Equality Check**: Use a Boolean expression to ensure each variable in $c_1$ equals the corresponding variable in $c_2$.
+- **Single-Step Transition**: Use the Cook–Levin technique to express that the contents of each triple of cells in $c_1$ yield the corresponding triple in $c_2$ according to $M$’s transition rules.
+
+##### Case: $t > 1$
+
+For $t > 1$, we construct $\phi_{c_1, c_2, t}$ recursively. A first attempt might be:
+
+$$
+\phi_{c_1, c_2, t} = \exists m_1 \left( \phi_{c_1, m_1, t/2} \wedge \phi_{m_1, c_2, t/2} \right),
+$$
+
+where $m_1$ is an intermediate configuration, and $\exists m_1$ quantifies over $O(n^k)$ variables encoding $m_1$. This formula checks if there exists $m_1$ such that $M$ can go from $c_1$ to $m_1$ in at most $t/2$ steps and from $m_1$ to $c_2$ in at most $t/2$ steps.
+
+- **Issue**: Each recursive level halves $t$ but doubles the formula size, leading to a formula of size $O(t) = O(2^{d n^k})$, which is exponential.
+
+##### Improved Construction
+
+To reduce the formula size, we use universal quantifiers to reuse subformulas:
+
+$$
+\phi_{c_1, c_2, t} = \exists m_1 \forall (c_3, c_4) \in \{(c_1, m_1), (m_1, c_2)\} \phi_{c_3, c_4, t/2}.
+$$
+
+- **Explanation**: This formula checks if there exists an intermediate configuration $m_1$ such that for both pairs $(c_1, m_1)$ and $(m_1, c_2)$, $M$ can go from $c_3$ to $c_4$ in at most $t/2$ steps.
+- **Syntactic Correctness**: The construct $\forall (c_3, c_4) \in \{(c_1, m_1), (m_1, c_2)\}$ is shorthand for:
+  $$
+  \forall c_3, c_4 \left[ ((c_3 = c_1 \wedge c_4 = m_1) \vee (c_3 = m_1 \wedge c_4 = c_2)) \rightarrow \phi_{c_3, c_4, t/2} \right],
+  $$
+  where $=$ denotes Boolean equality (expressible using AND and NOT).
+
+#### Size Analysis
+
+- **Recursion Levels**: The number of recursive levels is $\log(h) = \log(2^{d n^k}) = O(n^k)$.
+- **Size per Level**: Each level adds a formula portion linear in the configuration size, i.e., $O(n^k)$.
+- **Total Size**: The formula size is $O(n^k \cdot n^k) = O(n^{2k})$, which is polynomial in $n$.
+- **Reduction Time**: Constructing $\phi$ involves generating variables and Boolean expressions for each recursive level, which can be done in polynomial time.
+
+#### Conclusion
+
+- The reduction maps $w$ to $\phi$ in polynomial time, and $\phi$ is true if and only if $M$ accepts $w$.
+- Since $A \in \text{PSPACE}$ was arbitrary, TQBF is PSPACE-hard.
+
+### Final Conclusion
+
+Since TQBF is in PSPACE and PSPACE-hard, TQBF is PSPACE-complete.
