@@ -15,6 +15,7 @@
 ## Bachelor 3
 - [[Artificial Inteligence]]: 1500WETAIN
 - [[Datastructuren en graafalgoritmen]]: 1500WETDGR
+- [[Distributed Systems]]: 1500WETDIS
 - [[Software engineering]]: 1001WETSEN
 
 ## Korf Vakken

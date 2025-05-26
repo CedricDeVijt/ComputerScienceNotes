@@ -1,0 +1,8 @@
+[[1 Introduction]]
+[[2 Middleware and Communication]]
+[[3 Service Oriented Architectures]]
+[[4 Web Services]]
+[[5 Microservices]]
+[[6 Distributed Storage Systems]]
+[[7 Replication]]
+[[8 Coordination]]
