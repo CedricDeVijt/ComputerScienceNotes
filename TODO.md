@@ -31,9 +31,9 @@
 - [x] ==3 Service Oriented Architectures==
 - [x] ==4 Web Services==
 - [x] ==5 Microservices==
-- [ ] ==6 Distributed Storage==
+- [x] ==6 Distributed Storage==
 - [ ] ==7 Replication==
-- [ ] 8 Coordination
+- [ ] ==8 Coordination==
 
 ## Elementaire statistiek
 
