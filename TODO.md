@@ -32,8 +32,8 @@
 - [x] ==4 Web Services==
 - [x] ==5 Microservices==
 - [x] ==6 Distributed Storage==
-- [ ] ==7 Replication==
-- [ ] ==8 Coordination==
+- [x] ==7 Replication==
+- [x] ==8 Coordination==
 
 ## Elementaire statistiek
 
