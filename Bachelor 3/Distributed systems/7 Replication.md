@@ -103,41 +103,47 @@
 - **Weak Consistency→Bandwidth Efficiency**: Reduces sync overhead at the cost of temporary inconsistencies ★★★☆☆
 - **Eventual Consistency→Scalability**: Used in systems like DNS and early Facebook ★★★☆☆
 
-
 ## More info
 
 Replication in distributed systems is the process of maintaining multiple copies of data or services across different nodes (servers or computers) in a network to improve reliability, availability, performance, and fault tolerance. Here's an overview:
 
 ### Key Concepts
+
 1. **Purpose of Replication**:
+
    - **Availability**: Ensures data or services remain accessible even if some nodes fail.
    - **Fault Tolerance**: Allows the system to continue functioning despite hardware or software failures.
    - **Performance**: Distributes workload across nodes, reducing latency by serving data from geographically closer replicas.
    - **Scalability**: Supports increased demand by balancing requests across multiple replicas.
 
 2. **Types of Replication**:
+
    - **Full Replication**: Every node stores a complete copy of the data. Common in systems requiring high availability but can be resource-intensive.
    - **Partial Replication**: Only specific subsets of data are replicated on certain nodes, optimizing storage but requiring careful coordination.
    - **Active Replication**: All replicas process requests simultaneously, often used for fault-tolerant systems (e.g., in real-time control systems).
    - **Passive (Primary-Backup) Replication**: One node (primary) handles requests, while others (backups) synchronize with it, taking over if the primary fails.
 
 3. **Replication Models**:
+
    - **Synchronous Replication**: Updates are applied to all replicas simultaneously, ensuring strong consistency but potentially increasing latency.
    - **Asynchronous Replication**: Updates are propagated to replicas with some delay, improving performance but risking temporary inconsistencies.
    - **Quorum-Based Replication**: A subset of replicas (quorum) must agree on updates, balancing consistency and availability.
 
 4. **Consistency Models**:
+
    - **Strong Consistency**: All replicas reflect the same data at all times, often requiring synchronous updates.
    - **Eventual Consistency**: Replicas may temporarily diverge but will eventually converge to the same state, common in asynchronous systems.
    - **Causal Consistency**: Ensures operations that are causally related are applied in the correct order across replicas.
 
 5. **Challenges in Replication**:
+
    - **Consistency vs. Performance**: Strong consistency slows down operations due to coordination overhead, while weaker models risk stale data.
    - **Conflict Resolution**: In multi-master replication, concurrent updates to the same data can cause conflicts, requiring mechanisms like versioning or last-writer-wins.
    - **Network Partitions**: Splits in the network can lead to inconsistent replicas, addressed by protocols like Paxos or Raft.
    - **Resource Overhead**: Replication increases storage, bandwidth, and computational requirements.
 
 6. **Replication Strategies**:
+
    - **Master-Slave**: One node (master) handles writes, while others (slaves) replicate data for reads.
    - **Multi-Master**: Multiple nodes can handle writes, increasing complexity but improving availability.
    - **Sharding with Replication**: Data is partitioned (sharded) across nodes, with each shard replicated for redundancy.
@@ -149,11 +155,21 @@ Replication in distributed systems is the process of maintaining multiple copies
    - **Cloud Services**: AWS S3 or Google Cloud Spanner replicate data across regions for durability and availability.
 
 ### Trade-Offs
-Replication involves balancing the CAP theorem (Consistency, Availability, Partition Tolerance). No system can guarantee all three simultaneously:
-- **CP Systems**: Prioritize consistency and partition tolerance (e.g., banking systems).
-- **AP Systems**: Prioritize availability and partition tolerance (e.g., social media platforms).
+
+Replication involves balancing the CAP theorem (Consistency, Availability, Partition Tolerance).
+
+- **C**: Consistency ensures all replicas reflect the same data.
+- **A**: Availability guarantees that requests receive a response.
+- **P**: Partition Tolerance allows the system to function despite network failures.
+
+No system can guarantee all three simultaneously:
+
+- **CP systems**: prioritize consistency and partition-tolerance, sacrificing availability.
+- **AP systems**: prioritize availability and partition-tolerance, sacrificing strict consistency.
+- **CA systems**: technically only work if partitions are not considered — not realistic for distributed systems.
 
 ### Examples
+
 - **Google Spanner**: Uses synchronous replication with strong consistency across global data centers.
 - **Apache Cassandra**: Employs asynchronous replication with tunable consistency for high availability.
 - **Redis Cluster**: Supports master-slave replication for fast, in-memory data access.
