@@ -281,4 +281,12 @@ The CAP theorem states that a distributed system can only guarantee two of three
 - **Books**: _Designing Data-Intensive Applications_ by Martin Kleppmann covers coordination in depth.
 - **Tools**: Explore Zookeeper, etcd, or Raft implementations for practical insights.
 
-If you’d like a deeper dive into a specific aspect (e.g., Paxos vs. Raft, Zookeeper usage, or handling network partitions), let me know! I can also generate a chart comparing coordination algorithms if you’d find that helpful.
+
+## Algorithm's
+
+Central algorithm
+Ring-based algorithm
+Ricart-Agrawala algorithm
+Maekawa Voting algorithm
+Chang-Roberts algorithm
+Bully algorithm
