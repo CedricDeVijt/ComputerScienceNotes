@@ -2,7 +2,7 @@
 
 - [x] ==1 Turing machines==
 - [x] ==2 Tijdscomplexiteit==
-- [ ] ==3 Plaatscomplexiteit==
+- [x] ==3 Plaatscomplexiteit==
 
 ## Compilers
 
