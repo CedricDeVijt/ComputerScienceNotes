@@ -16,7 +16,7 @@
 
 ### Storage Optimization Concepts
 
-- **Tradeoffs in Algorithm Design**: Consider **O(n log n)** vs **O(n²)** operations alongside hardware factors (disk access = 10⁵ slower than RAM)
+- **Tradeoffs in Algorithm Design**: Consider $O(n \log n)$ vs $O(n^2)$ operations alongside hardware factors (disk access = 10⁵ slower than RAM)
 - **Paradigm Shift Drivers**: Physical limits (atomic scales, 3D layering constraints) forced move from clock speed increases to parallel processing
 
 ## 6.2 Distributed Processing Frameworks
