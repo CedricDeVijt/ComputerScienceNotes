@@ -47,6 +47,7 @@ In distributed systems, two primary types of decoupled logical architectures are
 ## Describe the two types of system architectures that a distributed system may follow. Indicate the strengths and weaknesses of each of these types.
 
 In distributed systems, two primary types of system architectures are client-server and peer-to-peer architectures.
+
 **Client-Server Architecture:**
 
 - In a client-server architecture, clients request services from centralized servers that provide those services.
