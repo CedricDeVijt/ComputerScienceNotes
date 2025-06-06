@@ -4,74 +4,118 @@
 
 Interpolation involves finding a function (called an interpolant) that fits a set of data points $(x_i, y_i)$ exactly or approximately, allowing estimation of values at intermediate points $x$ within the range of $x_i$.
 
-## 3.2 Lagrange Basis Polynomials
+### Lagrange Interpolation Formula
 
-- The Lagrange basis polynomials $L_i(t)$ are defined such that $L_i(t_i) = 1$ and $L_i(t_j) = 0$ for $j \neq i$.
-- The interpolating polynomial is constructed as:
-  $$
-  P(t) = \sum_{i=0}^n y_i L_i(t).
-  $$
-- **Example**: For linear interpolation ($n=1$), the formula simplifies to:
-  $$
-  P(t) = \frac{t - t_1}{t_0 - t_1} y_0 + \frac{t - t_0}{t_1 - t_0} y_1.
-  $$
+Lagrange interpolation constructs a polynomial of degree at most $n$ that passes through $n+1$ points by expressing the polynomial as a linear combination of basis polynomials.
 
-### Practical Application
+**Formula**: For points $(x_0, y_0), (x_1, y_1), \dots, (x_n, y_n)$, the Lagrange polynomial is:
 
-- **Case Study**: Estimating temperature at $t = 18$ minutes using quadratic interpolation ($n=2$) with points $(15, 48)$, $(20, 36)$, $(25, 29)$. The result is $P(18) = 40.2$.
+$$
+P(x) = \sum_{i=0}^n y_i \ell_i(x)
+$$
 
-## 3.3 Neville’s Method
+where $\ell_i(x)$ is the Lagrange basis polynomial:
 
-**Neville’s Method** efficiently computes interpolated values for varying degrees of polynomials using a recursive approach.
+$$
+\ell_i(x) = \prod_{\substack{j=0 \\ j \neq i}}^n \frac{x - x_j}{x_i - x_j}
+$$
 
-### Recursive Formula
+Each $\ell_i(x)$ is 1 at $x = x_i$ and 0 at all other $x_j$, ensuring $P(x_i) = y_i$.
 
-- The method builds higher-degree polynomials from lower-degree ones:
-  $$
-  P_{j,\ldots,j+k}(t) = \frac{(t - t_j)P_{j+1,\ldots,j+k}(t) - (t - t_{j+k})P_{j,\ldots,j+k-1}(t)}{t_{j+k} - t_j}.
-  $$
-- **Advantage**: Adding new data points only requires computing a new row in the Neville table.
+**Key Features**:
 
-### Example
+- **Direct computation**: No need to solve a system of equations; the formula is explicit.
+- **Drawbacks**: Computationally expensive for large $n$ (requires $\mathcal{O}(n^2)$ operations for evaluation), and adding a new point requires recalculating the entire polynomial.
+- **Use case**: Best for theoretical work or small datasets due to its simplicity in formulation.
 
-- For $t = 18$, the Neville table yields intermediate results like $P_{012}(18) = 42.12$ and $P_{0123}(18) = 40.872$.
+**Example**: For points $(0, 1), (1, 2), (2, 0)$, the Lagrange polynomial is:
 
-## 3.4 Newton’s Interpolation Formula
+$$
+\ell_0(x) = \frac{(x-1)(x-2)}{(0-1)(0-2)}, \quad \ell_1(x) = \frac{(x-0)(x-2)}{(1-0)(1-2)}, \quad \ell_2(x) = \frac{(x-0)(x-1)}{(2-0)(2-1)}
+$$
 
-**Newton’s Formula** expresses the interpolating polynomial using divided differences, making it easier to update with new data.
+$$
+P(x) = 1 \cdot \ell_0(x) + 2 \cdot \ell_1(x) + 0 \cdot \ell_2(x)
+$$
 
-### Divided Differences
+### Neville’s Method
 
-- The $j$-th divided difference $d_{0,\ldots,j}$ is computed recursively:
-  $$
-  d_{i,\ldots,i+j} = \frac{d_{i+1,\ldots,i+j} - d_{i,\ldots,i+j-1}}{t_{i+j} - t_i}.
-  $$
-- The polynomial is written as:
-  $$
-  P(t) = d_0 + d_{01}(t - t_0) + \cdots + d_{0,\ldots,n}(t - t_0)\cdots(t - t_{n-1}).
-  $$
+Neville’s method is an iterative algorithm to compute the value of the interpolating polynomial at a specific point $x$ without explicitly constructing the polynomial. It builds a table of intermediate values to find $P(x)$.
 
-### Example
+**Algorithm**: Given points $(x_0, y_0), \dots, (x_n, y_n)$ and evaluation point $x$, construct a table where each entry $P_{i,j}(x)$ is the polynomial of degree $j$ that passes through points $(x_i, y_i), \dots, (x_{i+j}, y_{i+j})$. The recursive formula is:
 
-- For points $t = 10, 15, 20, 25$, the polynomial is:
-  $$
-  P(t) = 61 - \frac{13}{5}(t - 10) + \frac{1}{50}(t - 10)(t - 15) + \frac{2}{375}(t - 10)(t - 15)(t - 20).
-  $$
+$$
+P_{i,j}(x) = \frac{(x - x_{i+j})P_{i,j-1}(x) + (x_i - x)P_{i+1,j-1}(x)}{x_i - x_{i+j}}
+$$
 
-## 3.5 Error Analysis in Polynomial Interpolation
+- Start with $P_{i,0}(x) = y_i$.
+- Compute higher-order terms until $P_{0,n}(x)$, which is the value of the interpolating polynomial at $x$.
 
-**Interpolation Error** quantifies the difference between the true function $f(t)$ and the interpolating polynomial $P(t)$.
+**Key Features**:
 
-### Error Formula
+- **Efficiency**: Computes $P(x)$ at a single point in $\mathcal{O}(n^2)$ operations without forming the full polynomial.
+- **Flexibility**: Easily incorporates additional points by extending the table.
+- **Drawbacks**: Not ideal for computing the polynomial’s coefficients or evaluating at multiple points.
 
-- If $f$ is $(n+1)$-times differentiable, the error at $t$ is:
-  $$
-  r(t) = \frac{f^{(n+1)}(\tau)}{(n+1)!} \prod_{i=0}^n (t - t_i).
-  $$
-- **Example**: For $f(t) = \ln t$ interpolated at $t = 2, 3, 4, 5$, the error at $t = 3.5$ is bounded by:
-  $$
-  |r(3.5)| \leq \frac{9}{1024}.
-  $$
+**Use case**: Useful for evaluating the interpolating polynomial at specific points, especially in dynamic datasets.
+
+### Newton’s Interpolation Formula
+
+Newton’s interpolation (forward or backward) expresses the polynomial using divided differences, making it efficient for adding new points and evaluating the polynomial.
+
+**Formula**: The Newton polynomial is:
+
+$$
+P(x) = f[x_0] + f[x_0, x_1](x - x_0) + f[x_0, x_1, x_2](x - x_0)(x - x_1) + \dots + f[x_0, \dots, x_n] \prod_{i=0}^{n-1} (x - x_i)
+$$
+
+where $f[x_i, \dots, x_{i+k}]$ are divided differences, defined recursively:
+
+- First divided difference: $f[x_i, x_{i+1}] = \frac{f(x_{i+1}) - f(x_i)}{x_{i+1} - x_i}$
+- Higher-order: $f[x_i, \dots, x_{i+k}] = \frac{f[x_{i+1}, \dots, x_{i+k}] - f[x_i, \dots, x_{i+k-1}]}{x_{i+k} - x_i}$
+
+**Key Features**:
+
+- **Incremental**: Adding a new point only requires computing additional divided differences, not recomputing the entire polynomial.
+- **Efficiency**: Evaluation is $\mathcal{O}(n)$ per point after computing divided differences ($\mathcal{O}(n^2)$).
+- **Forms**: Forward differences are used when points are equally spaced or $x$ is near the start; backward differences when $x$ is near the end.
+
+**Use case**: Preferred for numerical computations, especially when points are added incrementally or when the polynomial’s coefficients are needed.
+
+### Error Analysis in Polynomial Interpolation
+
+The error in polynomial interpolation arises because the interpolating polynomial $P(x)$ approximates the true function $f(x)$. The error depends on the function’s smoothness and the placement of interpolation points.
+
+**Error Formula**: For a function $f(x)$ interpolated by a polynomial $P(x)$ of degree at most $n$ at points $x_0, x_1, \dots, x_n$, the error is:
+
+$$
+f(x) - P(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{i=0}^n (x - x_i)
+$$
+
+where $\xi \in [a, b]$ (the interval containing $x$ and the $x_i$) is some point, and $f^{(n+1)}$ is the $(n+1)$-th derivative of $f$.
+
+**Key Points**:
+
+- **Error magnitude**: The error depends on:
+  - The term $\frac{f^{(n+1)}(\xi)}{(n+1)!}$, which is small if $f$ is smooth (low higher derivatives) or $n$ is large.
+  - The term $\prod_{i=0}^n (x - x_i)$, which is minimized by choosing points (e.g., Chebyshev nodes) that reduce this product’s maximum value.
+- **Runge’s phenomenon**: For equally spaced points and high-degree polynomials, interpolation can oscillate wildly near the edges of the interval, increasing error. This is mitigated by using Chebyshev nodes.
+- **Convergence**: If $f$ is sufficiently smooth and points are well-chosen, the error decreases as $n$ increases, but high-degree polynomials can be numerically unstable.
+
+**Practical Considerations**:
+
+- **Point placement**: Chebyshev nodes (roots of Chebyshev polynomials) minimize the maximum error compared to equally spaced points.
+- **Error estimation**: If $f^{(n+1)}$ is unknown, bounds on the derivative or numerical methods (e.g., adding more points and comparing results) can estimate the error.
+- **Trade-offs**: Higher-degree polynomials reduce error for smooth functions but increase computational cost and risk numerical instability.
+
+### Summary Table
+
+| Method             | Formula Type        | Computational Cost                                        | Adding Points               | Best Use Case                    |
+| ------------------ | ------------------- | --------------------------------------------------------- | --------------------------- | -------------------------------- |
+| **Lagrange**       | Explicit polynomial | $\mathcal{O}(n^2)$ per evaluation                         | Requires full recalculation | Small datasets, theoretical work |
+| **Neville**        | Iterative table     | $\mathcal{O}(n^2)$ for one point                          | Easy to add points          | Single-point evaluation          |
+| **Newton**         | Divided differences | $\mathcal{O}(n^2)$ setup, $\mathcal{O}(n)$ per evaluation | Incremental addition        | Numerical work, incremental data |
+| **Error Analysis** | Error term          | Depends on derivative estimation                          | N/A                         | Assessing accuracy               |
 
 ---
 
