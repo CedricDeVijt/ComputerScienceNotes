@@ -1,6 +1,8 @@
 ## 3.1 Introduction to Interpolation
 
-**Interpolation** involves constructing a function $\Phi(t)$ that passes through given data points $(t_i, y_i)$. For polynomial interpolation, $\Phi$ is a polynomial $P(t)$ of degree $n$. The **Lagrange Interpolation Formula** provides a unique polynomial $P(t)$ that fits the data exactly.
+**Interpolation** is a method used to estimate unknown values within a range of known data points by constructing a function that passes through or approximates those points. It’s commonly used to approximate values of a function at points where direct measurements or data are unavailable, based on discrete data points.
+
+Interpolation involves finding a function (called an interpolant) that fits a set of data points $(x_i, y_i)$ exactly or approximately, allowing estimation of values at intermediate points $x$ within the range of $x_i$.
 
 ## 3.2 Lagrange Basis Polynomials
 
