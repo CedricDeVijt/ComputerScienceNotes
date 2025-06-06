@@ -1,8 +1,8 @@
-### Introduction to Interpolation
+## 3.1 Introduction to Interpolation
 
 **Interpolation** involves constructing a function $\Phi(t)$ that passes through given data points $(t_i, y_i)$. For polynomial interpolation, $\Phi$ is a polynomial $P(t)$ of degree $n$. The **Lagrange Interpolation Formula** provides a unique polynomial $P(t)$ that fits the data exactly.
 
-#### Lagrange Basis Polynomials
+## 3.2 Lagrange Basis Polynomials
 
 - The Lagrange basis polynomials $L_i(t)$ are defined such that $L_i(t_i) = 1$ and $L_i(t_j) = 0$ for $j \neq i$.
 - The interpolating polynomial is constructed as:
@@ -14,15 +14,15 @@
   P(t) = \frac{t - t_1}{t_0 - t_1} y_0 + \frac{t - t_0}{t_1 - t_0} y_1.
   $$
 
-#### Practical Application
+### Practical Application
 
 - **Case Study**: Estimating temperature at $t = 18$ minutes using quadratic interpolation ($n=2$) with points $(15, 48)$, $(20, 36)$, $(25, 29)$. The result is $P(18) = 40.2$.
 
-### Neville’s Method
+## 3.3 Neville’s Method
 
 **Neville’s Method** efficiently computes interpolated values for varying degrees of polynomials using a recursive approach.
 
-#### Recursive Formula
+### Recursive Formula
 
 - The method builds higher-degree polynomials from lower-degree ones:
   $$
@@ -30,15 +30,15 @@
   $$
 - **Advantage**: Adding new data points only requires computing a new row in the Neville table.
 
-#### Example
+### Example
 
 - For $t = 18$, the Neville table yields intermediate results like $P_{012}(18) = 42.12$ and $P_{0123}(18) = 40.872$.
 
-### Newton’s Interpolation Formula
+## 3.4 Newton’s Interpolation Formula
 
 **Newton’s Formula** expresses the interpolating polynomial using divided differences, making it easier to update with new data.
 
-#### Divided Differences
+### Divided Differences
 
 - The $j$-th divided difference $d_{0,\ldots,j}$ is computed recursively:
   $$
@@ -49,18 +49,18 @@
   P(t) = d_0 + d_{01}(t - t_0) + \cdots + d_{0,\ldots,n}(t - t_0)\cdots(t - t_{n-1}).
   $$
 
-#### Example
+### Example
 
 - For points $t = 10, 15, 20, 25$, the polynomial is:
   $$
   P(t) = 61 - \frac{13}{5}(t - 10) + \frac{1}{50}(t - 10)(t - 15) + \frac{2}{375}(t - 10)(t - 15)(t - 20).
   $$
 
-### Error Analysis in Polynomial Interpolation
+## 3.5 Error Analysis in Polynomial Interpolation
 
 **Interpolation Error** quantifies the difference between the true function $f(t)$ and the interpolating polynomial $P(t)$.
 
-#### Error Formula
+### Error Formula
 
 - If $f$ is $(n+1)$-times differentiable, the error at $t$ is:
   $$
