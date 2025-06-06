@@ -276,10 +276,6 @@ Now try a different $g(x) = \sqrt{x + 2}$ with $x_0 = 1$:
   - $g(x)$ is not well-defined or discontinuous.
 - **Modifications**: Techniques like relaxation (e.g., $x_{n+1} = \alpha g(x_n) + (1 - \alpha) x_n$) can improve convergence for some functions.
 
-### Visualizing Convergence (Optional Chart)
-
-If you’d like, I can generate a chart to show how the sequence $x_n$ converges to the fixed point for the example above (e.g., using $g(x) = \sqrt{x + 2}$). Would you like me to create such a chart?
-
 Fixed-Point Iteration is a versatile method for root-finding, valued for its simplicity and lack of derivative requirements, but its success depends critically on the choice of $g(x)$ and the initial guess.
 
 ---
