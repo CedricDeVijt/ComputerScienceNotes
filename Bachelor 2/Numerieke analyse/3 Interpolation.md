@@ -4,7 +4,7 @@
 
 Interpolation involves finding a function (called an interpolant) that fits a set of data points $(x_i, y_i)$ exactly or approximately, allowing estimation of values at intermediate points $x$ within the range of $x_i$.
 
-### Lagrange Interpolation Formula
+## 3.2 Lagrange Interpolation Formula
 
 Lagrange interpolation constructs a polynomial of degree at most $n$ that passes through $n+1$ points by expressing the polynomial as a linear combination of basis polynomials.
 
@@ -38,7 +38,7 @@ $$
 P(x) = 1 \cdot \ell_0(x) + 2 \cdot \ell_1(x) + 0 \cdot \ell_2(x)
 $$
 
-### Neville’s Method
+## 3.3 Neville’s Method
 
 Neville’s method is an iterative algorithm to compute the value of the interpolating polynomial at a specific point $x$ without explicitly constructing the polynomial. It builds a table of intermediate values to find $P(x)$.
 
@@ -59,7 +59,7 @@ $$
 
 **Use case**: Useful for evaluating the interpolating polynomial at specific points, especially in dynamic datasets.
 
-### Newton’s Interpolation Formula
+## 3.4 Newton’s Interpolation Formula
 
 Newton’s interpolation (forward or backward) expresses the polynomial using divided differences, making it efficient for adding new points and evaluating the polynomial.
 
@@ -82,7 +82,7 @@ where $f[x_i, \dots, x_{i+k}]$ are divided differences, defined recursively:
 
 **Use case**: Preferred for numerical computations, especially when points are added incrementally or when the polynomial’s coefficients are needed.
 
-### Error Analysis in Polynomial Interpolation
+## 3.5 Error Analysis in Polynomial Interpolation
 
 The error in polynomial interpolation arises because the interpolating polynomial $P(x)$ approximates the true function $f(x)$. The error depends on the function’s smoothness and the placement of interpolation points.
 
