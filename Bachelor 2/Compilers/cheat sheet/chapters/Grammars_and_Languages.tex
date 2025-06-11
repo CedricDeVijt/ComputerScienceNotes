@@ -1,5 +1,27 @@
 \section{Grammars}
 
+\subsection{Grammar Fundamentals}
+\textbf{Context-Free Grammar (CFG)}: $G = (V, T, P, S)$ where:
+- $V$: finite set of non-terminals
+- $T$: finite set of terminals  
+- $P$: finite set of productions $A \to \alpha$ where $A \in V$, $\alpha \in (V \cup T)^*$
+- $S$: start symbol $\in V$
+
+\textbf{Derivation}: $\alpha \Rightarrow \beta$ if $\alpha = \gamma A \delta$, $\beta = \gamma \omega \delta$, and $A \to \omega \in P$
+
+\textbf{Language}: $L(G) = \{w \in T^* \mid S \Rightarrow^* w\}$
+
+\textbf{Ambiguous Grammar}: A grammar where some string has multiple parse trees.
+
+\subsection{Grammar Transformations}
+\textbf{Left Recursion}: $A \to A\alpha \mid \beta$
+- \textit{Elimination}: Replace with $A \to \beta A'$, $A' \to \alpha A' \mid \epsilon$
+
+\textbf{Left Factoring}: $A \to \alpha\beta_1 \mid \alpha\beta_2$
+- \textit{Factor out}: $A \to \alpha A'$, $A' \to \beta_1 \mid \beta_2$
+
+\textbf{Grammar Hierarchy}: $\text{LL}(k) \subset \text{LR}(k)$, $\text{SLR}(k) \subset \text{LALR}(k) \subset \text{LR}(k)$
+
 \subsection{LL(k) Grammar}
 A CFG is LL(k) if:
 The grammar can be parsed by a top-down parser with $k$ lookahead tokens.
