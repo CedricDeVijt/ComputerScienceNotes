@@ -1,0 +1,1 @@
+## Write regular expressions for lexical units for identifiers, for numbers, and for all three constants. Give minimal deterministic finite state automata for all 5 languages too.
