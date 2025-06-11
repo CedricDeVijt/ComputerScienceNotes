@@ -19,13 +19,13 @@ D. Jumps can only target the start of a basic block
 
 ## During the course we have focused on conservative approximations of both type checking and reachability analysis. Argue that the exact versions of both tasks are in fact undecidable.
 
-## Suppose we are given a context free grammar for a language L on Σ. For all words w ∈Σ∗, we can use the grammar to determine whether w ∈ L in time:
+## Suppose we are given a context free grammar for a language L on Σ. For all words $w \in \sigma^∗$, we can use the grammar to determine whether w ∈ L in time:
 
 A. polynomial in |w|
 B. exponential in |w|
 C. nope, that is an undecidable problem
 
-## Suppose we are given a grammar (not necessarily context free!) for a language L on Σ. For all words w ∈Σ∗, we can use the grammar to determine whether w ∈Lin time:
+## Suppose we are given a grammar (not necessarily context free!) for a language L on Σ. For all words $w \in \sigma^∗$, we can use the grammar to determine whether w ∈Lin time:
 
 A. polynomial in |w|
 B. exponential in |w|
@@ -33,15 +33,26 @@ C. nope, that is an undecidable problem
 
 ## Suppose we are given a deterministic finite automaton with state set Q for a language
 
-Lon Σ. For all words w ∈Σ∗, we can use the automaton to determine whether w ∈Lin time:
+Lon Σ. For all words $w \in \sigma^∗$, we can use the automaton to determine whether w ∈Lin time:
 A. $O(|Q|^{|w|})$
 B. $O(|w|^2)$
 C. $O(|w|)$
 D. $O(\log |w|)$
 
+## Suppose we are given a deterministic finite automaton for a language Lon Σ. For all words $w \in \sigma^∗$, we can use the automaton to determine whether w ∈Lin time:
+
+A. O($2^{|w|}$)
+B. O($|w|^2$)
+C. O($|w|$)
+D. O($\log |w|$)
+
 ## How can we make sure the sequence “true” is always deemed a constant and not a string?
 
 ## Give an arithmetic-expression tree such that the minimal number of registers required to evaluate it is exactly 7.
+
+## Give an arithmetic-expression tree such that the minimal number of registers required to evaluate it is exactly 8.
+
+## Give an arithmetic-expression tree such that the minimal number of registers required to evaluate it is exactly the Strahler number of the tree.
 
 ## Argue that the converse of the following statement studied during the course is not true.
 

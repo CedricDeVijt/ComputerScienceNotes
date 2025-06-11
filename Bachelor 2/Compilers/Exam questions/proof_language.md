@@ -42,3 +42,18 @@
 (2) E → E + E
 (3) E → id
 
+## Let T= {cst, id, +, ∗}be a set of terminals. Is the language of the following grammar LL(1)? Is it LALR(3)?
+(1) Exp → Exp + Prod
+(2) → Prod
+(3) Prod → Prod ∗atom
+(4) → atom
+(5) atom → cst
+(6) → id
+
+## Let T= {cst, id, +, ∗}be a set of terminals. Is the language of the following grammar SLR(0)? Is it LALR(2)?
+(1) Exp → Exp + Prod
+(2) → Prod
+(3) Prod → Prod ∗atom
+(4) → atom
+(5) atom → cst
+(6) → id
