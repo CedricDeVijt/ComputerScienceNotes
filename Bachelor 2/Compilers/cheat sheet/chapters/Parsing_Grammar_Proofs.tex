@@ -63,7 +63,7 @@ To determine whether a grammar is LR, SLR, or LALR, an LR parsing table must be 
     \item For each state $I_i$ and terminal $a$, if $\textit{goto}(I_i, a)$ leads to state \(I_j\), add a \textbf{shift} action to the parsing table: \(\text{ACTION}[i, a] = \text{shift } j\).
     \item For each state \(I_i\) containing an item \(A \to \alpha \cdot\) (complete production), add a \textbf{reduce} action: \(\text{ACTION}[i, a] = \text{reduce } A \to \alpha\) for all \(a \in \text{FOLLOW}(A)\) (for SLR). For LR(1) and LALR, use the lookahead symbols associated with the item.
     \item For the state containing \(S' \to S \cdot\), add an \textbf{accept} action: \(\text{ACTION}[i, \$] = \text{accept}\).
-    \item For each state \(I_i\) and non-terminal \(A\), if \textit{goto}(I_i, A) leads to state \(I_j\), add \(\text{GOTO}[i, A] = j\).
+    % \item For each state \(I_i\) and non-terminal \(A\), if \textit{goto}(I_i, A) leads to state \(I_j\), add \(\text{GOTO}[i, A] = j\).
   \end{itemize}
 
   \item \textbf{Check for Conflicts}:
@@ -80,12 +80,12 @@ To determine whether a grammar is LR, SLR, or LALR, an LR parsing table must be 
 
   \item \textbf{Example Construction}:
   Consider the grammar:
-  \[
-  S \to E \\
-  E \to E + T \mid T \\
-  T \to T * F \mid F \\
-  F \to (E) \mid id
-  \]
+  % \[
+  % S \to E \\
+  % E \to E + T \mid T \\
+  % T \to T * F \mid F \\
+  % F \to (E) \mid id
+  % \]
   Augment the grammar, compute the LR(0) items, build the canonical collection, and populate the parsing table. Check for conflicts to classify the grammar.
 
 \end{enumerate}

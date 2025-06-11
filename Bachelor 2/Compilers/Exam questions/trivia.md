@@ -1,3 +1,5 @@
+<!-- DONE -->
+
 ## Which one of the following is an advantage of automata-based scanners over hand-built scanners?
 
 A. They can always be automatically constructed.
@@ -31,20 +33,12 @@ A. polynomial in |w|
 B. exponential in |w|
 C. nope, that is an undecidable problem
 
-## Suppose we are given a deterministic finite automaton with state set Q for a language
-
-Lon Σ. For all words $w \in \sigma^∗$, we can use the automaton to determine whether w ∈Lin time:
+## Suppose we are given a deterministic finite automaton with state set Q for a language L on Σ. For all words $w \in \sigma^∗$, we can use the automaton to determine whether w ∈Lin time:
 A. $O(|Q|^{|w|})$
 B. $O(|w|^2)$
 C. $O(|w|)$
 D. $O(\log |w|)$
 
-## Suppose we are given a deterministic finite automaton for a language Lon Σ. For all words $w \in \sigma^∗$, we can use the automaton to determine whether w ∈Lin time:
-
-A. O($2^{|w|}$)
-B. O($|w|^2$)
-C. O($|w|$)
-D. O($\log |w|$)
 
 ## How can we make sure the sequence “true” is always deemed a constant and not a string?
 
@@ -64,3 +58,8 @@ In other words: Give an example of a context-free grammar G and a rightmost deri
 reaches a sentential form γRwsuch that (q,w,γZ0) is not a configuration reached along an accepting
 run of the classical bottom-up parser constructed for G — i.e. the one that only has Shift/Reduce
 transitions.
+
+## Let (q,w,γZ0) be a configuration reached along a run ρof the bottom-up parser with q not of the form (A,...). The latter means that the parser is not busy popping elements as part of a reduce action. What can we conclude about ρ?
+
+A. If $S \Rightarrow ^∗ \gamma^Rw$, that is the reverse of $\gamma$ is a valid prefix of a sentential form, then $ρ$ is an accepting run.
+B. If $\gamma^R$ is not a valid prefix of a sentential form then $ρ$ is not an accepting run.

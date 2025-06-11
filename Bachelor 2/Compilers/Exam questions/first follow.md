@@ -16,7 +16,6 @@
 (12) → id
 (13) → (Exp)
 
-
 - X →•
 - U →X•
 - E →B + •U
@@ -32,3 +31,19 @@ Grammar:
 (7) D → E
 (8) U → X
 (9) X → ε
+
+## The closure of {S →•aA,S →a•B}includes:
+
+Grammar:
+(1) S → aA
+(2) S → aB
+(3) A → ε
+(4) A → Aa
+(5) B → b
+(6) B → a
+
+- S →•aA
+- S →a•B
+- A→•Aa
+- B →•b
+- B →•a

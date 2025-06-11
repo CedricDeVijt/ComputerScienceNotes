@@ -30,7 +30,7 @@
 
 ## Give an example of a grammar and a word from its language which can be deterministically parsed by an LALR(1) parser thanks to ItemFollow and which cannot be done using Follow only.
 
-## Let T= {id, assign, num}be a set of terminals. Consider the following grammar G and the language Lit defines.
+## Let T= {id, assign, num}be a set of terminals. Consider the following grammar G and the language L it defines.
 
 (1) S → id
 (2) S → V assign E
@@ -44,3 +44,40 @@ Which of the following are true? (Several may be true!)
 - G is SLR(1)
 - G is LALR(1)
 - L is LL(3)
+
+## Let T= {id, +} be a set of terminals. Is the following grammar LL(1)? Does it define an LL(2) language?
+
+(1) S → E
+(2) E → id + C
+(3) C → id
+
+## Let T= {cst, id, +, ∗}be a set of terminals. Is the following grammar SLR(0)? Is it LALR(2)?
+
+(1) Exp → Exp + Prod
+(2) → Prod
+(3) Prod → Prod ∗atom
+(4) → atom
+(5) atom → cst
+(6) → id
+
+## Let T= {cst, id, +, ∗}be a set of terminals. Is the following grammar SLR(1)? Is it LALR(2)?
+
+(1) Exp → Exp + Prod
+(2) → Prod
+(3) Prod → Prod ∗atom
+(4) → atom
+(5) atom → cst
+(6) → id
+
+## Let T= {id, +}be a set of terminals. Is the following grammar LL(2)? Does it define an LL(3) language?
+
+(1) S → Exp
+(2) Exp → Exp + Exp
+(3) → id
+(4) → id++
+
+## Let T= {id, +}be a set of terminals. Is the following grammar LL(0)? Does it define an LL(2) language?
+
+(1) S → E
+(2) E → E + E
+(3) → id
