@@ -10,16 +10,16 @@
 \pagestyle{empty}
 \makeatletter
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
-                                {-1ex plus -.5ex minus -.2ex}%
-                                {0.5ex plus .2ex}%
-                                {\normalfont\large\bfseries}}
-\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
-                                {-1ex plus -.5ex minus -.2ex}%
-                                {0.5ex plus .2ex}%
+                                {-0.5ex plus -.25ex minus -.1ex}%
+                                {0.25ex plus .1ex}%
                                 {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-0.5ex plus -.25ex minus -.1ex}%
+                                {0.25ex plus .1ex}%
+                                {\normalfont\small\bfseries}}
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
-                                {-1ex plus -.5ex minus -.2ex}%
-                                {1ex plus .2ex}%
+                                {-0.5ex plus -.25ex minus -.1ex}%
+                                {0.5ex plus .1ex}%
                                 {\normalfont\small\bfseries}}
 \makeatother
 \setcounter{secnumdepth}{0}
@@ -30,11 +30,12 @@
 \begin{document}
 
 
-\raggedright
 \tiny
+\setlength{\linewidth}{\columnwidth}
+\setlength{\hsize}{\columnwidth}
 
 \begin{center}
-     \Large{\textbf{Compilers}} \\
+     \Large{\textbf{Compilers}}
 \end{center}
 
 \begin{multicols*}{3}
@@ -42,13 +43,19 @@
 \setlength{\postmulticols}{1pt}
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
+\sloppy
+\tolerance=1000
+\emergencystretch=10pt
 
+
+% DONE
 \input{chapters/Key Definitions_and_Concepts.tex}
+\input{chapters/Trivia.tex}
+
+% TODO
 \input{chapters/Canonical_Finite_State_Machine.tex}
 \input{chapters/First_and_Follow.tex}
 \input{chapters/Grammars_and_Languages.tex}
-\input{chapters/Time_Complexities.tex}
-\input{chapters/Trivia.tex}
 \input{chapters/Example_Grammars_and_Languages.tex}
 \input{chapters/Parsing_Grammar_Proofs.tex}
 
