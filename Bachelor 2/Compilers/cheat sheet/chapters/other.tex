@@ -1,0 +1,11 @@
+\section{Other}
+
+\textbf{Rewriting Grammars for Precedence}
+Identify Operators: E.g., + (addition), * (multiplication).
+Assign Precedence:
+Higher precedence (e.g., *) gets lower-level nonterminals.
+Lower precedence (e.g., +) gets higher-level nonterminals.
+Rewrite CFG:
+For multiplication before addition: Exp → Exp + Term | Term, Term → Term * Factor | Factor.
+Add parentheses: Factor → (Exp) | cst.
+Verify: Ensure parse trees respect operator precedence.

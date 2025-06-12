@@ -1,0 +1,35 @@
+\section{LR Items}
+
+An $\mathbf{LR(k) \text{ item}}$ is a production with a dot ($\bullet$) marking a position in the right-hand side, along with a $k$-symbol lookahead string. The dot indicates how much of the production has been recognized so far. An item $[A \to \alpha \bullet \beta, w]$ means we have seen $\alpha$ and expect to see $\beta$, with lookahead $w$.
+
+Types of LR Items:
+\textbf{Shift item}: $[A \to \alpha \bullet a \beta, w]$ where $a$ is a terminal
+\textbf{Reduce item}: $[A \to \alpha \bullet, w]$ where the dot is at the end
+\textbf{Goto item}: $[A \to \alpha \bullet B \beta, w]$ where $B$ is a non-terminal
+
+Steps to Compute $\mathbf{CLOSURE(I)}$ for a set of items $I$:
+1. Initialize $CLOSURE(I) = I$.
+2. For each item $[A \to \alpha \bullet B \beta, w]$ in $CLOSURE(I)$ where $B$ is a non-terminal:
+   - For each production $B \to \gamma$:
+     - Compute $FIRST^k(\beta w)$ (concatenate $\beta$ and lookahead $w$, then take first $k$ symbols).
+     - For each string $u \in FIRST^k(\beta w)$:
+       - Add item $[B \to \bullet \gamma, u]$ to $CLOSURE(I)$ if not already present.
+3. Repeat step 2 until no new items are added to $CLOSURE(I)$.
+
+Steps to Compute $\mathbf{GOTO(I, X)}$ for item set $I$ and symbol $X$:
+1. Initialize $J = \emptyset$.
+2. For each item $[A \to \alpha \bullet X \beta, w]$ in $I$:
+   - Add item $[A \to \alpha X \bullet \beta, w]$ to $J$.
+3. Return $CLOSURE(J)$.
+
+Steps to Construct the $\mathbf{LR(k) \text{ Automaton}}$:
+1. Create the initial state $I_0 = CLOSURE(\{[S' \to \bullet S, \$^k]\})$ where $S'$ is the augmented start symbol.
+2. Initialize the set of states $\mathcal{C} = \{I_0\}$ and a worklist $W = \{I_0\}$.
+3. While $W \neq \emptyset$:
+   - Remove a state $I$ from $W$.
+   - For each symbol $X$ (terminal or non-terminal) such that $GOTO(I, X) \neq \emptyset$:
+     - Let $J = GOTO(I, X)$.
+     - If $J \notin \mathcal{C}$:
+       - Add $J$ to $\mathcal{C}$ and $W$.
+     - Add transition $I \xrightarrow{X} J$ to the automaton.
+4. The resulting automaton defines the LR parsing table.
