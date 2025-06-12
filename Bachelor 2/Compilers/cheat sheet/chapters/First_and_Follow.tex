@@ -1,25 +1,15 @@
 % DONE
 
 \section{First and Follow}
-\subsection{Calculating FIRST}
-The $FIRST^k(\alpha)$ set for a non-terminal $S$ is defined as:
-    $FIRST^k(\alpha)$ includes terminals that appear as the first $k$ symbols in any derivation of $S$.\\
+The $\mathbf{FIRST^k(\alpha)}$ set for a non-terminal $S$ is defined as:
+    $FIRST^k(\alpha)$ includes terminals that appear as the first $k$ symbols in any derivation of $S$.
     To compute $FIRST^k(\alpha)$:
-    \begin{enumerate}
-        \item For each production $S \to \alpha$, add the first terminal of $\alpha$ to $FIRST^k(\alpha)$.
-        \item If $\alpha$ starts with a non-terminal $A$, include $FIRST^k(A)$.
-        \item Consider $k$-length lookahead, ensuring that $FIRST^k(\alpha)$ captures all terminals up to $k$ symbols.
-    \end{enumerate}
-
-\subsection{Calculating FOLLOW}
-The $FOLLOW^k(\alpha)$ set for a non-terminal $S$ is defined as:
-    $FOLLOW^k(\alpha)$ includes terminals that can appear immediately after $S$ in some string derivable from the start symbol, considering up to $k$ symbols.\\
+        1) For each production $S \to \alpha$, add the first terminal of $\alpha$ to $FIRST^k(\alpha)$.
+        2) If $\alpha$ starts with a non-terminal $A$, include $FIRST^k(A)$.
+        3) Consider $k$-length lookahead, ensuring that $FIRST^k(\alpha)$ captures all terminals up to $k$ symbols.
+The $\mathbf{FOLLOW^k(\alpha)}$ set for a non-terminal $S$ is defined as:
+    $FOLLOW^k(\alpha)$ includes terminals that can appear immediately after $S$ in some string derivable from the start symbol, considering up to $k$ symbols.
     To compute $FOLLOW^k(\alpha)$:
-    \begin{enumerate}
-        \item For each production $A \to \alpha S \beta$, add $FIRST^k(\beta)$ to $FOLLOW^k(\alpha)$.
-        \item If $\beta$ can derive the empty string $\epsilon$, add $FOLLOW^k(A)$ to $FOLLOW^k(\alpha)$.
-        \item Ensure that $FOLLOW^k(\alpha)$ includes all possible terminals appearing after $S$ within $k$ symbols.
-    \end{enumerate}
-
-
-%\subsubsection{ItemFollows}
+        1) For each production $A \to \alpha S \beta$, add $FIRST^k(\beta)$ to $FOLLOW^k(\alpha)$.
+        2) If $\beta$ can derive the empty string $\epsilon$, add $FOLLOW^k(A)$ to $FOLLOW^k(\alpha)$.
+        3) Ensure that $FOLLOW^k(\alpha)$ includes all possible terminals appearing after $S$ within $k$ symbols.
