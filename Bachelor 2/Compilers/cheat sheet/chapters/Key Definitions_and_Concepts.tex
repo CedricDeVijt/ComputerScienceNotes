@@ -12,6 +12,6 @@
 \textbf{Follow(k) Set} For a nonterminal $A$, the set of all possible $k$-token prefixes that can appear immediately after $A$ in a derivation.
 \textbf{Closure in Parsing} In LR parsing, the closure of a set of items (e.g., $A \rightarrow \alpha \cdot \beta $) includes all items that can be reached by following nonterminal transitions (adding rules like $B \rightarrow \cdot \gamma$ if $\beta $ starts with $B$).
 \textbf{Regular Expression} A pattern describing a regular language, using symbols like `*` (zero or more), `+` (one or more), `$\vert$` (union), and `()` (grouping).
-\textbf{Longest Match Principle} In lexical analysis, the scanner selects the longest prefix of the input that matches a token pattern (Maximal munch).
+\textbf{Longest Match Principle (Maximal munch)} In lexical analysis, the scanner selects the longest prefix of the input that matches a token pattern.
 \textbf{Strong Language} A context-free language is strong if it can be parsed deterministically by an LR(1) parser. Strong languages are a proper subset of context-free languages and include all LR(k) languages. They are characterized by having unambiguous grammars that can be parsed bottom-up with bounded lookahead.
 \textbf{Strong Grammar} A context-free grammar is strong if it generates a strong language and can be parsed deterministically by an LR(1) parser without conflicts. Strong grammars are unambiguous and have the property that every viable prefix can be extended to a complete derivation in at most one way with bounded lookahead.
