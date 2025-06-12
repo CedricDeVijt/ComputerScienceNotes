@@ -187,3 +187,4 @@ This guide provides a universal reference for solving problems related to formal
 - **Lookahead**: For LL/LR, ensure lookaheads are computed correctly.
 - **Nonterminals vs. Terminals**: Clearly distinguish in grammars and automata.
 - **Pumping Lemma**: Use it to prove non-regularity or non-CFL status, but carefully select the string.
+

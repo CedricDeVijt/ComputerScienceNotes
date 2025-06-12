@@ -6,6 +6,26 @@ Assign Precedence:
 Higher precedence (e.g., *) gets lower-level nonterminals.
 Lower precedence (e.g., +) gets higher-level nonterminals.
 Rewrite CFG:
-For multiplication before addition: Exp → Exp + Term | Term, Term → Term * Factor | Factor.
-Add parentheses: Factor → (Exp) | cst.
+For multiplication before addition: Exp $\rightarrow$ Exp + Term | Term, Term $\rightarrow$ Term * Factor | Factor.
+Add parentheses: Factor $\rightarrow$ (Exp) | cst.
 Verify: Ensure parse trees respect operator precedence.
+
+
+\textbf{LLVM IR}
+LLVM IR: A low-level, platform-independent representation used in compilers.
+Unlimited Registers: Uses an infinite set of virtual registers.
+Static Single Assignment (SSA): Each variable is assigned exactly once, simplifying optimization.
+Basic Blocks: Sequences of instructions with a single entry and exit point. Must end with a terminator (e.g., branch, return).
+Jumps: Target the start of basic blocks, ensuring structured control flow.
+
+\textbf{Obtaining an LL(1) grammar}
+Three main obstacles to LL(1) and their solutions:
+1. Ambiguity: Grammar must be unambiguous first. Use operator precedence and associativity rules.
+2. Left Recursion: Eliminate by converting to right recursion.
+   - $A \rightarrow A\alpha  | \beta $ becomes $A \rightarrow \beta A'$, $A' \rightarrow \alpha A' | \epsilon$
+3. Common Prefixes: Use left factoring to eliminate shared prefixes.
+   - $A \rightarrow \alpha \beta  | \alpha \gamma$ becomes $A \rightarrow \alpha A'$, $A' \rightarrow \beta  | \gamma$
+Key Properties:
+- LL(k) grammars are necessarily unambiguous
+- Parser decides rules based on lookahead tokens
+- First and Follow sets must be disjoint for LL(1)
