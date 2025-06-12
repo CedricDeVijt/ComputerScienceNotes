@@ -1,15 +1,29 @@
-% DONE
+\section{First and Follow Sets}
 
-\section{First and Follow}
-The $\mathbf{FIRST^k(\alpha)}$ set for a non-terminal $S$ is defined as:
-    $FIRST^k(\alpha)$ includes terminals that appear as the first $k$ symbols in any derivation of $S$.
-    To compute $FIRST^k(\alpha)$:
-        1) For each production $S \to \alpha$, add the first terminal of $\alpha$ to $FIRST^k(\alpha)$.
-        2) If $\alpha$ starts with a non-terminal $A$, include $FIRST^k(A)$.
-        3) Consider $k$-length lookahead, ensuring that $FIRST^k(\alpha)$ captures all terminals up to $k$ symbols.
-The $\mathbf{FOLLOW^k(\alpha)}$ set for a non-terminal $S$ is defined as:
-    $FOLLOW^k(\alpha)$ includes terminals that can appear immediately after $S$ in some string derivable from the start symbol, considering up to $k$ symbols.
-    To compute $FOLLOW^k(\alpha)$:
-        1) For each production $A \to \alpha S \beta$, add $FIRST^k(\beta)$ to $FOLLOW^k(\alpha)$.
-        2) If $\beta$ can derive the empty string $\epsilon$, add $FOLLOW^k(A)$ to $FOLLOW^k(\alpha)$.
-        3) Ensure that $FOLLOW^k(\alpha)$ includes all possible terminals appearing after $S$ within $k$ symbols.
+The $\mathbf{FIRST^k(\alpha)}$ set for a string $\alpha$ (terminal, non-terminal, or sequence) contains all sequences of up to $k$ terminals that can appear as the first $k$ symbols in any derivation of $\alpha$. If $\alpha$ derives a string shorter than $k$, the entire derived string is included.
+
+Steps to Compute $FIRST^k(\alpha)$:
+1. If $\alpha$ is a terminal $a$: Add the string $a$ (of length 1) to $FIRST^k(\alpha)$.
+2. If $\alpha$ is a sequence $\alpha_1 \alpha_2 \dots \alpha_n$:
+   - Initialize $FIRST^k(\alpha) = \emptyset$.
+   - For $i = 1$ to $n$:
+     - Add to $FIRST^k(\alpha)$ all strings of length up to $k$ from $FIRST^k(\alpha_i)$ if $\alpha_1, \dots, \alpha_{i-1}$ can all derive the empty string $\epsilon$.
+     - For strings shorter than $k$, concatenate with $FIRST^{k-|s|}(\alpha_{i+1} \dots \alpha_n)$ (where $|s|$ is the length of the string).
+   - If $\alpha$ can derive $\epsilon$, include $\epsilon$ in $FIRST^k(\alpha)$.
+3. If $\alpha$ is a non-terminal $A$:
+   - For each production $A \to \beta$, compute $FIRST^k(\beta)$ and add its strings to $FIRST^k(A)$.
+   - Repeat until $FIRST^k(A)$ stabilizes (no new strings are added).
+4. Handle $k$-length lookahead: Truncate strings longer than $k$ to their first $k$ symbols.
+
+The $\mathbf{FOLLOW^k(A)}$ set for a non-terminal $A$ contains all sequences of up to $k$ terminals that can appear immediately after $A$ in some derivation from the start symbol. If $A$ appears at the end of a derivation, include the end-of-input marker (e.g., $\$$).
+
+Steps to Compute $FOLLOW^k(A)$:
+1. Initialize:
+   - For the start symbol $S$, add $\$$ (or a $k$-length end marker) to $FOLLOW^k(S)$.
+   - Set $FOLLOW^k(A) = \emptyset$ for all other non-terminals $A$.
+2. For each production $B \to \alpha A \beta$ (where $A$ is a non-terminal):
+   - Compute $FIRST^k(\beta)$ and add its strings to $FOLLOW^k(A)$.
+   - If $\beta$ can derive $\epsilon$, add $FOLLOW^k(B)$ to $FOLLOW^k(A)$.
+3. Iterate:
+   - Repeat step 2 across all productions until no new strings are added to any $FOLLOW^k(A)$.
+4. Handle $k$-length lookahead: Ensure all strings in $FOLLOW^k(A)$ are of length up to $k$, truncating longer strings to their first $k$ symbols.
