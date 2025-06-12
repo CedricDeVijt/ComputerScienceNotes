@@ -1,97 +1,73 @@
-\section{Parsing Grammar Proofs}
+% DONE
 
-\subsection{LL(k) Proof}
-A grammar is \textbf{LL(k)} if:
-\begin{enumerate}
-  \item No left recursion exists.
-  \item For every non-terminal \(A\) with productions \(A \to \alpha \mid \beta\):
-  \[
-  \text{FIRST}_k(\alpha \cdot \text{FOLLOW}_k(A)) \cap \text{FIRST}_k(\beta \cdot \text{FOLLOW}_k(A)) = \emptyset
-  \]
-  (If \(\alpha\)/\(\beta\) can derive \(\epsilon\), include \(\text{FOLLOW}_k(A)\).)
-\end{enumerate}
+\section{Grammar Proofs}
 
-\subsection{SLR(k) Proof}
-A grammar is \textbf{SLR(k)} if:
-\begin{enumerate}
-  \item Construct SLR(1) states (LR(0) items + \text{FOLLOW} for reduce actions).
-  \item No \textit{shift-reduce} or \textit{reduce-reduce} conflicts in the parsing table.
-  \item Conflicts tested using \text{FOLLOW} sets (not lookaheads).
-\end{enumerate}
+\textbf{Preliminary Checks}
+   1) Ensure the grammar is well-formed: The CFG should have no useless symbols (nonterminals that cannot derive any string or cannot be reached from the start symbol). Remove them using standard algorithms (e.g., find productive and reachable symbols).
+   2) Check for ambiguity: An ambiguous grammar (one that allows multiple parse trees for the same string) cannot be LL(k), SLR(k), LALR(k), or LR(k) for any \( k \). Test for ambiguity by attempting to construct multiple leftmost or rightmost derivations for a string. If ambiguous, the grammar fails for all these parser types.
+   3) Eliminate left recursion: For LL(k), the grammar must be free of left recursion (direct or indirect). Use left recursion elimination techniques if needed. For LR-based parsers (SLR, LALR, LR), left recursion is not an issue.
 
-\subsection{LR(k) Proof}
-A grammar is \textbf{LR(k)} if:
-\begin{enumerate}
-  \item Construct canonical LR(k) states (with full lookaheads).
-  \item No conflicts in the parsing table (even with precise lookaheads).
-\end{enumerate}
+\textbf{Check for LL(k)}
+   A grammar is LL(k) if it can be parsed top-down with \( k \) lookahead symbols without backtracking, using a deterministic parsing table.
+   Steps:
+     1. Compute $\text{FIRST}_k$ sets: For each nonterminal \( A \), compute the set of all possible strings of length \( \leq k \) that can be derived from \( A \). For terminals, \( \text{FIRST}_k(a) = \{a\} \) (or prefixes of length \( k \)).
+     2. Compute $\text{FOLLOW}_k$ sets: For each nonterminal \( A \), compute the set of strings of length \( \leq k \) that can follow \( A \) in a derivation.
+     3. Construct the LL(k) parsing table: For each production \( A \to \alpha \), compute the lookahead sets as \( \text{FIRST}_k(\alpha \cdot \text{FOLLOW}_k(A)) \). Place the production in the table at \( [A, t] \) for each terminal string \( t \) in the lookahead set.
+     4. Check for conflicts: The grammar is LL(k) if the parsing table has no conflicts (i.e., no cell \( [A, t] \) contains multiple productions).
+     5. Test for each \( k \): If the table has conflicts for \( k = 1 \), try \( k = 2 \) or \( k = 3 \). If conflicts persist, the grammar is not LL(k) for the tested \( k \).
+     - For k = 0: LL(0) grammars are rare and require each nonterminal to have a single production with distinct terminals in its derivation. Check if the grammar is essentially deterministic without lookahead.
+   Proof: If the table is conflict-free for some \( k \), the grammar is LL(k). Provide the parsing table as evidence. If conflicts exist for all \( k \leq 3 \), state the conflicting entries to prove it’s not LL(k).
 
-\subsection{LALR(k) Proof}
-A grammar is \textbf{LALR(k)} if:
-\begin{enumerate}
-  \item Merge LR(1) states with identical \textit{cores} (same productions, different lookaheads).
-  \item Ensure no conflicts arise after merging (common in practice but weaker than LR).
-\end{enumerate}
+\textbf{Check for LR(k)}
+   A grammar is LR(k) if it can be parsed bottom-up with \( k \) lookahead symbols using a deterministic LR parsing table based on the canonical collection of LR(k) items.
+   Steps:
+     1. Construct the LR(k) item sets: An LR(k) item is of the form \( [A \to \alpha \cdot \beta, w] \), where \( \alpha \) is the part already parsed, \( \beta \) is the remaining part, and \( w \) is a lookahead string of length \( k \). Build the DFA of LR(k) items (states) using closure and goto operations.
+     2. Build the parsing table: For each state, define actions (shift, reduce, accept) based on the items:
+        - Shift: If \( [A \to \alpha \cdot a \beta, w] \) and \( \text{goto}(I, a) = J \), add a shift to state \( J \).
+        - Reduce: If \( [A \to \alpha \cdot, w] \), add a reduce by \( A \to \alpha \) for lookahead \( w \).
+        - Accept: If \( [S' \to S \cdot, \epsilon] \) (augmented start symbol), accept on end-of-input.
+     3. Check for conflicts: The grammar is LR(k) if there are no shift-reduce or reduce-reduce conflicts in the table.
+     4. Test for each \( k \): Start with \( k = 0 \). If conflicts arise, try \( k = 1, 2, 3 \). Larger \( k \) resolves conflicts by distinguishing lookaheads.
+     - For k = 0: Use empty lookaheads (\( w = \epsilon \)). Conflicts are common, as LR(0) is restrictive.
+   - Proof: If the table is conflict-free for some \( k \), the grammar is LR(k). Show the DFA and table. If conflicts exist, list them to prove it’s not LR(k).
 
-\subsubsection*{Hierarchy}
-\[
-\text{SLR} \subset \text{LALR} \subset \text{LR}, \quad \text{LL} \subset \text{CFG (non-overlapping)}
-\]
+\textbf{Check for SLR(k)}
+   SLR(k) is a simplified version of LR(k) that uses FOLLOW sets for lookaheads instead of precise LR(k) lookaheads, making it less powerful but easier to compute.
+   - Steps:
+     1. Build the LR(0) DFA: Construct the DFA of LR(0) items (same as LR(k) but with no lookahead, i.e., \( k = 0 \)).
+     2. Compute $\text{FOLLOW}_k$ sets: For each nonterminal \( A \), compute the set of terminal strings of length \( \leq k \) that can follow \( A \).
+     3. Construct the SLR(k) parsing table:
+        - Shift and goto actions are the same as in LR(0).
+        - For an item \( [A \to \alpha \cdot] \) in state \( I \), add a reduce by \( A \to \alpha \) for each terminal string \( t \in \text{FOLLOW}_k(A) \).
+     4. Check for conflicts: The grammar is SLR(k) if the table has no shift-reduce or reduce-reduce conflicts.
+     5. Test for each \( k \): Try \( k = 0, 1, 2, 3 \). SLR(0) uses empty lookaheads, often leading to conflicts.
+   - Proof: If conflict-free, the grammar is SLR(k); provide the table. If conflicts exist, show conflicting actions to prove it’s not SLR(k).
 
-\textbf{Key Notes}:
-- For \textbf{LL(k)}: Compute \(\text{FIRST}_k\) and \(\text{FOLLOW}_k\) rigorously.
-- For \textbf{SLR}: Conflicts = overlap between shift terminals and \(\text{FOLLOW}\) of reduced non-terminal.
-- \textbf{LALR} merges LR(1) states; conflicts here imply not LALR but might still be LR.
-- \textbf{Left recursion} invalidates LL(k); \textbf{ambiguity} invalidates all.
+\textbf{Check for LALR(k)}
+   - Definition: LALR(k) is a compromise between SLR(k) and LR(k), using the LR(0) DFA but with lookaheads computed by merging LR(k) states.
+   - Steps:
+     1. Build the LR(0) DFA: Same as for SLR(k).
+     2. Compute LALR(k) lookaheads: Propagate lookaheads through the LR(0) DFA to compute the set of lookahead strings of length \( \leq k \) for each item \( [A \to \alpha \cdot] \). This is done by analyzing spontaneous generation and propagation of lookaheads (a simplified version of LR(k) lookaheads).
+     3. Construct the LALR(k) parsing table:
+        - Shift and goto actions are identical to LR(0).
+        - For an item \( [A \to \alpha \cdot, w] \), add a reduce by \( A \to \alpha \) for lookahead \( w \).
+     4. Check for conflicts: The grammar is LALR(k) if the table has no conflicts.
+     5. Test for each \( k \): Try \( k = 0, 1, 2, 3 \). LALR(0) is equivalent to SLR(0) in practice, as lookaheads are minimal.
+   - Proof: If conflict-free, the grammar is LALR(k); show the table and lookaheads. If conflicts exist, list them to prove it’s not LALR(k).
 
-\subsection{Constructing an LR Parsing Table}
-To determine whether a grammar is LR, SLR, or LALR, an LR parsing table must be constructed. The steps are as follows:
+\textbf{Relationships and Optimization}
+   - Hierarchy: If a grammar is LR(k), it is LALR(k). If it is LALR(k), it is SLR(k). If it is LL(k), it is not necessarily LR(k), but LL(k) grammars are often simpler. Use this to optimize checks:
+     - If the grammar is not SLR(k), it cannot be LALR(k) or LR(k).
+     - If it is LR(k), it is also LALR(k) and SLR(k).
+     - If it is LL(k), it may still need separate checks for LR-based parsers.
+   - Start with k = 1: Most practical grammars are tested for \( k = 1 \). \( k = 0 \) often fails due to insufficient lookahead, and \( k > 1 \) is rarely needed for well-designed grammars.
 
-\begin{enumerate}
-  \item \textbf{Augment the Grammar}: Add a new start symbol \(S'\) and production \(S' \to S\), where \(S\) is the original start symbol. This ensures the parser recognizes when it has fully parsed the input.
+\textbf{Document the Proof}
+   - For each type (LL, SLR, LALR, LR) and each \( k \), provide:
+     - The parsing table or DFA (as applicable).
+     - Any conflicts found (e.g., specific table entries with multiple actions).
+     - A conclusion: “The grammar is [type](k) because the table is conflict-free” or “The grammar is not [type](k) due to conflicts at [state/entry].”
 
-  \item \textbf{Compute LR(0) Items}: Create the set of LR(0) items for the grammar. Each item represents a position within a production (e.g., \(A \to \alpha \cdot \beta\)).
-
-  \item \textbf{Closure Operation}: For each item \(A \to \alpha \cdot B \beta\), add all productions of \(B\) with a dot at the beginning (\(B \to \cdot \gamma\)) to the closure. Repeat until no new items can be added.
-
-  \item \textbf{Goto Function}: For each item set \(I\) and each grammar symbol \(X\) (terminal or non-terminal), compute the \textit{goto}(I, X) by advancing the dot over \(X\) in all items of \(I\) and taking the closure of the result.
-
-  \item \textbf{Build the Canonical Collection}: Start with the initial state \(I_0 = \text{closure}(\{S' \to \cdot S\})\). Use the \textit{goto} function to generate all reachable states. This forms the canonical collection of LR(0) item sets.
-
-  \item \textbf{Action and Goto Tables}:
-  \begin{itemize}
-    \item For each state $I_i$ and terminal $a$, if $\textit{goto}(I_i, a)$ leads to state \(I_j\), add a \textbf{shift} action to the parsing table: \(\text{ACTION}[i, a] = \text{shift } j\).
-    \item For each state \(I_i\) containing an item \(A \to \alpha \cdot\) (complete production), add a \textbf{reduce} action: \(\text{ACTION}[i, a] = \text{reduce } A \to \alpha\) for all \(a \in \text{FOLLOW}(A)\) (for SLR). For LR(1) and LALR, use the lookahead symbols associated with the item.
-    \item For the state containing \(S' \to S \cdot\), add an \textbf{accept} action: \(\text{ACTION}[i, \$] = \text{accept}\).
-    % \item For each state \(I_i\) and non-terminal \(A\), if \textit{goto}(I_i, A) leads to state \(I_j\), add \(\text{GOTO}[i, A] = j\).
-  \end{itemize}
-
-  \item \textbf{Check for Conflicts}:
-  \begin{itemize}
-    \item \textbf{Shift-Reduce Conflict}: Occurs if a state has both a shift and reduce action for the same terminal.
-    \item \textbf{Reduce-Reduce Conflict}: Occurs if a state has multiple reduce actions for the same terminal.
-    \item If no conflicts exist, the grammar is:
-    \begin{itemize}
-      \item \textbf{SLR}: If conflicts are resolved using \(\text{FOLLOW}\) sets.
-      \item \textbf{LR(1)}: If conflicts are resolved using precise lookahead symbols.
-      \item \textbf{LALR}: If the grammar remains conflict-free after merging LR(1) states with identical cores.
-    \end{itemize}
-  \end{itemize}
-
-  \item \textbf{Example Construction}:
-  Consider the grammar:
-  % \[
-  % S \to E \\
-  % E \to E + T \mid T \\
-  % T \to T * F \mid F \\
-  % F \to (E) \mid id
-  % \]
-  Augment the grammar, compute the LR(0) items, build the canonical collection, and populate the parsing table. Check for conflicts to classify the grammar.
-
-\end{enumerate}
-
-\textbf{Notes on Classification}:
-- If the grammar has no conflicts in the LR(0) table, it is \textbf{LR(0)}.
-- If conflicts are resolved using \(\text{FOLLOW}\) sets, it is \textbf{SLR}.
-- If conflicts are resolved using precise lookaheads, it is \textbf{LR(1)}.
-- If merging LR(1) states resolves conflicts, it is \textbf{LALR}.
+Notes
+For k = 0: LL(0) and SLR(0)/LALR(0) are restrictive and rarely practical. Focus on \( k = 1 \) unless specified.
+Ambiguity: If the grammar is ambiguous, it fails all tests. Check this first to avoid unnecessary work.

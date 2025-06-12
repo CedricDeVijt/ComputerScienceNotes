@@ -12,14 +12,15 @@ $L = \{a^n b^n c^m | n, m \geq 1\} $\
 $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
 
 \textbf{CFL that is not LR(1)}\\
-    English language
+$ L = \{ w w^R \mid w \in \{a, b\}^* \} $ where $ w^R $ is the reverse of $ w $
+
 \end{samepage}
 \subsection{Example Grammars}
 \begin{samepage}
 \subsubsection{LL(k) Grammar}
 \textbf{LL(1) grammar that is not strongly LL(1)}\\ % Cursus p146 Theorem 5.4.
     Theorem 5.4 "All LL(1) grammars are also strong LL(1), i.e. the classes of LL(1) and strong LL(1) grammars coincide."
-    
+
 \textbf{LL(1) grammar that is not LALR(1)}\\ % Cursus p205 Figure 6.23: An grammar which is LL(1) and not LALR(1)
     $S\rightarrow aX$\\
     $S\rightarrow Eb$\\
@@ -37,7 +38,7 @@ $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
     $A \rightarrow \epsilon$\\
     $B \rightarrow b$\\
     $B \rightarrow c$\\
-    
+
 \textbf{LL(2) and SLR(1) grammar but neither LL(1) nor LR(0)} % Cursus p205 Figure 6.24: A grammar that is LL(2) and SLR(1) but neither LL(1) nor LR(0).
     $S\rightarrow ab$\\
     $S\rightarrow ac$\\
@@ -50,7 +51,7 @@ $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
     $S \rightarrow bAc$\\
     $S \rightarrow dc$\\
     $A \rightarrow d$\\
-    
+
 \subsubsection{LR(k) Grammar}
 \textbf{LR(1) grammar that is not LALR(1) and not LL(1)}\\ % Cursus p198 Figure 6.18: An LR(1) grammar that is not LALR(1) and not LL(1).
     $S\rightarrow aAd$\\
@@ -72,11 +73,11 @@ $L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
     $S \rightarrow aAc$\\
     $A \rightarrow bAb$\\
     $A  \rightarrow b$\\
-    
+
 \textbf{CFG that is not LR(0)}\\ % Cursus p190 Figure 6.14: A simple grammar which is not LR(0).
     $S \rightarrow a$\\
     $S \rightarrow abS$\\
-    
+
 \end{samepage}
 \begin{samepage}
 \subsubsection{SLR(k) Grammar}
