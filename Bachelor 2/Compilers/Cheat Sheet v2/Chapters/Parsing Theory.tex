@@ -2,53 +2,31 @@
 
 The $\mathbf{FIRST^k(\alpha)}$ set for a string $\alpha$ (terminal, non-terminal, or sequence) contains all sequences of up to $k$ terminals that can appear as the first $k$ symbols in any derivation of $\alpha$. If $\alpha$ derives a string shorter than $k$, the entire derived string is included.
 
-\textbf{Steps to Compute $FIRST^k(\alpha)$:}
-\begin{enumerate}
-    \item If $\alpha$ is a terminal $a$: Add the string $a$ (of length 1) to $FIRST^k(\alpha)$.
-    
-    \item If $\alpha$ is a sequence $\alpha_1 \alpha_2 \dots \alpha_n$:
-    \begin{itemize}
-        \item Initialize $FIRST^k(\alpha) = \emptyset$.
-        \item For $i = 1$ to $n$:
-        \begin{itemize}
-            \item Add to $FIRST^k(\alpha)$ all strings of length up to $k$ from $FIRST^k(\alpha_i)$ if $\alpha_1, \dots, \alpha_{i-1}$ can all derive the empty string $\epsilon$.
-            \item For strings shorter than $k$, concatenate with $FIRST^{k-|s|}(\alpha_{i+1} \dots \alpha_n)$ (where $|s|$ is the length of the string).
-        \end{itemize}
-        \item If $\alpha$ can derive $\epsilon$, include $\epsilon$ in $FIRST^k(\alpha)$.
-    \end{itemize}
-    
-    \item If $\alpha$ is a non-terminal $A$:
-    \begin{itemize}
-        \item For each production $A \to \beta$, compute $FIRST^k(\beta)$ and add its strings to $FIRST^k(A)$.
-        \item Repeat until $FIRST^k(A)$ stabilizes (no new strings are added).
-    \end{itemize}
-    
-    \item Handle $k$-length lookahead: Truncate strings longer than $k$ to their first $k$ symbols.
-\end{enumerate}
+\textbf{Steps to Compute} $FIRST^k(\alpha)$:\\
+1. If $\alpha$ is a terminal $a$: Add the string $a$ (of length 1) to $FIRST^k(\alpha)$.
+2. If $\alpha$ is a sequence $\alpha_1 \alpha_2 \dots \alpha_n$:
+   - Initialize $FIRST^k(\alpha) = \emptyset$.
+   - For $i = 1$ to $n$:
+     - Add to $FIRST^k(\alpha)$ all strings of length up to $k$ from $FIRST^k(\alpha_i)$ if $\alpha_1, \dots, \alpha_{i-1}$ can all derive the empty string $\epsilon$.
+     - For strings shorter than $k$, concatenate with $FIRST^{k-|s|}(\alpha_{i+1} \dots \alpha_n)$ (where $|s|$ is the length of the string).
+   - If $\alpha$ can derive $\epsilon$, include $\epsilon$ in $FIRST^k(\alpha)$.
+3. If $\alpha$ is a non-terminal $A$:
+   - For each production $A \to \beta$, compute $FIRST^k(\beta)$ and add its strings to $FIRST^k(A)$.
+   - Repeat until $FIRST^k(A)$ stabilizes (no new strings are added).
+4. Handle $k$-length lookahead: Truncate strings longer than $k$ to their first $k$ symbols.
 
 The $\mathbf{FOLLOW^k(A)}$ set for a non-terminal $A$ contains all sequences of up to $k$ terminals that can appear immediately after $A$ in some derivation from the start symbol. If $A$ appears at the end of a derivation, include the end-of-input marker (e.g., $\$$).
 
-\textbf{Steps to Compute $FOLLOW^k(A)$:}
-\begin{enumerate}
-    \item Initialize:
-    \begin{itemize}
-        \item For the start symbol $S$, add $\$$ (or a $k$-length end marker) to $FOLLOW^k(S)$.
-        \item Set $FOLLOW^k(A) = \emptyset$ for all other non-terminals $A$.
-    \end{itemize}
-    
-    \item For each production $B \to \alpha A \beta$ (where $A$ is a non-terminal):
-    \begin{itemize}
-        \item Compute $FIRST^k(\beta)$ and add its strings to $FOLLOW^k(A)$.
-        \item If $\beta$ can derive $\epsilon$, add $FOLLOW^k(B)$ to $FOLLOW^k(A)$.
-    \end{itemize}
-    
-    \item Iterate:
-    \begin{itemize}
-        \item Repeat step 2 across all productions until no new strings are added to any $FOLLOW^k(A)$.
-    \end{itemize}
-    
-    \item Handle $k$-length lookahead: Ensure all strings in $FOLLOW^k(A)$ are of length up to $k$, truncating longer strings to their first $k$ symbols.
-\end{enumerate}
+\textbf{Steps to Compute} $FOLLOW^k(A)$:\\
+1. Initialize:
+   - For the start symbol $S$, add $\$$ (or a $k$-length end marker) to $FOLLOW^k(S)$.
+   - Set $FOLLOW^k(A) = \emptyset$ for all other non-terminals $A$.
+2. For each production $B \to \alpha A \beta$ (where $A$ is a non-terminal):
+   - Compute $FIRST^k(\beta)$ and add its strings to $FOLLOW^k(A)$.
+   - If $\beta$ can derive $\epsilon$, add $FOLLOW^k(B)$ to $FOLLOW^k(A)$.
+3. Iterate:
+   - Repeat step 2 across all productions until no new strings are added to any $FOLLOW^k(A)$.
+4. Handle $k$-length lookahead: Ensure all strings in $FOLLOW^k(A)$ are of length up to $k$, truncating longer strings to their first $k$ symbols.
 
 
 
@@ -56,105 +34,67 @@ The $\mathbf{FOLLOW^k(A)}$ set for a non-terminal $A$ contains all sequences of 
 
 An $\mathbf{LR(k) \text{ item}}$ is a production with a dot ($\bullet$) marking a position in the right-hand side, along with a $k$-symbol lookahead string. The dot indicates how much of the production has been recognized so far. An item $[A \to \alpha \bullet \beta, w]$ means we have seen $\alpha$ and expect to see $\beta$, with lookahead $w$.
 
-\textbf{Types of LR Items:}
-\begin{itemize}
-    \item \textbf{Shift item}: $[A \to \alpha \bullet a \beta, w]$ where $a$ is a terminal
-    \item \textbf{Reduce item}: $[A \to \alpha \bullet, w]$ where the dot is at the end
-    \item \textbf{Goto item}: $[A \to \alpha \bullet B \beta, w]$ where $B$ is a non-terminal
-\end{itemize}
+Types of LR Items:
+\textbf{Shift item}: $[A \to \alpha \bullet a \beta, w]$ where $a$ is a terminal
+\textbf{Reduce item}: $[A \to \alpha \bullet, w]$ where the dot is at the end
+\textbf{Goto item}: $[A \to \alpha \bullet B \beta, w]$ where $B$ is a non-terminal
 
-\textbf{Steps to Compute $\mathbf{CLOSURE(I)}$ for a set of items $I$:}
-\begin{enumerate}
-    \item Initialize $CLOSURE(I) = I$.
-    
-    \item For each item $[A \to \alpha \bullet B \beta, w]$ in $CLOSURE(I)$ where $B$ is a non-terminal:
-    \begin{itemize}
-        \item For each production $B \to \gamma$:
-        \begin{itemize}
-            \item Compute $FIRST^k(\beta w)$ (concatenate $\beta$ and lookahead $w$, then take first $k$ symbols).
-            \item For each string $u \in FIRST^k(\beta w)$:
-            \begin{itemize}
-                \item Add item $[B \to \bullet \gamma, u]$ to $CLOSURE(I)$ if not already present.
-            \end{itemize}
-        \end{itemize}
-    \end{itemize}
-    
-    \item Repeat step 2 until no new items are added to $CLOSURE(I)$.
-\end{enumerate}
+Steps to Compute $\mathbf{CLOSURE(I)}$ for a set of items $I$:
+1. Initialize $CLOSURE(I) = I$.
+2. For each item $[A \to \alpha \bullet B \beta, w]$ in $CLOSURE(I)$ where $B$ is a non-terminal:
+   - For each production $B \to \gamma$:
+     - Compute $FIRST^k(\beta w)$ (concatenate $\beta$ and lookahead $w$, then take first $k$ symbols).
+     - For each string $u \in FIRST^k(\beta w)$:
+       - Add item $[B \to \bullet \gamma, u]$ to $CLOSURE(I)$ if not already present.
+3. Repeat step 2 until no new items are added to $CLOSURE(I)$.
 
-\textbf{Steps to Compute $\mathbf{GOTO(I, X)}$ for item set $I$ and symbol $X$:}
-\begin{enumerate}
-    \item Initialize $J = \emptyset$.
-    
-    \item For each item $[A \to \alpha \bullet X \beta, w]$ in $I$:
-    \begin{itemize}
-        \item Add item $[A \to \alpha X \bullet \beta, w]$ to $J$.
-    \end{itemize}
-    
-    \item Return $CLOSURE(J)$.
-\end{enumerate}
+Steps to Compute $\mathbf{GOTO(I, X)}$ for item set $I$ and symbol $X$:
+1. Initialize $J = \emptyset$.
+2. For each item $[A \to \alpha \bullet X \beta, w]$ in $I$:
+   - Add item $[A \to \alpha X \bullet \beta, w]$ to $J$.
+3. Return $CLOSURE(J)$.
 
-\textbf{Steps to Construct the $\mathbf{LR(k) \text{ Automaton}}$:}
-\begin{enumerate}
-    \item Create the initial state $I_0 = CLOSURE(\{[S' \to \bullet S, \$^k]\})$ where $S'$ is the augmented start symbol.
-    
-    \item Initialize the set of states $\mathcal{C} = \{I_0\}$ and a worklist $W = \{I_0\}$.
-    
-    \item While $W \neq \emptyset$:
-    \begin{itemize}
-        \item Remove a state $I$ from $W$.
-        \item For each symbol $X$ (terminal or non-terminal) such that $GOTO(I, X) \neq \emptyset$:
-        \begin{itemize}
-            \item Let $J = GOTO(I, X)$.
-            \item If $J \notin \mathcal{C}$:
-            \begin{itemize}
-                \item Add $J$ to $\mathcal{C}$ and $W$.
-            \end{itemize}
-            \item Add transition $I \xrightarrow{X} J$ to the automaton.
-        \end{itemize}
-    \end{itemize}
-    
-    \item The resulting automaton defines the LR parsing table.
-\end{enumerate}
+Steps to Construct the $\mathbf{LR(k) \text{ Automaton}}$:
+1. Create the initial state $I_0 = CLOSURE(\{[S' \to \bullet S, \$^k]\})$ where $S'$ is the augmented start symbol.
+2. Initialize the set of states $\mathcal{C} = \{I_0\}$ and a worklist $W = \{I_0\}$.
+3. While $W \neq \emptyset$:
+   - Remove a state $I$ from $W$.
+   - For each symbol $X$ (terminal or non-terminal) such that $GOTO(I, X) \neq \emptyset$:
+     - Let $J = GOTO(I, X)$.
+     - If $J \notin \mathcal{C}$:
+       - Add $J$ to $\mathcal{C}$ and $W$.
+     - Add transition $I \xrightarrow{X} J$ to the automaton.
+4. The resulting automaton defines the LR parsing table.
 
 
 
 
 \section{Parsing Conflicts}
 
-\subsection{Shift-Reduce Conflict}
-
+\textbf{Shift-Reduce Conflict}
 A shift-reduce conflict occurs when the parser cannot decide whether to:
-\begin{enumerate}
-    \item \textbf{Shift}: Move the next input symbol onto the stack
-    \item \textbf{Reduce}: Apply a production rule to reduce symbols on the stack
-\end{enumerate}
+1) \textbf{Shift}: Move the next input symbol onto the stack
+2) \textbf{Reduce}: Apply a production rule to reduce symbols on the stack
+
 
 In terms of LR items, this happens when a state contains both:
-\begin{enumerate}
-    \item A shift item: $[A \to \alpha \bullet a \beta, w]$ (expecting terminal $a$)
-    \item A reduce item: $[B \to \gamma \bullet, a]$ (ready to reduce with lookahead $a$)
-\end{enumerate}
+1) A shift item: $[A \to \alpha \bullet a \beta, w]$ (expecting terminal $a$)
+2) A reduce item: $[B \to \gamma \bullet, a]$ (ready to reduce with lookahead $a$)
+
 
 The conflict manifests in the parsing table as both a shift action and a reduce action for entry $[state, a]$.
-
-\subsection{Reduce-Reduce Conflict}
-
+\textbf{Reduce-Reduce Conflict}
 A reduce-reduce conflict occurs when the parser cannot decide which production to use for reduction. This happens when a state contains multiple reduce items with overlapping lookaheads:
-\begin{enumerate}
-    \item $[A \to \alpha \bullet, w]$
-    \item $[B \to \beta \bullet, w]$
-\end{enumerate}
+1) $[A \to \alpha \bullet, w]$
+2) $[B \to \beta \bullet, w]$
+
 
 Both items indicate that reduction is possible with the same lookahead $w$, but the parser cannot determine which production rule to apply.
 
 The conflict manifests in the parsing table as multiple reduce actions for the same entry $[state, w]$.
 
-\subsection{Resolution}
-
+\textbf{Resolution}
 These conflicts indicate that the grammar is not in the respective LR class (LR(k), LALR(k), or SLR(k)). Resolution strategies include:
-\begin{enumerate}
-    \item Increasing the lookahead length $k$
-    \item Grammar transformation (left-factoring, eliminating ambiguity)
-    \item Using precedence and associativity rules
-\end{enumerate}
+1) Increasing the lookahead length $k$
+2) Grammar transformation (left-factoring, eliminating ambiguity)
+3) Using precedence and associativity rules
