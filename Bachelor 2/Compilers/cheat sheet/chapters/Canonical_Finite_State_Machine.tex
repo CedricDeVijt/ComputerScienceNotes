@@ -19,21 +19,21 @@ The language of this grammar is LR(1).
 \section*{Steps to Construct the Canonical Finite State Machine (CFSM)}
 \begin{enumerate}
     \item \textbf{Augment the Grammar}: Add a new start symbol \( S' \) and production \( S' \to S \$ \), where \( S \) is the original start symbol and \( \$ \) is the end-of-input marker.
-    \item \textbf{Initialize the First State}: Compute the initial state \( I_0 = \text{CLOSURE}(\{[S' \to \cdot S \$]\}) \), where the dot (\(\cdot\)) indicates the current position in the production.
+    \item \textbf{Initialize the First State}: Compute the initial state \( I_0 = \text{CLOSURE}(\{[S' \to \bullet S \$]\}) \), where the dot (\(\bullet\)) indicates the current position in the production.
     \item \textbf{Compute CLOSURE}: For a set of items \( I \):
         \begin{itemize}
             \item Start with \( \text{CLOSURE}(I) = I \).
-            \item For each item \( [A \to \alpha \cdot B \beta, w] \) in \( \text{CLOSURE}(I) \), where \( B \) is a nonterminal:
+            \item For each item \( [A \to \alpha \bullet B \beta, w] \) in \( \text{CLOSURE}(I) \), where \( B \) is a nonterminal:
                 \begin{itemize}
                     \item For each production \( B \to \gamma \), compute \( \text{FIRST}_1(\beta w) \).
-                    \item For each \( u \in \text{FIRST}_1(\beta w) \), add \( [B \to \cdot \gamma, u] \) to \( \text{CLOSURE}(I) \) if not present.
+                    \item For each \( u \in \text{FIRST}_1(\beta w) \), add \( [B \to \bullet \gamma, u] \) to \( \text{CLOSURE}(I) \) if not present.
                 \end{itemize}
             \item Repeat until no new items are added.
         \end{itemize}
     \item \textbf{Compute GOTO}: For a state \( I \) and symbol \( X \) (terminal or nonterminal):
         \begin{itemize}
             \item Initialize \( J = \emptyset \).
-            \item For each item \( [A \to \alpha \cdot X \beta, w] \) in \( I \), add \( [A \to \alpha X \cdot \beta, w] \) to \( J \).
+            \item For each item \( [A \to \alpha \bullet X \beta, w] \) in \( I \), add \( [A \to \alpha X \bullet \beta, w] \) to \( J \).
             \item Return \( \text{CLOSURE}(J) \).
         \end{itemize}
     \item \textbf{Build the State Machine}:
@@ -54,9 +54,9 @@ The language of this grammar is LR(1).
         \begin{itemize}
             \item For each state \( I \in C \):
                 \begin{itemize}
-                    \item If \( [A \to \alpha \cdot a \beta, w] \in I \) and \( \text{GOTO}(I, a) = J \), add shift action to state \( J \) for terminal \( a \).
-                    \item If \( [A \to \alpha \cdot, w] \in I \), add reduce action by \( A \to \alpha \) for lookahead \( w \).
-                    \item If \( [S' \to S \cdot \$] \in I \), add accept action for \( \$ \).
+                    \item If \( [A \to \alpha \bullet a \beta, w] \in I \) and \( \text{GOTO}(I, a) = J \), add shift action to state \( J \) for terminal \( a \).
+                    \item If \( [A \to \alpha \bullet, w] \in I \), add reduce action by \( A \to \alpha \) for lookahead \( w \).
+                    \item If \( [S' \to S \bullet \$] \in I \), add accept action for \( \$ \).
                 \end{itemize}
             \item Check for conflicts: Shift-reduce or reduce-reduce conflicts indicate the grammar is not LR(1).
         \end{itemize}

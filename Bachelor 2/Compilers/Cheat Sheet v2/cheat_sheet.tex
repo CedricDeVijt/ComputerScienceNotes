@@ -1,0 +1,63 @@
+\documentclass[landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow, bookmark}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage[landscape,a4paper,top=1cm,left=1cm,right=1cm,bottom=1cm]{geometry}
+\usepackage{hyperref}
+
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-0.5ex plus -.25ex minus -.1ex}%
+                                {0.25ex plus .1ex}%
+                                {\normalfont\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-0.5ex plus -.25ex minus -.1ex}%
+                                {0.25ex plus .1ex}%
+                                {\normalfont\small\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-0.5ex plus -.25ex minus -.1ex}%
+                                {0.5ex plus .1ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+\title{Compilers}
+\begin{document}
+
+
+\tiny
+\setlength{\linewidth}{\columnwidth}
+\setlength{\hsize}{\columnwidth}
+
+\begin{center}
+     \Large{\textbf{Compilers}}
+\end{center}
+
+\begin{multicols*}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+\sloppy
+\tolerance=1000
+\emergencystretch=10pt
+
+
+\input{Chapters/Foundations of Formal Languages.tex}
+\input{Chapters/Parsing Theory.tex}
+\input{Chapters/Top-Down Parsing (LL).tex}
+\input{Chapters/Bottom-Up Parsing (LR).tex}
+\input{Chapters/Grammar Analysis and Proofs.tex}
+\input{Chapters/Grammar Transformations.tex}
+\input{Chapters/Reference Examples.tex}
+\input{Chapters/Trivia.tex}
+
+
+\end{multicols*}
+
+\end{document}
