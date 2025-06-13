@@ -1,14 +1,6 @@
-% Purpose: Core concepts and terminology that everything else builds on
-
-% Language Classifications: Regular, Context-Free, Strong languages/grammars
-% Automata Types: FSM (DFA/NFA), PDA (DPDA/NPDA), Turing machines
-% Grammar Types: CFG, LL(k), LR(k) definitions
-% Basic Principles: Longest Match Principle, SSA form
-
 \section{Foundations of Formal Languages}
 \textbf{Regular Language} A language that can be expressed using regular expressions or recognized by finite automata (DFA or NFA). Regular languages are closed under union, concatenation, and Kleene star operations.  Regular languages are less expressive than context-free languages.
+\textbf{Regular Expression} A pattern describing a regular language, using symbols like `*` (zero or more), `+` (one or more), `$\vert$` (union), and `()` (grouping).
 \textbf{Context-Free Language (CFL)}: Languages defined by context-free grammars (CFGs) and recognized by pushdown automata (PDAs).
 \textbf{Context-Free Grammar (CFG)} A grammar consisting of rules of the form $A \rightarrow \alpha $, where $A$ is a nonterminal, and $\alpha $ is a string of terminals and/or nonterminals. CFGs generate context-free languages, which can be recognized by pushdown automata.
-\textbf{Strong Language} A context-free language is strong if it can be parsed deterministically by an LR(1) parser. Strong languages are a proper subset of context-free languages and include all LR(k) languages. They are characterized by having unambiguous grammars that can be parsed bottom-up with bounded lookahead.
-\textbf{Strong Grammar} A context-free grammar is strong if it generates a strong language and can be parsed deterministically by an LR(1) parser without conflicts. Strong grammars are unambiguous and have the property that every viable prefix can be extended to a complete derivation in at most one way with bounded lookahead.
-
+\textbf{Strong Grammar} A grammar is strongly LL(k) if, for every nonterminal $ A $ and every lookahead string of k tokens $ w $, there is at most one production rule $ A \to \alpha $ that can be applied, determined solely by the first k tokens of the input (the lookahead). This eliminates any need for backtracking or additional context beyond the k-token lookahead.
