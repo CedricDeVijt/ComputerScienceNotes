@@ -20,7 +20,7 @@ Bottom-up parsers **construct parse trees from leaves to root** by reversing der
 
 ### Handle Detection Mechanics
 
-A **handle** is the RHS α of a production rule A→α appearing on stack top. Parsers must:
+A **handle** is the RHS $\alpha$ of a production rule $A \rightarrow \alpha$ appearing on stack top. Parsers must:
 
 1. Identify valid handles using grammar rules
 2. Choose between shifting or reducing (conflict resolution critical).
@@ -43,8 +43,8 @@ A **handle** is the RHS α of a production rule A→α appearing on stack top. P
    ```python
    def closure(I):
        repeat:
-           for A→α·Bβ in I:
-               add B→·γ for all B→γ
+           for A → alpha·Bbeta in I:
+               add B \rightarrow ·gamma for all B \rightarrow gamma
    ```
 
 2. **Goto Function**: Compute state transitions for symbols (Algorithm 9).
@@ -54,23 +54,23 @@ A **handle** is the RHS α of a production rule A→α appearing on stack top. P
 Grammar:
 
 $$
-\begin{align}
-S &→ A$\\
-A &→ aC D\\
-  &→ ab\\
-C &→ c\\
-D &→ d\\
-\end{align}
+\begin{aligned}
+S & \rightarrow  A\$\\
+A & \rightarrow  aC D\\
+  & \rightarrow  ab\\
+C & \rightarrow  c\\
+D & \rightarrow  d\\
+\end{aligned}
 $$
 
 CFSM:
 
-![[Bachelor 2/Compilers/images/Pasted image 20250317175419.png]]
+![Alt text](Bachelor%202/Compilers/images/Pasted%20image%2020250317175419.png)
 
 ### Item Types
 
 - **Kernel Items**: Initial items defining a state's core
-- **Non-Kernel Items**: Added via closure (e.g., state 0 in Figure 6.3 includes closure items for A→aCD and A→ab).
+- **Non-Kernel Items**: Added via closure (e.g., state 0 in Figure 6.3 includes closure items for $A \rightarrow aCD$ and $A \rightarrow ab$).
 
 ## 6.4 LR(0) Parsers
 
@@ -89,8 +89,8 @@ CFSM:
 
 Uses **Follow sets** to resolve conflicts:
 
-- Reduce only if lookahead ∈ Follow(A) for rule A→α
-- Shift if lookahead ∈ First(β) for incomplete item A→α·aβ.
+- Reduce only if lookahead $\in$ Follow(A) for rule $A \rightarrow \alpha$
+- Shift if lookahead $\in$ First($\beta$) for incomplete item $A \rightarrow \alpha\cdot a\beta$.
 
 #### Table Construction
 
@@ -100,12 +100,12 @@ Uses **Follow sets** to resolve conflicts:
 
 ### Precise Lookahead Handling
 
-- **Items**: Augmented with lookahead strings (e.g., A→α·β, {u})
+- **Items**: Augmented with lookahead strings (e.g., $A \rightarrow \alpha\cdot\beta, {u}$)
 - **CFSM States**: Split based on specific lookahead contexts (Example 6.15: Distinct states for $ vs =).
 
 ### LR(k) Grammars
 
-**Formal Definition**: No ambiguous reductions when k-symbol lookahead distinguishes between valid handles (Definition 6.19). Non-LR(k) example: Knuth's `S→aAbc | aBbd` (Figure 6.20).
+**Formal Definition**: No ambiguous reductions when k-symbol lookahead distinguishes between valid handles (Definition 6.19). Non-LR(k) example: Knuth's `S \rightarrow aAbc | aBbd` (Figure 6.20).
 
 ## 6.7 LALR(k) Parsers
 
@@ -122,7 +122,7 @@ Uses **Follow sets** to resolve conflicts:
 
 ### Grammar Classes
 
-- **Inclusions**: LR(0) ⊂ SLR(1) ⊂ LALR(1) ⊂ LR(1) (Theorem 6.6)
+- **Inclusions**: $LR(0) \subset SLR(1) \subset LALR(1) \subset LR(1)$ (Theorem 6.6)
 - **Undecidable**: Whether a grammar is LR(k) for some k (Knuth 1965).
 
 ### Language Classes
@@ -134,17 +134,17 @@ Uses **Follow sets** to resolve conflicts:
 
 ### Syntactic Power
 
-- **LL(k) ⊂ LR(k)**: All LL(k) grammars are LR(k), but not vice versa (Theorem 6.10)
+- **LL(k) $\subset$ LR(k)**: All LL(k) grammars are LR(k), but not vice versa (Theorem 6.10)
 - **Hierarchy Collapse**: LR(k) lang = DCFL vs infinite LL(k) hierarchy.
 
 ---
 
 ## Key Points to Remember
 
-- **Shift-Reduce Conflict→Use Lookahead**: SLR(1) uses Follow sets; LR(k) uses precise contexts ★★★★☆
-- **Viable Prefixes→CFSM States**: Critical for tracking valid reductions ★★★☆☆
+- **Shift-Reduce Conflict → Use Lookahead**: SLR(1) uses Follow sets; LR(k) uses precise contexts ★★★★☆
+- **Viable Prefixes → CFSM States**: Critical for tracking valid reductions ★★★☆☆
 - **LALR Efficiency**: Merges LR(k) states but risks conflicts ★★★☆☆
 - **Grammar Power**: Bottom-up > Top-down (LR handles left recursion/ambiguity) ★★★★★
 - **DCFL = LR(1)**: All deterministic CFLs have LR(1) grammars ★★★★☆
-- **Endmarker $**: Enables LR(0) parsing for DCFL+$ languages ★★★☆☆
+- **Endmarker $**: Enables LR(0) parsing for DCFL+ languages ★★★☆☆
 - **Undecidability**: No algorithm detects if grammar is LR(k) for any k ★★☆☆☆

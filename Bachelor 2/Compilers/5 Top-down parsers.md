@@ -52,27 +52,27 @@
   1. Initialize terminals as their own First sets.
   2. Iteratively update First sets for variables using grammar rules.
 - **Follow$^k$**:
-  1. Initialize Follow(S) = {ε}.
+  1. Initialize Follow(S) = {$\varepsilon$}.
   2. Propagate Follow sets through rules of the form $A \rightarrow \alpha B \beta$.
 
 ### Example
 
 - For the grammar
   $$
-  \begin{align}
+  \begin{aligned}
   A &\rightarrow aaa\\
   &\rightarrow Bbb\\
   &\rightarrow Cdd\\
   B&\rightarrow b\\
   C&\rightarrow c\\
-  &\rightarrow ε\\
-  \end{align}
+  &\rightarrow \varepsilon\\
+  \end{aligned}
   $$
 
 compute:
 
-- $First^1(A) = {a, b, c, d}$
-- Follow$^1$(C) = {d} (from context in $A \rightarrow Cdd$).
+- First$^1(A) = {a, b, c, d}$
+- Follow$^1$(C) = {$d$} (from context in $A \rightarrow Cdd$).
 
 ## 5.5 LL(k) Grammars
 
@@ -115,7 +115,7 @@ compute:
 - **Example**:
   ```python
   def parse_S():
-      if lookahead in First(S → α):
+      if lookahead in First(S → a):
           consume terminals and call sub-functions
   ```
 
