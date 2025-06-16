@@ -1,0 +1,101 @@
+%DONE
+
+\begin{samepage}
+\section{Example Languages}
+\textbf{LR(0) language that is not LL(1)}\\
+    $L = \{a^n b^n | n \geq 0\}$
+
+\textbf{LR(0) language that is not LL(k) for any k}\\
+$L = \{a^n b^n c^m | n, m \geq 1\} $\
+
+\textbf{LL(2) language that is not LL(1)}\\
+$L = \{ a^n b c^n d \mid n \geq 1 \} \cup \{ a^n c b^n d \mid n \geq 1 \}$
+
+\textbf{CFL that is not LR(1)}\\
+$ L = \{ w w^R \mid w \in \{a, b\}^* \} $ where $ w^R $ is the reverse of $ w $
+
+\end{samepage}
+\subsection{Example Grammars}
+\begin{samepage}
+\subsubsection{LL(k) Grammar}
+\textbf{LL(1) grammar that is not strongly LL(1)}\\ % Cursus p146 Theorem 5.4.
+    Theorem 5.4 "All LL(1) grammars are also strong LL(1), i.e. the classes of LL(1) and strong LL(1) grammars coincide."
+
+\textbf{LL(1) grammar that is not LALR(1)}\\ % Cursus p205 Figure 6.23: An grammar which is LL(1) and not LALR(1)
+    $S\rightarrow aX$\\
+    $S\rightarrow Eb$\\
+    $S\rightarrow F c$\\
+    $X\rightarrow Ec$\\
+    $X\rightarrow F b$\\
+    $E\rightarrow A$\\
+    $F\rightarrow A$\\
+    $A\rightarrow \epsilon$\\
+
+\textbf{LL(2) grammar that is not strongly LL(2)}\\ % Cursus p144 Example 5.11 + p146: "Example 5.11, which is LL(2), and let us show that it is not strong LL(2)"
+    $S \rightarrow aAa$\\
+    $S \rightarrow bABa$\\
+    $A \rightarrow b$\\
+    $A \rightarrow \epsilon$\\
+    $B \rightarrow b$\\
+    $B \rightarrow c$\\
+
+\textbf{LL(2) and SLR(1) grammar but neither LL(1) nor LR(0)} % Cursus p205 Figure 6.24: A grammar that is LL(2) and SLR(1) but neither LL(1) nor LR(0).
+    $S\rightarrow ab$\\
+    $S\rightarrow ac$\\
+    $S\rightarrow a$\\
+\end{samepage}
+\begin{samepage}
+\subsubsection{LALR(k) Grammar}
+\textbf{LALR(1) grammar that is not SLR(1)}\\ % Cursus p197 Figure 6.17: An LALR(1) grammar that is not SLR(1) and not LL(1) but LL(2).
+    $S \rightarrow Aa$\\
+    $S \rightarrow bAc$\\
+    $S \rightarrow dc$\\
+    $A \rightarrow d$\\
+
+\subsubsection{LR(k) Grammar}
+\textbf{LR(1) grammar that is not LALR(1) and not LL(1)}\\ % Cursus p198 Figure 6.18: An LR(1) grammar that is not LALR(1) and not LL(1).
+    $S\rightarrow aAd$\\
+    $S\rightarrow bBd$\\
+    $S\rightarrow aBe$\\
+    $S\rightarrow bAe$\\
+    $A\rightarrow c$\\
+    $B\rightarrow c$\\
+
+\textbf{LR(k + 1) grammar that is not LR(k) and not LL(k + 1)}\\ % Cursus p198 Figure 6.19: An LR(k + 1) grammar that is not LR(k) and not LL(k + 1).
+    $S\rightarrow Ab^k c$\\
+    $S\rightarrow Bb^k d$\\
+    $A\rightarrow a$\\
+    $B\rightarrow a$\\
+\end{samepage}
+\begin{samepage}
+\subsubsection{Context Free Grammar}
+\textbf{CFG that is not LR(k)}\\ % Cursus p199 Figure 6.20: A grammar which is not LR(k) for any k.
+    $S \rightarrow aAc$\\
+    $A \rightarrow bAb$\\
+    $A  \rightarrow b$\\
+
+\textbf{CFG that is not LR(0)}\\ % Cursus p190 Figure 6.14: A simple grammar which is not LR(0).
+    $S \rightarrow a$\\
+    $S \rightarrow abS$\\
+
+\end{samepage}
+\begin{samepage}
+\subsubsection{SLR(k) Grammar}
+\textbf{SLR(1) grammar that is not LR(0)}\\ % Cursus 176 + p197 "Figure 6.7 is SLR(1) but not LR(0)"
+    $S\rightarrow Exp$\\
+    $Exp\rightarrow Exp + Prod$\\
+    $Exp\rightarrow Prod$\\
+    $Prod\rightarrow Prod * Atom$\\
+    $Prod\rightarrow Atom$\\
+    $Atom\rightarrow Id$\\
+    $Atom\rightarrow (Exp)$\\
+
+\subsection{Special examples}
+\textbf{LL(1) language with a non-LL(1) grammar}
+    $L = \{ w \mid w \text{ is a string of balanced parentheses} \}$\\
+Grammar:\\
+    $S \rightarrow S S$\\
+    $S \rightarrow ( S )$\\
+    $S \rightarrow \epsilon$\\
+
+\end{samepage}
