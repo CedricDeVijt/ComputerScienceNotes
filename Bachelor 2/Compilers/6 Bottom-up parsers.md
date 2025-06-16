@@ -44,7 +44,7 @@ A **handle** is the RHS $\alpha$ of a production rule $A \rightarrow \alpha$ app
    def closure(I):
        repeat:
            for A → alpha·Bbeta in I:
-               add B \rightarrow ·gamma for all B \rightarrow gamma
+               add B → ·gamma for all B → gamma
    ```
 
 2. **Goto Function**: Compute state transitions for symbols (Algorithm 9).
@@ -105,7 +105,7 @@ Uses **Follow sets** to resolve conflicts:
 
 ### LR(k) Grammars
 
-**Formal Definition**: No ambiguous reductions when k-symbol lookahead distinguishes between valid handles (Definition 6.19). Non-LR(k) example: Knuth's `S \rightarrow aAbc | aBbd` (Figure 6.20).
+**Formal Definition**: No ambiguous reductions when k-symbol lookahead distinguishes between valid handles (Definition 6.19). Non-LR(k) example: Knuth's `S → aAbc | aBbd` (Figure 6.20).
 
 ## 6.7 LALR(k) Parsers
 
