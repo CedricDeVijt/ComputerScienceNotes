@@ -2,6 +2,8 @@
 
 \section{Grammar Proofs}
 
+Note: if a language described by a grammar is asked, the grammar can be altered. The given grammar might be alterd to achieve a certain parser type, but the language remains the same.
+
 \subsection{Preliminary Checks}
 
 Before testing for specific parser types, perform these essential checks:
@@ -58,19 +60,8 @@ Before testing for specific parser types, perform these essential checks:
         \item No cell $[A, t]$ should contain multiple productions
     \end{itemize}
     
-    \item \textbf{Test incrementally}
-    \begin{itemize}
-        \item Start with $k = 1$ (most common)
-        \item If conflicts exist, try $k = 2, 3, \ldots$
-        \item LL(0) grammars are rare and require deterministic behavior without lookahead
-    \end{itemize}
 \end{enumerate}
 
-\textbf{Proof Strategy:}
-\begin{itemize}
-    \item \textcolor{green}{\textbf{Success:}} If table is conflict-free for some $k$, provide the parsing table as evidence
-    \item \textcolor{red}{\textbf{Failure:}} If conflicts exist for all tested $k$, show conflicting entries
-\end{itemize}
 
 \subsection{LR(k) Parser Check}
 
@@ -101,16 +92,9 @@ Before testing for specific parser types, perform these essential checks:
     \item \textbf{Test incrementally}
     \begin{itemize}
         \item Start with $k = 0$ (LR(0) uses empty lookaheads $w = \epsilon$)
-        \item If conflicts arise, try $k = 1, 2, 3$
-        \item Larger $k$ resolves conflicts by distinguishing lookaheads
     \end{itemize}
 \end{enumerate}
 
-\textbf{Proof Strategy:}
-\begin{itemize}
-    \item \textcolor{green}{\textbf{Success:}} Show conflict-free DFA and parsing table
-    \item \textcolor{red}{\textbf{Failure:}} List specific conflicts to prove non-LR(k) status
-\end{itemize}
 
 \subsection{SLR(k) Parser Check}
 
@@ -142,12 +126,6 @@ Before testing for specific parser types, perform these essential checks:
     \end{itemize}
 \end{enumerate}
 
-\textbf{Proof Strategy:}
-\begin{itemize}
-    \item \textcolor{green}{\textbf{Success:}} Provide conflict-free parsing table
-    \item \textcolor{red}{\textbf{Failure:}} Show conflicting actions
-\end{itemize}
-
 \subsection{LALR(k) Parser Check}
 
 \textbf{Definition:} LALR(k) is a compromise between SLR(k) and LR(k), using LR(0) DFA but with lookaheads computed by merging LR(k) states.
@@ -176,15 +154,9 @@ Before testing for specific parser types, perform these essential checks:
     \item \textbf{Check for conflicts and test incrementally}
     \begin{itemize}
         \item Grammar is LALR(k) if table has no conflicts
-        \item Try $k = 0, 1, 2, 3$ (LALR(0) equivalent to SLR(0) in practice)
     \end{itemize}
 \end{enumerate}
 
-\textbf{Proof Strategy:}
-\begin{itemize}
-    \item \textcolor{green}{\textbf{Success:}} Show conflict-free table and computed lookaheads
-    \item \textcolor{red}{\textbf{Failure:}} List conflicts to prove non-LALR(k) status
-\end{itemize}
 
 \subsection{Parser Type Relationships and Optimization}
 
@@ -201,13 +173,3 @@ If LR(k), then LALR(k) and SLR(k) & Use hierarchy to optimize testing order \\
 \hline
 \end{tabular}
 \end{center}
-
-
-\subsection{Important Notes}
-
-\begin{itemize}
-    \item \textbf{$k = 0$ limitations:} LL(0) and SLR(0)/LALR(0) are restrictive and rarely practical
-    \item \textbf{Focus on $k = 1$:} Unless specified otherwise, concentrate testing efforts on $k = 1$
-    \item \textbf{Ambiguity precedence:} If grammar is ambiguous, it fails all parser type tests
-    \item \textbf{Left recursion:} Critical for LL(k) but acceptable for LR-based parsers
-\end{itemize}
