@@ -72,7 +72,7 @@
 compute:
 
 - First$^1(A) = {a, b, c, d}$
-- Follow$^1$(C) = {$d$} (from context in $A \rightarrow Cdd$).
+- Follow$^1(C) = {d}$ (from context in $A \rightarrow Cdd$).
 
 ## 5.5 LL(k) Grammars
 

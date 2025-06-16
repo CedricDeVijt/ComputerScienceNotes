@@ -8,3 +8,167 @@
 % Canonical FSM Construction: Step-by-step CFSM building
 
 \section{Bottom-Up Parsing (LR)}
+Bottom-up parsing, also known as shift-reduce parsing, builds parse trees from the leaves up to the root. The LR family of parsers represents the most powerful class of deterministic bottom-up parsers.
+
+\subsection{LR Parsing Fundamentals}
+
+LR parsers read input from \textbf{L}eft to right and produce a \textbf{R}ightmost derivation in reverse. They use a stack to maintain parsing state and a parsing table to determine actions.
+
+\subsubsection{LR Parser Actions}
+\begin{itemize}
+    \item \textbf{Shift}: Move input symbol onto stack
+    \item \textbf{Reduce}: Replace handle on stack with LHS of production
+    \item \textbf{Accept}: Parsing completed successfully
+    \item \textbf{Error}: Invalid input detected
+\end{itemize}
+
+\subsection{LR(k) Canonical Parser}
+
+The canonical LR(k) parser uses complete item sets with k-symbol lookahead.
+
+\subsubsection{LR Items}
+An LR(k) item is a production with a dot indicating parsing progress and a lookahead string:
+$$[A \to \alpha \cdot \beta, u]$$
+where $u$ is a k-symbol lookahead string.
+
+\subsubsection{Closure and Goto Operations}
+\textbf{Closure}($I$):
+\begin{algorithmic}
+\State $J \gets I$
+\Repeat
+    \For{each item $[A \to \alpha \cdot B\beta, u]$ in $J$}
+        \For{each production $B \to \gamma$}
+            \For{each $v \in \text{FIRST}_k(\beta u)$}
+                \State Add $[B \to \cdot \gamma, v]$ to $J$
+            \EndFor
+        \EndFor
+    \EndFor
+\Until{no new items added}
+\State \Return $J$
+\end{algorithmic}
+
+\textbf{Goto}($I$, $X$):
+$$\text{Goto}(I, X) = \text{Closure}(\{[A \to \alpha X \cdot \beta, u] \mid [A \to \alpha \cdot X\beta, u] \in I\})$$
+
+\subsection{SLR(k) Parser}
+
+Simple LR parsers use FOLLOW sets instead of computing exact lookaheads, reducing table size but accepting fewer grammars.
+
+\subsubsection{SLR Table Construction}
+\begin{enumerate}
+    \item Construct canonical collection of LR(0) items
+    \item For each state $I_i$:
+        \begin{itemize}
+            \item If $[A \to \alpha \cdot a\beta] \in I_i$ and $\text{Goto}(I_i, a) = I_j$, set $\text{ACTION}[i,a] = \text{shift } j$
+            \item If $[A \to \alpha \cdot] \in I_i$ and $A \neq S'$, set $\text{ACTION}[i,a] = \text{reduce } A \to \alpha$ for all $a \in \text{FOLLOW}(A)$
+            \item If $[S' \to S \cdot] \in I_i$, set $\text{ACTION}[i,\$] = \text{accept}$
+        \end{itemize}
+    \item Set $\text{GOTO}[i,A] = j$ if $\text{Goto}(I_i, A) = I_j$
+\end{enumerate}
+
+\subsection{LALR(k) Parser}
+
+LALR parsers merge LR states with identical cores, providing a compromise between SLR and canonical LR.
+
+\subsubsection{Core and Lookahead Merging}
+Two states with identical cores (same items ignoring lookaheads) are merged:
+\begin{align}
+I_i &= \{[A \to \alpha \cdot \beta, u_1], [B \to \gamma \cdot \delta, v_1], \ldots\} \\
+I_j &= \{[A \to \alpha \cdot \beta, u_2], [B \to \gamma \cdot \delta, v_2], \ldots\}
+\end{align}
+Merged state: $\{[A \to \alpha \cdot \beta, u_1 \cup u_2], [B \to \gamma \cdot \delta, v_1 \cup v_2], \ldots\}$
+
+\subsection{Parser Hierarchy}
+
+The parsing methods form a hierarchy based on the classes of grammars they can handle:
+$$\text{LL}(k) \subset \text{SLR}(k) \subset \text{LALR}(k) \subset \text{LR}(k) \subset \text{CFG}$$
+
+\subsubsection{Comparison Properties}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Parser} & \textbf{Table Size} & \textbf{Grammar Class} & \textbf{Conflicts} & \textbf{Practical Use} \\
+\hline
+LL(1) & Small & Restricted & Predict & Yes \\
+SLR(1) & Medium & Moderate & Shift/Reduce & Limited \\
+LALR(1) & Medium & Large & Reduce/Reduce & Yes \\
+LR(1) & Large & Largest & Rare & Theoretical \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Canonical FSM Construction}
+
+The Canonical Finite State Machine (CFSM) construction algorithm:
+
+\subsubsection{Algorithm Steps}
+\begin{enumerate}
+    \item \textbf{Augment Grammar}: Add $S' \to S$ where $S'$ is new start symbol
+    \item \textbf{Initial State}: $I_0 = \text{Closure}(\{[S' \to \cdot S, \$]\})$
+    \item \textbf{State Generation}:
+        \begin{algorithmic}
+        \State $C \gets \{I_0\}$
+        \Repeat
+            \For{each state $I$ in $C$}
+                \For{each symbol $X$ following a dot in $I$}
+                    \State $J \gets \text{Goto}(I, X)$
+                    \If{$J \notin C$ and $J \neq \emptyset$}
+                        \State Add $J$ to $C$
+                    \EndIf
+                \EndFor
+            \EndFor
+        \Until{no new states added}
+        \end{algorithmic}
+    \item \textbf{Transition Construction}: Add edge $I \xrightarrow{X} J$ if $J = \text{Goto}(I, X)$
+\end{enumerate}
+
+\subsubsection{Example: CFSM for Simple Expression Grammar}
+Consider grammar:
+\begin{align}
+E &\to E + T \mid T \\
+T &\to T * F \mid F \\
+F &\to (E) \mid \text{id}
+\end{align}
+
+Augmented: $E' \to E$
+
+State $I_0$: $\text{Closure}(\{[E' \to \cdot E, \$]\})$
+$$I_0 = \{[E' \to \cdot E, \$], [E \to \cdot E + T, \$], [E \to \cdot T, \$], [T \to \cdot T * F, \$], [T \to \cdot F, \$], [F \to \cdot (E), \$], [F \to \cdot \text{id}, \$]\}$$
+
+The complete CFSM contains states representing all possible parsing configurations.
+
+\subsection{Conflict Resolution}
+
+\subsubsection{Shift/Reduce Conflicts}
+Occur when parser cannot decide between shifting and reducing. Resolved by:
+\begin{itemize}
+    \item Operator precedence
+    \item Associativity rules
+    \item Grammar restructuring
+\end{itemize}
+
+\subsubsection{Reduce/Reduce Conflicts}
+Multiple reductions possible in same state. Usually indicates:
+\begin{itemize}
+    \item Ambiguous grammar
+    \item Need for stronger parser (SLR → LALR → LR)
+    \item Grammar redesign required
+\end{itemize}
+
+\subsection{Practical Considerations}
+
+\subsubsection{Error Recovery}
+LR parsers detect errors early but recovery is complex:
+\begin{itemize}
+    \item \textbf{Panic Mode}: Skip input until synchronizing token
+    \item \textbf{Phrase Level}: Local corrections to input
+    \item \textbf{Error Productions}: Add error handling to grammar
+\end{itemize}
+
+\subsubsection{Parser Generators}
+Tools like Yacc/Bison generate LALR parsers from grammar specifications, handling:
+\begin{itemize}
+    \item Automatic table construction
+    \item Conflict detection and resolution
+    \item Code generation for target language
+\end{itemize}
