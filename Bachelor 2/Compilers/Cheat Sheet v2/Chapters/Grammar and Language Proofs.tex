@@ -1,0 +1,213 @@
+% DONE
+
+\section{Grammar Proofs}
+
+\subsection{Preliminary Checks}
+
+Before testing for specific parser types, perform these essential checks:
+
+\begin{enumerate}
+    \item \textbf{Well-formed grammar verification}
+    \begin{itemize}
+        \item Ensure the CFG has no useless symbols (nonterminals that cannot derive any string or cannot be reached from the start symbol)
+        \item Remove useless symbols using standard algorithms (find productive and reachable symbols)
+    \end{itemize}
+    
+    \item \textbf{Ambiguity check}
+    \begin{itemize}
+        \item An ambiguous grammar cannot be LL(k), SLR(k), LALR(k), or LR(k) for any $k$
+        \item Test by attempting to construct multiple leftmost or rightmost derivations for the same string
+        \item If ambiguous, the grammar fails for all parser types
+    \end{itemize}
+    
+    \item \textbf{Left recursion elimination}
+    \begin{itemize}
+        \item For LL(k): Grammar must be free of left recursion (direct or indirect)
+        \item Use left recursion elimination techniques if needed
+        \item For LR-based parsers (SLR, LALR, LR): Left recursion is acceptable
+    \end{itemize}
+\end{enumerate}
+
+\subsection{LL(k) Parser Check}
+
+\textbf{Definition:} A grammar is LL(k) if it can be parsed top-down with $k$ lookahead symbols without backtracking, using a deterministic parsing table.
+
+\subsubsection{Algorithm Steps}
+
+\begin{enumerate}
+    \item \textbf{Compute $\text{FIRST}_k$ sets}
+    \begin{itemize}
+        \item For each nonterminal $A$, compute all possible strings of length $\leq k$ that can be derived from $A$
+        \item For terminals: $\text{FIRST}_k(a) = \{a\}$ (or prefixes of length $k$)
+    \end{itemize}
+    
+    \item \textbf{Compute $\text{FOLLOW}_k$ sets}
+    \begin{itemize}
+        \item For each nonterminal $A$, compute strings of length $\leq k$ that can follow $A$ in a derivation
+    \end{itemize}
+    
+    \item \textbf{Construct LL(k) parsing table}
+    \begin{itemize}
+        \item For each production $A \to \alpha$, compute lookahead sets as $\text{FIRST}_k(\alpha \cdot \text{FOLLOW}_k(A))$
+        \item Place production in table at $[A, t]$ for each terminal string $t$ in the lookahead set
+    \end{itemize}
+    
+    \item \textbf{Check for conflicts}
+    \begin{itemize}
+        \item Grammar is LL(k) if parsing table has no conflicts
+        \item No cell $[A, t]$ should contain multiple productions
+    \end{itemize}
+    
+    \item \textbf{Test incrementally}
+    \begin{itemize}
+        \item Start with $k = 1$ (most common)
+        \item If conflicts exist, try $k = 2, 3, \ldots$
+        \item LL(0) grammars are rare and require deterministic behavior without lookahead
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Proof Strategy:}
+\begin{itemize}
+    \item \textcolor{green}{\textbf{Success:}} If table is conflict-free for some $k$, provide the parsing table as evidence
+    \item \textcolor{red}{\textbf{Failure:}} If conflicts exist for all tested $k$, show conflicting entries
+\end{itemize}
+
+\subsection{LR(k) Parser Check}
+
+\textbf{Definition:} A grammar is LR(k) if it can be parsed bottom-up with $k$ lookahead symbols using a deterministic LR parsing table based on canonical LR(k) items.
+
+\subsubsection{Algorithm Steps}
+
+\begin{enumerate}
+    \item \textbf{Construct LR(k) item sets}
+    \begin{itemize}
+        \item LR(k) item format: $[A \to \alpha \cdot \beta, w]$
+        \item $\alpha$: part already parsed, $\beta$: remaining part, $w$: lookahead string of length $k$
+        \item Build DFA of LR(k) items using closure and goto operations
+    \end{itemize}
+    
+    \item \textbf{Build parsing table}
+    \begin{itemize}
+        \item \textbf{Shift:} If $[A \to \alpha \cdot a \beta, w]$ and $\text{goto}(I, a) = J$, add shift to state $J$
+        \item \textbf{Reduce:} If $[A \to \alpha \cdot, w]$, add reduce by $A \to \alpha$ for lookahead $w$
+        \item \textbf{Accept:} If $[S' \to S \cdot, \epsilon]$ (augmented start), accept on end-of-input
+    \end{itemize}
+    
+    \item \textbf{Check for conflicts}
+    \begin{itemize}
+        \item Grammar is LR(k) if no shift-reduce or reduce-reduce conflicts exist
+    \end{itemize}
+    
+    \item \textbf{Test incrementally}
+    \begin{itemize}
+        \item Start with $k = 0$ (LR(0) uses empty lookaheads $w = \epsilon$)
+        \item If conflicts arise, try $k = 1, 2, 3$
+        \item Larger $k$ resolves conflicts by distinguishing lookaheads
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Proof Strategy:}
+\begin{itemize}
+    \item \textcolor{green}{\textbf{Success:}} Show conflict-free DFA and parsing table
+    \item \textcolor{red}{\textbf{Failure:}} List specific conflicts to prove non-LR(k) status
+\end{itemize}
+
+\subsection{SLR(k) Parser Check}
+
+\textbf{Definition:} SLR(k) is a simplified LR(k) that uses FOLLOW sets for lookaheads instead of precise LR(k) lookaheads. Less powerful but easier to compute.
+
+\subsubsection{Algorithm Steps}
+
+\begin{enumerate}
+    \item \textbf{Build LR(0) DFA}
+    \begin{itemize}
+        \item Construct DFA of LR(0) items (same as LR(k) but with $k = 0$)
+    \end{itemize}
+    
+    \item \textbf{Compute $\text{FOLLOW}_k$ sets}
+    \begin{itemize}
+        \item For each nonterminal $A$, compute terminal strings of length $\leq k$ that can follow $A$
+    \end{itemize}
+    
+    \item \textbf{Construct SLR(k) parsing table}
+    \begin{itemize}
+        \item Shift and goto actions same as LR(0)
+        \item For item $[A \to \alpha \cdot]$ in state $I$, add reduce by $A \to \alpha$ for each $t \in \text{FOLLOW}_k(A)$
+    \end{itemize}
+    
+    \item \textbf{Check for conflicts and test incrementally}
+    \begin{itemize}
+        \item Grammar is SLR(k) if table has no conflicts
+        \item Try $k = 0, 1, 2, 3$ (SLR(0) often has conflicts due to empty lookaheads)
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Proof Strategy:}
+\begin{itemize}
+    \item \textcolor{green}{\textbf{Success:}} Provide conflict-free parsing table
+    \item \textcolor{red}{\textbf{Failure:}} Show conflicting actions
+\end{itemize}
+
+\subsection{LALR(k) Parser Check}
+
+\textbf{Definition:} LALR(k) is a compromise between SLR(k) and LR(k), using LR(0) DFA but with lookaheads computed by merging LR(k) states.
+
+\subsubsection{Algorithm Steps}
+
+\begin{enumerate}
+    \item \textbf{Build LR(0) DFA}
+    \begin{itemize}
+        \item Same as for SLR(k)
+    \end{itemize}
+    
+    \item \textbf{Compute LALR(k) lookaheads}
+    \begin{itemize}
+        \item Propagate lookaheads through LR(0) DFA
+        \item Compute lookahead strings of length $\leq k$ for each item $[A \to \alpha \cdot]$
+        \item Use spontaneous generation and propagation analysis (simplified LR(k) lookaheads)
+    \end{itemize}
+    
+    \item \textbf{Construct LALR(k) parsing table}
+    \begin{itemize}
+        \item Shift and goto actions identical to LR(0)
+        \item For item $[A \to \alpha \cdot, w]$, add reduce by $A \to \alpha$ for lookahead $w$
+    \end{itemize}
+    
+    \item \textbf{Check for conflicts and test incrementally}
+    \begin{itemize}
+        \item Grammar is LALR(k) if table has no conflicts
+        \item Try $k = 0, 1, 2, 3$ (LALR(0) equivalent to SLR(0) in practice)
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Proof Strategy:}
+\begin{itemize}
+    \item \textcolor{green}{\textbf{Success:}} Show conflict-free table and computed lookaheads
+    \item \textcolor{red}{\textbf{Failure:}} List conflicts to prove non-LALR(k) status
+\end{itemize}
+
+\subsection{Parser Type Relationships and Optimization}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Hierarchy} & \textbf{Optimization Strategy} \\
+\hline
+LR(k) $\supseteq$ LALR(k) $\supseteq$ SLR(k) & If not SLR(k), cannot be LALR(k) or LR(k) \\
+\hline
+LL(k) $\not\subseteq$ LR(k) & LL(k) and LR(k) require separate checks \\
+\hline
+If LR(k), then LALR(k) and SLR(k) & Use hierarchy to optimize testing order \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Important Notes}
+
+\begin{itemize}
+    \item \textbf{$k = 0$ limitations:} LL(0) and SLR(0)/LALR(0) are restrictive and rarely practical
+    \item \textbf{Focus on $k = 1$:} Unless specified otherwise, concentrate testing efforts on $k = 1$
+    \item \textbf{Ambiguity precedence:} If grammar is ambiguous, it fails all parser type tests
+    \item \textbf{Left recursion:} Critical for LL(k) but acceptable for LR-based parsers
+\end{itemize}

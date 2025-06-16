@@ -1,13 +1,19 @@
 \documentclass[landscape]{article}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{amssymb,amsmath,amsthm,amsfonts}
-\usepackage{multicol,multirow, bookmark}
-\usepackage{calc}
-\usepackage{ifthen}
-\usepackage{graphicx}
+\usepackage{algorithm,
+algpseudocode,
+amssymb,
+amsmath,
+amsthm,
+amsfonts,
+bookmark,
+multicol,
+multirow,
+calc,
+ifthen,
+graphicx,
+hyperref,
+}
 \usepackage[landscape,a4paper,top=1cm,left=1cm,right=1cm,bottom=1cm]{geometry}
-\usepackage{hyperref}
 
 \pagestyle{empty}
 \makeatletter
@@ -18,7 +24,7 @@
 \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
                                 {-0.5ex plus -.25ex minus -.1ex}%
                                 {0.25ex plus .1ex}%
-                                {\normalfont\small\bfseries}}
+                                {\normalfont\tiny\bfseries}}
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
                                 {-0.5ex plus -.25ex minus -.1ex}%
                                 {0.5ex plus .1ex}%
@@ -52,10 +58,7 @@
 \input{Chapters/Foundations of Formal Languages.tex}
 \input{Chapters/First and Follow.tex}
 \input{Chapters/LR Items.tex}
-\input{Chapters/Bottom-Up Parsing (LR).tex}
-
-\input{Chapters/Top-Down Parsing (LL).tex}
-\input{Chapters/Grammar Analysis and Proofs.tex}
+\input{Chapters/Grammar and Language Proofs.tex}
 \input{Chapters/Reference Examples.tex}
 \input{Chapters/Trivia.tex}
 
