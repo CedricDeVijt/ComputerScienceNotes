@@ -16,3 +16,56 @@
 
 
 % LL Parsing Table Construction: Using First/Follow sets
+
+\section{Top-Down Parsing (LL)}
+\textbf{Remove Unnecessary Productions}
+1) \textbf{Unproductive Symbols}: Variables that cannot derive terminal strings.
+2) \textbf{Unreachable Symbols}: Symbols not reachable from the start variable.
+\textbf{Procedure}: Remove unproductive symbols first, then unreachable ones.
+
+\textbf{Left Recursion Elimination}
+1) \textbf{Immediate Left Recursion}: For productions of the form $A \to A\alpha | \beta$, replace with:
+    \[
+    A \to \beta A'
+    \]
+    \[
+    A' \to \alpha A' | \epsilon
+    \]
+    
+2) \textbf{Indirect Left Recursion}: For productions $A \to B\alpha | \beta$ and $B \to A\gamma | \delta$, eliminate by substituting $B$ in $A$'s productions.
+\textbf{Left Factoring}
+1) \textbf{Common Prefixes}: For productions of the form $A \to \alpha\beta_1 | \alpha\beta_2$, replace with:
+    \[
+    A \to \alpha A'
+    \]
+    \[
+    A' \to \beta_1 | \beta_2
+    \]
+    
+2) \textbf{Multiple Common Prefixes}: For productions $A \to \alpha\beta_1 | \alpha\beta_2 | \alpha\beta_3$, factor out the common prefix:
+    \[
+    A \to \alpha A'
+    \]
+    \[
+    A' \to \beta_1 | \beta_2 | \beta_3
+    \]
+    
+\textbf{LL(k) Grammar Requirements}
+1) \textbf{No Left Recursion}: The grammar must not have left recursion.
+2) \textbf{Disjoint First/Follow Sets}: For any variable $A$, the sets $FIRST(A)$ and $FOLLOW(A)$ must be disjoint.
+3) \textbf{Predictive Parsing Table}: The parsing table must be constructed such that for each variable $A$ and terminal $a$, there is at most one production $A \to \alpha$ where $a \in FIRST(\alpha)$ or $a \in FOLLOW(A)$.
+\textbf{LL Parsing Table Construction}
+1) \textbf{Compute FIRST Sets}: For each variable, compute the $FIRST$ set, which contains the terminals that can appear at the beginning of any string derived from that variable.
+2) \textbf{Compute FOLLOW Sets}: For each variable, compute the $FOLLOW$ set, which contains the terminals that can appear immediately after that variable in any derivation.
+3) \textbf{Construct Parsing Table}: For each variable $A$ and terminal $a$:
+   - If $a \in FIRST(A)$, add the production $A \to \alpha$ to the table.
+   - If $\epsilon \in FIRST(A)$ and $a \in FOLLOW(A)$, add the production $A \to \epsilon$.
+   - If $a \notin FIRST(A)$ and $a \notin FOLLOW(A)$, the grammar is not LL(k).
+\textbf{LL Parsing Algorithm}
+1) \textbf{Initialization}: Start with the stack containing the start variable and the input string.
+2) \textbf{Top of Stack}: If the top of the stack is a terminal, match it with the input symbol.
+3) \textbf{Variable Handling}: If the top of the stack is a variable $A$:
+   - Look up the parsing table for $A$ and the current input symbol.
+   - If a production $A \to \alpha$ is found, replace $A$ on the stack with $\alpha$.
+   - If no production is found, report an error.
+4) \textbf{Continue Until Done}: Repeat until the stack is empty or an error occurs.

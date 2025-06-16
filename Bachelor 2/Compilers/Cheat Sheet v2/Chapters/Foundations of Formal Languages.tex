@@ -1,6 +1,6 @@
 \section{Foundations of Formal Languages}
 \textbf{Regular Language}: A language that can be expressed using regular expressions or recognized by finite automata (DFA or NFA). Regular languages are closed under union, concatenation, and Kleene star operations.  Regular languages are less expressive than context-free languages.
-\textbf{Regular Expression}: A pattern describing a regular language, using symbols like `*` (zero or more), `+` (one or more), `$\vert$` (union), and `()` (grouping).
+\textbf{Regular Expression}: A pattern describing a regular language, using symbols like '*' (zero or more), '+' (one or more), '$\vert$' (union), and '()' (grouping).
 \textbf{Context-Free Language (CFL)}: Languages defined by context-free grammars (CFGs) and recognized by pushdown automata (PDAs).
 \textbf{Context-Free Grammar (CFG)}: A grammar consisting of rules of the form $A \rightarrow \alpha $, where $A$ is a nonterminal, and $\alpha $ is a string of terminals and/or nonterminals. CFGs generate context-free languages, which can be recognized by pushdown automata.
 \textbf{Strongly LL(k)}: A grammar is strongly LL(k) if, for every nonterminal $ A $ and every lookahead string of k tokens $ w $, there is at most one production rule $ A \to \alpha $ that can be applied, determined solely by the first k tokens of the input (the lookahead). This eliminates any need for backtracking or additional context beyond the k-token lookahead.
