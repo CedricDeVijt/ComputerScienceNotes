@@ -124,6 +124,8 @@ In terms of LR items, this happens when a state contains both:
 \end{enumerate}
 
 The conflict manifests in the parsing table as both a shift action and a reduce action for entry $[state, a]$.
+
+
 \textbf{Reduce-Reduce Conflict}
 
 A reduce-reduce conflict occurs when the parser cannot decide which production to use for reduction. This happens when a state contains multiple reduce items with overlapping lookaheads:
@@ -135,6 +137,7 @@ A reduce-reduce conflict occurs when the parser cannot decide which production t
 Both items indicate that reduction is possible with the same lookahead $w$, but the parser cannot determine which production rule to apply.
 
 The conflict manifests in the parsing table as multiple reduce actions for the same entry $[state, w]$.
+
 
 \textbf{Resolution}
 
