@@ -1,0 +1,40 @@
+\section{Parsing Conflicts}
+
+\textbf{Shift-Reduce Conflict}
+
+A shift-reduce conflict occurs when the parser cannot decide whether to:
+\begin{enumerate}
+\item \textbf{Shift}: Move the next input symbol onto the stack
+\item \textbf{Reduce}: Apply a production rule to reduce symbols on the stack
+\end{enumerate}
+
+In terms of LR items, this happens when a state contains both:
+\begin{enumerate}
+\item A shift item: $[A \to \alpha \bullet a \beta, w]$ (expecting terminal $a$)
+\item A reduce item: $[B \to \gamma \bullet, a]$ (ready to reduce with lookahead $a$)
+\end{enumerate}
+
+The conflict manifests in the parsing table as both a shift action and a reduce action for entry $[state, a]$.
+
+
+\textbf{Reduce-Reduce Conflict}
+
+A reduce-reduce conflict occurs when the parser cannot decide which production to use for reduction. This happens when a state contains multiple reduce items with overlapping lookaheads:
+\begin{enumerate}
+\item $[A \to \alpha \bullet, w]$
+\item $[B \to \beta \bullet, w]$
+\end{enumerate}
+
+Both items indicate that reduction is possible with the same lookahead $w$, but the parser cannot determine which production rule to apply.
+
+The conflict manifests in the parsing table as multiple reduce actions for the same entry $[state, w]$.
+
+
+\textbf{Resolution}
+
+These conflicts indicate that the grammar is not in the respective LR class (LR(k), LALR(k), or SLR(k)). Resolution strategies include:
+\begin{enumerate}
+\item Increasing the lookahead length $k$
+\item Grammar transformation (left-factoring, eliminating ambiguity)
+\item Using precedence and associativity rules
+\end{enumerate}
