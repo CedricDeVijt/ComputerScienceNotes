@@ -1,45 +1,43 @@
 \section{First and Follow Sets}
 
-The $\mathbf{FIRST^k(\alpha)}$ set for a string $\alpha$ (terminal, non-terminal, or sequence) contains all sequences of up to $k$ terminals that can appear as the first $k$ symbols in any derivation of $\alpha$. If $\alpha$ derives a string shorter than $k$, the entire derived string is included.
+The $\mathbf{FIRST^k(\alpha)}$ set for a string $\alpha$ (terminal, non-terminal, or sequence) contains all sequences of up to $k$ terminals that can start a derivation of $\alpha$. If $\alpha$ derives a string shorter than $k$, that string is included.
 
 \textbf{Steps to Compute} $FIRST^k(\alpha)$:
 \begin{enumerate}
-\item If $\alpha$ is a terminal $a$: Add the string $a$ (of length 1) to $FIRST^k(\alpha)$.
+\item If $\alpha$ is a terminal $a$: Set $FIRST^k(\alpha) = \{a\}$.
+\item If $\alpha$ is a non-terminal $A$:
+   \begin{itemize}
+   \item Initialize $FIRST^k(A) = \emptyset$.
+   \item For each production $A \to \beta$, add $FIRST^k(\beta)$ to $FIRST^k(A)$.
+   \item Repeat until no new strings are added.
+   \end{itemize}
 \item If $\alpha$ is a sequence $\alpha_1 \alpha_2 \dots \alpha_n$:
    \begin{itemize}
    \item Initialize $FIRST^k(\alpha) = \emptyset$.
    \item For $i = 1$ to $n$:
      \begin{itemize}
-     \item Add to $FIRST^k(\alpha)$ all strings of length up to $k$ from $FIRST^k(\alpha_i)$ if $\alpha_1, \dots, \alpha_{i-1}$ can all derive the empty string $\epsilon$.
-     \item For strings shorter than $k$, concatenate with $FIRST^{k-|s|}(\alpha_{i+1} \dots \alpha_n)$ (where $|s|$ is the length of the string).
+     \item If $\alpha_1, \dots, \alpha_{i-1}$ are all nullable, add all strings $s \in FIRST^k(\alpha_i)$ to $FIRST^k(\alpha)$.
+     \item For each $s \in FIRST^k(\alpha_i)$ with $|s| < k$, if $\alpha_{i+1}, \dots, \alpha_n$ are nullable or $i = n$, add $s$ to $FIRST^k(\alpha)$; otherwise, concatenate $s$ with $FIRST^{k-|s|}(\alpha_{i+1} \dots \alpha_n)$.
      \end{itemize}
-   \item If $\alpha$ can derive $\epsilon$, include $\epsilon$ in $FIRST^k(\alpha)$.
+   \item If all $\alpha_1, \dots, \alpha_n$ are nullable, add $\epsilon$ to $FIRST^k(\alpha)$.
    \end{itemize}
-\item If $\alpha$ is a non-terminal $A$:
-   \begin{itemize}
-   \item For each production $A \to \beta$, compute $FIRST^k(\beta)$ and add its strings to $FIRST^k(A)$.
-   \item Repeat until $FIRST^k(A)$ stabilizes (no new strings are added).
-   \end{itemize}
-\item Handle $k$-length lookahead: Truncate strings longer than $k$ to their first $k$ symbols.
+\item Truncate all strings in $FIRST^k(\alpha)$ to their first $k$ terminals.
 \end{enumerate}
 
-The $\mathbf{FOLLOW^k(A)}$ set for a non-terminal $A$ contains all sequences of up to $k$ terminals that can appear immediately after $A$ in some derivation from the start symbol. If $A$ appears at the end of a derivation, include the end-of-input marker (e.g., $\$$).
+The $\mathbf{FOLLOW^k(A)}$ set for a non-terminal $A$ contains all sequences of up to $k$ terminals that can appear immediately after $A$ in a derivation from the start symbol $S$. If $A$ can appear at the end of a derivation, include the end marker $\$$.
 
 \textbf{Steps to Compute} $FOLLOW^k(A)$:
 \begin{enumerate}
 \item Initialize:
    \begin{itemize}
-   \item For the start symbol $S$, add $\$$ (or a $k$-length end marker) to $FOLLOW^k(S)$.
-   \item Set $FOLLOW^k(A) = \emptyset$ for all other non-terminals $A$.
+   \item For the start symbol $S$, set $FOLLOW^k(S) = \{\$\}$.
+   \item For all other non-terminals $A$, set $FOLLOW^k(A) = \emptyset$.
    \end{itemize}
-\item For each production $B \to \alpha A \beta$ (where $A$ is a non-terminal):
+\item For each production $B \to \alpha A \beta$:
    \begin{itemize}
-   \item Compute $FIRST^k(\beta)$ and add its strings to $FOLLOW^k(A)$.
-   \item If $\beta$ can derive $\epsilon$, add $FOLLOW^k(B)$ to $FOLLOW^k(A)$.
+   \item Add all non-$\epsilon$ strings from $FIRST^k(\beta)$ to $FOLLOW^k(A)$.
+   \item If $\beta$ is nullable, add $FOLLOW^k(B)$ to $FOLLOW^k(A)$.
    \end{itemize}
-\item Iterate:
-   \begin{itemize}
-   \item Repeat step 2 across all productions until no new strings are added to any $FOLLOW^k(A)$.
-   \end{itemize}
-\item Handle $k$-length lookahead: Ensure all strings in $FOLLOW^k(A)$ are of length up to $k$, truncating longer strings to their first $k$ symbols.
+\item Repeat step 2 until no new strings are added to any $FOLLOW^k(A)$.
+\item Truncate all strings in $FOLLOW^k(A)$ to their first $k$ terminals.
 \end{enumerate}

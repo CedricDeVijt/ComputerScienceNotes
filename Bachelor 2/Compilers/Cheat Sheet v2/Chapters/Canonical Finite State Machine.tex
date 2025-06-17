@@ -1,24 +1,10 @@
 \section{LR(k) Automaton Construction}
 
 \begin{enumerate}
-\item \textbf{Augment the Grammar}: Add a new start symbol $S'$ and production $S' \to S \$^k$, where $S$ is the original start symbol and $\$^k$ is the $k$-symbol end-of-input marker.
-\item \textbf{Initialize the First State}: Compute the initial state $I_0 = CLOSURE(\{[S' \to \bullet S \$^k]\})$, where the dot ($\bullet$) indicates the current position in the production.
-\item \textbf{Compute CLOSURE}: For a set of items $I$:
-   \begin{itemize}
-   \item Start with $CLOSURE(I) = I$.
-   \item For each item $[A \to \alpha \bullet B \beta, w]$ in $CLOSURE(I)$, where $B$ is a nonterminal:
-     \begin{itemize}
-     \item For each production $B \to \gamma$, compute $FIRST^k(\beta w)$.
-     \item For each $u \in FIRST^k(\beta w)$, add $[B \to \bullet \gamma, u]$ to $CLOSURE(I)$ if not present.
-     \end{itemize}
-   \item Repeat until no new items are added.
-   \end{itemize}
-\item \textbf{Compute GOTO}: For a state $I$ and symbol $X$ (terminal or nonterminal):
-   \begin{itemize}
-   \item Initialize $J = \emptyset$.
-   \item For each item $[A \to \alpha \bullet X \beta, w]$ in $I$, add $[A \to \alpha X \bullet \beta, w]$ to $J$.
-   \item Return $CLOSURE(J)$.
-   \end{itemize}
+\item \textbf{Augment the Grammar}: Add a new start symbol $S'$ and production $S' \to S \$$, where $S$ is the original start symbol.
+\item \textbf{Initialize the First State}: Compute the initial state $I_0 = CLOSURE(\{[S' \to \bullet S \$]\})$, where the dot ($\bullet$) indicates the current position in the production.
+\item \textbf{Compute CLOSURE}: For a set of items $I$
+\item \textbf{Compute GOTO}: For a state $I$ and symbol $X$ (terminal or nonterminal)
 \item \textbf{Build the State Machine}:
    \begin{itemize}
    \item Initialize the set of states $\mathcal{C} = \{I_0\}$ and worklist $W = \{I_0\}$.
@@ -33,14 +19,20 @@
        \end{itemize}
      \end{itemize}
    \end{itemize}
-\item \textbf{Construct the Parsing Table}:
-   \begin{itemize}
-   \item For each state $I \in \mathcal{C}$:
-     \begin{itemize}
-     \item If $[A \to \alpha \bullet a \beta, w] \in I$ and $GOTO(I, a) = J$, add shift action to state $J$ for terminal $a$.
-     \item If $[A \to \alpha \bullet, w] \in I$, add reduce action by $A \to \alpha$ for lookahead $w$.
-     \item If $[S' \to S \bullet \$^k] \in I$, add accept action for $\$^k$.
-     \end{itemize}
-   \item Check for conflicts: Shift-reduce or reduce-reduce conflicts indicate the grammar is not LR(k).
-   \end{itemize}
-\end{enumerate}
+   \item \textbf{Construct the Parsing Table}:
+      \begin{itemize}
+      \item For each state $I \in \mathcal{C}$:
+        \begin{itemize}
+        \item If $[A \to \alpha \bullet a \beta, w] \in I$, $a$ is a terminal, and $\text{GOTO}(I, a) = J$, add \textit{shift} to state $J$ for $a$ in the action table.
+        \item If $[A \to \alpha \bullet, w] \in I$ and $A \neq S'$, add \textit{reduce} by $A \to \alpha$ for lookahead $w$ in the action table.
+        \item If $[S' \to S \bullet \$, w] \in I$, add \textit{accept} for lookahead $\$$ in the action table.
+        \item For nonterminal $A$, if $\text{GOTO}(I, A) = J$, add \textit{goto} state $J$ for $A$ in the goto table.
+        \end{itemize}
+      \item \textbf{Check for Conflicts}: For each state $I$ and lookahead $a$ in the action table:
+        \begin{itemize}
+        \item If the cell for $(I, a)$ has both a \textit{shift} and a \textit{reduce} action, report a \textit{shift-reduce} conflict.
+        \item If the cell for $(I, a)$ has multiple \textit{reduce} actions, report a \textit{reduce-reduce} conflict.
+        \item If any conflicts exist, the grammar is not LR(k).
+        \end{itemize}
+      \end{itemize}
+      \end{enumerate}

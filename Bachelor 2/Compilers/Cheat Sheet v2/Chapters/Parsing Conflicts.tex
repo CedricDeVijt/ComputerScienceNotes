@@ -28,13 +28,3 @@ A reduce-reduce conflict occurs when the parser cannot decide which production t
 Both items indicate that reduction is possible with the same lookahead $w$, but the parser cannot determine which production rule to apply.
 
 The conflict manifests in the parsing table as multiple reduce actions for the same entry $[state, w]$.
-
-
-\textbf{Resolution}
-
-These conflicts indicate that the grammar is not in the respective LR class (LR(k), LALR(k), or SLR(k)). Resolution strategies include:
-\begin{enumerate}
-\item Increasing the lookahead length $k$
-\item Grammar transformation (left-factoring, eliminating ambiguity)
-\item Using precedence and associativity rules
-\end{enumerate}
