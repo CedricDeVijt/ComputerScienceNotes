@@ -75,12 +75,6 @@ Before testing for specific parser types, perform these essential checks:
         \item Shift-reduce conflict: same entry has shift and reduce.
         \item Reduce-reduce conflict: same entry has multiple reduces.
     \end{itemize}
-
-    \item \textbf{Test incrementally}
-    \begin{itemize}
-        \item Start with $k=0$ (LR(0), reduce actions apply for all terminals in $\text{FOLLOW}(A)$).
-        \item If conflicts exist, increment $k$ (e.g., $k=1$) and repeat.
-    \end{itemize}
 \end{enumerate}
 
 
