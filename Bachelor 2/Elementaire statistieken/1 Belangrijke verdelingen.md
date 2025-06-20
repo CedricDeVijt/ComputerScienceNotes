@@ -26,8 +26,8 @@ The **Bernoulli distribution** models experiments with two outcomes, labeled as 
 For a random variable $X \sim \mathcal{B}(1, p)$ with sample space $\Omega = \{0, 1\}$:
 
 - **Probability**: $P(X = 1) = p$, $P(X = 0) = q = 1 - p$, where $0 < p < 1$.
-- **Expectation**: $E[X] = 0 \cdot q + 1 \cdot p = p$.
-- **Variance**: $\text{Var}[X] = E[X^2] - (E[X])^2 = p - p^2 = p(1 - p) = p q$.
+- **Expectation**: $E[X] = p$.
+- **Variance**: $\text{Var}[X] = p q$.
 - **Example**: In a coin toss with $p = 0.5$, $E[X] = 0.5$, $\text{Var}[X] = 0.25$.
 
 This distribution connects to real-world binary scenarios like pass/fail tests or yes/no responses.
@@ -42,11 +42,11 @@ For a random variable $Y = X_1 + \dots + X_n$, where $X_i \sim \mathcal{B}(1, p)
 
 - **Sample space**: $\Omega = \{0, 1, \dots, n\}$.
 - **Probability**: $P(Y = k) = \binom{n}{k} p^k q^{n-k} = \frac{n!}{k!(n-k)!} p^k q^{n-k}$.
-- **Expectation**: $E[Y] = \sum_{i=1}^n E[X_i] = n p$.
-- **Variance**: $\text{Var}[Y] = \sum_{i=1}^n \text{Var}[X_i] = n p q$.
+- **Expectation**: $E[Y] = n p$.
+- **Variance**: $\text{Var}[Y] = n p q$.
 - **Property**: If $Y_1 \sim \mathcal{B}(n_1, p)$ and $Y_2 \sim \mathcal{B}(n_2, p)$ are independent, then $Y_1 + Y_2 \sim \mathcal{B}(n_1 + n_2, p)$.
 
-The probability sums to 1 via the binomial theorem: $\sum_{k=0}^n \binom{n}{k} p^k q^{n-k} = (p + q)^n = 1$. The mode is 0 for $p \approx 0$ and $n$ for $p \approx 1$.
+The probability sums to 1 via the binomial theorem: $\sum\limits_{k=0}^n \binom{n}{k} p^k q^{n-k} = (p + q)^n = 1$. The mode is 0 for $p \approx 0$ and $n$ for $p \approx 1$.
 
 ### Negative Binomial Distribution
 
@@ -57,7 +57,7 @@ The **negative binomial distribution** models the number of failures before the 
 For a random variable $X$ representing the number of failures before the $r$-th success, $X \sim \text{NB}(r, \theta)$, where $\theta = 1 - p$:
 
 - **Sample space**: $\Omega = \{0, 1, 2, \dots\}$.
-- **Probability**: $P(X = j) = \binom{j + r - 1}{j} (1 - \theta)^r \theta^j = \binom{j + r - 1}{j} p^r q^j$.
+- **Probability**: $P(X = j) = \binom{j + r - 1}{j} p^r q^j$.
 - **Example**: If $r = 3$, $p = 0.4$, the probability of 2 failures before the third success is $P(X = 2) = \binom{4}{2} (0.4)^3 (0.6)^2$.
 - **Note**: Some notations use $p$ instead of $\theta$, so verify the parameter definition.
 
@@ -72,7 +72,7 @@ The **Poisson distribution** models the number of events in a fixed interval, gi
 For a random variable $X \sim \mathcal{P}(\alpha)$:
 
 - **Sample space**: $\Omega = \{0, 1, 2, \dots\}$.
-- **Probability**: $P(X = j) = \frac{\alpha^j}{j!} e^{-\alpha}$.
+- **Probability**: $P(X = j) = \frac{e^{-\alpha}\alpha^j}{j!}$.
 - **Expectation**: $E[X] = \alpha$.
 - **Variance**: $\text{Var}[X] = \alpha$.
 - **Property**: If $X_1 \sim \mathcal{P}(\alpha_1)$ and $X_2 \sim \mathcal{P}(\alpha_2)$ are independent, then $X_1 + X_2 \sim \mathcal{P}(\alpha_1 + \alpha_2)$.
