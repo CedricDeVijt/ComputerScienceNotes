@@ -70,6 +70,7 @@ For 300 car speeds (44.5–94.5 km/h) grouped into 10 classes ($\Delta = 5$):
 - **Histogram**: Bar heights reflect frequencies, e.g., the class [69.5, 74.5] has the highest frequency (74 cars, 24.67%).
 
 ![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620165102.png]]
+
 ### Density Histograms
 
 When classes have unequal widths ($\Delta_j$), a **density histogram** adjusts bar heights to $\frac{h_j}{\Delta_j}$, ensuring the total area equals 1:
@@ -91,6 +92,7 @@ Combining sparse classes (e.g., high-speed ranges) requires density adjustments 
 The **empirical distribution function** ($\widehat{F}_n(x) = \frac{\#\{x_i \leq x\}}{n}$) is a step function rising from 0 to 1, approximating the population distribution. The **empirical quantile function** ($\widehat{Q}_n(p)$) is its inverse, defined as the smallest $x$ where $\widehat{F}_n(x) \geq p$. For grouped data, cumulative frequencies are computed to estimate these functions.
 
 ![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620165734.png]]
+
 #### Example: Cumulative Frequencies
 
 For car speeds:
@@ -158,6 +160,8 @@ For 15 US cities (1960, in 10,000s):
 - **Outlier**: 778 (New York) beyond $[74 - 1.5 \cdot 126, 200 + 1.5 \cdot 126] = [-115, 389]$.
 - **Boxplot**: Shows right-skewness (longer upper whisker, outlier at 778).
 
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620173255.png]]
+
 ## 2.5 Assessing Relationships Between Variables
 
 Analyzing relationships between variables uses graphical (scatterplots) and numerical (covariance, correlation) methods for quantitative data, or **contingency tables** for qualitative data. These methods quantify dependencies, linking to frequency and distribution analyses.
@@ -170,6 +174,8 @@ Analyzing relationships between variables uses graphical (scatterplots) and nume
 
 - **Original Scatterplot**: Shows a positive, non-linear (logarithmic) relationship with an outlier (New Orleans).
 - **Log-Transformed**: Linearizes the relationship, reducing variability.
+
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620173732.png]]
 
 ### Covariance and Correlation
 
@@ -240,6 +246,8 @@ For normality, use $F^{-1}\left(\frac{i}{n}\right) = \mu + \sigma \Phi^{-1}\left
 
 - **Linear QQ-Plot**: Suggests normality with $\mu = 74.6$, $\sigma = 4.8$.
 - **Non-Linear QQ-Plot**: Logarithmic transformation linearizes the plot, indicating lognormal data.
+
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620174529.png]]
 
 ---
 
