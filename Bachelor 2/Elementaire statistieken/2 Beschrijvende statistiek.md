@@ -34,6 +34,8 @@ $$
 
 These are presented in **frequency tables** or visualized via **bar charts** (heights reflect frequencies) or **pie charts** (proportions of the whole).
 
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620164913.png]]
+
 #### Example: Regional Distribution
 
 For 60 cities across five regions:
@@ -67,6 +69,7 @@ For 300 car speeds (44.5–94.5 km/h) grouped into 10 classes ($\Delta = 5$):
 - **Frequencies**: $n_1 = 8, n_2 = 6, \ldots, n_{10} = 2$, with $\sum n_j = 300$, $\sum h_j = 1$.
 - **Histogram**: Bar heights reflect frequencies, e.g., the class [69.5, 74.5] has the highest frequency (74 cars, 24.67%).
 
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620165102.png]]
 ### Density Histograms
 
 When classes have unequal widths ($\Delta_j$), a **density histogram** adjusts bar heights to $\frac{h_j}{\Delta_j}$, ensuring the total area equals 1:
@@ -81,10 +84,13 @@ This approximates the population’s density function and avoids misrepresentati
 
 Combining sparse classes (e.g., high-speed ranges) requires density adjustments to maintain proportional representation, preventing overestimation in wider classes.
 
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620165320.png]]
+
 ### Empirical Distribution and Quantile Functions
 
 The **empirical distribution function** ($\widehat{F}_n(x) = \frac{\#\{x_i \leq x\}}{n}$) is a step function rising from 0 to 1, approximating the population distribution. The **empirical quantile function** ($\widehat{Q}_n(p)$) is its inverse, defined as the smallest $x$ where $\widehat{F}_n(x) \geq p$. For grouped data, cumulative frequencies are computed to estimate these functions.
 
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620165734.png]]
 #### Example: Cumulative Frequencies
 
 For car speeds:
@@ -95,15 +101,17 @@ For car speeds:
   \hline
   \text{Class} & \text{Speed} \leq \text{Bound} & \text{Number} & \% \\
   \hline
-  \leq 44.5 & 0 & 0.00\% \\
-  \leq 49.5 & 8 & 2.67\% \\
-  \leq 54.5 & 14 & 4.67\% \\
-  \vdots & \vdots & \vdots \\
-  \leq 94.5 & 300 & 100.00\% \\
+   1 & \leq 44.5  & 0 & 0.00\% \\
+   2 & \leq 49.5  & 8 & 2.67\% \\
+   3 & \leq 54.5  & 14 & 4.67\% \\
+  \vdots & \vdots & \vdots & \vdots \\
+  10 & \leq 94.5  & 300 & 100.00\% \\
   \hline
   \end{array}
   $$
 - **Cumulative Polygon**: Plots cumulative percentages, approximating the distribution function.
+
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620165912.png]]
 
 ## 2.3 Measures of Central Tendency and Dispersion
 
