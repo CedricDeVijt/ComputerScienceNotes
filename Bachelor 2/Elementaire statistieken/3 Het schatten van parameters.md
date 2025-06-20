@@ -10,6 +10,8 @@ The **distribution** of the sample mean ($\bar{X}_n$) provides insight into its 
 
 - **Example**: For a population $X \sim \mathcal{N}(10, 9)$, a sample of size $n=60$ yields sample means clustering around 10, with most values between 9 and 11, as seen in histograms of 50 sample means. This illustrates the **normal distribution** and reduced spread of $\bar{X}_n$ compared to individual observations.
 
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250620193426.png]]
+
 ### Central Limit Theorem
 
 The **Central Limit Theorem (CLT)** extends the utility of the sample mean to non-normal populations. For large $n$, the distribution of $\bar{X}_n$ approximates a normal distribution: $\bar{X}_n \approx \mathcal{N}(\mu, \frac{\sigma^2}{n})$, regardless of the underlying distribution of $X_i$, provided $\mathrm{E}[X_i] = \mu$ and $\operatorname{Var}[X_i] = \sigma^2 < \infty$. This makes the sample mean a versatile estimator, with precision improving as $n$ increases.
