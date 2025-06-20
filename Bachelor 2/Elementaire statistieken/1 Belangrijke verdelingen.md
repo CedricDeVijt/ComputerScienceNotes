@@ -11,8 +11,8 @@ The **discrete uniform distribution** models scenarios where each outcome in a f
 For a random variable $X$ following a discrete uniform distribution on $\Omega = \{1, \dots, n\}$:
 
 - **Probability**: $P(X = j) = \frac{1}{n}$ for $j = 1, \dots, n$.
-- **Expectation**: $E[X] = \sum_{j=1}^n j \cdot \frac{1}{n} = \frac{n+1}{2}$, derived using the sum $\sum_{j=1}^n j = \frac{n(n+1)}{2}$.
-- **Variance**: $\text{Var}[X] = \sum_{j=1}^n j^2 \cdot \frac{1}{n} - \left(\frac{n+1}{2}\right)^2 = \frac{(n+1)(n-1)}{12}$, using $\sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}$.
+- **Expectation**: $E[X] = \sum_\limits{j=1}^n j \cdot \frac{1}{n} = \frac{n+1}{2}$, derived using the sum $\sum\limits_{j=1}^n j = \frac{n(n+1)}{2}$.
+- **Variance**: $\text{Var}[X] = \sum\limits_{j=1}^n j^2 \cdot \frac{1}{n} - \left(\frac{n+1}{2}\right)^2 = \frac{(n+1)(n-1)}{12}$, using $\sum\limits_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}$.
 - **Example**: Rolling a fair die ($n = 6$) yields $E[X] = 3.5$ and $\text{Var}[X] = \frac{35}{12} \approx 2.9167$.
 
 This distribution’s symmetry makes it ideal for modeling scenarios like random sampling or lottery draws.
