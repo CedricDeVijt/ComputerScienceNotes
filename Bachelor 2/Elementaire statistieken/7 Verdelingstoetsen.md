@@ -1,100 +1,114 @@
-## 7.1 Chi-Squared Test voor Discrete Verdelingen
+# 7 Testing Discrete and Continuous Distributions
 
-### Theoretische Achtergrond
+This chapter explores statistical methods for testing whether observed data follows a specified distribution, focusing on the chi-square test for discrete distributions and both chi-square and Kolmogorov-Smirnov tests for continuous distributions. These methods are crucial for validating hypotheses about data distributions in various applications, such as quality control and social sciences. The content connects the mathematical foundations of these tests with practical examples to enhance understanding and retention.
 
-- **Doel**: Testen of waarnemingen uit een gegeven discrete verdeling komen.
-- **Hypothese**:
-  $H_0$: De steekproef volgt de theoretische verdeling met kansen $\{p_1, \ldots, p_k\}$.
-  $H_1$: De steekproef volgt de theoretische verdeling niet.
-- **Frequenties**:
-  - Waargenomen frequenties $N_j$ (aantal waarnemingen $z_j$).
-  - Theoretische frequenties $np_j$ (verwacht aantal onder $H_0$).
+## 7.1 Chi-Square Test for Discrete Distributions
 
-### Teststatistiek
+The **chi-square test** evaluates whether observed data follows a specified discrete distribution defined over a set of $k$ values $\{z_1, \ldots, z_k\}$ with theoretical probabilities $\{p_1, \ldots, p_k\}$. The null hypothesis assumes the data conforms to this distribution, and observed frequencies are compared to expected frequencies to assess fit. This test is widely used when expected frequencies are sufficiently large, linking to the normal approximation for binomial distributions.
+
+### Formulating the Null Hypothesis
+
+The null hypothesis is defined as:
 
 $$
-\chi^2 = \sum_{j=1}^k \frac{(N_j - np_j)^2}{np_j}
+H_0: X_1, \ldots, X_n \sim \text{the specified discrete distribution}.
 $$
 
-- **Verdeling**: Benaderend $\chi^2_{k-1}$ (aantal vrijheidsgraden = $k-1$).
-- **Aanvaardingsgebied**: $[0, \chi^2_{k-1; 1-\alpha}]$.
+After collecting $n$ observations, we compute the observed frequencies $N_j$, where $N_j$ is the number of times value $z_j$ appears, and $\sum_{j=1}^k N_j = n$. Under $H_0$, each $N_j$ follows a binomial distribution $B(n, p_j)$, approximated by a Poisson distribution with parameter $\lambda = n p_j$ when $n p_j$ is large, and further approximated by a normal distribution:
 
-### Voorbeeld: Uniforme Verdeling van Bibliotheekbezoek
+$$
+\frac{N_j - n p_j}{\sqrt{n p_j}} \approx N(0,1).
+$$
 
-- **Gegevens**:
+This approximation connects to the central limit theorem, ensuring the test’s validity for large samples.
 
-  | Dag | ma | di | woe | do | vrij | zat |
-  |-----|-----|-----|------|-----|-------|------|
-  | $n_j$ | 26 | 32 | 23 | 29 | 34 | 41 |
+### Chi-Square Test Statistic
 
-  $n = 185$, $p_j = \frac{1}{6}$, $np_j = 30.833$.
+The chi-square test statistic aggregates the standardized differences across all categories:
 
-- **Berekening**:
-  $$
-  \chi^2 = \frac{1}{30.833} \left(23.361 + 1.361 + \ldots + 103.361\right) = 6.578
-  $$
-- **Conclusie**:
-  $\chi^2_{5; 0.95} = 11.070$. Aangezien $6.578 < 11.070$, wordt $H_0$ aanvaard.
+$$
+\sum_{j=1}^k \left( \frac{N_j - n p_j}{\sqrt{n p_j}} \right)^2 \approx \chi^2_{k-1},
+$$
 
-## 7.2 Chi-Squared Test voor Continue Verdelingen
+where the degrees of freedom are $k-1$ due to the constraint $\sum N_j = n$. Alternatively, it can be expressed as:
 
-### Methodologie
+$$
+\sum_{j=1}^k \frac{(N_j - n p_j)^2}{n p_j}.
+$$
 
-- **Stappen**:
-  1. Verdeel de data in $k$ klassen.
-  2. Bereken theoretische kansen $p_j$ en frequenties $np_j$.
-  3. Combineer klassen indien $np_j < 5$.
-  4. Gebruik dezelfde $\chi^2$-formule als bij discrete verdelingen.
-- **Vrijheidsgraden**:
-  $\chi^2_{k-v-1}$ als $v$ parameters geschat zijn.
+The test statistic is always non-negative, with smaller values indicating a better fit to the theoretical distribution. The acceptance region for $H_0$ at significance level $\alpha$ is $[0, \chi^2_{k-1, 1-\alpha}]$. For reliable approximation, theoretical frequencies $n p_j$ should be at least 5, which may require grouping categories to ensure sufficient expected counts.
 
-### Voorbeeld: Normale Verdeling van Snelheidsmetingen
+### Example: Uniform Distribution of Book Loans
 
-- **Gegevens**: 300 snelheden, ingedeeld in 10 klassen.
-- **Parameters**:
-  $\hat{\mu} = 68.22$, $\hat{\sigma} = 8.91$.
-- **Theoretische kansen**: Gebaseerd op $N(68.22, 79.36)$.
-- **Teststatistiek**:
-  $\chi^2 = 21.64$, $\chi^2_{6; 0.95} = 12.592$.
-- **Conclusie**: $21.64 > 12.592$, dus $H_0$ wordt verworpen.
+Consider a librarian testing whether book loans across six days (Monday to Saturday) follow a uniform distribution. With $n=185$ loans and observed frequencies $N_j = \{26, 32, 23, 29, 34, 41\}$, the theoretical probability is $p_j = \frac{1}{6}$, yielding expected frequencies $n p_j = \frac{185}{6} \approx 30.833$. The test statistic is calculated as:
 
-## 7.3 Kolmogorov-Smirnov Test
+$$
+\sum_{j=1}^6 \frac{(N_j - 30.833)^2}{30.833} = 6.578.
+$$
 
-### Theoretische Achtergrond
+For $k=6$, degrees of freedom are $5$. At $\alpha=5\%$, the acceptance region is $[0, 11.070]$, and at $\alpha=1\%$, it is $[0, 15.086]$. Since $6.578$ lies within both regions, $H_0$ is not rejected, suggesting the data is consistent with a uniform distribution. This example illustrates how the chi-square test validates uniformity in real-world data.
 
-- **Doel**: Testen of een continue steekproef uit een specifieke verdeling $P$ komt.
-- **Teststatistiek**:
-  $$
-  D = \sup_x |\hat{F}_n(x) - F_P(x)|
-  $$
-  waarbij $\hat{F}_n(x)$ de empirische verdelingsfunctie is.
-- **Voordelen**: Exacte test, geen vereisten voor steekproefgrootte.
+### Adjusting for Estimated Parameters
 
-## 7.4 Belangrijke Opmerkingen
+When parameters of the distribution are estimated from the data, the degrees of freedom are reduced by the number of estimated parameters ($v$), resulting in $\chi^2_{k-v-1}$. For example, testing a Poisson distribution with $n=80$ observations and values $z_j = \{0, 1, 2, 3, 4, 5, 6, \geq 7\}$, the parameter $\lambda$ is estimated as $\bar{x} = 2.1$. Grouping into five classes (e.g., $\{0\}, \{1\}, \{2\}, \{3\}, \{4,5,6,\ldots\}$), the test statistic is:
 
-1. **Voorwaarden voor $\chi^2$-test**:
-   - Theoretische frequenties $np_j \geq 5$.
-   - Combineer klassen indien nodig.
-2. **Vrijheidsgraden**:
-   - $k-1$ voor discrete verdelingen.
-   - $k-v-1$ indien $v$ parameters geschat zijn.
-3. **Kolmogorov-Smirnov**:
-   - Geschikt voor kleine steekproeven.
-   - Vergelijkt empirische en theoretische verdelingsfuncties.
+$$
+\sum_{j=1}^5 \frac{(n_j - n p_j)^2}{n p_j} \approx 2.11,
+$$
+
+with $k-v-1 = 5-1-1 = 3$ degrees of freedom. The acceptance regions $[0, 7.815]$ ($\alpha=5\%$) and $[0, 11.345]$ ($\alpha=1\%$) include $2.11$, so $H_0$ is not rejected. This adjustment ensures the test accounts for parameter estimation, linking to the concept of model fitting.
+
+## 7.2 Chi-Square Test for Continuous Distributions
+
+For continuous distributions, the chi-square test groups data into $k$ classes to compare observed and expected frequencies, adjusting for estimated parameters. This approach is effective when the sample size ensures adequate expected frequencies per class, extending the discrete chi-square framework to continuous data.
+
+### Estimating Parameters and Class Probabilities
+
+Parameters like mean $\mu$ and variance $\sigma^2$ are estimated using class centers $c_j$ and observed frequencies $n_j$. For a normal distribution $N(\mu, \sigma^2)$, probabilities $p_j$ for each class are computed using the cumulative distribution function. For example, with $n=300$ observations across 10 classes, estimates are $\bar{x} = 68.22$ and $s^2 = 79.36$. The probability for class $[49.5, 54.5)$ is:
+
+$$
+P[49.5 \leq X < 54.5] = \Phi\left(\frac{54.5 - 68.22}{8.91}\right) - \Phi\left(\frac{49.5 - 68.22}{8.91}\right) \approx 0.044.
+$$
+
+The lowest and highest classes are extended to $-\infty$ and $+\infty$ to ensure the sum of probabilities equals 1, connecting to the properties of continuous distributions.
+
+### Test Statistic and Decision
+
+The test statistic is:
+
+$$
+\sum_{j=1}^k \frac{(n_j - n p_j)^2}{n p_j},
+$$
+
+with $k-v-1$ degrees of freedom, where $v$ is the number of estimated parameters. In the normal distribution example, combining the last two classes yields $k=9$, and with two estimated parameters ($\mu$, $\sigma^2$), degrees of freedom are $6$. The test statistic is $21.64$, exceeding the critical value $12.592$ at $\alpha=5\%$, leading to rejection of $H_0$. This result highlights the importance of sufficient sample sizes and proper class grouping in continuous distribution testing.
+
+## 7.3 Kolmogorov-Smirnov Test for Continuous Distributions
+
+The **Kolmogorov-Smirnov (KS) test** is an exact method for testing whether a sample follows a specific continuous distribution by comparing the empirical distribution function $\hat{F}_n(x)$ to the theoretical distribution function $F_P(x)$. Unlike the chi-square test, it imposes no minimum sample size requirements, making it versatile for smaller datasets.
+
+### Empirical and Theoretical Distribution Functions
+
+The empirical distribution function is defined as:
+
+$$
+\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n I(X_i \leq x),
+$$
+
+where $I$ is the indicator function counting observations less than or equal to $x$. The KS test statistic is the maximum absolute difference:
+
+$$
+D = \sup_x |\hat{F}_n(x) - F_P(x)|.
+$$
+
+Critical values are obtained from statistical tables, and the test’s exact nature makes it robust for continuous distributions, linking to the concept of distribution-free testing.
 
 ---
 
 ## Key Points to Remember
 
-- **Chi-Squared Test**:
-  - Gebruikt voor discrete en continue verdelingen.
-  - Teststatistiek: $\sum \frac{(N_j - np_j)^2}{np_j} \sim \chi^2$.
-  - Vrijheidsgraden hangen af van geschatte parameters.
-- **Kolmogorov-Smirnov**:
-  - Exacte test, gebaseerd op maximale afwijking tussen verdelingsfuncties.
-- **Voorwaarden**:
-  - Theoretische frequenties $\geq 5$ voor $\chi^2$-test.
-  - Combineer klassen indien nodig.
-- **Voorbeelden**:
-  - Uniforme verdeling: $H_0$ aanvaard.
-  - Normale verdeling: $H_0$ verworpen.
+- **Chi-Square Test → Discrete Distributions**: Tests fit to a specified discrete distribution using $\sum \frac{(N_j - n p_j)^2}{n p_j} \approx \chi^2_{k-1}$. Requires $n p_j \geq 5$ for reliable approximation. _(High Priority)_ ★★★★★
+- **Parameter Estimation → Degrees of Freedom**: Estimating $v$ parameters reduces degrees of freedom to $k-v-1$ in chi-square tests, accounting for model fitting. _(Critical Distinction)_ ★★★★
+- **Chi-Square Test → Continuous Distributions**: Groups continuous data into classes, computes probabilities using estimated parameters, and applies the chi-square statistic. _(Common Application)_ ★★★★
+- **Kolmogorov-Smirnov Test → Exact Method**: Compares empirical and theoretical distribution functions for continuous distributions, with no sample size constraints, offering a robust alternative to chi-square. _(Key Advantage)_ ★★★★
+- **Acceptance Region → Decision Rule**: For chi-square tests, $H_0$ is accepted if the test statistic falls within $[0, \chi^2_{df, 1-\alpha}]$, guiding hypothesis testing decisions. _(Essential Rule)_ ★★★★
+- **Practical Consideration → Class Grouping**: Grouping categories or classes ensures $n p_j \geq 5$ in chi-square tests, critical for valid approximations in both discrete and continuous cases. _(Common Pitfall)_ ★★★★
