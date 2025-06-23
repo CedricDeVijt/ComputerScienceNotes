@@ -49,7 +49,7 @@
   $$E[X] = \sum_{i} x_i P(X = x_i)$$
 
 - **Expected value (continuous)**:
-  $$E[X] = \int_{-\infty}^{\infty} x f(x) dx$$
+  $$E[X] = \int\limits_{-\infty}^{\infty} x f(x) dx$$
 
 - **Variance definition**:
   $$\text{Var}(X) = E[(X - \mu)^2] = E[X^2] - (E[X])^2$$
