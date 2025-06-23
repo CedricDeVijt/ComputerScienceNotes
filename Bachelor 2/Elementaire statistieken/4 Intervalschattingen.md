@@ -1,8 +1,6 @@
-## 4.1 Confidence Intervals: Constructing Reliable Parameter Estimates
-
 Confidence intervals (CIs) provide a range of values within which an unknown population parameter is likely to lie, based on sample data. Unlike point estimates, which yield a single value, CIs account for sampling variability by quantifying the uncertainty associated with an estimate. This chapter explores the construction and interpretation of CIs for parameters like means, variances, and proportions, emphasizing their probabilistic nature and practical applications.
 
-### Defining Confidence Intervals
+## 4.1 Defining Confidence Intervals
 
 A **confidence interval** is a statistical tool that estimates a population parameter $\theta$ with a specified level of confidence. It is defined as an interval $[L(X_1, \ldots, X_n), R(X_1, \ldots, X_n)]$, where $L$ and $R$ are functions of the sample data $X_1, \ldots, X_n$, such that:
 
@@ -14,13 +12,13 @@ $$
 - **Significance level** ($\alpha$): The probability that the interval does not contain $\theta$, e.g., 0.05 for a 95% CI.
 - CIs are not unique; they can be two-sided or one-sided (left or right), depending on the application.
 
-#### Types of Confidence Intervals
+### Types of Confidence Intervals
 
 - **Two-sided CI**: Satisfies $P(\theta < L) = P(\theta > R) = \alpha/2$, balancing the error on both sides.
 - **Left-sided CI**: Takes the form $[-\infty, R(X_1, \ldots, X_n)]$, focusing on an upper bound.
 - **Right-sided CI**: Takes the form $[L(X_1, \ldots, X_n), \infty]$, focusing on a lower bound.
 
-### General Strategy for Constructing Confidence Intervals
+## 4.2 General Strategy for Constructing Confidence Intervals
 
 Constructing a CI involves transforming a sample statistic into an interval estimate with a desired confidence level. The process leverages the distribution of a function of the estimator and the parameter. The steps are:
 
@@ -31,11 +29,11 @@ Constructing a CI involves transforming a sample statistic into an interval esti
 
 This strategy ensures the CI captures the parameter with the specified probability, accounting for sample variability.
 
-### Confidence Interval for the Mean (Known Variance)
+## 4.3 Confidence Interval for the Mean (Known Variance)
 
 When estimating the mean $\mu$ of a normal distribution $\mathcal{N}(\mu, \sigma^2)$ with **known variance** $\sigma^2$, the sample mean $\bar{X}_n$ is a natural estimator. The CI leverages the normal distribution of the standardized variable.
 
-#### Theoretical Foundation
+### Theoretical Foundation
 
 Given a sample $X_1, \ldots, X_n \sim \mathcal{N}(\mu, \sigma^2)$, the sample mean follows:
 
@@ -61,7 +59,8 @@ $$
 \left[\bar{x}_n - 1.96 \frac{\sigma}{\sqrt{n}}, \bar{x}_n + 1.96 \frac{\sigma}{\sqrt{n}}\right]
 $$
 
-#### Example: Mountain Height Estimation
+![[Bachelor 2/Elementaire statistieken/images/Screenshot 2025-06-23 at 14.17.08.png]]
+### Example: Mountain Height Estimation
 
 Suppose 16 measurements of a mountain’s height yield $\bar{x} = 3118.5 \, \text{m}$, with a known standard deviation $\sigma = 2 \, \text{m}$. The 95% CI is:
 
@@ -71,11 +70,11 @@ $$
 
 This interval suggests that, in 95% of repeated samples, the true mean height lies within this range.
 
-### Confidence Interval for Variance
+## 4.4 Confidence Interval for Variance
 
 Estimating the **variance** $\sigma^2$ of a normal distribution $\mathcal{N}(\mu, \sigma^2)$ with unknown $\mu$ and $\sigma$ relies on the sample variance $S^2$. The CI uses the chi-square distribution.
 
-#### Theoretical Foundation
+### Theoretical Foundation
 
 The sample variance is defined as:
 
@@ -107,7 +106,7 @@ $$
 \left[\sqrt{\frac{(n-1) s^2}{\chi_{n-1, 1 - \alpha/2}^2}}, \sqrt{\frac{(n-1) s^2}{\chi_{n-1, \alpha/2}^2}}\right]
 $$
 
-#### Example: Soldier Height Variability
+### Example: Soldier Height Variability
 
 For 16 soldiers, the sample variance of height is $s^2 = 5.76 \, \text{cm}^2$. For a 95% CI ($\alpha = 0.05$) with 15 degrees of freedom:
 
@@ -123,11 +122,11 @@ $$
 
 This interval is asymmetric around $s$, reflecting the chi-square distribution’s skewness.
 
-### Confidence Interval for the Mean (Unknown Variance)
+## 4.5 Confidence Interval for the Mean (Unknown Variance)
 
 When both $\mu$ and $\sigma^2$ are unknown, the CI for the mean uses the **t-distribution**, accounting for the uncertainty in estimating $\sigma$ with $S$.
 
-#### Theoretical Foundation
+### Theoretical Foundation
 
 The standardized variable is:
 
@@ -147,7 +146,7 @@ $$
 \left[\bar{x} - t_{n-1, 1 - \alpha/2} \frac{s}{\sqrt{n}}, \bar{x} + t_{n-1, 1 - \alpha/2} \frac{s}{\sqrt{n}}\right]
 $$
 
-#### Example: Easter Egg Weights
+### Example: Easter Egg Weights
 
 For 12 Easter eggs, the sample mean weight is $\bar{x} = 177.66 \, \text{g}$, with sample standard deviation $s = 4.774 \, \text{g}$. For a 95% CI ($\alpha = 0.05$) with 11 degrees of freedom, $t_{11, 0.975} = 2.201$. The CI for $\mu$ is:
 
@@ -161,11 +160,11 @@ $$
 \left[\sqrt{\frac{11 \times 22.787}{21.92}}, \sqrt{\frac{11 \times 22.787}{3.816}}\right] = [3.38 \, \text{g}, 8.09 \, \text{g}]
 $$
 
-### Confidence Interval for a Proportion
+## 4.6 Confidence Interval for a Proportion
 
 Estimating a population **proportion** $p$ (e.g., success rate) uses the sample proportion $\widehat{P}$. For large samples, the normal approximation applies.
 
-#### Theoretical Foundation
+### Theoretical Foundation
 
 Given a sample $X_1, \ldots, X_n \sim \text{Bernoulli}(p)$, the sample proportion is:
 
@@ -191,7 +190,7 @@ $$
 \left[\hat{p} - z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}, \hat{p} + z_{1 - \alpha/2} \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}\right]
 $$
 
-#### Example: Election Poll
+### Example: Election Poll
 
 In a poll of 200 voters, 110 support candidate A ($\hat{p} = 0.55$). For a 95% CI ($\alpha = 0.05$), $z_{1 - \alpha/2} = 1.96$. The standard error is:
 
@@ -210,8 +209,6 @@ For a 99% CI ($\alpha = 0.01$), $z_{1 - \alpha/2} = 2.576$, yielding:
 $$
 [45.9\%, 64.1\%]
 $$
-
----
 
 ## Key Points to Remember
 
