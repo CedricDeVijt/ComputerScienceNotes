@@ -59,7 +59,8 @@ $$
 \left[\bar{x}_n - 1.96 \frac{\sigma}{\sqrt{n}}, \bar{x}_n + 1.96 \frac{\sigma}{\sqrt{n}}\right]
 $$
 
-![[Bachelor 2/Elementaire statistieken/images/Screenshot 2025-06-23 at 14.17.08.png]]
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250623141708.png]]
+
 ### Example: Mountain Height Estimation
 
 Suppose 16 measurements of a mountain’s height yield $\bar{x} = 3118.5 \, \text{m}$, with a known standard deviation $\sigma = 2 \, \text{m}$. The 95% CI is:
@@ -106,6 +107,8 @@ $$
 \left[\sqrt{\frac{(n-1) s^2}{\chi_{n-1, 1 - \alpha/2}^2}}, \sqrt{\frac{(n-1) s^2}{\chi_{n-1, \alpha/2}^2}}\right]
 $$
 
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250623143624.png]]
+
 ### Example: Soldier Height Variability
 
 For 16 soldiers, the sample variance of height is $s^2 = 5.76 \, \text{cm}^2$. For a 95% CI ($\alpha = 0.05$) with 15 degrees of freedom:
@@ -139,6 +142,8 @@ For a $(1 - \alpha)$ CI, use the critical value $t_{n-1, 1 - \alpha/2}$:
 $$
 P\left(-t_{n-1, 1 - \alpha/2} \leq T \leq t_{n-1, 1 - \alpha/2}\right) = 1 - \alpha
 $$
+
+![[Bachelor 2/Elementaire statistieken/images/Pasted image 20250623145211.png]]
 
 The CI for $\mu$ is:
 
