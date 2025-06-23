@@ -11,9 +11,10 @@ Hypotheses are statements about population parameters that frame a decision prob
 
 #### Types of Hypotheses
 
-- **One-sided test**: $H_1$ specifies a direction (e.g., $\mu > \mu_0$ or $\mu < \mu_0$).
-- **Two-sided test**: $H_1$ indicates a difference without direction (e.g., $\mu \neq \mu_0$).
-- **Practical Note**: The choice of $H_0$ and $H_1$ depends on the research question and the consequences of errors, with $H_0$ often reflecting the more critical assumption to avoid falsely rejecting.
+1. **One-sided test**: $H_1$ specifies a direction (e.g., $\mu > \mu_0$ or $\mu < \mu_0$).
+2. **Two-sided test**: $H_1$ indicates a difference without direction (e.g., $\mu \neq \mu_0$).
+
+**Practical Note**: The choice of $H_0$ and $H_1$ depends on the research question and the consequences of errors, with $H_0$ often reflecting the more critical assumption to avoid falsely rejecting.
 
 ### Steps in Hypothesis Testing
 
