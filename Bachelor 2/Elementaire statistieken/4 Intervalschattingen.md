@@ -217,7 +217,7 @@ $$
 
 ## Key Points to Remember
 
-- **CI Definition → Probability Interpretation**: A $(1 - \alpha)$ CI means that in repeated sampling, 95% of intervals (for $\alpha = 0.05$) contain the true parameter. ★★★★☆
+- **CI Definition → Probability Interpretation**: A $(1 - \alpha)$ CI means that in repeated sampling, 95% of intervals (for $\alpha = 0.05$) contain the true parameter. ★★★★★
 - **Mean (Known Variance) → Normal Distribution**: Use $z_{1 - \alpha/2}$ and $\sigma/\sqrt{n}$ for precise intervals when $\sigma$ is known. ★★★★☆
 - **Variance → Chi-Square Distribution**: The CI for $\sigma^2$ is asymmetric due to the chi-square distribution’s shape. ★★★☆☆
 - **Mean (Unknown Variance) → t-Distribution**: Accounts for $\sigma$ estimation uncertainty, converging to the normal case as $n \to \infty$. ★★★★☆
