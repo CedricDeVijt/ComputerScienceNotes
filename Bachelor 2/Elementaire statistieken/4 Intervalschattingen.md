@@ -215,6 +215,8 @@ $$
 [45.9\%, 64.1\%]
 $$
 
+---
+
 ## Key Points to Remember
 
 - **CI Definition → Probability Interpretation**: A $(1 - \alpha)$ CI means that in repeated sampling, 95% of intervals (for $\alpha = 0.05$) contain the true parameter. ★★★★★
