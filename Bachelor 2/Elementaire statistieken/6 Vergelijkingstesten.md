@@ -1,5 +1,3 @@
-# 6 Comparing Variances: The F-Test
-
 ## 6.1 Introduction to Variance Comparison
 
 The **F-test** is used to compare the variances of two independent samples from normal distributions, determining if their population variances $\sigma_1^2$ and $\sigma_2^2$ are equal. This test is critical before comparing means, as equal variances are often assumed in subsequent tests. The test statistic is based on the ratio of sample variances, following an F-distribution under the null hypothesis.
