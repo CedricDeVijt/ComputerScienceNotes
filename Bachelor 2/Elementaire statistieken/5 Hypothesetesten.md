@@ -1,6 +1,6 @@
 ## 5.1 Introduction to Hypothesis Testing
 
-Hypothesis testing is a statistical method used to make decisions about population parameters based on sample data. It involves formulating two opposing hypotheses—the null hypothesis ($H_0$) and the alternative hypothesis ($H_1$)—and using sample evidence to decide whether to reject $H_0$. This process is critical in fields like science and industry to evaluate claims, such as whether a new product outperforms an existing one or if environmental standards are met. The method accounts for sampling variability, ensuring decisions are statistically robust.
+Hypothesis testing is a statistical method used to make decisions about population parameters based on sample data. It involves formulating two opposing hypotheses, the null hypothesis ($H_0$) and the alternative hypothesis ($H_1$), and using sample evidence to decide whether to reject $H_0$. This process is critical in fields like science and industry to evaluate claims, such as whether a new product outperforms an existing one or if environmental standards are met. The method accounts for sampling variability, ensuring decisions are statistically robust.
 
 ### Formulating Hypotheses
 
@@ -29,8 +29,9 @@ The hypothesis testing process follows four structured steps to ensure a systema
 
 #### Error Types and Their Implications
 
-- **Type-I Error**: Incorrectly rejecting $H_0$ when it is true (probability = $\alpha$).
-- **Type-II Error**: Failing to reject $H_0$ when $H_1$ is true (probability = $\beta$).
+1. **Type-I Error**: Incorrectly rejecting $H_0$ when it is true (probability = $\alpha$).
+2. **Type-II Error**: Failing to reject $H_0$ when $H_1$ is true (probability = $\beta$).
+
 - **Power of the Test**: Defined as $1 - \beta$, it measures the test’s ability to detect a true alternative hypothesis.
 - **Example**: In testing whether a medicine is effective ($H_1$), a Type-I error might lead to investing in an ineffective drug, while a Type-II error might miss a beneficial treatment.
 
