@@ -1,6 +1,4 @@
-# 1 Statistics Formulas - Complete Reference Sheet
-
-## 1.1 Fundamental Probability Concepts
+## 1 Fundamental Probability Concepts
 
 ### Basic Probability Rules
 
@@ -26,7 +24,7 @@
   - $E[X + Y] = E[X] + E[Y]$
   - $\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)$
 
-## 1.2 Probability Distributions
+## 2 Probability Distributions
 
 ### Normal Distribution $N(\mu, \sigma^2)$
 
@@ -60,7 +58,7 @@
 - **$q$-th quantile**: Value $x_q$ such that $P(X \leq x_q) = q$
 - **For standard normal**: $P(Z \leq z_\alpha) = 1 - \alpha$
 
-## 1.3 Sampling Distributions and Central Limit Theorem
+## 3 Sampling Distributions and Central Limit Theorem
 
 ### Sample Statistics
 
@@ -83,7 +81,7 @@
 - **Standardized sample mean**: $Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)$
 - **Standardized sum**: $\frac{S_n - n\mu}{\sigma \sqrt{n}} \approx N(0,1)$
 
-## 1.4 Estimation Theory
+## 4 Estimation Theory
 
 ### Estimator Properties
 
@@ -98,7 +96,7 @@
 - **Sum of squares expectation**: $E\left[\sum_{i=1}^n (X_i - \bar{X})^2\right] = (n-1)\sigma^2$
 - **Chi-squared variance**: $\text{Var}\left(\sum_{i=1}^n (X_i - \bar{X})^2\right) = 2(n-1)\sigma^4$
 
-## 1.5 Confidence Intervals
+## 5 Confidence Intervals
 
 ### For Population Mean
 
@@ -122,7 +120,7 @@
 
 **Upper bound**: $\bar{X} + z_\alpha \cdot \frac{\sigma}{\sqrt{n}}$ or $\bar{X} + t_{\alpha, n-1} \cdot \frac{s}{\sqrt{n}}$
 
-## 1.6 Sample Size Determination
+## 6 Sample Size Determination
 
 ### For Mean Estimation
 
@@ -138,7 +136,7 @@
 
 **Power analysis**: $n = \left( \frac{(z_{\alpha} + z_{\beta}) \sigma}{\mu_1 - \mu_0} \right)^2$
 
-## 1.7 Hypothesis Testing
+## 7 Hypothesis Testing
 
 ### One-Sample Tests
 
@@ -190,7 +188,7 @@ $$Z = \frac{\bar{X} - \bar{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + 
 - **Type II error**: $\beta = P(\text{accept } H_0 \mid H_1 \text{ true})$
 - **Power**: $1 - \beta = P(\text{reject } H_0 \mid H_1 \text{ true})$
 
-## 1.8 Goodness of Fit and Independence Tests
+## 8 Goodness of Fit and Independence Tests
 
 ### Chi-Squared Goodness of Fit
 
@@ -226,7 +224,7 @@ $$Z = \frac{\bar{X} - \bar{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + 
 
 - **P-value (one-sided)**: $p = \sum_{k \geq x_{obs}} \binom{n}{k} p_0^k (1-p_0)^{n-k}$
 
-## 1.9 Correlation and Regression
+## 9 Correlation and Regression
 
 ### Correlation
 
@@ -240,7 +238,7 @@ $$Z = \frac{\bar{X} - \bar{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + 
 - **Intercept**: $a = \bar{y} - b\bar{x}$
 - **Coefficient of determination**: $R^2 = r^2$
 
-## 1.10 Special Formulas and Applications
+## 10 Special Formulas and Applications
 
 ### Distribution-Specific Properties
 
@@ -258,7 +256,7 @@ $$Z = \frac{\bar{X} - \bar{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + 
   $$E[W] = \mu \implies a + b = 1$$
 - **Variance minimization**: Take derivative with respect to parameter, set to zero, solve
 
-## 1.11 Distribution Tables Reference
+## 11 Distribution Tables Reference
 
 ### Critical Values
 
