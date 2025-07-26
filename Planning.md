@@ -3,8 +3,8 @@
 ## Overview
 - **Total Study Days Available:** 33 days (July 26 – August 24, August 27, August 30-31)
 - **Adjusted Study Days:**
-  - AC: 4 days (originally 6, reduced by 2 days for "1 Turing machines")
-  - SE: 3 days (originally 4, reduced by 1 day for "0 Praktisch")
+  - AC: 4 days
+  - SE: 3 days
   - DS: 5 days
   - NA: 4 days
   - ES: 4 days
