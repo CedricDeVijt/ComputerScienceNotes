@@ -1,32 +1,52 @@
 ## You should know the answers to these questions:
 
-### How does Software Engineering differ from programming?
-
-- Software Engineering involves a systematic, disciplined, and quantifiable approach to developing, operating, and maintaining software. Programming is just a subset, focusing on writing code.
-
 ### Why is programming only a small part of the cost of a “real” software project ?
 
-- Significant effort and cost come from requirements gathering, design, testing, maintenance, documentation, and quality assurance.
+- Programming is only a small part because real software projects involve extensive activities like requirements collection, analysis, design, testing, maintenance, and quality assurance. These activities require significant time and resources beyond just writing code.
 
 ### Give a definition for “traceability”.
 
 - Traceability is the ability to relate components of a system back to their originating requirements to predict the impact of changes.
 
-### What is the difference between analysis and design?
-
-- Analysis involves understanding and specifying "what" a system should do. Design focuses on "how" the system will achieve the requirements.
-
 ### Explain verification and validation in simple terms.
 
-- Verification ensures the system is built correctly (meets specifications). Validation ensures the system does what the user needs.
+- **Validation:** Ensures that the requirements specifications match what the customer needs. It answers the question, "Are we building the right product?"
+- **Verification:** Ensures that the product meets the requirements specifications. It answers the question, "Are we building the product right?"
 
 ### Why is the “waterfall” model unrealistic? Why is it still used?
 
-- Unrealistic due to its rigid phases and difficulty accommodating changes. It's used because of its simplicity and visibility for management.
+- **Completeness:** It requires customers to define all requirements upfront, which is often impractical.
+- **Time:** A working version is only available at the end, leading to potential misalignment with customer expectations.
+- **Idealism:** It assumes a linear process, while real projects often require iteration.
+- **Change:** Adapting to changes in requirements is difficult and costly later in the process.
 
 ### Can you explain the difference between iterative development and incremental development?
 
-- Iterative involves refining parts of the system through repetition. Incremental means delivering smaller, functional parts of the system progressively.
+- **Iterative Development:** Involves revisiting and refining parts of the system to improve them, often through cycles of feedback and enhancement.
+- **Incremental Development:** Focuses on delivering the system in small, functional pieces, allowing for early tangible results and a running version at all times.
+
+### List the 6 principles of extreme programming.
+
+1. Fine-scale feedback
+2. continuous process improvement
+3. shared understanding
+4. programmer welfare
+5. coding -> first unit test then code
+6. testing -> all code must have tests, acceptance tests are run often
+
+### What is a “sprint” in the SCRUM process?
+
+- A sprint is a time-boxed period (typically 2 to 4 weeks) during which a potentially shippable product increment is developed. Features are selected from the product backlog, and the sprint is the phase in the SCRUM process where actual programming occurs.
+
+---
+
+### How does Software Engineering differ from programming?
+
+- Software Engineering involves a systematic, disciplined, and quantifiable approach to developing, operating, and maintaining software. Programming is just a subset, focusing on writing code.
+
+### What is the difference between analysis and design?
+
+- Analysis involves understanding and specifying "what" a system should do. Design focuses on "how" the system will achieve the requirements.
 
 ### How do you decide to stop in the spiral model?
 
@@ -40,25 +60,11 @@
 
 - FMEA is a method for identifying potential failures and analyzing their impact on the system.
 
-### List the 6 principles of extreme programming.
-
-1. Fine-scale feedback
-2. continuous process improvement
-3. shared understanding
-4. programmer welfare
-5. coding
-6. testing
-
-### What is a “sprint” in the SCRUM process?
-
-- A sprint is a 2–4 week cycle during which a team develops a potentially shippable product increment.
-
 ### Give the three principal roles in a scrum team. Explain their main responsibilities.
 
 - **Product Owner:** Prioritizes the product backlog.
 - **Scrum Master:** Facilitates the process and removes impediments.
 - **Development Team:** Delivers the product increment.
-
 
 ## You should be able to complete the following tasks
 
