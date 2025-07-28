@@ -1,6 +1,6 @@
 ## You should know the answers to these questions:
 
-### Why is programming only a small part of the cost of a “real” software project ?
+### Why is programming only a small part of the cost of a “real” software project?
 
 - Programming is only a small part because real software projects involve extensive activities like requirements collection, analysis, design, testing, maintenance, and quality assurance. These activities require significant time and resources beyond just writing code.
 
@@ -19,6 +19,7 @@
 - **Time:** A working version is only available at the end, leading to potential misalignment with customer expectations.
 - **Idealism:** It assumes a linear process, while real projects often require iteration.
 - **Change:** Adapting to changes in requirements is difficult and costly later in the process.
+- **Still Used:** Popular because it is visible for upper management, easy to control project progress.
 
 ### Can you explain the difference between iterative development and incremental development?
 
@@ -38,19 +39,18 @@
 
 - A sprint is a time-boxed period (typically 2 to 4 weeks) during which a potentially shippable product increment is developed. Features are selected from the product backlog, and the sprint is the phase in the SCRUM process where actual programming occurs.
 
----
-
 ### How does Software Engineering differ from programming?
 
 - Software Engineering involves a systematic, disciplined, and quantifiable approach to developing, operating, and maintaining software. Programming is just a subset, focusing on writing code.
 
 ### What is the difference between analysis and design?
 
-- Analysis involves understanding and specifying "what" a system should do. Design focuses on "how" the system will achieve the requirements.
+- **Analysis:** Focuses on understanding and specifying what the system should do (the requirements) ("What").
+- **Design:** Focuses on how the system will achieve those requirements, detailing the architecture and components ("How").
 
 ### How do you decide to stop in the spiral model?
 
-- You stop when all major risks have been resolved, and the project goals are met satisfactorily.
+- You stop spiraling when you've met the project's goals, minimized remaining risks, and it is no longer cost-effective to iterate further.
 
 ### How do you identify risk? How do you asses a risk? Which risks require action?
 
@@ -58,7 +58,7 @@
 
 ### What is Failure Mode and Effects Analysis (FMEA)?
 
-- FMEA is a method for identifying potential failures and analyzing their impact on the system.
+- FMEA is a systematic method for identifying potential failures in a process, product, or system, and analyzing their causes and effects to prioritize and prevent them.
 
 ### Give the three principal roles in a scrum team. Explain their main responsibilities.
 
@@ -66,15 +66,7 @@
 - **Scrum Master:** Facilitates the process and removes impediments.
 - **Development Team:** Delivers the product increment.
 
-## You should be able to complete the following tasks
-
-### Draw a UML class diagram modelling marriages in cultures with monogamy (1 wife marries 1 husband), polygamy (persons can be married with more than one other person), polyandry (1 woman can be married to more than one man) and polygyny (1 man can be married to more than one woman).
-
-...
-
-### Draw a UML diagram that represents an object “o” which creates an account (balance initially zero), deposits 100$ and then checks whether the balance is correct.
-
-...
+---
 
 ## Can you answer the following questions?
 
