@@ -17,9 +17,9 @@ A requirements specification must be:
 
 ### Can you give 3 criteria to evaluate a system scope description? Why do you select these 3?
 
-1.  **Clarity**: Ensures stakeholders understand system goals and boundaries.
-2.  **Goal-Oriented**: Ensures focus on achieving specific, valuable objectives.
-3.  **Inclusion of Quality Criteria**: Provides measurable benchmarks for success.
+1. **Clarity and Conciseness** – The scope should be short and clearly written to avoid misunderstandings and keep everyone aligned.
+2. **Defined System Boundaries** – It must state what is inside and outside the system to prevent scope creep.
+3. **Stakeholder Commitment** – End-users should be involved and approve the scope to ensure it reflects real needs.
 
 ### Why should there be at least one actor who benefits from a use case?
 
@@ -37,7 +37,7 @@ At least one actor must benefit to justify the use case’s inclusion in the sys
 
 1.  What functions does each actor require from the system?
 2.  What triggers events in the system?
-3.  How does the system respond to external events?.
+3.  How does the system respond to external events?
 
 ### What’s the difference between a primary scenario and a secondary scenario?
 
@@ -70,7 +70,7 @@ Technical stories address non-functional requirements (e.g., performance, securi
 
 ### What is a minimum viable product?
 
-An MVP is the smallest version of a product that provides value to users while allowing feedback for iterative development.
+A minimum viable product (MVP) is the simplest version of a product that can be released to users to gather feedback and validate assumptions. It contains just enough features to satisfy early adopters and inform future development. It is a milestone for startups to test market viability with minimal resources.
 
 ### Define a misuse case.
 
@@ -80,11 +80,7 @@ A misuse case describes a negative scenario or hostile intent against the system
 
 A safety story specifies measures to prevent hazards or reduce their impact. It uses structured templates like EARS (Event-Driven, State-Driven, etc.).
 
-## You should be able to complete the following tasks
-
-### Write a requirements specification for your bachelor capstone project.
-
-...
+---
 
 ## Can you answer the following questions?
 
