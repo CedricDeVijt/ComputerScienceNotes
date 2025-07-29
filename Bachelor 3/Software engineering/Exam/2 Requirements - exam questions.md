@@ -2,11 +2,11 @@
 
 ### Why should the requirements specification be understandable, precise and open?
 
-A requirements specification must:
+A requirements specification must be:
 
-- **Be understandable** so stakeholders can agree on what is in and out of scope.
-- **Be precise** so all parties can confirm agreement on inclusions/exclusions and test each requirement.
-- **Be open** so developers have freedom to design optimal solutions by focusing on the "what" rather than the "how".
+- **Understandable** so stakeholders can agree on what is in and out of scope.
+- **Precise** so all parties can confirm agreement on inclusions/exclusions and test each requirement.
+- **Open** so developers have freedom to design optimal solutions by focusing on the "what" rather than the "how".
 
 ### What’s the relationship between a use case and a scenario?
 
