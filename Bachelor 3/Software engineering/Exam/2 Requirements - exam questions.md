@@ -70,7 +70,7 @@ Technical stories address non-functional requirements (e.g., performance, securi
 
 ### What is a minimum viable product?
 
-A minimum viable product (MVP) is the simplest version of a product that can be released to users to gather feedback and validate assumptions. It contains just enough features to satisfy early adopters and inform future development. It is a milestone for startups to test market viability with minimal resources.
+A minimum viable product (MVP) is the simplest version of a product that can be released to users to gather feedback and validate assumptions. It is a milestone for startups to test market viability with minimal resources.
 
 ### Define a misuse case.
 
