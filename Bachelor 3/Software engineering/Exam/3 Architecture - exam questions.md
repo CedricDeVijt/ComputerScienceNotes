@@ -6,19 +6,23 @@ Software architecture provides a description of the system’s structure, includ
 
 ### What is a component? And what’s a connector?
 
-- **Component:** An encapsulated part of a software system with a designated interface, such as a class, module, or subsystem.
+- **Component:** An encapsulated part of a software system with a designated interface, such as a class, module, or subsystem. Components may be represented as modules (packages), classes, objects or a set of related functions.
 - **Connector:** A connection or relationship between components. They can be static (e.g., imports, dependencies) or dynamic (e.g., method calls or data streams).
 
 ### What is coupling? What is cohesion? What should a good design do with them?
 
-- **Coupling:** The measure of the strength of the connection between components.
-- **Cohesion:** The degree to which elements within a component work together to fulfill a specific function.
-- **Good Design:** Minimize coupling while maximizing cohesion to reduce dependencies and enhance modularity.
+- **Coupling:** Coupling refers to the degree of interdependence between components. Low coupling means components are less dependent on each other, making the system more modular and easier to maintain.
+- **Cohesion:** Cohesion refers to how closely related and focused the responsibilities of a single component are. High cohesion means that a component has a well-defined purpose and its parts work together effectively.
+- **Good Design:** A good design aims to minimize coupling and maximize cohesion. This leads to a modular architecture where components can be developed, tested, and maintained independently, enhancing system flexibility and robustness.
 
 ### What is a pattern? Why is it useful for describing architecture?
 
 - **Pattern:** The essence of a solution to a recurring problem in a specific context.
-- **Usefulness:** Patterns document established solutions, provide a shared vocabulary for design discussions, and help manage tradeoffs in architectural decisions.
+- **Usefulness:**
+  1. Experts can recall similar solved problems and customize the solution, leveraging existing knowledge.
+  2. Patterns document existing experience, providing a shared vocabulary and understanding of design solutions.
+  3. The context of a pattern states when and when not to apply the solution, guiding appropriate usage.
+  4. A pattern lists the trade-offs involved in applying the solution, helping architects make informed decisions.
 
 ### Can you name the components in a 3-tiered architecture? And what about the connectors?
 
@@ -62,8 +66,8 @@ By running a **spike**, which includes prototyping both alternatives and conduct
 
 ### Define a sensitivity point and a tradeoff point from the ATAM terminology.
 
-- **Sensitivity Point:** A property critical to achieving a quality attribute, e.g., performance depending on encryption levels.
-- **Tradeoff Point:** A situation where conflicting sensitivity points exist, e.g., balancing security (encryption) with real-time performance.
+- **Sensitivity Point:** A sensitivity point is a property of one or more components (and/ or component relationships) that is critical for achieving a particular quality attribute response.
+- **Tradeoff Point:** A trade-off point involves two (or more) conflicting sensitivity points.
 
 ## You should be able to complete the following tasks
 
@@ -74,6 +78,8 @@ By running a **spike**, which includes prototyping both alternatives and conduct
   - **Connectors:** Attach, detach, and notify methods.
   - **Coupling and Cohesion:** Low coupling between subject and observers; cohesion within the subject or observer.
   - **Tradeoffs:** Increased complexity due to notifications; excessive updates if not carefully implemented.
+
+---
 
 ## Can you answer the following questions?
 
