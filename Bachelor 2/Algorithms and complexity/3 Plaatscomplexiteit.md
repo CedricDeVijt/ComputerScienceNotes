@@ -113,5 +113,5 @@
   - $LOGSPACE \subseteq NLOGSPACE \subseteq PTIME$.
 - **Reductions:** LOGSPACE reductions are critical for defining completeness in logarithmic space classes.
 - **Key Problems:**
-  - **3SAT \in DSPACE(n)** (linear space).
-  - **PATH \in NLOGSPACE** (logarithmic space).
+  - **3SAT $\in$ DSPACE(n)** (linear space).
+  - **PATH $\in$ NLOGSPACE** (logarithmic space).
