@@ -6,7 +6,7 @@
 2.  **Organization**: Defining who is responsible for what.
 3.  **Staffing**: Recruiting and motivating team members.
 4.  **Directing**: Ensuring the team works cohesively towards project goals.
-5.  **Monitoring (Controlling)**: Detecting deviations and taking corrective actions.
+5.  **Monitoring**: Detecting deviations and taking corrective actions.
 
 ### What is a milestone? What can you use them for?
 
@@ -21,6 +21,7 @@
 - **Importance**:
   - Identifies tasks critical to on-time delivery.
   - Guides prioritization of resources and effort to avoid delays.
+  - Helps in monitoring tasks on the critical path to ensure timely completion.
 
 ### What can you do to recover from delays on the critical path?
 
@@ -38,9 +39,9 @@
 
 ### What is a “Known kown”, and “Unknown known” and an “Unknown Unknown”?
 
-- **Known knowns**: Things you know and can plan for.
-- **Known unknowns**: Things you know you don’t know, requiring contingency plans.
-- **Unknown unknowns**: Things you don’t know that you don’t know; best addressed by thorough risk analysis and flexibility.
+- **Known knowns**: The things you know you know, you can safely make assumptions here.
+- **Known unknowns**: The things you know, you don’t know. You can prepare for these during planning.
+- **Unknown unknowns**: The things ou do not know, you don’t know. These you cannot prepare for during planning. The best you can do is being aware and spot opportunities and do a thorough risk analysis.
 
 ### How do you use PERT to calculate the risk of delays to a project?
 
@@ -53,10 +54,8 @@
 
 ### Why does replacing a person imply a negative productivity?
 
-- Transition periods involve:
-  - Reduced output from outgoing staff (e.g., documentation).
-  - Extra time for the new member to integrate.
-  - Disruptions to colleagues during onboarding.
+- First, the person that is leaving will have to do additional work ta hand over to the successor. Moreover, this person is typically less motivated, must take remaing holidays.
+- Second, the replacement will have many questions in the beginning regarding the working of the system. These questions are often asked to co-workers, the newcomer bothers their colleagues.
 
 ### What’s the difference between the 0/100; the 50/50 and the milestone technique for calculating the earned value?
 
@@ -79,6 +78,8 @@
 3.  **Chapter**: Specialists within a tribe sharing expertise (e.g., frontend developers).
 4.  **Guild**: Interest groups across multiple tribes (e.g., DevOps enthusiasts).
 
+---
+
 ## You should be able to complete the following tasks
 
 ### draw a PERT Chart, incl. calculating the critical path and the risk of delays
@@ -92,6 +93,8 @@
 ### draw a slip line and a timeline
 
 ...
+
+---
 
 ## Can you answer the following questions?
 
