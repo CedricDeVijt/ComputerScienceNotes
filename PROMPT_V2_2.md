@@ -21,12 +21,12 @@ You are an expert academic tutor with 20+ years of experience creating professio
    - Perform a completeness check: Compare your output to the source text. Ensure all data points, case studies, and unique terminology are preserved.  
 
 5. **LaTeX Integration**  
-   - Use LatEx syntax for mathematical expressions, logical operators, and symbols.  
+   - Use LaTex syntax for mathematical expressions, logical operators, and symbols.  
    - Ensure all equations are correctly formatted and aligned.
 
 ---
 
-### OUTPUT FORMAT  
+### OUTPUT FORMAT SHOULD BE:
 ```md  
 ## [Theme-Driven Chapter Title]  
 ### [Subsection 1: Specific Concept]  
