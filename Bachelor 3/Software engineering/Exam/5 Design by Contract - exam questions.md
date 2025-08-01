@@ -1,13 +1,29 @@
 ## You should know the answers to these questions
 
+### What is behavioral subtyping?
+
+- Interpetation of the Liskov Substitution Principle, where a subtype can be used in place of its supertype without affecting the program's correctness.
+- If S is a subtype of T, then objects of type T may be replaced with objects of type S (i.e., objects of type S may substitute objects of type T) without altering any of the desirable properties of that program (correctness, task performed, etc.).
+- For example, if `Rectangle` is a subtype of `Shape`, then any operation that works on `Shape` should also work correctly when given a `Rectangle`.
+
+### What’s the Liskov substitution principle? Why is it important in OO development?
+
+- **Definition**: If S is a subtype of T, then objects of type T may be replaced with objects of type S (i.e., objects of type S may substitute objects of type T) without altering any of the desirable properties of that program (correctness, task performed, etc.). Each instance of a superclass may be replacing by instances of a superclass without altering the correct behaviour.
+- **Importance in OO**: It defines the rules for inheritance and therefore subcontracts, precondition must be weaker or equal and postcondition stronger
+
+### If a subclass overrides an operation, what is it allowed to do with the pre- and postcondition? And what about the class invariant?
+
+- **Precondition**: The subclass can weaken or maintain the precondition but cannot strengthen it. This ensures compatibility with clients using the superclass.
+- **Postcondition**: The subclass must maintain or strengthen the postcondition.
+- **Class Invariant**: The subclass must maintain the class invariant.
+
 ### What is the distinction between Testing and Design by Contract? Why are they complementary techniques?
 
 - **Testing** diagnoses and cures defects after they occur. It verifies the software by checking if it meets the expected behavior through test cases.
 - **Design by Contract (DbC)** prevents specific types of defects by explicitly defining preconditions, postconditions, and invariants as contracts between components.
 - They are complementary because:
-  - **Testing** detects a wide range of coding mistakes.
-  - **DbC** prevents mistakes due to incorrect assumptions between provider and client.
-  - Together, they enhance **traceability** by linking code and requirements and ensuring higher reliability.
+  - **Testing** used to verify whether parties satisfy their pre- & postconditions (design by contract).
+  - **DbC** can be used in Equivalence Partitioning & Boundary Value Analysis (Black box testing) to determine classes of input data & prediction of corresponding output.
 
 ### What’s the weakest possible condition in logic terms? And the strongest?
 
@@ -20,12 +36,6 @@
 - **Postcondition**: Weak postconditions are preferable as they allow more flexibility in the implementation.
 - **Class Invariant**: Must remain strong to ensure the consistency of the class across all operations.
 
-### If a subclass overrides an operation, what is it allowed to do with the pre- and postcondition? And what about the class invariant?
-
-- **Precondition**: The subclass can weaken or maintain the precondition but cannot strengthen it. This ensures compatibility with clients using the superclass.
-- **Postcondition**: The subclass must maintain or strengthen the postcondition.
-- **Class Invariant**: The subclass must maintain the class invariant.
-
 ### Compare Testing and Design by contract using the criteria “Correctness” and “Traceability”.
 
 - **Correctness**:
@@ -34,15 +44,6 @@
 - **Traceability**:
   - **Testing** maps requirements to test cases and observed behavior.
   - **DbC** embeds requirements in the source code via contracts, enabling direct traceability.
-
-### What’s the Liskov substitution principle? Why is it important in OO development?
-
-- **Definition**: Subtypes must be substitutable for their supertypes without altering the correctness of the program.
-- **Importance**: It ensures polymorphism and behavioral consistency, making systems more robust and reusable.
-
-### What is behavioral subtyping?
-
-- Behavioral subtyping requires that a subclass satisfies all the behavioral contracts of its superclass. This includes respecting preconditions, postconditions, and invariants, ensuring that the subclass does not violate the expectations set by the superclass.
 
 ### When is a pre-condition reasonable?
 
