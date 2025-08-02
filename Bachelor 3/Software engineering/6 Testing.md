@@ -1,8 +1,6 @@
-# Software Testing: Principles, Techniques, and Strategies
-
 This chapter provides a comprehensive overview of software testing, emphasizing its role as a risk reduction activity to ensure system reliability. It covers the timing, purpose, and execution of testing, along with key terminology, techniques, and strategies. The content is structured to clarify the distinction between verification and validation, explore white-box and black-box testing methods, and address practical considerations like when to stop testing. By linking testing to risk management and quality assurance, this chapter equips learners with a holistic understanding of testing in software development.
 
-## When to Test: Aligning Testing with Development Processes
+## 6.1 When to Test: Aligning Testing with Development Processes
 
 Testing should commence as early as possible to mitigate risks and ensure alignment with project schedules. The **Unified Process** and **V-Model** provide frameworks for integrating testing throughout the development lifecycle. Early testing reduces the cost of fixing defects and builds confidence in the system’s reliability.
 
@@ -22,7 +20,7 @@ The V-Model aligns testing with development phases, advocating for test preparat
 
 ![[Pasted image 20241023110234.png]]
 
-## Why Test: Risk Management and Confidence Building
+## 6.2 Why Test: Risk Management and Confidence Building
 
 Testing is a **risk management** activity that demonstrates the presence of defects but cannot prove their absence (E.W. Dijkstra). It increases confidence in the system by reducing the likelihood of harmful defects.
 
@@ -40,7 +38,7 @@ The more rigorous the testing, the greater the assurance that the system will pe
 - **Example**: A banking application tested extensively for transaction errors inspires trust.
 - **Link to Later Sections**: This confidence ties to coverage metrics like MC/DC in safety-critical systems.
 
-## What is Testing: Verification vs. Validation
+## 6.3 What is Testing: Verification vs. Validation
 
 Testing verifies that a system meets its **specifications** (building the product right) but does not validate whether it meets user needs (building the right product). It involves executing a program to identify **defects**.
 
@@ -58,7 +56,7 @@ Software testing, per Myers (1979), is the process of executing a system to find
 - **Technique Example**: Basis path testing ensures all code paths are executed.
 - **Strategy Example**: Regression testing ensures changes don’t introduce new defects.
 
-## Who Should Test: Roles and Responsibilities
+## 6.4 Who Should Test: Roles and Responsibilities
 
 Testing is a **destructive activity** (trying to make systems fail), contrasting with the **constructive nature** of programming. Different roles ensure objectivity and thoroughness.
 
@@ -76,7 +74,7 @@ Testing is part of **quality assurance**, ensuring defects are identified and ad
 - **Unit Testing**: Done by developers to verify individual components.
 - **System Testing**: Conducted by testers to validate subsystem interactions.
 
-## What is Correct: Defining System Behavior
+## 6.5 What is Correct: Defining System Behavior
 
 A system is **correct** if it behaves according to its **specification**, though correctness is theoretically undecidable. Practical measures focus on reliability and robustness.
 
@@ -94,7 +92,7 @@ Users rely on systems to operate as expected, with testing reducing the probabil
 - **Link to Coverage**: Metrics like code coverage quantify how much of the specification is tested.
 - **Source Reference**: [Ghez02] highlights representative qualities of correctness.
 
-## Terminology: Precision in Testing Language
+## 6.6 Terminology: Precision in Testing Language
 
 Precise terminology distinguishes between **defect**, **failure**, and **error**, avoiding ambiguous terms like “bug.” The IEEE Glossary and ISTQB standards provide clarity.
 
@@ -121,13 +119,13 @@ The workflow categorizes issues as **errors**, **defects**, **usability issues**
 - **Test Driver**: Code executing test cases.
 - **Test Fixture**: A fixed state for consistent testing.
 
-## White-Box Testing: Internal Structure Focus
+## 6.7 White-Box Testing: Internal Structure Focus
 
 **White-box testing** leverages knowledge of a system’s internal structure to design test cases. It includes techniques like **basis path testing**, **condition testing**, and **loop testing**.
 
 ### Basis Path Testing
 
-Basis path testing uses a **control flow graph** to identify independent execution paths, measured by **cyclomatic complexity** \($(V(G) = E - N + 2$\), where ($E$) is edges and ($N$) is nodes).
+Basis path testing uses a **control flow graph** to identify independent execution paths, measured by **cyclomatic complexity** $$(V(G) = E - N + 2$$, where ($E$) is edges and ($N$) is nodes).
 
 - **Steps**:
   1. Draw the control flow graph.
@@ -142,8 +140,8 @@ Condition testing ensures all **true/false combinations** of conditions are test
 - **Types**:
   - **Condition Coverage**: Each condition’s true/false outcomes.
   - **Multiple Condition Coverage**: All combinations of conditions.
-  - **Domain Testing**: Tests boundary conditions (e.g., \( a < b \), \( a \leq b \)).
-- **Example**: For \( (x > y) \&\& (x > z) \), test all combinations of \( x \), \( y \), and \( z \).
+  - **Domain Testing**: Tests boundary conditions (e.g., $a < b$, $a \leq b$).
+- **Example**: For $(x > y) \&\& (x > z)$, test all combinations of $x$, $y$, and $z$.
 
 ### Loop Testing
 
@@ -159,7 +157,7 @@ White-box testing is less effective in **object-oriented systems** due to comple
 - **Challenge**: Internal structure is obscured by encapsulation.
 - **Solution**: Focus on behavioral testing using black-box techniques.
 
-## Coverage Metrics: Measuring Test Effectiveness
+## 6.8 Coverage Metrics: Measuring Test Effectiveness
 
 **Coverage** quantifies how thoroughly a test suite exercises a system, including **code coverage**, **MC/DC coverage**, and **mutation coverage**.
 
@@ -178,16 +176,16 @@ MC/DC, required for safety-critical systems (e.g., DO-178C, ISO 26262), ensures 
   - Each entry/exit point is invoked.
   - Each decision and condition takes all outcomes.
   - Each condition independently influences the decision.
-- **Example**: For \( A \&\& B \), test cases show \( A \) and \( B \) independently affecting the result.
+- **Example**: For $A \&\& B$, test cases show $A$ and $B$ independently affecting the result.
 
 ### Mutation Coverage
 
 Mutation testing injects faults (mutants) into code to assess test suite strength. A test “kills” a mutant if it detects the fault.
 
-- **Process**: Modify code (e.g., change \( i \geq 0 \) to \( i > 0 \)) and run tests.
+- **Process**: Modify code (e.g., change $i \geq 0$ to $i > 0$) and run tests.
 - **Example**: Adding a boundary test for `findLast` kills a mutant altering the loop condition.
 
-## Black-Box Testing: Specification-Based Testing
+## 6.9 Black-Box Testing: Specification-Based Testing
 
 **Black-box testing** treats the system as a “black box,” deriving test cases from its **external specification** without knowledge of internal structure.
 
@@ -200,7 +198,7 @@ Mutation testing injects faults (mutants) into code to assess test suite strengt
   2. Divide into valid and invalid equivalence classes.
   3. Select test data, prioritizing boundaries.
   4. Predict outputs for test cases.
-- **Example**: For an input range \( 1 \leq x \leq 100 \), test \( x = 1 \), \( x = 100 \), \( x = 0 \), and \( x = 101 \).
+- **Example**: For an input range $1 \leq x \leq 100$, test $x = 1$, $x = 100$, $x = 0$, and $x = 101$.
 
 ### Fuzz Testing
 
@@ -209,7 +207,7 @@ Mutation testing injects faults (mutants) into code to assess test suite strengt
 - **Application**: Commonly used for REST APIs or user interfaces.
 - **Example**: Sending malformed JSON to a REST endpoint to test error handling.
 
-## Testing Levels: From Units to Systems
+## 6.10 Testing Levels: From Units to Systems
 
 Testing occurs at multiple levels, each addressing different system aspects: **unit**, **integration**, **regression**, and **acceptance testing**.
 
@@ -241,7 +239,7 @@ Acceptance testing, conducted by end-users, verifies requirements implementation
 - **Purpose**: Balances verification and validation.
 - **Example**: Beta testing a mobile app with select customers.
 
-## Additional Testing Strategies
+## 6.11 Additional Testing Strategies
 
 Beyond core testing levels, specialized strategies address specific system attributes.
 
@@ -263,7 +261,7 @@ Compares outputs of two system versions to ensure consistency.
 
 - **Use Case**: Validating a new implementation against a legacy system.
 
-## When to Stop Testing: Balancing Risk and Resources
+## 6.12 When to Stop Testing: Balancing Risk and Resources
 
 Deciding when to stop testing involves balancing risk, time, and budget constraints. **Statistical testing** measures failure rates against acceptable thresholds.
 
@@ -280,7 +278,7 @@ Tests save time by catching defects early, despite initial investment.
 - **Link to Regression Testing**: Automated tests reduce long-term maintenance costs.
 - **Pitfall**: Pressure to skip testing can lead to costly failures.
 
-## Tool Support: Enhancing Testing Efficiency
+## 6.13 Tool Support: Enhancing Testing Efficiency
 
 Tools like **test harnesses**, **code coverage tools**, **mutation testing tools**, and **capture-playback tools** streamline testing processes.
 
@@ -304,7 +302,7 @@ Record and replay UI actions to verify consistent behavior.
 
 - **Use Case**: Testing web application workflows.
 
-## Agile Testing and DevOps
+## 6.14 Agile Testing and DevOps
 
 **Agile testing** integrates testing into iterative development, often using **FIT tables** for acceptance tests. **DevOps** emphasizes continuous testing in deployment pipelines.
 
@@ -315,19 +313,21 @@ Record and replay UI actions to verify consistent behavior.
 
 ![[Pasted image 20241125092202.png]]
 
-## Test Coverage: Beyond Code
+## 6.15 Test Coverage: Beyond Code
 
 **Test coverage** includes **code coverage** (lines, statements, MC/DC), **requirement coverage** (e.g., FIT tables), and **test plan coverage** (executed test cases).
 
 - **Distinction**: Code coverage measures code execution, while test coverage tracks test case completion.
 - **Example**: A test plan with 90% executed test cases may have 80% code coverage.
 
-## Conclusion: Correctness, Traceability, and Quality
+## 6.16 Conclusion: Correctness, Traceability, and Quality
 
 Testing ensures **correctness** (adherence to specifications), **traceability** (linking tests to requirements), and **quality** (reducing risks). It requires a strategic blend of techniques and tools tailored to project needs.
 
 - **Traceability**: Ensures all requirements are tested.
 - **Quality**: Balances reliability and robustness for user trust.
+
+---
 
 ## Key Points to Remember
 
