@@ -1,8 +1,21 @@
 ## You should know the answers to these questions
 
+### Give the mathematical definition for the weakest precondition of Hoare triple {P} S {Q}.
+
+$$ \text{wp}(S, Q) = \{ P \mid \forall P' : \{ P' \} S \{ Q \} \Rightarrow P' \Rightarrow P \} $$
+
 ### Why is an UML class diagram a semi-formal specification?
 
-A UML class diagram is a semi-formal specification because it uses a precise syntax for structure and relationships but lacks strict formal semantics, leaving room for interpretation.
+- **Semantics contain ambiguities**: UML class diagrams have a well-defined syntax, but contain ambiguities in semantics, leading to multiple interpretations.
+  - Example ambiguities:
+    - The `#` symbol indicates a protected member, but the exact access control semantics may differ across implementations.
+    - The protocol of a class definition does not need to be complete, meaning there can be methods and attributes that are not represented in the UML diagram.
+
+### What does it mean for a statechart to be (a) consistent, (b) complete, and (c) unambiguous?
+
+- **Consistent**: Every state is reachable from the initial state, and all final states are reachable from every other state.
+- **Complete**: Every possible event-state pair has a defined transition.
+- **Unambiguous**: No event or guard expression appears more than once leaving the same state.
 
 ### What is an automated theorem prover?
 
@@ -12,10 +25,6 @@ An automated theorem prover is a tool that uses formal logic to verify that spec
 
 - **Partially Correct**: If the precondition holds and the function terminates, the postcondition is true.
 - **Totally Correct**: The function is guaranteed to terminate, and when it does, the postcondition is true, assuming the precondition holds.
-
-### Give the mathematical definition for the weakest precondition of Hoare triple {P} S {Q}.
-
-The weakest precondition $wp(S, Q)$ for a statement $S$ and postcondition $Q$ is defined as the least restrictive condition $P$ such that, if $P$ holds before $S$, then $Q$ will hold after $S$.
 
 ### Why is it necessary to complement sequence diagrams with statecharts?
 
@@ -27,15 +36,11 @@ Sequence diagrams depict specific scenarios or message exchanges, while statecha
 - **Termination State**: Represented by a filled circle with an enclosing circle.
 - **Guard Expression**: Written in square brackets `[]` adjacent to the transition.
 
-### What does it mean for a statechart to be (a) consistent, (b) complete, and (c) unambiguous?
-
-- **Consistent**: Every state is reachable from the initial state, and all final states are reachable from every other state.
-- **Complete**: Every possible event-state pair has a defined transition.
-- **Unambiguous**: No event or guard expression appears more than once leaving the same state.
-
 ### How does a formal specification contribute to the correctness of a given system?
 
 Formal specifications allow mathematical proof of system properties, ensuring correctness and aiding in traceability from requirements to implementation. They also facilitate comprehensive test case generation.
+
+---
 
 ## You should be able to complete the following tasks
 
