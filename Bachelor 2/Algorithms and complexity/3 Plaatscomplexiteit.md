@@ -85,7 +85,7 @@ PSPACE-complete problems characterize the hardest problems in PSPACE, requiring 
 
 #### TQBF: True Quantified Boolean Formulas
 
-- **Definition**: TQBF = $\{ \phi \mid \phi \text{ is a fully quantified Boolean formula that is true} \}$.
+- **Definition**: TQBF = $\{ \langle\phi\rangle \mid \phi \text{ is a fully quantified Boolean formula that is true} \}$.
 - **Algorithm**: A TM $M$ evaluates $\phi = Q_1 x_1 Q_2 x_2 \ldots Q_k x_k \varphi$ recursively, using $O(k)$ space by reusing memory for each variable assignment.
 - Example: For $\forall y \exists x (x \vee y) \wedge (\neg x \vee \neg y)$, $M$ checks all combinations, accepting if there exists an $x$ for every $y$, using linear space.
 - **PSPACE-Hardness**: Any PSPACE language can be reduced to TQBF by encoding TM configurations as quantified variables, mirroring the Cook-Levin theorem for NP.
