@@ -72,10 +72,10 @@ The **weakest precondition** for a Hoare triple `{P} S {Q}` is the least restric
 
 ### Example: Weakest Precondition Calculation
 
-- **Hoare Triple**: $\{x = 5\} x := x \* 2 \{x = 10\}$
+- **Hoare Triple**: $\{x = 5\} x := x * 2 \{x = 10\}$
 - **Calculation**: Substitute $x _ 2$ for $x$ in the postcondition:
   $$
-  [x _ 2 / x] (x = 10) = (x \* 2 = 10) \implies x = 5
+  [x _ 2 / x] (x = 10) = (x * 2 = 10) \implies x = 5
   $$
 - **Result**: The weakest precondition is $x = 5$, ensuring $x = 10$ after execution.
 
