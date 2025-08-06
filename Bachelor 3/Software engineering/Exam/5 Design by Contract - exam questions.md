@@ -2,8 +2,7 @@
 
 ### What is behavioral subtyping?
 
-- Interpetation of the Liskov Substitution Principle, where a subtype can be used in place of its supertype without affecting the program's correctness.
-- If S is a subtype of T, then objects of type T may be replaced with objects of type S (i.e., objects of type S may substitute objects of type T) without altering any of the desirable properties of that program (correctness, task performed, etc.).
+- Behavioral subtyping is a principle in object-oriented programming where a subclass adheres to the behavior expected by its superclass, ensuring that it can be used interchangeably without breaking the program's correctness. It extends the Liskov Substitution Principle by requiring subclasses to preserve the semantic guarantees (preconditions, postconditions, and invariants) of the superclass.
 - For example, if `Rectangle` is a subtype of `Shape`, then any operation that works on `Shape` should also work correctly when given a `Rectangle`.
 
 ### What’s the Liskov substitution principle? Why is it important in OO development?
@@ -56,31 +55,31 @@
 
 ### What would be the pre- and post-conditions for the methods top and isEmpty in the Stack specification? How would I extend the contract if I added a method size to the Stack interface?
 
-- **`top`**:
+- `top`:
   - Precondition: The stack is not empty (`!isEmpty()`).
   - Postcondition: Returns the last element pushed onto the stack without removing it.
-- **`isEmpty`**:
+- `isEmpty`:
   - Precondition: None (always callable).
   - Postcondition: Returns `true` if the stack has no elements, otherwise `false`.
-- **Extension for `size`:**
+- Extension for `size`:
   - Precondition: None (always callable).
   - Postcondition: Returns the current number of elements in the stack.
 
 ### Apply design by contract on a class Rectangle, with operations move() and resize().
 
-- **Class Invariant**: `width > 0 && height > 0`.
-- **`move(dx, dy)`**:
+- Class Invariant: `width > 0 && height > 0`.
+- `move(dx, dy)`:
   - Precondition: None.
   - Postcondition: The rectangle's position is updated by `(dx, dy)`.
-- **`resize(dw, dh)`**:
+- `resize(dw, dh)`:
   - Precondition: `width + dw > 0 && height + dh > 0`.
   - Postcondition: The dimensions are updated to `width + dw` and `height + dh`.
 
 ### Write consumer-driven contracts for a given REST-API .
 
 - Define a contract for each endpoint describing:
-  - **Consumer requests** (method, path, headers, body).
-  - **Provider responses** (status codes, headers, body structure).
+  - Consumer requests (method, path, headers, body).
+  - Provider responses (status codes, headers, body structure).
 - Example for `GET /users/{id}`:
   - Consumer expectation: Returns user details for a valid ID.
   - Provider obligation: Responds with `200 OK` and JSON data or `404 Not Found`.
@@ -96,72 +95,72 @@
 
 ### You’re a project manager for a weather forecasting system, where performance is a real issue. Set-up some guidelines concerning assertion monitoring and argue your choice.
 
-1. **Enable Assertions During Development**:
+1. Enable Assertions During Development:
    - Assertions can catch violations of preconditions, postconditions, and invariants early.
    - Ensure that the system behaves correctly during development and testing phases.
-2. **Disable Assertions in Production**:
+2. Disable Assertions in Production:
    - To avoid performance overhead in critical real-time operations, turn off assertions in production builds.
-3. **Profile the System**:
+3. Profile the System:
    - Use performance profiling to identify bottlenecks caused by assertion checks.
-4. **Monitor Critical Preconditions**:
+4. Monitor Critical Preconditions:
    - Maintain lightweight, essential precondition checks in performance-critical components, ensuring these checks are fast and minimal.
-5. **Adopt Conditional Compilation**:
+5. Adopt Conditional Compilation:
    - Use compile-time or runtime configurations to include or exclude assertions based on the environment.
 
-**Argument**: These guidelines strike a balance between maintaining correctness during development and achieving high performance during production.
+Argument: These guidelines strike a balance between maintaining correctness during development and achieving high performance during production.
 
 ### If you have to buy a class from an outsourcer in India, would you prefer a strong precondition over a weak one? And what about the postcondition?
 
-- **Precondition**: A **strong precondition** is preferable, as it clearly defines the supplier's expectations and limits the scenarios they must handle. This clarity makes it easier to verify the correctness of the outsourced class.
-- **Postcondition**: A **strong postcondition** is preferred because it guarantees a more predictable and detailed outcome from the class, reducing ambiguity and potential integration issues.
+- Precondition: A strong precondition is preferable, as it clearly defines the supplier's expectations and limits the scenarios they must handle. This clarity makes it easier to verify the correctness of the outsourced class.
+- Postcondition: A strong postcondition is preferred because it guarantees a more predictable and detailed outcome from the class, reducing ambiguity and potential integration issues.
 
 ### Do you feel that design by contract yields software systems that are defect free? If you do, argue why. If you don’t, argue why it is still useful.
 
-- **No**, Design by Contract does not guarantee defect-free systems because:
+- No, Design by Contract does not guarantee defect-free systems because:
   - It addresses specific errors related to interface and contract violations but cannot catch all possible coding or logic errors.
   - It assumes the correctness of the implementation, which may still contain flaws.
-- **However**, it is still highly useful because:
+- However, it is still highly useful because:
   - It reduces defects caused by miscommunication between components.
   - It embeds requirements into the source code, improving traceability and documentation.
   - It facilitates better testing by specifying clear conditions for input, output, and system states.
 
 ### How can you ensure the quality of the pre- and postconditions?
 
-### **How can you ensure the quality of the pre- and postconditions?**
+### How can you ensure the quality of the pre- and postconditions?
 
-1. **Validate Against Requirements**:
+1. Validate Against Requirements:
    - Ensure preconditions and postconditions align with the system's requirements and use cases.
-2. **Iterate Through Peer Reviews**:
+2. Iterate Through Peer Reviews:
    - Conduct code reviews focused on verifying the correctness of contracts.
-3. **Use Static Analysis Tools**:
+3. Use Static Analysis Tools:
    - Employ tools that can analyze and validate contracts for logical consistency and completeness.
-4. **Test Edge Cases**:
+4. Test Edge Cases:
    - Design test cases that verify contracts hold in boundary and exceptional conditions.
-5. **Document Contracts Clearly**:
+5. Document Contracts Clearly:
    - Clearly document the rationale for each contract to ensure they are well-understood and consistently applied.
 
 ### Why is (consumer-driven) contract testing so relevant in the context of micro-services?
 
-- **Ensures Compatibility**: Validates that services adhere to agreed contracts, preventing integration failures.
-- **Isolates Services**: Allows testing of microservices independently by mocking dependencies based on contracts.
-- **Prevents Breaking Changes**: Changes in one service are tested against consumer contracts, ensuring backward compatibility.
-- **Improves Traceability**: Makes explicit which parts of the contract are actively used by consumers, focusing testing efforts.
-- **Supports Agile Development**: Enables rapid iterations by verifying only the necessary components without requiring full-system integration tests.
+- Ensures Compatibility: Validates that services adhere to agreed contracts, preventing integration failures.
+- Isolates Services: Allows testing of microservices independently by mocking dependencies based on contracts.
+- Prevents Breaking Changes: Changes in one service are tested against consumer contracts, ensuring backward compatibility.
+- Improves Traceability: Makes explicit which parts of the contract are actively used by consumers, focusing testing efforts.
+- Supports Agile Development: Enables rapid iterations by verifying only the necessary components without requiring full-system integration tests.
 
 ### Assume you have an existing software system and you are a software quality engineer assigned to apply design by contract. How would you start? What would you do?
 
-1. **Analyze Existing System**:
+1. Analyze Existing System:
    - Identify key components and their interactions.
    - Review documentation to understand implicit contracts and assumptions.
-2. **Define Contracts**:
+2. Define Contracts:
    - Explicitly define preconditions, postconditions, and invariants for critical operations and classes.
-3. **Refactor Code**:
+3. Refactor Code:
    - Introduce assertions to enforce these contracts in the source code.
-4. **Test Contracts**:
+4. Test Contracts:
    - Design tests to verify the validity of preconditions, postconditions, and invariants.
-5. **Automate Validation**:
+5. Automate Validation:
    - Use tools to automate contract validation and regression testing.
-6. **Educate Team Members**:
+6. Educate Team Members:
    - Train developers on the principles and practices of Design by Contract to ensure consistent adoption.
-7. **Iterate Incrementally**:
+7. Iterate Incrementally:
    - Apply Design by Contract incrementally, starting with high-risk or high-impact components to minimize disruption.

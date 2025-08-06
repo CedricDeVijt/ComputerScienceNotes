@@ -6,6 +6,13 @@
 - **Testing Technique:** A method or procedure used to design test cases, such as equivalence partitioning or boundary value analysis.
 - **Testing Strategy:** A high-level plan that outlines the approach, resources, schedule, and scope for testing activities.
 
+a) Wat is Testen?
+programma uitvoeren met de boeling defects te vinden
+b)Wat is een Test Techniek
+technieken met een hoge kans om nieuwe fouten te vinden
+c) Wat is een Test Strategie
+plan dat zegt wanneer je welke techniek moet toepassen
+
 ### What is the difference between an error, a failure and a defect?
 
 - **Error:** A human mistake in the design, coding, or requirements.
@@ -27,10 +34,21 @@
 - **Similarities:** All aim to ensure comprehensive testing and identify logical flaws.
 - **Differences:** Each targets specific constructs (paths, conditions, or loops).
 
+basic path testing tests all possible paths by total coverage of every statement, branch.
+condition testing tests all conditions by making them true or false. (not all these possibilities
+were done by basic path testing)
+loop testing tests every loop by passing it (n is number of allowable passes)
+0, 1, 2,
+m passes with 2 < m < n
+n - 1, n, n +1 passes
+(not all these possibilities were done by basic path testing and condition testing)
+each technique tests a different aspect since not all possibilities were done by the previous
+technique(s) => complementary
+
 ### How many tests should you write to achieve MC/DC coverage? And multiple condition coverage?
 
-- **MC/DC Coverage:** Requires at least one test case for each condition to independently affect the outcome.
-- **Multiple Condition Coverage:** Requires test cases for all possible combinations of conditions.
+MC/DC Coverage: n + 1 test cases (for a decision with n conditions)
+Multiple condition coverage:2 to the power of n test cases (for a decision with n conditions)
 
 ### Where do you situate alpha/beta testing in the four quadrants model?
 
@@ -44,6 +62,15 @@
 - **Similarities:** Both involve executing tests to verify behavior.
 - **Differences:** Unit testing focuses on isolated components, while regression testing evaluates the impact of changes on the entire system.
 
+
+Wat is “Regression Testing”?
+Regression Testing ensures that all things that used to work still work after
+changes.
+= re-execution of some subset of tests to ensure that changes have not caused
+unintended side effects
+Waarom is dit belangrijk?
+Helps during iterative and incremental development + during maintenance
+
 ### How do you know when you tested enough?
 
 Testing is considered sufficient when:
@@ -54,15 +81,30 @@ Testing is considered sufficient when:
 - Risk levels are acceptable.
 - Deadlines and budgets are met.
 
+statistical testing: testen tot ‘failure rate’ onder ‘risk treshold’
+
 ### What is Alpha-testing and Beta-Testing? When is it used?
 
 - **Alpha Testing:** Performed internally by developers and testers to identify bugs before releasing the product to external users.
 - **Beta Testing:** Conducted by external users to gather feedback and uncover issues in a real-world environment.
 
+a. testing technieken met veel ongeidentifieerde gebruikers voor software die
+"off-the-shelf" wordt verkocht
+b. Alpha: users worden uitgenodigd on-site in een gecontroleerde omgeving
+c. Beta: software wordt vrijgegeven aan bepaalde gebruikers in een real-world
+setting
+
 ### What is the difference between stress-testing and performance testing?
 
 - **Stress Testing:** Evaluates how the system behaves under extreme load or resource constraints.
 - **Performance Testing:** Assesses the system's responsiveness and stability under expected load conditions.
+
+Stress-Testing: Tests extreme conditions - tries to break the system.
+Performance testing: Test run-time performance in normal conditions, time
+consumption memory consumtion. Checks if the system is performant enough
+according to the requirements.
+
+---
 
 ## You should be able to complete the following tasks
 
