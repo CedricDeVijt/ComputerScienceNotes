@@ -4,22 +4,22 @@
 
 A requirements specification must be:
 
-- **Understandable** so stakeholders can agree on what is in and out of scope.
-- **Precise** so all parties can confirm agreement on inclusions/exclusions and test each requirement.
-- **Open** so developers have freedom to design optimal solutions by focusing on the "what" rather than the "how".
+- Understandable so stakeholders can agree on what is in and out of scope.
+- Precise so all parties can confirm agreement on inclusions/exclusions and test each requirement.
+- Open so developers have freedom to design optimal solutions by focusing on the "what" rather than the "how".
 
 ### What’s the relationship between a use case and a scenario?
 
-- **Use Case:** A generic description of a transaction to achieve a goal, involving one or more actors.
-- **Scenario:** An instance of a use case. It shows a typical example of execution. Scenarios include:
+- Use Case: A generic description of a transaction to achieve a goal, involving one or more actors.
+- Scenario: An instance of a use case. It shows a typical example of execution. Scenarios include:
   - Primary (happy day path)
   - Secondary (alternate paths or error cases).
 
 ### Can you give 3 criteria to evaluate a system scope description? Why do you select these 3?
 
-1. **Clarity and Conciseness** – The scope should be short and clearly written to avoid misunderstandings and keep everyone aligned.
-2. **Defined System Boundaries** – It must state what is inside and outside the system to prevent scope creep.
-3. **Stakeholder Commitment** – End-users should be involved and approve the scope to ensure it reflects real needs.
+1. Clarity and Conciseness – The scope should be short and clearly written to avoid misunderstandings and keep everyone aligned.
+2. Defined System Boundaries – It must state what is inside and outside the system to prevent scope creep.
+3. Stakeholder Commitment – End-users should be involved and approve the scope to ensure it reflects real needs.
 
 ### Why should there be at least one actor who benefits from a use case?
 
@@ -27,13 +27,13 @@ At least one actor must benefit to justify the use case’s inclusion in the sys
 
 ### Can you supply 3 questions that may help you identifying actors? And use cases?
 
-**Identifying Actors:**
+Identifying Actors:
 
 1.  Who uses the system?
 2.  Who maintains the system?
 3.  Who provides or receives information from the system?
 
-**Identifying Use Cases:**
+Identifying Use Cases:
 
 1.  What functions does each actor require from the system?
 2.  What triggers events in the system?
@@ -41,13 +41,13 @@ At least one actor must benefit to justify the use case’s inclusion in the sys
 
 ### What’s the difference between a primary scenario and a secondary scenario?
 
-- **Primary Scenario:** Describes the main, successful path to achieving the goal.
-- **Secondary Scenario:** Describes alternate paths, error handling, or exceptional conditions.
+- Primary Scenario: Describes the main, successful path to achieving the goal.
+- Secondary Scenario: Describes alternate paths, error handling, or exceptional conditions.
 
 ### What’s the direction of the \<\<extends\>\> and \<\<includes\>\> dependencies?
 
-- **\<\<extends\>\>:** From the base use case to the extending use case, showing optional or conditional behavior.
-- **\<\<includes\>\>:** From the including use case to the included use case, showing mandatory behavior.
+- \<\<extends\>\>: From the base use case to the extending use case, showing optional or conditional behavior.
+- \<\<includes\>\>: From the including use case to the included use case, showing mandatory behavior.
 
 ### What is the purpose of technical stories in scrum?
 
@@ -55,18 +55,18 @@ Technical stories address non-functional requirements (e.g., performance, securi
 
 ### List and explain briefly the INVEST criteria for user stories.
 
-1.  **Independent:** Stories should not depend on others.
-2.  **Negotiable:** Allows open discussion with stakeholders.
-3.  **Valuable:** Provides clear benefits to the user.
-4.  **Estimable:** Can be estimated for effort or size.
-5.  **Small:** Achievable within a single sprint.
-6.  **Testable:** Clear acceptance criteria.
+1.  Independent: Stories should not depend on others.
+2.  Negotiable: Allows open discussion with stakeholders.
+3.  Valuable: Provides clear benefits to the user.
+4.  Estimable: Can be estimated for effort or size.
+5.  Small: Achievable within a single sprint.
+6.  Testable: Clear acceptance criteria.
 
 ### Explain briefly the three levels of detail for Product Backlog Items (Epic, Features, Stories).
 
-1.  **Epic:** Large objectives taking months; spans multiple releases.
-2.  **Features:** Medium-sized, spanning weeks; bigger than a sprint.
-3.  **Stories:** Small, actionable items; completed within days.
+1.  Epic: Large objectives taking months; spans multiple releases.
+2.  Features: Medium-sized, spanning weeks; bigger than a sprint.
+3.  Stories: Small, actionable items; completed within days.
 
 ### What is a minimum viable product?
 
@@ -94,12 +94,12 @@ Distinguishing them ensures the system is tested for both ideal and exceptional 
 
 ### What would you think would be the main advantages and disadvantages of use cases?
 
-**Advantages:**
+Advantages:
 
 - Clear communication of system behavior.
 - Traceability to requirements.
 
-**Disadvantages:**
+Disadvantages:
 
 - May become complex for large systems.
 - Hard to maintain consistency across iterations.
@@ -118,17 +118,17 @@ The roadmap communicates the incremental delivery of features over time, alignin
 
 ### Choose the three most important items in your “Definition of Ready” checklist. Why are these most important to you?
 
-1.  **Clear business value:** Ensures alignment with stakeholder goals.
-2.  **Testable acceptance criteria:** Facilitates validation.
-3.  **Dependencies identified:** Prevents blockers during development.
+1.  Clear business value: Ensures alignment with stakeholder goals.
+2.  Testable acceptance criteria: Facilitates validation.
+3.  Dependencies identified: Prevents blockers during development.
 
 ### Can you relate scrum user stories to some of the principles in the Agile Manifesto?
 
 Scrum user stories reflect:
 
-- **Customer collaboration** by prioritizing user needs.
-- **Responding to change** with iterative feedback loops.
-- **Delivering working software** incrementally.
+- Customer collaboration by prioritizing user needs.
+- Responding to change with iterative feedback loops.
+- Delivering working software incrementally.
 
 ### How would you turn an FMEA analysis into a misuse case diagram?
 
