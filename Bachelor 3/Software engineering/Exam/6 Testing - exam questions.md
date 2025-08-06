@@ -2,107 +2,79 @@
 
 ### What is (a) Testing, (b) a Testing Technique, (c) a Testing Strategy
 
-- **Testing:** The process of evaluating a system or component to determine whether it satisfies the specified requirements and to identify any defects.
-- **Testing Technique:** A method or procedure used to design test cases, such as equivalence partitioning or boundary value analysis.
-- **Testing Strategy:** A high-level plan that outlines the approach, resources, schedule, and scope for testing activities.
-
-a) Wat is Testen?
-programma uitvoeren met de boeling defects te vinden
-b)Wat is een Test Techniek
-technieken met een hoge kans om nieuwe fouten te vinden
-c) Wat is een Test Strategie
-plan dat zegt wanneer je welke techniek moet toepassen
+- **(a) Testing**: The process of executing a program or system to find errors, verifying requirements are met, and ensuring the system behaves as expected.
+- **(b) Testing Technique**: A method to design test cases to uncover defects, such as basis path testing or equivalence partitioning, focusing on specific aspects like code structure or input domains.
+- **(c) Testing Strategy**: A plan dictating when and which testing techniques to apply to achieve confidence in system reliability, such as unit testing or regression testing, guiding the overall testing
 
 ### What is the difference between an error, a failure and a defect?
 
-- **Error:** A human mistake in the design, coding, or requirements.
-- **Defect:** A flaw in the system caused by an error, leading to incorrect or unexpected behavior.
-- **Failure:** The manifestation of a defect when the system behaves incorrectly during execution.
+- **Error**: A human mistake, such as incorrect operation or usability issue, leading to incorrect system behavior.
+- **Failure**: The system’s deviation from expected behavior, observable when a defect manifests during execution.
+- **Defect**: A design or coding mistake (fault) that may cause abnormal behavior, including omissions or incorrect entries in design or code.
 
 ### What is a test case? A test stub? A test driver? A test fixture?
 
-- **Test Case:** A set of conditions, inputs, and expected outcomes used to verify a system's behavior.
-- **Test Stub:** A simulated module or component that mimics the behavior of a dependent component during testing.
-- **Test Driver:** A program or script used to initiate and manage the execution of test cases.
-- **Test Fixture:** A fixed state of the system under test, including pre-configured inputs, data, or environmental settings required for testing.
+- **Test Case**: A set of inputs, execution conditions, and expected outputs designed to verify a specific aspect of the system.
+- **Test Stub**: A simplified implementation of a component’s interface to simulate its behavior during testing.
+- **Test Driver**: A program or script that executes test cases by providing inputs and checking outputs.
+- **Test Fixture**: The setup or environment (e.g., data, objects) required to run a test case consistently (implied in gTest examples, Page 18).
 
 ### What are the differences and similarities between basis path testing, condition testing and loop testing?
 
-- **Basis Path Testing:** Focuses on ensuring every independent path through the code is executed at least once.
-- **Condition Testing:** Validates the correctness of logical conditions in decision statements.
-- **Loop Testing:** Focuses on validating the functionality of loops, including boundary cases and nested loops.
-- **Similarities:** All aim to ensure comprehensive testing and identify logical flaws.
-- **Differences:** Each targets specific constructs (paths, conditions, or loops).
-
-basic path testing tests all possible paths by total coverage of every statement, branch.
-condition testing tests all conditions by making them true or false. (not all these possibilities
-were done by basic path testing)
-loop testing tests every loop by passing it (n is number of allowable passes)
-0, 1, 2,
-m passes with 2 < m < n
-n - 1, n, n +1 passes
-(not all these possibilities were done by basic path testing and condition testing)
-each technique tests a different aspect since not all possibilities were done by the previous
-technique(s) => complementary
+- **Similarities**:
+  - All are white-box testing techniques, relying on the internal structure of the code.
+  - Aim to maximize code coverage and detect defects by exercising different code paths or conditions.
+- **Differences**:
+  - **Basis Path Testing**: Focuses on covering independent control flow paths, using cyclomatic complexity to determine the minimum number of paths.
+  - **Condition Testing**: Tests all true/false combinations of conditions in complex boolean expressions, ensuring assertions and decision points are exercised.
+  - **Loop Testing**: Targets loop constructs, testing iterations (0, 1, N times) to ensure proper loop behavior.
+  - **Complementary Nature**: Basis path testing covers overall control flow, condition testing ensures detailed condition coverage, and loop testing focuses on iterative structures, together providing comprehensive code coverage.
 
 ### How many tests should you write to achieve MC/DC coverage? And multiple condition coverage?
 
-MC/DC Coverage: n + 1 test cases (for a decision with n conditions)
-Multiple condition coverage:2 to the power of n test cases (for a decision with n conditions)
+- **MC/DC (Modified Condition/Decision Coverage)**:
+  - Requires a number of tests equal to **n + 1**, where **n** is the number of independent conditions in a decision, ensuring each condition independently affects the outcome while others remain constant.
+  - Example: For 3 conditions, typically 4 tests are needed.
+- **Multiple Condition Coverage**:
+  - Requires **2^n** tests, where **n** is the number of conditions, to cover all possible true/false combinations of conditions.
+  - Example: For 3 conditions, 8 tests are needed (2^3).
 
 ### Where do you situate alpha/beta testing in the four quadrants model?
 
-- **Alpha Testing:** Quadrant 2 (Business-facing, product validation).
-- **Beta Testing:** Quadrant 3 (Business-facing, customer-focused).
+- The four quadrants model categorizes tests by purpose (e.g., technology-facing vs. business-facing, supporting team vs. critiquing product).
+- **Alpha Testing**: Fits in **Quadrant 3** (business-facing, critiquing product), as it involves end-users testing in a controlled environment to verify requirements.
+- **Beta Testing**: Fits in **Quadrant 3** (business-facing, critiquing product), as it involves selected customers testing in uncontrolled environments.
 
 ### What are the differences and similarities between unit testing and regression testing?
 
-- **Unit Testing:** Verifies individual components for correctness.
-- **Regression Testing:** Ensures that changes or updates have not introduced new defects.
-- **Similarities:** Both involve executing tests to verify behavior.
-- **Differences:** Unit testing focuses on isolated components, while regression testing evaluates the impact of changes on the entire system.
-
-
-Wat is “Regression Testing”?
-Regression Testing ensures that all things that used to work still work after
-changes.
-= re-execution of some subset of tests to ensure that changes have not caused
-unintended side effects
-Waarom is dit belangrijk?
-Helps during iterative and incremental development + during maintenance
+- **Similarities**:
+  - Both aim to ensure system correctness and detect defects.
+  - Often automated to improve efficiency and repeatability.
+  - Can use similar testing techniques (e.g., white-box or black-box) depending on the context.
+- **Differences**:
+  - **Unit Testing**: Focuses on testing individual components in isolation to catch local defects, performed by developers during development.
+  - **Regression Testing**: Ensures that new changes (e.g., fixes, updates) do not break existing functionality, involving a subset of tests run repeatedly after changes.
+  - **Scope**: Unit testing is narrower (component-level), while regression testing spans multiple levels (unit, integration, system).
 
 ### How do you know when you tested enough?
 
-Testing is considered sufficient when:
-
-- All specified requirements are verified.
-- Code coverage meets the target (e.g., 90%+ for critical systems).
-- No high-severity defects remain unresolved.
-- Risk levels are acceptable.
-- Deadlines and budgets are met.
-
-statistical testing: testen tot ‘failure rate’ onder ‘risk treshold’
+- Testing is sufficient when:
+  - The failure rate is below an acceptable risk threshold, determined through statistical testing.
+  - All planned test cases are specified and executed, achieving adequate coverage (code, requirements, test coverage).
+  - No new defects are found, or testing exhausts time/budget constraints.
+  - Each bug fix is accompanied by a new test to prevent regression.
 
 ### What is Alpha-testing and Beta-Testing? When is it used?
 
-- **Alpha Testing:** Performed internally by developers and testers to identify bugs before releasing the product to external users.
-- **Beta Testing:** Conducted by external users to gather feedback and uncover issues in a real-world environment.
-
-a. testing technieken met veel ongeidentifieerde gebruikers voor software die
-"off-the-shelf" wordt verkocht
-b. Alpha: users worden uitgenodigd on-site in een gecontroleerde omgeving
-c. Beta: software wordt vrijgegeven aan bepaalde gebruikers in een real-world
-setting
+- **Alpha Testing**: Conducted by end-users at the developer’s site in a controlled environment to verify requirements for off-the-shelf software before release. pre-release stage.
+- **Beta Testing**: Conducted by selected customers in real-world settings without developers present, testing the software’s performance in actual usage conditions. diverse, uncontrolled environments before final release.
 
 ### What is the difference between stress-testing and performance testing?
 
-- **Stress Testing:** Evaluates how the system behaves under extreme load or resource constraints.
-- **Performance Testing:** Assesses the system's responsiveness and stability under expected load conditions.
+- **Stress Testing**: Tests system behavior under extreme conditions (e.g., excessive input rates) to check if it fails gracefully or recovers properly, focusing on resilience.
+- **Performance Testing**: Evaluates system runtime performance (e.g., time, memory consumption) under normal or specified conditions to ensure efficiency and scalability.
 
-Stress-Testing: Tests extreme conditions - tries to break the system.
-Performance testing: Test run-time performance in normal conditions, time
-consumption memory consumtion. Checks if the system is performant enough
-according to the requirements.
+- **Difference**: Stress testing pushes the system beyond normal limits to test failure and recovery, while performance testing measures efficiency within expected usage scenarios.
 
 ---
 
