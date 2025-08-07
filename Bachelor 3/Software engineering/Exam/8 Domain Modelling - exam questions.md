@@ -6,12 +6,12 @@
 
 ### What’s the decomposition principle for functional and object-oriented decomposition?
 
-- **Functional decomposition** breaks down the system according to the functions it performs, leading to a centralized hierarchy.
-- **Object-oriented decomposition** divides the system based on objects it manipulates, distributing responsibilities across "is-a" hierarchies.
+- **Functional decomposition** breaks down the system according to the functions it performs, leading to a centralized hierarchy. Good with stable requirements or single function.
+- **Object-oriented decomposition** divides the system based on objects it manipulates, distributing responsibilities across "is-a" hierarchies. Better for complex and evolving systems.
 
 ### Can you give the advantages and disadvantages for functional decomposition? What about object-oriented decomposition?
 
-#### Functional Decomposition:
+**Functional Decomposition**:
 
 - **Advantages**:
   - Suited for stable requirements or single-function systems.
@@ -21,57 +21,65 @@
   - Difficult to interface with other systems.
   - Not adaptable to modern multi-functional systems.
 
-#### Object-Oriented Decomposition:
+**Oriented Decomposition**:
 
 - **Advantages**:
   - Better for complex, evolving systems.
   - Encapsulation increases robustness against changes.
 - **Disadvantages**:
-  - Requires careful design to avoid misuse like "god classes".
+  - More complex to design; requires careful management to avoid issues like god classes.
 
 ### How can you recognize “god classes”?
 
-- Symptoms include:
-  - A few large classes managing most of the system's operations.
-  - Classes with suffixes like "Manager" or "Controller."
-  - Many small "provider" classes only offering accessor operations (e.g., `get`, `set` methods).
+- A few large classes managing most of the system's operations.
+- Classes with suffixes like "Manager" or "Controller."
+- Many small "provider" classes only offering accessor operations (e.g., `get`, `set` methods).
+- Top-heavy inheritance hierarchies focused on code/data reuse.
 
 ### What is a responsibility? What is a collaboration?
 
-- **Responsibility**: The knowledge or actions an object provides to others.
-- **Collaboration**: The relationships between objects needed to fulfill responsibilities. Collaborators play roles to assist in fulfilling a responsibility.
+- **Responsibility**: Public services an object provides, including knowledge it maintains or actions it performs (what, not how).
+- **Collaboration**: Other objects an object interacts with to fulfill its responsibilities.
 
 ### Name 3 techniques to identify responsibilities.
 
-1.  Scenario walk-throughs and role-play.
-2.  Verb phrase identification in requirements.
-3.  Class enumeration and hierarchy analysis.
+- Scenario walk-throughs and role-playing.
+- Verb phrase identification from requirements.
+- Class enumeration to assign initial responsibilities.
 
 ### What do feature models define?
 
-- They define reusable and configurable requirements for a family of systems, showing commonalities and variations through feature diagrams.
+Feature models define prominent user-visible aspects, qualities, or characteristics of a software system, capturing commonalities and variations (e.g., mandatory/optional features in a car like transmission or air conditioning).
 
 ### Give two advantages and disadvantages of a “clone and own” approach
 
-#### Advantages:
+**Advantages**:
 
-1.  Saves time and reduces costs.
-2.  Offers independence in product variants.
+- Saves time and reduces costs
+- Provides independence
+- Readily available
 
-#### Disadvantages:
+**Disadvantages**:
 
-1.  Propagating changes becomes difficult.
-2.  Adapting the clone is repetitive and prone to bugs.
+- Propagating changes
+- Adapting the clone is difficult
+- Repetitive tasks are common (=> increased maintenance burden)
 
 ### Explain the main difference between a social fork and a variant fork
 
-- **Social fork**: Created for contributions or improvements, usually reintegrated via pull requests.
-- **Variant fork**: Created to establish a separate project that deviates significantly from the original
+- **Social Fork**: Created in social coding platforms (e.g., Git) for modifications like bug fixes or features, often temporary and merged back or abandoned.
+- **Variant Fork**: A deliberate product variant created via "clone and own" for distinct functionality, maintained separately long-term.
 
 ### How does domain modeling help to achieve correctness? Traceability?
 
-- **Correctness**: Ensures a robust problem domain model by focusing on the "what" instead of the "how."
-- **Traceability**: Links requirements to the system design via proper naming conventions and associations.
+- **Correctness**:
+
+1. Models the problem domain from the customer’s perspective
+2. using role-playing and CRC cards to validate use cases and ensure the system meets requirements.
+3. feature diagrams focus on commonalities/variations
+4. makes differences (and choices) explicit
+
+- **Traceability**: Uses consistent naming conventions for classes and operations to link requirements to system components, ensuring alignment.
 
 ## You should be able to complete the following tasks
 
