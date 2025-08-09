@@ -92,6 +92,9 @@
 - Rejection Region:
   - Two-sided: $\chi^2 < \chi^2_{1-\alpha/2, n-1}$ or $\chi^2 > \chi^2_{\alpha/2, n-1}$
   - One-sided: $\chi^2 > \chi^2_{\alpha, n-1}$ or $\chi^2 < \chi^2_{1-\alpha, n-1}$
+- P-value:
+  - Two-sided: $p = P(\chi^2 < \chi^2_{1-\alpha/2, n-1}) + P(\chi^2 > \chi^2_{\alpha/2, n-1})$
+  - One-sided: $p = P(\chi^2 > \chi^2_{\alpha, n-1})$ or $p = P(\chi^2 < \chi^2_{1-\alpha, n-1})$
 
 ### Type II Error
 
