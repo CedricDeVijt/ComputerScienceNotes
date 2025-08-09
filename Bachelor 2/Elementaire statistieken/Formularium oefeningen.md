@@ -71,6 +71,19 @@
 - Rejection Region:
   - Two-sided: $|T| > t_{\alpha/2, n-1}$
   - One-sided: $T > t_{\alpha, n-1}$ or $T < -t_{\alpha, n-1}$
+- P-value:
+  - Two-sided: $p = 2 \cdot [1 - \Phi(|T|)]$
+  - One-sided: $p = 1 - \Phi(T)$ or $p = \Phi(T)$
+
+### Proportion
+
+- Test Statistic: $Z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$, $Z \sim N(0,1)$
+- Rejection Region:
+  - Two-sided: $|Z| > Z_{\alpha/2}$
+  - One-sided: $Z > Z_{\alpha}$ or $Z < -Z_{\alpha}$
+- P-value:
+  - Two-sided: $p = 2 \cdot [1 - \Phi(|Z|)]$
+  - One-sided: $p = 1 - \Phi(Z)$ or $p = \Phi(Z)$
 
 ### Variance
 
@@ -121,8 +134,8 @@
 - Expected Value: $E(X) = np$
 - Variance: $\text{Var}(X) = np(1-p)$
 
-
 ### Critical Values
-  - 99%: $Z_{\alpha/2} = 2.576$
-  - 95%: $Z_{\alpha/2} = 1.96$
-  - 90%: $Z_{\alpha/2} = 1.645$
+
+- 99%: $Z_{\alpha/2} = 2.576$
+- 95%: $Z_{\alpha/2} = 1.96$
+- 90%: $Z_{\alpha/2} = 1.645$
