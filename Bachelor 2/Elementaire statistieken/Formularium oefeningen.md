@@ -33,10 +33,6 @@
 ### Mean (Known Variance)
 
 - $\bar{X} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$
-- Critical Values:
-  - 95%: $Z_{\alpha/2} = 1.96$
-  - 99%: $Z_{\alpha/2} = 2.576$
-  - 90%: $Z_{\alpha/2} = 1.645$
 
 ### Mean (Unknown Variance)
 
@@ -124,3 +120,9 @@
 - PMF: $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
 - Expected Value: $E(X) = np$
 - Variance: $\text{Var}(X) = np(1-p)$
+
+
+### Critical Values
+  - 99%: $Z_{\alpha/2} = 2.576$
+  - 95%: $Z_{\alpha/2} = 1.96$
+  - 90%: $Z_{\alpha/2} = 1.645$
