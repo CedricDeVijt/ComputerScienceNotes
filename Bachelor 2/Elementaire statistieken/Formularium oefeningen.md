@@ -102,7 +102,9 @@
 
 ### Chi-Square Goodness of Fit
 
-- Hypotheses: $H_0$: Observed frequencies match expected, $H_1$: They do not
+- Hypotheses: 
+	- $H_0$: Observed frequencies match expected, 
+	- $H_1$: They do not
 - Test Statistic: $\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}$, where $O_i$ is observed frequency, $E_i$ is expected frequency
 - Distribution: $\chi^2 \sim \chi^2_{k-1}$, where $k$ is the number of categories
 - Acceptance Region: $\chi^2 \leq \chi^2_{\alpha, k-1}$
