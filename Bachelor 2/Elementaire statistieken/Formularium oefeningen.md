@@ -110,38 +110,33 @@
 
 ## 5 Comparison Tests
 
-### Two-Sample Z-Test (Known Variance, Equal Variances)
+### Two-Sample Z-Test (Known Variances — σ₁ and σ₂ given)
 
-- Hypotheses: $H_0: \mu_1 = \mu_2$, $H_1: \mu_1 \neq \mu_2$
-- Test Statistic: $Z = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\sigma^2 \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$
+- Hypotheses:
+  $H_0: \mu_1 - \mu_2 = \Delta_0$ (often $\Delta_0 = 0$)
+  $H_1:$ one- or two-sided depending on problem.
+- Test Statistic:$Z = \frac{(\bar{X}_1 - \bar{X}_2) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$
 - Acceptance Region:
-  - Two-sided: $|Z| \leq Z_{\alpha/2}$
-  - One-sided: $Z \leq Z_{\alpha}$ or $Z \geq -Z_{\alpha}$
-- P-value:
-  - Two-sided: $p = 2 \cdot [1 - \Phi(|Z|)]$
-  - One-sided: $p = 1 - \Phi(Z)$ or $p = \Phi(Z)$
+  - Two-sided: $|Z| > z_{\alpha/2}$
+  - Upper-tail: $Z > z_{\alpha}$
+  - Lower-tail: $Z < -z_{\alpha}$
+- p-value:
+  - Two-sided: $p = 2\,[1 - \Phi(|Z|)]$
+  - Upper-tail: $p = 1 - \Phi(Z)$
+  - Lower-tail: $p = \Phi(Z)$
 
-### Two-Sample T-Test (Unknown Variance, Equal Variances)
+### Two-Sample t-Test (Unknown Variances, Equal Variances Assumed — pooled)
 
-- Pooled Variance: $s_p^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}$
-- Test Statistic: $T = \frac{\bar{X}_1 - \bar{X}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$, $T \sim t_{n_1+n_2-2}$
+- Hypotheses:
+  $H_0: \mu_1 - \mu_2 = \Delta_0$ (often $\Delta_0 = 0$)
+  $H_1:$ one- or two-sided depending on problem.
+- Pooled variance: $s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}$
+- Test Statistic: $T = \frac{(\bar{X}_1 - \bar{X}_2) - \Delta_0}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ with $T \sim t_{n_1 + n_2 - 2}$
 - Acceptance Region:
-  - Two-sided: $|T| \leq t_{\alpha/2, n_1+n_2-2}$
-  - One-sided: $T \leq t_{\alpha, n_1+n_2-2}$ or $T \geq -t_{\alpha, n_1+n_2-2}$
-- P-value:
-  - Two-sided: $p = 2 \cdot [1 - F_t(|T|)]$
-  - One-sided: $p = 1 - F_t(T)$ or $p = F_t(T)$
-
-### Two-Sample T-Test (Unknown Variance, Unequal Variances)
-
-- Hypotheses: $H_0: \mu_1 = \mu_2$, $H_1: \mu_1 \neq \mu_2$
-- Test Statistic: $T = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$
-- Acceptance Region:
-  - Two-sided: $|T| \leq t_{\alpha/2, df}$
-  - One-sided: $T \leq t_{\alpha, df}$ or $T \geq -t_{\alpha, df}$
-- P-value:
-  - Two-sided: $p = 2 \cdot [1 - F_t(|T|)]$
-  - One-sided: $p = 1 - F_t(T)$ or $p = F_t(T)$
+  - Two-sided: $|T| > t_{\alpha/2,\,n_1+n_2-2}$
+  - Upper-tail: $T > t_{\alpha,\,n_1+n_2-2}$
+  - Lower-tail: $T < -t_{\alpha,\,n_1+n_2-2}$
+- p-value: same structure as Z-test but with $t$-CDF $F_t(\cdot)$.
 
 ## 6 Distributions
 
