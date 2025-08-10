@@ -58,9 +58,9 @@
 
 - Hypotheses: $H_0: \mu = \mu_0$, $H_1: \mu \neq \mu_0$ (or one-sided)
 - Test Statistic: $Z = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}}$, $Z \sim N(0,1)$
-- Rejection Region:
-  - Two-sided: $|Z| > Z_{\alpha/2}$
-  - One-sided: $Z > Z_{\alpha}$ or $Z < -Z_{\alpha}$
+- Acceptance Region:
+  - Two-sided: $|Z| \leq Z_{\alpha/2}$
+  - One-sided: $Z \leq Z_{\alpha}$ or $Z \geq -Z_{\alpha}$
 - P-value:
   - Two-sided: $p = 2 \cdot [1 - \Phi(|Z|)]$
   - One-sided: $p = 1 - \Phi(Z)$ or $p = \Phi(Z)$
@@ -68,9 +68,9 @@
 ### Mean (Unknown Variance)
 
 - Test Statistic: $T = \frac{\bar{X} - \mu_0}{s / \sqrt{n}}$, $T \sim t_{n-1}$
-- Rejection Region:
-  - Two-sided: $|T| > t_{\alpha/2, n-1}$
-  - One-sided: $T > t_{\alpha, n-1}$ or $T < -t_{\alpha, n-1}$
+- Acceptance Region:
+  - Two-sided: $|T| \leq t_{\alpha/2, n-1}$
+  - One-sided: $T \leq t_{\alpha, n-1}$ or $T \geq -t_{\alpha, n-1}$
 - P-value:
   - Two-sided: $p = 2 \cdot [1 - \Phi(|T|)]$
   - One-sided: $p = 1 - \Phi(T)$ or $p = \Phi(T)$
@@ -78,9 +78,9 @@
 ### Proportion
 
 - Test Statistic: $Z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$, $Z \sim N(0,1)$
-- Rejection Region:
-  - Two-sided: $|Z| > Z_{\alpha/2}$
-  - One-sided: $Z > Z_{\alpha}$ or $Z < -Z_{\alpha}$
+- Acceptance Region:
+  - Two-sided: $|Z| \leq Z_{\alpha/2}$
+  - One-sided: $Z \leq Z_{\alpha}$ or $Z \geq -Z_{\alpha}$
 - P-value:
   - Two-sided: $p = 2 \cdot [1 - \Phi(|Z|)]$
   - One-sided: $p = 1 - \Phi(Z)$ or $p = \Phi(Z)$
@@ -89,23 +89,24 @@
 
 - Hypotheses: $H_0: \sigma^2 = \sigma_0^2$, $H_1: \sigma^2 \neq \sigma_0^2$ (or one-sided)
 - Test Statistic: $\chi^2 = \frac{(n-1)s^2}{\sigma_0^2}$, $\chi^2 \sim \chi^2_{n-1}$
-- Rejection Region:
-  - Two-sided: $\chi^2 < \chi^2_{1-\alpha/2, n-1}$ or $\chi^2 > \chi^2_{\alpha/2, n-1}$
-  - One-sided: $\chi^2 > \chi^2_{\alpha, n-1}$ or $\chi^2 < \chi^2_{1-\alpha, n-1}$
+- Acceptance Region:
+  - Two-sided: $\chi^2_{1-\alpha/2, n-1} \leq \chi^2 \leq \chi^2_{\alpha/2, n-1}$
+  - One-sided: $\chi^2 \leq \chi^2_{\alpha, n-1}$ or $\chi^2 \geq \chi^2_{1-\alpha, n-1}$
 - P-value:
-  - Two-sided: $p = P(\chi^2 < \chi^2_{1-\alpha/2, n-1}) + P(\chi^2 > \chi^2_{\alpha/2, n-1})$
-  - One-sided: $p = P(\chi^2 > \chi^2_{\alpha, n-1})$ or $p = P(\chi^2 < \chi^2_{1-\alpha, n-1})$
+  - Two-sided: $p = 2 \cdot \min\{P(\chi^2_{n-1} \geq \chi^2_{obs}), P(\chi^2_{n-1} \leq \chi^2_{obs})\}$
+  - One-sided: $p = P(\chi^2_{n-1} \geq \chi^2_{obs})$ or $p = P(\chi^2_{n-1} \leq \chi^2_{obs})$
 
 ### Type II Error
 
-- $\beta = \Phi\left(Z_{\alpha/2} - \frac{|\mu_1 - \mu_0|}{\sigma / \sqrt{n}}\right) - \Phi\left(-Z_{\alpha/2} - \frac{|\mu_1 - \mu_0|}{\sigma / \sqrt{n}}\right)$
+- $\beta = \Phi\left(Z_{\alpha/2} - \frac{|\mu_1 - \mu_0|}{\sigma / \sqrt{n}}\right) - \Phi\left(-Z_{\alpha/2} - \frac{|\mu_1 - \mu_0|}{\sigma / \sqrt{n}}\right)$ (for two-sided tests)
 
 ### Chi-Square Goodness of Fit
 
 - Hypotheses: $H_0$: Observed frequencies match expected, $H_1$: They do not
 - Test Statistic: $\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}$, where $O_i$ is observed frequency, $E_i$ is expected frequency
 - Distribution: $\chi^2 \sim \chi^2_{k-1}$, where $k$ is the number of categories
-- Rejection Region: $\chi^2 > \chi^2_{\alpha, k-1}$
+- Acceptance Region: $\chi^2 \leq \chi^2_{\alpha, k-1}$
+- P-value: $p = P(\chi^2_{k-1} \geq \chi^2_{observed})$
 
 ## 5 Comparison Tests
 
@@ -113,22 +114,41 @@
 
 - Hypotheses: $H_0: \mu_1 = \mu_2$, $H_1: \mu_1 \neq \mu_2$
 - Test Statistic: $Z = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\sigma^2 \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$
-- P-value: $p = 2 \cdot [1 - \Phi(|Z|)]$
+- Acceptance Region:
+  - Two-sided: $|Z| \leq Z_{\alpha/2}$
+  - One-sided: $Z \leq Z_{\alpha}$ or $Z \geq -Z_{\alpha}$
+- P-value:
+  - Two-sided: $p = 2 \cdot [1 - \Phi(|Z|)]$
+  - One-sided: $p = 1 - \Phi(Z)$ or $p = \Phi(Z)$
 
 ### Two-Sample T-Test (Unknown Variance, Equal Variances)
 
 - Pooled Variance: $s_p^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}$
 - Test Statistic: $T = \frac{\bar{X}_1 - \bar{X}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$, $T \sim t_{n_1+n_2-2}$
-- Rejection Region:
-  - Two-sided: $|T| > t_{\alpha/2, n_1+n_2-2}$
-  - One-sided: $T > t_{\alpha, n_1+n_2-2}$ or $T < -t_{\alpha, n_1+n_2-2}$
+- Acceptance Region:
+  - Two-sided: $|T| \leq t_{\alpha/2, n_1+n_2-2}$
+  - One-sided: $T \leq t_{\alpha, n_1+n_2-2}$ or $T \geq -t_{\alpha, n_1+n_2-2}$
+- P-value:
+  - Two-sided: $p = 2 \cdot [1 - F_t(|T|)]$
+  - One-sided: $p = 1 - F_t(T)$ or $p = F_t(T)$
+
+### Two-Sample T-Test (Unknown Variance, Unequal Variances)
+
+- Hypotheses: $H_0: \mu_1 = \mu_2$, $H_1: \mu_1 \neq \mu_2$
+- Test Statistic: $T = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$
+- Acceptance Region:
+  - Two-sided: $|T| \leq t_{\alpha/2, df}$
+  - One-sided: $T \leq t_{\alpha, df}$ or $T \geq -t_{\alpha, df}$
+- P-value:
+  - Two-sided: $p = 2 \cdot [1 - F_t(|T|)]$
+  - One-sided: $p = 1 - F_t(T)$ or $p = F_t(T)$
 
 ## 6 Distributions
 
 ### Uniform Distribution (Discrete)
 
-- PMF: $P(X = k) = \frac{1}{n}$, $k = 0, 1, \ldots, 9$
-- Expected Value: $E(X) = \frac{n-1}{2}$
+- PMF: $P(X = k) = \frac{1}{n}$, $k = a, a+1, \ldots, a+n-1$
+- Expected Value: $E(X) = a + \frac{n-1}{2}$
 - Variance: $\text{Var}(X) = \frac{n^2 - 1}{12}$
 
 ### Binomial Distribution
@@ -136,9 +156,3 @@
 - PMF: $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
 - Expected Value: $E(X) = np$
 - Variance: $\text{Var}(X) = np(1-p)$
-
-### Critical Values
-
-- 99%: $Z_{\alpha/2} = 2.576$
-- 95%: $Z_{\alpha/2} = 1.96$
-- 90%: $Z_{\alpha/2} = 1.645$
