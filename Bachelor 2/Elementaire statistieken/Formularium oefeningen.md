@@ -127,6 +127,10 @@
 
 ### Two-Sample t-Test (Unknown Variances, Equal Variances Assumed — pooled)
 
+- F-test for Equal Variances (prerequisite):
+  - Hypotheses: $H_0: \sigma_1^2 = \sigma_2^2$, $H_1: \sigma_1^2 \neq \sigma_2^2$
+  - Test Statistic: $F = \frac{s_1^2}{s_2^2}$ (larger variance in numerator), $F \sim F_{n_1-1, n_2-1}$
+  - Acceptance Region: $F \leq F_{\alpha/2, n_1-1, n_2-1}$
 - Hypotheses:
   $H_0: \mu_1 - \mu_2 = \Delta_0$ (often $\Delta_0 = 0$)
   $H_1:$ one- or two-sided depending on problem.
