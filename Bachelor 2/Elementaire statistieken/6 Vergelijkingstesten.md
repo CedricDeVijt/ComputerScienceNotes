@@ -208,7 +208,7 @@ $$
 
 ## 6.11 Test Procedure
 
-For $H_0: \p_1 = \p_2$ vs. $H_1: \p_1 \neq \p_2$:
+For $H_0: p_1 = p_2$ vs. $H_1: p_1 \neq p_2$:
 
 - Acceptance region: $\left[ -\Phi^{-1}\left(1 - \frac{\alpha}{2}\right), \Phi^{-1}\left(1 - \frac{\alpha}{2}\right) \right]$.
 - P-value: $p = 2 \mathrm{P}_{H_0}\left( Z \geq \frac{|\widehat{p}_1 - \widehat{p}_2|}{\sqrt{\frac{\widehat{p}_1 (1 - \widehat{p}_1)}{n_1} + \frac{\widehat{p}_2 (1 - \widehat{p}_2)}{n_2}}} \right)$.
