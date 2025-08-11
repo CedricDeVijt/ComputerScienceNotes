@@ -2,34 +2,24 @@
 
 ### Can you give three possible problems of metrics usage in software engineering? How does the measurement theory address them?
 
-- **Problems**:
-  1. Preciseness: Difficulty in defining consistent units for metrics.
-  2. Representation Condition: Whether the metric truly reflects the attribute it measures (e.g., does "code size" indicate "code quality"?).
-  3. Scale Types: Misinterpretation of data due to incorrect scale usage (e.g., ordinal vs. ratio scales).
-- **Measurement Theory** addresses these issues by defining valid scales, representation conditions, and clear domain-to-range mappings.
+- **Preciseness** – Units and context may differ (measurement theory enforces clear domain/range definitions).
+- **Representation condition** – Metric may not measure the intended concept (measurement theory ensures mathematical relations reflect empirical ones).
+- **Scale type misuse** – Using a scale for operations it doesn’t support (measurement theory classifies scales and their valid manipulations).
 
 ### What’s the distinction between a measure and a metric?
 
-- A **measure** is a mapping of a real-world attribute to a symbol set with known mathematical relationships.
-- A **metric** satisfies additional mathematical properties:
-
-$$
-\begin{align*}
-m(x,x) &= 0\\
-m(x,y) &= m(y,x)\\
-m(x,z) & \leq m(x,y) + m(y,z)\\
-\end{align*}
-$$
+- **Measure**: Maps an attribute of a real-world entity to a symbol in a defined set.
+- **Metric**: A special measure whose range is real numbers and satisfies mathematical distance properties (m(x,x)=0, symmetry, triangle inequality).
 
 ### Can you give an example of a direct and an indirect measure?
 
-- **Direct Measure**: Length of source code.
-- **Indirect Measure**: Defect density = (Number of defects) / (Length of source code).
+- **Direct**: Lines of source code, process duration, number of defects found.
+- **Indirect**: Defect density = defects / LOC.
 
 ### What kind of measurement scale would you need to say “A specification error is worse than a design error”? And what if we want to say “A specification error is twice as bad as a design error?”
 
-- **Ordinal Scale** for "worse than" (ordering but no arithmetic operations).
-- **Ratio Scale** for "twice as bad" (arithmetic operations permitted).
+- “Specification error is worse than a design error” → **Ordinal scale** (ordering only).
+- “Specification error is twice as bad as a design error” → **Ratio scale** (absolute zero, meaningful ratios).
 
 ### Explain the need for a calibration factor in Putnam’s model.
 
@@ -37,7 +27,7 @@ $$
 
 ### Fill in the blanks in the following sentence. Explain briefly, based on the Putnam’s model. If you want to finish earlier (= decrease scheduled time), you should ... the effort ... .
 
-- Increase the effort **a lot**. Reducing time increases effort disproportionately (time to the power of 4).
+- If you want to finish earlier, you should **increase** the effort **a lot** (because time and effort are interdependent).
 
 ### Give three metrics for measuring size of a software product.
 
@@ -47,8 +37,19 @@ $$
 
 ### Discuss the main advantages and disadvantages of Function Points.
 
-- **Advantages**: Measures functionality, language-independent, usable after design.
-- **Disadvantages**: Requires expert judgment, not automatic, counterintuitive.
+- **Advantages**:
+  - Independent of implementation language
+  - Measures functionality customers value
+  - Can be measured after design but before implementation
+  - Good for data-processing applications
+  - FP is better than LOC for measuring productivity
+
+- **Disadvantages**:
+  - Requires subjective expert judgment
+  - Cannot be calculated automatically
+  - Dependent on specification method; less suited to non–data-processing domains
+  - Meaningless without context (e.g., what does 2000 FP mean?)
+  - FP is not good for estimating effort as it comes too late in the lifecycle.
 
 ### What does it mean for a coupling metric not to satisfy the representation condition?
 
@@ -56,9 +57,9 @@ $$
 
 ### Can you give 3 examples of impreciseness in Lines of Code measurements?
 
-1. Defining what counts as a line
-2. code reuse or duplication
-3. verbosity differences.
+1. Ambiguity in what counts as a “line of code” (comments, blank lines, generated code).
+2. Code reuse or duplication
+3. Language differences (same functionality requiring different LOC across languages).
 
 ## You should be able to complete the following tasks
 

@@ -6,7 +6,7 @@ Software quality is more important today than a decade ago due to the increasing
 
 ### Can a correctly functioning piece of software still have poor quality? Why?
 
-Yes, software can function as specified yet exhibit poor quality if it lacks attributes such as maintainability, usability, or efficiency. For instance, it may be difficult to modify or require excessive resources.
+Yes. It can meet functional requirements yet fail in non-functional areas (e.g., maintainability, usability, portability), leading to inefficiency, difficulty in updates, or poor user experience.
 
 ### If quality control can’t guarantee results, why do we bother?
 
@@ -14,24 +14,24 @@ Quality control helps minimize errors and improve consistency, even if it can't 
 
 ### What’s the difference between an external and an internal quality attribute? And between a product and a process attribute?
 
-- **External vs. Internal**: External attributes relate to the system's behavior in its environment (e.g., usability), while internal attributes pertain to the software's description (e.g., code complexity).
+- **External vs. Internal**: External attributes relate to the system's behavior in its environment (e.g., usability), while internal attributes pertain to the software's description (e.g., understandability).
 - **Product vs. Process**: Product attributes describe the final deliverable, whereas process attributes describe the development method.
 
 ### What’s the distinction between correctness, reliability, and robustness?
 
-- **Correctness**: Conformance to specifications.
-- **Reliability**: The probability of the software operating as expected over time.
-- **Robustness**: The system’s ability to handle unspecified or abnormal circumstances.
+- Correctness: system matches its specification (absolute).
+- Reliability: probability it behaves as expected over time (relative).
+- Robustness: reasonable behavior under unspecified or abnormal conditions (vague).
 
 ### How can you express the “user friendliness” of a system?
 
-User-friendliness can be measured by the time users need to learn the system. This includes considerations for different user types, such as novices and experts.
+By measuring the time needed for users to learn the system, considering the target audience (novices, experts, operators, etc.).
 
 ### Can you name three distinct refinements of “maintainability”? What do each of these names mean?
 
-1.  **Repairability**: Effort required to fix defects.
-2.  **Adaptability**: Effort required to adjust to changing requirements.
-3.  **Portability**: Effort required to transition to new platforms.
+- Repairability: effort to fix defects. (= corrective maintenance)
+- Adaptability (Evolvability): effort to meet new requirements. (= perfective maintenance)
+- Portability: effort to move to a different environment. (= adaptive maintenance)
 
 ### What is meant with “short time to market”? Can you name 3 related quality attributes and provide definitions for each of them?
 
@@ -50,9 +50,9 @@ User-friendliness can be measured by the time users need to learn the system. Th
 
 ### Explain briefly the three items that should be included in a quality plan.
 
-1.  Desired product qualities and their assessment.
-2.  Organizational standards to be applied.
-3.  Quality assessment process (e.g., quality reviews).
+1. Desired product qualities & assessment methods.
+2. Applicable organizational standards.
+3. Quality assessment process (e.g., reviews).
 
 ### What’s the relationship between ISO9001, CMMI standards and an organization’s quality system? How do you get certified?
 
@@ -60,15 +60,15 @@ ISO9001 and CMMI define frameworks for quality management and maturity. Organiza
 
 ### Can you name and define the 5 levels of CMMI?
 
-1.  **Initial**: Processes are ad hoc.
-2.  **Managed**: Formal processes exist but are reactive.
-3.  **Defined**: Processes are proactive and institutionalized.
-4.  **Quantitatively Managed**: Data-driven improvements.
-5.  **Optimizing**: Continuous process refinement.
+1. Initial: ad-hoc, luck-based. Quality depends on individuals.
+2. Managed: formal procedures (reactive). Quality depends on project managers.
+3. Defined: institutionalized QA process. Organization is proactive.
+4. Quantitatively Managed: process plus metrics. Quantitative data is necessary for improvement.
+5. Optimizing: continuous improvement from feedback. Observations are used to enhance the QA process.
 
 ### Where would “use-cases” as defined in chapter 3 fit in the table of core process areas (p. 32)? Motivate your answer shortly.
 
-Use-cases fit in **Requirements Management (REQM)** at Level 2. They ensure requirements are traced and aligned with the system's goals.
+They fit under Requirements Management (REQM) in Project Management (Level 2), as they specify and manage functional requirements and form part of requirements documentation.
 
 ---
 
@@ -89,6 +89,8 @@ External attributes like usability require user interaction, whereas internal at
 ### Why do quality standards focus on process and internal attributes instead of the desired external product attributes?
 
 Processes and internal attributes are controllable during development, ensuring consistent quality. External attributes emerge only after the product is operational.
+
+Interne qualiteit leidt tot externe qualiteit + proces qualiteit leidt tot product qualiteit + externe qualiteit is pas meetbaar na afleveren van een product
 
 ### Why do you need a quality plan? Which topics should be covered in such a plan?
 
