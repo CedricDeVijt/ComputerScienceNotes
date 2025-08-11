@@ -38,20 +38,10 @@ These changes introduce new structures without altering existing behavior, ensur
 
 ### Which 4 activities should be supported by tools when refactoring?
 
-1.  Source-to-source program transformation.
-2.  Regression testing.
-3.  Configuration and version management.
-4.  Reverse engineering capabilities.
-
-Source-to-source transformation (behaviour preserving)
-Regression testing
-Reverse engineering support
-Version/configuration management.
-
-1. Refactoring - Source-to-source program transformation behaviour preserving ⇒ improve the program structure
-2. Regression Testing - Repeating past tests ⇒ improvements do not break anything
-3. Programming Environment - Fast edit-compile-run cycles Support small-scale reverse engineering activities ⇒ convenient for “local” ameliorations
-4. Configuration & Version Management - keep track of versions that represent project milestones ⇒ go back to previous version
+1. Source-to-source transformation (behaviour preserving)
+2. Regression testing
+3. Reverse engineering capabilities
+4. Version/configuration management.
 
 ### Why can’t we apply a “push up” to a method “x()” which accesses an attribute in the class the method is defined upon (see Refactoring Sequence on page 27–31)?
 
