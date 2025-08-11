@@ -2,7 +2,7 @@
 
 ### Can you explain how refactoring differs from plain coding?
 
-Refactoring is the process of changing a software system in a way that improves its internal structure without altering its external behavior. Plain coding focuses on adding new features or fixing bugs without necessarily improving the underlying code quality.
+Refactoring changes the internal structure of code without altering its external behaviour, whereas plain coding usually adds new functionality or fixes bugs. Refactoring is a behaviour-preserving transformation aimed at improving design.
 
 ### Can you tell the difference between Corrective, Adaptive and Perfective maintenance? And how about preventive maintenance?
 
@@ -21,10 +21,10 @@ Refactoring supports the **consolidation phase** best because it focuses on impr
 
 ### Can you give 4 symptoms for code that can be “cured” via refactoring?
 
-1.  Duplicated Code
-2.  Large Classes/Methods
-3.  Nested Conditionals
-4.  Abusive Inheritance.
+1. Duplicated code
+2. Nested/complex conditionals
+3. Large classes/methods
+4. Abusive inheritance.
 
 ### Can you explain why add class/add method/add attribute are behaviour preserving?
 
@@ -32,9 +32,9 @@ These changes introduce new structures without altering existing behavior, ensur
 
 ### Can you give the pre-conditions for a “rename method” refactoring?
 
-- Ensure no dynamic method calls depend on method names.
-- Confirm tests cover all invocations of the method.
-- Validate no external dependencies (e.g., configuration files) reference the method name.
+1. No method overloading/ambiguity after renaming
+2. All references to the method are updated consistently
+3. Regression tests pass before and after renaming.
 
 ### Which 4 activities should be supported by tools when refactoring?
 
@@ -42,6 +42,16 @@ These changes introduce new structures without altering existing behavior, ensur
 2.  Regression testing.
 3.  Configuration and version management.
 4.  Reverse engineering capabilities.
+
+Source-to-source transformation (behaviour preserving)
+Regression testing
+Reverse engineering support
+Version/configuration management.
+
+1. Refactoring - Source-to-source program transformation behaviour preserving ⇒ improve the program structure
+2. Regression Testing - Repeating past tests ⇒ improvements do not break anything
+3. Programming Environment - Fast edit-compile-run cycles Support small-scale reverse engineering activities ⇒ convenient for “local” ameliorations
+4. Configuration & Version Management - keep track of versions that represent project milestones ⇒ go back to previous version
 
 ### Why can’t we apply a “push up” to a method “x()” which accesses an attribute in the class the method is defined upon (see Refactoring Sequence on page 27–31)?
 
