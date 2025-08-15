@@ -88,7 +88,7 @@ This reduces interdependencies and enables targeted scaling.
 ### DevOps Integration
 
 - **"You build it, you run it"** (Amazon): Teams manage their service’s full lifecycle.
-- **CI/CD pipelines** automate testing and deployment (slide 39).
+- **CI/CD pipelines** automate testing and deployment.
 
 ## 5.6 Resilience and Reactive Systems
 
