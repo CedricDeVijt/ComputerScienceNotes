@@ -5,7 +5,7 @@
 - PATH $\in$ P
 - RELPRIME $\in$ P
 - 2SAT $\in$ P
-- HAMPATH $\in$ P
+- HAMPATH $\in$ NP
 - L $\in$ NP iff decided by some NP Turing machine
 - CLIQUE $\in$ NP
 - SUBSET-SUM $\in$ NP
