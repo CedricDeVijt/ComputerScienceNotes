@@ -6,7 +6,7 @@
 - RELPRIME $\in$ P
 - 2SAT $\in$ P
 - HAMPATH $\in$ NP
-- L $\in$ NP iff decided by some NP Turing machine
+- L $\in$ NP $\iff$ L is decided by some NP Turing machine
 - CLIQUE $\in$ NP
 - SUBSET-SUM $\in$ NP
 - 3SAT $\leq_P$ CLIQUE
