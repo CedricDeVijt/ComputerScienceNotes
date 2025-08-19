@@ -117,7 +117,7 @@
 - Hypotheses:
   $H_0: \mu_1 - \mu_2 = \Delta_0$ (often $\Delta_0 = 0$)
   $H_1:$ one- or two-sided depending on problem.
-- Test Statistic:$Z = \frac{(\bar{X}_1 - \bar{X}_2) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$
+- Test Statistic: $Z = \frac{(\bar{X}_1 - \bar{X}_2) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$
 - Acceptance Region:
   - Two-sided: $|Z| > z_{\alpha/2}$
   - Upper-tail: $Z > z_{\alpha}$
