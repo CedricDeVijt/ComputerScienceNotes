@@ -102,9 +102,9 @@
 
 ### Chi-Square Goodness of Fit
 
-- Hypotheses: 
-	- $H_0$: Observed frequencies match expected, 
-	- $H_1$: They do not
+- Hypotheses:
+  - $H_0$: Observed frequencies match expected,
+  - $H_1$: They do not
 - Test Statistic: $\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}$, where $O_i$ is observed frequency, $E_i$ is expected frequency
 - Distribution: $\chi^2 \sim \chi^2_{k-1}$, where $k$ is the number of categories
 - Acceptance Region: $\chi^2 \leq \chi^2_{\alpha, k-1}$
@@ -142,6 +142,20 @@
   - Two-sided: $|T| > t_{\alpha/2,\,n_1+n_2-2}$
   - Upper-tail: $T > t_{\alpha,\,n_1+n_2-2}$
   - Lower-tail: $T < -t_{\alpha,\,n_1+n_2-2}$
+- p-value: same structure as Z-test but with $t$-CDF $F_t(\cdot)$.
+
+### Two-Sample t-Test (Unknown Variances, Unequal Variances — Welch's t-test)
+
+- Hypotheses:
+  $H_0: \mu_1 - \mu_2 = \Delta_0$ (often $\Delta_0 = 0$)
+  $H_1:$ one- or two-sided depending on problem.
+- Test Statistic: $T = \frac{(\bar{X}_1 - \bar
+{X}_2) - \Delta_0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ with $T \sim t_{df}$, 
+$df = \dfrac{\left(\tfrac{s_1^2}{n_1} + \tfrac{s_2^2}{n_2}\right)^2}{\tfrac{\left(\tfrac{s_1^2}{n_1}\right)^2}{n_1-1} + \tfrac{\left(\tfrac{s_2^2}{n_2}\right)^2}{n_2-1}}$
+- Acceptance Region:
+  - Two-sided: $|T| > t_{\alpha/2, df}$
+  - Upper-tail: $T > t_{\alpha, df}$
+  - Lower-tail: $T < -t_{\alpha, df}$
 - p-value: same structure as Z-test but with $t$-CDF $F_t(\cdot)$.
 
 ## 6 Distributions
