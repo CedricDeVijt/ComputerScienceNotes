@@ -29,6 +29,7 @@
 2. **Shuffle**: Sorts and groups intermediate results by key
 3. **Reduce**: Aggregates values per key (e.g., word counts)
 
+![[Bachelor 3/Distributed systems/images/mapreduce example.png]]
 #### Limitations
 
 - **Disk-Based Workflow**: Requires HDFS writes between phases (slow for iterative tasks)
