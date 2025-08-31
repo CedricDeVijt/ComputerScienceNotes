@@ -16,7 +16,7 @@ Coordination ensures nodes agree on actions, states, or resource usage, enabling
 
 Coordination in distributed systems tackles several core challenges:
 
-### Consensus
+### 8.2.1 Consensus
 
 Consensus involves nodes agreeing on a single value or decision, even in the presence of failures. It’s critical for tasks like:
 
@@ -30,7 +30,7 @@ Consensus involves nodes agreeing on a single value or decision, even in the pre
 - **Raft**: A more understandable consensus algorithm that breaks down leader election, log replication, and safety into manageable steps. Used in systems like etcd and Consul.
 - **Byzantine Fault Tolerance (BFT)**: Handles malicious nodes or arbitrary failures (e.g., PBFT, used in blockchain systems).
 
-### Synchronization
+### 8.2.2 Synchronization
 
 Synchronization ensures that nodes perform actions in a specific order or at specific times, avoiding race conditions or inconsistent states.
 
@@ -46,89 +46,92 @@ Synchronization ensures that nodes perform actions in a specific order or at spe
 
 ## 8.3 Common Distributed Algorithms
 
-### **Central Algorithm**
+### 8.3.1 Distributed Mutual Exclusion
 
-#### How It Works
+#### Central Algorithm
+
+**How It Works**
 
 - A single coordinator node manages access to a shared resource (e.g., for mutual exclusion).
 - Nodes send requests to the coordinator, which grants access based on a queue or priority system.
 - The coordinator ensures only one node accesses the resource at a time.
 
-#### Pros
+**Pros**
 
 - **Simple**: Easy to implement and understand.
 - **Deterministic**: Centralized control ensures predictable behavior.
 - **Low message overhead**: Nodes only communicate with the coordinator.
 
-#### Cons
+**Cons**
 
 - **Single point of failure**: If the coordinator fails, the system halts.
 - **Scalability issues**: The coordinator can become a bottleneck in large systems.
 - **High latency**: All requests must go through the coordinator, increasing delay in large networks.
 
-### **Ring-Based Algorithm**
+#### Ring-Based Algorithm
 
-#### How It Works
+**How It Works**
 
 - Nodes are organized in a logical ring topology.
 - A token or message circulates around the ring. For mutual exclusion, only the node holding the token can access the shared resource.
-- For leader election (e.g., Chang-Roberts variant), nodes pass messages to elect a leader based on identifiers.
 
-#### Pros
+**Pros**
 
 - **Simple structure**: Easy to implement in systems with a ring topology.
 - **Fairness**: Nodes get equal opportunity to access resources as the token circulates.
 - **No central coordinator**: Avoids single point of failure.
 
-#### Cons
+**Cons**
 
 - **High latency**: Token must traverse the entire ring, which can be slow in large systems.
 - **Fault intolerance**: If a node fails, the ring breaks, disrupting the algorithm unless recovery mechanisms are in place.
 - **Inefficient for sparse access**: If only a few nodes need the resource, the token still circulates through all nodes.
 
-### **Ricart-Agrawala Algorithm**
+#### Ricart-Agrawala Algorithm
 
-#### How It Works
+**How It Works**
 
 - A distributed mutual exclusion algorithm where nodes request access to a critical section by sending timestamped messages to all other nodes.
 - A node grants permission to another node only if it is not in or requesting the critical section itself, using logical timestamps to resolve conflicts.
 - A node enters the critical section only after receiving permission from all other nodes.
 
-#### Pros
+**Pros**
 
 - **Decentralized**: No single point of failure.
 - **Fairness**: Timestamps ensure requests are processed in order.
 - **Robust**: Works in fully distributed systems without requiring a coordinator.
 
-#### Cons
+**Cons**
 
 - **High message complexity**: Requires O(N) messages per request (N = number of nodes), leading to network overhead.
 - **Latency**: Waiting for all permissions can be slow, especially in large systems.
 - **Clock synchronization**: Relies on logical clocks, which may introduce complexity.
 
-### **Maekawa Voting Algorithm**
+#### Maekawa Voting Algorithm
 
-#### How It Works
+**How It Works**
 
 - Each node is associated with a voting set (a subset of nodes) rather than requiring permission from all nodes.
 - A node requests votes from its voting set to enter the critical section. It needs a majority or all votes from its set to proceed.
 - Voting sets are designed such that any two sets intersect, ensuring mutual exclusion.
 
-#### Pros
+**Pros**
 
 - **Lower message complexity**: Requires fewer messages than Ricart-Agrawala (O(√N) in optimal cases).
 - **Decentralized**: No central coordinator, improving fault tolerance.
 - **Scalable**: More efficient than requiring all nodes’ permissions.
 
-#### Cons
+**Cons**
 
 - **Complex setup**: Designing voting sets to ensure intersection is non-trivial.
 - **Deadlock risk**: Improper voting set design or message delays can lead to deadlocks.
 - **Limited fault tolerance**: Failure of nodes in a voting set can block progress.
 
-### **Chang-Roberts Algorithm**
+### 8.3.2 Leader Election Algorithms
 
-#### How It Works
+#### Chang-Roberts Algorithm
+
+**How It Works**
 
 - A leader election algorithm for a ring-based topology.
 - Each node sends its unique identifier in a message around the ring.
@@ -137,21 +140,21 @@ Synchronization ensures that nodes perform actions in a specific order or at spe
   - If its own ID is higher, it sends its own ID instead.
   - If it receives its own ID, it declares itself the leader and informs others.
 
-#### Pros
+**Pros**
 
 - **Simple**: Easy to implement in a ring topology.
 - **Low message complexity**: In the best case, O(N) messages; in the worst case, O(N²).
 - **Deterministic**: Always elects the node with the highest ID.
 
-#### Cons
+**Cons**
 
 - **Ring dependency**: Requires a logical ring, which can break if a node fails.
 - **Latency**: Message passing around the ring can be slow in large systems.
 - **Assumes unique IDs**: Requires nodes to have distinct identifiers.
 
-### **Bully Algorithm**
+#### Bully Algorithm
 
-#### How It Works
+**How It Works**
 
 - A leader election algorithm where nodes have unique identifiers.
 - When a node detects the leader has failed (or initiates an election), it sends an election message to all nodes with higher IDs.
@@ -159,19 +162,19 @@ Synchronization ensures that nodes perform actions in a specific order or at spe
 - If a higher-ID node responds, it takes over the election process.
 - The node with the highest ID eventually becomes the leader.
 
-#### Pros
+**Pros**
 
 - **Simple**: Straightforward to implement.
 - **Robust**: Works in any topology, not limited to rings.
 - **Deterministic**: Always elects the node with the highest ID.
 
-#### Cons
+**Cons**
 
 - **High message complexity**: O(N²) in the worst case, as nodes may send messages to all higher-ID nodes.
 - **Network overhead**: Frequent elections in unstable systems can flood the network.
 - **High-ID node bias**: Always favors the node with the highest ID, which may not be optimal for load balancing.
 
-### Summary Table
+### 8.3.5 Summary Table
 
 | Algorithm       | Type                    | Pros                         | Cons                                | Message Complexity |
 | --------------- | ----------------------- | ---------------------------- | ----------------------------------- | ------------------ |
@@ -182,7 +185,7 @@ Synchronization ensures that nodes perform actions in a specific order or at spe
 | Chang-Roberts   | Leader Election         | Simple, deterministic        | Ring dependency, latency            | O(N) to O(N²)      |
 | Bully           | Leader Election         | Simple, robust topology      | High message complexity, bias       | O(N²) worst case   |
 
-### Notes
+### 8.3.6 Notes
 
 - **Mutual Exclusion vs. Leader Election**: Central, Ring-Based, Ricart-Agrawala, and Maekawa are primarily for mutual exclusion (ensuring one node accesses a resource at a time), while Chang-Roberts and Bully are for leader election (selecting a coordinator node).
 - **System Assumptions**: These algorithms assume reliable message delivery, unique node IDs, and sometimes specific topologies (e.g., ring for Chang-Roberts).
