@@ -127,7 +127,7 @@ Synchronization ensures that nodes perform actions in a specific order or at spe
 - **Deadlock risk**: Improper voting set design or message delays can lead to deadlocks.
 - **Limited fault tolerance**: Failure of nodes in a voting set can block progress.
 
-### 8.3.2 Leader Election Algorithms
+### 8.3. Leader Election Algorithms
 
 #### Chang-Roberts Algorithm
 
@@ -176,14 +176,14 @@ Synchronization ensures that nodes perform actions in a specific order or at spe
 
 ### 8.3.5 Summary Table
 
-| Algorithm       | Type                    | Pros                         | Cons                                | Message Complexity |
-| --------------- | ----------------------- | ---------------------------- | ----------------------------------- | ------------------ |
-| Central         | Mutual Exclusion        | Simple, low message overhead | Single point of failure, bottleneck | O(1) per request   |
-| Ring-Based      | Mutual Exclusion/Leader | Simple, fair, no coordinator | High latency, fault intolerant      | O(N) per request   |
-| Ricart-Agrawala | Mutual Exclusion        | Decentralized, fair          | High message overhead, latency      | O(N) per request   |
-| Maekawa Voting  | Mutual Exclusion        | Lower message complexity     | Complex setup, deadlock risk        | O(√N) per request  |
-| Chang-Roberts   | Leader Election         | Simple, deterministic        | Ring dependency, latency            | O(N) to O(N²)      |
-| Bully           | Leader Election         | Simple, robust topology      | High message complexity, bias       | O(N²) worst case   |
+| Algorithm       | Type             | Pros                         | Cons                                | Message Complexity |
+| --------------- | ---------------- | ---------------------------- | ----------------------------------- | ------------------ |
+| Central         | Mutual Exclusion | Simple, low message overhead | Single point of failure, bottleneck | O(1) per request   |
+| Ring-Based      | Mutual Exclusion | Simple, fair, no coordinator | High latency, fault intolerant      | O(N) per request   |
+| Ricart-Agrawala | Mutual Exclusion | Decentralized, fair          | High message overhead, latency      | O(N) per request   |
+| Maekawa Voting  | Mutual Exclusion | Lower message complexity     | Complex setup, deadlock risk        | O(√N) per request  |
+| Chang-Roberts   | Leader Election  | Simple, deterministic        | Ring dependency, latency            | O(N) to O(N²)      |
+| Bully           | Leader Election  | Simple, robust topology      | High message complexity, bias       | O(N²) worst case   |
 
 ### 8.3.6 Notes
 
