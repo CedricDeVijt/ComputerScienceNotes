@@ -238,8 +238,7 @@ Benefits of web services:
 Principles of REST (Architectural constraints):
 
 1. **Uniform Interface**: a consistent and standardized way of interacting with resources, typically using standard HTTP methods and URIs.
-2. **Client-Server Architecture**: separation of concerns between client and server, allowing them
-   to evolve independently.
+2. **Client-Server Architecture**: separation of concerns between client and server, allowing them to evolve independently.
 3. **Statelessness**: each request from client to server must contain all the information needed to understand and process the request, and the server should not store any client context between requests.
 4. **Cacheability**: responses from the server can be marked as cacheable or non-cacheable, allowing clients to cache responses and improve performance.
 5. **Layered System**: the architecture can be composed of multiple layers, with each layer only interacting with the layer directly above or below it, enhancing scalability and manageability.
