@@ -334,8 +334,7 @@ Advantages of SOAP:
 ## Characteristics and design principles of microservices
 
 1. **Single Responsibility Principle**: each microservice should focus on a single business capability or function.
-2. **Independently Deployable**: microservices can be developed, tested, and
-   deployed independently of each other.
+2. **Independently Deployable**: microservices can be developed, tested, and deployed independently of each other.
 3. **Decentralized Data Management**: each microservice manages its own database or data store, promoting data encapsulation and autonomy.
 4. **Lightweight Communication**: microservices communicate using lightweight protocols, such as HTTP/REST or messaging queues.
 5. **Polyglot Programming**: different microservices can be developed using different programming languages and technologies, allowing teams to choose the best tools for their specific needs.
