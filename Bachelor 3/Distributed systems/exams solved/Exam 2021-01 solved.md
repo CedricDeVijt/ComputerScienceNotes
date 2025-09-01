@@ -275,7 +275,7 @@ Suppose we have two processes:
 **P1:** `W(X)=1; W(Y)=1`
 **P2:** `R(Y); R(X)`
 
-1. **If P2 reads `Y=1` then `X=1`:** ✅ Consistent with PRAM, because P1’s writes are observed in order.
-2. **If P2 reads `Y=1` then `X=0`:** ❌ Violates PRAM, because it observes P1’s writes out of order.
+1. **If P2 reads `Y=1` then `X=1`:** Consistent with PRAM, because P1’s writes are observed in order.
+2. **If P2 reads `Y=1` then `X=0`:** Violates PRAM, because it observes P1’s writes out of order.
 
 In short: PRAM consistency **allows different processes to see writes from other processes in different orders**, but **never sees writes from the same process out of order**.
