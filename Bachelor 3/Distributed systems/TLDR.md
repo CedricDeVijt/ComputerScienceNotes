@@ -128,8 +128,8 @@ Cons:
 1. **Retry**: automatically retry failed operations a certain number of times before giving up
 2. **Duplicate filtering**: detect and discard duplicate messages to prevent processing the same request multiple times
 3. **Retransmission**: resend lost or corrupted messages to ensure reliable communication
-   3.1 Re-execution: re-execute operations that may have failed due to transient errors
-   3.2 Retransmit old reply: resend previous responses to clients if the original response was lost
+	3.1 Re-execution: re-execute operations that may have failed due to transient errors
+	3.2 Retransmit old reply: resend previous responses to clients if the original response was lost
 
 ### Invocation semantics
 
@@ -177,6 +177,7 @@ What guarantees are given on the number of executions of remote method invocatio
 **Dispatcher**: Component that receives incoming messages and routes them to the appropriate skeleton based on the target object
 
 **Remote reference module**: Responsible for managing remote object references, including creating, storing, and looking up references to remote objects
+
 **Binding service**: Provides a way for clients to discover and obtain references to remote objects, often through a directory or naming service
 
 # 3 Service-Oriented Architectures
