@@ -561,7 +561,7 @@ Consistency and scalability
 **How It Works**
 
 - Each node is associated with a voting set (a subset of nodes) rather than requiring permission from all nodes.
-- A node requests votes from its voting set to enter the critical section. It needs a majority or all votes from its set to proceed.
+- A node requests votes from its voting set to enter the critical section. It needs all votes from its set to proceed.
 - Voting sets are designed such that any two sets intersect, ensuring mutual exclusion.
 
 **Pros**
